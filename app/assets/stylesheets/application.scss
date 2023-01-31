@@ -1,0 +1,73 @@
+@import "footer";
+@import "nav";
+@import "profiles";
+
+@font-face {
+    font-family: NissanOpti;
+    src: url(NissanOpti.otf);
+}
+
+body {
+    color: #beb8bc;
+    background-color: #000000;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+a {
+  color: #beb8bc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nissan-title {
+    font-family: NissanOpti, serif;
+    color: #ffffff;
+}
+
+.nissan-code {
+    font-family: NissanOpti, serif;
+    color: #f30039;
+}
+
+.bg-obscure {
+  background-color: #000000;
+  border-color: transparent;
+}
+
+.hr-light {
+  height: 1px;
+  background-color: rgba(204, 204, 204, 0.25);
+  border: none;
+}
+
+.hr-light-title {
+  height: 1px;
+  background-color: rgba(204, 204, 204, 0.25);
+  border: none;
+  margin-bottom: 45px;
+}
+
+.popover-body {
+  font-weight: bold;
+  background-color: #2E2F30;
+  color: #bdbdbd;
+  border-radius: 3px;
+}
+
+.arrow:after {
+  border-bottom-color: #2E2F30 !important;
+  border-top-color: #2E2F30 !important;
+}

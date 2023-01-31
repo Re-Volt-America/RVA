@@ -1,0 +1,14 @@
+!!!
+%html{:lang => "en"}
+  = render :partial => 'layouts/head'
+  %body
+    = render :partial => "nav"
+
+    %div.container
+      %p.notice
+      = notice
+      %p.alert
+        = alert
+      = yield
+
+    = render :partial => "footer"

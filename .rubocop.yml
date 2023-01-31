@@ -1,0 +1,28 @@
+---
+AllCops:
+  NewCops: enable
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%w": '()'
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+Style/EndOfLine:
+  EnforcedStyle: lf
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/MutableConstant:
+  Enabled: false

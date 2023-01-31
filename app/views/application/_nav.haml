@@ -1,0 +1,64 @@
+%nav.navbar.navbar-expand-md.navbar-dark.navbar-default.bg-obscure
+  %div.container
+    %a.navbar-brand{:href => "/"}
+      = image_tag "rva-logo-dark.png", :height => "45", :width => "45", :style => "border-radius: 50px;"
+
+    %button.navbar-toggler{:type => "button", :"data-toggle" => "collapse", :"data-target" => "#main-navbar", :"aria-controls" => "main-navbar", :"aria-expanded" => "false", :"aria-label" => "Toggle navigation"}
+      %span.navbar-toggler-icon
+
+    %div.collapse.navbar-collapse{:id => "main-navbar"}
+      %ul.navbar-nav.mr-auto
+        %li.nav-item
+          %a.nav-link{:href => "/"}
+            %i.fa.fa-play{:"aria-hidden" => "true"}
+            Play
+        %li.nav-item
+          %a.nav-link{:href => "/rules"}
+            %i.fa.fa-bookmark{:"aria-hidden" => "true"}
+            Rules
+        %li.nav-item
+          %a.nav-link{:href => "/downloads"}
+            %i.fa.fa-download{:"aria-hidden" => "true"}
+            Downloads
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
+            %i.fa.fa-tags{:"aria-hidden" => true}
+            RVA
+          %div.dropdown-menu{:"aria-labelledby" => "dropdown01"}
+            %a.dropdown-item{:href => "/tracks"}
+              %i.fa.fa-map{:"aria-hidden" => "true"}
+              Tracks
+            %a.dropdown-item{:href => "/cars"}
+              %i.fa.fa-car{:"aria-hidden" => "true"}
+              Cars
+            %a.dropdown-item{:href => "/points"}
+              %i.fa.fa-calculator{:"aria-hidden" => "true"}
+              Points System
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
+            %i.fa.fa-users{:"aria-hidden" => true}
+            Players
+          %div.dropdown-menu{:"aria-labelledby" => "dropdown02"}
+            %a.dropdown-item{:href => "/stats"}
+              %i.fa.fa-chart-bar{:"aria-hidden" => "true"}
+              Stats
+            %a.dropdown-item{:href => "/staff"}
+              %i.fa.fa-user-md{:"aria-hidden" => "true"}
+              Staff
+      %ul.nav.navbar-nav.pull-right
+        %li.dropdown
+          %a.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}
+            - if user_signed_in?
+              %i.fa.fa-user
+            - else
+              %i.fa.fa-user
+            %b.caret
+          %ul.dropdown-menu.dropdown-menu-right{:"aria-labelledby" => "access-toggle"}
+            - if user_signed_in?
+              %li
+                = link_to "Log out", destroy_user_session_path, :method => "delete", :class => "dropdown-item"
+            - else
+              %li
+                = link_to "Login", new_user_session_path, :class => "dropdown-item"
+              %li
+                = link_to "Register", new_user_registration_path, :class => "dropdown-item"
