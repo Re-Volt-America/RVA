@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @car.speed %>
+</p>
+
+<p>
+  <strong>Accel:</strong>
+  <%= @car.accel %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @car.weight %>
+</p>
+
+<p>
+  <strong>Folder name:</strong>
+  <%= @car.folder_name %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  speed: 1.5
+  accel: 1.5
+  weight: 1.5
+  folder_name: MyString
+
+two:
+  name: MyString
+  speed: 1.5
+  accel: 1.5
+  weight: 1.5
+  folder_name: MyString
