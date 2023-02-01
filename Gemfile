@@ -20,11 +20,17 @@ gem 'omniauth', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '~> 1.2.1'                       # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'
 
+# Fix protocol warnings...
+gem 'net-http', require: false
+gem 'net-imap', require: false
+gem 'net-protocol', require: false
+gem 'net-smtp', require: false
+
 group :development, :test do
   gem 'byebug', platforms: [                     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
       :mri, :mingw, :x64_mingw
   ]
-  gem "erb2haml"
+  gem 'erb2haml', '~> 0.1.5'                     # Bulk covert ERB to HAML
 end
 
 group :development do
