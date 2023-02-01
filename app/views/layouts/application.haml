@@ -4,11 +4,8 @@
   %body
     = render :partial => "nav"
 
-    %div.container
-      %p.notice
-        = notice
-      %p.alert
-        = alert
-    = yield
-
-    = render :partial => "footer"
+    .container
+      = render :partial => "alerts"
+      = if content_for?(:content) then yield :content else yield end
+      %hr
+      = render :partial => "footer"
