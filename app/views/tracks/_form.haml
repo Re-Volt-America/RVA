@@ -1,0 +1,23 @@
+= form_with(model: track) do |form|
+  - if track.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(track.errors.count, "error")
+        prohibited this track from being saved:
+      %ul
+        - track.errors.each do |error|
+          %li= error.full_message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :difficulty
+    = form.number_field :difficulty
+  .field
+    = form.label :length
+    = form.number_field :length
+  .field
+    = form.label :folder_name
+    = form.text_field :folder_name
+  .actions
+    = form.submit

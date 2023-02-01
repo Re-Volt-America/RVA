@@ -1,0 +1,47 @@
+= form_with(model: profile) do |form|
+  - if profile.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(profile.errors.count, "error")
+        prohibited this profile from being saved:
+      %ul
+        - profile.errors.each do |error|
+          %li= error.full_message
+  .field
+    = form.label :about
+    = form.text_area :about
+  .field
+    = form.label :gender
+    = form.text_field :gender
+  .field
+    = form.label :public_email
+    = form.text_field :public_email
+  .field
+    = form.label :location
+    = form.text_field :location
+  .field
+    = form.label :discord
+    = form.text_field :discord
+  .field
+    = form.label :github
+    = form.text_field :github
+  .field
+    = form.label :instagram
+    = form.text_field :instagram
+  .field
+    = form.label :crowdin
+    = form.text_field :crowdin
+  .field
+    = form.label :steam
+    = form.text_field :steam
+  .field
+    = form.label :twitter
+    = form.text_field :twitter
+  .field
+    = form.label :occupation
+    = form.text_field :occupation
+  .field
+    = form.label :interests
+    = form.text_field :interests
+  .actions
+    = form.submit

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host: MyString
+  version: MyString
+  physics: MyString
+  protocol: MyString
+  number: 1
+  date: 2023-02-01
+  sessionlog: MyString
+
+two:
+  host: MyString
+  version: MyString
+  physics: MyString
+  protocol: MyString
+  number: 1
+  date: 2023-02-01
+  sessionlog: MyString

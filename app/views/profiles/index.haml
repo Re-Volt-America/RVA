@@ -1,0 +1,38 @@
+%p#notice= notice
+%h1 Profiles
+%table
+  %thead
+    %tr
+      %th About
+      %th Gender
+      %th Public email
+      %th Location
+      %th Discord
+      %th Github
+      %th Instagram
+      %th Crowdin
+      %th Steam
+      %th Twitter
+      %th Occupation
+      %th Interests
+      %th{:colspan => "3"}
+  %tbody
+    - @profiles.each do |profile|
+      %tr
+        %td= profile.about
+        %td= profile.gender
+        %td= profile.public_email
+        %td= profile.location
+        %td= profile.discord
+        %td= profile.github
+        %td= profile.instagram
+        %td= profile.crowdin
+        %td= profile.steam
+        %td= profile.twitter
+        %td= profile.occupation
+        %td= profile.interests
+        %td= link_to 'Show', profile
+        %td= link_to 'Edit', edit_profile_path(profile)
+        %td= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Profile', new_profile_path

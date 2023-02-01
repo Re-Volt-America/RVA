@@ -1,0 +1,18 @@
+%p#notice= notice
+%h1 Races
+%table
+  %thead
+    %tr
+      %th Track
+      %th Racers count
+      %th{:colspan => "3"}
+  %tbody
+    - @races.each do |race|
+      %tr
+        %td= race.track
+        %td= race.racers_count
+        %td= link_to 'Show', race
+        %td= link_to 'Edit', edit_race_path(race)
+        %td= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Race', new_race_path

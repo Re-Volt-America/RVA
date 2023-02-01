@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  race_wins: 1
+  race_count: 1
+  average_position: 1.5
+  participation_rate: 1.5
+  official_score: 1.5
+  obtained_points: 1.5
+  team_points: 1.5
+
+two:
+  race_wins: 1
+  race_count: 1
+  average_position: 1.5
+  participation_rate: 1.5
+  official_score: 1.5
+  obtained_points: 1.5
+  team_points: 1.5

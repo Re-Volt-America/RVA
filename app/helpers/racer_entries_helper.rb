@@ -1,0 +1,2 @@
+module RacerEntriesHelper
+end

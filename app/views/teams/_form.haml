@@ -1,0 +1,23 @@
+= form_with(model: team) do |form|
+  - if team.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(team.errors.count, "error")
+        prohibited this team from being saved:
+      %ul
+        - team.errors.each do |error|
+          %li= error.full_message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :short_name
+    = form.text_field :short_name
+  .field
+    = form.label :image
+    = form.text_field :image
+  .field
+    = form.label :string
+    = form.text_field :string
+  .actions
+    = form.submit

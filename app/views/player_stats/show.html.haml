@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Race wins:
+  = @player_stat.race_wins
+%p
+  %strong Race count:
+  = @player_stat.race_count
+%p
+  %strong Average position:
+  = @player_stat.average_position
+%p
+  %strong Participation rate:
+  = @player_stat.participation_rate
+%p
+  %strong Official score:
+  = @player_stat.official_score
+%p
+  %strong Obtained points:
+  = @player_stat.obtained_points
+%p
+  %strong Team points:
+  = @player_stat.team_points
+= link_to 'Edit', edit_player_stat_path(@player_stat)
+|
+= link_to 'Back', player_stats_path

@@ -1,0 +1,22 @@
+%p#notice= notice
+%h1 Tracks
+%table
+  %thead
+    %tr
+      %th Name
+      %th Difficulty
+      %th Length
+      %th Folder name
+      %th{:colspan => "3"}
+  %tbody
+    - @tracks.each do |track|
+      %tr
+        %td= track.name
+        %td= track.difficulty
+        %td= track.length
+        %td= track.folder_name
+        %td= link_to 'Show', track
+        %td= link_to 'Edit', edit_track_path(track)
+        %td= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Track', new_track_path

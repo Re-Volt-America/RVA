@@ -1,0 +1,28 @@
+%p#notice= notice
+%h1 Player Stats
+%table
+  %thead
+    %tr
+      %th Race wins
+      %th Race count
+      %th Average position
+      %th Participation rate
+      %th Official score
+      %th Obtained points
+      %th Team points
+      %th{:colspan => "3"}
+  %tbody
+    - @player_stats.each do |player_stat|
+      %tr
+        %td= player_stat.race_wins
+        %td= player_stat.race_count
+        %td= player_stat.average_position
+        %td= player_stat.participation_rate
+        %td= player_stat.official_score
+        %td= player_stat.obtained_points
+        %td= player_stat.team_points
+        %td= link_to 'Show', player_stat
+        %td= link_to 'Edit', edit_player_stat_path(player_stat)
+        %td= link_to 'Destroy', player_stat, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Player Stat', new_player_stat_path

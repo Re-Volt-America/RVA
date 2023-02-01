@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Number:
+  = @ranking.number
+= link_to 'Edit', edit_ranking_path(@ranking)
+|
+= link_to 'Back', rankings_path

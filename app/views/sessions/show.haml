@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Host:
+  = @session.host
+%p
+  %strong Version:
+  = @session.version
+%p
+  %strong Physics:
+  = @session.physics
+%p
+  %strong Protocol:
+  = @session.protocol
+%p
+  %strong Number:
+  = @session.number
+%p
+  %strong Date:
+  = @session.date
+%p
+  %strong Sessionlog:
+  = @session.sessionlog
+= link_to 'Edit', edit_session_path(@session)
+|
+= link_to 'Back', sessions_path

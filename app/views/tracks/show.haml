@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @track.name
+%p
+  %strong Difficulty:
+  = @track.difficulty
+%p
+  %strong Length:
+  = @track.length
+%p
+  %strong Folder name:
+  = @track.folder_name
+= link_to 'Edit', edit_track_path(@track)
+|
+= link_to 'Back', tracks_path

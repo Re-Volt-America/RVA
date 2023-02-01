@@ -1,0 +1,22 @@
+%p#notice= notice
+%h1 Teams
+%table
+  %thead
+    %tr
+      %th Name
+      %th Short name
+      %th Image
+      %th String
+      %th{:colspan => "3"}
+  %tbody
+    - @teams.each do |team|
+      %tr
+        %td= team.name
+        %td= team.short_name
+        %td= team.image
+        %td= team.string
+        %td= link_to 'Show', team
+        %td= link_to 'Edit', edit_team_path(team)
+        %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Team', new_team_path

@@ -1,0 +1,28 @@
+%p#notice= notice
+%h1 Sessions
+%table
+  %thead
+    %tr
+      %th Host
+      %th Version
+      %th Physics
+      %th Protocol
+      %th Number
+      %th Date
+      %th Sessionlog
+      %th{:colspan => "3"}
+  %tbody
+    - @sessions.each do |session|
+      %tr
+        %td= session.host
+        %td= session.version
+        %td= session.physics
+        %td= session.protocol
+        %td= session.number
+        %td= session.date
+        %td= session.sessionlog
+        %td= link_to 'Show', session
+        %td= link_to 'Edit', edit_session_path(session)
+        %td= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Session', new_session_path

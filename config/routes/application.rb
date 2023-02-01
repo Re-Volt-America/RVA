@@ -3,6 +3,9 @@ RVA::Application.routes.draw do
 
   root :to => 'application#index', :via => 'get'
 
+  resources :tracks
+  resources :cars
+
   devise_for :users,
              :controllers => {
                  :confirmations => 'confirmations',

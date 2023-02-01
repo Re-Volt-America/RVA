@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @racer_entry.name
+%p
+  %strong Car:
+  = @racer_entry.car
+%p
+  %strong Best lap:
+  = @racer_entry.best_lap
+%p
+  %strong Finished:
+  = @racer_entry.finished
+%p
+  %strong Cheating:
+  = @racer_entry.cheating
+%p
+  %strong Team:
+  = @racer_entry.team
+= link_to 'Edit', edit_racer_entry_path(@racer_entry)
+|
+= link_to 'Back', racer_entries_path

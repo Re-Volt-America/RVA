@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @car.name
+%p
+  %strong Speed:
+  = @car.speed
+%p
+  %strong Accel:
+  = @car.accel
+%p
+  %strong Weight:
+  = @car.weight
+%p
+  %strong Folder name:
+  = @car.folder_name
+= link_to 'Edit', edit_car_path(@car)
+|
+= link_to 'Back', cars_path

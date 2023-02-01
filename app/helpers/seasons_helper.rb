@@ -1,0 +1,2 @@
+module SeasonsHelper
+end
