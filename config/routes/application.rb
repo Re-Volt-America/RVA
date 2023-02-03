@@ -10,6 +10,12 @@ RVA::Application.routes.draw do
   resources :tracks
   resources :cars
 
+  match '404', to: 'errors#not_found', via: :all
+  match '422', to: 'errors#illegal', via: :all
+  match '500', to: 'errors#internal_error', via: :all
+
+  # get 'error' => 'errors#not_found'
+
   devise_for :users,
              :controllers => {
                  :confirmations => 'confirmations',
