@@ -6,8 +6,8 @@ RVA::Application.routes.draw do
   get 'rules' => 'rules#index'
   get 'terms' => 'rules#terms'
   get 'privacy' => 'rules#privacy'
-
   get 'logos' => 'assets#index'
+  get 'play' => 'play#index'
 
   resources :tracks
   resources :cars
