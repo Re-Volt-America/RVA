@@ -10,6 +10,7 @@ RVA::Application.routes.draw do
   get 'play' => 'play#index'
   get 'downloads' => 'downloads#index'
   get 'staff' => 'staff#index'
+  get 'points' => 'points#index'
 
   resources :tracks
   resources :cars
