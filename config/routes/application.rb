@@ -12,6 +12,8 @@ RVA::Application.routes.draw do
   get 'staff' => 'staff#index'
   get 'points' => 'points#index'
 
+  get 'stats' => 'users#stats'
+
   resources :tracks
   resources :cars
 

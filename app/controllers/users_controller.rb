@@ -16,4 +16,7 @@ class UsersController < ApplicationController
     @user.build_profile
     @user.build_player_stat
   end
+
+  def stats
+  end
 end
