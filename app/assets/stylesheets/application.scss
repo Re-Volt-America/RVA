@@ -1,10 +1,27 @@
+@import "assets";
+@import "cars";
+@import "downloads";
+@import "errors";
 @import "footer";
 @import "nav";
+@import "play";
+@import "player_stats";
+@import "points";
 @import "profiles";
+@import "racer_entries";
+@import "races";
+@import "rankings";
+@import "rules";
+@import "seasons";
+@import "sessions";
+@import "staff";
+@import "teams";
+@import "tournaments";
+@import "tracks";
 
 @font-face {
     font-family: NissanOpti;
-    src: url(NissanOpti.otf);
+    src: url(fonts/NissanOpti.otf);
 }
 
 body {
