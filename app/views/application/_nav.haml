@@ -36,7 +36,7 @@
               Points System
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
-            %i.fa.fa-users{:"aria-hidden" => true}
+            %i.fa.fa-user{:"aria-hidden" => true}
             Players
           %div.dropdown-menu{:"aria-labelledby" => "dropdown02"}
             %a.dropdown-item{:href => stats_path}
@@ -45,6 +45,17 @@
             %a.dropdown-item{:href => staff_path}
               %i.fa.fa-user-md{:"aria-hidden" => "true"}
               Staff
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
+            %i.fa.fa-trophy{:"aria-hidden" => true}
+            League
+          %div.dropdown-menu{:"aria-labelledby" => "dropdown03"}
+            %a.dropdown-item{:href => teams_path}
+              %i.fa.fa-users
+              Teams
+            %a.dropdown-item{:href => tournaments_path}
+              %i.fa.fa-flag
+              Tournaments
       %ul.nav.navbar-nav.pull-right
         %li.dropdown
           %a.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}

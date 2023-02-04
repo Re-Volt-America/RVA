@@ -2,7 +2,9 @@ class Team
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :user
+  store_in :database => "rv_teams"
+
+  embeds_many :users
 
   field :name, type: String
   field :short_name, type: String

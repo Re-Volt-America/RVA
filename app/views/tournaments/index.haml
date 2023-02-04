@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Tournaments
+%table
+  %thead
+    %tr
+      %th Name
+      %th Date
+      %th Format
+      %th{:colspan => "3"}
+  %tbody
+    - @tournaments.each do |tournament|
+      %tr
+        %td= tournament.name
+        %td= tournament.date
+        %td= tournament.format
+        %td= link_to 'Show', tournament
+        %td= link_to 'Edit', edit_tournament_path(tournament)
+        %td= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Tournament', new_tournament_path

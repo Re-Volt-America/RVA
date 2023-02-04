@@ -16,6 +16,8 @@ RVA::Application.routes.draw do
 
   resources :tracks
   resources :cars
+  resources :tournaments
+  resources :teams
 
   match '404', to: 'errors#not_found', via: :all
   match '422', to: 'errors#illegal', via: :all

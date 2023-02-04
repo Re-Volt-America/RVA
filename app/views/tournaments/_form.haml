@@ -1,0 +1,20 @@
+= form_with(model: tournament) do |form|
+  - if tournament.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(tournament.errors.count, "error")
+        prohibited this tournament from being saved:
+      %ul
+        - tournament.errors.each do |error|
+          %li= error.full_message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :date
+    = form.date_select :date
+  .field
+    = form.label :format
+    = form.text_area :format
+  .actions
+    = form.submit
