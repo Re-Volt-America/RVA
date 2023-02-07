@@ -8,7 +8,7 @@ development:
     # a connection in server versions >= 3.4. Note that the name cannot
     # exceed 128 bytes. It is also used as the database name if the
     # database name is not explicitly defined. (default: nil)
-    # app_name: MyApplicationName
+    app_name: RVA
     
     # Mark belongs_to associations as required by default, so that saving a
     # model with a missing belongs_to association will trigger a validation
@@ -61,9 +61,7 @@ development:
 test:
   clients:
     default:
-      database: rva_test
-      hosts:
-        - localhost:27017
+      uri: mongodb+srv://bgm:eSWa6MXpvLNJGjzG@cluster1.mgfak7m.mongodb.net/
       options:
         read:
           mode: :primary
