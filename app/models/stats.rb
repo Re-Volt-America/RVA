@@ -1,4 +1,4 @@
-class PlayerStat
+class Stats
   include Mongoid::Document
   include Mongoid::Timestamps
 

@@ -13,12 +13,12 @@ class User
   belongs_to :team, :optional => true
 
   embeds_one :profile
-  embeds_one :player_stat
+  embeds_one :stats
   accepts_nested_attributes_for(:profile, :update_only => true, :allow_destroy => false)
-  accepts_nested_attributes_for(:player_stat, :update_only => true, :allow_destroy => false) # FIXME: Probably not needed
+  accepts_nested_attributes_for(:stats, :update_only => true, :allow_destroy => false) # FIXME: Probably not needed
 
   before_create :create_profile
-  before_create :create_player_stat
+  before_create :create_stats
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :lockable, :trackable, :omniauthable
 
@@ -78,8 +78,8 @@ class User
                   :interests => '')
   end
 
-  def create_player_stat
-    build_player_stat(
+  def create_stats
+    build_stats(
         :race_wins => 0,
         :race_count => 0,
         :average_position => 0.0,

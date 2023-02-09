@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.build_profile
-    @user.build_player_stat
+    @user.build_stats
   end
 
   def stats
