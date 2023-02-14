@@ -5,6 +5,8 @@ class Season
   store_in :database => "rv_seasons"
 
   embeds_many :rankings
+  has_many :cars
+  has_many :tracks
 
   field :name, type: String
   field :start_date, type: Date
