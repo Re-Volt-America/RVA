@@ -66,6 +66,8 @@
             %b.caret
           %ul.dropdown-menu.dropdown-menu-right{:"aria-labelledby" => "access-toggle"}
             - if user_signed_in?
+              - @nav.each do |item|
+                = render_navigation(item)
               %li
                 = link_to "Log out", destroy_user_session_path, :method => "delete", :class => "dropdown-item"
             - else
