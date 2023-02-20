@@ -14,6 +14,8 @@ RVA::Application.routes.draw do
 
   get 'stats' => 'users#stats'
 
+  resources :seasons
+  resources :rankings
   resources :tracks
   resources :cars
   resources :tournaments

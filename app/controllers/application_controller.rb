@@ -5,9 +5,15 @@ class ApplicationController < ActionController::Base
 
   def build_navigation
     if user_signed_in?
-      @nav = [
-          { :name => "Profile", :path => user_path(current_user.name) },
+      @admin_nav = [
+          { :name => "New Season", :path => new_season_path },
+          { :name => "New Ranking", :path => new_ranking_path },
           { :name => "New Session", :path => new_session_path },
+          { :name => "New Tournament", :path => new_tournament_path }
+      ]
+      @nav = [
+          { :name => "Admin", :path => "", :sub => @admin_nav, :admin => true },
+          { :name => "Profile", :path => user_path(current_user.name) },
           { :name => "Account", :path => main_app.edit_user_registration_path }
       ]
     end
@@ -27,7 +33,19 @@ class ApplicationController < ActionController::Base
 
   def render_navigation(item)
     if item[:sub]
-      #- TODO: Add sub-nav support
+      if item[:admin] and not user_is_admin?
+        return
+      end
+
+      subs = item[:sub].map{|sub| render_navigation(sub) }.compact
+      %{
+          <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">#{item[:name]}</a>
+              <ul class="dropdown-menu">
+                  #{subs.join}
+              </ul>
+          </li>
+        }.html_safe
     else
       %{<li>#{nav_link(item)}</li>}.html_safe
     end

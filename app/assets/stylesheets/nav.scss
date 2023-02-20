@@ -59,3 +59,24 @@
   height: 29px;
   width: 29px;
 }
+
+.dropdown-submenu {
+  display: block;
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  position: relative !important;
+  background-color: #000000;
+}
+
+.dropdown-submenu a::after {
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  right: 20%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
