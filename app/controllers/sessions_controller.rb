@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_session, only: %i[ show edit update destroy ]
 
   # GET /sessions or /sessions.json

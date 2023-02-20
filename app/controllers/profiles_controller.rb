@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_profile, only: %i[ show edit update destroy ]
 
   # GET /profiles or /profiles.json

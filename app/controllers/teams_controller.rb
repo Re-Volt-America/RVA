@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_team, only: %i[ show edit update destroy ]
 
   # GET /teams or /teams.json

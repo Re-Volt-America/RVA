@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_car, only: %i[ show edit update destroy ]
 
   # GET /cars or /cars.json
