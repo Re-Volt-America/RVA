@@ -1,3 +1,28 @@
-// Place all the styles related to the Play controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#play {
+  @media only screen and (max-width: 400px) {
+    iframe {
+      width: 100%;
+    }
+  }
+}
+
+#clock #time {
+  margin-top: 10px;
+  font-family: NissanOpti, serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 720px) {
+  #clock #time {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #clock #time {
+    font-size: 30px;
+  }
+}
