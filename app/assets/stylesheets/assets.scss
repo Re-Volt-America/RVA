@@ -1,3 +1,28 @@
-// Place all the styles related to the Assets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#assets {
+  .assets-logo {
+    height: 350px;
+  }
+
+  button {
+    color: #beb8bc;
+    box-shadow: none;
+  }
+
+  button:hover {
+    color: #000000;
+    background-color: #ffffff;
+  }
+
+  button:focus {
+    color: #000000;
+    background-color: #ffffff;
+  }
+
+  .btn-outline-secondary {
+    border-color: #ffffff;
+  }
+}
+
+#guidelines {
+  margin-top: 50px;
+}

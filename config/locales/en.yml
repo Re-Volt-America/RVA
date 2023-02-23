@@ -184,27 +184,27 @@ en:
     subtitle: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
     allowed:
       title: "Allowed Usage"
-      1: "Use our logo to link to our website"
-      2: "Use our logo to advertise that you integrate with RVA"
-      3: "Use our logo in blog posts or articles about RVA"
+      1: "Use our logo to link to our website."
+      2: "Use our logo to advertise that you integrate with RVA."
+      3: "Use our logo in blog posts or articles about RVA."
     prohibited:
       title: "Forbidden Usage"
-      1: "Use our logo as your application's icon"
-      2: "Create a modified version of any of our logos"
-      3: "Integrate any of our logos into your logo"
-      4: "Use any of our artwork without permission"
-      5: "Change the colours, dimensions or add your own text/images"
+      1: "Use our logo as your application's icon."
+      2: "Create a modified version of any of our logos."
+      3: "Integrate any of our logos into your logo."
+      4: "Use any of our artwork without permission."
+      5: "Change the colours, dimensions or add your own text/images."
     contact:
-      title: "Please contact us"
-      1: "If you want to use artwork not included in this repository"
-      2: "If you want to use these images in a video/mainstream media"
+      title: "Please Contact Us"
+      1: "If you want to use artwork not included in this repository."
+      2: "If you want to use these images in a video/mainstream media."
     naming:
-      title: "Naming Projects and products"
+      title: "Naming Projects and Products"
       1: "Please avoid naming your projects anything that implies Re-Volt America's endorsement. This also applies to domain names."
     attribution:
       title: "Attribution"
-      1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors"
-      2: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>"
+      1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
+      2: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
   error:
     404:
       title: "Error 404"
