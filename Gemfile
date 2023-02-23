@@ -20,6 +20,8 @@ gem 'omniauth', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '~> 1.2.1'                       # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'
 gem 'redcarpet', '~> 3.6'
+gem 'sentry-ruby', '~> 5.8'
+gem 'sentry-rails', '~> 5.8'
 
 # Fix protocol warnings...
 gem 'net-http', require: false
