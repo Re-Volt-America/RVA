@@ -1,15 +1,19 @@
-function clock() {
-    let hours = document.getElementById("hour");
-    let minutes = document.getElementById("minutes");
-    let seconds = document.getElementById("seconds");
+$(document).on('turbolinks:load', function () {
+    if (!document.getElementById("play")) return
 
-    let hourNow = new Date().getUTCHours();
-    let minutesNow = new Date().getUTCMinutes();
-    let secondsNow = new Date().getUTCSeconds();
+    function clock() {
+        let hours = document.getElementById("hour");
+        let minutes = document.getElementById("minutes");
+        let seconds = document.getElementById("seconds");
 
-    hours.innerHTML = hourNow < 10 ? `0${hourNow}` : hourNow;
-    minutes.innerHTML = minutesNow < 10 ? `0${minutesNow}` : minutesNow;
-    seconds.innerHTML = secondsNow < 10 ? `0${secondsNow}` : secondsNow;
-}
+        let hourNow = new Date().getUTCHours();
+        let minutesNow = new Date().getUTCMinutes();
+        let secondsNow = new Date().getUTCSeconds();
 
-setInterval(clock, 1000);
+        hours.innerHTML = hourNow < 10 ? `0${hourNow}` : hourNow;
+        minutes.innerHTML = minutesNow < 10 ? `0${minutesNow}` : minutesNow;
+        seconds.innerHTML = secondsNow < 10 ? `0${secondsNow}` : secondsNow;
+    }
+
+    setInterval(clock, 1000);
+})
