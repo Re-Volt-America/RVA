@@ -56,7 +56,7 @@
             %a.dropdown-item{:href => tournaments_path}
               %i.fa.fa-flag
               = t('nav.league.tournaments')
-      %ul.navbar-nav.mr-auto
+      %ul.navbar-nav
         %li.dropdown
           %a.nav-link.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}
             - if user_signed_in?
