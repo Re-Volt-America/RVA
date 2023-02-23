@@ -244,3 +244,7 @@ en:
       developer: "Developers"
       moderator: "Moderators"
       organizer: "Organizers"
+  privacy:
+    title: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+  terms:
+    title: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"

@@ -19,6 +19,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'omniauth', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '~> 1.2.1'                       # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'
+gem 'redcarpet', '~> 3.6'
 
 # Fix protocol warnings...
 gem 'net-http', require: false
