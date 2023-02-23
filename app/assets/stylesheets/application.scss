@@ -49,6 +49,17 @@ a:hover {
   cursor: pointer;
 }
 
+.page-title {
+  margin-bottom: -0.7rem;
+}
+
+.page-title-hr {
+  height: 1px;
+  background-color: rgba(204, 204, 204, 0.25);
+  border: none;
+  margin-bottom: 45px;
+}
+
 .nissan-title {
     font-family: NissanOpti, serif;
     color: #ffffff;
@@ -68,13 +79,6 @@ a:hover {
   height: 1px;
   background-color: rgba(204, 204, 204, 0.25);
   border: none;
-}
-
-.hr-light-title {
-  height: 1px;
-  background-color: rgba(204, 204, 204, 0.25);
-  border: none;
-  margin-bottom: 45px;
 }
 
 .popover-body {
