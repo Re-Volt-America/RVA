@@ -4,45 +4,45 @@
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled
           %li.heading
-            Policies
+            = t('footer.policies.title')
           %li
-            = link_to "Rules", rules_path
+            = link_to t('footer.policies.rules'), rules_path
           %li
-            = link_to "Terms of Service", terms_path
+            = link_to t('footer.policies.terms'), terms_path
           %li
-            = link_to "Privacy Policy", privacy_path
+            = link_to t('footer.policies.privacy'), privacy_path
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled
           %li.heading
             Organization
           %li
-            = link_to "Development Logs", "https://github.com/Re-Volt-America/RVA/commits/master"
+            = link_to t('footer.organization.logs'), "https://github.com/Re-Volt-America/RVA/commits/master"
           %li
-            = link_to "Report a Bug", "https://github.com/Re-Volt-America/RVA/issues"
+            = link_to t('footer.organization.bugs'), "https://github.com/Re-Volt-America/RVA/issues"
           %li
-            = link_to "Sponsor", "https://github.com/sponsors/BGMP"
+            = link_to t('footer.organization.sponsor'), "https://github.com/sponsors/BGMP"
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled
           %li.heading
-            Trademark
+            = t('footer.trademark.title')
           %li
-            = link_to "Assets", logos_path
+            = link_to t('footer.trademark.assets'), logos_path
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled.follow-us
           %li.heading
-            Find Us
+            = t('footer.social.title')
           %li
             %a{:href => "https://discord.gg/T3KCh7g"}
               = image_tag "discord-logo-color.svg"
-              Discord
+              = t('footer.social.discord')
           %li
             %a{:href => "https://github.com/Re-Volt-America"}
               = image_tag "github-logo.png"
-              GitHub
+              = t('footer.social.github')
           %li
             %a{:href => "https://crowdin.com/project/rva"}
               = image_tag "crowdin-dark-symbol.svg"
-              Crowdin
+              = t('footer.social.crowdin')
     %div.col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.col-12
       %div.copy
         %p

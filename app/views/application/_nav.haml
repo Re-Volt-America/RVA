@@ -11,51 +11,51 @@
         %li.nav-item
           %a.nav-link{:href => play_path}
             %i.fa.fa-play{:"aria-hidden" => "true"}
-            Play
+            = t('nav.play')
         %li.nav-item
           %a.nav-link{:href => rules_path}
             %i.fa.fa-bookmark{:"aria-hidden" => "true"}
-            Rules
+            = t('nav.rules')
         %li.nav-item
           %a.nav-link{:href => downloads_path}
             %i.fa.fa-download{:"aria-hidden" => "true"}
-            Downloads
+            = t('nav.downloads')
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
             %i.fa.fa-tags{:"aria-hidden" => true}
-            RVA
+            = t('nav.rva.title')
           %div.dropdown-menu{:"aria-labelledby" => "dropdown01"}
             %a.dropdown-item{:href => tracks_path}
               %i.fa.fa-map{:"aria-hidden" => "true"}
-              Tracks
+              = t('nav.rva.tracks')
             %a.dropdown-item{:href => cars_path}
               %i.fa.fa-car{:"aria-hidden" => "true"}
-              Cars
+              = t('nav.rva.cars')
             %a.dropdown-item{:href => points_path}
               %i.fa.fa-calculator{:"aria-hidden" => "true"}
-              Points System
+              = t('nav.rva.points')
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
             %i.fa.fa-user{:"aria-hidden" => true}
-            Players
+            = t('nav.players.title')
           %div.dropdown-menu{:"aria-labelledby" => "dropdown02"}
             %a.dropdown-item{:href => stats_path}
               %i.fa.fa-chart-bar{:"aria-hidden" => "true"}
-              Stats
+              = t('nav.players.stats')
             %a.dropdown-item{:href => staff_path}
               %i.fa.fa-user-md{:"aria-hidden" => "true"}
-              Staff
+              = t('nav.players.staff')
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
             %i.fa.fa-trophy{:"aria-hidden" => true}
-            League
+            = t('nav.league.title')
           %div.dropdown-menu{:"aria-labelledby" => "dropdown03"}
             %a.dropdown-item{:href => teams_path}
               %i.fa.fa-users
-              Teams
+              = t('nav.league.teams')
             %a.dropdown-item{:href => tournaments_path}
               %i.fa.fa-flag
-              Tournaments
+              = t('nav.league.tournaments')
       %ul.navbar-nav.mr-auto
         %li.dropdown
           %a.nav-link.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}

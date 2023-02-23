@@ -38,14 +38,15 @@ en:
       title: "RVA"
       tracks: "Tracks"
       cars: "Cars"
+      points: "Points System"
     players:
       title: "Players"
       staff: "Staff"
-    ranking:
-      title: "Ranking"
-      points: "Points System"
-      season20202021: "2020-2021"
-      season20212021: "2021-2022"
+      stats: "Stats"
+    league:
+      title: "League"
+      teams: "Teams"
+      tournaments: "Tournaments"
     discussions: "Discussions"
   footer:
     policies:
@@ -66,6 +67,7 @@ en:
       title: "Find Us"
       discord: "Discord"
       github: "GitHub"
+      crowdin: "Crowdin"
   play:
     subheader: "We play daily at 23:00 UTC"
     subheader2: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
