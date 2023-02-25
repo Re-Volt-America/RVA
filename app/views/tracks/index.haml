@@ -1,22 +1,21 @@
-%p#notice= notice
-%h1 Tracks
-%table
-  %thead
-    %tr
-      %th Name
-      %th Difficulty
-      %th Length
-      %th Folder name
-      %th{:colspan => "3"}
-  %tbody
-    - @tracks.each do |track|
-      %tr
-        %td= track.name
-        %td= track.difficulty
-        %td= track.length
-        %td= track.folder_name
-        %td= link_to 'Show', track
-        %td= link_to 'Edit', edit_track_path(track)
-        %td= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
+%h2.page-title
+  %i.fa.fa-map{:"aria-hidden" => true}
+  %b
+    = t('rva.tracks.title')
+%hr.page-title-hr
+
+%nav
+  .nav.nav-tabs{:id => "nav-tab", :role => "tablist"}
+    %a.nav-item.nav-link{:id => "season-tracks-tab", :"data-toggle" => "tab", :href => "#season-tracks", :role => "tab", :"aria-controls" => "season-tracks", :"aria-selected" => false}
+      = t('rva.tracks.season')
+    %a.nav-item.nav-link.active{:id => "all-tracks-tab", :"data-toggle" => "tab", :href => "#all-tracks", :role => "tab", :"aria-controls" => "all-tracks", :"aria-selected" => true}
+      = t('rva.tracks.all-tracks')
+.tab-content{:id => "nav-tabContent"}
+  .tab-pane.fade.show.active{:id => "all-tracks", :role => "tabpanel", :"aria-labelledby" => "all-tracks-tab"}
+    %br
+    = render :partial => 'all_tracks'
+  .tab-pane.fade{:id => "season-tracks", :role => "tabpanel", :"aria-labelledby" => "season-tracks-tab"}
+    %br
+    %p Season Tracks!
+
 = link_to 'New Track', new_track_path

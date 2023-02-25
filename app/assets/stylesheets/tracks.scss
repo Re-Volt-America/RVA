@@ -1,3 +1,39 @@
-// Place all the styles related to the Tracks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#tracks {
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+.tracks {
+  margin-top: 20px;
+}
+
+.track-container {
+  display: inline-block;
+}
+
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  border: 1px solid rgba(204, 204, 204, 0.25);
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+}
+
+.track.thumbnail > .img {
+  position: relative;
+}
+
+.thumbnail .caption {
+  padding: 9px;
+  color: #333;
+}
+
+.tracks > div {
+  text-align: center;
+}
+

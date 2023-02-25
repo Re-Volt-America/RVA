@@ -26,6 +26,8 @@ module ORG
   DOMAIN = "rva.lat"
   EMAIL = "support@rva.lat"
   URL = "https://rva.lat"
+  CARS_REPO_URL = "https://cars.rva.lat"
+  TRACKS_REPO_URL = "https://tracks.rva.lat"
 end
 
 module RVA

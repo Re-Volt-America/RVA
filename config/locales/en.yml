@@ -157,7 +157,9 @@ en:
     parser: "RVA Points Parser"
   rva:
     tracks:
-      title: "Tracks"
+      all-tracks: "All Tracks"
+      season: "Season"
+      title: "The RVA Tracks"
       format:
         title: "Format"
         difficulty:
