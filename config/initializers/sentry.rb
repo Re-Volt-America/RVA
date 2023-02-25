@@ -1,4 +1,6 @@
 Sentry.init do |config|
+  return
+
   config.dsn = 'https://965601ed7d9b4e7f83ef49c4255b88c3@o4504597756903424.ingest.sentry.io/4504730242777088'
   config.breadcrumbs_logger = [:active_support_logger, :http_logger]
 
