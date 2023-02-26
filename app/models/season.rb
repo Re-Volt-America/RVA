@@ -1,6 +1,7 @@
 class Season
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::MultiParameterAttributes
 
   store_in :database => "rv_seasons"
 
