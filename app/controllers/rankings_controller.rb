@@ -67,6 +67,6 @@ class RankingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ranking_params
-      params.require(:ranking).permit(:number)
+      params.require(:ranking).permit(:number, :season)
     end
 end
