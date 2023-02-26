@@ -14,4 +14,14 @@ class Session
   field :number, type: Integer
   field :date, type: Date
   field :sessionlog, type: String
+
+  validates_presence_of :host
+  validates_presence_of :version
+  validates_presence_of :physics
+  validates_presence_of :protocol
+  validates_presence_of :number
+  validates_presence_of :date
+  validates_presence_of :sessionlog
+
+  validates_uniqueness_of :number
 end
