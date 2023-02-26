@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://rva:7P7tvNw4LmYUNA4@cluster0.xwuwein.mongodb.net/
+      uri: mongodb+srv://rva:7P7tvNw4LmYUNA4@cluster0.xwuwein.mongodb.net
   # Configure Mongoid specific options. (optional)
   options:
     # Application name that is printed to the mongodb logs upon establishing
