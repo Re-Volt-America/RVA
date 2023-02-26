@@ -12,4 +12,7 @@ class Season
   field :name, type: String
   field :start_date, type: Date
   field :end_date, type: Date
+
+  validates_presence_of :name
+  validates_presence_of :start_date
 end
