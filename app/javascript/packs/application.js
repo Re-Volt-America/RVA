@@ -4,10 +4,9 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+import "@hotwired/turbo-rails"
 import "channels"
 import "play"
 import "nav"
 
 Rails.start()
-Turbolinks.start()

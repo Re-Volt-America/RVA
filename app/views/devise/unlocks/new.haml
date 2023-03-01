@@ -6,5 +6,5 @@
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .actions
-    = f.submit "Resend unlock instructions"
+    = f.submit "Resend unlock instructions", :"data-turbo" => false
 = render "devise/shared/links"

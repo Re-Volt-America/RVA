@@ -4,7 +4,7 @@
 //       order to allow multiple of these at the same time. Bootstrap 4...
 //
 
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
     var submenus = document.getElementsByClassName('dropdown-submenu');
 
     for (var i = 0; i < submenus.length; i++) {

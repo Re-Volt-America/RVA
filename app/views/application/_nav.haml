@@ -69,7 +69,7 @@
               - @nav.each do |item|
                 = render_navigation(item)
               %li
-                = link_to "Log out", destroy_user_session_path, :method => "delete", :class => "dropdown-item"
+                = button_to "Log out", destroy_user_session_path, :class => "dropdown-item", :method => :delete, :"data-turbo" => false
             - else
               %li
                 = link_to "Login", new_user_session_path, :class => "dropdown-item"

@@ -33,6 +33,20 @@
   color: black;
 }
 
+.navbar-nav > li > .dropdown-menu input {
+  color: #fff;
+}
+
+.navbar-nav > li > .dropdown-menu input:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.navbar-nav > li > .dropdown-menu input:focus {
+  background-color: #fff;
+  color: black;
+}
+
 .navbar-toggler-icon {
   width: 1rem;
 }

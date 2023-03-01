@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
     if (!document.getElementById("play")) return
 
     function clock() {
@@ -16,4 +16,5 @@ $(document).on('turbolinks:load', function () {
     }
 
     setInterval(clock, 1000);
+    console.log("turbo")
 })

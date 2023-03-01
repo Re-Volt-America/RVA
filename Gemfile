@@ -9,19 +9,21 @@ gem 'sass-rails', '>= 6'                         # Use SCSS for stylesheets
 gem 'webpacker', '~> 5.0'                        # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'turbolinks', '~> 5'                         # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'jbuilder', '~> 2.7'                         # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'redis', '~> 4.0'                          # Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 4.0'                             # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'                       # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'               # Use Active Storage variant
 gem 'bootsnap', '>= 1.4.4', require: false       # Reduces boot times through caching; required in config/boot.rb
 gem 'mongoid', '~> 8.0', '>= 8.0.3'
 gem 'haml', '~> 6.1', '>= 6.1.1'
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise', '~> 4.9'
 gem 'omniauth', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '~> 1.2.1'                       # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'
 gem 'redcarpet', '~> 3.6'
 gem 'sentry-ruby', '~> 5.8'
 gem 'sentry-rails', '~> 5.8'
+gem 'turbo-rails', '~> 1.3', '>= 1.3.3'
+gem 'responders', '~> 3.1'
 
 # Fix protocol warnings...
 gem 'net-http', require: false
@@ -53,3 +55,5 @@ end
 gem 'tzinfo-data', platforms: [                  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
     :mingw, :mswin, :x64_mingw, :jruby
 ]
+
+gem "importmap-rails", "~> 1.1"
