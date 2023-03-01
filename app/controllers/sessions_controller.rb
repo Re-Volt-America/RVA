@@ -61,10 +61,7 @@ class SessionsController < ApplicationController
 
   def rankings
     @target = params[:target]
-    @rankings = Ranking.all.collect {|r| [r.number]}
-
-    puts "Rankings:"
-    puts @rankings
+    @rankings = Ranking.where(:season_id => params[:season]).collect {|r| [r.number, r.id]}
 
     respond_to do |format|
       format.turbo_stream { render :layout => false }
