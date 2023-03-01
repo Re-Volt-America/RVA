@@ -80,7 +80,7 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.0)
     crass (1.0.6)
-    dartsass-rails (0.4.1)
+    cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
     date (3.3.3)
     devise (4.9.0)
@@ -299,7 +299,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  dartsass-rails (~> 0.4)
+  cssbundling-rails (~> 1.1)
   devise (~> 4.9)
   erb2haml (~> 0.1.5)
   factory_bot_rails (~> 6.2)
