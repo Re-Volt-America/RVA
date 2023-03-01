@@ -5,10 +5,10 @@ ruby '2.7.3'
 
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'            # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'puma', '~> 5.0'                             # Use Puma as the app server
-gem 'sass-rails', '>= 6'                         # Use SCSS for stylesheets
-gem 'webpacker', '~> 5.0'                        # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'dartsass-rails', '~> 0.4'                   # Use SCSS for stylesheets
+gem 'jsbundling-rails', '~> 1.1'                 # Bundle and transpile JavaScript in Rails with esbuild
 gem 'jbuilder', '~> 2.7'                         # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'redis', '~> 4.0'                             # Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 4.0'                            # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'                       # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'               # Use Active Storage variant
 gem 'bootsnap', '>= 1.4.4', require: false       # Reduces boot times through caching; required in config/boot.rb
@@ -55,5 +55,3 @@ end
 gem 'tzinfo-data', platforms: [                  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
     :mingw, :mswin, :x64_mingw, :jruby
 ]
-
-gem "importmap-rails", "~> 1.1"

@@ -34,6 +34,5 @@
   %script $(document).ready(function() { $('[data-toggle="popover"]').popover(); });
   %script $(document).ready(function() { $('span.highlight > code').each(function(i, block) { hljs.highlightBlock(block); }); });
 
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  = javascript_importmap_tags
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbo-track': 'reload'

@@ -1,0 +1,3 @@
+web: rails s -p 3000
+js: yarn build --watch
+css: rails dartsass:watch
