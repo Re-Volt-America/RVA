@@ -6,5 +6,5 @@
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
   .actions
-    = f.submit "Resend confirmation instructions", :"data-turbo" => false
+    = f.submit "Resend confirmation instructions"
 = render "devise/shared/links"

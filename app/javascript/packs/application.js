@@ -4,9 +4,10 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import "@hotwired/turbo-rails"
+import { Turbo } from "@hotwired/turbo-rails"
 import "channels"
 import "play"
 import "nav"
 
+Turbo.session.drive = false
 Rails.start()
