@@ -20,7 +20,11 @@ RVA::Application.routes.draw do
   resources :cars
   resources :tournaments
   resources :teams
-  resources :sessions
+  resources :sessions do
+    collection do
+      get :rankings
+    end
+  end
 
   match '404', to: 'errors#not_found', via: :all
   match '422', to: 'errors#illegal', via: :all

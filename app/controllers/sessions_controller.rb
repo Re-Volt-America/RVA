@@ -59,6 +59,18 @@ class SessionsController < ApplicationController
     end
   end
 
+  def rankings
+    @target = params[:target]
+    @rankings = Ranking.all.collect {|r| [r.number]}
+
+    puts "Rankings:"
+    puts @rankings
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_session

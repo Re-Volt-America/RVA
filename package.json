@@ -4,14 +4,15 @@
   "dependencies": {
     "@hotwired/turbo-rails": "^7.2.5",
     "@rails/actioncable": "^6.0.0",
+    "@rails/request.js": "^0.0.8",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
-    "turbolinks": "^5.2.0",
     "webpack": "4.46.0",
     "webpack-cli": "3.3.12"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@hotwired/stimulus": "^3.2.1",
     "webpack-dev-server": "3"
   }
 }

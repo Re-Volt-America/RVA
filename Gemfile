@@ -19,6 +19,7 @@ gem 'omniauth', '~> 2.1', '>= 2.1.1'
 gem 'kaminari', '~> 1.2.1'                       # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'
 gem 'redcarpet', '~> 3.6'
+gem 'stimulus-rails', '~> 1.2', '>= 1.2.1'
 gem 'sentry-ruby', '~> 5.8'
 gem 'sentry-rails', '~> 5.8'
 gem 'turbo-rails', '~> 1.3', '>= 1.3.3'

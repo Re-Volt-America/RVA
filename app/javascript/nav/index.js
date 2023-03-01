@@ -23,7 +23,6 @@ const onSubmenuClick = function (dropdownMenu) {
         e.stopPropagation()
 
         if (dropdownMenu == null) return;
-
         if (!dropdownMenu.classList.contains("show")) {
             dropdownMenu.classList.add("show")
             return

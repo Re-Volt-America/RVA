@@ -29,13 +29,14 @@
   .field
     = form.label :sessionlog
     = form.text_field :sessionlog
-  .field
-    = form.label :season
-    = form.collection_select :season, Season.all, :id, :name
-  .field
-    = form.label :ranking
-    = form.collection_select :ranking, Ranking.all, :id, :number
+  %div{:"data-controller" => "season"}
+    .field
+      = form.label :season
+      = form.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}}
+    .field
+      = form.label :ranking
+      = form.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
   .actions
-    = form.submit
+    = form.submit :"data-turbo" => false
 
 = link_to 'Back', sessions_path
