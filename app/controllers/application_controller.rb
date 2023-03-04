@@ -58,4 +58,8 @@ class ApplicationController < ActionController::Base
   def authenticate_admin
     redirect_to root_path, :notice => 'You do not have permission' unless user_is_admin?
   end
+
+  def authenticate_staff
+    redirect_to root_path, :notice => "You do not have permission" unless user_is_staff?
+  end
 end
