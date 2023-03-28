@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.3'
 
-gem 'rails', '~> 6.1.6', '>= 6.1.6.1'            # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.1'            # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'puma', '~> 5.0'                             # Use Puma as the app server
 gem 'cssbundling-rails', '~> 1.1'                # Use SCSS for stylesheets
 gem 'jsbundling-rails', '~> 1.1'                 # Bundle and transpile JavaScript in Rails with esbuild
