@@ -14,4 +14,8 @@ module ApplicationHelper
   def user_is_staff?(user = current_user)
     user && (user.admin? || user.mod? || user.organizer?)
   end
+
+  def true?(obj)
+    obj.to_s.downcase == "true"
+  end
 end

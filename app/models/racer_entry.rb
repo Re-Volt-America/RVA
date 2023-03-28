@@ -6,6 +6,7 @@ class RacerEntry
   embeds_one :car
 
   field :name, type: String
+  field :time, type: String
   field :best_lap, type: String
   field :finished, type: Mongoid::Boolean
   field :cheating, type: Mongoid::Boolean

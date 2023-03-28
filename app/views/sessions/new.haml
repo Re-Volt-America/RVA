@@ -1,4 +1,9 @@
 %h1 New Session
+
+= form_with :url => import_sessions_path, :method => :post do |f|
+  = f.file_field :file, :accept => ".csv"
+  = f.button "Import"
+
 = form_with(model: @session) do |form|
   - if @session.errors.any?
     #error_explanation

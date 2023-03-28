@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
+  require "csv"
+
+  CSV_TYPE = "application/vnd.ms-excel".freeze
+  XLSM_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet".freeze
+
+  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_session, only: %i[ show edit update destroy ]
 
   # GET /sessions or /sessions.json
@@ -68,6 +73,45 @@ class SessionsController < ApplicationController
     end
   end
 
+  # FIXME: Selecting no file breaks everything
+  # FIXME: Validate if CSV is actually a session log
+  # FIXME: Validate if file is empty?
+  # @note Physics and other info is only captured for the first race.
+  def import
+    file = params[:file]
+
+    if file.content_type != CSV_TYPE
+      redirect_to new_session_path, :notice => "You may only upload CSV files."
+    end
+
+    full_log = []
+    session_info = []
+    session_races = []
+    file = File.open(file)
+    csv = CSV.parse(file)
+
+    # @see https://github.com/Re-Volt-America/RVA-Points/blob/f17b2fcf0e66470665622002fcce0207c5652597/rva_points_app/session_log.py#L326
+    csv.each do |row|
+      full_log << row
+    end
+
+    host = full_log[1][2]
+    version = full_log[0][1]
+    physics = full_log[1][3]
+    protocol = full_log[0][2]
+    date = Date.strptime(full_log[1][1], "%D")
+    pickups = true?(full_log[1][5])
+
+    races = []
+    full_log.drop(2).each do |row|
+
+    end
+
+
+
+    byebug
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_session
@@ -76,6 +120,6 @@ class SessionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def session_params
-      params.require(:session).permit(:host, :version, :physics, :protocol, :number, :date, :sessionlog, :ranking)
+      params.require(:session).permit(:host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :teams, :ranking)
     end
 end

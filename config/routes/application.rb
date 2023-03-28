@@ -23,6 +23,7 @@ RVA::Application.routes.draw do
   resources :sessions do
     collection do
       get :rankings
+      post :import
     end
   end
 
