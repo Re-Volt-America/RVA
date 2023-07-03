@@ -7,6 +7,8 @@ COPY . /usr/src/app
 
 WORKDIR /usr/src/app
 
+RUN gem update --system
+RUN bundle config set force_ruby_platform true
 RUN bundle
 
 EXPOSE 3000
