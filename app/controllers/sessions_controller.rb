@@ -84,11 +84,12 @@ class SessionsController < ApplicationController
       redirect_to new_session_path, :notice => "You may only upload CSV files."
     end
 
+    file = File.open(file)
+    csv = CSV.parse(file)
+
     full_log = []
     session_info = []
     session_races = []
-    file = File.open(file)
-    csv = CSV.parse(file)
 
     # @see https://github.com/Re-Volt-America/RVA-Points/blob/f17b2fcf0e66470665622002fcce0207c5652597/rva_points_app/session_log.py#L326
     csv.each do |row|
@@ -102,12 +103,34 @@ class SessionsController < ApplicationController
     date = Date.strptime(full_log[1][1], "%D")
     pickups = true?(full_log[1][5])
 
-    races = []
-    full_log.drop(2).each do |row|
+    first = true
+    race = []
+    racers = []
 
+    full_log.drop(2).each do |row|
+      if row[0] == "#" # skip headers
+        next
+      end
+
+      if not first and row[0] == "Results"
+        race << racers
+        session_races << race
+        race = []
+        racers = []
+        race << row
+      else
+        if row[0] == "Results"
+            race << row
+        else
+            racers << row
+        end
+
+        first = false
+      end
     end
 
-
+    race << racers
+    session_races << race
 
     byebug
   end
