@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  rva-service:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3001:3000
