@@ -4,7 +4,7 @@ class Car
 
   store_in :database => "rv_cars"
 
-  belongs_to :season
+  #belongs_to :season
 
   field :name, :type => String
   field :speed, :type => Float

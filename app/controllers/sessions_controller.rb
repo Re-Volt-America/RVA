@@ -89,7 +89,7 @@ class SessionsController < ApplicationController
 
     full_log = []
     session_info = []
-    session_races = []
+    session_races_arr = []
 
     # @see https://github.com/Re-Volt-America/RVA-Points/blob/f17b2fcf0e66470665622002fcce0207c5652597/rva_points_app/session_log.py#L326
     csv.each do |row|
@@ -114,7 +114,7 @@ class SessionsController < ApplicationController
 
       if not first and row[0] == "Results"
         race << racers
-        session_races << race
+        session_races_arr << race
         race = []
         racers = []
         race << row
@@ -129,8 +129,39 @@ class SessionsController < ApplicationController
       end
     end
 
-    race << racers
-    session_races << race
+    sample_car = Car.first.as_json
+
+    races = []
+    session_races_arr.each do |race_arr|
+      track_hash = Track.first.as_json # object hash
+      racers_count = race_arr[0][2]
+
+      count = 0
+      racer_entries = {}
+      race_arr[1].each do |racer_arr|
+        racer_entry_hash = {}
+        racer_entry_hash[:position] = racer_arr[0]
+        racer_entry_hash[:name] = racer_arr[1]
+        racer_entry_hash[:car] = sample_car # FIXME: look for the exact car...
+        racer_entry_hash[:time] = racer_arr[3]
+        racer_entry_hash[:best_lap] = racer_arr[4]
+        racer_entry_hash[:finished] = true?(racer_arr[5])
+        racer_entry_hash[:cheating] = true?(racer_arr[6])
+
+        racer_entries = racer_entries.merge(count.to_s => racer_entry_hash)
+        count += 1
+      end
+
+      race_hash = {}
+      race_hash[:track] = track_hash
+      race_hash[:racer_entries] = racer_entries
+      race_hash[:laps] = 3 # FIXME: look for real lap counts
+      race_hash[:racers_count] = racers_count
+
+      races << Race.new(race_hash) # FIXME: add missing fields (created_at, updated_at, etc...)
+    end
+
+    # TODO: new Session(session_hash)
 
     byebug
   end
