@@ -1,47 +1,24 @@
 %h1 New Session
 
 = form_with :url => import_sessions_path, :method => :post do |f|
-  = f.file_field :file, :accept => ".csv"
-  = f.button "Import"
+  .field
+    = f.file_field :file, :accept => ".csv"
 
-= form_with(model: @session) do |form|
-  - if @session.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@session.errors.count, "error")
-        prohibited this session from being saved:
-      %ul
-        - @session.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :host
-    = form.text_field :host
-  .field
-    = form.label :version
-    = form.text_field :version
-  .field
-    = form.label :physics
-    = form.text_field :physics
-  .field
-    = form.label :protocol
-    = form.text_field :protocol
-  .field
-    = form.label :number
-    = form.number_field :number
-  .field
-    = form.label :date
-    = form.date_select :date
-  .field
-    = form.label :teams
-    = form.check_box :teams
+  %br
+
   %div{:"data-controller" => "season"}
     .field
-      = form.label :season
-      = form.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}}
+      = f.label :season
+      = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}}
     .field
-      = form.label :ranking
-      = form.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
-  .actions
-    = form.submit :"data-turbo" => false
+      = f.label :ranking
+      = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
 
+  .field
+    = f.label :teams
+    = f.check_box :teams
+
+  = f.submit "Import", :"data-turbo" => false
+
+%br
 = link_to 'Back', sessions_path
