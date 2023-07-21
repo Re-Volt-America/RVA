@@ -2,7 +2,7 @@ class RacerEntry
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :race
+  embedded_in :race
   embeds_one :car
 
   field :position, type: Integer

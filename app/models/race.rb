@@ -2,7 +2,8 @@ class Race
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :session
+  embedded_in :session
+
   embeds_one :track
   embeds_many :racer_entries
 

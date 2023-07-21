@@ -2,7 +2,7 @@ class Stats
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :user
+  embedded_in :user
 
   field :race_wins, type: Integer
   field :race_count, type: Integer
