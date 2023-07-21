@@ -80,7 +80,7 @@ class SessionsController < ApplicationController
   def import
     file = params[:file]
 
-    # FIXME: Fails on mac???
+    # FIXME: Fails on macos???
     if file.content_type != CSV_TYPE
       redirect_to new_session_path, :notice => "You may only upload CSV files."
     end
@@ -89,7 +89,6 @@ class SessionsController < ApplicationController
     csv = CSV.parse(file)
 
     full_log = []
-    session_info = []
     session_races_arr = []
 
     # @see https://github.com/Re-Volt-America/RVA-Points/blob/f17b2fcf0e66470665622002fcce0207c5652597/rva_points_app/session_log.py#L326
@@ -104,51 +103,49 @@ class SessionsController < ApplicationController
     date = Date.strptime(full_log[1][1], "%D")
     pickups = true?(full_log[1][5])
 
-    first = true
-    race = []
-    racers = []
+    race_arr = []
+    racers_arr = []
 
+    first = true
     full_log.drop(2).each do |row|
       if row[0] == "#" # skip headers
         next
       end
 
       if not first and row[0] == "Results"
-        race << racers
-        session_races_arr << race
-        race = []
-        racers = []
-        race << row
+        race_arr << racers_arr
+        session_races_arr << race_arr
+        race_arr = []
+        racers_arr = []
+        race_arr << row
       else
         if row[0] == "Results"
-            race << row
+            race_arr << row
         else
-            racers << row
+            racers_arr << row
         end
 
         first = false
       end
     end
 
-    sample_car = Car.first.as_json
-
     races_hash = {}
     num_races = 0
-    session_races_arr.each do |race_arr|
-      track_hash = Track.first.as_json # object hash
-      racers_count = race_arr[0][2]
+    session_races_arr.each do |r|
+      track_hash = Track.first.as_json # FIXME: look for the exact track...
+      racers_count = r[0][2]
 
       num_racer_entries = 0
       racer_entries = {}
-      race_arr[1].each do |racer_arr|
+      r[1].each do |entry|
         racer_entry_hash = {}
-        racer_entry_hash[:position] = racer_arr[0]
-        racer_entry_hash[:name] = racer_arr[1]
-        racer_entry_hash[:car] = sample_car # FIXME: look for the exact car...
-        racer_entry_hash[:time] = racer_arr[3]
-        racer_entry_hash[:best_lap] = racer_arr[4]
-        racer_entry_hash[:finished] = true?(racer_arr[5])
-        racer_entry_hash[:cheating] = true?(racer_arr[6])
+        racer_entry_hash[:position] = entry[0]
+        racer_entry_hash[:name] = entry[1]
+        racer_entry_hash[:car] = Car.first.as_json # FIXME: look for the exact car...
+        racer_entry_hash[:time] = entry[3]
+        racer_entry_hash[:best_lap] = entry[4]
+        racer_entry_hash[:finished] = true?(entry[5])
+        racer_entry_hash[:cheating] = true?(entry[6])
 
         racer_entries = racer_entries.merge(num_racer_entries.to_s => racer_entry_hash)
         num_racer_entries += 1
@@ -171,16 +168,22 @@ class SessionsController < ApplicationController
     session_hash[:protocol] = protocol
     session_hash[:pickups] = pickups
     session_hash[:date] = date
-    session_hash[:teams] = false
+    session_hash[:teams] = true?(params[:teams])
     session_hash[:races] = races_hash
 
-    session = Session.new(session_hash)
-    byebug||
-    session.save!
+    @session = Session.new(session_hash)
 
-    # TODO: new Session(session_hash)
+    byebug
 
-
+    #respond_to do |format|
+    #  if @session.save
+    #    format.html { redirect_to session_url(@session), notice: "Session was successfully created." }
+    #    format.json { render :show, status: :created, location: @session }
+    #  else
+    #    format.html { render :new, status: :unprocessable_entity }
+    #    format.json { render json: @session.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   private
