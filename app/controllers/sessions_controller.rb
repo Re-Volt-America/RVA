@@ -80,6 +80,7 @@ class SessionsController < ApplicationController
   def import
     file = params[:file]
 
+    # FIXME: Fails on mac???
     if file.content_type != CSV_TYPE
       redirect_to new_session_path, :notice => "You may only upload CSV files."
     end
@@ -131,12 +132,13 @@ class SessionsController < ApplicationController
 
     sample_car = Car.first.as_json
 
-    races = []
+    races_hash = {}
+    num_races = 0
     session_races_arr.each do |race_arr|
       track_hash = Track.first.as_json # object hash
       racers_count = race_arr[0][2]
 
-      count = 0
+      num_racer_entries = 0
       racer_entries = {}
       race_arr[1].each do |racer_arr|
         racer_entry_hash = {}
@@ -148,8 +150,8 @@ class SessionsController < ApplicationController
         racer_entry_hash[:finished] = true?(racer_arr[5])
         racer_entry_hash[:cheating] = true?(racer_arr[6])
 
-        racer_entries = racer_entries.merge(count.to_s => racer_entry_hash)
-        count += 1
+        racer_entries = racer_entries.merge(num_racer_entries.to_s => racer_entry_hash)
+        num_racer_entries += 1
       end
 
       race_hash = {}
@@ -158,12 +160,27 @@ class SessionsController < ApplicationController
       race_hash[:laps] = 3 # FIXME: look for real lap counts
       race_hash[:racers_count] = racers_count
 
-      races << Race.new(race_hash) # FIXME: add missing fields (created_at, updated_at, etc...)
+      races_hash = races_hash.merge(num_races.to_s => race_hash)
+      num_races += 1
     end
+
+    session_hash = {}
+    session_hash[:host] = host
+    session_hash[:version] = version
+    session_hash[:physics] = physics
+    session_hash[:protocol] = protocol
+    session_hash[:pickups] = pickups
+    session_hash[:date] = date
+    session_hash[:teams] = false
+    session_hash[:races] = races_hash
+
+    session = Session.new(session_hash)
+    byebug||
+    session.save!
 
     # TODO: new Session(session_hash)
 
-    byebug
+
   end
 
   private

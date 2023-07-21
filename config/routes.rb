@@ -10,4 +10,3 @@ routes = case RVA::Application.rva_role
 routes.each do |r|
   load "config/routes/#{r}.rb"
 end
-
