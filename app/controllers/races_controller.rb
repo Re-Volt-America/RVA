@@ -65,6 +65,6 @@ class RacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def race_params
-      params.require(:race).permit(:track, :racers_count)
+      params.require(:race).permit(:laps, :racers_count, :track)
     end
 end
