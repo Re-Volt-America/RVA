@@ -18,9 +18,9 @@
         %td= session.version
         %td= session.physics
         %td= session.protocol
-        %td= session.number
+        -# %td= session.number
         %td= session.date
-        %td= session.sessionlog
+        -# %td= session.sessionlog
         %td= link_to 'Show', session
         %td= link_to 'Edit', edit_session_path(session)
         %td= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' }
