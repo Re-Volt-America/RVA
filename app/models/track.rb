@@ -4,7 +4,8 @@ class Track
 
   store_in :database => "rv_tracks"
 
-  embedded_in :race
+  belongs_to :season
+  belongs_to :race
 
   field :name, :type => String
   field :short_name, :type => String

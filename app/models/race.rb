@@ -1,10 +1,11 @@
 class Race
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   embedded_in :session
 
-  embeds_one :track
+  has_one :track
   embeds_many :racer_entries
 
   field :laps, type: Integer

@@ -1,9 +1,11 @@
 class RacerEntry
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   embedded_in :race
-  embeds_one :car
+
+  has_one :car
 
   field :position, type: Integer
   field :name, type: String

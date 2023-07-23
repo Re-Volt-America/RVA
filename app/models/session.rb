@@ -4,7 +4,7 @@ class Session
 
   store_in :database => "rv_sessions"
 
-  #embedded_in :ranking
+  belongs_to :ranking
   embeds_many :races
 
   # FIXME: sessions SHOULD have a number field. Allow up to 18. (Probably up to 28 and split based on :teams)
