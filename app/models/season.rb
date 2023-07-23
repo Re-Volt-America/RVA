@@ -5,7 +5,7 @@ class Season
 
   store_in :database => "rv_seasons"
 
-  embeds_many :rankings
+  has_many :rankings
   has_many :cars
   has_many :tracks
 
