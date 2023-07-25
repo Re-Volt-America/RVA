@@ -1,4 +1,4 @@
-= form_with(model: track) do |form|
+= form_with(:model => track) do |f|
   - if track.errors.any?
     #error_explanation
       %h2
@@ -8,19 +8,22 @@
         - track.errors.each do |error|
           %li= error.full_message
   .field
-    = form.label :name
-    = form.text_field :name
+    = f.label :season
+    = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}
   .field
-    = form.label :short_name
-    = form.text_field :short_name
+    = f.label :name
+    = f.text_field :name
   .field
-    = form.label :difficulty
-    = form.number_field :difficulty
+    = f.label :short_name
+    = f.text_field :short_name
   .field
-    = form.label :length
-    = form.number_field :length
+    = f.label :difficulty
+    = f.number_field :difficulty
   .field
-    = form.label :folder_name
-    = form.text_field :folder_name
+    = f.label :length
+    = f.number_field :length
+  .field
+    = f.label :folder_name
+    = f.text_field :folder_name
   .actions
-    = form.submit
+    = f.submit
