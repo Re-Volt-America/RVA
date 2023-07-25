@@ -1,4 +1,4 @@
-= form_with(model: car) do |form|
+= form_with(:model => car) do |f|
   - if car.errors.any?
     #error_explanation
       %h2
@@ -8,19 +8,22 @@
         - car.errors.each do |error|
           %li= error.full_message
   .field
-    = form.label :name
-    = form.text_field :name
+    = f.label :season
+    = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}
   .field
-    = form.label :speed
-    = form.text_field :speed
+    = f.label :name
+    = f.text_field :name
   .field
-    = form.label :accel
-    = form.text_field :accel
+    = f.label :speed
+    = f.text_field :speed
   .field
-    = form.label :weight
-    = form.text_field :weight
+    = f.label :accel
+    = f.text_field :accel
   .field
-    = form.label :folder_name
-    = form.text_field :folder_name
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :folder_name
+    = f.text_field :folder_name
   .actions
-    = form.submit
+    = f.submit
