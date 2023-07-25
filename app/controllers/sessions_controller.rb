@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
-    @rva_results # FIXME: calculate this somehow... maybe a in a service
+    require 'calculate_rva_results_service'
+
+    @rva_results = CalculateRvaResultsService.new(@session).call
   end
 
   # GET /sessions/new
@@ -84,7 +86,7 @@ class SessionsController < ApplicationController
       end
     end
 
-    @session = CsvImportSessionsService.new.call(file, params[:ranking], params[:teams])
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:teams]).call
 
     respond_to do |format|
       if @session.save!
