@@ -2,7 +2,7 @@ class Profile
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :user
+  embedded_in :user
 
   field :about, type: String
   field :gender, type: String
