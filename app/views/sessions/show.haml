@@ -1,19 +1,22 @@
-%p#notice= notice
-%p
-  %strong Host:
-  = @session.host
-%p
-  %strong Version:
-  = @session.version
-%p
-  %strong Physics:
-  = @session.physics
-%p
-  %strong Protocol:
-  = @session.protocol
-%p
-  %strong Date:
-  = @session.date
+%table
+  %thead
+    %tr
+      %th{:width => "5%"}
+        = "#"
+      %th{:width => "10%"}
+        Date
+      %th{:width => "5%"}
+        FP
+      - @session.races.each do |race|
+        %th{:width => "4%"}
+          = Track.find(race.track_id).short_name
+  %tbody
+    %tr
+      %th
+        = 1
+      %td
+        = @session.date
+
 = link_to 'Edit', edit_session_path(@session)
 |
 = link_to 'Back', sessions_path
