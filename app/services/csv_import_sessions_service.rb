@@ -6,8 +6,14 @@ class CsvImportSessionsService
   CSV_TYPE = "application/vnd.ms-excel".freeze
   XLSM_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet".freeze
 
-  def call(file, ranking, teams)
-    csv = CSV.parse(File.open(file))
+  def initialize(file, ranking, teams)
+    @file = file
+    @ranking = ranking
+    @teams = teams
+  end
+
+  def call
+    csv = CSV.parse(File.open(@file))
 
     unless is_rv_session_log(csv)
       return nil  # FIXME: handle?
@@ -26,15 +32,15 @@ class CsvImportSessionsService
         :pickups => true?(full_log[1][5]),
         :date => Date.strptime(full_log[1][1], "%D"),
         :races => get_races_hash(full_log),
-        :ranking => ranking,
-        :teams => teams,
+        :ranking => @ranking,
+        :teams => @teams,
     }
 
     Session.new(session_hash)
   end
 
   def get_races_hash(full_log)
-    sample_car_id = Car.first.id
+    sample_car_id = Car.first.id # FIXME: get real cars
 
     session_races_arr = get_session_races_arr(full_log)
 
