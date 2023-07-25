@@ -1,4 +1,4 @@
-= form_with(model: tournament) do |form|
+= form_with(model: tournament) do |f|
   - if tournament.errors.any?
     #error_explanation
       %h2
@@ -7,14 +7,17 @@
       %ul
         - tournament.errors.each do |error|
           %li= error.full_message
+    .field
+      = f.label :season
+      = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}
   .field
-    = form.label :name
-    = form.text_field :name
+    = f.label :name
+    = f.text_field :name
   .field
-    = form.label :date
-    = form.date_select :date
+    = f.label :date
+    = f.date_select :date
   .field
-    = form.label :format
-    = form.text_area :format
+    = f.label :format
+    = f.text_area :format
   .actions
-    = form.submit
+    = f.submit

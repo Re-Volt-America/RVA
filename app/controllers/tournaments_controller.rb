@@ -67,6 +67,6 @@ class TournamentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tournament_params
-      params.require(:tournament).permit(:name, :date, :format)
+      params.require(:tournament).permit(:name, :date, :format, :season)
     end
 end

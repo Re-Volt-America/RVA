@@ -4,6 +4,7 @@ class Tournament
 
   store_in :database => "rv_tournaments"
 
+  belongs_to :season
   embeds_many :teams
 
   field :name, type: String
