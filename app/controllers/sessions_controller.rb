@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
+    @rva_results # FIXME: calculate this somehow... maybe a in a service
   end
 
   # GET /sessions/new
@@ -69,7 +70,6 @@ class SessionsController < ApplicationController
   end
 
   # FIXME: Selecting no file breaks everything
-  # FIXME: Validate if CSV is actually a session log
   # FIXME: Validate if file is empty?
   # @note Physics and other info is only captured for the first race.
   def import

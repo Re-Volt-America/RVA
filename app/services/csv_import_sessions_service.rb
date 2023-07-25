@@ -10,7 +10,7 @@ class CsvImportSessionsService
     csv = CSV.parse(File.open(file))
 
     unless is_rv_session_log(csv)
-      return nil
+      return nil  # FIXME: handle?
     end
 
     full_log = []
