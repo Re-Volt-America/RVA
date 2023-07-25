@@ -11,6 +11,7 @@ class Track
   field :difficulty, :type => Integer
   field :length, :type => Integer
   field :folder_name, :type => String
+  field :stock, :type => Boolean, :default => false
 
   def thumbnail_url
     "#{ORG::TRACKS_REPO_URL}/gfx/#{folder_name}.bmp"

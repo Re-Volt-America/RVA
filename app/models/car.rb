@@ -12,4 +12,5 @@ class Car
   field :weight, :type => Float
   field :multiplier, :type => Float
   field :folder_name, :type => String
+  field :stock, :type => Boolean, :default => false
 end
