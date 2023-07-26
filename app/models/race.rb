@@ -10,4 +10,14 @@ class Race
 
   field :laps, type: Integer
   field :racers_count, type: Integer ## FIXME: maybe turn into a method? racers_count()... len(:racer_entries)...
+
+  def get_racer_names
+    names = []
+
+    racer_entries.each do |entry|
+      names << entry.name
+    end
+
+    names
+  end
 end

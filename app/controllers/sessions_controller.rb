@@ -3,6 +3,27 @@ class SessionsController < ApplicationController
   before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_session, only: %i[ show edit update destroy ]
 
+  # Internal car class values
+  ROOKIE = 0
+  AMATEUR = 1
+  ADVANCED = 2
+  SEMI_PRO = 3
+  PRO = 4
+  SUPER_PRO = 5
+  RANDOM = 6
+  CLOCKWORK = 7
+
+  CLASS_NUMBERS_MAP = {
+      :rookie => ROOKIE,
+      :amateur => AMATEUR,
+      :advanced => ADVANCED,
+      :"semi-pro" => SEMI_PRO,
+      :pro => PRO,
+      :"super-pro" => SUPER_PRO,
+      :random => RANDOM,
+      :clockwork => CLOCKWORK
+  }
+
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all
@@ -18,6 +39,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @car_class_numbers_map = CLASS_NUMBERS_MAP
   end
 
   # GET /sessions/1/edit
@@ -86,7 +108,7 @@ class SessionsController < ApplicationController
       end
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:teams]).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:car_class], params[:teams]).call
 
     respond_to do |format|
       if @session.save!
