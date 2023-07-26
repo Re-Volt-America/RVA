@@ -6,9 +6,10 @@ class CsvImportSessionsService
   CSV_TYPE = "application/vnd.ms-excel".freeze
   XLSM_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet".freeze
 
-  def initialize(file, ranking, teams)
+  def initialize(file, ranking, car_class, teams)
     @file = file
     @ranking = ranking
+    @car_class = car_class
     @teams = teams
   end
 
@@ -33,6 +34,7 @@ class CsvImportSessionsService
         :date => Date.strptime(full_log[1][1], "%D"),
         :races => get_races_hash(full_log),
         :ranking => @ranking,
+        :car_class => @car_class,
         :teams => @teams,
     }
 

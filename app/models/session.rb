@@ -16,6 +16,7 @@ class Session
   field :date, type: Date
   #field :sessionlog, type: String # FIXME: maybe attached file?
   field :teams, type: Boolean
+  field :car_class, type: Integer
 
   validates_presence_of :host
   validates_presence_of :version
@@ -24,4 +25,5 @@ class Session
   validates_presence_of :date
   # validates_presence_of :sessionlog
   validates_presence_of :teams
+  validates_presence_of :car_class
 end

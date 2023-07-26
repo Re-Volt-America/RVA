@@ -15,6 +15,10 @@
       = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
 
   .field
+    = f.label :car_class
+    = f.select :car_class, @car_class_numbers_map, {:prompt => "Select Season"}
+
+  .field
     = f.label :teams
     = f.check_box :teams
 
