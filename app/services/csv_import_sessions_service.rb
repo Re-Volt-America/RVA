@@ -20,19 +20,19 @@ class CsvImportSessionsService
       return nil  # FIXME: handle?
     end
 
-    full_log = []
+    session_arr = []
     csv.each do |row|
-      full_log << row
+      session_arr << row
     end
 
     session_hash = {
-        :host => full_log[1][2],
-        :version => full_log[0][1],
-        :physics => full_log[1][3],
-        :protocol => full_log[0][2],
-        :pickups => true?(full_log[1][5]),
-        :date => Date.strptime(full_log[1][1], "%D"),
-        :races => get_races_hash(full_log),
+        :host => session_arr[1][2],
+        :version => session_arr[0][1],
+        :physics => session_arr[1][3],
+        :protocol => session_arr[0][2],
+        :pickups => true?(session_arr[1][5]),
+        :date => Date.strptime(session_arr[1][1], "%D"),
+        :races => get_races_hash(session_arr),
         :ranking => @ranking,
         :category => @category,
         :teams => @teams,
@@ -41,26 +41,26 @@ class CsvImportSessionsService
     Session.new(session_hash)
   end
 
-  def get_races_hash(full_log)
+  def get_races_hash(session_arr)
     sample_car_id = Car.first.id # FIXME: get real cars
 
-    session_races_arr = get_session_races_arr(full_log)
+    session_races_arr = get_session_races_arr(session_arr)
 
     races_hash = {}
     num_races = 0
-    session_races_arr.each do |race|
+    session_races_arr.each do |race_arr|
 
       racer_entries = {}
       num_racer_entries = 0
-      race[1].each do |racer_entry|
+      race_arr[1].each do |racer_entry_arr|
         racer_entry_hash = {
-            :position => racer_entry[0],
-            :name => racer_entry[1],
+            :position => racer_entry_arr[0],
+            :name => racer_entry_arr[1],
             :car_id => sample_car_id,
-            :time => racer_entry[3],
-            :best_lap => racer_entry[4],
-            :finished => true?(racer_entry[5]),
-            :cheating => true?(racer_entry[6])
+            :time => racer_entry_arr[3],
+            :best_lap => racer_entry_arr[4],
+            :finished => true?(racer_entry_arr[5]),
+            :cheating => true?(racer_entry_arr[6])
         }
 
         racer_entries = racer_entries.merge(num_racer_entries.to_s => racer_entry_hash)
@@ -71,7 +71,7 @@ class CsvImportSessionsService
           :track_id => Track.first.id, # FIXME: get actual tracks
           :racer_entries => racer_entries,
           :laps => 3, # FIXME: look for real lap counts
-          :racers_count => race[0][2]
+          :racers_count => race_arr[0][2]
       }
 
       races_hash = races_hash.merge(num_races.to_s => race_hash)
