@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   RANDOM = 6
   CLOCKWORK = 7
 
-  CLASS_NUMBERS_MAP = {
+  CATEGORY_NUMBERS_MAP = {
       :rookie => ROOKIE,
       :amateur => AMATEUR,
       :advanced => ADVANCED,
@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
-    @car_class_numbers_map = CLASS_NUMBERS_MAP
+    @category_numbers_map = CATEGORY_NUMBERS_MAP
   end
 
   # GET /sessions/1/edit
@@ -101,6 +101,7 @@ class SessionsController < ApplicationController
 
     file = params[:file]
 
+    # FIXME: This check fails on MacOS, even when using correct .csv files.
     if file.content_type != CsvImportSessionsService::CSV_TYPE
       respond_to do |format|
         format.html { redirect_to new_session_path, :note => "You may only upload CSV files." }
@@ -108,7 +109,7 @@ class SessionsController < ApplicationController
       end
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:car_class], params[:teams]).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:teams]).call
 
     respond_to do |format|
       if @session.save!
@@ -129,6 +130,6 @@ class SessionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def session_params
-      params.require(:session).permit(:host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :car_class, :teams, :ranking)
+      params.require(:session).permit(:host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :category, :teams, :ranking)
     end
 end
