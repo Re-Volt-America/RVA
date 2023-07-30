@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
   before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_session, only: %i[ show edit update destroy ]
 
+  # TODO: Move all of these constants to ORG namespace?
+
   # Internal car class values
   ROOKIE = 0
   AMATEUR = 1
@@ -34,6 +36,7 @@ class SessionsController < ApplicationController
     require 'calculate_rva_results_service'
 
     @rva_results = CalculateRvaResultsService.new(@session).call
+    byebug
   end
 
   # GET /sessions/new
