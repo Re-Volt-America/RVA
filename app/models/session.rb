@@ -26,4 +26,20 @@ class Session
   # validates_presence_of :sessionlog
   validates_presence_of :teams
   validates_presence_of :category
+
+  # Look for all RacerEntry models in this session which correspond to the passed racer.
+  # @return An array containing each entry matching the racer.
+  def get_racer_entries_arr_for_name(name)
+    racer_entries_arr = []
+
+    races.each do |race|
+      race.racer_entries.each do |entry|
+        if entry.name.eql?(name)
+          racer_entries_arr << entry
+        end
+      end
+    end
+
+    racer_entries_arr
+  end
 end

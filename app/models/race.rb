@@ -22,15 +22,6 @@ class Race
   end
 
   def get_racer_entry_by_name(name)
-    match = nil
-
-    racer_entries.each do |entry|
-      if entry.name.eql?(name)
-        match = entry
-        break
-      end
-    end
-
-    match
+    racer_entries.find { |e| e.name.eql?(name) }
   end
 end

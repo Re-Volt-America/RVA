@@ -1,4 +1,12 @@
-class CalculateRvaResultsService
+#
+# This service calculates a 2D array which represents the parsed results in Re-Volt America's format. This array
+# contains things like the tracks played in the session, player names, positions, scoring, cars used, and other relevant
+# data.
+#
+# This array is later used by the session's _show view to easily render the data in an ordered manner.
+#
+# @return The RVA results array.
+class RvaCalculateResultsService
   include ApplicationHelper
 
   # FIXME: Replace :name by User model?
@@ -22,11 +30,12 @@ class CalculateRvaResultsService
 
   # FIXME: This might be a task for redis...
   class Storage
-    attr_reader :track_storage, :car_storage
+    attr_reader :track_storage, :car_storage, :user_storage
 
     def initialize
       @track_storage = []
       @car_storage = []
+      @user_storage = []
     end
   end
 
@@ -40,12 +49,6 @@ class CalculateRvaResultsService
     get_rva_singles_results_arr
   end
 
-  # This method returns a 2D array which represents the parsed results in Re-Volt America's format. This array contains
-  # things like the tracks played in the session, player names, positions, scoring, cars used, and other relevant data.
-  #
-  # This array is later used by the session's _show view to easily render the data in an ordered manner.
-  #
-  # @return The RVA results array.
   def get_rva_singles_results_arr
     rva_results_arr = [["Pos", "Racer"] + self.get_tracks_arr + ["PP", "PA", "CC", "MP", "PO"]]
 
@@ -90,7 +93,7 @@ class CalculateRvaResultsService
         next
       end
 
-      racer_entry = race.racer_entries.find { |entry| entry.name.eql?(racer) }
+      racer_entry = race.get_racer_entry_by_name(racer)
       car_bonus = get_car_bonus(find_car(racer_entry.car_id))
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
@@ -147,9 +150,9 @@ class CalculateRvaResultsService
   end
 
   def get_racer_result_entries_arr
-    racer_result_entries = []
+    racer_result_entries_arr = []
 
-    self.get_racers.each do |racer|
+    self.get_racers_arr.each do |racer|
       average_position = self.get_average_position(racer)
       obtained_points = self.get_obtained_points(racer)
       participation_multiplier = self.get_participation_multiplier(racer)
@@ -158,20 +161,28 @@ class CalculateRvaResultsService
       played_tracks = self.get_tracks_played(racer)
       team = self.get_team(racer)
 
-      racer_result_entries << RacerResultEntry.new(racer, race_count, average_position, obtained_points, official_score, played_tracks, participation_multiplier, team)
+      racer_result_entries_arr << RacerResultEntry.new(racer,
+                                                       race_count,
+                                                       average_position,
+                                                       obtained_points,
+                                                       official_score,
+                                                       played_tracks,
+                                                       participation_multiplier,
+                                                       team
+      )
     end
 
     if @session.teams
-      racer_result_entries.sort_by { |e| e.obtained_points }
+      racer_result_entries_arr.sort_by { |e| e.obtained_points }
     else
-      racer_result_entries.sort_by { |e| e.official_score }
+      racer_result_entries_arr.sort_by { |e| e.official_score }
     end
 
-    racer_result_entries
+    racer_result_entries_arr
   end
 
   # FIXME: Link to user models
-  def get_racers
+  def get_racers_arr
     racers = []
 
     @races.each do |race|
@@ -185,25 +196,11 @@ class CalculateRvaResultsService
     racers
   end
 
-  def get_racer_entries(racer)
-    racer_entries = []
-
-    @races.each do |race|
-      race.racer_entries.each do |entry|
-        if entry.name.eql?(racer)
-          racer_entries << entry
-        end
-      end
-    end
-
-    racer_entries
-  end
-
   def get_average_position(racer)
     race_count = self.get_race_count(racer)
     return 0 if race_count.zero?
 
-    racer_entries = self.get_racer_entries(racer)
+    racer_entries = @session.get_racer_entries_arr_for_name(racer)
 
     positions_sum = 0.0
     racer_entries.each do |entry|
@@ -219,7 +216,7 @@ class CalculateRvaResultsService
     @races.each do |race|
       race.racer_entries.each do |entry|
         if entry.name.eql?(racer)
-          obtained_points = obtained_points + get_racer_score(entry, race)
+          obtained_points = obtained_points + get_racer_score(race, entry)
         end
       end
     end
@@ -227,7 +224,7 @@ class CalculateRvaResultsService
     obtained_points.round(0)
   end
 
-  def get_racer_score(entry, race)
+  def get_racer_score(race, entry)
     car = find_car(entry.car_id)
     car_bonus = self.get_car_bonus(car)
 
@@ -335,5 +332,16 @@ class CalculateRvaResultsService
     end
 
     car
+  end
+
+  def find_user(name)
+    user = @storage.user_storage.find { |u| u.name.eql?(name) }
+
+    if user.nil?
+      user = User.find { |u| u.name.eql?(name) }
+      @storage.user_storage << user
+    end
+
+    user
   end
 end

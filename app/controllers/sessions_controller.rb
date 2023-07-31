@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
-    require 'calculate_rva_results_service'
+    require 'rva_calculate_results_service'
 
-    @rva_results = CalculateRvaResultsService.new(@session).call
+    @rva_results = RvaCalculateResultsService.new(@session).call
   end
 
   # GET /sessions/new
