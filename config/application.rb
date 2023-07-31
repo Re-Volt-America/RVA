@@ -30,6 +30,71 @@ module ORG
   TRACKS_REPO_URL = "https://tracks.rva.lat"
 end
 
+module SYS
+  RVA_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "random", "clockwork"]
+  RVGL_CAR_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "clockwork"]
+
+  module CAR
+    MYSTERY_NAME = "Mystery"
+    CLOCKWORK_NAME = "Clockwork"
+  end
+
+  module CATEGORY
+    ROOKIE = 0
+    AMATEUR = 1
+    ADVANCED = 2
+    SEMI_PRO = 3
+    PRO = 4
+    SUPER_PRO = 5
+    RANDOM = 6
+    CLOCKWORK = 7
+    NUMBERS_MAP = {
+        :rookie => CATEGORY::ROOKIE,
+        :amateur => CATEGORY::AMATEUR,
+        :advanced => CATEGORY::ADVANCED,
+        :"semi-pro" => CATEGORY::SEMI_PRO,
+        :pro => CATEGORY::PRO,
+        :"super-pro" => CATEGORY::SUPER_PRO,
+        :random => CATEGORY::RANDOM,
+        :clockwork => CATEGORY::CLOCKWORK
+    }
+    BONUSES_PER_DIFF = {
+        0 => 1.0,
+        1 => 1.25,
+        2 => 1.5,
+        3 => 1.75,
+        4 => 2,
+        5 => 2.25
+    }
+  end
+
+  module SCORING
+    NORMALIZER_CONSTANT = 0.1
+    NORMAL = {
+        1 => 15,
+        2 => 12,
+        3 => 10,
+        4 => 7,
+        5 => 5,
+        6 => 4,
+        7 => 2, 8 => 2,
+        9 => 1,
+        10 => 1, 11 => 1, 12 => 1, 13 => 1, 14 => 1, 15 => 1, 16 => 1
+    }
+    BIG = {
+        1 => 20,
+        2 => 16,
+        3 => 12,
+        4 => 10,
+        5 => 8, 6 => 8,
+        7 => 6,
+        8 => 4,
+        9 => 2, 10 => 2,
+        11 => 1, 12 => 1, 13 => 1, 14 => 1, 15 => 1, 16 => 1
+    }
+  end
+end
+
 module RVA
   class Application < Rails::Application
     class << self

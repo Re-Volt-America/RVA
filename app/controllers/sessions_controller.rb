@@ -3,29 +3,6 @@ class SessionsController < ApplicationController
   before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_session, only: %i[ show edit update destroy ]
 
-  # TODO: Move all of these constants to ORG namespace?
-
-  # Internal car class values
-  ROOKIE = 0
-  AMATEUR = 1
-  ADVANCED = 2
-  SEMI_PRO = 3
-  PRO = 4
-  SUPER_PRO = 5
-  RANDOM = 6
-  CLOCKWORK = 7
-
-  CATEGORY_NUMBERS_MAP = {
-      :rookie => ROOKIE,
-      :amateur => AMATEUR,
-      :advanced => ADVANCED,
-      :"semi-pro" => SEMI_PRO,
-      :pro => PRO,
-      :"super-pro" => SUPER_PRO,
-      :random => RANDOM,
-      :clockwork => CLOCKWORK
-  }
-
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all
@@ -42,7 +19,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
-    @category_numbers_map = CATEGORY_NUMBERS_MAP
+    @category_numbers_map = SYS::CATEGORY::NUMBERS_MAP
   end
 
   # GET /sessions/1/edit

@@ -1,92 +1,6 @@
 class CalculateRvaResultsService
   include ApplicationHelper
 
-  # TODO: Move all of these constants to ORG namespace?
-
-  # Car classes (rva-specific & rvgl)
-  RVA_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "random", "clockwork"]
-  RVGL_CAR_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "clockwork"]
-
-  # Internal car category values
-  ROOKIE = 0
-  AMATEUR = 1
-  ADVANCED = 2
-  SEMI_PRO = 3
-  PRO = 4
-  SUPER_PRO = 5
-  RANDOM = 6
-  CLOCKWORK = 7
-
-  # Special car names
-  MYSTERY_NAME = "Mystery"
-  CLOCKWORK_NAME = "Clockwork"
-
-  BONUSES_PER_CATEGORY_DIFF = {
-      0 => 1.0,
-      1 => 1.25,
-      2 => 1.5,
-      3 => 1.75,
-      4 => 2,
-      5 => 2.25
-  }
-
-  CATEGORY_NUMBERS_MAP = {
-      :rookie => ROOKIE,
-      :amateur => AMATEUR,
-      :advanced => ADVANCED,
-      :"semi-pro" => SEMI_PRO,
-      :pro => PRO,
-      :"super-pro" => SUPER_PRO,
-      :random => RANDOM,
-      :clockwork => CLOCKWORK
-  }
-
-  # TODO: Simplify
-  POSITION_SUFFIXES = {
-      1 => "st",
-      2 => "nd",
-      3 => "rd",
-      4 => "th",
-      5 => "th",
-      6 => "th",
-      7 => "th",
-      8 => "th",
-      9 => "th",
-      10 => "th",
-      11 => "th",
-      12 => "th",
-      13 => "th",
-      14 => "th",
-      15 => "th",
-      16 => "th"
-  }
-
-  SCORING = {
-      1 => 15,
-      2 => 12,
-      3 => 10,
-      4 => 7,
-      5 => 5,
-      6 => 4,
-      7 => 2, 8 => 2,
-      9 => 1,
-      10 => 1, 11 => 1, 12 => 1, 13 => 1, 14 => 1, 15 => 1, 16 => 1
-  }
-
-  BIG_SCORING = {
-      1 => 20,
-      2 => 16,
-      3 => 12,
-      4 => 10,
-      5 => 8, 6 => 8,
-      7 => 6,
-      8 => 4,
-      9 => 2, 10 => 2,
-      11 => 1, 12 => 1, 13 => 1, 14 => 1, 15 => 1, 16 => 1
-  }
-
-  NORMALIZER_CONSTANT = 0.1
-
   # FIXME: Replace :name by User model?
   # FIXME: Replace :team by Team model?
   class RacerResultEntry
@@ -170,7 +84,7 @@ class CalculateRvaResultsService
 
     @races.each do |race|
       # The category is Random, therefore we ignore cars for results
-      if @session.category == RANDOM
+      if @session.category == SYS::CATEGORY::RANDOM
         cars_line_arr << ""
         next
       end
@@ -193,7 +107,7 @@ class CalculateRvaResultsService
 
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
-      if not car.name.eql?(CLOCKWORK_NAME) and car.name.start_with?(CLOCKWORK_NAME)
+      if not car.name.eql?(SYS::CAR::CLOCKWORK_NAME) and car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
         cars_line_arr << (car.name.split(" ", 1)[1])
       else
         cars_line_arr << car.name
@@ -321,29 +235,29 @@ class CalculateRvaResultsService
 
   def get_position_score(position, big_scoring)
     if big_scoring
-      return BIG_SCORING[position]
+      return SYS::SCORING::BIG[position] # FIXME: Check if this is mapping to the right number
     end
 
-    SCORING[position]
+    SYS::SCORING::NORMAL[position]
   end
 
   def get_car_bonus(car)
-    if car.name == MYSTERY_NAME
+    if car.name == SYS::CAR::MYSTERY_NAME
       return nil
     end
 
-    if @session.category == RANDOM
+    if @session.category == SYS::CATEGORY::RANDOM
       return 1.0
     end
 
     # FIXME: maybe validate for nil?
     #car_category = car.category
 
-    if @session.category == CLOCKWORK and car.category == RANDOM
+    if @session.category == SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
       return 1.0  # The current category is Clockwork, and player is using a Clockwork, therefore valid and 1.0
-    elsif @session.category == CLOCKWORK and car.category != CLOCKWORK
+    elsif @session.category == SYS::CATEGORY::CLOCKWORK and car.category != SYS::CATEGORY::CLOCKWORK
       return nil  # The current category is Clockwork, but the player is not using a Clockwork, therefore invalid
-    elsif @session.category != CLOCKWORK and car.category == CLOCKWORK
+    elsif @session.category != SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
       return nil  # The current category is not Clockwork, but player is using a Clockwork, therefore invalid
     end
 
@@ -353,7 +267,7 @@ class CalculateRvaResultsService
       return nil  # Car is above the current category, therefore points are invalid
     end
 
-    BONUSES_PER_CATEGORY_DIFF[car_category_delta]
+    SYS::CATEGORY::BONUSES_PER_DIFF[car_category_delta]
   end
 
   def get_participation_multiplier(racer)
@@ -363,7 +277,7 @@ class CalculateRvaResultsService
   def get_official_score(obtained_points, average_position, participation_multiplier)
     official_score = obtained_points / average_position
     official_score = official_score * participation_multiplier
-    official_score = official_score * NORMALIZER_CONSTANT
+    official_score = official_score * SYS::SCORING::NORMALIZER_CONSTANT
 
     official_score.round(2)
   end
