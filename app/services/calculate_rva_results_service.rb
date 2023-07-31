@@ -3,6 +3,8 @@ class CalculateRvaResultsService
 
   # FIXME: Replace :name by User model?
   # FIXME: Replace :team by Team model?
+
+  # Represents a player's entry in the final RVA results table.
   class RacerResultEntry
     attr_reader :name, :race_count, :average_position, :obtained_points, :official_score, :played_tracks, :participation_multiplier, :team
 
@@ -18,31 +20,47 @@ class CalculateRvaResultsService
     end
   end
 
+  # FIXME: This might be a task for redis...
+  class Storage
+    attr_reader :track_storage, :car_storage
+
+    def initialize
+      @track_storage = []
+      @car_storage = []
+    end
+  end
+
   def initialize(session)
     @session = session
     @races = session.races
+    @storage = Storage.new
   end
 
   def call
     get_rva_singles_results_arr
   end
 
-  # FIXME: Revise table headers (should be in english by default)
+  # This method returns a 2D array which represents the parsed results in Re-Volt America's format. This array contains
+  # things like the tracks played in the session, player names, positions, scoring, cars used, and other relevant data.
+  #
+  # This array is later used by the session's _show view to easily render the data in an ordered manner.
+  #
+  # @return The RVA results array.
   def get_rva_singles_results_arr
     rva_results_arr = [["Pos", "Racer"] + self.get_tracks_arr + ["PP", "PA", "CC", "MP", "PO"]]
 
     pos = 1
-    racer_result_entries = self.get_racer_result_entries
+    racer_result_entries = self.get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
       name = result_entry.name
-      racer_positions_line_arr = [pos.to_s, name] + self.resolve_racer_positions_line_arr(name)
+      racer_positions_line_arr = [pos.to_s, name] + self.get_racer_positions_arr(name)
       racer_positions_line_arr << result_entry.average_position
       racer_positions_line_arr << result_entry.obtained_points
       racer_positions_line_arr << result_entry.race_count
       racer_positions_line_arr << result_entry.participation_multiplier
       racer_positions_line_arr << result_entry.official_score
 
-      racer_cars_line_arr = ["", ""] + self.resolve_racer_cars_line_arr(name)
+      racer_cars_line_arr = ["", ""] + self.get_racer_cars_arr(name)
 
       rva_results_arr << racer_positions_line_arr
       rva_results_arr << racer_cars_line_arr
@@ -53,7 +71,17 @@ class CalculateRvaResultsService
     rva_results_arr
   end
 
-  def resolve_racer_positions_line_arr(racer)
+  def get_tracks_arr
+    tracks = []
+
+    @races.each do |race|
+      tracks << find_track(race.track_id)
+    end
+
+    tracks
+  end
+
+  def get_racer_positions_arr(racer)
     racer_positions_arr = []
 
     @races.each do |race|
@@ -62,10 +90,8 @@ class CalculateRvaResultsService
         next
       end
 
-      # FIXME: revise, this might be wrong
       racer_entry = race.racer_entries.find { |entry| entry.name.eql?(racer) }
-
-      car_bonus = get_car_bonus(Car.find { |c| c.id.eql?(racer_entry.car_id) })
+      car_bonus = get_car_bonus(find_car(racer_entry.car_id))
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
       if car_bonus.nil?
@@ -78,7 +104,7 @@ class CalculateRvaResultsService
     racer_positions_arr
   end
 
-  def resolve_racer_cars_line_arr(racer)
+  def get_racer_cars_arr(racer)
     cars_line_arr = []
     last_car_used_id = nil
 
@@ -103,7 +129,7 @@ class CalculateRvaResultsService
         next
       end
 
-      car = Car.find { |c| c.id.eql?(car_used_id) }
+      car = find_car(car_used_id)
 
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
@@ -120,19 +146,7 @@ class CalculateRvaResultsService
     cars_line_arr
   end
 
-  def get_tracks_arr
-    tracks = []
-
-    # FIXME: check for repeated tracks to improve performance
-    @races.each do |race|
-      track_id = race.track_id
-      tracks << Track.find { |t| t.id.eql?(track_id)}
-    end
-
-    tracks
-  end
-
-  def get_racer_result_entries
+  def get_racer_result_entries_arr
     racer_result_entries = []
 
     self.get_racers.each do |racer|
@@ -214,7 +228,7 @@ class CalculateRvaResultsService
   end
 
   def get_racer_score(entry, race)
-    car = Car.find { |c| c.id.eql?(entry.car_id) }
+    car = find_car(entry.car_id)
     car_bonus = self.get_car_bonus(car)
 
     # Car is above the current category's class or invalid, therefore points are invalidated
@@ -250,9 +264,6 @@ class CalculateRvaResultsService
       return 1.0
     end
 
-    # FIXME: maybe validate for nil?
-    #car_category = car.category
-
     if @session.category == SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
       return 1.0  # The current category is Clockwork, and player is using a Clockwork, therefore valid and 1.0
     elsif @session.category == SYS::CATEGORY::CLOCKWORK and car.category != SYS::CATEGORY::CLOCKWORK
@@ -282,7 +293,6 @@ class CalculateRvaResultsService
     official_score.round(2)
   end
 
-  # FIXME: this is very inefficient
   def get_race_count(racer)
     self.get_tracks_played(racer).size
   end
@@ -303,5 +313,27 @@ class CalculateRvaResultsService
   # FIXME: Link to team models
   def get_team(racer)
     false
+  end
+
+  def find_track(track_id)
+    track = @storage.track_storage.find { |t| t.id.eql?(track_id) }
+
+    if track.nil?
+      track = Track.find { |t| t.id.eql?(track_id)}
+      @storage.track_storage << track
+    end
+
+    track
+  end
+
+  def find_car(car_id)
+    car = @storage.car_storage.find { |c| c.id.eql?(car_id)}
+
+    if car.nil?
+      car = Car.find { |c| c.id.eql?(car_id)}
+      @storage.car_storage << car
+    end
+
+    car
   end
 end

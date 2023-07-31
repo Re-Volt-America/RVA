@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     require 'calculate_rva_results_service'
 
     @rva_results = CalculateRvaResultsService.new(@session).call
-    byebug
   end
 
   # GET /sessions/new
