@@ -18,7 +18,7 @@
     = f.text_field :short_name
   .field
     = f.label :difficulty
-    = f.number_field :difficulty
+    = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => "Select Difficulty"}
   .field
     = f.label :length
     = f.number_field :length

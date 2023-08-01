@@ -11,6 +11,9 @@
     = f.label :season
     = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}
   .field
+    = f.label :category
+    = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}
+  .field
     = f.label :name
     = f.text_field :name
   .field
@@ -22,6 +25,12 @@
   .field
     = f.label :weight
     = f.text_field :weight
+  .field
+    = f.label :multiplier
+    = f.text_field :multiplier
+  .field
+    = f.label :stock
+    = f.check_box :stock
   .field
     = f.label :folder_name
     = f.text_field :folder_name
