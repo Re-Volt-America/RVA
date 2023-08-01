@@ -10,17 +10,17 @@ gem 'jsbundling-rails', '~> 1.1'                  # Bundle and transpile JavaScr
 gem 'jbuilder', '~> 2.7'                          # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'redis', '~> 4.0'                             # Use Redis adapter to run Action Cable in production
 gem 'bootsnap', '>= 1.4.4', :require => false     # Reduces boot times through caching; required in config/boot.rb
-gem 'mongoid', '~> 8.0', '>= 8.0.3'
-gem 'haml', '~> 6.1', '>= 6.1.1'
-gem 'devise', '~> 4.9'
-gem 'omniauth', '~> 2.1', '>= 2.1.1'
-gem 'kaminari', '~> 1.2.1'                       # Pagination
-gem 'kaminari-i18n', '~> 0.5.0'
-gem 'redcarpet', '~> 3.6'
-gem 'stimulus-rails', '~> 1.2', '>= 1.2.1'
-gem 'sentry-ruby', '~> 5.8'
-gem 'turbo-rails', '~> 1.3', '>= 1.3.3'
-gem 'responders', '~> 3.1'
+gem 'mongoid', '~> 8.0', '>= 8.0.3'               # The Official Ruby Object Mapper for MongoDB
+gem 'haml', '~> 6.1', '>= 6.1.1'                  # HTML Abstraction Markup Language - A Markup Haiku
+gem 'devise', '~> 4.9'                            # Flexible authentication solution for Rails with Warden
+gem 'omniauth', '~> 2.1', '>= 2.1.1'              # Flexible authentication system utilizing Rack middleware
+gem 'kaminari', '~> 1.2.1'                        # Pagination
+gem 'kaminari-i18n', '~> 0.5.0'                   # Translations for the Kaminari gem
+gem 'redcarpet', '~> 3.6'                         # The safe Markdown parser, reloaded
+gem 'stimulus-rails', '~> 1.2', '>= 1.2.1'        # Use Stimulus in your Ruby on Rails app
+gem 'sentry-ruby', '~> 5.8'                       # Sentry SDK for Ruby
+gem 'turbo-rails', '~> 1.3', '>= 1.3.3'           # Use Turbo in your Ruby on Rails app
+gem 'responders', '~> 3.1'                        # A set of Rails responders to dry up your application
 
 # Fix protocol warnings...
 gem 'net-http', require: false
@@ -45,8 +45,8 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'        # Adds support for Capybara system testing and selenium driver
   gem 'webdrivers'                                # Easy installation and use of web drivers to run system tests with browsers
-  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
-  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'         # RSpec for Rails 5+
+  gem 'factory_bot_rails', '~> 6.2'               # Fixtures replacement with a straightforward definition syntax
 end
 
 gem 'tzinfo-data', platforms: [                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
