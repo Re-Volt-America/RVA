@@ -148,10 +148,10 @@ class RvaCalculateResultsService
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
       if not car.name.eql?(SYS::CAR::CLOCKWORK_NAME) and car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
-        cars_line_arr << (car.name.split(" ", 1)[1])
-      else
-        cars_line_arr << car.name
+        car.name = car.name.split(" ", 1)[1]
       end
+
+      cars_line_arr << car
 
       last_car_used_id = car_used_id
     end

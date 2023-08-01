@@ -57,14 +57,15 @@
             = row[2]
           %td
             = row[3]
-          - row[4].each do |car|
-            - if car.eql?("")
+          - row[4].each do |item|
+            - if item.eql?("")
               -# @colspan += 2
               - next
 
             %td{:colspan => @colspan}
               -# @colspan = 2
-              = car
+              - if item.is_a?(Car)
+                = link_to item.name, car_path(item)
 
       - @count += 1
 
