@@ -42,21 +42,20 @@ class CsvImportSessionsService
   end
 
   def get_races_hash(session_arr)
-    sample_car_id = Car.first.id # FIXME: get real cars
-
     session_races_arr = get_session_races_arr(session_arr)
 
     races_hash = {}
     num_races = 0
     session_races_arr.each do |race_arr|
-
       racer_entries = {}
       num_racer_entries = 0
       race_arr[1].each do |racer_entry_arr|
+        car = Car.find { |c| c.name.eql?(racer_entry_arr[2]) } # consider matching season with @ranking
+
         racer_entry_hash = {
             :position => racer_entry_arr[0],
             :name => racer_entry_arr[1],
-            :car_id => sample_car_id,
+            :car_id => car.id,
             :time => racer_entry_arr[3],
             :best_lap => racer_entry_arr[4],
             :finished => true?(racer_entry_arr[5]),
@@ -67,8 +66,13 @@ class CsvImportSessionsService
         num_racer_entries += 1
       end
 
+      track = Track.find { |t| race_arr[0][1].start_with?(t.name) }
+      if track.nil?
+        byebug
+      end
+
       race_hash = {
-          :track_id => Track.first.id, # FIXME: get actual tracks
+          :track_id => track.id, # FIXME: get actual tracks
           :racer_entries => racer_entries,
           :laps => 3, # FIXME: look for real lap counts
           :racers_count => race_arr[0][2]
@@ -81,6 +85,8 @@ class CsvImportSessionsService
     races_hash
   end
 
+  # FIXME: Find lap count
+  # Account for lines beginning in "Session"
   def get_session_races_arr(full_log)
     session_races_arr = []
     racers_arr = []

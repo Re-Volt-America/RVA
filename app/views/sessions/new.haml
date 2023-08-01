@@ -16,7 +16,7 @@
 
   .field
     = f.label :category
-    = f.select :category, @category_numbers_map, {:prompt => "Select Category"}
+    = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}
 
   .field
     = f.label :teams

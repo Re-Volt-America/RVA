@@ -12,13 +12,16 @@ class SessionsController < ApplicationController
   def show
     require 'rva_calculate_results_service'
 
+    @first = true
+    @count = 0
+    #@colspan = 2
+
     @rva_results = RvaCalculateResultsService.new(@session).call
   end
 
   # GET /sessions/new
   def new
     @session = Session.new
-    @category_numbers_map = SYS::CATEGORY::NUMBERS_MAP
   end
 
   # GET /sessions/1/edit

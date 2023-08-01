@@ -30,12 +30,11 @@ class RvaCalculateResultsService
 
   # FIXME: This might be a task for redis...
   class Storage
-    attr_reader :track_storage, :car_storage, :user_storage
+    attr_reader :track_storage, :car_storage
 
     def initialize
       @track_storage = []
       @car_storage = []
-      @user_storage = []
     end
   end
 
@@ -50,20 +49,32 @@ class RvaCalculateResultsService
   end
 
   def get_rva_singles_results_arr
-    rva_results_arr = [["Pos", "Racer"] + self.get_tracks_arr + ["PP", "PA", "CC", "MP", "PO"]]
+    rva_results_arr = [["#", "Date"] + self.get_tracks_arr + ["PP", "PA", "CC", "MP", "PO"]]
 
+    first = true
     pos = 1
     racer_result_entries = self.get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
       name = result_entry.name
-      racer_positions_line_arr = [pos.to_s, name] + self.get_racer_positions_arr(name)
+      user = User.find { |u| u.name.eql?(result_entry.name) }
+
+      if first
+        racer_positions_line_arr = ["1", @session.date] # FIXME: Get real session numbers
+        first = false
+      else
+        racer_positions_line_arr = ["", ""]
+      end
+
+      racer_positions_line_arr += [pos.to_s, user]
+      racer_positions_line_arr << self.get_racer_positions_arr(name)
       racer_positions_line_arr << result_entry.average_position
       racer_positions_line_arr << result_entry.obtained_points
       racer_positions_line_arr << result_entry.race_count
       racer_positions_line_arr << result_entry.participation_multiplier
       racer_positions_line_arr << result_entry.official_score
 
-      racer_cars_line_arr = ["", ""] + self.get_racer_cars_arr(name)
+      racer_cars_line_arr = ["", "", "", ""]
+      racer_cars_line_arr << self.get_racer_cars_arr(name)
 
       rva_results_arr << racer_positions_line_arr
       rva_results_arr << racer_cars_line_arr
@@ -173,12 +184,10 @@ class RvaCalculateResultsService
     end
 
     if @session.teams
-      racer_result_entries_arr.sort_by { |e| e.obtained_points }
+      racer_result_entries_arr.sort_by { |e| e.obtained_points }.reverse!
     else
-      racer_result_entries_arr.sort_by { |e| e.official_score }
+      racer_result_entries_arr.sort_by { |e| e.official_score }.reverse!
     end
-
-    racer_result_entries_arr
   end
 
   # FIXME: Link to user models
@@ -324,7 +333,7 @@ class RvaCalculateResultsService
   end
 
   def find_car(car_id)
-    car = @storage.car_storage.find { |c| c.id.eql?(car_id)}
+    car = @storage.car_storage.find { |c| c.id.eql?(car_id) }
 
     if car.nil?
       car = Car.find { |c| c.id.eql?(car_id)}
@@ -332,16 +341,5 @@ class RvaCalculateResultsService
     end
 
     car
-  end
-
-  def find_user(name)
-    user = @storage.user_storage.find { |u| u.name.eql?(name) }
-
-    if user.nil?
-      user = User.find { |u| u.name.eql?(name) }
-      @storage.user_storage << user
-    end
-
-    user
   end
 end

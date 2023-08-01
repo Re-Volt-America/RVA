@@ -33,10 +33,31 @@ end
 module SYS
   RVA_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "random", "clockwork"]
   RVGL_CAR_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "clockwork"]
+  RVGL_TRACK_DIFFICULTY_NAMES = ["easy", "medium", "hard", "extreme"]
+
+
 
   module CAR
     MYSTERY_NAME = "Mystery"
     CLOCKWORK_NAME = "Clockwork"
+  end
+
+  module TRACK
+    UNKNOWN = -1
+
+    EASY = 0
+    MEDIUM = 1
+    HARD = 2
+    EXTREME = 3
+
+    DIFFICULTIES = {
+        :easy => EASY,
+        :medium => MEDIUM,
+        :hard => HARD,
+        :extreme => EXTREME,
+
+        :unknown => UNKNOWN
+    }
   end
 
   module CATEGORY
