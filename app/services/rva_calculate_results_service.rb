@@ -254,8 +254,6 @@ class RvaCalculateResultsService
       return SYS::SCORING::BIG[position]
     end
 
-    byebug
-
     SYS::SCORING::NORMAL[position]
   end
 
