@@ -74,7 +74,7 @@ class CsvImportSessionsService
       race_hash = {
           :track_id => track.id,
           :racer_entries => racer_entries,
-          :laps => race_arr[0][4], # FIXME: CHECK IF SESSION LINE DOESNT EXIST
+          :laps => race_arr[0][4],
           :racers_count => race_arr[1][2]
       }
 
@@ -85,48 +85,40 @@ class CsvImportSessionsService
     races_hash
   end
 
-  # FIXME: Find lap count
-  # Account for lines beginning in "Session"
   def get_session_races_arr(full_log)
-    results_row_arr = []
-    session_row_arr = []
-    position_rows_arr = []
-    racers_arr = []
-    first = true
+    session_races_arr = []
 
+    session_row_arr = nil
+    results_row_arr = nil
+    position_rows_arr = []
+
+    racers = 0
     full_log.drop(1).each do |row|
       if row[0] == "#" # skip headers
         next
       end
 
-      if not first and row[0] == "Session"
-        position_rows_arr << racers_arr
-        session_row_arr += position_rows_arr
-        results_row_arr << session_row_arr
-
-        session_row_arr = []
-        position_rows_arr = []
-        racers_arr = []
-
-        position_rows_arr << row
+      if row[0] == "Session"
+        session_row_arr = row
+      elsif row[0] == "Results"
+        results_row_arr = row
+        racers = results_row_arr[2].to_i
       else
-        if row[0] == "Session"
-          session_row_arr << row
-        elsif row[0] == "Results"
+        if racers
           position_rows_arr << row
-        else
-          racers_arr << row
-        end
+          racers -= 1
 
-        first = false
+          if racers == 0
+            session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
+            session_races_arr << session_race_arr
+
+            position_rows_arr = []
+          end
+        end
       end
     end
 
-    position_rows_arr << racers_arr
-    session_row_arr += position_rows_arr
-    results_row_arr << session_row_arr
-
-    results_row_arr
+    session_races_arr
   end
 
   # TODO: Check whether this csv corresponds to a Re-Volt session log
