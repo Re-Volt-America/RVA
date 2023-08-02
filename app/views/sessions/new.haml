@@ -2,8 +2,8 @@
 
 = form_with :url => import_sessions_path, :method => :post do |f|
   .field
+    = f.label "Session Log"
     = f.file_field :file, :accept => ".csv"
-
   %br
 
   %div{:"data-controller" => "season"}
@@ -13,6 +13,9 @@
     .field
       = f.label :ranking
       = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
+  .field
+    = f.label :number
+    = f.select :number, SYS::SESSION_NUMBERS, {:prompt => "Session Number"}
 
   .field
     = f.label :category

@@ -34,8 +34,7 @@ module SYS
   RVA_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "random", "clockwork"]
   RVGL_CAR_CATEGORY_NAMES = ["rookie", "amateur", "advanced", "semi-pro", "pro", "super-pro", "clockwork"]
   RVGL_TRACK_DIFFICULTY_NAMES = ["easy", "medium", "hard", "extreme"]
-
-
+  SESSION_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
   module CAR
     MYSTERY_NAME = "Mystery"

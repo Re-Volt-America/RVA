@@ -7,7 +7,7 @@ class Session
   belongs_to :ranking
   embeds_many :races
 
-  # FIXME: sessions SHOULD have a number field. Allow up to 18. (Probably up to 28 and split based on :teams)
+  field :number, type: Integer
   field :host, type: String
   field :version, type: String
   field :physics, type: String
@@ -18,6 +18,7 @@ class Session
   field :teams, type: Boolean
   field :category, type: Integer
 
+  validates_presence_of :number
   validates_presence_of :host
   validates_presence_of :version
   validates_presence_of :physics

@@ -6,10 +6,11 @@ class CsvImportSessionsService
   CSV_TYPE = "application/vnd.ms-excel".freeze
   XLSM_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet".freeze
 
-  def initialize(file, ranking, category, teams)
+  def initialize(file, ranking, category, number, teams)
     @file = file
     @ranking = ranking
     @category = category
+    @number = number
     @teams = teams
   end
 
@@ -26,6 +27,7 @@ class CsvImportSessionsService
     end
 
     session_hash = {
+        :number => @number,
         :host => session_arr[1][2],
         :version => session_arr[0][1],
         :physics => session_arr[1][3],

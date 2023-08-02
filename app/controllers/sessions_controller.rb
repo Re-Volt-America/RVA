@@ -91,7 +91,7 @@ class SessionsController < ApplicationController
       end
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:teams]).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number], params[:teams]).call
 
     respond_to do |format|
       if @session.save!
@@ -112,6 +112,6 @@ class SessionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def session_params
-      params.require(:session).permit(:host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :category, :teams, :ranking)
+      params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :category, :teams, :ranking)
     end
 end
