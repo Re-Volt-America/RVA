@@ -9,9 +9,6 @@
 class RvaCalculateResultsService
   include ApplicationHelper
 
-  # FIXME: Replace :name by User model?
-  # FIXME: Replace :team by Team model?
-
   # Represents a player's entry in the final RVA results table.
   class RacerResultEntry
     attr_reader :name, :race_count, :average_position, :obtained_points, :official_score, :played_tracks, :participation_multiplier, :team
@@ -190,7 +187,6 @@ class RvaCalculateResultsService
     end
   end
 
-  # FIXME: Link to user models
   def get_racers_arr
     racers = []
 

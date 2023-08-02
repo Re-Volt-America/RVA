@@ -15,7 +15,7 @@ class User
   embeds_one :profile
   embeds_one :stats
   accepts_nested_attributes_for(:profile, :update_only => true, :allow_destroy => false)
-  accepts_nested_attributes_for(:stats, :update_only => true, :allow_destroy => false) # FIXME: Probably not needed. This is for forms maybe??
+  accepts_nested_attributes_for(:stats, :update_only => true, :allow_destroy => false)
 
   before_create :create_profile
   before_create :create_stats
