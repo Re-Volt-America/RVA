@@ -56,7 +56,7 @@ class RvaCalculateResultsService
       user = User.find { |u| u.name.eql?(result_entry.name) }
 
       if first
-        racer_positions_line_arr = ["1", @session.date] # FIXME: Get real session numbers
+        racer_positions_line_arr = [@session.number, @session.date]
         first = false
       else
         racer_positions_line_arr = ["", ""]
@@ -251,8 +251,10 @@ class RvaCalculateResultsService
 
   def get_position_score(position, big_scoring)
     if big_scoring
-      return SYS::SCORING::BIG[position] # FIXME: Check if this is mapping to the right number
+      return SYS::SCORING::BIG[position]
     end
+
+    byebug
 
     SYS::SCORING::NORMAL[position]
   end
