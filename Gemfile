@@ -21,6 +21,7 @@ gem 'stimulus-rails', '~> 1.2', '>= 1.2.1'        # Use Stimulus in your Ruby on
 gem 'sentry-ruby', '~> 5.8'                       # Sentry SDK for Ruby
 gem 'turbo-rails', '~> 1.3', '>= 1.3.3'           # Use Turbo in your Ruby on Rails app
 gem 'responders', '~> 3.1'                        # A set of Rails responders to dry up your application
+gem 'rubocop', require: false                     # A Ruby static code analyzer and formatter
 
 # Fix protocol warnings...
 gem 'net-http', require: false
