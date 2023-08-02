@@ -33,6 +33,7 @@
           %td
             = row[2]
           %td
+            -# FIXME: Check for nil users
             = link_to row[3].name, user_path(row[3])
           - row[4].each do |pos|
             %td

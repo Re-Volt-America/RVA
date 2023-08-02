@@ -49,7 +49,7 @@ class CsvImportSessionsService
     session_races_arr.each do |race_arr|
       racer_entries = {}
       num_racer_entries = 0
-      race_arr[1].each do |racer_entry_arr|
+      race_arr[2].each do |racer_entry_arr|
         car = Car.find { |c| c.name.eql?(racer_entry_arr[2]) } # consider matching season with @ranking
 
         racer_entry_hash = {
@@ -66,16 +66,16 @@ class CsvImportSessionsService
         num_racer_entries += 1
       end
 
-      track = Track.find { |t| race_arr[0][1].start_with?(t.name) }
+      track = Track.find { |t| race_arr[1][1].start_with?(t.name) }
       if track.nil?
         byebug
       end
 
       race_hash = {
-          :track_id => track.id, # FIXME: get actual tracks
+          :track_id => track.id,
           :racer_entries => racer_entries,
-          :laps => 3, # FIXME: look for real lap counts
-          :racers_count => race_arr[0][2]
+          :laps => race_arr[0][4], # FIXME: CHECK IF SESSION LINE DOESNT EXIST
+          :racers_count => race_arr[1][2]
       }
 
       races_hash = races_hash.merge(num_races.to_s => race_hash)
@@ -88,25 +88,32 @@ class CsvImportSessionsService
   # FIXME: Find lap count
   # Account for lines beginning in "Session"
   def get_session_races_arr(full_log)
-    session_races_arr = []
+    results_row_arr = []
+    session_row_arr = []
+    position_rows_arr = []
     racers_arr = []
-    race_arr = []
     first = true
 
-    full_log.drop(2).each do |row|
+    full_log.drop(1).each do |row|
       if row[0] == "#" # skip headers
         next
       end
 
-      if not first and row[0] == "Results"
-        race_arr << racers_arr
-        session_races_arr << race_arr
-        race_arr = []
+      if not first and row[0] == "Session"
+        position_rows_arr << racers_arr
+        session_row_arr += position_rows_arr
+        results_row_arr << session_row_arr
+
+        session_row_arr = []
+        position_rows_arr = []
         racers_arr = []
-        race_arr << row
+
+        position_rows_arr << row
       else
-        if row[0] == "Results"
-          race_arr << row
+        if row[0] == "Session"
+          session_row_arr << row
+        elsif row[0] == "Results"
+          position_rows_arr << row
         else
           racers_arr << row
         end
@@ -115,7 +122,11 @@ class CsvImportSessionsService
       end
     end
 
-    session_races_arr
+    position_rows_arr << racers_arr
+    session_row_arr += position_rows_arr
+    results_row_arr << session_row_arr
+
+    results_row_arr
   end
 
   # TODO: Check whether this csv corresponds to a Re-Volt session log
