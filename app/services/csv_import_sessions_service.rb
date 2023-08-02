@@ -92,9 +92,11 @@ class CsvImportSessionsService
     results_row_arr = nil
     position_rows_arr = []
 
-    racers = 0
+    racers = false
+    count = 0
     full_log.drop(1).each do |row|
       if row[0] == "#" # skip headers
+        count += 1
         next
       end
 
@@ -102,21 +104,25 @@ class CsvImportSessionsService
         session_row_arr = row
       elsif row[0] == "Results"
         results_row_arr = row
-        racers = results_row_arr[2].to_i
       else
-        if racers
-          position_rows_arr << row
-          racers -= 1
-
-          if racers == 0
-            session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
-            session_races_arr << session_race_arr
-
-            position_rows_arr = []
-          end
-        end
+        position_rows_arr << row
+        racers = true
       end
+
+      if racers and (full_log[count + 1].nil? or (full_log[count + 1][0] == "Session") or (full_log[count + 1][0] == "Results"))
+        racers = false
+
+        session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
+        session_races_arr << session_race_arr
+
+        position_rows_arr = []
+      end
+
+      count += 1
     end
+
+    session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
+    session_races_arr << session_race_arr
 
     session_races_arr
   end
