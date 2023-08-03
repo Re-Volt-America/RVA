@@ -17,6 +17,5 @@ class UsersController < ApplicationController
     @user.build_stats
   end
 
-  def stats
-  end
+  def stats; end
 end

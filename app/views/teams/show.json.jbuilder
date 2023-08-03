@@ -1,1 +1,1 @@
-json.partial! "teams/team", team: @team
+json.partial! 'teams/team', :team => @team

@@ -2,12 +2,12 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  store_in :database => "rv_users"
+  store_in :database => 'rv_users'
 
   USERNAME_REGEX = /\A([a-zA-Z0-9_]{1,16}|[0-9a-f]{24})\z/.freeze
 
   validates :email, :presence => true, :uniqueness => true
-  validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 3, :maximum => 16 }
+  validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 16 }
   validates_format_of :username, :with => USERNAME_REGEX
 
   belongs_to :team, :optional => true
@@ -20,14 +20,15 @@ class User
   before_create :create_profile
   before_create :create_stats
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :lockable, :trackable, :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :lockable,
+         :trackable, :omniauthable
 
   ## Username
   field :username
 
   ## Database authenticatable
-  field :email,              :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+  field :email,              :type => String, :default => ''
+  field :encrypted_password, :type => String, :default => ''
 
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -57,7 +58,7 @@ class User
   field :admin, :type => Boolean, :default => false
   field :mod, :type => Boolean, :default => false
   field :organizer, :type => Boolean, :default => false
-  field :locale, :type => String, :default => "en_us"
+  field :locale, :type => String, :default => 'en_us'
 
   def to_param
     username
@@ -80,13 +81,13 @@ class User
 
   def create_stats
     build_stats(
-        :race_wins => 0,
-        :race_count => 0,
-        :average_position => 0.0,
-        :participation_rate => 0.0,
-        :official_score => 0.0,
-        :obtained_points => 0.0,
-        :team_points => 0.0
+      :race_wins => 0,
+      :race_count => 0,
+      :average_position => 0.0,
+      :participation_rate => 0.0,
+      :official_score => 0.0,
+      :obtained_points => 0.0,
+      :team_points => 0.0
     )
   end
 end

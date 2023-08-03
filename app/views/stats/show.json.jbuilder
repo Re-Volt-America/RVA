@@ -1,1 +1,1 @@
-json.partial! "stats/stat", stat: @stat
+json.partial! 'stats/stat', :stat => @stat

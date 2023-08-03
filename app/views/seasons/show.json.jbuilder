@@ -1,1 +1,1 @@
-json.partial! "seasons/season", season: @season
+json.partial! 'seasons/season', :season => @season

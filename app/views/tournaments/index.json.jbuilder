@@ -1,1 +1,1 @@
-json.array! @tournaments, partial: "tournaments/tournament", as: :tournament
+json.array! @tournaments, :partial => 'tournaments/tournament', :as => :tournament

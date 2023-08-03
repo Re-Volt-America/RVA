@@ -2,21 +2,21 @@ class Session
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  store_in :database => "rv_sessions"
+  store_in :database => 'rv_sessions'
 
   belongs_to :ranking
   embeds_many :races
 
-  field :number, type: Integer
-  field :host, type: String
-  field :version, type: String
-  field :physics, type: String
-  field :protocol, type: String
-  field :pickups, type: Boolean
-  field :date, type: Date
-  #field :sessionlog, type: String # FIXME: maybe attached file?
-  field :teams, type: Boolean
-  field :category, type: Integer
+  field :number, :type => Integer
+  field :host, :type => String
+  field :version, :type => String
+  field :physics, :type => String
+  field :protocol, :type => String
+  field :pickups, :type => Boolean
+  field :date, :type => Date
+  # field :sessionlog, type: String # FIXME: maybe attached file?
+  field :teams, :type => Boolean
+  field :category, :type => Integer
 
   validates_presence_of :number
   validates_presence_of :host
@@ -35,9 +35,7 @@ class Session
 
     races.each do |race|
       race.racer_entries.each do |entry|
-        if entry.username.eql?(name)
-          racer_entries_arr << entry
-        end
+        racer_entries_arr << entry if entry.username.eql?(name)
       end
     end
 

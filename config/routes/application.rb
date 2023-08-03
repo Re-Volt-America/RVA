@@ -27,23 +27,23 @@ RVA::Application.routes.draw do
     end
   end
 
-  match '404', to: 'errors#not_found', via: :all
-  match '422', to: 'errors#illegal', via: :all
-  match '500', to: 'errors#internal_error', via: :all
+  match '404', :to => 'errors#not_found', :via => :all
+  match '422', :to => 'errors#illegal', :via => :all
+  match '500', :to => 'errors#internal_error', :via => :all
 
   # get 'error' => 'errors#not_found'
 
   devise_for :users,
              :controllers => {
-                 :confirmations => 'confirmations',
-                 :registrations => 'registrations'
+               :confirmations => 'confirmations',
+               :registrations => 'registrations'
              },
              :path_names => {
-                 :sign_in => 'login',
-                 :sign_out => 'logout',
-                 :sign_up => 'register',
-                 :password => 'forgot',
-                 :confirmation => 'confirm'
+               :sign_in => 'login',
+               :sign_out => 'logout',
+               :sign_up => 'register',
+               :password => 'forgot',
+               :confirmation => 'confirm'
              }
 
   devise_scope :user do

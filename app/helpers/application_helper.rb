@@ -16,6 +16,6 @@ module ApplicationHelper
   end
 
   def true?(obj)
-    obj.to_s.downcase == "true"
+    obj.to_s.downcase == 'true'
   end
 end

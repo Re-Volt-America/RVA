@@ -12,121 +12,117 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/stats", type: :request do
-  
+RSpec.describe '/stats', :type => :request do
   # This should return the minimal set of attributes required to create a valid
   # Stats. As you add validations to Stats, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       Stats.create! valid_attributes
       get stats_index_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       stats = Stats.create! valid_attributes
       get stat_url(stats)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_stat_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       stats = Stats.create! valid_attributes
       get edit_stat_url(stats)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Stats" do
-        expect {
-          post stats_index_url, params: { stat: valid_attributes }
-        }.to change(Stats, :count).by(1)
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new Stats' do
+        expect do
+          post stats_index_url, :params => { :stat => valid_attributes }
+        end.to change(Stats, :count).by(1)
       end
 
-      it "redirects to the created stat" do
-        post stats_index_url, params: { stat: valid_attributes }
+      it 'redirects to the created stat' do
+        post stats_index_url, :params => { :stat => valid_attributes }
         expect(response).to redirect_to(stat_url(Stats.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new Stats" do
-        expect {
-          post stats_index_url, params: { stat: invalid_attributes }
-        }.to change(Stats, :count).by(0)
+    context 'with invalid parameters' do
+      it 'does not create a new Stats' do
+        expect do
+          post stats_index_url, :params => { :stat => invalid_attributes }
+        end.to change(Stats, :count).by(0)
       end
 
-    
+
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post stats_index_url, params: { stat: invalid_attributes }
+        post stats_index_url, :params => { :stat => invalid_attributes }
         expect(response).to be_successful
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested stat" do
-        stats = Stats.create! valid_attributes
-        patch stat_url(stats), params: { stat: new_attributes }
-        stats.reload
-        skip("Add assertions for updated state")
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
       end
 
-      it "redirects to the stat" do
+      it 'updates the requested stat' do
         stats = Stats.create! valid_attributes
-        patch stat_url(stats), params: { stat: new_attributes }
+        patch stat_url(stats), :params => { :stat => new_attributes }
+        stats.reload
+        skip('Add assertions for updated state')
+      end
+
+      it 'redirects to the stat' do
+        stats = Stats.create! valid_attributes
+        patch stat_url(stats), :params => { :stat => new_attributes }
         stats.reload
         expect(response).to redirect_to(stat_url(stats))
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         stats = Stats.create! valid_attributes
-        patch stat_url(stats), params: { stat: invalid_attributes }
+        patch stat_url(stats), :params => { :stat => invalid_attributes }
         expect(response).to be_successful
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested stat" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested stat' do
       stats = Stats.create! valid_attributes
-      expect {
+      expect do
         delete stat_url(stats)
-      }.to change(Stats, :count).by(-1)
+      end.to change(Stats, :count).by(-1)
     end
 
-    it "redirects to the stats list" do
+    it 'redirects to the stats list' do
       stats = Stats.create! valid_attributes
       delete stat_url(stats)
       expect(response).to redirect_to(stats_index_url)

@@ -1,1 +1,1 @@
-json.partial! "rankings/ranking", ranking: @ranking
+json.partial! 'rankings/ranking', :ranking => @ranking

@@ -2,7 +2,7 @@ class Track
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  store_in :database => "rv_tracks"
+  store_in :database => 'rv_tracks'
 
   belongs_to :season
 

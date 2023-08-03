@@ -8,12 +8,12 @@ require_relative '../config/boot'
 #     rails rva       # public website
 #     rails api       # API
 
-if %w[rva api].include? ARGV[0]
+if %w(rva api).include? ARGV[0]
   ENV['RVA_ROLE'] = ARGV[0]
   ARGV[0] = 'server'
 end
 
-case ENV['RVA_ROLE']
+case ENV.fetch('RVA_ROLE', nil)
 when 'rva'
   port = 3000
   pid = 'tmp/pids/octc.pid'
@@ -24,7 +24,7 @@ else
   port = pid = nil
 end
 
-ARGV << "--port=#{port}" if port && ARGV.none?{|arg| arg =~ /^(-p|--port)/ }
-ARGV << "--pid=#{pid}" if pid && ARGV.none?{|arg| arg =~ /^(-P|--pid)/ }
+ARGV << "--port=#{port}" if port && ARGV.none? { |arg| arg =~ /^(-p|--port)/ }
+ARGV << "--pid=#{pid}" if pid && ARGV.none? { |arg| arg =~ /^(-P|--pid)/ }
 
 require 'rails/commands'

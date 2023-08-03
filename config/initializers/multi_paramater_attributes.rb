@@ -28,23 +28,23 @@ module Mongoid
         multi_parameter_attributes = {}
         attrs.each_pair do |key, value|
           if key =~ /\A([^\(]+)\((\d+)([if])\)$/
-            key, index = $1, $2.to_i
-            (multi_parameter_attributes[key] ||= {})[index] = value.empty? ? nil : value.send("to_#{$3}")
+            key = ::Regexp.last_match(1)
+            index = ::Regexp.last_match(2).to_i
+            (multi_parameter_attributes[key] ||= {})[index] =
+              value.empty? ? nil : value.send("to_#{::Regexp.last_match(3)}")
           else
             attributes[key] = value
           end
         end
 
         multi_parameter_attributes.each_pair do |key, values|
-          begin
-            values = (values.keys.min..values.keys.max).map { |i| values[i] }
-            field = self.class.fields[database_field_name(key)]
-            attributes[key] = instantiate_object(field, values)
-          rescue => e
-            errors << Errors::AttributeAssignmentError.new(
-                "error on assignment #{values.inspect} to #{key}", e, key
-            )
-          end
+          values = (values.keys.min..values.keys.max).map { |i| values[i] }
+          field = self.class.fields[database_field_name(key)]
+          attributes[key] = instantiate_object(field, values)
+        rescue StandardError => e
+          errors << Errors::AttributeAssignmentError.new(
+            "error on assignment #{values.inspect} to #{key}", e, key
+          )
         end
 
         unless errors.empty?
@@ -62,9 +62,10 @@ module Mongoid
 
     def instantiate_object(field, values_with_empty_parameters)
       return nil if values_with_empty_parameters.all? { |v| v.nil? }
+
       values = values_with_empty_parameters.collect { |v| v.nil? ? 1 : v }
       klass = field.type
-      if klass == DateTime || klass == Date || klass == Time
+      if [DateTime, Date, Time].include?(klass)
         field.mongoize(values)
       elsif klass
         klass.new(*values)
@@ -73,8 +74,8 @@ module Mongoid
       end
     end
   end
+
   module Document
     include MultiParameterAttributes
   end
 end
-

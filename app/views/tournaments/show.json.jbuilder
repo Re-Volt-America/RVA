@@ -1,1 +1,1 @@
-json.partial! "tournaments/tournament", tournament: @tournament
+json.partial! 'tournaments/tournament', :tournament => @tournament

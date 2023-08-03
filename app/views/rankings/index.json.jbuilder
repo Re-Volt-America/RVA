@@ -1,1 +1,1 @@
-json.array! @rankings, partial: "rankings/ranking", as: :ranking
+json.array! @rankings, :partial => 'rankings/ranking', :as => :ranking

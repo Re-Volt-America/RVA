@@ -1,1 +1,1 @@
-json.array! @cars, partial: "cars/car", as: :car
+json.array! @cars, :partial => 'cars/car', :as => :car

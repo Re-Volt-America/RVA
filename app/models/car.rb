@@ -2,7 +2,7 @@ class Car
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  store_in :database => "rv_cars"
+  store_in :database => 'rv_cars'
 
   belongs_to :season
 

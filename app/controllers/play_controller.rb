@@ -1,4 +1,3 @@
 class PlayController < ApplicationController
-  def index
-  end
+  def index; end
 end

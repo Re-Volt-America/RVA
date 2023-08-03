@@ -1,1 +1,1 @@
-json.array! @stats, partial: "stats/stat", as: :stat
+json.array! @stats, :partial => 'stats/stat', :as => :stat

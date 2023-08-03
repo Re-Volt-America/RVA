@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :authenticate_staff, :except => [:index, :show]
-  before_action :set_session, only: %i[ show edit update destroy ]
+  before_action :set_session, :only => [:show, :edit, :update, :destroy]
 
   # GET /sessions or /sessions.json
   def index
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     @first = true
     @count = 0
-    #@colspan = 2
+    # @colspan = 2
 
     @rva_results = RvaCalculateResultsService.new(@session).call
   end
@@ -25,8 +25,7 @@ class SessionsController < ApplicationController
   end
 
   # GET /sessions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sessions or /sessions.json
   def create
@@ -34,11 +33,11 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to session_url(@session), notice: "Session was successfully created." }
-        format.json { render :show, status: :created, location: @session }
+        format.html { redirect_to session_url(@session), :notice => 'Session was successfully created.' }
+        format.json { render :show, :status => :created, :location => @session }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -47,11 +46,11 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to session_url(@session), notice: "Session was successfully updated." }
-        format.json { render :show, status: :ok, location: @session }
+        format.html { redirect_to session_url(@session), :notice => 'Session was successfully updated.' }
+        format.json { render :show, :status => :ok, :location => @session }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,7 +60,7 @@ class SessionsController < ApplicationController
     @session.destroy
 
     respond_to do |format|
-      format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
+      format.html { redirect_to sessions_url, :notice => 'Session was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -86,32 +85,35 @@ class SessionsController < ApplicationController
     # FIXME: This check fails on MacOS, even when using correct .csv files.
     if file.content_type != CsvImportSessionsService::CSV_TYPE
       respond_to do |format|
-        format.html { redirect_to new_session_path, :note => "You may only upload CSV files." }
-        format.json { render :json => "You may only upload CSV files.", :status => :bad_request }
+        format.html { redirect_to new_session_path, :note => 'You may only upload CSV files.' }
+        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request }
       end
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number], params[:teams]).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
+                                            params[:teams]).call
 
     respond_to do |format|
       if @session.save!
-        format.html { redirect_to session_url(@session), notice: "Session was successfully imported." }
-        format.json { render :show, status: :created, location: @session }
+        format.html { redirect_to session_url(@session), :notice => 'Session was successfully imported.' }
+        format.json { render :show, :status => :created, :location => @session }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_session
-      @session = Session.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def session_params
-      params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date, :sessionlog, :category, :teams, :ranking)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_session
+    @session = Session.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def session_params
+    params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date, :sessionlog,
+                                    :category, :teams, :ranking)
+  end
 end

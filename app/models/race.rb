@@ -8,8 +8,8 @@ class Race
   has_one :track
   embeds_many :racer_entries
 
-  field :laps, type: Integer
-  field :racers_count, type: Integer
+  field :laps, :type => Integer
+  field :racers_count, :type => Integer
 
   def get_racer_names
     names = []

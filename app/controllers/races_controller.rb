@@ -1,5 +1,5 @@
 class RacesController < ApplicationController
-  before_action :set_race, only: %i[ show edit update destroy ]
+  before_action :set_race, :only => [:show, :edit, :update, :destroy]
 
   # GET /races or /races.json
   def index
@@ -7,8 +7,7 @@ class RacesController < ApplicationController
   end
 
   # GET /races/1 or /races/1.json
-  def show
-  end
+  def show; end
 
   # GET /races/new
   def new
@@ -16,8 +15,7 @@ class RacesController < ApplicationController
   end
 
   # GET /races/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /races or /races.json
   def create
@@ -25,11 +23,11 @@ class RacesController < ApplicationController
 
     respond_to do |format|
       if @race.save
-        format.html { redirect_to race_url(@race), notice: "Race was successfully created." }
-        format.json { render :show, status: :created, location: @race }
+        format.html { redirect_to race_url(@race), :notice => 'Race was successfully created.' }
+        format.json { render :show, :status => :created, :location => @race }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @race.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -38,11 +36,11 @@ class RacesController < ApplicationController
   def update
     respond_to do |format|
       if @race.update(race_params)
-        format.html { redirect_to race_url(@race), notice: "Race was successfully updated." }
-        format.json { render :show, status: :ok, location: @race }
+        format.html { redirect_to race_url(@race), :notice => 'Race was successfully updated.' }
+        format.json { render :show, :status => :ok, :location => @race }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @race.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -52,19 +50,20 @@ class RacesController < ApplicationController
     @race.destroy
 
     respond_to do |format|
-      format.html { redirect_to races_url, notice: "Race was successfully destroyed." }
+      format.html { redirect_to races_url, :notice => 'Race was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_race
-      @race = Race.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def race_params
-      params.require(:race).permit(:laps, :racers_count, :track)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_race
+    @race = Race.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def race_params
+    params.require(:race).permit(:laps, :racers_count, :track)
+  end
 end

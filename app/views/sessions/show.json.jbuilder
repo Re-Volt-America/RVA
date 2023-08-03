@@ -1,1 +1,1 @@
-json.partial! "sessions/session", session: @session
+json.partial! 'sessions/session', :session => @session

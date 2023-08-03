@@ -11,9 +11,11 @@ class RvaCalculateResultsService
 
   # Represents a player's entry in the final RVA results table.
   class RacerResultEntry
-    attr_reader :username, :race_count, :average_position, :obtained_points, :official_score, :played_tracks, :participation_multiplier, :team
+    attr_reader :username, :race_count, :average_position, :obtained_points, :official_score, :played_tracks,
+                :participation_multiplier, :team
 
-    def initialize(username, race_count, average_position, obtained_points, official_score, played_tracks, participation_multiplier, team)
+    def initialize(username, race_count, average_position, obtained_points, official_score, played_tracks,
+                   participation_multiplier, team)
       @username = username
       @race_count = race_count
       @average_position = average_position
@@ -35,11 +37,11 @@ class RvaCalculateResultsService
   end
 
   def get_rva_singles_results_arr
-    rva_results_arr = [["#", "Date"] + self.get_tracks_arr + ["PP", "PA", "CC", "MP", "PO"]]
+    rva_results_arr = [['#', 'Date'] + get_tracks_arr + %w(PP PA CC MP PO)]
 
     first = true
     pos = 1
-    racer_result_entries = self.get_racer_result_entries_arr
+    racer_result_entries = get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
       name = result_entry.username
       user = find_user(result_entry.username)
@@ -48,19 +50,19 @@ class RvaCalculateResultsService
         racer_positions_line_arr = [@session.number, @session.date]
         first = false
       else
-        racer_positions_line_arr = ["", ""]
+        racer_positions_line_arr = ['', '']
       end
 
       racer_positions_line_arr += [pos.to_s, user]
-      racer_positions_line_arr << self.get_racer_positions_arr(name)
+      racer_positions_line_arr << get_racer_positions_arr(name)
       racer_positions_line_arr << result_entry.average_position
       racer_positions_line_arr << result_entry.obtained_points
       racer_positions_line_arr << result_entry.race_count
       racer_positions_line_arr << result_entry.participation_multiplier
       racer_positions_line_arr << result_entry.official_score
 
-      racer_cars_line_arr = ["", "", "", ""]
-      racer_cars_line_arr << self.get_racer_cars_arr(name)
+      racer_cars_line_arr = ['', '', '', '']
+      racer_cars_line_arr << get_racer_cars_arr(name)
 
       rva_results_arr << racer_positions_line_arr
       rva_results_arr << racer_cars_line_arr
@@ -86,7 +88,7 @@ class RvaCalculateResultsService
 
     @races.each do |race|
       unless race.get_racer_names.include?(racer)
-        racer_positions_arr << ""
+        racer_positions_arr << ''
         next
       end
 
@@ -94,9 +96,7 @@ class RvaCalculateResultsService
       car_bonus = get_car_bonus(find_car(racer_entry.car_id))
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
-      if car_bonus.nil?
-        racer_positions_arr << "'#{racer_entry.position}"
-      end
+      racer_positions_arr << "'#{racer_entry.position}" if car_bonus.nil?
 
       racer_positions_arr << "#{racer_entry.position}"
     end
@@ -111,13 +111,13 @@ class RvaCalculateResultsService
     @races.each do |race|
       # The category is Random, therefore we ignore cars for results
       if @session.category == SYS::CATEGORY::RANDOM
-        cars_line_arr << ""
+        cars_line_arr << ''
         next
       end
 
       # Player didn't play this race, so we skip
       unless race.get_racer_names.include?(racer)
-        cars_line_arr << ""
+        cars_line_arr << ''
         next
       end
 
@@ -125,7 +125,7 @@ class RvaCalculateResultsService
 
       # Player hasn't changed cars, so we skip
       if car_used_id.eql?(last_car_used_id)
-        cars_line_arr << ""
+        cars_line_arr << ''
         next
       end
 
@@ -133,8 +133,8 @@ class RvaCalculateResultsService
 
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
-      if not car.name.eql?(SYS::CAR::CLOCKWORK_NAME) and car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
-        car.name = car.name.split(" ", 1)[1]
+      if !car.name.eql?(SYS::CAR::CLOCKWORK_NAME) and car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
+        car.name = car.name.split(' ', 1)[1]
       end
 
       cars_line_arr << car
@@ -142,21 +142,21 @@ class RvaCalculateResultsService
       last_car_used_id = car_used_id
     end
 
-    cars_line_arr << " "
+    cars_line_arr << ' '
     cars_line_arr
   end
 
   def get_racer_result_entries_arr
     racer_result_entries_arr = []
 
-    self.get_racers_arr.each do |racer|
-      average_position = self.get_average_position(racer)
-      obtained_points = self.get_obtained_points(racer)
-      participation_multiplier = self.get_participation_multiplier(racer)
-      official_score = self.get_official_score(obtained_points, average_position, participation_multiplier)
-      race_count = self.get_race_count(racer)
-      played_tracks = self.get_tracks_played(racer)
-      team = self.get_team(racer)
+    get_racers_arr.each do |racer|
+      average_position = get_average_position(racer)
+      obtained_points = get_obtained_points(racer)
+      participation_multiplier = get_participation_multiplier(racer)
+      official_score = get_official_score(obtained_points, average_position, participation_multiplier)
+      race_count = get_race_count(racer)
+      played_tracks = get_tracks_played(racer)
+      team = get_team(racer)
 
       racer_result_entries_arr << RacerResultEntry.new(racer,
                                                        race_count,
@@ -165,8 +165,7 @@ class RvaCalculateResultsService
                                                        official_score,
                                                        played_tracks,
                                                        participation_multiplier,
-                                                       team
-      )
+                                                       team)
     end
 
     if @session.teams
@@ -191,7 +190,7 @@ class RvaCalculateResultsService
   end
 
   def get_average_position(racer)
-    race_count = self.get_race_count(racer)
+    race_count = get_race_count(racer)
     return 0 if race_count.zero?
 
     racer_entries = @session.get_racer_entries_arr_for_name(racer)
@@ -209,9 +208,7 @@ class RvaCalculateResultsService
 
     @races.each do |race|
       race.racer_entries.each do |entry|
-        if entry.username.eql?(racer)
-          obtained_points = obtained_points + get_racer_score(race, entry)
-        end
+        obtained_points += get_racer_score(race, entry) if entry.username.eql?(racer)
       end
     end
 
@@ -220,40 +217,30 @@ class RvaCalculateResultsService
 
   def get_racer_score(race, entry)
     car = find_car(entry.car_id)
-    car_bonus = self.get_car_bonus(car)
+    car_bonus = get_car_bonus(car)
 
     # Car is above the current category's class or invalid, therefore points are invalidated
-    if car_bonus.nil?
-      return 0.0
-    end
+    return 0.0 if car_bonus.nil?
 
     final_multiplier = (car.multiplier * car_bonus).round(3)
-    if final_multiplier > 4.0
-      final_multiplier = 4.0
-    end
+    final_multiplier = 4.0 if final_multiplier > 4.0
 
     big_race = race.racers_count >= 10
 
     # Racer score
-    (self.get_position_score(entry.position, big_scoring=big_race) * final_multiplier).round(3)
+    (get_position_score(entry.position, big_scoring = big_race) * final_multiplier).round(3)
   end
 
   def get_position_score(position, big_scoring)
-    if big_scoring
-      return SYS::SCORING::BIG[position]
-    end
+    return SYS::SCORING::BIG[position] if big_scoring
 
     SYS::SCORING::NORMAL[position]
   end
 
   def get_car_bonus(car)
-    if car.name == SYS::CAR::MYSTERY_NAME
-      return nil
-    end
+    return nil if car.name == SYS::CAR::MYSTERY_NAME
 
-    if @session.category == SYS::CATEGORY::RANDOM
-      return 1.0
-    end
+    return 1.0 if @session.category == SYS::CATEGORY::RANDOM
 
     if @session.category == SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
       return 1.0  # The current category is Clockwork, and player is using a Clockwork, therefore valid and 1.0
@@ -266,7 +253,7 @@ class RvaCalculateResultsService
     # RANDOM and CLOCKWORK never make it here, so no side effects!
     car_category_delta = @session.category - car.category
     if car_category_delta < 0
-      return nil  # Car is above the current category, therefore points are invalid
+      return nil # Car is above the current category, therefore points are invalid
     end
 
     SYS::CATEGORY::BONUSES_PER_DIFF[car_category_delta]
@@ -278,14 +265,14 @@ class RvaCalculateResultsService
 
   def get_official_score(obtained_points, average_position, participation_multiplier)
     official_score = obtained_points / average_position
-    official_score = official_score * participation_multiplier
-    official_score = official_score * SYS::SCORING::NORMALIZER_CONSTANT
+    official_score *= participation_multiplier
+    official_score *= SYS::SCORING::NORMALIZER_CONSTANT
 
     official_score.round(2)
   end
 
   def get_race_count(racer)
-    self.get_tracks_played(racer).size
+    get_tracks_played(racer).size
   end
 
   # NOTE: Returns track IDs
@@ -293,16 +280,14 @@ class RvaCalculateResultsService
     played_tracks = []
 
     @races.each do |race|
-      if race.get_racer_names.include?(racer)
-        played_tracks << race.track_id
-      end
+      played_tracks << race.track_id if race.get_racer_names.include?(racer)
     end
 
     played_tracks
   end
 
   # FIXME: Link to team models
-  def get_team(racer)
+  def get_team(_racer)
     false
   end
 

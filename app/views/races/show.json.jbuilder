@@ -1,1 +1,1 @@
-json.partial! "races/race", race: @race
+json.partial! 'races/race', :race => @race

@@ -1,1 +1,1 @@
-json.partial! "cars/car", car: @car
+json.partial! 'cars/car', :car => @car
