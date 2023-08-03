@@ -1,14 +1,16 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://rva:7P7tvNw4LmYUNA4@cluster0.xwuwein.mongodb.net
+      hosts:
+        - "localhost:27017"
+      database: rva_development
   # Configure Mongoid specific options. (optional)
   options:
     # Application name that is printed to the mongodb logs upon establishing
     # a connection in server versions >= 3.4. Note that the name cannot
     # exceed 128 bytes. It is also used as the database name if the
     # database name is not explicitly defined. (default: nil)
-    app_name: RVA
+    app_name: rva
     
     # Mark belongs_to associations as required by default, so that saving a
     # model with a missing belongs_to association will trigger a validation
