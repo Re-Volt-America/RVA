@@ -11,7 +11,7 @@ On RVA, we organise a series of online sessions were players from all around the
 continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas'
 official rankings.
 
-This project aims to be main website for RVA, where online session logs will be uploaded and and parsed into
+This project aims to be main website for RVA, where online session logs will be uploaded and parsed into
 RVA's results format to be displayed. The site will also help manage and maintain a wide range of information related to
 RVA's internal scoring system.
 
