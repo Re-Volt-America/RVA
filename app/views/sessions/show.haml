@@ -1,74 +1,75 @@
-%table
-  %thead
-    %tr
-      %th{:width => "2%"}
-        = @rva_results[0][0] # "#"
-      %th{:width => "8%"}
-        = @rva_results[0][1] # "Date"
-      %th{:width => "2%"}
-        FP
-      %th{:width => "5%"}
-        Racer
-      - @rva_results[0].slice(2, @session.races.size).each do |track|
-        %th{:width => "4%"}
-          = link_to track.short_name, track_path(track)
-      %th{:width => "2%"}
-        PP
-      %th{:width => "2%"}
-        PA
-      %th{:width => "2%"}
-        CC
-      %th{:width => "2%"}
-        MP
-      %th{:width => "2%"}
-        PO
-  %tbody
-    - @rva_results.drop(1).each do |row|
-      - if @count.even?
-        %tr
-          %td
-            = row[0]
-          %td
-            = row[1]
-          %td
-            = row[2]
-          %td
-            -# FIXME: Check for nil users
-            = link_to row[3].name, user_path(row[3])
-          - row[4].each do |pos|
+- cache "Session##{@session.id}", :expires_in => 5.minutes do
+  %table
+    %thead
+      %tr
+        %th{:width => "2%"}
+          = @rva_results[0][0] # "#"
+        %th{:width => "8%"}
+          = @rva_results[0][1] # "Date"
+        %th{:width => "2%"}
+          FP
+        %th{:width => "5%"}
+          Racer
+        - @rva_results[0].slice(2, @session.races.size).each do |track|
+          %th{:width => "4%"}
+            = link_to track.short_name, track_path(track)
+        %th{:width => "2%"}
+          PP
+        %th{:width => "2%"}
+          PA
+        %th{:width => "2%"}
+          CC
+        %th{:width => "2%"}
+          MP
+        %th{:width => "2%"}
+          PO
+    %tbody
+      - @rva_results.drop(1).each do |row|
+        - if @count.even?
+          %tr
             %td
-              = pos
-          %td
-            = row[5]
-          %td
-            = row[6]
-          %td
-            = row[7]
-          %td
-            = row[8]
-          %td
-            = row[9]
-      - else
-        %tr
-          %td
-            = row[0]
-          %td
-            = row[1]
-          %td
-            = row[2]
-          %td
-            = row[3]
-          - row[4].each do |item|
-            - if item.eql?("")
-              -# @colspan += 2
-              - next
+              = row[0]
+            %td
+              = row[1]
+            %td
+              = row[2]
+            %td
+              -# FIXME: Check for nil users
+              = link_to row[3].name, user_path(row[3])
+            - row[4].each do |pos|
+              %td
+                = pos
+            %td
+              = row[5]
+            %td
+              = row[6]
+            %td
+              = row[7]
+            %td
+              = row[8]
+            %td
+              = row[9]
+        - else
+          %tr
+            %td
+              = row[0]
+            %td
+              = row[1]
+            %td
+              = row[2]
+            %td
+              = row[3]
+            - row[4].each do |item|
+              - if item.eql?("")
+                -# @colspan += 2
+                - next
 
-            %td{:colspan => @colspan}
-              -# @colspan = 2
-              - if item.is_a?(Car)
-                = link_to item.name, car_path(item)
+              %td{:colspan => @colspan}
+                -# @colspan = 2
+                - if item.is_a?(Car)
+                  = link_to item.name, car_path(item)
 
-      - @count += 1
+        - @count += 1
 
 = link_to 'Edit', edit_session_path(@session)
 |

@@ -25,20 +25,9 @@ class RvaCalculateResultsService
     end
   end
 
-  # FIXME: This might be a task for redis...
-  class Storage
-    attr_reader :track_storage, :car_storage
-
-    def initialize
-      @track_storage = []
-      @car_storage = []
-    end
-  end
-
   def initialize(session)
     @session = session
     @races = session.races
-    @storage = Storage.new
   end
 
   def call
@@ -53,7 +42,7 @@ class RvaCalculateResultsService
     racer_result_entries = self.get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
       name = result_entry.name
-      user = User.find { |u| u.name.eql?(result_entry.name) }
+      user = find_user(result_entry.name)
 
       if first
         racer_positions_line_arr = [@session.number, @session.date]
@@ -317,25 +306,21 @@ class RvaCalculateResultsService
     false
   end
 
-  def find_track(track_id)
-    track = @storage.track_storage.find { |t| t.id.eql?(track_id) }
-
-    if track.nil?
-      track = Track.find { |t| t.id.eql?(track_id)}
-      @storage.track_storage << track
+  def find_user(name)
+    Rails.cache.fetch("User##{name}") do
+      User.find { |u| u.name.eql?(name) }
     end
+  end
 
-    track
+  def find_track(track_id)
+    Rails.cache.fetch("Track##{track_id}") do
+      Track.find { |t| t.id.eql?(track_id) }
+    end
   end
 
   def find_car(car_id)
-    car = @storage.car_storage.find { |c| c.id.eql?(car_id) }
-
-    if car.nil?
-      car = Car.find { |c| c.id.eql?(car_id)}
-      @storage.car_storage << car
+    Rails.cache.fetch("Car##{car_id}") do
+      Car.find { |c| c.id.eql?(car_id) }
     end
-
-    car
   end
 end
