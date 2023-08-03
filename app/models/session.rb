@@ -35,7 +35,7 @@ class Session
 
     races.each do |race|
       race.racer_entries.each do |entry|
-        if entry.name.eql?(name)
+        if entry.username.eql?(name)
           racer_entries_arr << entry
         end
       end

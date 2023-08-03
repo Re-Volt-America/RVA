@@ -7,8 +7,8 @@ class User
   USERNAME_REGEX = /\A([a-zA-Z0-9_]{1,16}|[0-9a-f]{24})\z/.freeze
 
   validates :email, :presence => true, :uniqueness => true
-  validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 16 }
-  validates_format_of :name, :with => USERNAME_REGEX
+  validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 3, :maximum => 16 }
+  validates_format_of :username, :with => USERNAME_REGEX
 
   belongs_to :team, :optional => true
 
@@ -23,7 +23,7 @@ class User
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :lockable, :trackable, :omniauthable
 
   ## Username
-  field :name
+  field :username
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -60,7 +60,7 @@ class User
   field :locale, :type => String, :default => "en_us"
 
   def to_param
-    name
+    username
   end
 
   def create_profile

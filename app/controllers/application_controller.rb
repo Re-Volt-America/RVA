@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       ]
       @nav = [
           { :name => "Admin", :path => "", :sub => @admin_nav, :admin => true },
-          { :name => "Profile", :path => user_path(current_user.name) },
+          { :name => "Profile", :path => user_path(current_user.username) },
           { :name => "Account", :path => main_app.edit_user_registration_path }
       ]
     end

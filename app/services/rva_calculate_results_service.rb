@@ -11,10 +11,10 @@ class RvaCalculateResultsService
 
   # Represents a player's entry in the final RVA results table.
   class RacerResultEntry
-    attr_reader :name, :race_count, :average_position, :obtained_points, :official_score, :played_tracks, :participation_multiplier, :team
+    attr_reader :username, :race_count, :average_position, :obtained_points, :official_score, :played_tracks, :participation_multiplier, :team
 
-    def initialize(name, race_count, average_position, obtained_points, official_score, played_tracks, participation_multiplier, team)
-      @name = name
+    def initialize(username, race_count, average_position, obtained_points, official_score, played_tracks, participation_multiplier, team)
+      @username = username
       @race_count = race_count
       @average_position = average_position
       @obtained_points = obtained_points
@@ -41,8 +41,8 @@ class RvaCalculateResultsService
     pos = 1
     racer_result_entries = self.get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
-      name = result_entry.name
-      user = find_user(result_entry.name)
+      name = result_entry.username
+      user = find_user(result_entry.username)
 
       if first
         racer_positions_line_arr = [@session.number, @session.date]
@@ -181,9 +181,9 @@ class RvaCalculateResultsService
 
     @races.each do |race|
       race.racer_entries.each do |entry|
-        next if racers.include? entry.name
+        next if racers.include? entry.username
 
-        racers << entry.name
+        racers << entry.username
       end
     end
 
@@ -209,7 +209,7 @@ class RvaCalculateResultsService
 
     @races.each do |race|
       race.racer_entries.each do |entry|
-        if entry.name.eql?(racer)
+        if entry.username.eql?(racer)
           obtained_points = obtained_points + get_racer_score(race, entry)
         end
       end
@@ -308,7 +308,7 @@ class RvaCalculateResultsService
 
   def find_user(name)
     Rails.cache.fetch("User##{name}") do
-      User.find { |u| u.name.eql?(name) }
+      User.find { |u| u.username.eql?(name) }
     end
   end
 

@@ -65,6 +65,6 @@ class RacerEntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def racer_entry_params
-      params.require(:racer_entry).permit(:position, :name, :time, :best_lap, :finished, :cheating, :car, :team)
+      params.require(:racer_entry).permit(:position, :username, :time, :best_lap, :finished, :cheating, :car, :team)
     end
 end

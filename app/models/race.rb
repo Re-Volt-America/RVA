@@ -15,13 +15,13 @@ class Race
     names = []
 
     racer_entries.each do |entry|
-      names << entry.name
+      names << entry.username
     end
 
     names
   end
 
   def get_racer_entry_by_name(name)
-    racer_entries.find { |e| e.name.eql?(name) }
+    racer_entries.find { |e| e.username.eql?(name) }
   end
 end

@@ -56,7 +56,7 @@ class CsvImportSessionsService
 
         racer_entry_hash = {
             :position => racer_entry_arr[0],
-            :name => racer_entry_arr[1],
+            :username => racer_entry_arr[1],
             :car_id => car.id,
             :time => racer_entry_arr[3],
             :best_lap => racer_entry_arr[4],
