@@ -30,8 +30,6 @@ This project was built using [Ruby on Rails](https://rubyonrails.org/), the full
 
 Installation
 ---
-These are general instructions you must follow in order to successfully mount the application.
-
 Install the following services and configure them to run on their default ports:
 * [Ruby 2.7.3](https://www.ruby-lang.org/en/)
   * OS X: [RVM](http://rvm.io/) is recommended over the default OS X Ruby. Here's a one-liner:
