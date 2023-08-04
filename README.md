@@ -43,7 +43,8 @@ Install the following services and configure them to run on their default ports:
 * [NodeJS 16+](https://nodejs.org/en/download/)
 * [Yarn 1.22+](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable/)
 
-### Ubuntu 18.04
+Ubuntu 18.04
+---
 The following installation instructions are specific to Linux, Ubuntu 18. This is the recommended OS to run
 the application on. In a clean Ubuntu installation, run the following commands in super-user mode to install and run
 all the required services and tools:
