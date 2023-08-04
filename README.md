@@ -26,9 +26,7 @@ This repo contains the following components:
 * The public website, including an admin interface used for some essential configuration.
 * Several services which perform tasks like parsing and calculating results tables and leaderboards.
 
-Framework
----
-[Ruby on Rails](https://rubyonrails.org/): The full-stack framework.
+This project was built using [Ruby on Rails](https://rubyonrails.org/), the full-stack framework.
 
 Installation
 ---
