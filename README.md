@@ -13,7 +13,8 @@ official rankings.
 
 RVGL Results               | RVGL Results
 :-------------------------:|:-------------------------:
-![screenshot_2023-02-07_20-03-15](https://github.com/Re-Volt-America/RVA/assets/26081543/f16e3fcd-3b68-446f-a988-dc2b26f97688)  |  ![screenshot_2023-03-26_13-48-21](https://github.com/Re-Volt-America/RVA/assets/26081543/4184effc-5872-4c9d-8b81-321c3fdae51c)
+![screenshot_2023-02-07_20-03-15](https://github.com/Re-Volt-America/RVA/assets/26081543/eafe16e0-a806-40c2-af32-d943db16fab0)  | ![screenshot_2023-03-26_13-48-21](https://github.com/Re-Volt-America/RVA/assets/26081543/8773ae36-fa4a-4567-aa98-74a6eb15eda6)
+
 
 This project aims to be the main website for RVA, where online session logs will be uploaded and parsed into
 RVA's results format to be displayed. The site will also help manage and maintain a wide range of information related to
