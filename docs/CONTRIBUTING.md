@@ -54,16 +54,16 @@ work stably.
 
 ### How to Contribute
 1. Create an issue and a new branch originating from the master branch.
-  - Describe and list all the tasks which will be developed.
+    - Describe and list all the tasks which will be developed.
 2. Develop the code in the newly created branch.
-  - Make the commits to the issue branch.
-  - Mention the issue number in the commit message.
+    - Make the commits to the issue branch.
+    - Mention the issue number in the commit message.
 3. Sending your code to the repository opening a pull request.
-  - Describe what will be implemented into the master branch.
-  - Describe the acceptance criteria and review of the code and changes.
-  - Label the PR with all the related labels.
-  - Mention the issue in the PR description.
-  - If the PR contains all the changes which complete the tasks for the issue being addressed, add 'Closes Issue #123'.
+    - Describe what will be implemented into the master branch.
+    - Describe the acceptance criteria and review of the code and changes.
+    - Label the PR with all the related labels.
+    - Mention the issue in the PR description.
+    - If the PR contains all the changes which complete the tasks for the issue being addressed, add 'Closes Issue #123'.
 4. Await approval from one of the project maintainers.
 
 ### Version Control
