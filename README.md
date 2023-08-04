@@ -11,6 +11,10 @@ On RVA, we organise a series of online sessions where players from all around th
 continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas'
 official rankings.
 
+RVGL Results               | RVGL Results
+:-------------------------:|:-------------------------:
+![screenshot_2023-02-07_20-03-15](https://github.com/Re-Volt-America/RVA/assets/26081543/f16e3fcd-3b68-446f-a988-dc2b26f97688)  |  ![screenshot_2023-03-26_13-48-21](https://github.com/Re-Volt-America/RVA/assets/26081543/4184effc-5872-4c9d-8b81-321c3fdae51c)
+
 This project aims to be the main website for RVA, where online session logs will be uploaded and parsed into
 RVA's results format to be displayed. The site will also help manage and maintain a wide range of information related to
 RVA's internal scoring system.
