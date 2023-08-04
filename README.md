@@ -113,8 +113,8 @@ mongoimport --db rva_development --collection users --file rv_users.users.json -
 
 #### Redis
 The caching configuration and connection to the Redis database you may find here:
-* [config/environments/development.rb](https://github.com/Re-Volt-America/RVA/blob/28d193d54638e57d808cf98d719f02d27488f83a/config/environments/development.rb#L19)
-* [config/environments/production.rb]()
+* [config/environments/development.rb](https://github.com/Re-Volt-America/RVA/blob/3774cd04472ea3e1aff52f9f602339083721af00/config/environments/development.rb#L23)
+* [config/environments/production.rb](https://github.com/Re-Volt-America/RVA/blob/3774cd04472ea3e1aff52f9f602339083721af00/config/environments/production.rb#L58)
 
 ### Environment
 Run the following shell command from the RVA repo to start the application:
@@ -147,7 +147,8 @@ User.create!(
 
 Contributing
 ---
-Please read the full instructions on how to contribute to this project found in the CONTRIBUTING.md file.
+Please read the full instructions on how to contribute to this project found in the
+[CONTRIBUTING.md](https://github.com/Re-Volt-America/RVA/blob/master/docs/CONTRIBUTING.md) file.
 
 Governance
 ---
