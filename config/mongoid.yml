@@ -63,7 +63,7 @@ development:
 test:
   clients:
     default:
-      uri: mongodb+srv://bgm:eSWa6MXpvLNJGjzG@cluster1.mgfak7m.mongodb.net/
+      uri: ""
       options:
         read:
           mode: :primary
