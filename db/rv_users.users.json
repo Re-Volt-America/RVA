@@ -1,0 +1,771 @@
+[{
+  "_id": {
+    "$oid": "6422ff6516365c286c55913d"
+  },
+  "email": "jose@bgm.cl",
+  "encrypted_password": "$2a$12$YS8FntB48rhhNgMC4Rx7NuY2qwUqijzsoqJM8dW.jczIrJwrMHS2e",
+  "sign_in_count": 41,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "BGM",
+  "admin": true,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-03T12:38:24.380Z"
+  },
+  "created_at": {
+    "$date": "2023-03-28T14:53:25.533Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "6422ff6516365c286c55913e"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "6422ff6516365c286c55913f"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "8KqELzVrRHvYFQWLdK3A",
+  "confirmation_sent_at": {
+    "$date": "2023-03-28T14:53:25.632Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-03-28T14:56:45.630Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-03T12:38:24.380Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-03T05:11:52.686Z"
+  },
+  "last_sign_in_ip": "127.0.0.1",
+  "remember_created_at": {
+    "$date": "2023-08-01T15:09:30.843Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c872c016365c1e8c21c872"
+  },
+  "email": "delecto@gmail.com",
+  "encrypted_password": "$2a$12$FXaVahzGL7PkeU8gTaIZg.emecZ5SAo/LN56DEY4mWMQaRSZnT8YC",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "DELECTO",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:49:50.896Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:49:36.720Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c872c016365c1e8c21c873"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c872c016365c1e8c21c874"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "qgQtFCUZNUoMp4rfy4QL",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:49:36.721Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:49:50.800Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:49:50.895Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:49:50.895Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c8739d16365c1e8c21c875"
+  },
+  "email": "macacosky@gmail.com",
+  "encrypted_password": "$2a$12$PP4Fgy9ND6bLBoak4bw9guNui/9NTLfhdd042vGyaIMzXC8gvvlWa",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "MACACOSKY",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:53:30.202Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:53:17.454Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c8739d16365c1e8c21c876"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c8739d16365c1e8c21c877"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "4cy1q65vozwZDd43vM-a",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:53:17.455Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:53:30.107Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:53:30.202Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:53:30.202Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c873c216365c1e8c21c878"
+  },
+  "email": "yun@gmail.com",
+  "encrypted_password": "$2a$12$UHDv6bSAvntGGKTjkikLv.pEpsZNnpyKCay4lxAc5nU8JfDPHBF8W",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "YUN",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:54:07.939Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:53:54.925Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c873c216365c1e8c21c879"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c873c216365c1e8c21c87a"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "eNjHsc5GY38MxeknYqtZ",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:53:54.927Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:54:07.845Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:54:07.939Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:54:07.939Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c873e316365c1e8c21c87b"
+  },
+  "email": "loq@gmail.com",
+  "encrypted_password": "$2a$12$U3ZG1vIltqisgFHWDKLV6uaW8afX4trHDfpFJ56hobOVSf2VFhf9q",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "LOQ",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:54:42.659Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:54:27.466Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c873e316365c1e8c21c87c"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c873e316365c1e8c21c87d"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "LASkH-ZyTix7bzS7zwJb",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:54:27.467Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:54:42.566Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:54:42.659Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:54:42.659Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c8740c16365c1e8c21c87e"
+  },
+  "email": "estebanmz@gmail.com",
+  "encrypted_password": "$2a$12$hka0M4C610UQcUshA1XTfei4ZpDmK5jaAndq7kKhc4N4Eo3rK6XFG",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "ESTEBANMZ",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:55:21.743Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:55:08.456Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c8740c16365c1e8c21c87f"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c8740c16365c1e8c21c880"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "vKkesBztTjwb23bu6wKb",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:55:08.457Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:55:21.635Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:55:21.743Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:55:21.743Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c8743816365c1e8c21c881"
+  },
+  "email": "daijoubu@gmail.com",
+  "encrypted_password": "$2a$12$btl8u/ZPztdf/IxxyJ2n0O0O7dz3vvbzMWJ/IZ6KkzCUue/0qWXhi",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "DAIJOUBU",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:56:11.387Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:55:52.632Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c8743816365c1e8c21c882"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c8743816365c1e8c21c883"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "JzBGav7DBB49UdKaxQYf",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:55:52.633Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:56:11.277Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:56:11.387Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:56:11.387Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c8747a16365c1e8c21c884"
+  },
+  "email": "waluigimb@gmail.com",
+  "encrypted_password": "$2a$12$YZOmiIcMxGNzo5S4mbYQfugdcsIufkYB6q3hqCFIbLNZjYICsc1.S",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "WALUIGIMB",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:57:11.050Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:56:58.218Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c8747a16365c1e8c21c885"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c8747a16365c1e8c21c886"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "Qv9yfMPCGvP7s3_BANLg",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:56:58.219Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:57:10.955Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:57:11.050Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:57:11.050Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c874a016365c1e8c21c887"
+  },
+  "email": "rog@gmail.com",
+  "encrypted_password": "$2a$12$bRGp8B8Q/39VLXb1zUsJcuGlSqduhDZiPppLPfPnw7pqdu6OVKVyi",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "ROG",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:57:51.688Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:57:36.176Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c874a016365c1e8c21c888"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c874a016365c1e8c21c889"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "EQnvry8D-yWDzKLMcVus",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:57:36.177Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:57:51.594Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:57:51.688Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:57:51.688Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c874ca16365c1e8c21c88a"
+  },
+  "email": "josecar@gmail.com",
+  "encrypted_password": "$2a$12$aJWl8e72wC3wFWxLdsK7f.nyxwqmRglcupiA.hp7.TkpBFdyLNaJG",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "JOSECAR",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T02:58:53.896Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:58:18.401Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c874ca16365c1e8c21c88b"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c874ca16365c1e8c21c88c"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "aVwzeCt2CsEBX-Qcsw6-",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:58:18.403Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T02:58:53.799Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T02:58:53.895Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T02:58:53.895Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c8752716365c1e8c21c88d"
+  },
+  "email": "zed@gmail.com",
+  "encrypted_password": "$2a$12$RlV4GNnHu8GZ/fU21FcZVuQsFitJdE5gQUh2v4KjmOCbg8/YDYxiO",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "ZED",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:00:44.609Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T02:59:51.925Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c8752716365c1e8c21c88e"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c8752716365c1e8c21c88f"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "JMLu6AcDGtaaknn4JUtt",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T02:59:51.926Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T03:00:44.498Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T03:00:44.609Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T03:00:44.609Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64c89e0a16365c3210b008fa"
+  },
+  "email": "osvldx@gmail.com",
+  "encrypted_password": "$2a$12$J6N/ki3SRdr1d2PTfLqtB.WzZQ7NugVqCLpzvvU3An0SEql40JYUq",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "name": "OSVLDX",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-01T05:54:31.606Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T05:54:18.653Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64c89e0a16365c3210b008fb"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64c89e0a16365c3210b008fc"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "tjoJvH7QNCzQ17QN2p9V",
+  "confirmation_sent_at": {
+    "$date": "2023-08-01T05:54:18.654Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-01T05:54:31.497Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-01T05:54:31.606Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-01T05:54:31.606Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
+}]

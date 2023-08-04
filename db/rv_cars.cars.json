@@ -1,0 +1,549 @@
+[{
+  "_id": {
+    "$oid": "64bf406516365c35f8fffdc7"
+  },
+  "name": "RC Bandit",
+  "speed": 51.5,
+  "accel": 2.09,
+  "weight": 1.2,
+  "folder_name": "rc",
+  "season_id": {
+    "$oid": "63fb06ee16365c084c5d5e3c"
+  },
+  "updated_at": {
+    "$date": "2023-07-25T03:24:21.771Z"
+  },
+  "created_at": {
+    "$date": "2023-07-25T03:24:21.771Z"
+  },
+  "multiplier": 0.7,
+  "category": 0
+},
+{
+  "_id": {
+    "$oid": "64c8897416365c384405fe98"
+  },
+  "name": "FLIR",
+  "speed": 71.4,
+  "accel": 5.66,
+  "weight": 2,
+  "folder_name": "nrf_flir",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:14:38.447Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:26:28.308Z"
+  },
+  "category": 5,
+  "multiplier": 1
+},
+{
+  "_id": {
+    "$oid": "64c889a016365c384405fe99"
+  },
+  "name": "Saeger",
+  "speed": 69.6,
+  "accel": 5.81,
+  "weight": 2,
+  "folder_name": "saeger",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:14:58.853Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:27:12.970Z"
+  },
+  "category": 5,
+  "multiplier": 1
+},
+{
+  "_id": {
+    "$oid": "64c889c116365c384405fe9a"
+  },
+  "name": "Screamer",
+  "speed": 77.3,
+  "accel": 3,
+  "weight": 1.4,
+  "folder_name": "screamer",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:15:09.408Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:27:45.297Z"
+  },
+  "category": 5,
+  "multiplier": 1.7
+},
+{
+  "_id": {
+    "$oid": "64c889e816365c384405fe9b"
+  },
+  "name": "Calcure",
+  "speed": 71,
+  "accel": 2.87,
+  "weight": 2,
+  "folder_name": "phim_calcure",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:15:20.883Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:28:24.697Z"
+  },
+  "category": 5,
+  "multiplier": 0.9
+},
+{
+  "_id": {
+    "$oid": "64c88a1416365c384405fe9c"
+  },
+  "name": "Tesseract",
+  "speed": 71.3,
+  "accel": 4,
+  "weight": 2,
+  "folder_name": "fd_s7",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:15:34.393Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:29:08.429Z"
+  },
+  "category": 5,
+  "multiplier": 0.8
+},
+{
+  "_id": {
+    "$oid": "64c88a4516365c384405fe9d"
+  },
+  "name": "Volken Champion",
+  "speed": 71.7,
+  "accel": 3.9,
+  "weight": 1.5,
+  "folder_name": "tx3volkdtm",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:15:59.358Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:29:57.949Z"
+  },
+  "category": 5,
+  "multiplier": 1.1
+},
+{
+  "_id": {
+    "$oid": "64c88a9016365c384405fe9e"
+  },
+  "name": "Dookur Special",
+  "speed": 75.2,
+  "accel": 2.47,
+  "weight": 3.5,
+  "folder_name": "phim_dakar",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:16:12.348Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:31:12.148Z"
+  },
+  "category": 5,
+  "multiplier": 1.5
+},
+{
+  "_id": {
+    "$oid": "64c88ac916365c384405fe9f"
+  },
+  "name": "King Kaiju",
+  "speed": 72.6,
+  "accel": 4.41,
+  "weight": 1.8,
+  "folder_name": "tx11kaiju",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:16:22.673Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:32:09.621Z"
+  },
+  "category": 5,
+  "multiplier": 1
+},
+{
+  "_id": {
+    "$oid": "64c88af516365c384405fea0"
+  },
+  "name": "Track Reaper",
+  "speed": 74.8,
+  "accel": 3.1,
+  "weight": 2,
+  "folder_name": "trackreaper",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:16:34.433Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:32:53.966Z"
+  },
+  "category": 5,
+  "multiplier": 0.7
+},
+{
+  "_id": {
+    "$oid": "64c88b1316365c384405fea1"
+  },
+  "name": "Voltrex",
+  "speed": 72.7,
+  "accel": 3.88,
+  "weight": 1.3,
+  "folder_name": "moz_voltrex",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:16:44.629Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:33:23.727Z"
+  },
+  "category": 5,
+  "multiplier": 0.9
+},
+{
+  "_id": {
+    "$oid": "64c88b4716365c384405fea2"
+  },
+  "name": "Superdriver",
+  "speed": 62.9,
+  "accel": 5.45,
+  "weight": 1.4,
+  "folder_name": "superdriver",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:17:04.864Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:34:15.006Z"
+  },
+  "category": 4,
+  "multiplier": 1.4
+},
+{
+  "_id": {
+    "$oid": "64c88b7f16365c384405fea3"
+  },
+  "name": "XM250",
+  "speed": 70.2,
+  "accel": 3.13,
+  "weight": 1.4,
+  "folder_name": "xm250",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:17:15.247Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:35:11.372Z"
+  },
+  "category": 5,
+  "multiplier": 0.8
+},
+{
+  "_id": {
+    "$oid": "64c88ba516365c384405fea4"
+  },
+  "name": "Adeon",
+  "speed": 59,
+  "accel": 2.97,
+  "weight": 1.2,
+  "folder_name": "adeon",
+  "stock": true,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:17:30.239Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:35:49.429Z"
+  },
+  "category": 3,
+  "multiplier": 0.7
+},
+{
+  "_id": {
+    "$oid": "64c88bd216365c384405fea5"
+  },
+  "name": "Humma",
+  "speed": 63.9,
+  "accel": 3.46,
+  "weight": 2,
+  "folder_name": "sugo",
+  "stock": true,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:17:44.611Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:36:34.466Z"
+  },
+  "category": 4,
+  "multiplier": 0.9
+},
+{
+  "_id": {
+    "$oid": "64c88c0016365c384405fea6"
+  },
+  "name": "Toyeca",
+  "speed": 64.6,
+  "accel": 3.21,
+  "weight": 2,
+  "folder_name": "toyeca",
+  "stock": true,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:17:53.897Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:37:20.827Z"
+  },
+  "category": 4,
+  "multiplier": 0.7
+},
+{
+  "_id": {
+    "$oid": "64c88c3916365c384405fea7"
+  },
+  "name": "Nakajima",
+  "speed": 76,
+  "accel": 3.2,
+  "weight": 1.25,
+  "folder_name": "nakajima",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:18:06.877Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:38:17.027Z"
+  },
+  "category": 5,
+  "multiplier": 0.9
+},
+{
+  "_id": {
+    "$oid": "64c88c6016365c384405fea8"
+  },
+  "name": "La Rossa",
+  "speed": 72.9,
+  "accel": 4.16,
+  "weight": 2,
+  "folder_name": "fd94rossa",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:18:18.975Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:38:56.836Z"
+  },
+  "category": 5,
+  "multiplier": 0.8
+},
+{
+  "_id": {
+    "$oid": "64c88c8c16365c384405fea9"
+  },
+  "name": "Identity X",
+  "speed": 78.2,
+  "accel": 3.38,
+  "weight": 2.5,
+  "folder_name": "fd95x",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:18:33.392Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:39:40.537Z"
+  },
+  "category": 5,
+  "multiplier": 1.2
+},
+{
+  "_id": {
+    "$oid": "64c88cbc16365c384405feaa"
+  },
+  "name": "Megalodon XL",
+  "speed": 77.1,
+  "accel": 3.73,
+  "weight": 2.2,
+  "folder_name": "megalodonxl",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:18:43.816Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:40:28.281Z"
+  },
+  "category": 5,
+  "multiplier": 1
+},
+{
+  "_id": {
+    "$oid": "64c88ce416365c384405feab"
+  },
+  "name": "Outlaw",
+  "speed": 65.9,
+  "accel": 2.63,
+  "weight": 2,
+  "folder_name": "nrf_outlaw",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:18:53.534Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:41:08.828Z"
+  },
+  "category": 4,
+  "multiplier": 0.7
+},
+{
+  "_id": {
+    "$oid": "64c88d0516365c384405feac"
+  },
+  "name": "Cougar",
+  "speed": 69.4,
+  "accel": 2.36,
+  "weight": 2,
+  "folder_name": "cougar",
+  "stock": true,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:19:07.788Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:41:41.025Z"
+  },
+  "category": 4,
+  "multiplier": 1.6
+},
+{
+  "_id": {
+    "$oid": "64c88d4916365c384405fead"
+  },
+  "name": "Stinger",
+  "speed": 70.2,
+  "accel": 3.08,
+  "weight": 2,
+  "folder_name": "phim_stinger",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:19:20.658Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:42:49.114Z"
+  },
+  "category": 5,
+  "multiplier": 0.7
+},
+{
+  "_id": {
+    "$oid": "64c8932616365c384406016a"
+  },
+  "name": "Touga",
+  "speed": 65.6,
+  "accel": 3.08,
+  "weight": 2,
+  "folder_name": "touga",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:19:33.591Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T05:07:50.925Z"
+  },
+  "category": 3,
+  "multiplier": 0.8
+},
+{
+  "_id": {
+    "$oid": "64c8938416365c384406016b"
+  },
+  "name": "Armand",
+  "speed": 69.1,
+  "accel": 4.17,
+  "weight": 1.5,
+  "folder_name": "armando",
+  "stock": false,
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "updated_at": {
+    "$date": "2023-08-01T05:19:46.698Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T05:09:24.306Z"
+  },
+  "category": 5,
+  "multiplier": 0.7
+}]

@@ -1,0 +1,1320 @@
+[{
+  "_id": {
+    "$oid": "64c876f116365c1e8c21c890"
+  },
+  "name": "Toys in the Hood 1",
+  "short_name": "TH1",
+  "difficulty": 0,
+  "length": 747,
+  "folder_name": "nhood1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:07:29.477Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:07:29.477Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8771816365c1e8c21c891"
+  },
+  "name": "SuperMarket 2",
+  "short_name": "SM2",
+  "difficulty": 0,
+  "length": 301,
+  "folder_name": "market2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:08:08.583Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:08:08.583Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8773116365c1e8c21c892"
+  },
+  "name": "Museum 2",
+  "short_name": "M2",
+  "difficulty": 0,
+  "length": 600,
+  "folder_name": "muse2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:08:33.656Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:08:33.656Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8774c16365c1e8c21c893"
+  },
+  "name": "Botanical Garden",
+  "short_name": "BG",
+  "difficulty": 0,
+  "length": 323,
+  "folder_name": "garden1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:09:00.056Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:09:00.056Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8776816365c1e8c21c894"
+  },
+  "name": "Rooftops",
+  "short_name": "RT",
+  "difficulty": 1,
+  "length": 588,
+  "folder_name": "roof",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:09:28.258Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:09:28.258Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8779616365c1e8c21c895"
+  },
+  "name": "Toy World 1",
+  "short_name": "TW1",
+  "difficulty": 1,
+  "length": 354,
+  "folder_name": "toylite",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:10:14.292Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:10:14.292Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c877af16365c1e8c21c896"
+  },
+  "name": "Ghost Town 1",
+  "short_name": "GT1",
+  "difficulty": 1,
+  "length": 324,
+  "folder_name": "wild_west1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:10:39.942Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:10:39.942Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c877cf16365c1e8c21c897"
+  },
+  "name": "Toy World 2",
+  "short_name": "TW2",
+  "difficulty": 1,
+  "length": 444,
+  "folder_name": "toy2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:11:11.150Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:11:11.150Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c877f416365c1e8c21c898"
+  },
+  "name": "Toys in the Hood 2",
+  "short_name": "TH2",
+  "difficulty": 2,
+  "length": 592,
+  "folder_name": "nhood2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:11:59.211Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:11:48.733Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8782216365c1e8c21c899"
+  },
+  "name": "Toytanic 1",
+  "short_name": "T1",
+  "difficulty": 2,
+  "length": 742,
+  "folder_name": "ship1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:12:34.371Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:12:34.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8784f16365c1e8c21c89a"
+  },
+  "name": "Museum 1",
+  "short_name": "M1",
+  "difficulty": 2,
+  "length": 668,
+  "folder_name": "muse1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:13:19.043Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:13:19.043Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8786d16365c1e8c21c89b"
+  },
+  "name": "Supermarket 1",
+  "short_name": "SM1",
+  "difficulty": 3,
+  "length": 502,
+  "folder_name": "market1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:13:49.562Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:13:49.562Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8788a16365c1e8c21c89c"
+  },
+  "name": "Ghost Town 2",
+  "short_name": "GT2",
+  "difficulty": 3,
+  "length": 490,
+  "folder_name": "wild_west2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:14:18.200Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:14:18.200Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c878a416365c1e8c21c89d"
+  },
+  "name": "Toytanic 2",
+  "short_name": "T2",
+  "difficulty": 3,
+  "length": 742,
+  "folder_name": "ship2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:14:44.355Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:14:44.355Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c878e416365c1e8c21c89e"
+  },
+  "name": "Airport 1",
+  "short_name": "AP1",
+  "difficulty": 2,
+  "length": 612,
+  "folder_name": "fdt16airport1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:15:48.289Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:15:48.289Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87b3216365c47b4ccf44a"
+  },
+  "name": "Casino RV",
+  "short_name": "CRV",
+  "difficulty": 1,
+  "length": 635,
+  "folder_name": "casinorv",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:25:38.929Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:25:38.929Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87e7916365c47b4ccf44b"
+  },
+  "name": "Castle 1",
+  "short_name": "CT1",
+  "difficulty": 3,
+  "length": 795,
+  "folder_name": "fdt21castle1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:39:37.370Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:39:37.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87ea716365c47b4ccf44c"
+  },
+  "name": "Castle 2",
+  "short_name": "CT2",
+  "difficulty": 3,
+  "length": 715,
+  "folder_name": "fdt22castle2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:40:23.222Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:40:23.222Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87f5a16365c384405fe69"
+  },
+  "name": "Conduciendo Fumado: Redux",
+  "short_name": "CFU",
+  "difficulty": 1,
+  "length": 524,
+  "folder_name": "condfumadored",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:43:23.021Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:43:23.021Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87f9f16365c384405fe6a"
+  },
+  "name": "Botanical Garden EX",
+  "short_name": "GEX",
+  "difficulty": 2,
+  "length": 807,
+  "folder_name": "fdt9xgarden",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:44:31.181Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:44:31.181Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c87fdf16365c384405fe6b"
+  },
+  "name": "Desolate District",
+  "short_name": "DD1",
+  "difficulty": 2,
+  "length": 657,
+  "folder_name": "district",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:45:35.181Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:45:35.181Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8806b16365c384405fe6c"
+  },
+  "name": "DS Desert Hills",
+  "short_name": "DSD",
+  "difficulty": null,
+  "length": 375,
+  "folder_name": "dsdh",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:47:55.234Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:47:55.234Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c880a516365c384405fe6d"
+  },
+  "name": "Fairground 1",
+  "short_name": "FG1",
+  "difficulty": 1,
+  "length": 363,
+  "folder_name": "fair1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:48:53.462Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:48:53.462Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c880bc16365c384405fe6e"
+  },
+  "name": "Fairground 2",
+  "short_name": "FG2",
+  "difficulty": 3,
+  "length": 766,
+  "folder_name": "fair2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:49:16.904Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:49:16.904Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c880e316365c384405fe6f"
+  },
+  "name": "Game Room 2",
+  "short_name": "GR2",
+  "difficulty": 2,
+  "length": 635,
+  "folder_name": "fdt24arcade2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:49:55.355Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:49:55.355Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8811516365c384405fe70"
+  },
+  "name": "Grisville",
+  "short_name": "GV",
+  "difficulty": 3,
+  "length": 648,
+  "folder_name": "ghetto",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:50:45.873Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:50:45.873Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8814116365c384405fe71"
+  },
+  "name": "H(8)TY",
+  "short_name": "H8T",
+  "difficulty": 1,
+  "length": 351,
+  "folder_name": "h8ty",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:51:29.778Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:51:29.778Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8815516365c384405fe72"
+  },
+  "name": "Holiday Camp: California Edition",
+  "short_name": "HCC",
+  "difficulty": 1,
+  "length": 1170,
+  "folder_name": "hcampcal",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:52:15.289Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:51:49.997Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8818b16365c384405fe73"
+  },
+  "name": "Home 1",
+  "short_name": "H1",
+  "difficulty": 0,
+  "length": 237,
+  "folder_name": "home1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:52:43.280Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:52:43.280Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8819d16365c384405fe74"
+  },
+  "name": "Home 2",
+  "short_name": "H2",
+  "difficulty": 2,
+  "length": 489,
+  "folder_name": "home2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:53:01.810Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:53:01.810Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8821a16365c384405fe75"
+  },
+  "name": "Hospital 1",
+  "short_name": "HP1",
+  "difficulty": 2,
+  "length": 623,
+  "folder_name": "hospital1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:55:06.309Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:55:06.309Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8823516365c384405fe76"
+  },
+  "name": "Hospital 2",
+  "short_name": "HP2",
+  "difficulty": 2,
+  "length": 399,
+  "folder_name": "hospital2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:55:33.871Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:55:33.871Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8825b16365c384405fe77"
+  },
+  "name": "Jailhouse Rock",
+  "short_name": "JR",
+  "difficulty": -1,
+  "length": 729,
+  "folder_name": "jailhouse",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:56:11.179Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:56:11.179Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8827a16365c384405fe78"
+  },
+  "name": "Library",
+  "short_name": "LIB",
+  "difficulty": 3,
+  "length": 570,
+  "folder_name": "library",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:56:42.663Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:56:42.663Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8829a16365c384405fe79"
+  },
+  "name": "Market Mayhem",
+  "short_name": "MM",
+  "difficulty": 1,
+  "length": 448,
+  "folder_name": "marketmayhem",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:57:14.094Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:57:14.094Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c882bf16365c384405fe7a"
+  },
+  "name": "Metro-Volt",
+  "short_name": "MV",
+  "difficulty": -1,
+  "length": 649,
+  "folder_name": "metrovolt",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:57:51.794Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:57:51.794Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c882de16365c384405fe7b"
+  },
+  "name": "Moon Dawn",
+  "short_name": "MD",
+  "difficulty": 3,
+  "length": 1418,
+  "folder_name": "dome3",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T05:30:57.966Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:58:22.332Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c882fe16365c384405fe7c"
+  },
+  "name": "Museum 3",
+  "short_name": "M3",
+  "difficulty": 0,
+  "length": 539,
+  "folder_name": "muse3",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:58:54.712Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:58:54.712Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8833016365c384405fe7d"
+  },
+  "name": "Museum EX",
+  "short_name": "MEX",
+  "difficulty": 3,
+  "length": 970,
+  "folder_name": "fdt13xmuse",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T03:59:44.184Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T03:59:44.184Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8834c16365c384405fe7e"
+  },
+  "name": "PetroVolt",
+  "short_name": "PV",
+  "difficulty": 3,
+  "length": 948,
+  "folder_name": "petrol",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:00:12.503Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:00:12.503Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8837216365c384405fe7f"
+  },
+  "name": "Port Limano 1",
+  "short_name": "PL1",
+  "difficulty": 1,
+  "length": 308,
+  "folder_name": "portlimano1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:00:50.117Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:00:50.117Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8839016365c384405fe80"
+  },
+  "name": "Port Limano 2",
+  "short_name": "PL2",
+  "difficulty": 2,
+  "length": 616,
+  "folder_name": "portlimano2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:01:20.678Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:01:20.678Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c883ad16365c384405fe81"
+  },
+  "name": "Quake!",
+  "short_name": "Q!",
+  "difficulty": 3,
+  "length": 843,
+  "folder_name": "quake",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:01:49.115Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:01:49.115Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c883ce16365c384405fe82"
+  },
+  "name": "Rigs Highway",
+  "short_name": "RH",
+  "difficulty": 1,
+  "length": 671,
+  "folder_name": "pmt_highway",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:02:22.278Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:02:22.278Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c883f416365c384405fe83"
+  },
+  "name": "Rooftop Chase: Redux",
+  "short_name": "RCR",
+  "difficulty": -1,
+  "length": 605,
+  "folder_name": "roofchaseredux",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:03:00.084Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:03:00.084Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8840a16365c384405fe84"
+  },
+  "name": "Rooftops 1",
+  "short_name": "RT1",
+  "difficulty": 3,
+  "length": 717,
+  "folder_name": "roof1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:03:22.773Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:03:22.773Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8842c16365c384405fe85"
+  },
+  "name": "Sakura",
+  "short_name": "SA",
+  "difficulty": -1,
+  "length": 752,
+  "folder_name": "sakura",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:03:56.573Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:03:56.573Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8846416365c384405fe86"
+  },
+  "name": "School 1 (THUG2)",
+  "short_name": "SC1",
+  "difficulty": -1,
+  "length": 783,
+  "folder_name": "THUG2 School",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:05:02.175Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:04:52.759Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c884ab16365c384405fe87"
+  },
+  "name": "School's Out 1",
+  "short_name": "SO1",
+  "difficulty": 1,
+  "length": 495,
+  "folder_name": "schoolslite",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:06:09.075Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:06:03.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c884c816365c384405fe88"
+  },
+  "name": "School's Out 2",
+  "short_name": "SO2",
+  "difficulty": 3,
+  "length": 1545,
+  "folder_name": "schools",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:06:32.577Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:06:32.577Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c884f116365c384405fe89"
+  },
+  "name": "Skating Toys Redux",
+  "short_name": "STR",
+  "difficulty": 3,
+  "length": 1011,
+  "folder_name": "skatoysred",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:07:13.932Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:07:13.932Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8850f16365c384405fe8a"
+  },
+  "name": "Spa-Volt 1",
+  "short_name": "SV1",
+  "difficulty": 3,
+  "length": 595,
+  "folder_name": "spavolt1",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:07:43.791Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:07:43.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8852916365c384405fe8b"
+  },
+  "name": "Spa-Volt 2",
+  "short_name": "SV2",
+  "difficulty": 3,
+  "length": 532,
+  "folder_name": "spavolt2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:08:09.423Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:08:09.423Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8856f16365c384405fe8c"
+  },
+  "name": "Spooktober Super Special Stage",
+  "short_name": "SSS",
+  "difficulty": 2,
+  "length": 710,
+  "folder_name": "krnspooktober22",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:09:19.655Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:09:19.655Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8858d16365c384405fe8d"
+  },
+  "name": "StadVolt",
+  "short_name": "SV",
+  "difficulty": 2,
+  "length": 571,
+  "folder_name": "stadvolt",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:09:49.973Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:09:49.973Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c885a916365c384405fe8e"
+  },
+  "name": "Subway 2",
+  "short_name": "SW2",
+  "difficulty": 1,
+  "length": 937,
+  "folder_name": "subway2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:10:17.245Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:10:17.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c885c316365c384405fe8f"
+  },
+  "name": "Tetanic",
+  "short_name": "TET",
+  "difficulty": 1,
+  "length": 687,
+  "folder_name": "tetanic",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:10:43.529Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:10:43.529Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c885e716365c384405fe90"
+  },
+  "name": "The Great Silence",
+  "short_name": "TGS",
+  "difficulty": 3,
+  "length": 583,
+  "folder_name": "winterwest",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:11:19.653Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:11:19.653Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8860816365c384405fe91"
+  },
+  "name": "Toys in the Hood 4",
+  "short_name": "TH4",
+  "difficulty": 3,
+  "length": 706,
+  "folder_name": "nhood4",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:11:52.184Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:11:52.184Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8878c16365c384405fe92"
+  },
+  "name": "ToySoldierz",
+  "short_name": "TSZ",
+  "difficulty": -1,
+  "length": 454,
+  "folder_name": "toysoldierz",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:18:20.017Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:18:20.017Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c887b416365c384405fe93"
+  },
+  "name": "User-Deli: XL",
+  "short_name": "DEL",
+  "difficulty": 3,
+  "length": 390,
+  "folder_name": "user-delixl",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:19:00.829Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:19:00.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c887d716365c384405fe94"
+  },
+  "name": "Venice",
+  "short_name": "VN",
+  "difficulty": 3,
+  "length": 617,
+  "folder_name": "venice",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:19:35.958Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:19:35.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c887f616365c384405fe95"
+  },
+  "name": "White Rose Chapel",
+  "short_name": "WRC",
+  "difficulty": -1,
+  "length": 653,
+  "folder_name": "whiterose",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:20:06.396Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:20:06.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8881e16365c384405fe96"
+  },
+  "name": "Wonderful Skylands 2",
+  "short_name": "WS2",
+  "difficulty": 3,
+  "length": 732,
+  "folder_name": "fdt15skylands2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T04:20:46.830Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T04:20:46.830Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c8985116365c4854552939"
+  },
+  "name": "Antigrav SC",
+  "short_name": "ASC",
+  "difficulty": 2,
+  "length": 578,
+  "folder_name": "krnshop",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T05:29:53.693Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T05:29:53.693Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c898f016365c3210b007a9"
+  },
+  "name": "RC Stadium 2",
+  "short_name": "RS2",
+  "difficulty": 1,
+  "length": 392,
+  "folder_name": "fdt4stad2",
+  "season_id": {
+    "$oid": "64c8709916365c1e8c21c86b"
+  },
+  "stock": false,
+  "updated_at": {
+    "$date": "2023-08-01T05:32:32.301Z"
+  },
+  "created_at": {
+    "$date": "2023-08-01T05:32:32.301Z"
+  }
+}]
