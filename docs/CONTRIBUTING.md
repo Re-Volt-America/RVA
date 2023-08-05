@@ -1,5 +1,27 @@
-Contribution Guide
+# Contribution Guide
+We're really excited to have you join the community of contributors for the RVA project! Before we jump into the
+nitty-gritty details, let's go over the design choices and philosophy of the project so we're all on the same page.
+
+Table of Contents
 ===
+* [Scope](#scope)
+* [Development Team](#development-team)
+* [Features](#features)
+* [Coding Standards](#coding-standards)
+    * [Code Style](#code-style)
+    * [Analyse the Code with RuboCop](#analyse-the-code-with-rubocop)
+    * [Code Editor Configuration](#code-editor-configuration)
+* [Code Development](#code-development)
+    * [System Architecture & Design Patterns](#system-architecture--design-patterns)
+* [Repository Interaction]
+    * [Branches](#branches)
+    * [How to Contribute](#how-to-contribute)
+    * [Version Control](#version-control)
+
+## Scope
+Re-Volt America, should focus on providing the best competitive experience in terms of maintaining a reliable and
+interactive site where all online session results and leaderboards are kept public and available for all its players
+and the general public.
 
 ## Development Team
 * [José Benavente](https://github.com/BGMP) - bgm@rva.lat
@@ -19,16 +41,16 @@ table representation to the user.
 This project's code style must follow the standard recommendations for Ruby programming:
 
 1. All the codebase and documentation must be written in English.
-2. In general, the entire project follows Ruby's naming conventions and other useful guides which you may find on the
-following site: [RubyStyle website](https://rubystyle.guide/).
+2. In general, the entire project follows Ruby's naming conventions and other useful guidelines which you may find on
+the following site: [RubyStyle website](https://rubystyle.guide/).
 
 ### Analyse the Code with RuboCop
 This project utilises the [RuboCop](https://docs.rubocop.org/rubocop/1.55/index.html) gem to apply an standard format to
-the codebase. All exceptions and directives are listed in the `.rubocop.yml` file.
+the codebase. All exceptions and directives to these standards are listed in the `.rubocop.yml` file.
 
 The RuboCop gem is installed alongside the rest of the project's gems, therefore once you run `bundle install` to
-download and install dependencies you will pull RuboCop too and get it ready for use. Once you finish installing,
-you may inspect and auto-correct the code using the following commands, respectively:
+download and install dependencies you will pull RuboCop too. When installed, you may inspect and auto-correct the code
+using the following commands, respectively:
 ```bash
 rubocop                          # Inspect
 rubocop --autocorrect            # Autocorrect
@@ -42,9 +64,9 @@ Before writing your code, verify that the following general configurations in yo
 * No tabs -- Use 2 spaces.
 
 ## Code Development
-
 ### System Architecture & Design Patterns
-- This project being a Rails application follows the MVC (Model View Controller) pattern.
+- This project, being a Rails application, follows the MVC (Model View Controller) pattern.
+- Databases are prefixed using the term `rv` (Re-Volt). Follow this standard when naming model databases.
 
 ## Repository Interaction
 ### Branches
