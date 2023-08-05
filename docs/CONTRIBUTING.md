@@ -19,7 +19,7 @@ Table of Contents
     * [Version Control](#version-control)
 
 ## Scope
-Re-Volt America, should focus on providing the best competitive experience in terms of maintaining a reliable and
+Re-Volt America should focus on providing the best competitive experience in terms of maintaining a reliable and
 interactive site where all online session results and leaderboards are kept public and available for all its players
 and the general public.
 
