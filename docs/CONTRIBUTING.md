@@ -1,6 +1,6 @@
 # Contribution Guide
-We're really excited to have you join the community of contributors for the RVA project! Before we jump into the
-nitty-gritty details, let's go over the design choices and philosophy of the project so we're all on the same page.
+We're really excited to have you join the community of contributors for the RVA project! Make sure to read the following
+content comprehensively so that you can get a clear idea of how to contribute to this project effectively.
 
 Table of Contents
 ===
