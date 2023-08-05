@@ -1,9 +1,41 @@
 version: '3'
 
 services:
-  rva-service:
-    build: .
+  mongo_seed:
+    image: mongo:3.6.3
     volumes:
-      - ./:/usr/src/app
+      - ./db/.:/src/data
+    working_dir: /src/data
+    command: ./seed.sh
+    networks: [rva]
+  mongo:
+    image: mongo:3.6.3
+    restart: always
     ports:
-      - 3001:3000
+      - 27017:27017
+    depends_on:
+      - mongo_seed
+    networks: [rva]
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    networks: [rva]
+    command: redis-server
+  app:
+    build: .
+    command: "bundler exec rails server -b 0.0.0.0"
+    ports:
+      - 3000:3000
+    networks: [rva]
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
+
+networks:
+  rva:
+    driver: bridge
