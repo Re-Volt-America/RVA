@@ -187,7 +187,7 @@ Credentials
 - Password: `adminadmin`
 
 ## Docker
-This project includes a `docker-compose.yml` file ready to use in order to run the project using Docker.
+This project includes a `docker-compose.yml` file ready to use in order to run using Docker.
 
 The Docker configuration is designed to work from the project folder itself, so in order to run it you must first clone
 this repository and cd into it:
