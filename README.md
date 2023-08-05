@@ -13,8 +13,7 @@ official rankings.
 
 RVGL Results               | RVGL Results
 :-------------------------:|:-------------------------:
-![screenshot_2023-02-07_20-03-15](https://github.com/Re-Volt-America/RVA/assets/26081543/eafe16e0-a806-40c2-af32-d943db16fab0)  | ![screenshot_2023-03-26_13-48-21](https://github.com/Re-Volt-America/RVA/assets/26081543/8773ae36-fa4a-4567-aa98-74a6eb15eda6)
-
+![screenshot_2023-02-07_20-03-15](https://github.com/Re-Volt-America/RVA/assets/26081543/f16e3fcd-3b68-446f-a988-dc2b26f97688)  |  ![screenshot_2023-03-26_13-48-21](https://github.com/Re-Volt-America/RVA/assets/26081543/4184effc-5872-4c9d-8b81-321c3fdae51c)
 
 This project aims to be the main website for RVA, where online session logs will be uploaded and parsed into
 RVA's results format to be displayed. The site will also help manage and maintain a wide range of information related to
@@ -56,6 +55,42 @@ Update & Upgrade Packages.
 apt-get update -y && apt-get upgrade -y
 ```
 
+Update GNU Privacy Guard
+```bash
+apt-get install gnupg2
+```
+
+Install Curl
+```bash
+apt-get install curl
+```
+
+Download and Install RVM. Run the following commands WITHOUT super user rights and replace `<username>` with your
+username.
+```bash
+command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+\curl -sSL https://get.rvm.io | bash -s stable
+source /home/<username>/.rvm/scripts/rvm
+```
+
+Install Ruby 2.7.3
+```bash
+rvm install 2.7.3
+```
+
+Now with the following command you should be able to see your installed Ruby versions and use version 2.7.3
+```bash
+rvm list
+rvm use 2.7.3
+```
+
+Install NodeJS
+```bash
+curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
+sudo bash /tmp/nodesource_setup.sh
+sudo apt-get install -y nodejs
+```
+
 Install MongoDB & Redis.
 ```bash
 apt-get install mongodb -y && apt-get install redis-server -y
@@ -72,6 +107,10 @@ Docker
 
 Mounting
 ---
+```bash
+sudo apt-get install git -y
+```
+
 Clone this repository to your machine and cd into it:
 ```bash
 git clone https://github.com/Re-Volt-America/RVA
@@ -80,12 +119,12 @@ cd RVA
 
 Ensure bundler is installed:
 ```bash
-gem install bundle
+gem install bundler
 ```
 
 Download and install dependencies:
 ```bash
-bundle install
+bundler install
 ```
 
 ### Database Setup
@@ -101,11 +140,11 @@ site.
 
 Import each file as follows:
 ```bash
-mongoimport --db rva_development --collection users --file rv_cars.cars.json --jsonArray
-mongoimport --db rva_development --collection users --file rv_rankings.rankings.json --jsonArray
-mongoimport --db rva_development --collection users --file rv_seasons.seasons.json --jsonArray
-mongoimport --db rva_development --collection users --file rv_tracks.tracks.json --jsonArray
-mongoimport --db rva_development --collection users --file rv_users.users.json --jsonArray
+mongoimport --db rv_cars --collection users --file rv_cars.cars.json --jsonArray
+mongoimport --db rv_rankings --collection users --file rv_rankings.rankings.json --jsonArray
+mongoimport --db rv_seasons --collection users --file rv_seasons.seasons.json --jsonArray
+mongoimport --db rv_tracks --collection users --file rv_tracks.tracks.json --jsonArray
+mongoimport --db rv_users --collection users --file rv_users.users.json --jsonArray
 ```
 
 #### Redis
