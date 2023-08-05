@@ -236,4 +236,4 @@ software as a network service, anyone who can use that service must also have ac
 * [Benjamin Mosso](https://github.com/bamm99).
 * [Juan Pablo Rosas](https://github.com/yeipills).
 * [Leandro Rodriguez](https://github.com/TioRotti).
-* [Lautaro](https://github.com/Burdang).
+* [Dario Chaile](https://github.com/Burdang).
