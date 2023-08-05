@@ -73,17 +73,17 @@ Update & Upgrade Packages.
 apt-get update -y && apt-get upgrade -y
 ```
 
-Update GNU Privacy Guard
+Update GNU Privacy Guard.
 ```bash
 apt-get install gnupg2
 ```
 
-Install Curl
+Install Curl.
 ```bash
 apt-get install curl
 ```
 
-Install NodeJS
+Install NodeJS.
 ```bash
 curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
 sudo bash /tmp/nodesource_setup.sh
@@ -191,7 +191,6 @@ This project includes a `docker-compose.yml` file ready to use in order to run t
 
 The Docker configuration is designed to work from the project folder itself, so in order to run it you must first clone
 this repository and cd into it:
-
 ```bash
 git clone https://github.com/Re-Volt-America/RVA
 cd RVA
