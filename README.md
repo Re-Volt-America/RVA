@@ -90,6 +90,11 @@ sudo bash /tmp/nodesource_setup.sh
 sudo apt-get install -y nodejs
 ```
 
+Install Yarn.
+```
+npm install -g yarn
+```
+
 Install MongoDB & Redis.
 ```bash
 apt-get install mongodb -y && apt-get install redis-server -y
@@ -139,6 +144,13 @@ gem install bundler
 Download and install dependencies:
 ```bash
 bundler install
+```
+
+Run yarn install tasks:
+```bash
+yarn install
+yarn build
+yarn build:css
 ```
 
 #### Database Setup
