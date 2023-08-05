@@ -4,8 +4,6 @@ development:
       hosts:
         - "mongo:27017"
       database: rva_development
-      user: 'user'
-      password: 'password'
   # Configure Mongoid specific options. (optional)
   options:
     # Application name that is printed to the mongodb logs upon establishing
