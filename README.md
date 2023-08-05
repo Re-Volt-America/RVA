@@ -1,4 +1,4 @@
-RVA
+RVA [![License: GPL v3](https://img.shields.io/github/license/Re-Volt-America/RVA)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 ===
 This is the code that powers the website and backend services for Re-Volt America (RVA), the American community around
 the popular RC Cars racing game [Re-Volt](https://en.wikipedia.org/wiki/Re-Volt) from 1999.
