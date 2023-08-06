@@ -154,6 +154,10 @@ yarn build:css
 ```
 
 #### Database Setup
+Both MongoDB and Redis come configured to work on "localhost" by default. If you run the application with Docker, make
+sure to change "localhost" for "mongo" and "redis" respectively. For example, in the `monoid.yml` file, you would have
+to change `- "localhost:27017"` to `- "mongo:27017"`.
+
 ##### MongoDB
 You may edit your MongoDB client configuration from the `config/mongoid.yml` file. Since Mongo is running on its default
 port, you don't need to do anything here. Default settings should suffice. You may modify this file in case you want to

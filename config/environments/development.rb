@@ -21,7 +21,7 @@ Rails.application.configure do
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :redis_cache_store, {
-      :host => 'redis',
+      :host => 'localhost',
       :port => 6379,
       :db => 0
     }
