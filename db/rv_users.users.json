@@ -768,4 +768,68 @@
     "$date": "2023-08-01T05:54:31.606Z"
   },
   "last_sign_in_ip": "127.0.0.1"
+},
+{
+  "_id": {
+    "$oid": "64cf2e3816365c43f8dac51e"
+  },
+  "email": "admin@example.com",
+  "encrypted_password": "$2a$12$ycW2oELhvFoGN8n6B0fQSeKRQqLBDyFewKKIUInBUbRyJsu.QKSpG",
+  "sign_in_count": 1,
+  "failed_attempts": 0,
+  "locale": "en_us",
+  "username": "Admin",
+  "admin": false,
+  "mod": false,
+  "organizer": false,
+  "updated_at": {
+    "$date": "2023-08-06T05:23:19.369Z"
+  },
+  "created_at": {
+    "$date": "2023-08-06T05:23:04.318Z"
+  },
+  "profile": {
+    "_id": {
+      "$oid": "64cf2e3816365c43f8dac51f"
+    },
+    "about": "",
+    "gender": "",
+    "public_email": "",
+    "location": "",
+    "discord": "",
+    "github": "",
+    "instagram": "",
+    "crowdin": "",
+    "steam": "",
+    "twitter": "",
+    "occupation": "",
+    "interests": ""
+  },
+  "stats": {
+    "_id": {
+      "$oid": "64cf2e3816365c43f8dac520"
+    },
+    "race_wins": 0,
+    "race_count": 0,
+    "average_position": 0,
+    "participation_rate": 0,
+    "official_score": 0,
+    "obtained_points": 0,
+    "team_points": 0
+  },
+  "confirmation_token": "dNbSCjvnQzouFQBsu9ZA",
+  "confirmation_sent_at": {
+    "$date": "2023-08-06T05:23:04.330Z"
+  },
+  "confirmed_at": {
+    "$date": "2023-08-06T05:23:19.354Z"
+  },
+  "current_sign_in_at": {
+    "$date": "2023-08-06T05:23:19.369Z"
+  },
+  "current_sign_in_ip": "127.0.0.1",
+  "last_sign_in_at": {
+    "$date": "2023-08-06T05:23:19.369Z"
+  },
+  "last_sign_in_ip": "127.0.0.1"
 }]
