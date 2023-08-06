@@ -13,7 +13,7 @@ Table of Contents
     * [Code Editor Configuration](#code-editor-configuration)
 * [Code Development](#code-development)
     * [System Architecture & Design Patterns](#system-architecture--design-patterns)
-* [Repository Interaction]
+* [Repository Interaction](#repository-interaction)
     * [Branches](#branches)
     * [How to Contribute](#how-to-contribute)
     * [Version Control](#version-control)
