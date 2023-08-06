@@ -30,7 +30,7 @@ gem 'net-protocol', :require => false
 gem 'net-smtp', :require => false
 
 group :development, :test do
-  gem 'byebug', :platforms => [ # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', :platforms => [                   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     :mri, :mingw, :x64_mingw
   ]
   gem 'erb2haml', '~> 0.1.5'                      # Bulk covert ERB to HAML
