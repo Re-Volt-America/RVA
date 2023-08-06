@@ -18,10 +18,10 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'             # Bundle edge Rails instead: g
 gem 'redcarpet', '~> 3.6'                         # The safe Markdown parser, reloaded
 gem 'redis', '~> 4.0'                             # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                        # A set of Rails responders to dry up your application
-gem 'rubocop', :require => false # A Ruby static code analyzer and formatter
-gem 'sentry-ruby', '~> 5.8' # Sentry SDK for Ruby
-gem 'stimulus-rails', '~> 1.2', '>= 1.2.1' # Use Stimulus in your Ruby on Rails app
-gem 'turbo-rails', '~> 1.3', '>= 1.3.3' # Use Turbo in your Ruby on Rails app
+gem 'rubocop', :require => false                  # A Ruby static code analyzer and formatter
+gem 'sentry-ruby', '~> 5.8'                       # Sentry SDK for Ruby
+gem 'stimulus-rails', '~> 1.2', '>= 1.2.1'        # Use Stimulus in your Ruby on Rails app
+gem 'turbo-rails', '~> 1.3', '>= 1.3.3'           # Use Turbo in your Ruby on Rails app
 
 # Fix protocol warnings...
 gem 'net-http', :require => false
