@@ -24,7 +24,7 @@ class User
          :trackable, :omniauthable
 
   ## Username
-  field :username
+  field :username, :type => String
 
   ## Database authenticatable
   field :email,              :type => String, :default => ''
