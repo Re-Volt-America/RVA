@@ -779,7 +779,7 @@
   "failed_attempts": 0,
   "locale": "en_us",
   "username": "Admin",
-  "admin": false,
+  "admin": true,
   "mod": false,
   "organizer": false,
   "updated_at": {
