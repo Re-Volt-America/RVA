@@ -10,4 +10,7 @@ class Team
   field :short_name, :type => String
   field :image, :type => String
   field :leader, :type => String
+
+  validates_presence_of :name
+  validates_presence_of :short_name
 end

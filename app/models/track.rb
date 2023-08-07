@@ -13,6 +13,13 @@ class Track
   field :folder_name, :type => String
   field :stock, :type => Boolean, :default => false
 
+  validates_presence_of :name
+  validates_presence_of :short_name
+  validates_presence_of :difficulty
+  validates_presence_of :length
+  validates_presence_of :folder_name
+  validates_presence_of :stock
+
   def thumbnail_url
     "#{ORG::TRACKS_REPO_URL}/gfx/#{folder_name}.bmp"
   end

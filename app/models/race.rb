@@ -11,6 +11,9 @@ class Race
   field :laps, :type => Integer
   field :racers_count, :type => Integer
 
+  validates_presence_of :laps
+  validates_presence_of :racers_count
+
   def get_racer_names
     names = []
 

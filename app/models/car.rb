@@ -14,4 +14,13 @@ class Car
   field :folder_name, :type => String
   field :category, :type => Integer
   field :stock, :type => Boolean, :default => false
+
+  validates_presence_of :name
+  validates_presence_of :speed
+  validates_presence_of :accel
+  validates_presence_of :weight
+  validates_presence_of :multiplier
+  validates_presence_of :folder_name
+  validates_presence_of :category
+  validates_presence_of :stock
 end

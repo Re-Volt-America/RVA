@@ -13,4 +13,11 @@ class RacerEntry
   field :best_lap, :type => String
   field :finished, :type => Mongoid::Boolean
   field :cheating, :type => Mongoid::Boolean
+
+  validates_presence_of :position
+  validates_presence_of :username
+  validates_presence_of :time
+  validates_presence_of :best_lap
+  validates_presence_of :finished
+  validates_presence_of :cheating
 end

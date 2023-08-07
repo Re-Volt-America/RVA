@@ -10,4 +10,8 @@ class Tournament
   field :name, :type => String
   field :date, :type => Date
   field :format, :type => String
+
+  validates_presence_of :name
+  validates_presence_of :date
+  validates_presence_of :format
 end
