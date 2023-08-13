@@ -9,7 +9,12 @@ class CarsController < ApplicationController
   end
 
   # GET /cars/1 or /cars/1.json
-  def show; end
+  def show
+    respond_to do |format|
+      format.html { render :show, :status => :ok }
+      format.json { render :layout => false }
+    end
+  end
 
   # GET /cars/new
   def new
