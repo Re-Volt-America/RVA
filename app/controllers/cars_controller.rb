@@ -14,7 +14,7 @@ class CarsController < ApplicationController
     end
   end
 
-  # GET /cars/1 or /cars/hash.json
+  # GET /cars/1 or /cars/1.json
   def show
     respond_with @car do |format|
       format.json { render :layout => false }
