@@ -3,15 +3,20 @@ class CarsController < ApplicationController
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_car, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /cars or /cars.json
   def index
     @cars = Car.all
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
   end
 
-  # GET /cars/1 or /cars/1.json
+  # GET /cars/1 or /cars/hash.json
   def show
-    respond_to do |format|
-      format.html { render :show, :status => :ok }
+    respond_with @car do |format|
       format.json { render :layout => false }
     end
   end
@@ -31,10 +36,10 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.save
         format.html { redirect_to car_url(@car), :notice => 'Car was successfully created.' }
-        format.json { render :show, :status => :created, :location => @car }
+        format.json { render :show, :status => :created, :location => @car, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @car.errors, :status => :unprocessable_entity }
+        format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -44,10 +49,10 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.update(car_params)
         format.html { redirect_to car_url(@car), :notice => 'Car was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @car }
+        format.json { render :show, :status => :ok, :location => @car, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @car.errors, :status => :unprocessable_entity }
+        format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -58,7 +63,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to cars_url, :notice => 'Car was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_content, :layout => false }
     end
   end
 
