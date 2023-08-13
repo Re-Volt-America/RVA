@@ -116,6 +116,28 @@ module SYS
 end
 
 module RVA
+  module PLATFORM
+    def self.windows?
+      (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def self.mac?
+      (/darwin/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def self.unix?
+      !PLATFORM.windows?
+    end
+
+    def self.linux?
+      PLATFORM.unix? and not PLATFORM.mac?
+    end
+
+    def self.jruby?
+      RUBY_ENGINE == 'jruby'
+    end
+  end
+
   class Application < Rails::Application
     class << self
       def rva_role

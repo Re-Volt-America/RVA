@@ -82,12 +82,13 @@ class SessionsController < ApplicationController
 
     file = params[:file]
 
-    # FIXME: This check fails on MacOS, even when using correct .csv files.
     if file.content_type != CsvImportSessionsService::CSV_TYPE
       respond_to do |format|
         format.html { redirect_to new_session_path, :note => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request }
       end
+
+      return
     end
 
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
