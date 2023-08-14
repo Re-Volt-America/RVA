@@ -130,7 +130,7 @@ module RVA
     end
 
     def self.linux?
-      PLATFORM.unix? and not PLATFORM.mac?
+      PLATFORM.unix? and !PLATFORM.mac?
     end
 
     def self.jruby?
