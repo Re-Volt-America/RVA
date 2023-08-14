@@ -16,7 +16,7 @@ end
 case ENV.fetch('RVA_ROLE', nil)
 when 'rva'
   port = 3000
-  pid = 'tmp/pids/octc.pid'
+  pid = 'tmp/pids/rva.pid'
 when 'api'
   port = 3010
   pid = 'tmp/pids/api.pid'
