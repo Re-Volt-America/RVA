@@ -3,9 +3,15 @@ class SessionsController < ApplicationController
   before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_session, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all
+
+    respond_with @sessions do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /sessions/1 or /sessions/1.json
@@ -17,6 +23,10 @@ class SessionsController < ApplicationController
     # @colspan = 2
 
     @rva_results = RvaCalculateResultsService.new(@session).call
+
+    respond_with @session do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /sessions/new
@@ -34,10 +44,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.save
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully created.' }
-        format.json { render :show, :status => :created, :location => @session }
+        format.json { render :show, :status => :created, :location => @session, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @session.errors, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -47,10 +57,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.update(session_params)
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @session }
+        format.json { render :show, :status => :ok, :location => @session, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @session.errors, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -85,7 +95,7 @@ class SessionsController < ApplicationController
     if file.content_type != CsvImportSessionsService::CSV_TYPE
       respond_to do |format|
         format.html { redirect_to new_session_path, :note => 'You may only upload CSV files.' }
-        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request }
+        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
       end
 
       return
@@ -97,10 +107,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.save!
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully imported.' }
-        format.json { render :show, :status => :created, :location => @session }
+        format.json { render :show, :status => :created, :location => @session, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @session.errors, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
