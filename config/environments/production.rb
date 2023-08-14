@@ -56,12 +56,12 @@ Rails.application.configure do
   config.action_controller.enable_fragment_cache_logging = true
 
   config.cache_store = :redis_cache_store, {
-      :host => 'localhost',
-      :port => 6379,
-      :db => 0
+    :host => 'localhost',
+    :port => 6379,
+    :db => 0
   }
   config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{30.days.to_i}"
+    'Cache-Control' => "public, max-age=#{30.days.to_i}"
   }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
