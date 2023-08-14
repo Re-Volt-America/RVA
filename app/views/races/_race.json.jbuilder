@@ -1,2 +1,2 @@
-json.extract! race, :id, :track, :racers_count, :created_at, :updated_at
+json.extract! race, :id, :track, :laps, :racers_count, :racer_entries
 json.url race_url(race, :format => :json)
