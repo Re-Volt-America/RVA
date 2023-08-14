@@ -3,13 +3,23 @@ class TracksController < ApplicationController
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_track, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /tracks or /tracks.json
   def index
     @tracks = Track.all
+
+    respond_with @tracks do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /tracks/1 or /tracks/1.json
-  def show; end
+  def show
+    respond_with @track do |format|
+      format.json { render :layout => false }
+    end
+  end
 
   # GET /tracks/new
   def new
@@ -26,10 +36,10 @@ class TracksController < ApplicationController
     respond_to do |format|
       if @track.save
         format.html { redirect_to track_url(@track), :notice => 'Track was successfully created.' }
-        format.json { render :show, :status => :created, :location => @track }
+        format.json { render :show, :status => :created, :location => @track, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @track.errors, :status => :unprocessable_entity }
+        format.json { render :json => @track.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -39,10 +49,10 @@ class TracksController < ApplicationController
     respond_to do |format|
       if @track.update(track_params)
         format.html { redirect_to track_url(@track), :notice => 'Track was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @track }
+        format.json { render :show, :status => :ok, :location => @track, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @track.errors, :status => :unprocessable_entity }
+        format.json { render :json => @track.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
