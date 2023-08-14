@@ -3,13 +3,23 @@ class SeasonsController < ApplicationController
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_season, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /seasons or /seasons.json
   def index
     @seasons = Season.all
+
+    respond_with @seasons do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /seasons/1 or /seasons/1.json
-  def show; end
+  def show
+    respond_with @season do |format|
+      format.json { render :layout => false }
+    end
+  end
 
   # GET /seasons/new
   def new
@@ -26,10 +36,10 @@ class SeasonsController < ApplicationController
     respond_to do |format|
       if @season.save
         format.html { redirect_to season_url(@season), :notice => 'Season was successfully created.' }
-        format.json { render :show, :status => :created, :location => @season }
+        format.json { render :show, :status => :created, :location => @season, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @season.errors, :status => :unprocessable_entity }
+        format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -39,10 +49,10 @@ class SeasonsController < ApplicationController
     respond_to do |format|
       if @season.update(season_params)
         format.html { redirect_to season_url(@season), :notice => 'Season was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @season }
+        format.json { render :show, :status => :ok, :location => @season, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @season.errors, :status => :unprocessable_entity }
+        format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
