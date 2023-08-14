@@ -3,13 +3,23 @@ class TeamsController < ApplicationController
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_team, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /teams or /teams.json
   def index
     @teams = Team.all
+
+    respond_with @teams do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /teams/1 or /teams/1.json
-  def show; end
+  def show
+    respond_with @team do |format|
+      format.json { render :layout => false }
+    end
+  end
 
   # GET /teams/new
   def new
@@ -26,10 +36,10 @@ class TeamsController < ApplicationController
     respond_to do |format|
       if @team.save
         format.html { redirect_to team_url(@team), :notice => 'Team was successfully created.' }
-        format.json { render :show, :status => :created, :location => @team }
+        format.json { render :show, :status => :created, :location => @team, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @team.errors, :status => :unprocessable_entity }
+        format.json { render :json => @team.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -39,10 +49,10 @@ class TeamsController < ApplicationController
     respond_to do |format|
       if @team.update(team_params)
         format.html { redirect_to team_url(@team), :notice => 'Team was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @team }
+        format.json { render :show, :status => :ok, :location => @team, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @team.errors, :status => :unprocessable_entity }
+        format.json { render :json => @team.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
