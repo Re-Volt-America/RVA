@@ -3,13 +3,23 @@ class TournamentsController < ApplicationController
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_tournament, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /tournaments or /tournaments.json
   def index
     @tournaments = Tournament.all
+
+    respond_with @tournaments do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /tournaments/1 or /tournaments/1.json
-  def show; end
+  def show
+    respond_with @tournament do |format|
+      format.json { render :layout => false }
+    end
+  end
 
   # GET /tournaments/new
   def new
@@ -26,10 +36,10 @@ class TournamentsController < ApplicationController
     respond_to do |format|
       if @tournament.save
         format.html { redirect_to tournament_url(@tournament), :notice => 'Tournament was successfully created.' }
-        format.json { render :show, :status => :created, :location => @tournament }
+        format.json { render :show, :status => :created, :location => @tournament, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @tournament.errors, :status => :unprocessable_entity }
+        format.json { render :json => @tournament.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
@@ -39,10 +49,10 @@ class TournamentsController < ApplicationController
     respond_to do |format|
       if @tournament.update(tournament_params)
         format.html { redirect_to tournament_url(@tournament), :notice => 'Tournament was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @tournament }
+        format.json { render :show, :status => :ok, :location => @tournament, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @tournament.errors, :status => :unprocessable_entity }
+        format.json { render :json => @tournament.errors, :status => :unprocessable_entity, :layout => false }
       end
     end
   end
