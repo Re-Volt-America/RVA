@@ -153,7 +153,7 @@ module RVA
     end
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Gracefully handle website exceptions such as 404, 422 & 500. All through the ErrorsController
     config.exceptions_app = routes
