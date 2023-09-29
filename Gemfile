@@ -17,6 +17,8 @@ gem 'responders', '~> 3.1'                                            # A set of
 gem 'rubocop', :require => false                                      # A Ruby static code analyzer and formatter
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
+gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
+gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
 gem 'importmap-rails', '~> 1.2', '>= 1.2.1'                           # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
