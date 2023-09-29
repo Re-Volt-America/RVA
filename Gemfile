@@ -1,27 +1,27 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'bootsnap', require: false                                        # Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', :require => false                                        # Reduces boot times through caching; required in config/boot.rb
+gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
 gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'mongoid', '~> 8.1', '>= 8.1.2'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
+gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rails', '~> 7.1.0.rc1'                                           # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
-gem "redis", ">= 4.0.1"                                               # Use Redis adapter to run Action Cable in production
+gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application
 gem 'rubocop', :require => false                                      # A Ruby static code analyzer and formatter
-gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
-gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
-gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
-gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 
 group :development, :test do
   gem 'byebug', :platforms => [                                       # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -31,9 +31,9 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby] # Add a short explanation where the exception is raised
   gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  gem 'error_highlight', ">= 0.4.0", platforms: [:ruby]               # Add a short explanation where the exception is raised
+  gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 
 group :test do
@@ -44,4 +44,4 @@ group :test do
   gem 'webdrivers', '~> 5.3'                                          # Easy installation and use of web drivers to run system tests with
 end
 
-gem 'tzinfo-data', platforms: %i[ windows jruby ]                     # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', :platforms => [:windows, :jruby]                     # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
