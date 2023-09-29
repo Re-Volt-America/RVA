@@ -10,13 +10,13 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Paginati
 gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'mongoid', '~> 8.1', '>= 8.1.2'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
-gem "rails", "~> 7.1.0.rc1"                                           # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.1.0.rc1'                                           # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem "redis", ">= 4.0.1"                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application
 gem 'rubocop', :require => false                                      # A Ruby static code analyzer and formatter
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "puma", ">= 5.0"                                                  # Use the Puma web server [https://github.com/puma/puma]
+gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'importmap-rails', '~> 1.2', '>= 1.2.1'                           # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
@@ -38,7 +38,7 @@ end
 group :development do
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]               # Add a short explanation where the exception is raised
+  gem 'error_highlight', ">= 0.4.0", platforms: [:ruby]               # Add a short explanation where the exception is raised
 end
 
 group :test do
@@ -49,4 +49,4 @@ group :test do
   gem 'webdrivers', '~> 5.3'                                          # Easy installation and use of web drivers to run system tests with
 end
 
-gem "tzinfo-data", platforms: %i[ windows jruby ]                     # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[ windows jruby ]                     # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
