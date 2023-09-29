@@ -47,7 +47,7 @@ This project was built using [Ruby on Rails](https://rubyonrails.org/), the full
 
 ## Installation
 Install the following services and configure them to run on their default ports if needed:
-* [Ruby 2.7.3](https://www.ruby-lang.org/en/)
+* [Ruby 3.2.2](https://www.ruby-lang.org/en/)
   * OS X: [RVM](http://rvm.io/) is recommended over the default OS X Ruby. Here's a one-liner:
    `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
 * [MongoDB 3+](https://www.mongodb.com/)
@@ -113,15 +113,15 @@ command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
 source /home/<username>/.rvm/scripts/rvm
 ```
 
-Install Ruby 2.7.3 via RVM.
+Install Ruby 3.2.2 via RVM.
 ```bash
-rvm install 2.7.3
+rvm install 3.2.2
 ```
 
 With the following command you should be able to see your installed Ruby versions and use version 2.7.3
 ```bash
 rvm list
-rvm use 2.7.3
+rvm use 3.2.2
 ```
 
 #### Mounting

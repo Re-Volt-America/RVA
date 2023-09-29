@@ -1,4 +1,4 @@
-# Official base image for Ruby 2.7.3
+# Official base image for Ruby 3.2.2
 FROM ruby:3.2.2
 
 # Update & Upgrade Packages
