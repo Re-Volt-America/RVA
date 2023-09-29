@@ -1,5 +1,5 @@
 # Official base image for Ruby 2.7.3
-FROM ruby:2.7.3
+FROM ruby:3.2.2
 
 # Update & Upgrade Packages
 RUN apt-get update -y
