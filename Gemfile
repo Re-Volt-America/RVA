@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'bootsnap', :require => false                                        # Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
