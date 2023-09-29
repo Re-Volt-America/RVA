@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby '3.2.2'
 
 gem 'bootsnap', require: false                                        # Reduces boot times through caching; required in config/boot.rb
-gem 'devise', '~> 4.9', '>= 4.9.2'                                    # Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
@@ -21,12 +21,6 @@ gem 'importmap-rails', '~> 1.2', '>= 1.2.1'                           # Use Java
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-
-# Fix protocol warnings...
-gem 'net-http', :require => false
-gem 'net-imap', :require => false
-gem 'net-protocol', :require => false
-gem 'net-smtp', :require => false
 
 group :development, :test do
   gem 'byebug', :platforms => [                                       # Call 'byebug' anywhere in the code to stop execution and get a debugger console
