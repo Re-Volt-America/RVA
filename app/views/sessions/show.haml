@@ -1,5 +1,5 @@
 - cache "Session##{@session.id}", :expires_in => 5.minutes do
-  %table
+  %table.table-bordered
     %thead
       %tr
         %th{:width => "2%"}
@@ -59,15 +59,44 @@
               = row[2]
             %td
               = row[3]
+
+            - i = 0
+            - step = 0
+            - colspan = 1
+            - first = true
             - row[4].each do |item|
-              - if item.eql?("")
-                -# @colspan += 2
+              - if !step.zero?
+                - step -= 1
+                - colspan -= 1
+                - i += 1
                 - next
 
-              %td{:colspan => @colspan}
-                -# @colspan = 2
-                - if item.is_a?(Car)
+              - if item.eql?("x")
+                - col = i
+                - while row[4][col + 1].eql?("x")
+                  - step += 1
+                  - colspan += 1
+                  - col += 1
+
+              - if item.is_a?(Car)
+                - col = i
+                - while not row[4][col + 1].is_a?(Car) and not row[4][col + 1].eql?("!")
+                  - step += 1
+                  - colspan += 1
+                  - col += 1
+
+              - if item.is_a?(Car)
+                %td{:colspan => colspan}
                   = link_to item.name, car_path(item)
+              - if item.eql?("x")
+                %td{:colspan => (first ? colspan : 1)}
+                  = "x"
+              - if item.eql?("!")
+                %td
+                  = item
+
+              - i += 1
+              - first = false
 
         - @count += 1
 

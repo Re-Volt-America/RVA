@@ -18,10 +18,7 @@ class SessionsController < ApplicationController
   def show
     require 'rva_calculate_results_service'
 
-    @first = true
     @count = 0
-    # @colspan = 2
-
     @rva_results = RvaCalculateResultsService.new(@session).call
 
     respond_with @session do |format|

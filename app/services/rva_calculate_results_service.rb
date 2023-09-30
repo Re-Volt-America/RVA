@@ -117,7 +117,7 @@ class RvaCalculateResultsService
 
       # Player didn't play this race, so we skip
       unless race.get_racer_names.include?(racer)
-        cars_line_arr << ''
+        cars_line_arr << 'x'
         next
       end
 
@@ -142,7 +142,11 @@ class RvaCalculateResultsService
       last_car_used_id = car_used_id
     end
 
-    cars_line_arr << ' '
+    cars_line_arr << '!'
+    cars_line_arr << '!'
+    cars_line_arr << '!'
+    cars_line_arr << '!'
+    cars_line_arr << '!'
     cars_line_arr
   end
 
@@ -287,7 +291,7 @@ class RvaCalculateResultsService
   end
 
   # FIXME: Link to team models
-  def get_team(_racer)
+  def get_team(racer)
     false
   end
 
