@@ -35,5 +35,6 @@
   %script $(document).ready(function() { $('span.highlight > code').each(function(i, block) { hljs.highlightBlock(block); }); });
 
   = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
-  = javascript_include_tag 'application', 'data-turbo-track': 'reload'
   = javascript_include_tag 'turbo', type: 'module'
+  = javascript_include_tag 'application', 'data-turbo-track': 'reload'
+
