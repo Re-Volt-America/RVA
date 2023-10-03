@@ -1,0 +1,93 @@
+- cache "Session##{@session.id}", :expires_in => 5.minutes do
+  %table.table-bordered
+    %thead
+      %tr
+        %th{:width => "2%"}
+          = @rva_results[0][0] # "#"
+        %th{:width => "8%"}
+          = @rva_results[0][1] # "Date"
+        %th{:width => "2%"}
+          FP
+        %th{:width => "5%"}
+          Racer
+        - @rva_results[0].slice(2, @session.races.size).each do |track|
+          %th{:width => "4%"}
+            = link_to track.short_name, track_path(track)
+        %th{:width => "2%"}
+          CC
+        %th{:width => "2%"}
+          PA
+    %tbody
+      - @rva_results.drop(1).each do |row|
+        - if @count.even?
+          %tr
+            %td
+              = row[0]
+            %td
+              = row[1]
+            %td
+              = row[2]
+            %td
+              -# FIXME: Check for nil users
+              = link_to row[3].username, user_path(row[3])
+            - row[4].each do |pos|
+              %td
+                = pos
+            %td
+              = row[5]
+            %td
+              = row[6]
+        - else
+          %tr
+            %td
+              = row[0]
+            %td
+              = row[1]
+            %td
+              = row[2]
+            %td
+              = row[3]
+
+            - i = 0
+            - step = 0
+            - colspan = 1
+            - first = true
+            - row[4].each do |item|
+              - if !step.zero?
+                - step -= 1
+                - colspan -= 1
+                - i += 1
+                - next
+
+              - if item.eql?("x")
+                - col = i
+                - while row[4][col + 1].eql?("x")
+                  - step += 1
+                  - colspan += 1
+                  - col += 1
+
+              - if item.is_a?(Car)
+                - col = i
+                - while not row[4][col + 1].is_a?(Car) and not row[4][col + 1].eql?("!")
+                  - step += 1
+                  - colspan += 1
+                  - col += 1
+
+              - if item.is_a?(Car)
+                %td{:colspan => colspan}
+                  = link_to item.name, car_path(item)
+              - if item.eql?("x")
+                %td{:colspan => (first ? colspan : 1)}
+                  = "x"
+              - if item.eql?("!")
+                %td
+                  = item
+
+              - i += 1
+              - first = false
+
+        - @count += 1
+
+= link_to 'Edit', edit_session_path(@session)
+|
+= link_to 'Back', sessions_path

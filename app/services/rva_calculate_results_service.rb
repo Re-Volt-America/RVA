@@ -33,7 +33,11 @@ class RvaCalculateResultsService
   end
 
   def call
-    get_rva_singles_results_arr
+    if @session.teams
+      get_rva_teams_results_arr
+    else
+      get_rva_singles_results_arr
+    end
   end
 
   def get_rva_singles_results_arr
@@ -71,6 +75,39 @@ class RvaCalculateResultsService
     end
 
     rva_results_arr
+  end
+
+  def get_rva_teams_results_arr
+    rva_teams_results_arr = [['#', 'Date'] + get_tracks_arr + %w(CC PA)]
+
+    first = true
+    pos = 1
+    racer_result_entries = get_racer_result_entries_arr
+    racer_result_entries.each do |result_entry|
+      name = result_entry.username
+      user = find_user(result_entry.username)
+
+      if first
+        racer_positions_line_arr = [@session.number, @session.date]
+        first = false
+      else
+        racer_positions_line_arr = ['', '']
+      end
+
+      racer_positions_line_arr += [pos.to_s, user]
+      racer_positions_line_arr << get_racer_positions_arr(name)
+      racer_positions_line_arr << result_entry.race_count
+      racer_positions_line_arr << result_entry.obtained_points
+      racer_cars_line_arr = ['', '', '', '']
+      racer_cars_line_arr << get_racer_cars_arr(name)
+
+      rva_teams_results_arr << racer_positions_line_arr
+      rva_teams_results_arr << racer_cars_line_arr
+
+      pos += 1
+    end
+
+    rva_teams_results_arr
   end
 
   def get_tracks_arr
@@ -142,11 +179,17 @@ class RvaCalculateResultsService
       last_car_used_id = car_used_id
     end
 
-    cars_line_arr << '!'
-    cars_line_arr << '!'
-    cars_line_arr << '!'
-    cars_line_arr << '!'
-    cars_line_arr << '!'
+    if @session.teams?
+      cars_line_arr << '!'
+      cars_line_arr << '!'
+    else
+      cars_line_arr << '!'
+      cars_line_arr << '!'
+      cars_line_arr << '!'
+      cars_line_arr << '!'
+      cars_line_arr << '!'
+    end
+
     cars_line_arr
   end
 
