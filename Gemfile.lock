@@ -195,6 +195,12 @@ GEM
     nokogiri (1.14.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    nokogiri (1.14.5-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.14.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.5-x86_64-linux)
+      racc (~> 1.4)
     omniauth (2.1.1)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
@@ -356,6 +362,7 @@ PLATFORMS
   ruby
   x64-mingw-ucrt
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
