@@ -179,7 +179,7 @@ class RvaCalculateResultsService
       last_car_used_id = car_used_id
     end
 
-    if @session.teams?
+    if @session.teams
       cars_line_arr << '!'
       cars_line_arr << '!'
     else
