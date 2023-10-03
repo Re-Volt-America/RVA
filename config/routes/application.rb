@@ -11,8 +11,7 @@ RVA::Application.routes.draw do
   get 'downloads' => 'downloads#index'
   get 'staff' => 'staff#index'
   get 'points' => 'points#index'
-
-  get 'stats' => 'users#stats'
+  get 'stats' => 'stats#index'
 
   resources :seasons
   resources :rankings
