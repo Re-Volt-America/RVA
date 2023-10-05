@@ -14,7 +14,7 @@
         %td= team.name
         %td= team.short_name
         %td= team.image
-        %td= team.string
+        %td= team.leader
         %td= link_to 'Show', team
         %td= link_to 'Edit', edit_team_path(team)
         %td= link_to 'Destroy', team, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
