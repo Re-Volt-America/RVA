@@ -11,6 +11,6 @@
         %td= ranking.number
         %td= link_to 'Show', ranking
         %td= link_to 'Edit', edit_ranking_path(ranking)
-        %td= link_to "Destroy", ranking, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+        %td= link_to "Destroy", ranking, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Ranking', new_ranking_path
