@@ -15,6 +15,6 @@
         %td= season.end_date
         %td= link_to 'Show', season
         %td= link_to 'Edit', edit_season_path(season)
-        %td= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', season, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Season', new_season_path

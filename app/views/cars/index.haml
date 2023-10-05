@@ -19,6 +19,6 @@
         %td= car.folder_name
         %td= link_to 'Show', car
         %td= link_to 'Edit', edit_car_path(car)
-        %td= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', car, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Car', new_car_path

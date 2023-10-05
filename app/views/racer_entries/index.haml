@@ -21,6 +21,6 @@
         %td= racer_entry.team
         %td= link_to 'Show', racer_entry
         %td= link_to 'Edit', edit_racer_entry_path(racer_entry)
-        %td= link_to 'Destroy', racer_entry, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', racer_entry, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Racer Entry', new_racer_entry_path

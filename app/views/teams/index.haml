@@ -17,6 +17,6 @@
         %td= team.string
         %td= link_to 'Show', team
         %td= link_to 'Edit', edit_team_path(team)
-        %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', team, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Team', new_team_path

@@ -23,6 +23,6 @@
         -# %td= session.sessionlog
         %td= link_to 'Show', session
         %td= link_to 'Edit', edit_session_path(session)
-        %td= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', session, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
 %br/
 = link_to 'New Session', new_session_path
