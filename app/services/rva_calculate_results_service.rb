@@ -361,9 +361,9 @@ class RvaCalculateResultsService
     end
   end
 
-  def find_team(name)
-    Rails.cache.fetch("Team##{name}") do
-      Team.find { |t| t.name.eql?(name) }
+  def find_team(short_name)
+    Rails.cache.fetch("Team##{short_name}") do
+      Team.find { |t| t.short_name.eql?(short_name) }
     end
   end
 end
