@@ -10,6 +10,8 @@
           FP
         %th{:width => "5%"}
           Racer
+        %th{:width => "5%"}
+          Team
         - @rva_results[0].slice(2, @session.races.size).each do |track|
           %th{:width => "4%"}
             = link_to track.short_name, track_path(track)
@@ -28,15 +30,19 @@
             %td
               = row[2]
             %td
-              -# FIXME: Check for nil users
-              = link_to row[3].username, user_path(row[3])
-            - row[4].each do |pos|
+              - if row[3].is_a?(User)
+                = link_to row[3].username, user_path(row[3])
+              - else
+                = row[3]
+            %td
+              = row[4]
+            - row[5].each do |pos|
               %td
                 = pos
             %td
-              = row[5]
-            %td
               = row[6]
+            %td
+              = row[7]
         - else
           %tr
             %td
@@ -47,12 +53,14 @@
               = row[2]
             %td
               = row[3]
-
+            %td
+              = row[4]
             - i = 0
             - step = 0
             - colspan = 1
             - first = true
-            - row[4].each do |item|
+            = byebug
+            - row[5].each do |item|
               - if !step.zero?
                 - step -= 1
                 - colspan -= 1
@@ -61,14 +69,14 @@
 
               - if item.eql?("x")
                 - col = i
-                - while row[4][col + 1].eql?("x")
+                - while row[5][col + 1].eql?("x")
                   - step += 1
                   - colspan += 1
                   - col += 1
 
               - if item.is_a?(Car)
                 - col = i
-                - while not row[4][col + 1].is_a?(Car) and not row[4][col + 1].eql?("!")
+                - while not row[5][col + 1].is_a?(Car) and not row[5][col + 1].eql?("!")
                   - step += 1
                   - colspan += 1
                   - col += 1

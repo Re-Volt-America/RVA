@@ -84,8 +84,13 @@ class RvaCalculateResultsService
     pos = 1
     racer_result_entries = get_racer_result_entries_arr
     racer_result_entries.each do |result_entry|
-      name = result_entry.username
-      user = find_user(result_entry.username)
+      full_username = result_entry.username
+
+      username = full_username.partition(" ").last
+      team_name = full_username.partition(" ").first
+
+      user = find_user(username)
+      team = find_team(team_name)
 
       if first
         racer_positions_line_arr = [@session.number, @session.date]
@@ -94,12 +99,12 @@ class RvaCalculateResultsService
         racer_positions_line_arr = ['', '']
       end
 
-      racer_positions_line_arr += [pos.to_s, user]
-      racer_positions_line_arr << get_racer_positions_arr(name)
+      racer_positions_line_arr += [pos.to_s, user, team]
+      racer_positions_line_arr << get_racer_positions_arr(full_username)
       racer_positions_line_arr << result_entry.race_count
       racer_positions_line_arr << result_entry.obtained_points
-      racer_cars_line_arr = ['', '', '', '']
-      racer_cars_line_arr << get_racer_cars_arr(name)
+      racer_cars_line_arr = ['', '', '', '', '']
+      racer_cars_line_arr << get_racer_cars_arr(full_username)
 
       rva_teams_results_arr << racer_positions_line_arr
       rva_teams_results_arr << racer_cars_line_arr
@@ -353,6 +358,12 @@ class RvaCalculateResultsService
   def find_car(car_id)
     Rails.cache.fetch("Car##{car_id}") do
       Car.find { |c| c.id.eql?(car_id) }
+    end
+  end
+
+  def find_team(name)
+    Rails.cache.fetch("Team##{name}") do
+      Team.find { |t| t.name.eql?(name) }
     end
   end
 end
