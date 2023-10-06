@@ -111,7 +111,7 @@ class CsvImportSessionsService
         racers = true
       end
 
-      if racers and (full_log[count + 1].nil? or (full_log[count + 1][0] == 'Session') or (full_log[count + 1][0] == 'Results'))
+      if racers && (full_log[count + 1].nil? or (full_log[count + 1][0] == 'Session') or (full_log[count + 1][0] == 'Results'))
         racers = false
 
         session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
