@@ -57,7 +57,7 @@ class RvaCalculateResultsService
         racer_positions_line_arr = ['', '']
       end
 
-      racer_positions_line_arr += [pos.to_s, user]
+      racer_positions_line_arr += [pos.to_s, user.nil? ? result_entry.username : user]
       racer_positions_line_arr << get_racer_positions_arr(name)
       racer_positions_line_arr << result_entry.average_position
       racer_positions_line_arr << result_entry.obtained_points
@@ -99,7 +99,7 @@ class RvaCalculateResultsService
         racer_positions_line_arr = ['', '']
       end
 
-      racer_positions_line_arr += [pos.to_s, user, team]
+      racer_positions_line_arr += [pos.to_s, (user.nil? ? username : user), (team.nil? ? team_name : team)]
       racer_positions_line_arr << get_racer_positions_arr(full_username)
       racer_positions_line_arr << result_entry.race_count
       racer_positions_line_arr << result_entry.obtained_points
