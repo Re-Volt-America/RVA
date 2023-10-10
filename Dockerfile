@@ -1,14 +1,19 @@
 # Official base image for Ruby 3.2.2
 FROM ruby:3.2.2
 
+ENV NODE_VERSION=16.13.0
+ENV NVM_DIR=/root/.nvm
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+
 # Update & Upgrade Packages
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
 # Install NodeJS 16
-RUN curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
-RUN bash /tmp/nodesource_setup.sh
-RUN apt-get install nodejs -y
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 
 # Install Yarn
 RUN npm install -g yarn
