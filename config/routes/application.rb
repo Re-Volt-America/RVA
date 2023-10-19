@@ -34,8 +34,8 @@ RVA::Application.routes.draw do
 
   devise_for :users,
              :controllers => {
-               :confirmations => 'confirmations',
-               :registrations => 'registrations'
+               :confirmations => 'users/confirmations',
+               :registrations => 'users/registrations'
              },
              :path_names => {
                :sign_in => 'login',
