@@ -5,6 +5,7 @@ ruby '3.2.2'
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
+gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
@@ -22,6 +23,7 @@ gem 'sentry-rails', '~> 5.11'                                         # A gem th
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem 'tzinfo-data', :platforms => [:windows, :jruby]                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 group :development, :test do
   gem 'byebug', :platforms => [                                       # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,5 +45,3 @@ group :test do
   gem 'selenium-webdriver'                                            # Adds support for Capybara system testing and selenium driver
   gem 'webdrivers', '~> 5.3'                                          # Easy installation and use of web drivers to run system tests with
 end
-
-gem 'tzinfo-data', :platforms => [:windows, :jruby]                     # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
