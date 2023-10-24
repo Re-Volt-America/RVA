@@ -33,4 +33,10 @@ module ApplicationHelper
   def true?(obj)
     obj.to_s.downcase == 'true'
   end
+
+  # @param datetime [DateTime]
+  # @return [String] Pretty date string (i.e: April 21st, 2022)
+  def pretty_datetime(datetime)
+    datetime.strftime("%B #{datetime.day.ordinalize}, %Y")
+  end
 end
