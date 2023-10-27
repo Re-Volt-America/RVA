@@ -17,7 +17,7 @@ module ApplicationHelper
 
   # Check if the passed user is an organizer
   # @return [Boolean] true if the current user is an organizer, false otherwise
-  def user_is_organizer(user = current_user)
+  def user_is_organizer?(user = current_user)
     user && user.organizer?
   end
 
