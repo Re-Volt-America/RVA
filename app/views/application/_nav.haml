@@ -48,8 +48,11 @@
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
             %i.fa.fa-trophy{:"aria-hidden" => true}
-            = t('nav.league.title')
+            = "Online"
           %div.dropdown-menu{:"aria-labelledby" => "dropdown03"}
+            %a.dropdown-item{:href => seasons_path}
+              %i.fa.fa-calendar
+              = "Seasons"
             %a.dropdown-item{:href => teams_path}
               %i.fa.fa-users
               = t('nav.league.teams')

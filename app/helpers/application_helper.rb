@@ -39,4 +39,24 @@ module ApplicationHelper
   def pretty_datetime(datetime)
     datetime.strftime("%B #{datetime.day.ordinalize}, %Y")
   end
+
+  # @param session [Session]
+  # @return [String] Hex colour of the session category
+  def session_color_hex(session)
+    unless session.is_a?(Session)
+      return nil
+    end
+
+    SYS::RVA_CATEGORY_COLORS[session.category]
+  end
+
+  # @param session [Session]
+  # @return [String] Capitalised name of the session category
+  def session_category_name(session)
+    unless session.is_a?(Session)
+      return nil
+    end
+
+    SYS::RVA_CATEGORY_NAMES[session.category].capitalize.gsub(/-[a-z]/, &:upcase)
+  end
 end

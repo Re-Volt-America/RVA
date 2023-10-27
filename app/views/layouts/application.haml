@@ -3,7 +3,7 @@
   = render :partial => "head"
   %body
     = render :partial => "nav"
-
+    = yield :splash if content_for?(:splash)
     .container
       = render :partial => "alerts"
       = if content_for?(:content) then yield :content else yield end
