@@ -43,9 +43,7 @@ module ApplicationHelper
   # @param session [Session]
   # @return [String] Hex colour of the session category
   def session_color_hex(session)
-    unless session.is_a?(Session)
-      return nil
-    end
+    return nil unless session.is_a?(Session)
 
     SYS::RVA_CATEGORY_COLORS[session.category]
   end
@@ -53,9 +51,7 @@ module ApplicationHelper
   # @param session [Session]
   # @return [String] Capitalised name of the session category
   def session_category_name(session)
-    unless session.is_a?(Session)
-      return nil
-    end
+    return nil unless session.is_a?(Session)
 
     SYS::RVA_CATEGORY_NAMES[session.category].capitalize.gsub(/-[a-z]/, &:upcase)
   end

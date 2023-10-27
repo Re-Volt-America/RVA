@@ -3,9 +3,7 @@ module SessionsHelper
 
   # TODO: Maybe sort?
   def latest_session
-    if current_ranking.nil?
-      nil
-    end
+    nil if current_ranking.nil?
 
     current_ranking.sessions.first
   end

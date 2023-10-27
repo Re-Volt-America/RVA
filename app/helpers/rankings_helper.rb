@@ -3,9 +3,7 @@ module RankingsHelper
 
   # TODO: Maybe sort?
   def current_ranking
-    if current_season.nil?
-      return nil
-    end
+    return nil if current_season.nil?
 
     current_season.rankings.first
   end

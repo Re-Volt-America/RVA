@@ -86,8 +86,8 @@ class RvaCalculateResultsService
     racer_result_entries.each do |result_entry|
       full_username = result_entry.username
 
-      username = full_username.partition(" ").last
-      team_name = full_username.partition(" ").first
+      username = full_username.partition(' ').last
+      team_name = full_username.partition(' ').first
 
       user = find_user(username)
       team = find_team(team_name)
@@ -339,7 +339,7 @@ class RvaCalculateResultsService
   end
 
   # FIXME: Link to team models
-  def get_team(racer)
+  def get_team(_racer)
     false
   end
 
