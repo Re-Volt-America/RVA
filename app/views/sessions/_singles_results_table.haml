@@ -41,7 +41,7 @@
                   - else
                     = row[3]
                 - row[4].each do |pos|
-                  %td.pos.text-center.align-middle
+                  %td.pos.text-center.align-middle{:class => "#{pos == "1" ? 'first-place' : ''}" "#{pos == "2" ? 'second-place' : ''} #{pos == "3" ? 'third-place' : ''}"}
                     = pos
                 %td.pp.text-center.align-middle
                   = row[5]
