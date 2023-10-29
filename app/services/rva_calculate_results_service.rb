@@ -185,14 +185,14 @@ class RvaCalculateResultsService
     end
 
     if @session.teams
-      cars_line_arr << '!'
-      cars_line_arr << '!'
+      cars_line_arr << '!CC'
+      cars_line_arr << '!PA'
     else
-      cars_line_arr << '!'
-      cars_line_arr << '!'
-      cars_line_arr << '!'
-      cars_line_arr << '!'
-      cars_line_arr << '!'
+      cars_line_arr << '!PP'
+      cars_line_arr << '!PA'
+      cars_line_arr << '!CC'
+      cars_line_arr << '!MP'
+      cars_line_arr << '!PO'
     end
 
     cars_line_arr

@@ -29,6 +29,11 @@
   src: url(fonts/NissanOpti-Italic.otf);
 }
 
+@font-face {
+  font-family: Bahnschrift-Light;
+  src: url(fonts/Bahnschrift-Light.ttf);
+}
+
 body {
   color: #beb8bc;
   background-color: #000000;
@@ -246,4 +251,3 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-color: #2E2F30 !important;
   border-top-color: #2E2F30 !important;
 }
-

@@ -1,3 +1,118 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#results {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1175px;
+  }
+
+  table {
+    font-family: "Bahnschrift-Light", sans-serif;
+    background-color: #2d3f43;
+
+    th {
+      background-color: #1d282b;
+      color: #ffd966;
+      border-bottom: 0;
+      height: 40px;
+
+      a {
+        color: #ffd966;
+      }
+    }
+
+    tr {
+      color: #5bada9;
+    }
+
+    td {
+      border-top: 1px solid #5a5a5a;
+    }
+
+    a {
+      color: #5bada9;
+    }
+
+    .team-col {
+      a {
+        color: #5b9bd5;
+      }
+
+      background-color: #212b36;
+      color: #5b9bd5;
+    }
+
+    .car {
+      max-width: 1px;
+      min-width: 1px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .pp-header, .pa-header, .cc-header, .mp-header, .po-header {
+      color: #ffffff;
+      font-size: 18px;
+      border-bottom: 1px solid #5a5a5a;
+    }
+
+    .pos, .car {
+      font-style: italic;
+    }
+
+    .pp, .pa, .cc, .mp, .po {
+      border-top: 0;
+    }
+
+    .pp, .pa, .cc, .mp {
+      color: #a6a6a6;
+    }
+
+    .pp, .pp-header {
+      background-color: #1d282b;
+    }
+
+    .pa, .pa-header {
+      background-color: #000800;
+    }
+
+    .cc, .cc-header {
+      background-color: #161616;
+    }
+
+    .mp, .mp-header {
+      background-color: #161616;
+    }
+
+    .po, .po-header {
+      background-color: #262626;
+      color: #ffd966;
+    }
+
+    .number-col {
+      color: #ffd966;
+      background-color: #262626;
+      border-top: 0;
+    }
+
+    .date-col {
+      color: #7f7f7f;
+      background-color: #d9d9d9;
+      font-style: italic;
+      border-top: 0;
+    }
+
+    .fp-col {
+      color: #906000;
+      background-color: #ffd966;
+      font-weight: bold;
+      border-top: 0;
+      border-left: 1px solid #464646;
+    }
+
+    .racer-col {
+      color: #a0d5ef;
+      background-image: linear-gradient(to right, #18301a, #2d3f43 80%);
+
+      a {
+        color: #a0d5ef;
+      }
+    }
+  }
+}

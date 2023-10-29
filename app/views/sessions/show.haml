@@ -1,4 +1,5 @@
-- if @session.teams
-  = render :partial => "teams_results_table"
-- else
-  = render :partial => "singles_results_table"
+- content_for :results do
+  - if @session.teams
+    = render :partial => "teams_results_table"
+  - else
+    = render :partial => "singles_results_table"

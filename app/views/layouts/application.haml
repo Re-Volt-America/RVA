@@ -4,6 +4,7 @@
   %body
     = render :partial => "nav"
     = yield :splash if content_for?(:splash)
+    = yield :results if content_for?(:results)
     .container
       = render :partial => "alerts"
       = if content_for?(:content) then yield :content else yield end
