@@ -6,6 +6,17 @@ footer {
   margin-top: 25px;
   margin-bottom: 50px;
 
+  a {
+    color: #beb8bc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   ul {
     margin-top: 20px;
     margin-bottom: 50px;
@@ -20,7 +31,8 @@ footer {
   }
 
   ul li a:hover {
-    background-color: #ffffff;
+    color: white;
+    background-color: #1e1e1e;
     border-radius: 5px;
   }
 
