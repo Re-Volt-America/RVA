@@ -1,20 +1,38 @@
-%p#notice= notice
-%h1 Seasons
-%table
-  %thead
-    %tr
-      %th Name
-      %th Start date
-      %th End date
-      %th{:colspan => "3"}
-  %tbody
-    - @seasons.each do |season|
-      %tr
-        %td= season.name
-        %td= season.start_date
-        %td= season.end_date
-        %td= link_to 'Show', season
-        %td= link_to 'Edit', edit_season_path(season)
-        %td= link_to 'Destroy', season, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
-%br/
-= link_to 'New Season', new_season_path
+#seasons
+  .row.gx-5.align-items-center.justify-content-center
+    .col-lg-8.col-xl-7.col-xxl-6
+      .my-5.text-center.text-xl-start
+        %h2.display-5.fw-bolder.text-white.mb-2
+          What are RVA Seasons?
+        %p.lead.fw-normal.text-white-80.mb-4
+          In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
+          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races.
+        .justify-content-sm-center
+          %a.btn.btn-lg.px-4.me-sm-3.mr-4{ href: season_path(current_season) }
+            Current Season
+          %a.btn.btn-lg.px-4{ href: points_path }
+            Learn More
+    .col-xl-5.col-xxl-6.text-center
+      = image_tag "seasons.png", :class => "img-fluid rounded-3 my-5"
+
+  %h3.nissan-title.text-center
+    All Seasons
+
+  %h3.border-bottom.border-gray.pb-2.mb-0.nissan-title
+  - @seasons.each do |season|
+    - if season.eql?(current_season)
+      %a.media.ongoing.text-muted.pt-3.border-bottom.border-gray{:href => season_path(season) }
+        .media-body.pb-3.mb-0.small.lh-125
+          .d-flex.justify-content-between.align-items-center.w-100
+            %strong.text-gray-dark
+              = season.name
+          %span.d-block.session-host
+            = "#{season.start_date} — #{season.end_date.nil? ? 'Present' : season.end_date }"
+    - else
+      %a.media.text-muted.pt-3.border-bottom.border-gray{:href => season_path(season) }
+        .media-body.pb-3.mb-0.small.lh-125
+          .d-flex.justify-content-between.align-items-center.w-100
+            %strong.text-gray
+              = season.name
+          %span.d-block.session-host
+            = "#{season.start_date} — #{season.end_date.nil? ? 'Present' : season.end_date }"

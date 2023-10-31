@@ -1,3 +1,90 @@
-// Place all the styles related to the Seasons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#seasons {
+  strong {
+    color: #fff;
+  }
+
+  a, a:hover, a:focus {
+    text-decoration: none;
+  }
+
+  img {
+    position: relative;
+    border: 1px solid #beb8bc;
+  }
+
+  p {
+    color: #c6c6c6;
+  }
+
+  .media {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, #282828, #000000);
+    transition: color 0.3s ease-out;
+    z-index: 1;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .media:before {
+    background-image: linear-gradient(to bottom, #181818, #000000);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .media:hover:before, .media:focus:before {
+    opacity: 1;
+  }
+
+  .ongoing {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, #37d75c, #26863a);
+    transition: color 0.3s ease-out;
+    z-index: 1;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ongoing:before {
+    background-image: linear-gradient(to bottom, #208036, #144a1f);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .ongoing:hover:before, .media:focus:before {
+    opacity: 1;
+  }
+
+  .session-number {
+    height: 32px;
+    width: 32px;
+    border-radius: 3px;
+    margin-right: 7px;
+    margin-top: 3px;
+    font-family: NissanOpti, serif;
+    color: black;
+  }
+
+  .session-date {
+    color: #c6c6c6;
+  }
+
+  .session-host {
+    color: #c6c6c6;
+  }
+}
