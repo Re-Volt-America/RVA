@@ -1,27 +1,22 @@
-%h1.display-5.fw-bolder.text-white.mb-2
-  = @season.name
+#seasons
+  %h1.nissan-title.text-center.mb-5
+    = @season.name
 
-.container.mt-5
-  .row
-    .col-md-12
-      .table-wrap
-        - @season.rankings.each do |ranking|
-          %table.table.table-responsive-xl
-            %thead
-              %tr
-                %th{:colspan => 3}
-                  .text-center
-                    = "Ranking #{ranking.number}"
-              %tr
-                %th #
-                %th Host
-                %th Link
-            %tbody
-              - ranking.sessions.each do |session|
-                %tr
-                  %td
-                    = session.number
-                  %td
-                    = session.host
-                  %td
-                    = link_to "Session", session_path(session)
+  - @season.rankings.each do |ranking|
+    %h3.nissan-title.text-center
+      = "Ranking #{ranking.number}"
+    %h6.border-bottom.border-gray.pb-2.mb-0
+    - ranking.sessions.each do |session|
+      %a.media.text-muted.pt-3.border-bottom.border-gray{:href => session_path(session) }
+        .session-number{:style => "background-color: #{session_color_hex(session)}"}
+          .text-center
+            %span.align-middle
+              = session.number
+        .media-body.pb-3.mb-0.small.lh-125
+          .d-flex.justify-content-between.align-items-center.w-100
+            %strong.text-gray-dark
+              = "#{session_category_name(session)} Races"
+            .session-date
+              = pretty_datetime(session.date)
+          %span.d-block.session-host
+            = "Hosted by #{session.host}"

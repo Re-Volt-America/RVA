@@ -1,6 +1,12 @@
 - cache "Session##{@session.id}", :expires_in => 5.minutes do
   #results
     .container
+      %h3.nissan-title.mb-4
+        = "#{link_to @session.ranking.season.name, @session.ranking.season} /"
+        = "#{link_to "Ranking #{@session.ranking.number}", @session.ranking} /"
+        = "#{link_to "Session #{@session.number}", @session}"
+        = link_to 'Edit', edit_session_path(@session), :class => "btn btn-sm"
+
       %table.table.table-sm.table-fluid.table-responsive
         %thead
           %tr
@@ -101,6 +107,16 @@
 
             - @count += 1
 
-      = link_to 'Edit', edit_session_path(@session)
-      |
-      = link_to 'Back', sessions_path
+      .row
+        .col-4
+          %b
+            FP:
+          Final Position
+        .col-4
+          %b
+            CC:
+          Race Count
+        .col-4
+          %b
+            PA:
+          Accumulated Score

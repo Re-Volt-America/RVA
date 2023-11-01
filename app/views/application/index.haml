@@ -42,4 +42,4 @@
         %span.d-block.session-host
           = "Hosted by #{session.host}"
   %small.d-block.text-center.mt-3
-    = link_to "All Sessions", sessions_path, :class => "btn btn-sm"
+    = link_to "All Sessions", season_path(current_season), :class => "btn btn-sm"
