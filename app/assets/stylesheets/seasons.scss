@@ -1,10 +1,14 @@
-#seasons {
-  strong {
+#season {
+  h3 {
     color: #fff;
+
+    a {
+      color: #fff;
+    }
   }
 
-  a, a:hover, a:focus {
-    text-decoration: none;
+  strong {
+    color: #fff;
   }
 
   img {

@@ -1,22 +1,20 @@
-#seasons
-  %h1.nissan-title.text-center.mb-5
-    = @season.name
+#season
+  .container
+    %h3.nissan-title.mb-4
+      = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), "/"
+      = "/"
+      = "#{link_to @season.name, @season} /"
 
+  %h6.border-bottom.border-gray.pb-2.mb-0
+    = ""
   - @season.rankings.each do |ranking|
-    %h3.nissan-title.text-center
-      = "Ranking #{ranking.number}"
-    %h6.border-bottom.border-gray.pb-2.mb-0
-    - ranking.sessions.each do |session|
-      %a.media.text-muted.pt-3.border-bottom.border-gray{:href => session_path(session) }
-        .session-number{:style => "background-color: #{session_color_hex(session)}"}
-          .text-center
-            %span.align-middle
-              = session.number
-        .media-body.pb-3.mb-0.small.lh-125
-          .d-flex.justify-content-between.align-items-center.w-100
-            %strong.text-gray-dark
-              = "#{session_category_name(session)} Races"
-            .session-date
-              = pretty_datetime(session.date)
-          %span.d-block.session-host
-            = "Hosted by #{session.host}"
+    %a.media.text-muted.pt-3.border-bottom.border-gray{:href => ranking_path(ranking) }
+      .session-number{:style => "background-color: #fff;"}
+        .text-center
+          %span.align-middle
+            = ranking.number
+      .media-body.pb-3.mb-0.small.lh-125
+        .d-flex.justify-content-between.align-items-center.w-100
+          %h3{:style => "margin-top: 6px; margin-left: 5px;"}
+            = "Ranking #{ranking.number}"
+
