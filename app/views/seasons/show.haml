@@ -1,10 +1,9 @@
 #season
   .container
     %h3.nissan-title.mb-4
-      = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), "/"
+      = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), seasons_path
       = "/"
       = "#{link_to @season.name, @season}"
-      = link_to 'New Ranking', new_ranking_path, :class => "btn btn-sm"
 
   %h6.border-bottom.border-gray.pb-2.mb-0
     = ""

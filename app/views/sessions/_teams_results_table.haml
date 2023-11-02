@@ -2,7 +2,7 @@
   #results
     .container
       %h3.nissan-title.mb-4
-        = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), "/"
+        = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), seasons_path
         = "/"
         = "#{link_to @session.ranking.season.name, @session.ranking.season} /"
         = "#{link_to "Ranking #{@session.ranking.number}", @session.ranking} /"

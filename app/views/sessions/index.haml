@@ -1,7 +1,10 @@
-%h1.nissan-title.text-center
-  = current_season.name
-
 #recent
+  .container
+  %h3.nissan-title.mb-4
+    = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), seasons_path
+    = "/"
+    = "#{link_to current_season.name, season_path(current_season)}"
+
   - current_season.rankings.each do |ranking|
     %h5.border-bottom.border-gray.pb-2.mb-0.nissan-title
       = "Ranking #{ranking.number}"

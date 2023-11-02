@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
     return unless user_signed_in?
 
     @admin_nav = [
-      { :name => 'Seasons', :path => seasons_path },
-      { :name => 'Rankings', :path => rankings_path },
-      { :name => 'Sessions', :path => sessions_path },
-      { :name => 'Tournaments', :path => tournaments_path }
+      { :name => 'Upload Session', :path => new_session_path },
+      { :name => 'New Season', :path => new_season_path },
+      { :name => 'New Ranking', :path => new_ranking_path },
+      { :name => 'New Tournament', :path => new_tournament_path }
     ]
     @nav = [
       { :name => 'Admin', :path => '', :sub => @admin_nav, :admin => true },

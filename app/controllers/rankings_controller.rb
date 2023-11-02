@@ -5,15 +5,6 @@ class RankingsController < ApplicationController
 
   respond_to :html, :json
 
-  # GET /rankings or /rankings.json
-  def index
-    @rankings = Ranking.all
-
-    respond_with @rankings do |format|
-      format.json { render :layout => false }
-    end
-  end
-
   # GET /rankings/1 or /rankings/1.json
   def show
     respond_with @ranking do |format|
