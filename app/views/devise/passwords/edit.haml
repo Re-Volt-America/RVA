@@ -1,19 +1,21 @@
-%h2 Change your password
+%h2.nissan-title.mb-3 Change your password
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    %br/
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-      %br/
-    = f.password_field :password, autofocus: true, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Change my password"
-= render "devise/shared/links"
+  .row
+    .col-md-5
+      = render "devise/shared/error_messages", resource: resource
+      = f.hidden_field :reset_password_token
+      .field.form-group
+        = f.label :password, "New password"
+        %br/
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+          %br/
+        = f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "form-control"
+      .field.form-group
+        = f.label :password_confirmation, "Confirm new password"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
+      .actions
+        = f.submit "Change my password", :class => "btn mb-2"
+      = render "devise/shared/links"
