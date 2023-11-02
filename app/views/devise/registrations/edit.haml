@@ -31,9 +31,10 @@
         %br/
         = f.password_field :current_password, autocomplete: "current-password", :class => "form-control"
       .actions
-        = f.submit "Update", :"data-turbo" => false, :class => "btn mb-2"
+        = f.submit "Update", :"data-turbo" => false, :class => "btn mb-4"
 
-      %h3 Cancel my account
+      %h3.nissan-title.mb-3 Cancel my account
       %p
-        Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-
+        Unhappy? You may cancel your account at any time.
+      .actions
+        = button_to "Cancel my account", registration_path(resource_name), :class => "btn", data: { confirm: "Are you sure?" }, method: :delete
