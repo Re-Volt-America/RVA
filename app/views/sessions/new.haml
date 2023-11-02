@@ -1,31 +1,22 @@
-%h1 New Session
+%h2.nissan-title.mb-3 Upload Session
 
 = form_with :url => import_sessions_path, :method => :post do |f|
-  .field
-    = f.label "Session Log"
-    = f.file_field :file, :accept => ".csv"
-  %br
+  .row
+    .col-md-5
+      .field.form-group
+        = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
-  %div{:"data-controller" => "season"}
-    .field
-      = f.label :season
-      = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}}
-    .field
-      = f.label :ranking
-      = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}}
-  .field
-    = f.label :number
-    = f.select :number, SYS::SESSION_NUMBERS, {:prompt => "Session Number"}
+      %div{:"data-controller" => "season"}
+        .field.form-group
+          = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}, :class => "form-control" }
+        .field.form-group
+          = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
+      .field.form-group
+        = f.select :number, SYS::SESSION_NUMBERS, {:prompt => "Select Session Number"}, {:class => "form-control"}
+      .field.form-group
+        = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
+      .field.form-group
+        = f.label :teams
+        = f.check_box :teams
 
-  .field
-    = f.label :category
-    = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}
-
-  .field
-    = f.label :teams
-    = f.check_box :teams
-
-  = f.submit "Import", :"data-turbo" => false
-
-%br
-= link_to 'Back', sessions_path
+      = f.submit "Import", :"data-turbo" => false, :class => "btn"
