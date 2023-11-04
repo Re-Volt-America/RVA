@@ -1,2 +1,29 @@
-%h1 Points#index
-%p Find me in app/views/points/index.haml
+%h2.nissan-title
+  RVA Points System
+
+%br
+%h3
+  Introduction
+
+%p
+  In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores
+  will depend on two things: their final position in the race, and the amount of racers in that race. If a race has
+  10 or more racers in it, then it's considered a to be a "big" race.
+
+.row
+  .col-sm-12.col-md-6.col-lg-6.col-xl-6
+    %h4 Normal Race Scoring
+    = image_tag "points.png", :class => "img-fluid"
+  .col-sm-12.col-md-6.col-lg-6.col-xl-6
+    %h4 Big Race Scoring
+    = image_tag "points-10.png", :class => "img-fluid"
+
+%br
+%h3
+  Car Ratings
+
+%p
+  In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other
+  characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for
+  playing hard cars, and for regulating really good or overpowered cars as well.
+
