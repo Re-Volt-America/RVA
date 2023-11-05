@@ -1,3 +1,55 @@
-// Place all the styles related to the Cars controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#cars {
+  a {
+    color: #beb8bc;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  .car-category-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .car-category-img-small {
+    height: 100%;
+    width: 30%;
+    border-radius: 3px;
+  }
+
+  .car-category-thumbnail {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .car-category-thumbnail-small {
+    position: relative;
+  }
+
+  .car-category-thumbnail-overlay {
+    position: relative;
+  }
+
+  .car-category-thumbnail-overlay:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, black, black);
+    opacity: 40%;
+  }
+
+  .car-category-caption {
+    font-family: NissanOpti, serif;
+    font-size: 275%;
+    text-shadow: 0 1px 10px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0);
+    position: absolute;
+    top: 27%;
+    width: 100%;
+    left: 0;
+  }
+}

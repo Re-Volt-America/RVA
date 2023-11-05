@@ -16,9 +16,20 @@ RVA::Application.routes.draw do
   resources :seasons
   resources :rankings
   resources :tracks
+
+  # TODO: Maybe find a better way to add routing exceptions?
+  get '/cars/rookie' => 'cars#rookie'
+  get '/cars/amateur' => 'cars#amateur'
+  get '/cars/advanced' => 'cars#advanced'
+  get '/cars/semipro' => 'cars#semipro'
+  get '/cars/pro' => 'cars#pro'
+  get '/cars/superpro' => 'cars#superpro'
+  get '/cars/clockwork' => 'cars#clockwork'
   resources :cars
+
   resources :tournaments
   resources :teams
+
   resources :sessions do
     collection do
       get :rankings

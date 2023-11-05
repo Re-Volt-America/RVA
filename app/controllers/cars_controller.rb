@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  include CarsHelper
+
   before_action :authenticate_user!, :only => [:edit, :update, :destroy]
   before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_car, :only => [:show, :edit, :update, :destroy]
@@ -8,6 +10,69 @@ class CarsController < ApplicationController
   # GET /cars or /cars.json
   def index
     @cars = Car.all
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/rookie or /cars/rookie.json
+  def rookie
+    @cars = cars_of_category(SYS::CATEGORY::ROOKIE)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/amateur or /cars/amateur.json
+  def amateur
+    @cars = cars_of_category(SYS::CATEGORY::AMATEUR)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/advanced or /cars/advanced.json
+  def advanced
+    @cars = cars_of_category(SYS::CATEGORY::ADVANCED)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/semipro or /cars/semipro.json
+  def semirpo
+    @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/pro or /cars/pro.json
+  def pro
+    @cars = cars_of_category(SYS::CATEGORY::PRO)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/superpro or /cars/superpro.json
+  def superpro
+    @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO)
+
+    respond_with @cars do |format|
+      format.json { render :layout => false }
+    end
+  end
+
+  # GET /cars/clockwork or /cars/clockwork.json
+  def clockwork
+    @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK)
 
     respond_with @cars do |format|
       format.json { render :layout => false }

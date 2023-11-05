@@ -53,6 +53,12 @@ module ApplicationHelper
   def session_category_name(session)
     return nil unless session.is_a?(Session)
 
-    SYS::RVA_CATEGORY_NAMES[session.category].capitalize.gsub(/-[a-z]/, &:upcase)
+    category_name(session.category)
+  end
+
+  # @param category [Integer]
+  # @return [String] Capitalised name of the category
+  def category_name(category)
+    SYS::RVA_CATEGORY_NAMES[category].capitalize.gsub(/-[a-z]/, &:upcase)
   end
 end
