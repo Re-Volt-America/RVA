@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   def render_navigation(item)
     if item[:sub]
-      return if item[:admin] and !user_is_admin?
+      return if item[:admin] && !user_is_admin?
 
       subs = item[:sub].map { |sub| render_navigation(sub) }.compact
       %(
