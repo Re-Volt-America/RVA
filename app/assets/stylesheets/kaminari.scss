@@ -1,0 +1,77 @@
+.pagination a, .pagination span.gap {
+  float: left;
+  padding: 0 10px;
+  line-height: 30px;
+  text-decoration: none;
+  border-left-width: 0;
+  color: #beb8bc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pagination span.current {
+  float: left;
+  padding: 0 10px;
+  line-height: 30px;
+  text-decoration: none;
+  border-left-width: 0;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+.pagination a {
+  border: 1px solid gray;
+}
+
+.pagination a:hover {
+  color: #dee2e6;
+  border: 1px solid gray;
+}
+
+.pagination {
+  .first {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .prev {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .page {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .next {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .last {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+
+  .page-item.active .page-link {
+    background-color: #1e1e1e;
+  }
+
+  .page-item .page-link {
+    background-color: #212121;
+  }
+
+  .page-item.disabled {
+    cursor: not-allowed;
+    a {
+      color: #beb8bc;
+      border: 1px solid gray;
+    }
+  }
+}

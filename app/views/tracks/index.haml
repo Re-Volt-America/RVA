@@ -1,21 +1,20 @@
-%h2.page-title
-  %i.fa.fa-map{:"aria-hidden" => true}
-  %b
+#tracks
+  %h2.nissan-title.mb-4
     = t('rva.tracks.title')
-%hr.page-title-hr
 
-%nav
-  .nav.nav-tabs{:id => "nav-tab", :role => "tablist"}
-    %a.nav-item.nav-link{:id => "season-tracks-tab", :"data-toggle" => "tab", :href => "#season-tracks", :role => "tab", :"aria-controls" => "season-tracks", :"aria-selected" => false}
-      = t('rva.tracks.season')
-    %a.nav-item.nav-link.active{:id => "all-tracks-tab", :"data-toggle" => "tab", :href => "#all-tracks", :role => "tab", :"aria-controls" => "all-tracks", :"aria-selected" => true}
-      = t('rva.tracks.all-tracks')
-.tab-content{:id => "nav-tabContent"}
-  .tab-pane.fade.show.active{:id => "all-tracks", :role => "tabpanel", :"aria-labelledby" => "all-tracks-tab"}
-    %br
-    = render :partial => 'all_tracks'
-  .tab-pane.fade{:id => "season-tracks", :role => "tabpanel", :"aria-labelledby" => "season-tracks-tab"}
-    %br
-    %p Season Tracks!
+  = paginate @tracks
 
-= link_to 'New Track', new_track_path
+  .row.mt-4
+    - @tracks.each do |track|
+      .col-xxl-4.col-xl-4.col-lg-4.col-md-6.col-sm-12.col-xs-12
+        .track-container.text-center
+          .track.thumbnail
+            .img
+              %a{:href => track_path(track)}
+                %img.img-responsive{:alt => track.name, :src => track.thumbnail_url, :height => "246", :width => "290"}
+            .caption{:style => "text-align: center;"}
+              %h1.lead
+                %a{:href => track_path(track)}
+                  = track.name
+
+  = paginate @tracks

@@ -1,39 +1,38 @@
 #tracks {
   img {
+    margin-bottom: 5px;
+  }
+
+  .track-container {
+    display: inline-block;
+  }
+
+  .thumbnail {
+    display: block;
+    padding: 4px;
     margin-bottom: 20px;
+    border: 1px solid rgba(204, 204, 204, 0.25);
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+  }
+
+  .track.thumbnail > .img {
+    position: relative;
+  }
+
+  .thumbnail .caption {
+    padding: 9px;
+    color: #333;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+
+    a {
+      color: #beb8bc;
+    }
   }
 }
-
-.tracks {
-  margin-top: 20px;
-}
-
-.track-container {
-  display: inline-block;
-}
-
-.thumbnail {
-  display: block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857143;
-  border: 1px solid rgba(204, 204, 204, 0.25);
-  border-radius: 4px;
-  -webkit-transition: border .2s ease-in-out;
-  -o-transition: border .2s ease-in-out;
-  transition: border .2s ease-in-out;
-}
-
-.track.thumbnail > .img {
-  position: relative;
-}
-
-.thumbnail .caption {
-  padding: 9px;
-  color: #333;
-}
-
-.tracks > div {
-  text-align: center;
-}
-
