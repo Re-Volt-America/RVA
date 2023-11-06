@@ -9,7 +9,6 @@ class TracksController < ApplicationController
   def index
     @tracks = Track.all
     @tracks = Kaminari.paginate_array(@tracks).page(params[:page]).per(12)
-    @count = (@tracks.current_page - 1) * (@tracks.limit_value + 1)
 
     respond_with @tracks do |format|
       format.json { render :layout => false }
