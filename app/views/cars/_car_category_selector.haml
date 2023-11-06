@@ -1,0 +1,17 @@
+#cars-category-menu.btn-group.pull-right
+  %button.btn.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", type: "button"}
+    = t("rva.cars.class-selector.title")
+  .dropdown-menu.dropdown-menu-right
+    %a.dropdown-item{href: cars_rookie_path}
+      = t("classes.rookie")
+    %a.dropdown-item{href: cars_amateur_path}
+      = t("classes.amateur")
+    %a.dropdown-item{href: cars_advanced_path}
+      = t("classes.advanced")
+    %a.dropdown-item{href: cars_semipro_path}
+      = t("classes.semi-pro")
+    %a.dropdown-item{href: cars_pro_path}
+      = t("classes.pro")
+    %a.dropdown-item{href: cars_superpro_path}
+      = t("classes.super-pro")
+    / a class="dropdown-item" href="{{ baseurl }}/cars/clockwork">{% t classes.clockwork %}</a>

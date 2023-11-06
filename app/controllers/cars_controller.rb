@@ -44,7 +44,7 @@ class CarsController < ApplicationController
   end
 
   # GET /cars/semipro or /cars/semipro.json
-  def semirpo
+  def semipro
     @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
 
     respond_with @cars do |format|

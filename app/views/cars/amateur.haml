@@ -1,3 +1,16 @@
-= @cars
+#car-cards-display
+  .sticky-top.search-bar
+    .pb-2.mt-4.mb-2.text-center
+      %h2
+        %i.fa.fa-car{"aria-hidden" => "true"}
+        %b
+          = t("classes.amateur")
+    .row
+      .col-xl-11.col-lg-10.col-md-10.col-xs-9.col-8.sticky-top
+        %input#input.form-control{placeholder: "Search...", type: "text"}/
+      .col-xl-1.col-lg-2.col-md-2.col-xs-3.col-4
+        = render :partial => "car_category_selector"
 
-= cars_amateur_path
+  .row
+    - @cars.each do |car|
+      = render :partial => "car_card", :locals => { :car => car }

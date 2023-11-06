@@ -23,4 +23,8 @@ class Car
   validates_presence_of :folder_name
   validates_presence_of :category
   validates_presence_of :stock
+
+  def thumbnail_url
+    "#{ORG::CARS_REPO_URL}/cars/#{folder_name}/carbox.bmp"
+  end
 end

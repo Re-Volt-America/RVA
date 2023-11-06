@@ -61,4 +61,9 @@ module ApplicationHelper
   def category_name(category)
     SYS::RVA_CATEGORY_NAMES[category].capitalize.gsub(/-[a-z]/, &:upcase)
   end
+
+  # @param input
+  def precision(input, value=0)
+    ("%.#{value}f" % input)
+  end
 end

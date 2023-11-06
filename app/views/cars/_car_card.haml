@@ -1,0 +1,40 @@
+#car-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
+  .card
+    .card-header
+      .text-center
+        %h2.car-title
+          = car.name
+    .card-body
+      %img.card-img-top{alt: "", src: car.thumbnail_url}
+    .card-footer
+      .row
+        .col-6
+          %p
+            = t("car-card.speed")
+        .col-6
+          %p
+            = "#{precision(car.speed, 1)} #{t("car-card.kmh")}"
+    .card-footer
+      .row
+        .col-6
+          %p
+            = t("car-card.acc")
+        .col-6
+          %p
+            = "#{precision(car.accel, 2)} #{t("car-card.ms2")}"
+    .card-footer
+      .row
+        .col-6
+          %p
+            = t("car-card.weight")
+        .col-6
+          %p
+            = "#{precision(car.weight, 2)} #{t("car-card.kg")}"
+    .card-footer
+      .row
+        .col-6
+          %p
+            = t("car-card.multiplier")
+        .col-6
+          %p
+            = car.multiplier
