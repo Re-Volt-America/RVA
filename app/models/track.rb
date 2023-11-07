@@ -23,4 +23,9 @@ class Track
   def thumbnail_url
     "#{ORG::TRACKS_REPO_URL}/gfx/#{folder_name}.bmp"
   end
+
+  # @return [String] Capitalised name of the track difficulty as a string
+  def difficulty_name
+    SYS::RVGL_TRACK_DIFFICULTY_NAMES[difficulty].capitalize.gsub(/-[a-z]/, &:upcase)
+  end
 end

@@ -1,0 +1,10 @@
+%h2.title.mb-4
+  = t('rva.tracks.title')
+
+%nav#tracks-nav.navbar.navbar-expand.navbar-dark.navbar-default.mb-5
+  %div.container
+    %div.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item
+          %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
+            = "All Tracks"

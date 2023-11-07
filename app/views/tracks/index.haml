@@ -1,7 +1,6 @@
-#tracks
-  %h2.nissan-title.mb-4
-    = t('rva.tracks.title')
+= render :partial => "tracks/tracks_nav"
 
+#tracks
   = paginate @tracks
 
   .row.mt-4
@@ -11,7 +10,7 @@
           .track.thumbnail
             .img
               %a{:href => track_path(track)}
-                %img.img-responsive{:alt => track.name, :src => track.thumbnail_url, :height => "246", :width => "290"}
+                %img.img-responsive{:alt => "", :src => track.thumbnail_url, :height => "246", :width => "290"}
             .caption{:style => "text-align: center;"}
               %h1.lead
                 %a{:href => track_path(track)}

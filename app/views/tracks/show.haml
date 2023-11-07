@@ -1,19 +1,31 @@
-%p#notice= notice
-%p
-  %strong Season:
-  = @track.season.id
-%p
-  %strong Name:
-  = @track.name
-%p
-  %strong Difficulty:
-  = @track.difficulty
-%p
-  %strong Length:
-  = @track.length
-%p
-  %strong Folder name:
-  = @track.folder_name
-= link_to 'Edit', edit_track_path(@track)
-|
-= link_to 'Back', tracks_path
+= render :partial => "tracks/tracks_nav"
+
+#tracks
+  .container
+    .row
+      .col-md-6
+        %h1{style: "margin-top: 0;"}
+          = @track.name
+        %br
+        %dl.dl-horizontal
+          %dt
+            Short Name
+          %dd
+            = @track.short_name
+          %dt
+            Difficulty
+          %dd
+            = @track.difficulty_name
+          %dt
+            Length
+          %dd
+            = @track.length
+          %dt
+            Stock?
+          %dd
+            = @track.stock ? "Yes" : "No"
+        %i
+          = "This track has been featured in RVA #{@track.season.name}"
+
+      .col-md-6
+        %img.thumbnail.center-block.img-responsive{src: @track.thumbnail_url, :height => "350"}
