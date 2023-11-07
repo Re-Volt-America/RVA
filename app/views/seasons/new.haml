@@ -1,20 +1,20 @@
-%h1 New Season
+%h2.title.mb-3 Create Season
 = form_with(model: @season) do |form|
-  - if @season.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@season.errors.count, "error")
-        prohibited this season from being saved:
-      %ul
-        - @season.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :start_date
-    = form.date_select :start_date
-  .actions
-    = form.submit
-
-= link_to 'Back', seasons_path
+  .row
+    .col-md-5
+      - if @season.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@season.errors.count, "error")
+            prohibited this season from being saved:
+          %ul
+            - @season.errors.each do |error|
+              %li= error.full_message
+      .field.form-group
+        = form.label :name
+        = form.text_field :name, :class => "form-control"
+      .field.form-group
+        = form.label :start_date
+        = form.date_field :start_date, :class => "form-control"
+      .actions
+        = form.submit "Create Season", :class => "btn mb-2"
