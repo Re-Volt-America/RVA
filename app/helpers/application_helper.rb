@@ -62,7 +62,9 @@ module ApplicationHelper
     SYS::RVA_CATEGORY_NAMES[category].capitalize.gsub(/-[a-z]/, &:upcase)
   end
 
-  # @param input
+  # @param input [Number] The number
+  # @param value [Integer] Amount of precision
+  # @return [String] The number with the desired precision as a string
   def precision(input, value=0)
     ("%.#{value}f" % input)
   end
