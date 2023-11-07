@@ -3,7 +3,7 @@
 = form_with :url => import_sessions_path, :method => :post do |f|
   .row
     .col-md-5
-      .field.form-group
+      .field.input-group
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
       %div{:"data-controller" => "season"}
