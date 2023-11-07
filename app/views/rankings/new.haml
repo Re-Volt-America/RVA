@@ -1,19 +1,20 @@
-%h1 New Ranking
+%h2.title.mb-3 New Ranking
 = form_with(model: @ranking) do |form|
-  - if @ranking.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@ranking.errors.count, "error")
-        prohibited this ranking from being saved:
-      %ul
-        - @ranking.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :number
-    = form.number_field :number
-  .field
-    = form.label :season
-    = form.collection_select :season, Season.all, :id, :name
-  .actions
-    = form.submit
-= link_to 'Back', rankings_path
+  .row
+    .col-md-5
+      - if @ranking.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@ranking.errors.count, "error")
+            prohibited this ranking from being saved:
+          %ul
+            - @ranking.errors.each do |error|
+              %li= error.full_message
+      .field.form-group
+        = form.label :number
+        = form.number_field :number, :class => "form-control"
+      .field.form-group
+        = form.label :season
+        = form.collection_select :season, Season.all, :id, :name, {}, {:class => "form-control"}
+      .actions
+        = form.submit "Create Ranking", :class => "btn mb-2"
