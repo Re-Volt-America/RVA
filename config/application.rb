@@ -70,14 +70,14 @@ module SYS
     RANDOM = 6
     CLOCKWORK = 7
     NUMBERS_MAP = {
-      :rookie => CATEGORY::ROOKIE,
-      :amateur => CATEGORY::AMATEUR,
-      :advanced => CATEGORY::ADVANCED,
-      :'semi-pro' => CATEGORY::SEMI_PRO,
-      :pro => CATEGORY::PRO,
-      :'super-pro' => CATEGORY::SUPER_PRO,
-      :random => CATEGORY::RANDOM,
-      :clockwork => CATEGORY::CLOCKWORK
+      :Rookie => CATEGORY::ROOKIE,
+      :Amateur => CATEGORY::AMATEUR,
+      :Advanced => CATEGORY::ADVANCED,
+      :'Semi-Pro' => CATEGORY::SEMI_PRO,
+      :Pro => CATEGORY::PRO,
+      :'Super-Pro' => CATEGORY::SUPER_PRO,
+      :Random => CATEGORY::RANDOM,
+      :Clockwork => CATEGORY::CLOCKWORK
     }
     BONUSES_PER_DIFF = {
       0 => 1.0,
