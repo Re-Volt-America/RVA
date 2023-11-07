@@ -1,4 +1,4 @@
-%h2.nissan-title.mb-3
+%h2.title.mb-3
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   .row
@@ -33,7 +33,7 @@
       .actions
         = f.submit "Update", :"data-turbo" => false, :class => "btn mb-4"
 
-      %h3.nissan-title.mb-3 Cancel my account
+      %h3.title.mb-3 Cancel my account
       %p
         Unhappy? You may cancel your account at any time.
       .actions

@@ -1,6 +1,6 @@
 #ranking
   .container
-    %h3.nissan-title.mb-4
+    %h3.title.mb-4
       = link_to (image_tag "rva-logo-dark.png", :height => "40", :width => "40", :style => "border-radius: 50px;"), seasons_path
       = "/"
       = "#{link_to @ranking.season.name, @ranking.season} /"
@@ -34,7 +34,7 @@
           %td
             9
 
-    %h5.border-bottom.border-gray.pb-2.mb-0.nissan-title
+    %h5.border-bottom.border-gray.pb-2.mb-0.title
       = "Sessions"
 
     - @ranking.sessions.each do |session|
