@@ -4,7 +4,6 @@
     .col-md-5
       .field.form-group
         = f.label :email
-        %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .actions
         = f.button "Resend password instructions", :type => "submit", :class => "btn mb-2"

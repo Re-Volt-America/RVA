@@ -4,7 +4,6 @@
     .col-md-5
       .field.form-group
         = f.label :email
-        %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :class => "form-control"
       .actions
         = f.button "Resend confirmation instructions", :type => "submit", :class => "btn mb-2"

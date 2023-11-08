@@ -5,7 +5,6 @@
     .col-md-5
       .field.form-group
         = f.label :email
-        %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
@@ -13,21 +12,17 @@
       .field.form-group
         = f.label :password
         %i (leave blank if you don't want to change it)
-        %br/
         = f.password_field :password, autocomplete: "new-password", :class => "form-control"
         - if @minimum_password_length
-          %br/
           %em
             = @minimum_password_length
             characters minimum
       .field.form-group
         = f.label :password_confirmation
-        %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
       .field.form-group
         = f.label :current_password
         %i (we need your current password to confirm your changes)
-        %br/
         = f.password_field :current_password, autocomplete: "current-password", :class => "form-control"
       .actions
         = f.button "Update", :type => "submit", :"data-turbo" => false, :class => "btn mb-4"
