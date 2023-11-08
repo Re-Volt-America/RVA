@@ -52,8 +52,8 @@ The RuboCop gem is installed alongside the rest of the project's gems, therefore
 download and install dependencies you will pull RuboCop too. When installed, you may inspect and auto-correct the code
 using the following commands, respectively:
 ```bash
-rubocop                          # Inspect
-rubocop --autocorrect            # Autocorrect
+rubocop                           # Inspect
+rubocop -A                        # Autocorrect
 ```
 
 ### Code Editor Configuration
