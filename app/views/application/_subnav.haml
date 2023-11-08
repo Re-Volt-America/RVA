@@ -23,7 +23,6 @@
               = "Ranking #{ranking.number} »"
         -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
         -# definition is ours ...
-
         - if defined?(session) && session.is_a?(Session)
           %li.nav-item
           %a.nav-link{:href => session_path(session), :class => "#{current_page?(session_path(session)) ? 'active' : ''}"}
