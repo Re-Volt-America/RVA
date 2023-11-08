@@ -113,6 +113,22 @@ input[type=file]::file-selector-button:hover, input[type=file]::file-selector-bu
   max-width: 1175px;
 }
 
+.alert {
+  margin-bottom: 0;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff1bb;
+  border-color: #fff1bb;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #ace8b9;
+  border-color: #ace8b9;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -242,6 +258,8 @@ input[type=file]::file-selector-button:hover, input[type=file]::file-selector-bu
 }
 
 #landing {
+  margin-top: 2rem;
+
   img {
     position: relative;
     border: 1px solid #beb8bc;

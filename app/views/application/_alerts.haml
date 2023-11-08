@@ -1,5 +1,10 @@
-.container
-  %p.notice
+- if notice
+  .alert.alert-warning.alert-dismissible.fade.show.mt-3{role: "alert"}
     = notice
-  %p.alert
+    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+      %span{"aria-hidden" => "true"} ×
+- if alert
+  .alert.alert-success.alert-dismissible.fade.show.mt-3{role: "alert"}
     = alert
+    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+      %span{"aria-hidden" => "true"} ×
