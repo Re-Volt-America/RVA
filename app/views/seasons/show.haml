@@ -1,15 +1,34 @@
-= render :partial => "application/subnav", :locals => { :season => @season }
+= render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
-#season
-  %h6.border-bottom.border-gray.pb-2.mb-0
-    = ""
-  - @season.rankings.each do |ranking|
-    %a.media.text-muted.pt-3.border-bottom.border-gray{:href => ranking_path(ranking) }
-      .session-number{:style => "background-color: #fff;"}
-        .text-center
-          %span.align-middle
-            = ranking.number
-      .media-body.pb-3.mb-0.small.lh-125
-        .d-flex.justify-content-between.align-items-center.w-100
-          %h3{:style => "margin-top: 6px; margin-left: 5px;"}
-            = "Ranking #{ranking.number}"
+%h2.text-center.mt-4
+  Leaderboard
+
+#ranking
+  .container
+  %p#notice= notice
+  %table.table.table-fluid
+    %thead
+      %tr
+        %th Racer
+        %th PP
+        %th PA
+        %th MP
+        %th PO
+        %th CC
+        %th FJ
+    %tbody
+      %tr
+        %td
+          YUN
+        %td
+          3.040
+        %td
+          2033
+        %td
+          0.967
+        %td
+          64.65
+        %td
+          174
+        %td
+          9

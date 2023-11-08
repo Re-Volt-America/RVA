@@ -3,24 +3,27 @@
     %div.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto
         %li.nav-item
-          %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
-            = "All Cars"
-        %li.nav-item
-          %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
-            = "All Tracks"
-        %li.nav-item
           %a.nav-link{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
             = "Seasons »"
         - if defined?(season)
           %li.nav-item
             %a.nav-link{:href => season_path(season), :class => "#{current_page?(season_path(season)) ? 'active' : ''}"}
               = "#{season.name} »"
+        - if defined?(rankings)
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
+              = "Rankings"
+            %div.dropdown-menu{:"aria-labelledby" => "dropdown04"}
+              - rankings.each do |ranking|
+                %a.dropdown-item{:href => ranking_path(ranking)}
+                  = "Ranking #{ranking.number}"
         - if defined?(ranking)
           %li.nav-item
             %a.nav-link{:href => ranking_path(ranking), :class => "#{current_page?(ranking_path(ranking)) ? 'active' : ''}"}
               = "Ranking #{ranking.number} »"
         -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
         -# definition is ours ...
+
         - if defined?(session) && session.is_a?(Session)
           %li.nav-item
           %a.nav-link{:href => session_path(session), :class => "#{current_page?(session_path(session)) ? 'active' : ''}"}
