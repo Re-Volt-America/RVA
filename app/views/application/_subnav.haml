@@ -1,13 +1,16 @@
-%h2.mb-4
-  = "RVA Seasons"
-
 %nav.sub-nav.navbar.navbar-expand.navbar-dark.navbar-default.mb-3
   %div.container
     %div.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto
         %li.nav-item
+          %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
+            = "All Cars"
+        %li.nav-item
+          %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
+            = "All Tracks"
+        %li.nav-item
           %a.nav-link{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
-            = "All Seasons »"
+            = "Seasons »"
         - if defined?(season)
           %li.nav-item
             %a.nav-link{:href => season_path(season), :class => "#{current_page?(season_path(season)) ? 'active' : ''}"}
