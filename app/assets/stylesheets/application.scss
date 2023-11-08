@@ -69,6 +69,7 @@ button:hover, button:focus {
 
 input[type=file]::file-selector-button {
   border-top: transparent;
+  border-bottom: transparent;
   border-left: transparent;
   border-right: 1px solid #dacece;
   background-color: #000;
@@ -85,7 +86,7 @@ input[type=file]::file-selector-button:hover, input[type=file]::file-selector-bu
 .input-group {
   border: 1px solid #ced4da;
   border-radius: 3px;
-  margin-bottom: 7px;
+  margin-bottom: 1rem;
   padding: 0;
 }
 
