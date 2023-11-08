@@ -2,26 +2,23 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .row
     .col-md-5
-      = render "devise/shared/error_messages", resource: resource
       .field.form-group
         = f.label :username
-        %br/
         = f.text_field :username, autofocus: true, autocomplete: "username", :class => "form-control"
       .field.form-group
         = f.label :email
-        %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .field.form-group
         = f.label :password
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
-        %br/
         = f.password_field :password, autocomplete: "new-password", :class => "form-control"
       .field.form-group
         = f.label :password_confirmation
-        %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
       .actions
         = f.button "Sign up", :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"
+    .col-md-7
+      = render "devise/shared/error_messages", resource: resource

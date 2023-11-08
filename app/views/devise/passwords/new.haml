@@ -2,7 +2,6 @@
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   .row
     .col-md-5
-      = render "devise/shared/error_messages", resource: resource
       .field.form-group
         = f.label :email
         %br/
@@ -10,3 +9,5 @@
       .actions
         = f.button "Resend password instructions", :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"
+    .col-md-7
+      = render "devise/shared/error_messages", resource: resource
