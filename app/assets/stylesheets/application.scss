@@ -51,10 +51,10 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
-  font-family: inherit;
+  font-family: NissanOpti, serif;
   font-weight: bold;
   line-height: 20px;
-  color: inherit;
+  color: #fff;
   text-rendering: optimizelegibility;
 }
 
@@ -70,7 +70,6 @@ button:hover, button:focus {
 input[type=file]::file-selector-button {
   border-top: transparent;
   border-left: transparent;
-  border-bottom: transparent;
   border-right: 1px solid #dacece;
   background-color: #000;
   color: #beb8bc;
@@ -88,11 +87,6 @@ input[type=file]::file-selector-button:hover, input[type=file]::file-selector-bu
   border-radius: 3px;
   margin-bottom: 7px;
   padding: 0;
-}
-
-.title {
-  font-family: NissanOpti, serif;
-  color: #ffffff;
 }
 
 .show {

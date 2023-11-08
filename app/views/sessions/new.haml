@@ -1,4 +1,4 @@
-%h2.title.mb-3 Upload Session
+%h2.mb-4 Upload Session
 
 = form_with :url => import_sessions_path, :method => :post do |f|
   .row
@@ -17,6 +17,5 @@
         = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
       .field.form-group
         = f.label :teams
-        = f.check_box :teams
 
       = f.submit "Import", :"data-turbo" => false, :class => "btn"

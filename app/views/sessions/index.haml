@@ -4,7 +4,7 @@
 #recent
   .container
   - current_season.rankings.each do |ranking|
-    %h5.border-bottom.border-gray.pb-2.mb-0.title
+    %h5.border-bottom.border-gray.pb-2.mb-0
       = "Ranking #{ranking.number}"
 
     - ranking.sessions.each do |session|

@@ -17,10 +17,10 @@
     .col-xl-5.col-xxl-6.text-center
       = image_tag "seasons.png", :class => "img-fluid rounded-3 my-5"
 
-  %h3.title.text-center
+  %h3.text-center
     All Seasons
 
-  %h3.border-bottom.border-gray.pb-2.mb-0.title
+  %h3.border-bottom.border-gray.pb-2.mb-0
   - @seasons.each do |season|
     - if season.eql?(current_season)
       %a.media.ongoing.text-muted.pt-3.border-bottom.border-gray{:href => season_path(season) }
