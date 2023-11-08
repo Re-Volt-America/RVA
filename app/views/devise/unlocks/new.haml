@@ -8,5 +8,5 @@
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .actions
-        = f.submit "Resend unlock instructions", :class => "btn mb-2"
+        = f.button "Resend unlock instructions", :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"

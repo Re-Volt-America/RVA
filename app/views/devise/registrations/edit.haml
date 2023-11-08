@@ -31,7 +31,7 @@
         %br/
         = f.password_field :current_password, autocomplete: "current-password", :class => "form-control"
       .actions
-        = f.submit "Update", :"data-turbo" => false, :class => "btn mb-4"
+        = f.button "Update", :type => "submit", :"data-turbo" => false, :class => "btn mb-4"
 
       %h3.mb-3 Cancel my account
       %p

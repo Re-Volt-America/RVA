@@ -17,4 +17,4 @@
         = form.label :season
         = form.collection_select :season, Season.all, :id, :name, {}, {:class => "form-control"}
       .actions
-        = form.submit "Create Ranking", :class => "btn mb-2"
+        = form.button "Create Ranking", :type => "submit", :class => "btn mb-2"
