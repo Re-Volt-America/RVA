@@ -6,19 +6,19 @@ module ApplicationHelper
   # Check if the passed user is an admin
   # @return [Boolean] true if the current user is an admin, false otherwise
   def user_is_admin?(user = current_user)
-    user && user.admin?
+    user&.admin?
   end
 
   # Check if the passed user is a moderator
   # @return [Boolean] true if the current user is a moderator, false otherwise
   def user_is_mod?(user = current_user)
-    user && user.mod?
+    user&.mod?
   end
 
   # Check if the passed user is an organizer
   # @return [Boolean] true if the current user is an organizer, false otherwise
   def user_is_organizer?(user = current_user)
-    user && user.organizer?
+    user&.organizer?
   end
 
   # Check if the passed user has a staff role
@@ -65,7 +65,7 @@ module ApplicationHelper
   # @param input [Number] The number
   # @param value [Integer] Amount of precision
   # @return [String] The number with the desired precision as a string
-  def precision(input, value=0)
+  def precision(input, value = 0)
     ("%.#{value}f" % input)
   end
 end

@@ -140,7 +140,7 @@ class RvaCalculateResultsService
       # Car was invalid for whatever reason, so we prepend "'" to the position
       racer_positions_arr << "'#{racer_entry.position}" if car_bonus.nil?
 
-      racer_positions_arr << "#{racer_entry.position}"
+      racer_positions_arr << racer_entry.position.to_s
     end
 
     racer_positions_arr
@@ -175,7 +175,7 @@ class RvaCalculateResultsService
 
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
-      if !car.name.eql?(SYS::CAR::CLOCKWORK_NAME) and car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
+      if !car.name.eql?(SYS::CAR::CLOCKWORK_NAME) && car.name.start_with?(SYS::CAR::CLOCKWORK_NAME)
         car.name = car.name.split(' ', 1)[1]
       end
 
@@ -221,9 +221,9 @@ class RvaCalculateResultsService
     end
 
     if @session.teams
-      racer_result_entries_arr.sort_by { |e| e.obtained_points }.reverse!
+      racer_result_entries_arr.sort_by(&:obtained_points).reverse!
     else
-      racer_result_entries_arr.sort_by { |e| e.official_score }.reverse!
+      racer_result_entries_arr.sort_by(&:official_score).reverse!
     end
   end
 
@@ -280,7 +280,7 @@ class RvaCalculateResultsService
     big_race = race.racers_count >= 10
 
     # Racer score
-    (get_position_score(entry.position, big_scoring = big_race) * final_multiplier).round(3)
+    (get_position_score(entry.position, big_race) * final_multiplier).round(3)
   end
 
   def get_position_score(position, big_scoring)
@@ -294,17 +294,17 @@ class RvaCalculateResultsService
 
     return 1.0 if @session.category == SYS::CATEGORY::RANDOM
 
-    if @session.category == SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
+    if (@session.category == SYS::CATEGORY::CLOCKWORK) && (car.category == SYS::CATEGORY::CLOCKWORK)
       return 1.0  # The current category is Clockwork, and player is using a Clockwork, therefore valid and 1.0
-    elsif @session.category == SYS::CATEGORY::CLOCKWORK and car.category != SYS::CATEGORY::CLOCKWORK
+    elsif (@session.category == SYS::CATEGORY::CLOCKWORK) && (car.category != SYS::CATEGORY::CLOCKWORK)
       return nil  # The current category is Clockwork, but the player is not using a Clockwork, therefore invalid
-    elsif @session.category != SYS::CATEGORY::CLOCKWORK and car.category == SYS::CATEGORY::CLOCKWORK
+    elsif (@session.category != SYS::CATEGORY::CLOCKWORK) && (car.category == SYS::CATEGORY::CLOCKWORK)
       return nil  # The current category is not Clockwork, but player is using a Clockwork, therefore invalid
     end
 
     # RANDOM and CLOCKWORK never make it here, so no side effects!
     car_category_delta = @session.category - car.category
-    if car_category_delta < 0
+    if car_category_delta.negative?
       return nil # Car is above the current category, therefore points are invalid
     end
 

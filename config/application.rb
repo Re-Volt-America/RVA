@@ -149,7 +149,7 @@ module RVA
         return if role == rva_role
 
         ENV['RVA_ROLE'] = role
-        Rails.application.reload_routes! if Rails.application
+        Rails.application&.reload_routes!
       end
     end
 

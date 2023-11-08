@@ -61,7 +61,7 @@ module Mongoid
     protected
 
     def instantiate_object(field, values_with_empty_parameters)
-      return nil if values_with_empty_parameters.all? { |v| v.nil? }
+      return nil if values_with_empty_parameters.all?(&:nil?)
 
       values = values_with_empty_parameters.collect { |v| v.nil? ? 1 : v }
       klass = field.type
