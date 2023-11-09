@@ -18,7 +18,7 @@
                 = "Ranking"
             %div.dropdown-menu{:"aria-labelledby" => "dropdown04"}
               - rankings.each do |r|
-                %a.dropdown-item{:href => ranking_path(r), :class => "#{ranking == r ? 'active' : ''}"}
+                %a.dropdown-item{:href => ranking_path(r), :class => "#{(defined?(ranking) && ranking == r) ? 'active' : ''}"}
                   = "Ranking #{r.number}"
         -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
         -# definition is ours ...
