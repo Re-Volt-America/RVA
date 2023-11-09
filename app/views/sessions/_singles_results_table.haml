@@ -1,5 +1,5 @@
 .container
-  = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :ranking => @session.ranking, :session => @session }
+  = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
 
 - cache "Session##{@session.id}", :expires_in => 5.minutes do
   #results.container

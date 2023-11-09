@@ -1,4 +1,4 @@
-= render :partial => "application/subnav", :locals => { :season => @ranking.season, :ranking => @ranking }
+= render :partial => "application/subnav", :locals => { :season => @ranking.season, :rankings => @ranking.season.rankings, :ranking => @ranking }
 
 #ranking
   .container

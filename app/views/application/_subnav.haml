@@ -12,15 +12,14 @@
         - if defined?(rankings)
           %li.nav-item.dropdown
             %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
-              = "Rankings"
+              - if defined? (ranking)
+                = "Ranking #{ranking.number}"
+              - else
+                = "Ranking"
             %div.dropdown-menu{:"aria-labelledby" => "dropdown04"}
-              - rankings.each do |ranking|
-                %a.dropdown-item{:href => ranking_path(ranking)}
-                  = "Ranking #{ranking.number}"
-        - if defined?(ranking)
-          %li.nav-item
-            %a.nav-link{:href => ranking_path(ranking), :class => "#{current_page?(ranking_path(ranking)) ? 'active' : ''}"}
-              = "Ranking #{ranking.number} »"
+              - rankings.each do |r|
+                %a.dropdown-item{:href => ranking_path(r), :class => "#{ranking == r ? 'active' : ''}"}
+                  = "Ranking #{r.number}"
         -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
         -# definition is ours ...
         - if defined?(session) && session.is_a?(Session)
