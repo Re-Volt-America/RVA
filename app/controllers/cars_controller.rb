@@ -122,6 +122,37 @@ class CarsController < ApplicationController
     end
   end
 
+  def import
+    require 'csv_import_cars_service'
+
+    file = params[:file]
+
+    if file.content_type != SYS::CSV_TYPE
+      respond_to do |format|
+        format.html { redirect_to new_car_path, :note => 'You may only upload CSV files.' }
+        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
+
+    @cars = CsvImportCarsService.new(file, params[:season], params[:category]).call
+
+    respond_to do |format|
+      @cars.each do |car|
+        byebug
+
+        if car.save!
+          format.html { redirect_to cars_path, :notice => 'Cars successfully imported.' }
+          format.json { render :show, :status => :created, :location => car, :layout => false }
+        else
+          format.html { render :new, :status => :unprocessable_entity }
+          format.json { render :json => car.errors, :status => :unprocessable_entity, :layout => false }
+        end
+      end
+    end
+  end
+
   # DELETE /cars/1 or /cars/1.json
   def destroy
     @car.destroy

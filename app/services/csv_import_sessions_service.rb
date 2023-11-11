@@ -3,9 +3,6 @@ class CsvImportSessionsService
 
   require 'csv'
 
-  CSV_TYPE = RVA::PLATFORM.mac? ? 'text/csv'.freeze : 'application/vnd.ms-excel'.freeze
-  XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
-
   def initialize(file, ranking, category, number, teams)
     @file = file
     @ranking = ranking

@@ -25,7 +25,12 @@ RVA::Application.routes.draw do
   get '/cars/pro' => 'cars#pro'
   get '/cars/superpro' => 'cars#superpro'
   get '/cars/clockwork' => 'cars#clockwork'
-  resources :cars
+
+  resources :cars do
+    collection do
+      post :import
+    end
+  end
 
   resources :tournaments
   resources :teams

@@ -1,4 +1,14 @@
-%h1 New Car
+%h2.mb-4 Import Cars
 
-= render 'form', car: @car
-= link_to 'Back', cars_path
+= form_with :url => import_cars_path, :method => :post do |f|
+  .row
+    .col-md-5
+      .field.input-group
+        = f.file_field :file, :accept => ".csv", :class => "form-control-file"
+
+      .field.form-group
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+      .field.form-group
+        = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
+
+      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
