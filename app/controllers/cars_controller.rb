@@ -140,8 +140,6 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       @cars.each do |car|
-        byebug
-
         if car.save!
           format.html { redirect_to cars_path, :notice => 'Cars successfully imported.' }
           format.json { render :show, :status => :created, :location => car, :layout => false }
