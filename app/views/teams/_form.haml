@@ -1,23 +1,26 @@
 = form_with(model: team) do |form|
-  - if team.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(team.errors.count, "error")
-        prohibited this team from being saved:
-      %ul
-        - team.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :short_name
-    = form.text_field :short_name
-  .field
-    = form.label :image
-    = form.text_field :image
-  .field
-    = form.label :string
-    = form.text_field :string
-  .actions
-    = form.submit
+  .row
+    .col-md-5
+      .field.form-group
+        = form.label :name
+        = form.text_field :name, :class => "form-control"
+      .field.form-group
+        = form.label :short_name
+        = form.text_field :short_name, :class => "form-control"
+      .field.form-group
+        = form.label :image
+        = form.text_field :image, :class => "form-control"
+      .field.form-group
+        = form.label :string
+        = form.text_field :string, :class => "form-control"
+      .actions
+        = form.button "Create Team", :type => "submit", :"data-turbo" => false, :class => "btn"
+    .col-md-7
+      - if team.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(team.errors.count, "error")
+            prohibited this team from being saved:
+          %ul
+            - team.errors.each do |error|
+              %li= error.full_message
