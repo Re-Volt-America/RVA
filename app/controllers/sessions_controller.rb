@@ -81,13 +81,19 @@ class SessionsController < ApplicationController
     end
   end
 
-  # FIXME: Selecting no file breaks everything
-  # FIXME: Validate if file is empty?
-  # @note Physics and other info is only captured for the first race.
+  # NOTE: Game physics and other info present in the session log headers is only captured for the first race.
   def import
     require 'csv_import_sessions_service'
 
     file = params[:file]
+    if file.nil?
+      respond_to do |format|
+        format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
+        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
 
     if file.content_type != SYS::CSV_TYPE
       respond_to do |format|
