@@ -58,6 +58,35 @@ class TracksController < ApplicationController
     end
   end
 
+  def import
+    require 'csv_import_tracks_service'
+
+    file = params[:file]
+
+    if file.content_type != SYS::CSV_TYPE
+      respond_to do |format|
+        format.html { redirect_to new_car_path, :note => 'You may only upload CSV files.' }
+        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
+
+    @tracks = CsvImportTracksService.new(file, params[:season]).call
+
+    respond_to do |format|
+      @tracks.each do |track|
+        if track.save!
+          format.html { redirect_to tracks_path, :notice => 'Tracks successfully imported.' }
+          format.json { render :show, :status => :created, :location => track, :layout => false }
+        else
+          format.html { render :new, :status => :unprocessable_entity }
+          format.json { render :json => track.errors, :status => :unprocessable_entity, :layout => false }
+        end
+      end
+    end
+  end
+
   # DELETE /tracks/1 or /tracks/1.json
   def destroy
     @track.destroy

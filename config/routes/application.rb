@@ -15,7 +15,11 @@ RVA::Application.routes.draw do
 
   resources :seasons
   resources :rankings
-  resources :tracks
+  resources :tracks do
+    collection do
+      post :import
+    end
+  end
 
   # TODO: Maybe find a better way to add routing exceptions?
   get '/cars/rookie' => 'cars#rookie'
