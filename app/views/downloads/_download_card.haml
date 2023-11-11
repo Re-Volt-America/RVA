@@ -1,0 +1,15 @@
+#download-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
+  .card
+    .card-header
+      .text-center
+        %h2.download-title
+          %i.fa.icon{"aria-hidden" => "true", class: "#{icon}"}
+          = name
+    .card-body
+      = image_tag img_file, :alt => "", :class => "card-img-top"
+    .card-footer
+      .row
+        .col.text-center
+          %a{href: "#{download_link}", target: "#{target}"}
+            %button.btn.btn-sm{type: "button"}
+              = t('misc.download')

@@ -1,2 +1,11 @@
-%h1 Downloads#index
-%p Find me in app/views/downloads/index.haml
+%h1 Downloads
+
+%p Pending video...
+
+%h2 Legacy Downloads
+
+.container
+  .row
+    = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVGL Launcher", :img_file => "rvgl_launcher.png", :download_link => DISTRIBUTE::RVGL_LAUNCHER, :target => "_blank"}
+    = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Car Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_CARS, :target => "_self"}
+    = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Track Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_TRACKS, :target => "_self"}

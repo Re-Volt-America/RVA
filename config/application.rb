@@ -141,6 +141,16 @@ module SYS
   end
 end
 
+module DISTRIBUTE
+  PACKAGES = 'https://distribute.rva.lat/packages.json'
+  RVA_CARS = 'https://distribute.rva.lat/rva/rva_cars.zip'
+  RVA_TRACKS = 'https://distribute.rva.lat/rva/rva_tracks.zip'
+  RVA_POINTS_WIN64 = 'https://distribute.rva.lat/rva_points/win64/rva_points_win64.zip'
+  RVA_POINTS_LINUX = 'https://distribute.rva.lat/rva_points/linux/rva_points_linux.zip'
+  RVA_MARK = 'https://distribute.rva.lat/assets/rva-mark.zip'
+  RVGL_LAUNCHER = 'https://re-volt.gitlab.io/rvgl-launcher/#download'
+end
+
 module RVA
   class Application < Rails::Application
     class << self
