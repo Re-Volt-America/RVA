@@ -126,6 +126,14 @@ class CarsController < ApplicationController
     require 'csv_import_cars_service'
 
     file = params[:file]
+    if file.nil?
+      respond_to do |format|
+        format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
+        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
 
     if file.content_type != SYS::CSV_TYPE
       respond_to do |format|
