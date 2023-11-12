@@ -64,7 +64,7 @@ class TracksController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
+        format.html { redirect_to new_track_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
       end
 
@@ -73,7 +73,7 @@ class TracksController < ApplicationController
 
     if file.content_type != SYS::CSV_TYPE
       respond_to do |format|
-        format.html { redirect_to new_car_path, :note => 'You may only upload CSV files.' }
+        format.html { redirect_to new_track_path, :note => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
       end
 

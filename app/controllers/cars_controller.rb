@@ -128,7 +128,7 @@ class CarsController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
+        format.html { redirect_to new_car_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
       end
 
