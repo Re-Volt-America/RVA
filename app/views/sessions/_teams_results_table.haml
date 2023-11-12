@@ -1,6 +1,23 @@
 .container
   = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :ranking => @session.ranking, :session => @session }
 
+  .row
+    .col-xl-5.col-lg-5.col-md-12.col-xs-12
+      .session-details.mb-4
+        %h2
+          = "#{category_name(@session.category)} Races (Session #{@session.number})"
+        %ul
+          %li
+            = "Version: #{@session.version}"
+          %li
+            = "Connection: #{@session.protocol} (Server)"
+          %li
+            = "Mode: #{@session.physics}"
+          %li
+            = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
+          %li
+            = "Teams: #{@session.teams? ? "Yes" : "No"}"
+
 - cache "Session##{@session.id}", :expires_in => 5.minutes do
   #results.container
     %table.table.table-sm.table-fluid.table-responsive
