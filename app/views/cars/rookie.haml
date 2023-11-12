@@ -1,10 +1,10 @@
 #car-cards-display
+  %h2
+    = "#{t('rva.cars.title')} - #{t("classes.rookie")}"
+
+  = render :partial => "application/subnav", :locals => {:category => SYS::CATEGORY::ROOKIE}
+
   .sticky-top.search-bar
-    .pb-2.mt-4.mb-2.text-center
-      %h2
-        %i.fa.fa-car{"aria-hidden" => "true"}
-        %b
-          = t("classes.rookie")
     .row
       .col-xl-11.col-lg-10.col-md-10.col-xs-9.col-8.sticky-top
         %input#input.form-control{placeholder: "Search...", type: "text"}/

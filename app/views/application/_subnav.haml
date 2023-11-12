@@ -3,23 +3,48 @@
     %div.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto
         %li.nav-item
+          %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
+            = "Tracks #{defined?(track) ? "»" : ""}"
+        - if defined?(track)
+          %li.nav-item
+            %a.nav-link{:href => track_path(track), :class => "#{current_page?(track_path(track)) ? 'active' : ''}"}
+              = track.name
+        %li.nav-item
+          %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
+            = "Cars #{defined?(category) ? "»" : ""}"
+        - if defined?(category)
+          %li.nav-item
+            %a.nav-link{:href => car_category_path(category), :class => "#{current_page?(car_category_path(category)) ? 'active' : ''}"}
+              = "#{category_name(category)} #{defined?(car) ? "»" : ""}"
+        - if defined?(car)
+          %li.nav-item
+            %a.nav-link{:href => car_path(car), :class => "#{current_page?(car_path(car)) ? 'active' : ''}"}
+              = car.name
+        %li.nav-item
           %a.nav-link{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
-            = "Seasons »"
+            = "Seasons #{(defined?(season)) ? "»" : ""}"
         - if defined?(season)
           %li.nav-item
             %a.nav-link{:href => season_path(season), :class => "#{current_page?(season_path(season)) ? 'active' : ''}"}
-              = "#{season.name} »"
+              = "#{season.name} #{defined?(ranking) ? "»" : ""}"
         - if defined?(rankings)
-          %li.nav-item.dropdown
-            %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
-              - if defined? (ranking)
-                = "Ranking #{ranking.number}"
-              - else
-                = "Ranking"
-            %div.dropdown-menu{:"aria-labelledby" => "dropdown04"}
-              - rankings.each do |r|
-                %a.dropdown-item{:href => ranking_path(r), :class => "#{(defined?(ranking) && ranking == r) ? 'active' : ''}"}
-                  = "Ranking #{r.number}"
+          -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
+          -# definition is ours ...
+          - if defined?(session) && session.is_a?(Session)
+            %li.nav-item
+              %a.nav-link{:href => ranking_path(ranking), :class => "#{current_page?(ranking_path(ranking)) ? 'active' : ''}"}
+                = "Ranking #{ranking.number} »"
+          - else
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
+                - if defined? (ranking)
+                  = "Ranking #{ranking.number}"
+                - else
+                  = "Ranking"
+              %div.dropdown-menu{:"aria-labelledby" => "dropdown04"}
+                - rankings.each do |r|
+                  %a.dropdown-item{:href => ranking_path(r), :class => "#{(defined?(ranking) && ranking == r) ? 'active' : ''}"}
+                    = "Ranking #{r.number}"
         -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
         -# definition is ours ...
         - if defined?(session) && session.is_a?(Session)

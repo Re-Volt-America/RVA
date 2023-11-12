@@ -1,6 +1,8 @@
 %h2.mb-4
   = t('rva.tracks.title')
 
+= render :partial => "application/subnav"
+
 #tracks
   = paginate @tracks
 
