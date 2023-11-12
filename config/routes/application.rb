@@ -21,7 +21,7 @@ RVA::Application.routes.draw do
     end
   end
 
-  # TODO: Maybe find a better way to add routing exceptions?
+  # NOTE: Maybe not the best way of adding routing exceptions?
   get '/cars/rookie' => 'cars#rookie'
   get '/cars/amateur' => 'cars#amateur'
   get '/cars/advanced' => 'cars#advanced'
