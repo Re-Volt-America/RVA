@@ -5,6 +5,7 @@ module CarsHelper
     Car.all.filter { |c| c.category == category }
   end
 
+  # @param category [Integer] Category number
   # @return [String] Path to the passed category, or nil if not found
   def car_category_path(category)
     case category
