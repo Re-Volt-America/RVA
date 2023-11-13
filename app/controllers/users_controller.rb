@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :except => [:show]
+  before_action :authenticate_user!, :except => [:show, :stats]
+  before_action :authenticate_admin, :only => [:new, :import]
 
   def members
     @users = User.all
@@ -15,6 +16,43 @@ class UsersController < ApplicationController
     @user = User.new
     @user.build_profile
     @user.build_stats
+  end
+
+  def import
+    require 'csv_import_users_service'
+
+    file = params[:file]
+    if file.nil?
+      respond_to do |format|
+        format.html { redirect_to new_user_path, :notice => 'You must select a CSV file.' }
+        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
+
+    if file.content_type != SYS::CSV_TYPE
+      respond_to do |format|
+        format.html { redirect_to new_user_path, :note => 'You may only upload CSV files.' }
+        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+      end
+
+      return
+    end
+
+    @users = CsvImportUsersService.new(file).call
+
+    respond_to do |format|
+      @users.each do |user|
+        if user.save!
+          format.html { redirect_to users_path, :notice => 'Users successfully imported.' }
+          format.json { render :show, :status => :created, :location => user, :layout => false }
+        else
+          format.html { render :new, :status => :unprocessable_entity }
+          format.json { render :json => user.errors, :status => :unprocessable_entity, :layout => false }
+        end
+      end
+    end
   end
 
   def stats; end

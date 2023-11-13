@@ -1,0 +1,9 @@
+%h2.mb-4 Import Users
+
+= form_with :url => users_import_path, :method => :post do |f|
+  .row
+    .col-md-5
+      .field.input-group
+        = f.file_field :file, :accept => ".csv", :class => "form-control-file"
+
+      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
