@@ -1,15 +1,13 @@
 #
-# This service calculates a 2D array which represents the parsed results in Re-Volt America's format. This array
+# This service is used to generate a 2D array of race results in Re-Volt America's format. This array
 # contains things like the tracks played in the session, player names, positions, scoring, cars used, and other relevant
 # data.
 #
-# This array is later used by the session's _show view to easily render the data in an ordered manner.
+# The generated array is later used by the session views to easily render the data as an actual table.
 #
-# @return The RVA results array.
 class RvaCalculateResultsService
   include ApplicationHelper
 
-  # Represents a player's entry in the final RVA results table.
   class RacerResultEntry
     attr_reader :username, :race_count, :average_position, :obtained_points, :official_score, :played_tracks,
                 :participation_multiplier, :team
@@ -41,7 +39,7 @@ class RvaCalculateResultsService
   end
 
   def get_rva_singles_results_arr
-    rva_results_arr = [['#', 'Date'] + get_tracks_arr + %w(PP PA CC MP PO)]
+    rva_results_arr = [%w[# Date] + get_tracks_arr + %w(PP PA CC MP PO)]
 
     first = true
     pos = 1
@@ -78,7 +76,7 @@ class RvaCalculateResultsService
   end
 
   def get_rva_teams_results_arr
-    rva_teams_results_arr = [['#', 'Date'] + get_tracks_arr + %w(CC PA)]
+    rva_teams_results_arr = [%w[# Date] + get_tracks_arr + %w(CC PA)]
 
     first = true
     pos = 1
