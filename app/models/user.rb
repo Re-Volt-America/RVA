@@ -59,6 +59,7 @@ class User
   field :mod, :type => Boolean, :default => false
   field :organizer, :type => Boolean, :default => false
   field :locale, :type => String, :default => 'en_us'
+  field :country, :type => String
 
   def to_param
     username

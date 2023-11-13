@@ -5,6 +5,8 @@ ruby '3.2.2'
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
+gem 'countries', '~> 5.7'                                             # Collection of all sorts of useful information for every country in the ISO 3166 standard
+gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
