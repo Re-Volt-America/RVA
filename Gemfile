@@ -35,7 +35,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby] # Add a short explanation where the exception is raised
+  gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
   gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
