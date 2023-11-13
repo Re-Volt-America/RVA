@@ -28,7 +28,7 @@
     = "Recent Sessions"
 
   - if current_ranking.nil? || current_ranking.sessions.empty?
-    %h5.text-center.mt-2
+    %h6.text-center.mt-2
       = "No Sessions to display :("
   - else
     - current_ranking.sessions.each do |session|
