@@ -14,16 +14,9 @@ class CsvImportUsersService
     csv.each do |user|
 
       user_hash = {
-        :email => user[2],
-        :password => user[4],
-        :encrypted_password => user[3],
-        :sign_in_count => 0,
-        :failed_attempts => 0,
-        :locale => "en_us",
         :username => user[1],
-        :admin => false,
-        :mod => false,
-        :organizer => false,
+        :email => user[2],
+        :password => user[3],
         :country => user[0]
       }
 
