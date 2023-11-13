@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
       { :name => 'Upload Cars', :path => new_car_path },
       { :name => 'New Season', :path => new_season_path },
       { :name => 'New Ranking', :path => new_ranking_path },
-      { :name => 'New Tournament', :path => new_tournament_path }
+      { :name => 'New Tournament', :path => new_tournament_path },
+      { :name => 'Import Users', :path => users_new_path }
     ]
     @nav = [
       { :name => 'Admin', :path => '', :sub => @admin_nav, :admin => true },
