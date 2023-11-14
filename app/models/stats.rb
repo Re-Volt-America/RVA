@@ -12,5 +12,5 @@ class Stats
   field :average_position, :type => Float
   field :participation_rate, :type => Float
   field :official_score, :type => Float
-  field :obtained_points, :type => Float
+  field :obtained_points, :type => Integer
 end

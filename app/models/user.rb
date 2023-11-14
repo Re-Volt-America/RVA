@@ -91,7 +91,7 @@ class User
       :average_position => 0.0,
       :participation_rate => 0.0,
       :official_score => 0.0,
-      :obtained_points => 0.0
+      :obtained_points => 0
     )
   end
 end
