@@ -3,6 +3,7 @@ RVA::Application.routes.draw do
 
   root :to => 'application#index', :via => 'get'
 
+  get 'about' => "application#about"
   get 'rules' => 'rules#index'
   get 'terms' => 'rules#terms'
   get 'privacy' => 'rules#privacy'
