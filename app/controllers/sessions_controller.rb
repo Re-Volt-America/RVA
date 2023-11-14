@@ -69,9 +69,7 @@ class SessionsController < ApplicationController
 
     @rva_results = RvaCalculateResultsService.new(@session).call
 
-    unless @session.nil? || @session.teams?
-      UserStatsService.new.remove_stats(@rva_results)
-    end
+    UserStatsService.new.remove_stats(@rva_results) unless @session.nil? || @session.teams?
 
     @session.destroy
 
@@ -115,14 +113,11 @@ class SessionsController < ApplicationController
       return
     end
 
-    # FIXME: Maybe store rva_results as a model?
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
                                             params[:teams]).call
     @rva_results = RvaCalculateResultsService.new(@session).call
 
-    unless @session.nil? || @session.teams?
-      UserStatsService.new.add_stats(@rva_results)
-    end
+    UserStatsService.new.add_stats(@rva_results) unless @session.nil? || @session.teams?
 
     respond_to do |format|
       if @session.save!

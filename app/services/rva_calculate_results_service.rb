@@ -39,7 +39,7 @@ class RvaCalculateResultsService
   end
 
   def get_rva_singles_results_arr
-    rva_results_arr = [%w[# Date] + get_tracks_arr + %w(PP PA CC MP PO)]
+    rva_results_arr = [%w(# Date) + get_tracks_arr + %w(PP PA CC MP PO)]
 
     first = true
     pos = 1
@@ -76,7 +76,7 @@ class RvaCalculateResultsService
   end
 
   def get_rva_teams_results_arr
-    rva_teams_results_arr = [%w[# Date] + get_tracks_arr + %w(CC PA)]
+    rva_teams_results_arr = [%w(# Date) + get_tracks_arr + %w(CC PA)]
 
     first = true
     pos = 1

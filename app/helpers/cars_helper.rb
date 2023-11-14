@@ -1,5 +1,4 @@
 module CarsHelper
-
   # @return [Array] All the cars of the passed category
   def cars_of_category(category)
     Car.all.filter { |c| c.category == category }
@@ -23,8 +22,6 @@ module CarsHelper
       cars_superpro_path
     when SYS::CATEGORY::CLOCKWORK
       cars_clockwork_path
-    else
-      nil
     end
   end
 end

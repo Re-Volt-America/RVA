@@ -30,7 +30,7 @@ class CsvImportTracksService
   end
 
   # TODO: Check whether this csv corresponds to RVA track data
-  def is_rva_track_data(csv)
+  def is_rva_track_data(_csv)
     true
   end
 end

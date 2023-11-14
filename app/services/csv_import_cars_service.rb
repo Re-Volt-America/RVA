@@ -33,7 +33,7 @@ class CsvImportCarsService
   end
 
   # TODO: Check whether this csv corresponds to RVA car data
-  def is_rva_car_data(csv)
+  def is_rva_car_data(_csv)
     true
   end
 end

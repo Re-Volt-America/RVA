@@ -12,7 +12,6 @@ class CsvImportUsersService
 
     users = []
     csv.each do |user|
-
       user_hash = {
         :username => user[1],
         :email => user[2],

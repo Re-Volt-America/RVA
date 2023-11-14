@@ -60,6 +60,7 @@ class UserStatsService
       user.stats.positions_sum -= positions_sum
       user.stats.session_count -= 1
       user.stats.average_position = user.stats.positions_sum / user.stats.race_count
+      # NOTE: We assume every past session had 20 races... not perfect, but good enough
       user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20))
       user.stats.official_score -= row[9].to_f
       user.stats.obtained_points -= row[6].to_i
