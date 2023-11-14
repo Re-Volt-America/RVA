@@ -1,2 +1,171 @@
-%h1
-  #{@user.username}'s profile
+#profile
+  .row
+    .col-md-12
+      %h1.username
+        = "#{@user.username}"
+        %small
+          #{@user.country}
+      = render :partial => 'badges', locals: { user: @user }
+    .col-md-4.mt-4
+      .stats
+        .well
+          .rank
+            .name rank
+            .number
+              = "-"
+              %sup
+                =# ordinal_ending(1)
+          .rank
+            .name win rate
+            .number
+              = @user.stats.race_win_rate
+          .rule
+          %div
+            .total
+              .name sessions
+              .number
+                = @user.stats.session_count
+            .total
+              .name races
+              .number
+                = @user.stats.race_count
+            .total
+              .name wins
+              .number
+                = @user.stats.race_wins
+
+  %br/
+  %ul.nav.nav-tabs{role: "tablist"}
+    %li.nav-item
+      %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"} General
+    %li.nav-item
+      %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"} Stats
+  .tab-content
+    #general.tab-pane.fade.show.active{"aria-labelledby" => "general-tab", role: "tabpanel"}
+      .row.mt-2.info
+        - if @user.profile.instagram?
+          .col-md-4.col-sm-6
+            %h6 Instagram
+            %blockquote
+              %p
+                %a{href: "https://instagram.com/#{@user.profile.instagram}", target: "_blank"}
+                  = @user.profile.instagram
+        - if @user.profile.twitter?
+          .col-md-4.col-sm-6
+            %h6 Twitter
+            %blockquote
+              %p
+                %a{href: "https://twitter.com/#{@user.profile.twitter}", target: "_blank"}
+                  = @user.profile.twitter
+        - if @user.profile.steam?
+          .col-md-4.col-sm-6
+            %h6 Steam
+            %blockquote
+              %p
+                %a{href: "https://steamcommunity.com/id/#{@user.profile.steam}", target: "_blank"}
+                  = @user.profile.steam
+        - if @user.profile.github?
+          .col-md-4.col-sm-6
+            %h6 GitHub
+            %blockquote
+              %p
+                %a{href: "https://github.com/#{@user.profile.github}", target: "_blank"}
+                  = @user.profile.github
+        - if @user.profile.crowdin?
+          .col-md-4.col-sm-6
+            %h6 Crowdin
+            %blockquote
+              %p
+                %a{href: "https://crowdin.com/profile/#{@user.profile.crowdin}", target: "_blank"}
+                  = @user.profile.crowdin
+        - if @user.profile.discord?
+          .col-md-4.col-sm-6
+            %h6 Discord
+            %blockquote
+              %p
+                %b
+                  = @user.profile.discord
+        - if @user.profile.public_email?
+          .col-md-4.col-sm-6
+            %h6 Email
+            %blockquote
+              %p
+                %b
+                  = @user.profile.public_email
+      .row.info
+        - if @user.profile.gender?
+          .col-sm-6
+            %h6 Gender
+            %pre
+              = @user.profile.gender
+        - if @user.profile.location?
+          .col-sm-6
+            %h6 Location
+            %pre
+              = @user.profile.location
+        - if @user.profile.occupation?
+          .col-sm-6
+            %h6 Occupation
+            %pre
+              = @user.profile.occupation
+        - if @user.profile.interests?
+          .col-sm-6
+            %h6 Interests
+            %pre
+              = @user.profile.interests
+      .row.info
+        .col-md-12
+          .info
+            %h6
+              About #{@user.username}
+            - if @user.profile.about?
+              %pre#about
+                = render_safe(@user.profile.about)
+            - else
+              %pre
+                Nothing here yet...
+    #stats.tab-pane.fade{"aria-labelledby" => "stats-tab", role: "tabpanel"}
+      %h4.mt-4
+        Race Stats
+      %hr
+      .row
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.race_wins
+            %small wins
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.race_podiums
+            %small podiums
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.race_win_rate
+            %small win rate
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.session_count
+            %small sessions played
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.race_count
+            %small races played
+      %h4.mt-4
+        Overall Stats
+      %hr
+      .row
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.obtained_points
+            %small obtained points
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.official_score.round(2)
+            %small official score
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.average_position
+            %small average position
+        .col-md-4.col-sm-4
+          %h3
+            = @user.stats.participation_rate
+            %small participation rate

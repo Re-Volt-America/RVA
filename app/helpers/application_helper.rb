@@ -69,6 +69,23 @@ module ApplicationHelper
     ("%.#{value}f" % input)
   end
 
+  def count_all(array, values_to_count)
+    array.count { |el| values_to_count.include?(el) }
+  end
+
+  def ordinal_ending(n)
+    ending = case n % 100
+             when 11, 12, 13 then 'th'
+             else
+               case n % 10
+               when 1 then 'st'
+               when 2 then 'nd'
+               when 3 then 'rd'
+               else 'th'
+               end
+             end
+  end
+
   # @param content [String] Content
   # @return [String] Parsed html and/or markdown text
   def render_pretty(content, config = Sanitize::Config::RELAXED)

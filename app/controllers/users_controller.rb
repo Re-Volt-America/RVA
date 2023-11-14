@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ProfilesHelper
+
   before_action :authenticate_user!, :except => [:show, :stats]
   before_action :authenticate_admin, :only => [:new, :import]
 
@@ -10,6 +12,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by!(:username => params[:username])
+
+    # TODO: Find player position in current season/ranking
+    # @ranking
   end
 
   def new
