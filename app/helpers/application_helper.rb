@@ -68,4 +68,13 @@ module ApplicationHelper
   def precision(input, value = 0)
     ("%.#{value}f" % input)
   end
+
+  # @param content [String] Content
+  # @return [String] Parsed html and/or markdown text
+  def render_pretty(content, config = Sanitize::Config::RELAXED)
+    Sanitize.clean(content, config)
+
+    options = { :input => 'Kramdown', :parse_block_html => true }
+    Kramdown::Document.new(content, options).to_html.html_safe
+  end
 end
