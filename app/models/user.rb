@@ -83,6 +83,8 @@ class User
   def create_stats
     build_stats(
       :race_wins => 0,
+      :race_win_rate => 0.0,
+      :race_podiums => 0,
       :race_count => 0,
       :positions_sum => 0,
       :session_count => 0,

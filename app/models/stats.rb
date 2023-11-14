@@ -4,6 +4,8 @@ class Stats
   embedded_in :user
 
   field :race_wins, :type => Integer
+  field :race_win_rate, :type => Float
+  field :race_podiums, :type => Integer
   field :race_count, :type => Integer
   field :positions_sum, :type => Integer
   field :session_count, :type => Integer

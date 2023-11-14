@@ -51,7 +51,7 @@ module Users
       devise_parameter_sanitizer.permit(:account_update, :keys => [
                                           :admin, :mod, :organizer, :locale, :country,
                                           { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests],
-                                            :stats_attributes => [:id, :race_wins, :race_count, :positions_sum,
+                                            :stats_attributes => [:id, :race_wins, :race_win_rate, :race_podiums, :race_count, :positions_sum,
                                                                   :session_count, :average_position, :participation_rate, :official_score, :obtained_points] }
                                         ])
     end

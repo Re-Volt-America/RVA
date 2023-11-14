@@ -18,9 +18,12 @@ class UserStatsService
       user = row[3]
       positions = row[4]
       race_wins = positions.count('1')
+      race_podiums = positions.count_all(positions, %w[1 2 3])
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins += race_wins
+      user.stats.race_win_rate = stats.race_wins / stats.race_count
+      user.stats.race_podiums += race_podiums
       user.stats.race_count += row[7].to_i
       user.stats.positions_sum += positions_sum
       user.stats.session_count += 1
@@ -53,9 +56,12 @@ class UserStatsService
       user = row[3]
       positions = row[4]
       race_wins = positions.count('1')
+      race_podiums = positions.count_all(positions, %w[1 2 3])
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins -= race_wins
+      user.stats.race_win_rate = stats.race_wins / stats.race_count
+      user.stats.race_podiums -= race_podiums
       user.stats.race_count -= row[7].to_i
       user.stats.positions_sum -= positions_sum
       user.stats.session_count -= 1
