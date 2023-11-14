@@ -127,6 +127,7 @@ class RvaCalculateResultsService
     racer_positions_arr = []
 
     @races.each do |race|
+      # Racer didn't play this race
       unless race.get_racer_names.include?(racer)
         racer_positions_arr << ''
         next

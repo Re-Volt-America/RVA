@@ -84,11 +84,12 @@ class User
     build_stats(
       :race_wins => 0,
       :race_count => 0,
+      :positions_sum => 0,
+      :session_count => 0,
       :average_position => 0.0,
       :participation_rate => 0.0,
       :official_score => 0.0,
-      :obtained_points => 0.0,
-      :team_points => 0.0
+      :obtained_points => 0.0
     )
   end
 end

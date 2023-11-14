@@ -64,6 +64,15 @@ class SessionsController < ApplicationController
 
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
+    require 'rva_calculate_results_service'
+    require 'user_stats_service'
+
+    @rva_results = RvaCalculateResultsService.new(@session).call
+
+    unless @session.nil? || @session.teams?
+      UserStatsService.new.remove_stats(@rva_results)
+    end
+
     @session.destroy
 
     respond_to do |format|
@@ -84,6 +93,8 @@ class SessionsController < ApplicationController
   # NOTE: Game physics and other info present in the session log headers is only captured for the first race.
   def import
     require 'csv_import_sessions_service'
+    require 'rva_calculate_results_service'
+    require 'user_stats_service'
 
     file = params[:file]
     if file.nil?
@@ -104,8 +115,14 @@ class SessionsController < ApplicationController
       return
     end
 
+    # FIXME: Maybe store rva_results as a model?
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
                                             params[:teams]).call
+    @rva_results = RvaCalculateResultsService.new(@session).call
+
+    unless @session.nil? || @session.teams?
+      UserStatsService.new.add_stats(@rva_results)
+    end
 
     respond_to do |format|
       if @session.save!
