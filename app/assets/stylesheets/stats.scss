@@ -1,3 +1,19 @@
-// Place all the styles related to the Stats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#stats-table {
+  small {
+    font-size: 70%;
+  }
+
+  thead {
+    color: #bdbdbd;
+  }
+
+  tbody {
+    color: #beb8bc;
+  }
+
+  .stats-head-entry {
+    height: 26px;
+    width: 26px;
+    border-radius: 3px;
+  }
+}

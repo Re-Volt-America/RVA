@@ -1,2 +1,62 @@
-%h1 Stats#index
-%p Find me in app/views/stats/index.haml
+%h1.mb-4
+  Stats
+
+Sorted by:
+
+%select#sorter.form-control{style: "display: inline-block; width: 130px; cursor: pointer;"}
+  - @sorts.each do |key, label|
+    - if params[:sort].eql?(key.to_s)
+      %option{label: label, selected: "selected", value: "#{full_url_for :sort => key}"}= label
+    - else
+      %option{label: label, value: "#{full_url_for :sort => key}"}= label
+
+.table-responsive.mt-4#stats-table
+  = paginate @users
+
+  %table.mt-3.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th{width: "1%"} #
+        %th{width: "2%"} Country
+        %th{width: "15%"} Racer
+        %th{width: "2%"} Wins
+        %th{width: "2%"} Podiums
+        %th{width: "12%"} Win Ratio
+        %th{width: "15%"} Average Pos.
+        %th{width: "15%"} Race Count
+        %th{width: "17%"} Obtained Points
+        %th{width: "15%"} Official Score
+    %tbody
+      - @users.each do |user|
+        - @count += 1
+        %tr
+          %td
+            = "#{@count - 1}"
+          %td
+            = user.country
+          %td
+            = link_to user.username, user_path(user)
+          %td
+            = user.stats.race_wins
+          %td
+            = user.stats.race_podiums
+          %td
+            = user.stats.race_win_rate
+          %td
+            = user.stats.average_position
+          %td
+            = user.stats.race_count
+          %td
+            = user.stats.obtained_points
+          %td
+            = user.stats.official_score.round(2)
+
+  = paginate @users
+
+:javascript
+  var select = document.getElementById('sorter');
+
+  select.onchange = function () {
+      var option = this.options[this.selectedIndex];
+      window.location.replace(option.value)
+  }
