@@ -53,7 +53,7 @@
             %small
               (National flag)
           .field.form-group
-            = f.country_select :country, {}, {:class => "form-control"}
+            = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
           %h6 Location
           .form-group
             .input-group
