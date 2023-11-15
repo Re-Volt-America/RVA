@@ -132,23 +132,28 @@
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_wins
-            %small wins
+            %small
+              = "#{@user.stats.race_wins == 1 ? "win" : "wins"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_podiums
-            %small podiums
+            %small
+              = "#{@user.stats.race_podiums == 1 ? "podium" : "podiums"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_win_rate
-            %small win rate
+            %small
+              win rate
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_count
-            %small sessions played
+            %small
+              = "#{@user.stats.session_count == 1 ? "session played" : "sessions played"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_count
-            %small races played
+            %small
+              = "#{@user.stats.race_count == 1 ? "race played" : "races played"}"
       %h4.mt-4
         Overall Stats
       %hr
@@ -156,19 +161,23 @@
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_wins
-            %small session wins
+            %small
+              = "#{@user.stats.session_wins == 1 ? "session win" : "session wins"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_podiums
-            %small session podiums
+            %small
+              = "#{@user.stats.session_podiums == 1 ? "session podium" : "session podiums"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_win_rate
-            %small session win rate
+            %small
+              session win rate
         .col-md-4.col-sm-4
           %h3
             = @user.stats.obtained_points
-            %small obtained points
+            %small
+              = "#{@user.stats.obtained_points == 1 ? "obtained point" : "obtained points"}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.official_score.round(2)
