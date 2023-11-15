@@ -27,11 +27,13 @@
   table {
     font-family: "Bahnschrift-Light", sans-serif;
     background-color: #2d3f43;
+    border: 1px solid #646464;
 
     th {
       background-color: #1d282b;
       color: #ffd966;
       border-bottom: 0;
+      border-top: 0;
       height: 40px;
 
       a {
