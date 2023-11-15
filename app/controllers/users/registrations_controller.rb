@@ -52,7 +52,7 @@ module Users
                                           :admin, :mod, :organizer, :locale, :country,
                                           { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests],
                                             :stats_attributes => [:id, :race_wins, :race_win_rate, :race_podiums, :race_count, :positions_sum,
-                                                                  :session_count, :average_position, :participation_rate, :official_score, :obtained_points] }
+                                                                  :session_wins, :session_podiums, :session_win_rate, :session_count, :average_position, :participation_rate, :official_score, :obtained_points] }
                                         ])
     end
 

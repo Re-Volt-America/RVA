@@ -8,6 +8,9 @@ class Stats
   field :race_podiums, :type => Integer
   field :race_count, :type => Integer
   field :positions_sum, :type => Integer
+  field :session_wins, :type => Integer
+  field :session_win_rate, :type => Float
+  field :session_podiums, :type => Integer
   field :session_count, :type => Integer
   field :average_position, :type => Float
   field :participation_rate, :type => Float
