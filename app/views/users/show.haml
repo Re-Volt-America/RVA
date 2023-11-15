@@ -3,8 +3,9 @@
     .col-md-12
       %h1.username
         = "#{@user.username}"
-        %small
-          #{@user.country}
+        - if @user.country
+          %small.country-flag
+            = ISO3166::Country.new(@user.country).emoji_flag
       = render :partial => 'badges', locals: { user: @user }
     .col-md-4.mt-4
       .stats

@@ -30,25 +30,28 @@ Sorted by:
       - @users.each do |user|
         - @count += 1
         %tr
-          %td.rank
+          %td.rank.text-center
             = "#{@count - 1}"
-          %td
-            = user.country
-          %td.racer
+          %td.country-flag.text-center
+            - if user.country.nil? || user.country.eql?("??")
+              = "?"
+            - else
+              = ISO3166::Country.new(user.country).emoji_flag
+          %td.racer.align-middle
             = link_to user.username, user_path(user)
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.race_wins
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.race_podiums
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.race_win_rate
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.average_position
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.race_count
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.obtained_points
-          %td.stat-number
+          %td.stat-number.align-middle
             = user.stats.official_score.round(2)
 
   = paginate @users
