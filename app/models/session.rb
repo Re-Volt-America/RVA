@@ -6,6 +6,7 @@ class Session
 
   belongs_to :ranking
   embeds_many :races
+  embeds_many :racer_result_entries
 
   field :number, :type => Integer
   field :host, :type => String

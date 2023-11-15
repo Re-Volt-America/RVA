@@ -2,6 +2,8 @@ class CsvImportSessionsService
   include ApplicationHelper
 
   require 'csv'
+  require 'rva_calculate_results_service'
+  require 'user_stats_service'
 
   def initialize(file, ranking, category, number, teams)
     @file = file
@@ -37,7 +39,55 @@ class CsvImportSessionsService
       :teams => @teams
     }
 
-    Session.new(session_hash)
+    session = Session.new(session_hash)
+    return session if session.teams
+
+    # Keep a record of this session's racer result entries for season/ranking leaderboard calculations
+
+    rva_results = RvaCalculateResultsService.new(session).call
+
+    racer_result_entries = []
+    num_entries = 0
+    count = 0
+    rva_results.drop(1).each do |row|
+      if count.odd?
+        count += 1
+        next
+      end
+
+      unless row[3].is_a?(User)
+        count += 1
+        next
+      end
+
+      user = row[3]
+      average_position = row[5].to_f
+      obtained_points = row[6].to_i
+      official_score = row[9].to_f
+      race_count = row[7].to_i
+      participation_multiplier = row[8].to_f
+
+      racer_result_entry_hash = {
+        :username => user.username,
+        :race_count => race_count.to_i,
+        :average_position => average_position,
+        :obtained_points => obtained_points,
+        :official_score => official_score,
+        :participation_multiplier => participation_multiplier,
+        :team => nil # TODO: Extend support for team sessions
+      }
+
+      racer_result_entries << RacerResultEntry.new(racer_result_entry_hash)
+      count += 1
+      num_entries += 1
+    end
+
+    session.racer_result_entries = racer_result_entries
+    session.update
+
+    UserStatsService.new.add_stats(rva_results) unless session.nil?
+
+    session
   end
 
   def get_races_hash(session_arr)

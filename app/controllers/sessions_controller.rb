@@ -91,8 +91,6 @@ class SessionsController < ApplicationController
   # NOTE: Game physics and other info present in the session log headers is only captured for the first race.
   def import
     require 'csv_import_sessions_service'
-    require 'rva_calculate_results_service'
-    require 'user_stats_service'
 
     file = params[:file]
     if file.nil?
@@ -113,9 +111,7 @@ class SessionsController < ApplicationController
       return
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
-                                            params[:teams]).call
-    @rva_results = RvaCalculateResultsService.new(@session).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number], params[:teams]).call
 
     respond_to do |format|
       if @session.save!
@@ -128,8 +124,6 @@ class SessionsController < ApplicationController
         return
       end
     end
-
-    UserStatsService.new.add_stats(@rva_results) unless @session.nil? || @session.teams?
   end
 
   private
