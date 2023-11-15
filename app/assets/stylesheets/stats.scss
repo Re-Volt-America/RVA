@@ -1,19 +1,41 @@
 #stats-table {
-  small {
-    font-size: 70%;
+  table {
+    font-family: "Bahnschrift-Light", sans-serif;
+    background-color: #212121;
+    border: 1px solid #646464;
   }
 
-  thead {
-    color: #bdbdbd;
+  th {
+    background-color: #1a1a1a;
+    color: #ffd966;
+    border: 0;
+    height: 40px;
+
+    a {
+      color: #ffd966;
+    }
   }
 
-  tbody {
+  tr {
     color: #beb8bc;
+    border: 0;
+  }
+
+  td {
+    border: 0;
+  }
+
+  a {
+    color: #fff;
   }
 
   .stats-head-entry {
     height: 26px;
     width: 26px;
     border-radius: 3px;
+  }
+
+  .rank {
+    color: #fff;
   }
 }

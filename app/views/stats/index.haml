@@ -30,25 +30,25 @@ Sorted by:
       - @users.each do |user|
         - @count += 1
         %tr
-          %td
+          %td.rank
             = "#{@count - 1}"
           %td
             = user.country
-          %td
+          %td.racer
             = link_to user.username, user_path(user)
-          %td
+          %td.stat-number
             = user.stats.race_wins
-          %td
+          %td.stat-number
             = user.stats.race_podiums
-          %td
+          %td.stat-number
             = user.stats.race_win_rate
-          %td
+          %td.stat-number
             = user.stats.average_position
-          %td
+          %td.stat-number
             = user.stats.race_count
-          %td
+          %td.stat-number
             = user.stats.obtained_points
-          %td
+          %td.stat-number
             = user.stats.official_score.round(2)
 
   = paginate @users

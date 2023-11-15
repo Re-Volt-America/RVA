@@ -8,7 +8,7 @@ class StatsController < ApplicationController
     @users.reverse! # unless params[:sort].eql?('average_position')
 
 
-    @users = Kaminari.paginate_array(@users).page(params[:page]).per(20)
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(16)
 
     @count = (@users.current_page - 1) * @users.limit_value + 1
     @sorts = {
