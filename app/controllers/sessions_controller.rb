@@ -117,8 +117,6 @@ class SessionsController < ApplicationController
                                             params[:teams]).call
     @rva_results = RvaCalculateResultsService.new(@session).call
 
-    UserStatsService.new.add_stats(@rva_results) unless @session.nil? || @session.teams?
-
     respond_to do |format|
       if @session.save!
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully imported.' }
@@ -126,8 +124,12 @@ class SessionsController < ApplicationController
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
+
+        return
       end
     end
+
+    UserStatsService.new.add_stats(@rva_results) unless @session.nil? || @session.teams?
   end
 
   private
