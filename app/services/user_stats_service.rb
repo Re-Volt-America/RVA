@@ -22,13 +22,13 @@ class UserStatsService
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins += race_wins
-      user.stats.race_win_rate = user.stats.race_wins / user.stats.race_count
+      user.stats.race_win_rate = user.stats.race_wins / (user.stats.race_count.nonzero? || 1)
       user.stats.race_podiums += race_podiums
       user.stats.race_count += row[7].to_i
       user.stats.positions_sum += positions_sum
       user.stats.session_count += 1
-      user.stats.average_position = user.stats.positions_sum / user.stats.race_count
-      user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20))
+      user.stats.average_position = user.stats.positions_sum / (user.stats.race_count.nonzero? || 1)
+      user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20).nonzero? || 1)
       user.stats.official_score += row[9].to_f
       user.stats.obtained_points += row[6].to_i
 
@@ -60,14 +60,14 @@ class UserStatsService
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins -= race_wins
-      user.stats.race_win_rate = user.stats.race_wins / user.stats.race_count
+      user.stats.race_win_rate = user.stats.race_wins / (user.stats.race_count.nonzero? || 1)
       user.stats.race_podiums -= race_podiums
       user.stats.race_count -= row[7].to_i
       user.stats.positions_sum -= positions_sum
       user.stats.session_count -= 1
-      user.stats.average_position = user.stats.positions_sum / user.stats.race_count
+      user.stats.average_position = user.stats.positions_sum / (user.stats.race_count.nonzero? || 1)
       # NOTE: We assume every past session had 20 races... not perfect, but good enough
-      user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20))
+      user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20).nonzero? || 1)
       user.stats.official_score -= row[9].to_f
       user.stats.obtained_points -= row[6].to_i
 
