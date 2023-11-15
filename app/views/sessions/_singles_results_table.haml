@@ -1,24 +1,24 @@
-.container
-  = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
+- cache "Session##{@session.id}" do
+  .container
+    = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
 
-  .row
-    .col-xl-5.col-lg-5.col-md-12.col-xs-12
-      .session-details.mb-4
-        %h2
-          = "#{category_name(@session.category)} Races (Session #{@session.number})"
-        %ul
-          %li
-            = "Version: #{@session.version}"
-          %li
-            = "Connection: #{@session.protocol} (Server)"
-          %li
-            = "Mode: #{@session.physics}"
-          %li
-            = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
-          %li
-            = "Teams: #{@session.teams? ? "Yes" : "No"}"
+    .row
+      .col-xl-5.col-lg-5.col-md-12.col-xs-12
+        .session-details.mb-4
+          %h2
+            = "#{category_name(@session.category)} Races (Session #{@session.number})"
+          %ul
+            %li
+              = "Version: #{@session.version}"
+            %li
+              = "Connection: #{@session.protocol} (Server)"
+            %li
+              = "Mode: #{@session.physics}"
+            %li
+              = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
+            %li
+              = "Teams: #{@session.teams? ? "Yes" : "No"}"
 
-- cache "Session##{@session.id}", :expires_in => 5.minutes do
   #results.container
     %table.table.table-sm.table-fluid.table-responsive
       %thead
@@ -56,7 +56,7 @@
                 = row[2]
               %td.racer-col
                 - if row[3].is_a?(User)
-                  = link_to row[3].username, user_path(row[3])
+                  = link_to row[3].username, user_path(row[3]), :style => "color: #{row[3].username.eql?(@session.host) ? "yellow" : ""};"
                 - else
                   = row[3]
               - row[4].each do |pos|
