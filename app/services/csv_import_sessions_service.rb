@@ -69,7 +69,7 @@ class CsvImportSessionsService
 
       racer_result_entry_hash = {
         :username => user.username,
-        :race_count => race_count.to_i,
+        :race_count => race_count,
         :average_position => average_position,
         :obtained_points => obtained_points,
         :official_score => official_score,
