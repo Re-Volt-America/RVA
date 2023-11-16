@@ -14,7 +14,7 @@ gem 'jsbundling-rails', '~> 1.1'                                      # Bundle a
 gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'kramdown', '~> 2.4'                                              # Yet-another-markdown-parser but fast
-gem 'mongoid', '~> 8.1', '>= 8.1.2'                                   # The Official Ruby Object Mapper for MongoDB
+gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rails', '~> 7.1', '>= 7.1.1'                                     # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
