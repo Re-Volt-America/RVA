@@ -118,7 +118,7 @@ Install Ruby 3.2.2 via RVM.
 rvm install 3.2.2
 ```
 
-With the following command you should be able to see your installed Ruby versions and use version 2.7.3
+With the following commands, you should be able to see your installed Ruby versions and use version 2.7.3
 ```bash
 rvm list
 rvm use 3.2.2
@@ -155,7 +155,7 @@ yarn build:css
 
 #### Database Setup
 Both MongoDB and Redis come configured to work on "localhost" by default. If you run the application with Docker, make
-sure to change "localhost" for "mongo" and "redis" respectively. For example, in the `monoid.yml` file, you would have
+sure to change "localhost" for "mongo" and "redis" respectively. For example, in the `mongoid.yml` file, you would have
 to change `- "localhost:27017"` to `- "mongo:27017"`.
 
 ##### MongoDB
