@@ -37,8 +37,8 @@ class UserStatsService
       user.stats.average_position = (user.stats.positions_sum.to_f / (user.stats.race_count.nonzero? || 1)).round(2)
       user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20).nonzero? || 1).round(2)
 
-      user.stats.official_score += row[9].to_f
       user.stats.obtained_points += row[6].to_i
+      user.stats.official_score += row[9].to_f
 
       user.save
 
@@ -84,8 +84,8 @@ class UserStatsService
       user.stats.average_position = (user.stats.positions_sum.to_f / (user.stats.race_count.nonzero? || 1)).round(2)
       user.stats.participation_rate = (user.stats.race_count / (user.stats.session_count * 20).nonzero? || 1).round(2)
 
-      user.stats.official_score -= row[9].to_f
       user.stats.obtained_points -= row[6].to_i
+      user.stats.official_score -= row[9].to_f
 
       user.save
 
