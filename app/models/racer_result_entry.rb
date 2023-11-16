@@ -1,6 +1,9 @@
 class RacerResultEntry
   include Mongoid::Document
-  include Mongoid::Timestamps
+
+  embedded_in :season
+  embedded_in :ranking
+  embedded_in :session
 
   field :username, :type => String
   field :race_count, :type => Integer

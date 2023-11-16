@@ -9,6 +9,10 @@ class Season
   has_many :cars
   has_many :tracks
 
+  embeds_many :racer_result_entries
+
+  accepts_nested_attributes_for :racer_result_entries
+
   field :name, :type => String
   field :start_date, :type => Date
   field :end_date, :type => Date

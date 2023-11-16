@@ -8,6 +8,8 @@ class Session
   embeds_many :races
   embeds_many :racer_result_entries
 
+  accepts_nested_attributes_for :racer_result_entries
+
   field :number, :type => Integer
   field :host, :type => String
   field :version, :type => String
