@@ -61,7 +61,9 @@ class CsvImportSessionsService
       end
 
       user = row[3]
+      positions = row[4]
       average_position = row[5].to_f
+      positions_sum = positions.map(&:to_i).sum
       obtained_points = row[6].to_i
       official_score = row[9].to_f
       race_count = row[7].to_i
@@ -70,6 +72,7 @@ class CsvImportSessionsService
       racer_result_entry_hash = {
         :username => user.username,
         :race_count => race_count,
+        :positions_sum => positions_sum,
         :average_position => average_position,
         :obtained_points => obtained_points,
         :official_score => official_score,
@@ -87,7 +90,88 @@ class CsvImportSessionsService
 
     UserStatsService.new.add_stats(rva_results) unless session.nil?
 
+    update_ranking(session)
+    update_season(session)
+
     session
+  end
+
+  # Add the Session results to its Ranking
+  def update_ranking(session)
+    ranking = session.ranking
+
+    session_entries = session.racer_result_entries
+    ranking_entries = ranking.racer_result_entries
+
+    session_entries.each do |session_entry|
+      ranking_entry = ranking_entries.find { |e| e.username.eql?(session_entry.username) }
+
+      if ranking_entry.nil?
+        se_hash = {
+          :username => session_entry.username,
+          :race_count => session_entry.race_count,
+          :session_count => 1,
+          :positions_sum => session_entry.positions_sum,
+          :average_position => session_entry.average_position,
+          :obtained_points => session_entry.obtained_points,
+          :official_score => session_entry.official_score,
+          :participation_multiplier => session_entry.participation_multiplier,
+          :team => session_entry.team
+        }
+
+        ranking_entries << RacerResultEntry.new(se_hash)
+      else
+        ranking_entry.session_count += 1
+        ranking_entry.race_count += session_entry.race_count
+        ranking_entry.positions_sum += session_entry.positions_sum
+        ranking_entry.average_position += (ranking_entry.positions_sum.to_f / (ranking_entry.race_count.nonzero? || 1)).round(2)
+        ranking_entry.obtained_points += session_entry.obtained_points.to_i
+        ranking_entry.official_score += session_entry.official_score.to_f
+        ranking_entry.participation_multiplier = (ranking_entry.race_count / (ranking_entry.session_count * 20).nonzero? || 1).round(2)
+      end
+    end
+
+    ranking.racer_result_entries = ranking_entries
+    ranking.update!
+  end
+
+  # Add the Session results to its Season
+  def update_season(session)
+    season = session.ranking.season
+
+    session_entries = session.racer_result_entries
+    season_entries = season.racer_result_entries
+
+    session_entries.each do |session_entry|
+      season_entry = season_entries.find { |e| e.username.eql?(session_entry.username) }
+
+      if season_entry.nil?
+        session_entry_hash = {
+          :username => session_entry.username,
+          :session_count => 1,
+          :race_count => session_entry.race_count,
+          :positions_sum => session_entry.positions_sum,
+          :average_position => session_entry.average_position,
+          :obtained_points => session_entry.obtained_points,
+          :official_score => session_entry.official_score,
+          :participation_multiplier => session_entry.participation_multiplier,
+          :team => session_entry.team
+        }
+
+        season_entries << RacerResultEntry.new(session_entry_hash)
+      else
+        season_entry.session_count += 1
+        season_entry.race_count += session_entry.race_count
+        season_entry.positions_sum += session_entry.positions_sum
+        season_entry.average_position += (season_entry.positions_sum.to_f / (season_entry.race_count.nonzero? || 1)).round(2)
+        season_entry.obtained_points += session_entry.obtained_points.to_i
+        season_entry.official_score += session_entry.official_score.to_f
+        season_entry.participation_multiplier = (season_entry.race_count / (season_entry.session_count * 20).nonzero? || 1).round(2)
+      end
+    end
+
+    season.racer_result_entries = season_entries
+    season.update!
   end
 
   def get_races_hash(session_arr)
