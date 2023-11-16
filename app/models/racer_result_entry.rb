@@ -6,6 +6,7 @@ class RacerResultEntry
   embedded_in :session
 
   field :username, :type => String
+  field :country, :type => String
   field :session_count, :type => Integer
   field :race_count, :type => Integer
   field :positions_sum, :type => Integer

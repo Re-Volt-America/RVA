@@ -71,6 +71,7 @@ class CsvImportSessionsService
 
       racer_result_entry_hash = {
         :username => user.username,
+        :country => user.country,
         :race_count => race_count,
         :positions_sum => positions_sum,
         :average_position => average_position,
@@ -109,6 +110,7 @@ class CsvImportSessionsService
       if ranking_entry.nil?
         se_hash = {
           :username => session_entry.username,
+          :country => session_entry.country,
           :race_count => session_entry.race_count,
           :session_count => 1,
           :positions_sum => session_entry.positions_sum,
@@ -121,6 +123,7 @@ class CsvImportSessionsService
 
         ranking_entries << RacerResultEntry.new(se_hash)
       else
+        ranking_entry.country = session_entry.country
         ranking_entry.session_count += 1
         ranking_entry.race_count += session_entry.race_count
         ranking_entry.positions_sum += session_entry.positions_sum
@@ -148,6 +151,7 @@ class CsvImportSessionsService
       if season_entry.nil?
         session_entry_hash = {
           :username => session_entry.username,
+          :country => session_entry.country,
           :session_count => 1,
           :race_count => session_entry.race_count,
           :positions_sum => session_entry.positions_sum,
@@ -160,6 +164,7 @@ class CsvImportSessionsService
 
         season_entries << RacerResultEntry.new(session_entry_hash)
       else
+        season_entry.country = session_entry.country
         season_entry.session_count += 1
         season_entry.race_count += session_entry.race_count
         season_entry.positions_sum += session_entry.positions_sum
