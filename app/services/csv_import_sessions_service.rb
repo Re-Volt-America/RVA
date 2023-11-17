@@ -135,7 +135,7 @@ class CsvImportSessionsService
       end
     end
 
-    ranking.racer_result_entries = ranking_entries
+    ranking.racer_result_entries = ranking_entries.sort_by { |e| e.official_score }.reverse!
     ranking.update!
   end
 
@@ -176,7 +176,7 @@ class CsvImportSessionsService
       end
     end
 
-    season.racer_result_entries = season_entries
+    season.racer_result_entries = season_entries.sort_by { |e| e.official_score }.reverse!
     season.update!
   end
 

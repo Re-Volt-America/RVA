@@ -13,9 +13,13 @@
           .rank
             .name rank
             .number
-              = "-"
-              %sup
-                =# ordinal_ending(1)
+              - if @rank && !@rank.eql?('-')
+                %a{:href => ranking_path(current_ranking)}
+                  = @rank
+                  %sup
+                    = ordinal_ending(@rank)
+              - else
+                = @rank
           .rank
             .name win rate
             .number
