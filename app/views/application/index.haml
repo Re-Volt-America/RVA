@@ -31,7 +31,7 @@
     %h6.text-center.mt-2
       = "No Sessions to display :("
   - else
-    - current_ranking.sessions.each do |session|
+    - current_ranking.sessions.last(5).each do |session|
       %a.media.text-muted.pt-3.border-bottom.border-gray{:href => session_path(session) }
         .session-number{:style => "background-color: #{session_color_hex(session)}"}
           .text-center
