@@ -7,6 +7,9 @@ class RankingsController < ApplicationController
 
   # GET /rankings/1 or /rankings/1.json
   def show
+    @sessions = @ranking.sessions
+    @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(8)
+
     respond_with @ranking do |format|
       format.json { render :layout => false }
     end
