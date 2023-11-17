@@ -30,7 +30,7 @@
             - else
               = ISO3166::Country.new(e.country).emoji_flag
           %td.racer.align-middle.text-center
-            = link_to e.username, user_path(e)
+            = link_to e.username, user_path(e.username)
           %td.stat-number.align-middle.text-center
             = e.average_position
           %td.stat-number.align-middle.text-center
