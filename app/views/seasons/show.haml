@@ -1,34 +1,43 @@
 = render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
-%h2.text-center.mt-4
-  Leaderboard
+%h2.mt-4.text-center
+  = "#{@season.name} Leaderboard"
 
-#ranking
-  .container
-  %p#notice= notice
-  %table.table.table-fluid
+.table-responsive#season-stats-table
+  %table.mt-1.table.table-bordered.table-striped
     %thead
       %tr
-        %th Racer
-        %th PP
-        %th PA
-        %th MP
-        %th PO
-        %th CC
-        %th FJ
+        %th{width: "1%"} #
+        %th{width: "2%"} Country
+        %th{width: "16%"} Racer
+        %th.text-center{width: "14%"} PP
+        %th.text-center{width: "14%"} PA
+        %th.text-center{width: "14%"} MP
+        %th.po.text-center{width: "14%"} PO
+        %th.text-center{width: "14%"} CC
+        %th.text-center{width: "14%"} FJ
     %tbody
-      %tr
-        %td
-          YUN
-        %td
-          3.040
-        %td
-          2033
-        %td
-          0.967
-        %td
-          64.65
-        %td
-          174
-        %td
-          9
+      - @entries.each do |e|
+        - @count += 1
+        %tr
+          %td.rank.text-center
+            = "#{@count - 1}"
+          %td.country-flag.text-center
+            - if e.country.nil? || e.country.eql?("??")
+              = "?"
+            - else
+              = ISO3166::Country.new(e.country).emoji_flag
+          %td.racer.align-middle.text-center
+            = link_to e.username, user_path(e)
+          %td.stat-number.align-middle.text-center
+            = e.average_position
+          %td.stat-number.align-middle.text-center
+            = e.obtained_points
+          %td.stat-number.align-middle.text-center
+            = e.participation_multiplier
+          %td.po.align-middle.text-center
+            = e.official_score.round(2)
+          %td.stat-number.align-middle.text-center
+            = e.race_count
+          %td.stat-number.align-middle.text-center
+            = e.session_count

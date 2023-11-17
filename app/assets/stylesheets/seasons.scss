@@ -92,3 +92,57 @@
     color: #c6c6c6;
   }
 }
+
+#season-stats-table {
+  table {
+    font-family: "Bahnschrift-Light", sans-serif;
+    background-color: #333f4f;
+    border: 1px solid #646464;
+  }
+
+  th {
+    background-color: #333f4f;
+    color: #c6e0b4;
+    border: 0;
+    height: 40px;
+
+    a {
+      color: #c6e0b4;
+    }
+  }
+
+  tr {
+    color: #beb8bc;
+    border: 0;
+  }
+
+  td {
+    border: 0;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .stats-head-entry {
+    height: 26px;
+    width: 26px;
+    border-radius: 3px;
+  }
+
+  .rank {
+    color: #fff;
+  }
+
+  .stat-number {
+    color: #c6e0b4;
+  }
+
+  .po {
+    color: #ffc011;
+  }
+
+  .country-flag {
+    font-size: 25px;
+  }
+}

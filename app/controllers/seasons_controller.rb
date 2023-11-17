@@ -16,6 +16,9 @@ class SeasonsController < ApplicationController
 
   # GET /seasons/1 or /seasons/1.json
   def show
+    @count = 1
+    @entries = @season.racer_result_entries
+
     respond_with @season do |format|
       format.json { render :layout => false }
     end
