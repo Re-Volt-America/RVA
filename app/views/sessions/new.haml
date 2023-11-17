@@ -4,7 +4,8 @@
   .row
     .col-md-5
       .field.input-group
-        = f.file_field :file, :accept => ".csv", :class => "form-control-file"
+        = f.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
+        = f.file_field :session_log, :accept => ".csv", :class => "form-control-file"
 
       %div{:"data-controller" => "season"}
         .field.form-group

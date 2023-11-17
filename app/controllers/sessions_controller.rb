@@ -92,7 +92,8 @@ class SessionsController < ApplicationController
   def import
     require 'csv_import_sessions_service'
 
-    file = params[:file]
+    file = params[:session_log]
+
     if file.nil?
       respond_to do |format|
         format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
@@ -135,7 +136,7 @@ class SessionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def session_params
-    params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date, :sessionlog,
-                                    :category, :teams, :ranking)
+    params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date,
+                                    :category, :teams, :ranking, :session_log)
   end
 end

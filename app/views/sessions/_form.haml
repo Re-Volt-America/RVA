@@ -26,7 +26,7 @@
     = form.label :date
     = form.date_select :date
   .field
-    =# form.label :sessionlog
-    =# form.text_field :sessionlog
+    = form.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
+    = form.file_upload :session_log
   .actions
     = form.submit

@@ -1,5 +1,6 @@
 class Session
   include Mongoid::Document
+  include SessionLogUploader::Attachment(:session_log)
   include Mongoid::Timestamps
 
   store_in :database => 'rv_sessions'
@@ -17,9 +18,9 @@ class Session
   field :protocol, :type => String
   field :pickups, :type => Boolean
   field :date, :type => Date
-  # field :sessionlog, type: String # FIXME: maybe attached file?
   field :teams, :type => Boolean
   field :category, :type => Integer
+  field :session_log_data, type: String
 
   validates_presence_of :number
   validates_presence_of :host
@@ -27,7 +28,7 @@ class Session
   validates_presence_of :physics
   validates_presence_of :protocol
   validates_presence_of :date
-  # validates_presence_of :sessionlog
+  validates_presence_of :session_log
   validates_presence_of :teams
   validates_presence_of :category
 

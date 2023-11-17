@@ -36,7 +36,8 @@ class CsvImportSessionsService
       :races => get_races_hash(session_arr),
       :ranking => @ranking,
       :category => @category,
-      :teams => @teams
+      :teams => @teams,
+      :session_log => @file
     }
 
     session = Session.new(session_hash)
