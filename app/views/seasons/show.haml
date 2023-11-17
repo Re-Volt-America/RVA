@@ -30,11 +30,11 @@
           %td.racer.align-middle.text-center
             = link_to e.username, user_path(e.username)
           %td.stat-number.align-middle.text-center
-            = e.average_position
+            = e.average_position.round(3)
           %td.stat-number.align-middle.text-center
             = e.obtained_points
           %td.stat-number.align-middle.text-center
-            = e.participation_multiplier
+            = e.participation_multiplier.round(3)
           %td.po.align-middle.text-center
             = e.official_score.round(2)
           %td.stat-number.align-middle.text-center
