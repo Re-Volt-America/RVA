@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
     if file.content_type != SYS::CSV_TYPE
       respond_to do |format|
-        format.html { redirect_to users_new_path, :note => 'You may only upload CSV files.' }
+        format.html { redirect_to users_new_path, :notice => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
       end
 
