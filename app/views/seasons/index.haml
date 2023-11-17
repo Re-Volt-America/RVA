@@ -14,7 +14,7 @@
           consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
           points for every race.
         .justify-content-sm-center
-          %a.btn.btn-lg.px-4.me-sm-3.mr-4{ href: season_path(current_season) }
+          %a{ href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn btn-lg px-4 me-sm-3 mr-4 #{current_season.nil? ? 'disabled' : ''}"}
             Current Season
           %a.btn.btn-lg.px-4{ href: points_path }
             Learn More
