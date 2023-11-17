@@ -85,6 +85,13 @@ input[type=file]::file-selector-button:hover, input[type=file]::file-selector-bu
   cursor: pointer;
 }
 
+textarea {
+  resize: both;
+  margin-left: 15px;
+  width: 540px;
+  height: 171px;
+}
+
 .input-group {
   border: 1px solid #ced4da;
   border-radius: 3px;
