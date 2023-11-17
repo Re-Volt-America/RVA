@@ -191,8 +191,6 @@ class CsvImportSessionsService
       race_arr[2].each do |racer_entry_arr|
         car = Car.find { |c| c.name.eql?(racer_entry_arr[2]) } # consider matching season with @ranking
 
-        byebug if car.nil? # FIXME: debug
-
         racer_entry_hash = {
           :position => racer_entry_arr[0],
           :username => racer_entry_arr[1],
@@ -208,7 +206,6 @@ class CsvImportSessionsService
       end
 
       track = Track.find { |t| race_arr[1][1].start_with?(t.name) }
-      byebug if track.nil? # FIXME: debug
 
       race_hash = {
         :track_id => track.id,
