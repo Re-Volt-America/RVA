@@ -59,7 +59,7 @@ module SYS
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
   SESSION_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
-  CSV_TYPE = PLATFORM.mac? ? 'text/csv'.freeze : 'application/vnd.ms-excel'.freeze
+  CSV_TYPE = PLATFORM.windows? ? 'application/vnd.ms-excel'.freeze : 'text/csv'.freeze
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 
   module CAR
