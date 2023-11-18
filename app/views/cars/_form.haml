@@ -12,7 +12,7 @@
     = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}
   .field
     = f.label :category
-    = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}
+    = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => "Select Category"}
   .field
     = f.label :name
     = f.text_field :name

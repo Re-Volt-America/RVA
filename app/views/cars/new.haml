@@ -9,6 +9,6 @@
       .field.form-group
         = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
       .field.form-group
-        = f.select :category, SYS::CATEGORY::NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
+        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
 
       = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"

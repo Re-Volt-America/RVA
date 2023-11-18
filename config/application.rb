@@ -94,7 +94,7 @@ module SYS
     SUPER_PRO = 5
     RANDOM = 6
     CLOCKWORK = 7
-    NUMBERS_MAP = {
+    RVA_NUMBERS_MAP = {
       :Rookie => CATEGORY::ROOKIE,
       :Amateur => CATEGORY::AMATEUR,
       :Advanced => CATEGORY::ADVANCED,
@@ -102,6 +102,15 @@ module SYS
       :Pro => CATEGORY::PRO,
       :'Super-Pro' => CATEGORY::SUPER_PRO,
       :Random => CATEGORY::RANDOM,
+      :Clockwork => CATEGORY::CLOCKWORK
+    }
+    RVGL_NUMBERS_MAP = {
+      :Rookie => CATEGORY::ROOKIE,
+      :Amateur => CATEGORY::AMATEUR,
+      :Advanced => CATEGORY::ADVANCED,
+      :'Semi-Pro' => CATEGORY::SEMI_PRO,
+      :Pro => CATEGORY::PRO,
+      :'Super-Pro' => CATEGORY::SUPER_PRO,
       :Clockwork => CATEGORY::CLOCKWORK
     }
     BONUSES_PER_DIFF = {
