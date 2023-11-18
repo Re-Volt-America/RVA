@@ -227,7 +227,7 @@ Please read the full instructions on how to contribute to this project found in 
 
 ## Governance
 The lead maintainer of this project is [BGM](https://github.com/BGMP). As the project grows, we'll scale the governance
-model to meet those needs.
+model to meet its needs.
 
 ## Licence
 RVA Website/Backend is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General
