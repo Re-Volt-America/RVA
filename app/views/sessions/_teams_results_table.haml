@@ -23,11 +23,11 @@
     %table.table.table-sm.table-fluid.table-responsive
       %thead
         %tr
-          %th.text-center.align-middle{:width => "1%"}
+          %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Session Number"}
             = @rva_results[0][0] # "#"
           %th.align-middle{:width => "8%"}
             = @rva_results[0][1] # "Date"
-          %th.text-center.align-middle{:width => "1%"}
+          %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Final Position"}
             FP
           %th.align-middle{:width => "30%"}
             Racer
@@ -36,9 +36,9 @@
           - @rva_results[0].slice(2, @session.races.size).each do |track|
             %th.text-center.align-middle{:width => "4%"}
               = link_to track.short_name, track_path(track)
-          %th.cc-header.text-center.align-middle{:width => "2%"}
+          %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"}
             CC
-          %th.pa-header.text-center.align-middle{:width => "2%"}
+          %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Obtained Points"}
             PA
       %tbody
         - @rva_results.drop(1).each do |row|
