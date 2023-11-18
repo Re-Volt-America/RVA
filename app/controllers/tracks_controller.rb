@@ -85,7 +85,7 @@ class TracksController < ApplicationController
     respond_to do |format|
       @tracks.each do |track|
         if track.save!
-          format.html { redirect_to tracks_path, :notice => 'Tracks successfully imported.' }
+          format.html { redirect_to new_track_path, :notice => 'Tracks successfully imported.' }
           format.json { render :show, :status => :created, :location => track, :layout => false }
         else
           format.html { render :new, :status => :unprocessable_entity }
