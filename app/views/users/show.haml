@@ -13,7 +13,7 @@
           .rank
             .name rank
             .number
-              - if @rank && !@rank.eql?('-')
+              - if !@rank.nil? && !@rank.eql?('-')
                 %a{:href => ranking_path(current_ranking)}
                   = @rank
                   %sup
