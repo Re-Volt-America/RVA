@@ -247,6 +247,8 @@ software as a network service, anyone who can use that service must also have ac
 ## Thanks to
 ### Developers
 * [Marco Roth](https://github.com/marcoroth). For helping with the *esbuild* migration and solving some HAML issues.
+* [Nicolás Duque](https://github.com/nickskyline). For testing the installation instructions on Linux platforms,
+beta-testing the site on its early stages, and helping with i18n.
 
 ### Sponsors
 * [Gabriel Carnielli](https://github.com/RVGforce).
