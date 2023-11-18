@@ -35,7 +35,6 @@ group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3', :platforms => [               # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     :mri, :mingw, :x64_mingw
   ]
-  gem 'erb2haml', '~> 0.1.5'                                          # Bulk covert ERB to HAML
 end
 
 group :development do
