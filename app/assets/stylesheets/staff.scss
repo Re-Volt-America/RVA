@@ -1,3 +1,51 @@
-// Place all the styles related to the Staff controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#staff {
+  a {
+    color: #beb8bc;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  .staff-group {
+    h2 {
+      font-family: "Segoe UI", serif;
+      font-weight: normal;
+    }
+  }
+
+  .staff-description {
+    color: #a49fa2;
+    font-size: 21px;
+  }
+
+  .staff-group-count {
+    color: #beb8bc;
+  }
+
+  .staff-entry {
+    display: block;
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .avatar {
+    display: inline-block;
+    background-color: #000;
+  }
+
+  .staff-entry .staff-username {
+    display: inline-block;
+    margin: 0.75em auto 0.3em;
+    padding-bottom: 0.3em;
+    border-bottom: 0.125em solid #666;
+    font-size: 150%;
+    overflow: hidden;
+  }
+
+  .staff-entry .staff-role {
+    font-size: 85%;
+    color: #beb8bc;
+  }
+}

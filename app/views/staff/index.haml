@@ -1,2 +1,89 @@
-%h1 Staff#index
-%p Find me in app/views/staff/index.haml
+#staff
+  %h2
+    %i.fa.fa-user-md{"aria-hidden" => "true"}
+    %b
+      = t("staff.title")
+      %small.staff-description
+        = t("staff.description")
+  %hr
+
+  .row.staff-group
+    .col-md-12
+      %h2{style: "color: #f89406"}
+        = t("staff.groups.administrator")
+        %small.staff-group-count
+          = @admins.size
+      %hr.hr-light-title/
+  .row
+    - @admins.each do |admin|
+      .col-md-3.col-sm-6.text-center
+        .staff-entry
+          = image_tag "staff/#{admin.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+          %br
+          %a{:href => user_path(admin)}
+            %h4.staff-username{style: "color: #f89406; border-bottom-color: #f89406;"}
+              = admin.username
+          %br
+          - if admin.profile.public_email?
+            %a{"data-content" => admin.profile.public_email, "data-placement" => "bottom", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fa.fa-envelope{"aria-hidden" => "true"}
+          - if admin.profile.discord?
+            %a{"data-content" => admin.profile.discord, "data-placement" => "top", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fab.fa-discord{"aria-hidden" => "true"}
+          - if admin.profile.github?
+            %a{href: "https://github.com/#{admin.profile.github}", target: "_blank"}
+              %i.fab.fa-github{"aria-hidden" => "true"}
+
+  .row.staff-group
+    .col-md-12
+      %h2{style: "color: #ff2200"}
+        = t("staff.groups.moderator")
+        %small.staff-group-count
+          = @admins.size
+      %hr.hr-light-title/
+  .row
+    - @mods.each do |mod|
+      .col-md-3.col-sm-6.text-center
+        .staff-entry
+          = image_tag "staff/#{mod.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+          %br
+          %a{:href => user_path(mod)}
+            %h4.staff-username{style: "color: #ff2200; border-bottom-color: #ff2200;"}
+              = mod.username
+          %br
+          - if mod.profile.public_email?
+            %a{"data-content" => mod.profile.public_email, "data-placement" => "bottom", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fa.fa-envelope{"aria-hidden" => "true"}
+          - if mod.profile.discord?
+            %a{"data-content" => mod.profile.discord, "data-placement" => "top", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fab.fa-discord{"aria-hidden" => "true"}
+          - if mod.profile.github?
+            %a{href: "https://github.com/#{mod.profile.github}", target: "_blank"}
+              %i.fab.fa-github{"aria-hidden" => "true"}
+
+  .row.staff-group
+    .col-md-12
+      %h2{style: "color: #36f971"}
+        = t("staff.groups.organizer")
+        %small.staff-group-count
+          = @admins.size
+      %hr.hr-light-title/
+  .row
+    - @organizers.each do |organizer|
+      .col-md-3.col-sm-6.text-center
+        .staff-entry
+          = image_tag "staff/#{organizer.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+          %br
+          %a{:href => user_path(organizer)}
+            %h4.staff-username{style: "color: #36f971; border-bottom-color: #36f971;"}
+              = organizer.username
+          %br
+          - if organizer.profile.public_email?
+            %a{"data-content" => organizer.profile.public_email, "data-placement" => "bottom", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fa.fa-envelope{"aria-hidden" => "true"}
+          - if organizer.profile.discord?
+            %a{"data-content" => organizer.profile.discord, "data-placement" => "top", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+              %i.fab.fa-discord{"aria-hidden" => "true"}
+          - if organizer.profile.github?
+            %a{href: "https://github.com/#{organizer.profile.github}", target: "_blank"}
+              %i.fab.fa-github{"aria-hidden" => "true"}
