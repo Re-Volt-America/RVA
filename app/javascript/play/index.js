@@ -16,5 +16,4 @@ $(document).on('turbo:load', function () {
     }
 
     setInterval(clock, 1000);
-    console.log("turbo")
 })
