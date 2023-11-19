@@ -27,8 +27,9 @@
             Stock?
           %dd
             = @track.stock ? "Yes" : "No"
-        %i
-          = "This track has been featured in RVA #{@track.season.name}"
+        - if @track.season
+          %i
+            = "This track has been featured in RVA #{@track.season.name}"
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @track.thumbnail_url, :height => "350"}
