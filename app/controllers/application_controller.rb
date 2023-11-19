@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
 
     @admin_nav = [
       { :name => 'Upload Session', :path => new_session_path },
-      { :name => 'New Ranking', :path => new_ranking_path },
       { :name => 'New Season', :path => new_season_path },
       { :name => 'Upload Tracks', :path => new_track_path },
       { :name => 'Upload Cars', :path => new_car_path },
