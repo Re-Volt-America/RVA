@@ -13,8 +13,6 @@
         .field.form-group
           = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
       .field.form-group
-        = f.select :number, SYS::SESSION_NUMBERS, {:prompt => "Select Session Number"}, {:class => "form-control"}
-      .field.form-group
         = f.select :category, SYS::CATEGORY::RVA_NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
       .field.form-group
         = f.check_box :teams

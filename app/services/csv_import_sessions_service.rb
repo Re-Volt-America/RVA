@@ -26,7 +26,7 @@ class CsvImportSessionsService
     end
 
     session_hash = {
-      :number => @number,
+      :number => Ranking.find { |r| r.id.to_s.eql?(@ranking) }.sessions.size + 1,
       :host => session_arr[1][2],
       :version => session_arr[0][1],
       :physics => session_arr[1][3],
