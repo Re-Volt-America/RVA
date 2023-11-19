@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
     if current_ranking
       @rank = current_ranking.get_rank(@user)
+    else
+      @rank = '-'
     end
   end
 
