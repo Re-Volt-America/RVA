@@ -28,11 +28,11 @@
   %h6.border-bottom.border-gray.pb-2.mb-0
     = "Recent Sessions"
 
-  - if current_ranking.nil? || current_ranking.sessions.empty?
+  - if @recent_sessions.none?
     %h6.text-center.mt-2
       = "No Sessions to display :("
   - else
-    - current_ranking.sessions.last(5).each do |session|
+    - @recent_sessions.each do |session|
       %a.media.text-muted.pt-3.border-bottom.border-gray{:href => session_path(session) }
         .session-number{:style => "background-color: #{session_color_hex(session)}"}
           .text-center
