@@ -9,6 +9,6 @@
           %li= error.full_message
   .field
     = form.label :number
-    = form.number_field :number
+    = form.number_field :number, :min => 1, :max => 6
   .actions
     = form.submit
