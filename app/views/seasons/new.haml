@@ -15,6 +15,6 @@
         = form.text_field :name, :class => "form-control"
       .field.form-group
         = form.label :start_date
-        = form.date_field :start_date, :class => "form-control"
+        = form.date_field :start_date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today
       .actions
         = form.button "Create Season", :type => "submit", :class => "btn mb-2"
