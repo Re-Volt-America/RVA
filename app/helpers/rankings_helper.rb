@@ -8,7 +8,7 @@ module RankingsHelper
 
     current_ranking = nil
     season.rankings.each do |r|
-      next if r.sessions.size > 28
+      next if r.sessions.size >= 28
 
       current_ranking = r
       break
