@@ -4,7 +4,7 @@
     .col-md-5
       .field.form-group
         = f.label :username
-        = f.text_field :username, autocomplete: "username", :class => "form-control"
+        = f.text_field :username, autocomplete: "username", :class => "form-control", :style => "text-transform: uppercase;"
       .field.form-group
         = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
