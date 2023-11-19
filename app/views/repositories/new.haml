@@ -1,0 +1,32 @@
+%h2.mb-4 New Repository
+
+= form_with :model => @repository do |f|
+  .row
+    .col-md-5
+      .field.form-group
+        = f.text_field :title, :class => "form-control", :placeholder => "Title"
+
+      .field.form-group
+        = f.text_field :description, :class => "form-control", :placeholder => "Description"
+
+      .field.form-group
+        = f.text_field :namespace, :class => "form-control", :placeholder => "Namespace"
+
+      .field.form-group
+        = f.text_field :repo, :class => "form-control", :placeholder => "Repository"
+
+      .field.form-group
+        = f.text_field :branch, :class => "form-control", :placeholder => "branch"
+
+      .field.form-group
+        = f.select :provider, ['GitHub'], {}, {:class => 'form-control'}
+
+
+      .field.form-group
+        = f.check_box :open
+        = f.label :open
+
+        = f.check_box :visible
+        = f.label :visible
+
+      = f.button "Create", :type => "submit", :"data-turbo" => false, :class => "btn"

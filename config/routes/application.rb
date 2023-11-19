@@ -14,6 +14,8 @@ RVA::Application.routes.draw do
   get 'points' => 'points#index'
   get 'stats' => 'stats#index'
 
+  resources :repositories
+
   resources :seasons
   resources :rankings
   resources :tracks do

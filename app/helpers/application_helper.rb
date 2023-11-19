@@ -40,6 +40,12 @@ module ApplicationHelper
     datetime.strftime("%B #{datetime.day.ordinalize}, %Y")
   end
 
+  # @param datetime [DateTime]
+  # @return [String] Precise pretty date string (i.e: April 21st, 2022 - 06:32 AM)
+  def pretty_time_precise(datetime)
+    datetime.strftime("%B #{datetime.day.ordinalize}, %Y - %H:%M %p")
+  end
+
   # @param session [Session]
   # @return [String] Hex colour of the session category
   def session_color_hex(session)
@@ -93,5 +99,18 @@ module ApplicationHelper
 
     options = { :input => 'Kramdown', :parse_block_html => true }
     Kramdown::Document.new(content, options).to_html.html_safe
+  end
+
+  # Truncates a string to a set amount of characters. The finalising character is an ellipsis by default. If the string
+  # is shorter than the max, then it will effectively return itself.
+  # @param string [String] The original string
+  # @param max_length [Integer] The length to which we will truncate to
+  # @param final_char [String] The string to append at the end of the truncated string, if truncated at all
+  def truncate_string(string, max_length, final_char = '...')
+    longer = string.length > max_length
+    string = string[0..max_length]
+    string += final_char if longer
+
+    string
   end
 end

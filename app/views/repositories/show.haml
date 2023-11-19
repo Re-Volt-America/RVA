@@ -1,0 +1,53 @@
+.container#repositories
+  .page-header
+    %h3
+      Revisions
+      %small Latest git commits in our organization
+      - if user_is_admin?
+        %a.btn.btn-sm.float-right{:href => new_repository_path} New
+    %hr.mt-1/
+  .row
+    .col-md-12
+      %ul.nav.nav-tabs
+        - @repositories.each do |repo|
+          - next unless repo.open?
+          %li.nav-item
+            %a{class: "nav-link #{(repo.eql? @repository) ? 'active' : ''}", href: "#{repository_path(repo)}"}= repo.title
+      %br/
+      .row
+        .col
+          %p= @repository.description
+        .ml-auto.mb-1.mr-3
+          %a.btn.btn-sm{:href => @repository.get_url, :target => '_blank'} Repository
+      .table-container
+        %table.table.table-bordered
+          %thead
+            %tr
+              %th{width: "1%"} #
+              %th{width: "10%"} Revision
+              %th{width: "10%"} Author
+              %th{width: "62%"} Description
+              %th{width: "17%"} When
+          %tbody
+            - @revs.each do |r|
+              %tr
+                %td
+                  = @count += 1
+                %td
+                  %a{href: "#{commit_url(r.sha)}", target: "_blank"}= r.sha_brief
+                %td
+                  - user = user_by_github(r.author_name)
+                  - if user
+                    = link_to user.username, user_path(user)
+                  - else
+                    = r.author_name
+                %td
+                  - if r.message.length > 72
+                    = render_pretty(r.message)
+                  - else
+                    = r.message
+                %td
+                  = time_ago_in_words(r.date)
+                  ago
+
+      = paginate @revs

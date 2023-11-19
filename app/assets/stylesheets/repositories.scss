@@ -1,0 +1,32 @@
+#repositories {
+  h3 {
+    a {
+      font-family: "Segoe UI", sans-serif;
+    }
+  }
+
+  table {
+    h1, h2, h3 {
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    color: #beb8bc;
+  }
+
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #000;
+    border-color: #fff;
+  }
+
+  .nav-link:hover, .nav-link:focus {
+    border-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-item {
+    a {
+      color: #bdbdbd;
+    }
+  }
+}

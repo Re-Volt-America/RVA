@@ -26,8 +26,17 @@ module ORG
   DOMAIN = 'rva.lat'
   EMAIL = 'support@rva.lat'
   URL = 'https://rva.lat'
+
   CARS_REPO_URL = 'https://cars.rva.lat'
   TRACKS_REPO_URL = 'https://tracks.rva.lat'
+
+  GIT = 'https://github.com/Re-Volt-America'
+  GIT_REPO = 'RVA'
+  GIT_ISSUES_URL = "#{GIT}/#{GIT_REPO}/issues"
+
+  SPONSOR_URL = "https://github.com/sponsors/BGMP"
+  CROWDIN_URL = "https://translate.rva.lat/"
+  DISCORD_URL = "https://discord.gg/9SCruDud7N"
 end
 
 module PLATFORM

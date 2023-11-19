@@ -16,11 +16,11 @@
           %li.heading
             Organization
           %li
-            = link_to t('footer.organization.logs'), "https://github.com/Re-Volt-America/RVA/commits/master"
+            = link_to t('footer.organization.logs'), web_repo_or_first
           %li
-            = link_to t('footer.organization.bugs'), "https://github.com/Re-Volt-America/RVA/issues"
+            = link_to t('footer.organization.bugs'), ORG::GIT_ISSUES_URL, :target => "_blank"
           %li
-            = link_to t('footer.organization.sponsor'), "https://github.com/sponsors/BGMP"
+            = link_to t('footer.organization.sponsor'), ORG::SPONSOR_URL, :target => "_blank"
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled
           %li.heading
@@ -32,15 +32,15 @@
           %li.heading
             = t('footer.social.title')
           %li
-            %a{:href => "https://discord.gg/T3KCh7g"}
+            %a{:href => ORG::DISCORD_URL, :target => "_blank"}
               = image_tag "discord-logo-color.svg"
               = t('footer.social.discord')
           %li
-            %a{:href => "https://github.com/Re-Volt-America"}
+            %a{:href => ORG::GIT, :target => "_blank"}
               = image_tag "github-logo.png"
               = t('footer.social.github')
           %li
-            %a{:href => "https://crowdin.com/project/rva"}
+            %a{:href => ORG::CROWDIN_URL, :target => "_blank"}
               = image_tag "crowdin-dark-symbol.svg"
               = t('footer.social.crowdin')
     %div.col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.col-12
