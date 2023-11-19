@@ -306,18 +306,32 @@ textarea {
     text-decoration: none;
   }
 
+  .media-group {
+    background-color: #212121;
+    border: 1px solid #646464;
+    border-radius: 4px;
+
+    h6 {
+      margin-bottom: 19px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-weight: bold;
+      border-bottom: 1px solid #646464;
+    }
+  }
+
   .media {
     text-decoration: none;
-    background-image: linear-gradient(to bottom, #282828, #000000);
-    transition: color 0.3s ease-out;
     z-index: 1;
     position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border-bottom: 1px solid #646464;
   }
 
   .media:before {
-    background-image: linear-gradient(to bottom, #181818, #000000);
+    background-color: #151515;
+    border-radius: 4px;
     content: "";
     position: absolute;
     z-index: -1;
@@ -326,7 +340,6 @@ textarea {
     height: 100%;
     top: 0;
     left: 0;
-    transition: opacity 0.3s ease-out;
   }
 
   .media:hover:before, .media:focus:before {

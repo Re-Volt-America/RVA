@@ -13,6 +13,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by!(:username => params[:username])
+    @recent_sessions = []
+
+    count = 0
+    Session.all.each do |session|
+      break if count == 3
+      next unless session.racer_result_entries.filter { |r| r.username.eql?(params[:username]) }.any?
+
+      @recent_sessions << session
+      count += 1
+    end
 
     if current_ranking
       @rank = current_ranking.get_rank(@user)
