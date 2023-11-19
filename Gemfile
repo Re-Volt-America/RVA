@@ -50,5 +50,5 @@ group :test do
   gem 'factory_bot_rails', '~> 6.2'                                   # Fixtures replacement with a straightforward definition syntax
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'                             # RSpec for Rails 5+
   gem 'selenium-webdriver'                                            # Adds support for Capybara system testing and selenium driver
-  gem 'webdrivers', '~> 5.3'                                          # Easy installation and use of web drivers to run system tests with
+  gem 'webdrivers', '~> 5.3'                                          # Keep your Selenium WebDrivers updated automatically
 end
