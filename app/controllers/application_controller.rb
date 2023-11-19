@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
+  include RankingsHelper
 
   before_action :build_navigation
 
@@ -53,7 +54,7 @@ class ApplicationController < ActionController::Base
   helper_method :render_navigation
 
   def index
-    @recent_sessions = Session.last(5)
+    @recent_sessions = current_ranking.sessions.last(5)
   end
 
   def authenticate_admin

@@ -1,10 +1,19 @@
 module RankingsHelper
   include SeasonsHelper
 
-  # @return The most recent ranking, or nil if not found
+  # @return [Ranking] The ranking currently being played in RVA
   def current_ranking
-    return nil if current_season.nil?
+    season = current_season
+    return nil if season.nil?
 
-    current_season.rankings.max_by { |s| s[:number] }
+    current_ranking = nil
+    season.rankings.each do |r|
+      next if r.sessions.size > 28
+
+      current_ranking = r
+      break
+    end
+
+    current_ranking
   end
 end
