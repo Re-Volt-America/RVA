@@ -66,7 +66,6 @@ module SYS
   RVA_CATEGORY_COLORS = %w(#3c3cff #00af63 #f0e764 #ff7823 #ff2323 #c337ff #6e6e6e #d7d7d7)
   RVGL_CAR_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro clockwork)
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
-  SESSION_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
   CSV_TYPE = PLATFORM.windows? ? 'application/vnd.ms-excel'.freeze : 'text/csv'.freeze
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
