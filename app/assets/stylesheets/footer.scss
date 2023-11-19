@@ -30,12 +30,7 @@ footer {
     text-decoration: none;
   }
 
-  ul li a:hover {
-    background-color: #ffffff;
-    border-radius: 5px;
-  }
-
-  ul li a:focus {
+  ul li a:hover, ul li a:focus {
     background-color: #ffffff;
     border-radius: 5px;
   }
@@ -45,11 +40,7 @@ footer {
     padding: 6px 10px 6px 10px;
   }
 
-  li a:hover {
-    color: #000000;
-  }
-
-  li a:focus {
+  li a:hover, li a:focus {
     color: #000000;
   }
 
