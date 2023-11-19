@@ -65,6 +65,10 @@ class User
     username
   end
 
+  def username=(username)
+    self[:username] = username.upcase
+  end
+
   def create_profile
     build_profile(:about => '',
                   :gender => '',
