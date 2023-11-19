@@ -35,8 +35,9 @@
             Stock?
           %dd
             = "#{@car.stock? ? "Yes" : "No"}"
-        %i
-          = "This car has been featured in RVA #{@car.season.name}"
+        - if @car.season
+          %i
+            = "This car has been featured in RVA #{@car.season.name}"
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url, :height => "350"}
