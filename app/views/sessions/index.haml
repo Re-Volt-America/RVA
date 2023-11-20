@@ -1,23 +1,27 @@
 .container
   = render :partial => "application/subnav", :locals => { :season => current_season, :ranking => current_ranking }
 
-#recent
-  .container
-  - current_season.rankings.each do |ranking|
-    %h5.border-bottom.border-gray.pb-2.mb-0
-      = "Ranking #{ranking.number}"
+  #recent.mb-4
+    - if @sessions.any?
+      %h6.pb-2.mb-0
+        = "Recent Sessions"
+      .media-group
+        - @sessions.each do |session|
+          %a.media.text-muted.pt-3{:href => session_path(session) }
+            .session-number{:style => "background-color: #{session_color_hex(session)}"}
+              .text-center
+                %span.align-middle
+                  = session.number
+            .media-body.pb-3.mb-0.small.lh-125
+              .d-flex.justify-content-between.align-items-center.w-100
+                %strong.text-gray-dark
+                  = "#{session_category_name(session)} Races"
+                .session-date
+                  = pretty_datetime(session.date)
+              %span.d-block.session-host
+                = "Hosted by #{session.host}"
+    - else
+      %h6.text-center
+        No Sessions to display :(
 
-    - ranking.sessions.each do |session|
-      %a.media.text-muted.pt-3.border-bottom.border-gray{:href => session_path(session) }
-        .session-number{:style => "background-color: #{session_color_hex(session)}"}
-          .text-center
-            %span.align-middle
-              = session.number
-        .media-body.pb-3.mb-0.small.lh-125
-          .d-flex.justify-content-between.align-items-center.w-100
-            %strong.text-gray-dark
-              = "#{session_category_name(session)} Races"
-            .session-date
-              = pretty_datetime(session.date)
-          %span.d-block.session-host
-            = "Hosted by #{session.host}"
+  = paginate @sessions
