@@ -1,2 +1,1 @@
-%h1 Errors#internal_error
-%p Find me in app/views/errors/internal_error.haml
+= render :partial => 'error', :locals => {:error_code => 500, :error_message => 'Internal Server Error'}

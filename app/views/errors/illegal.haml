@@ -1,2 +1,1 @@
-%h1 Errors#illegal
-%p Find me in app/views/errors/illegal.haml
+= render :partial => 'error', :locals => {:error_code => 422, :error_message => 'Illegal Error'}

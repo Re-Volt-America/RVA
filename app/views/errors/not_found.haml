@@ -1,2 +1,1 @@
-%h1 Errors#not_found
-%p Find me in app/views/errors/not_found.haml
+= render :partial => 'error', :locals => {:error_code => 404, :error_message => 'Not Found'}
