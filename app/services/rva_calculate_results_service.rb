@@ -244,7 +244,7 @@ class RvaCalculateResultsService
     race_count = get_race_count(racer)
     return 0 if race_count.zero?
 
-    racer_entries = @session.get_racer_entries_arr_for_name(racer)
+    racer_entries = @session.get_racer_entries_arr(racer)
 
     positions_sum = 0.0
     racer_entries.each do |entry|

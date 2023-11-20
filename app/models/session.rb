@@ -34,12 +34,12 @@ class Session
 
   # Look for all RacerEntry models in this session which correspond to the passed racer.
   # @return An array containing each entry matching the racer.
-  def get_racer_entries_arr_for_name(name)
+  def get_racer_entries_arr(username)
     racer_entries_arr = []
 
     races.each do |race|
       race.racer_entries.each do |entry|
-        racer_entries_arr << entry if entry.username.eql?(name)
+        racer_entries_arr << entry if entry.username.eql?(username)
       end
     end
 
