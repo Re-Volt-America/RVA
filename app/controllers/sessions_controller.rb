@@ -65,11 +65,11 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
     require 'rva_calculate_results_service'
-    require 'user_stats_service'
+    require 'stats_service'
 
     @rva_results = RvaCalculateResultsService.new(@session).call
 
-    UserStatsService.new.remove_stats(@rva_results) unless @session.nil? || @session.teams?
+    StatsService.new(@session, @rva_results).remove_stats unless @session.nil? || @session.teams?
 
     @session.destroy
 
