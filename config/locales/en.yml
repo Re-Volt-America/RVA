@@ -255,4 +255,20 @@ en:
 
   application:
     index:
-      community: "Community"
+      community:
+        title: "Community"
+        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
+        play-button: "Play »"
+      competition:
+        title: "Competition"
+        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        seasons-button: "Seasons »"
+      reliability:
+        title: "Reliabilty"
+        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
+        about-us-button: "About Us »"
+      recent:
+        title: "Recent Sessions."
+        races: "%{category} Race"
+        hosted-by: "Hosted by %{host}"
+        all-sessions-button: "All Sessions"

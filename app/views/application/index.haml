@@ -6,27 +6,32 @@
     .col-lg-4
       = image_tag "index/community.png", :class => "img-fluid"
       %h2
-        = t("application.index.community")
-      %p We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us.
+        = t("application.index.community.title")
+      %p
+        = t("application.index.community.description")
       %p
         %a.btn-important{ href: play_path, role: "button" } Play »
     .col-lg-4
       = image_tag "index/competition.png", :class => "img-fluid"
-      %h2 Competition
-      %p In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!
+      %h2
+        = t("application.index.competition.title")
+      %p
+        = t("application.index.competition.description")
       %p
         %a.btn-important{ href: seasons_path, role: "button" } Seasons »
     .col-lg-4
       = image_tag "index/reliability.png", :class => "img-fluid"
-      %h2 Reliability
-      %p Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community.
+      %h2
+        = t("application.index.reliability.title")
+      %p
+        = t("application.index.reliability.description")
       %p
         %a.btn-important{ href: about_path, role: "button" } About Us »
 
 #recent.mt-5
   - if @recent_sessions&.any?
     %h6.pb-2.mb-0
-      = "Recent Sessions"
+      = t("application.index.recent.title")
     .media-group
       - @recent_sessions.each do |session|
         %a.media.text-muted.pt-3{:href => session_path(session) }
@@ -37,8 +42,8 @@
           .media-body.pb-3.mb-0.small.lh-125
             .d-flex.justify-content-between.align-items-center.w-100
               %strong.text-gray-dark
-                = "#{session_category_name(session)} Races"
+                = t("application.index.recent.races", category: session_category_name(session)) #{session_category_name(session)}
               .session-date
                 = pretty_datetime(session.date)
             %span.d-block.session-host
-              = "Hosted by #{session.host}"
+              = t("application.index.recent.hosted-by", host: session.host) #{session.host}
