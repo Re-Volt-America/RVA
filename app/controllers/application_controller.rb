@@ -54,6 +54,11 @@ class ApplicationController < ActionController::Base
   helper_method :render_navigation
 
   def index
+    if current_ranking.nil?
+      @recent_sessions = []
+      return
+    end
+
     @recent_sessions = current_ranking.sessions.last(5)
   end
 

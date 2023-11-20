@@ -25,13 +25,9 @@
         %a.btn{ href: about_path, role: "button" } About Us »
 
 #recent
-  %h6.pb-2.mb-0
-    = "Recent Sessions"
-
-  - if @recent_sessions.none?
-    %h6.text-center.mt-2
-      = "No Sessions to display :("
-  - else
+  - if @recent_sessions.any?
+    %h6.pb-2.mb-0
+      = "Recent Sessions"
     .media-group
       - @recent_sessions.each do |session|
         %a.media.text-muted.pt-3{:href => session_path(session) }
