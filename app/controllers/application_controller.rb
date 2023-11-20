@@ -67,11 +67,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_mod
-    redirect_to root_path, :notice => "You do not have permission" unless user_is_mod?
+    redirect_to root_path, :notice => 'You do not have permission' unless user_is_mod?
   end
 
   def authenticate_organizer
-    redirect_to root_path, :notice => "You do not have permission" unless user_is_organizer?
+    redirect_to root_path, :notice => 'You do not have permission' unless user_is_organizer?
   end
 
   def authenticate_staff

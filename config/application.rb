@@ -34,9 +34,9 @@ module ORG
   GIT_REPO = 'RVA'
   GIT_ISSUES_URL = "#{GIT}/#{GIT_REPO}/issues"
 
-  SPONSOR_URL = "https://github.com/sponsors/BGMP"
-  CROWDIN_URL = "https://translate.rva.lat/"
-  DISCORD_URL = "https://discord.gg/9SCruDud7N"
+  SPONSOR_URL = 'https://github.com/sponsors/BGMP'
+  CROWDIN_URL = 'https://translate.rva.lat/'
+  DISCORD_URL = 'https://discord.gg/9SCruDud7N'
 end
 
 module PLATFORM

@@ -113,7 +113,8 @@ class SessionsController < ApplicationController
       return
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number], params[:teams]).call
+    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
+                                            params[:teams]).call
 
     respond_to do |format|
       if @session.save!

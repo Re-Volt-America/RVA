@@ -103,7 +103,7 @@ class StatsService
       end
     end
 
-    ranking.racer_result_entries = ranking_entries.sort_by { |e| e.official_score }.reverse!
+    ranking.racer_result_entries = ranking_entries.sort_by(&:official_score).reverse!
     ranking.update!
   end
 
@@ -144,7 +144,7 @@ class StatsService
       end
     end
 
-    season.racer_result_entries = season_entries.sort_by { |e| e.official_score }.reverse!
+    season.racer_result_entries = season_entries.sort_by(&:official_score).reverse!
     season.update!
   end
 
@@ -168,7 +168,7 @@ class StatsService
       user = row[3]
       positions = row[4]
       race_wins = positions.count('1')
-      race_podiums = count_all(positions, %w[1 2 3])
+      race_podiums = count_all(positions, %w(1 2 3))
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins += race_wins
@@ -210,7 +210,7 @@ class StatsService
       ranking_entry.participation_multiplier = (ranking_entry.race_count.to_f / ((ranking_entry.session_count * 20).nonzero? || 1)).round(2)
     end
 
-    ranking.racer_result_entries = ranking_entries.sort_by { |e| e.official_score }.reverse!
+    ranking.racer_result_entries = ranking_entries.sort_by(&:official_score).reverse!
     ranking.update!
   end
 
@@ -229,7 +229,7 @@ class StatsService
       season_entry.participation_multiplier = (season_entry.race_count.to_f / ((season_entry.session_count * 20).nonzero? || 1)).round(2)
     end
 
-    season.racer_result_entries = season_entries.sort_by { |e| e.official_score }.reverse!
+    season.racer_result_entries = season_entries.sort_by(&:official_score).reverse!
     season.update!
   end
 
@@ -254,7 +254,7 @@ class StatsService
       user = row[3]
       positions = row[4]
       race_wins = positions.count('1')
-      race_podiums = count_all(positions, %w[1 2 3])
+      race_podiums = count_all(positions, %w(1 2 3))
       positions_sum = positions.map(&:to_i).sum
 
       user.stats.race_wins -= race_wins

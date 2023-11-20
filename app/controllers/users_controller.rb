@@ -18,17 +18,17 @@ class UsersController < ApplicationController
     count = 0
     Session.all.each do |session|
       break if count == 3
-      next unless session.racer_result_entries.filter { |r| r.username.eql?(params[:username]) }.any?
+      next unless session.racer_result_entries.any? { |r| r.username.eql?(params[:username]) }
 
       @recent_sessions << session
       count += 1
     end
 
-    if current_ranking
-      @rank = current_ranking.get_rank(@user)
-    else
-      @rank = '-'
-    end
+    @rank = if current_ranking
+              current_ranking.get_rank(@user)
+            else
+              '-'
+            end
   end
 
   def new

@@ -39,7 +39,7 @@ class SeasonsController < ApplicationController
     respond_to do |format|
       if @season.save!
         6.times do |n|
-          @season.rankings << Ranking.new({:number => n + 1, :season => @season})
+          @season.rankings << Ranking.new({ :number => n + 1, :season => @season })
         end
 
         format.html { redirect_to season_url(@season), :notice => 'Season was successfully created.' }
@@ -66,9 +66,7 @@ class SeasonsController < ApplicationController
 
   # DELETE /seasons/1 or /seasons/1.json
   def destroy
-    @season.rankings.each do |r|
-      r.destroy
-    end
+    @season.rankings.each(&:destroy)
 
     @season.destroy
 

@@ -10,14 +10,14 @@ class StatsController < ApplicationController
 
     @users = Kaminari.paginate_array(@users).page(params[:page]).per(16)
 
-    @count = (@users.current_page - 1) * @users.limit_value + 1
+    @count = ((@users.current_page - 1) * @users.limit_value) + 1
     @sorts = {
-      race_wins: 'Wins',
-      race_podiums: 'Podiums',
-      race_win_rate: 'Win Ratio',
+      :race_wins => 'Wins',
+      :race_podiums => 'Podiums',
+      :race_win_rate => 'Win Ratio',
       # average_position: 'Average Position',
-      obtained_points: "Obtained Points",
-      official_score: "Official Score"
+      :obtained_points => 'Obtained Points',
+      :official_score => 'Official Score'
     }
   end
 end

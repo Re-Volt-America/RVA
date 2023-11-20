@@ -2,16 +2,16 @@ class Repository
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  store_in :database => "rv_repos"
+  store_in :database => 'rv_repos'
 
-  field :title, type: String
-  field :description, type: String
-  field :visible, type: Boolean
-  field :provider, type: String
+  field :title, :type => String
+  field :description, :type => String
+  field :visible, :type => Boolean
+  field :provider, :type => String
   field :namespace, :type => String
-  field :repo, type: String
-  field :open, type: Boolean
-  field :branch, type: String
+  field :repo, :type => String
+  field :open, :type => Boolean
+  field :branch, :type => String
 
   validates_presence_of :title
   validates_presence_of :description

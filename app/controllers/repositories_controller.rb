@@ -1,7 +1,7 @@
 class RepositoriesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :authenticate_admin, :except => [:index, :show]
-  before_action :set_repository, only: %i[ show edit update destroy ]
+  before_action :set_repository, :only => [:show, :edit, :update, :destroy]
 
   # GET /repositories or /repositories.json
   def index
@@ -15,7 +15,8 @@ class RepositoriesController < ApplicationController
     @revs = []
 
     if @repository.open?
-      Github.repos.commits.list(@repository.namespace, @repository.repo, @repository.branch, :per_page => 100).each do |r|
+      Github.repos.commits.list(@repository.namespace, @repository.repo, @repository.branch,
+                                :per_page => 100).each do |r|
         author_name = r.commit.committer.name
         author_email = r.commit.committer.email
         message = r.commit.message
@@ -36,8 +37,7 @@ class RepositoriesController < ApplicationController
   end
 
   # GET /repositories/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /repositories or /repositories.json
   def create
@@ -45,11 +45,11 @@ class RepositoriesController < ApplicationController
 
     respond_to do |format|
       if @repository.save
-        format.html { redirect_to repository_url(@repository), notice: "Repository was successfully created." }
-        format.json { render :show, status: :created, location: @repository }
+        format.html { redirect_to repository_url(@repository), :notice => 'Repository was successfully created.' }
+        format.json { render :show, :status => :created, :location => @repository }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @repository.errors, status: :unprocessable_entity }
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @repository.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -58,11 +58,11 @@ class RepositoriesController < ApplicationController
   def update
     respond_to do |format|
       if @repository.update(repository_params)
-        format.html { redirect_to repository_url(@repository), notice: "Repository was successfully updated." }
-        format.json { render :show, status: :ok, location: @repository }
+        format.html { redirect_to repository_url(@repository), :notice => 'Repository was successfully updated.' }
+        format.json { render :show, :status => :ok, :location => @repository }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @repository.errors, status: :unprocessable_entity }
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @repository.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -72,7 +72,7 @@ class RepositoriesController < ApplicationController
     @repository.destroy!
 
     respond_to do |format|
-      format.html { redirect_to repositories_url, notice: "Repository was successfully destroyed." }
+      format.html { redirect_to repositories_url, :notice => 'Repository was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -108,13 +108,14 @@ class RepositoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_repository
-      @repository = Repository.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def repository_params
-      params.require(:repository).permit(:title, :description, :visible, :provider, :namespace, :repo, :open, :branch)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_repository
+    @repository = Repository.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def repository_params
+    params.require(:repository).permit(:title, :description, :visible, :provider, :namespace, :repo, :open, :branch)
+  end
 end

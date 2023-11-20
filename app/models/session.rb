@@ -20,7 +20,7 @@ class Session
   field :date, :type => Date
   field :teams, :type => Boolean
   field :category, :type => Integer
-  field :session_log_data, type: String
+  field :session_log_data, :type => String
 
   validates_presence_of :number
   validates_presence_of :host
