@@ -16,17 +16,19 @@
           %li.heading
             Organization
           %li
+            = link_to "Staff Listing", staff_path
+          %li
             = link_to t('footer.organization.logs'), web_repo_or_first
           %li
             = link_to t('footer.organization.bugs'), ORG::GIT_ISSUES_URL, :target => "_blank"
-          %li
-            = link_to t('footer.organization.sponsor'), ORG::SPONSOR_URL, :target => "_blank"
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled
           %li.heading
             = t('footer.trademark.title')
           %li
             = link_to t('footer.trademark.assets'), logos_path
+          %li
+            = link_to t('footer.organization.sponsor'), ORG::SPONSOR_URL, :target => "_blank"
       %div.col-xl-3.col-lg-3.col-md-3.col-sm-6.col-xs-6.col-6
         %ul.list-unstyled.follow-us
           %li.heading
