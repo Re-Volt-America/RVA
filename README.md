@@ -252,8 +252,13 @@ beta-testing the site on its early stages, and helping with i18n.
 
 ### Sponsors
 * [Gabriel Carnielli](https://github.com/RVGforce).
-* [Mateusz Kobylański](https://github.com/Nickurn).
-* [Benjamin Mosso](https://github.com/bamm99).
-* [Juan Pablo Rosas](https://github.com/yeipills).
-* [Leandro Rodriguez](https://github.com/TioRotti).
 * [Dario Chaile](https://github.com/Burdang).
+* [Benjamín Contreras](https://github.com/Benjax14).
+* [Benjamín Ferrada](https://github.com/BenjaFerrada).
+* [Josafat Jimenez](https://github.com/JosafatJimenezB).
+* [Mateusz Kobylański](https://github.com/Nickurn).
+* [Jorge Matamala](https://github.com/jorgematamala).
+* [Benjamin Mosso](https://github.com/bamm99).
+* [Leandro Rodriguez](https://github.com/TioRotti).
+* [Juan Pablo Rosas](https://github.com/yeipills).
+
