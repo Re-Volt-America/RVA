@@ -163,9 +163,9 @@ You may edit your MongoDB client configuration from the `config/mongoid.yml` fil
 port, you don't need to do anything here. Default settings should suffice. You may modify this file in case you want to
 change the default connection strategy or other mongoid options.
 
-In the project's root, there is a directory named `db/`. This directory contains several MongoDB exported collections
-with sample data. Using these files, you will be able to simulate a working environment to parse session results on the
-site.
+In the project's docs directory, there is a directory named `db/`. This directory contains several MongoDB exported
+collections with sample data. Using these files, you will be able to simulate a working environment to parse session
+results on the site.
 
 Import each file as follows:
 ```bash
