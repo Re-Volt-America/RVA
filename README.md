@@ -261,4 +261,3 @@ beta-testing the site on its early stages, and helping with i18n.
 * [Benjamin Mosso](https://github.com/bamm99).
 * [Leandro Rodriguez](https://github.com/TioRotti).
 * [Juan Pablo Rosas](https://github.com/yeipills).
-
