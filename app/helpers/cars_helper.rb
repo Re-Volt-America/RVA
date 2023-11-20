@@ -22,6 +22,8 @@ module CarsHelper
       cars_superpro_path
     when SYS::CATEGORY::CLOCKWORK
       cars_clockwork_path
+    else
+      'unknown'
     end
   end
 end
