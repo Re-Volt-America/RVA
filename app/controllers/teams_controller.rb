@@ -14,13 +14,6 @@ class TeamsController < ApplicationController
     end
   end
 
-  # GET /teams/1 or /teams/1.json
-  def show
-    respond_with @team do |format|
-      format.json { render :layout => false }
-    end
-  end
-
   # GET /teams/new
   def new
     @team = Team.new
@@ -76,6 +69,6 @@ class TeamsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def team_params
-    params.require(:team).permit(:name, :short_name, :image, :leader)
+    params.require(:team).permit(:name, :short_name, :team_logo, :leader, :members)
   end
 end

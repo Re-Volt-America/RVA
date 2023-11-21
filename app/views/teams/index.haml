@@ -1,22 +1,36 @@
-%p#notice= notice
-%h1 Teams
-%table
-  %thead
-    %tr
-      %th Name
-      %th Short name
-      %th Image
-      %th String
-      %th{:colspan => "3"}
-  %tbody
-    - @teams.each do |team|
-      %tr
-        %td= team.name
-        %td= team.short_name
-        %td= team.image
-        %td= team.leader
-        %td= link_to 'Show', team
-        %td= link_to 'Edit', edit_team_path(team)
-        %td= link_to 'Destroy', team, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
-%br/
-= link_to 'New Team', new_team_path
+#teams
+  %p
+    #notice
+      = notice
+
+  %h2
+    RVA Teams
+
+  - @teams.each do |team|
+    .text-center
+      .row
+        .teams-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
+          .card
+            .card-header
+              .text-center
+                %h2.car-title
+                  = "#{team.name}"
+                  %small
+                    = "(#{team.short_name})"
+            .card-body
+              %img.card-img-top{:src => team.team_logo_url, :alt => ""}
+            .card-footer
+              .row
+                .col-5
+                  %p Leader:
+                .col-7
+                  %p
+                    = link_to team.leader.username, user_path(team.leader) if team.leader
+            - if team.members.any?
+              .card-footer
+                .row
+                  .col-6
+                    %p Members:
+                  .col-12
+                    - team.members.each do |member|
+                      = "#{member.username}#{team.members.last.eql?(member) ? '' : ', '}"

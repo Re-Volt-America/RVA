@@ -1,4 +1,4 @@
-= form_with(model: team) do |form|
+= form_with(:model => @team) do |form|
   .row
     .col-md-5
       .field.form-group
@@ -7,12 +7,13 @@
       .field.form-group
         = form.label :short_name
         = form.text_field :short_name, :class => "form-control"
+      = form.label :team_image
+      .field.input-group
+        = form.hidden_field :team_logo, :value => team.cached_team_logo_data, :id => nil
+        = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
-        = form.label :image
-        = form.text_field :image, :class => "form-control"
-      .field.form-group
-        = form.label :string
-        = form.text_field :string, :class => "form-control"
+        = form.label :leader
+        = form.select :leader, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
       .actions
         = form.button "Create Team", :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7

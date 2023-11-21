@@ -11,6 +11,7 @@ class User
   validates_format_of :username, :with => USERNAME_REGEX
 
   belongs_to :team, :optional => true
+  has_one :team
 
   embeds_one :profile
   embeds_one :stats
