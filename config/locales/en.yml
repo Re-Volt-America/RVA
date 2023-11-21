@@ -34,7 +34,6 @@ en:
     play: "Play"
     tracks: "Tracks"
     cars: "Cars"
-    downloads: "Downloads"
     league:
       title: "League"
       seasons: "Seasons"
@@ -46,6 +45,7 @@ en:
       title: "Players"
       staff: "Staff"
       stats: "Stats"
+    downloads: "Downloads"
   footer:
     policies:
       title: "Policies"
