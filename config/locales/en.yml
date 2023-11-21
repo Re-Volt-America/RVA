@@ -66,6 +66,10 @@ en:
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
+  splash:
+    description1: "The Website for the American community of Re-Volt, 1999"
+    description2: "Download the game and meet players from all over the Americas!"
+    download-button: "Downloads »"
   play:
     subheader: "We play daily at 00:00 UTC"
     subheader2: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
