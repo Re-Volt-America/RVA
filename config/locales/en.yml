@@ -310,5 +310,33 @@ en:
       instruction: "Click the link below to unlock your account:"
       url: "Unlock my account"
 
+  registrations:
+    edit:
+      title: "Edit User"
+      email:
+        title: "Change Email"
+        new: "New email"
+      password:
+        title: "Change Password"
+        new-length: "New password (%{length} characters minimum)"
+        new: "New password"
+        confirm: "Confirm new password"
+      info:
+        title: "Change your info"
+        gender: "Gender"
+        nationality:
+          title: "Nationality"
+          small: "(National flag)"
+          placeholder: "Select nationality"
+        location: "Location"
+        occupation: "Occupation"
+        interests: "Interests"
+        public-email: "Public Email"
+        about-me:
+          title: "About me... (You may use html)"
+          placeholder: "Write something interesting..."
+      current-password: "Current password"
+      update: "Update"
+
 
 
