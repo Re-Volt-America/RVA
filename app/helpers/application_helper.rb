@@ -3,6 +3,14 @@ module ApplicationHelper
     Rails.env == 'production' || Rails.env == 'staging'
   end
 
+  def meta(tag, text)
+    content_for :"meta_#{tag}", text
+  end
+
+  def yield_meta_tag(tag, default_text='')
+    content_for?(:"meta_#{tag}") ? content_for(:"meta_#{tag}") : default_text
+  end
+
   # Check if the passed user is an admin
   # @return [Boolean] true if the current user is an admin, false otherwise
   def user_is_admin?(user = current_user)
