@@ -297,7 +297,12 @@ en:
     change:
       greeting: "Hello %{email}!"
       description: "We're contacting you to notify you that your password has been changed."
-
+    reset:
+      greeting: "Hello %{email}!"
+      advise: "Someone has requested a link to change your password. You can do this through the link below."
+      advise2: "If you didn't request this, please ignore this email."
+      advise3: "Your password won't change until you access the link above and create a new one.
+"
 
 
 
