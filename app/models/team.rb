@@ -5,8 +5,8 @@ class Team
 
   store_in :database => 'rv_teams'
 
-  belongs_to :leader, :class_name => "User", :optional => true
-  has_many :members, :class_name => "User"
+  belongs_to :leader, :class_name => 'User', :optional => true
+  has_many :members, :class_name => 'User'
 
   field :name, :type => String
   field :short_name, :type => String
