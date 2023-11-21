@@ -13,3 +13,9 @@ mongoimport --host localhost:27017 --db rv_users --collection users --file rv_us
 ```
 
 In order for these imports to work from a Docker context, replace "--host localhost:27017" with "--host mongo:27017".
+
+Once the script is done importing, you should be able to log in with the following test credentials of an admin user:
+
+Credentials
+- Email: `admin@example.com`
+- Password: `adminadmin`

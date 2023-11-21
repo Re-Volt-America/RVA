@@ -181,13 +181,7 @@ rails rva -b HOST -p PORT              # Public website on http://`<host>`:`<por
 Replace `<host>` and `<port>` with the desired host and port you would like to use for the website. For example, you
 could run the application on host 0.0.0.0 and port 80 to make the site accessible from outside localhost.
 
-At this point, you should be able to visit the website at http://`<host>`:`<port>`. If you followed the
-[Database Setup](#database-setup) instructions for MongoDB, you should be able to login with the following test
-credentials of an admin user:
-
-Credentials
-- Email: `admin@example.com`
-- Password: `adminadmin`
+At this point, you should be able to visit the website at http://`<host>`:`<port>`.
 
 ## Docker
 This project includes a `docker-compose.yml` file ready to use in order to run using Docker.
