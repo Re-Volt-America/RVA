@@ -6,7 +6,7 @@
         = f.text_field :name, :class => "form-control"
       .field.form-group
         = f.label :date
-        = f.date_field :date, :class => "form-control"
+        = f.date_field :date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
       .field.form-group
         = f.label :season
         = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
