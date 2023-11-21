@@ -281,3 +281,10 @@ en:
         races: "%{category} Race"
         hosted-by: "Hosted by %{host}"
         all-sessions-button: "All Sessions"
+
+  confirmation:
+    welcome: "Welcome %{email}"
+    description: "You can confirm your account email through the link below:"
+
+
+
