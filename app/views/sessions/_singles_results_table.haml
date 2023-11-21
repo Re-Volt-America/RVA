@@ -1,3 +1,6 @@
+- meta :title, "RVA Singles Session"
+- meta :description, singles_session_meta_desc(@rva_results)
+
 - cache "Session##{@session.id}" do
   .container
     = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
