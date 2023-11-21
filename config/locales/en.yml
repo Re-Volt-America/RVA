@@ -293,5 +293,11 @@ en:
         changing: "We're contacting you to notify you that your email is being changed to %{email}."
         changed: "We're contacting you to notify you that your email has been changed to %{email}"
 
+  password:
+    change:
+      greeting: "Hello %{email}!"
+      description: "We're contacting you to notify you that your password has been changed."
+
+
 
 
