@@ -282,9 +282,16 @@ en:
         hosted-by: "Hosted by %{host}"
         all-sessions-button: "All Sessions"
 
+
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
+
+  email:
+      changed:
+        greeting: "Hello %{email}!"
+        changing: "We're contacting you to notify you that your email is being changed to %{email}."
+        changed: "We're contacting you to notify you that your email has been changed to %{email}"
 
 
 
