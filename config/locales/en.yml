@@ -140,23 +140,21 @@ en:
         term: "(2) Speced:"
         precision: "When the lobby host forces a racer into spectator. In this context, as a form of punishment."
   points:
-    title: "Points System"
+    title: "RVA Points System"
     introduction:
       title: "Introduction"
-      p1: "In Re-Volt America, racers are assigned points for each race they play, which vary depending on the position they finish in. The following image illustrates which positions give what amount of points:"
-      p2: "For lobbies which start with 10 or more racers, bonus points are scored. The following image illustrates the points system with the bonus points in place:"
+      description: "In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores will depend on two things: their final position in the race, and the amount of racers in that race. If a race has 10 or more racers in it, then it's considered a to be a \"big\" race."
+      normal-race: "Normal Race Scoring"
+      big-race: "Big Race Scoring"
     car-ratings:
       title: "Car Ratings"
-      p1: "Cars are rated depending on their top speed, acceleration, weight, etc. And each rating results in a multiplier for each car. The <b style='color: #c6c67d'>yellow bolt</b> represents said multiplier for the cars in the following image:"
-      p2: "With that in mind, 1° place scores of 15 points, on three different cars, would vary depending on their multipliers:"
-    variables:
-      title: "Variables"
-      1: "Obtained Points"
-      2: "Car Multiplier"
-      3: "Average Position"
-      4: "Official Score"
-      5: "0.1, constant factor for reducing final scores"
-    parser: "RVA Points Parser"
+      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+    desktop-parser:
+      title: "RVA Desktop Points Parser"
+      description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
+    downloads:
+      title: "Download RVA Points"
+
   rva:
     tracks:
       all-tracks: "All Tracks"
