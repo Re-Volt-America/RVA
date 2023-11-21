@@ -1,7 +1,6 @@
 require 'shrine'
 require 'shrine/storage/file_system'
 require 'shrine/storage/memory'
-require 'shrine/storage/s3'
 
 if Rails.env.test?
   Shrine.storages = {
@@ -15,6 +14,8 @@ else
   }
 end
 
-Shrine.plugin :mongoid, :validations => false
+Shrine.plugin :mongoid
 Shrine.plugin :cached_attachment_data # enables retaining cached file across form redisplays
 Shrine.plugin :restore_cached_data    # extracts metadata for assigned cached files
+Shrine.plugin :validation
+Shrine.plugin :validation_helpers
