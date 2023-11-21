@@ -154,7 +154,6 @@ en:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
-
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -181,6 +180,16 @@ en:
     cars:
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
+      features:
+        speed: "Speed"
+        acceleration: "Acceleration"
+        weight: "Weight"
+        multiplier: "Multiplier"
+        category: "Category"
+        stock: "Stock"
+        stock-tooltip:
+          tooltip: "Original Re-Volt Content"
+        featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
   assets:
