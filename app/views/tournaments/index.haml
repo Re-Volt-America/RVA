@@ -1,20 +1,14 @@
-%p#notice= notice
-%h1 Tournaments
-%table
-  %thead
-    %tr
-      %th Name
-      %th Date
-      %th Format
-      %th{:colspan => "3"}
-  %tbody
+#tournaments
+  %h1
+    Past Tournaments
+
+  - if @tournaments.any?
     - @tournaments.each do |tournament|
-      %tr
-        %td= tournament.name
-        %td= tournament.date
-        %td= tournament.format
-        %td= link_to 'Show', tournament
-        %td= link_to 'Edit', edit_tournament_path(tournament)
-        %td= link_to 'Destroy', tournament, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }
-%br/
-= link_to 'New Tournament', new_tournament_path
+      .row
+        .col-12
+          %a.tournament-banner{:href => tournament_path(tournament)}
+            = image_tag tournament.tournament_banner_url, :class => 'tournament-banner' if tournament.tournament_banner
+
+  - if user_is_staff?
+    .text-center
+      = link_to "New", new_tournament_path, :class => "btn btn-sm"

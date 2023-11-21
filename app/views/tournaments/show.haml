@@ -1,16 +1,18 @@
-%p#notice= notice
+#tournaments
+  %p
+    #notice
+      = notice
+
+  %h1.text-center
+    = @tournament.name
+
+  .row
+    .col-12
+      .tournament-banner
+        = image_tag @tournament.tournament_banner_url, :class => 'tournament-banner' if @tournament.tournament_banner
+
+  = render_pretty(@tournament.format)
+
 %p
-  %strong Season:
-  = @tournament.season
-%p
-  %strong Name:
-  = @tournament.name
-%p
-  %strong Date:
-  = @tournament.date
-%p
-  %strong Format:
-  = @tournament.format
-= link_to 'Edit', edit_tournament_path(@tournament)
-|
-= link_to 'Back', tournaments_path
+  %strong
+    = "#{@tournament.season.name} - #{pretty_datetime(@tournament.date)}"

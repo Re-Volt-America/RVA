@@ -1,4 +1,4 @@
-= form_with(model: tournament) do |f|
+= form_with(:model => tournament) do |f|
   .row
     .col-md-5
       .field.form-group
@@ -8,13 +8,17 @@
         = f.label :date
         = f.date_field :date, :class => "form-control"
       .field.form-group
-        = f.label :format
-        = f.text_area :format, :class => "form-control"
-      .field.form-group
         = f.label :season
         = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+      = f.label :tournament_banner
+      .field.input-group
+        = f.hidden_field :tournament_banner, :value => tournament.cached_tournament_banner_data, :id => nil
+        = f.file_field :tournament_banner, :accept => "image/png, image/jpeg", :class => "form-control-file"
+      .field.form-group
+        = f.label :format
+        = f.text_area :format, :class => "form-control"
       .actions
-        = f.button "Create Tournament", :type => "submit", :"data-turbo" => false, :class => "btn"
+        = f.button "Save Tournament", :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if tournament.errors.any?
         #error_explanation
