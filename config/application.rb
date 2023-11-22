@@ -196,7 +196,8 @@ module RVA
 
     config.assets.paths << Rails.root.join('app', 'assets')
 
-    config.hosts << 'staging.rva.lat'
+    config.hosts << ORG::DOMAIN
+    config.hosts << "staging.#{ORG::DOMAIN}"
 
     config.generators.system_tests = nil
     config.generators do |g|
