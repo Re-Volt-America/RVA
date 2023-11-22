@@ -10,23 +10,20 @@
     .col-lg-8.col-xl-7.col-xxl-6
       .my-5.text-center.text-xl-start
         %h2.display-5.fw-bolder.text-white.mb-2
-          What are RVA Seasons?
+          = t("seasons.explanation.title")
         %p.lead.fw-normal.text-white-80.mb-4
-          In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
-          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
-          points for every race.
+          = t("seasons.explanation.description")
         .justify-content-sm-center
           %a{href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn-important btn-lg px-4 me-sm-3 mr-4 #{current_season.nil? ? 'disabled' : ''}"}
-            Current Season
+            = t("seasons.buttons.current-season")
           %a.btn-important.btn-lg.px-4{href: points_path}
-            Learn More
+            = t("seasons.buttons.learn-more")
     .col-xl-5.col-xxl-6.text-center
       = image_tag "seasons.png", :class => "img-fluid rounded-3 my-5"
 
   - if @seasons.any?
     %h3.text-center
-      All Seasons
-
+      = t("seasons.bottom.title")
     %h3.border-bottom.border-gray.pb-2.mb-0
     - @seasons.each do |season|
       - if season.eql?(current_season)
@@ -36,7 +33,7 @@
               %strong.text-gray-dark
                 = season.name
             %span.d-block.session-host
-              = "#{season.start_date} — #{season.end_date.nil? ? 'Present' : season.end_date }"
+              = "#{season.start_date} — #{season.end_date.nil? ? t("seasons.bottom.present") : season.end_date }"
       - else
         %a.media.text-muted.pt-3.border-bottom.border-gray{:href => season_path(season) }
           .media-body.pb-3.mb-0.small.lh-125
@@ -44,4 +41,4 @@
               %strong.text-gray
                 = season.name
             %span.d-block.session-host
-              = "#{season.start_date} — #{season.end_date.nil? ? 'Present' : season.end_date }"
+              = "#{season.start_date} — #{season.end_date.nil? ? t("seasons.bottom.present") : season.end_date }"
