@@ -40,8 +40,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'                               # Resolve OpenSSH problems with capistrano
+  gem 'capistrano', '~> 3.18', :require => false                      # Deployment
+  gem 'capistrano-bundler', '~> 2.1', :require => false               # Capistrano bundler integration
+  gem 'capistrano-rails', '~> 1.6', '>= 1.6.3', :require => false # Ruby on Rails specific tasks for Capistrano
+  gem 'ed25519', '>= 1.2', '< 2.0'                                    # Resolve OpenSSH problems with capistrano
   gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
   gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem 'rvm1-capistrano3', '~> 1.4', :require => false                 # Capistrano rvm integration
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 

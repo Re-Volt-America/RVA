@@ -25,6 +25,7 @@ module ORG
   DESCRIPTION = 'The Website for the Re-Volt America Community'
   DOMAIN = 'rva.lat'
   EMAIL = 'support@rva.lat'
+  SMTP = 'smtp.postmarkapp.com'
   URL = 'https://rva.lat'
 
   CARS_REPO_URL = 'https://cars.rva.lat'
@@ -195,8 +196,7 @@ module RVA
 
     config.assets.paths << Rails.root.join('app', 'assets')
 
-    config.hosts << "staging.rva.lat"
-    config.hosts << "staging.rva.lat"
+    config.hosts << 'staging.rva.lat'
 
     config.generators.system_tests = nil
     config.generators do |g|
