@@ -12,7 +12,6 @@ set :user, 'deploy'
 set :stages, %w(production)
 set :deploy_to, '/home/deploy/RVA'
 set :linked_dirs, %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads)
-set :linked_files, %w(config/database.yml config/secrets.yml)
 set :pty, true
 set :rvm1_ruby_version, '3.2.2'
 
