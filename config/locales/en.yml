@@ -75,16 +75,8 @@ en:
     subheader2: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
   downloads:
     title: "Downloads"
-    rvgl-rva: "RVGL + RVA Pack"
-    rva-standalone: "RVA Pack"
-    rva-launcher-repository: "RVGL Launcher Repository"
-    current-version: "Current version:"
-    re-volt:
-      description: "This is the game we play, Re-Volt! Get it from the RVGL project in order to play online with us."
-    rva:
-      description: "The content pack we use at Re-Volt America. This includes the cars, tracks & gfx."
-    repo:
-      intro: "If you are using the <a href='{{ site.data.distribute.rvgl-launcher }}' target='_blank'><b>RVGL Launcher</b></a> and you don't see the <i>rva_</i> prefixed packs at the Packs tab, then you don't have our repository added! Go to your Repositories tab and add our packages repo:"
+    video: "Pending video..."
+    legacy-downloads: "Legacy Downloads"
   rules:
     title: "Rules"
     sections:
@@ -161,6 +153,8 @@ en:
       title: "The RVA Tracks"
       format:
         title: "Format"
+        short-name:
+          title: "Short Name"
         difficulty:
           title: "Difficulty"
           easy: "Easy"
@@ -173,6 +167,13 @@ en:
           medium: "Medium"
           long: "Long"
           extralong: "Extra Long"
+          meters: "%{length} meters"
+        stock:
+          title: "Stock?"
+          true: "Yes"
+          false: "No"
+      featured:
+        description: "This track has been featured in RVA %{season}"
       rotation:
         title: "Re-Volt America Rotation"
       collection:
@@ -226,8 +227,18 @@ en:
     1: "We're playing right now! Lobby IP:"
     2: "New RVA Pack Update Available!"
   seasons:
-    season: "Season"
-    unavailable: "Results unavailable"
+    title: "The RVA Seasons"
+    explanation:
+      title: "What are RVA Seasons?"
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
+          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
+          points for every race."
+    buttons:
+      current-season: "Current Season"
+      learn-more: "Learn More"
+    bottom:
+      title: "All Seasons"
+      present: "Present"
   classes:
     rookie: "Rookie"
     amateur: "Amateur"
@@ -278,9 +289,11 @@ en:
         about-us-button: "About Us »"
       recent:
         title: "Recent Sessions."
-        races: "%{category} Race"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
         hosted-by: "Hosted by %{host}"
         all-sessions-button: "All Sessions"
+        no-sessions: "N"
 
 
   confirmation:
@@ -288,10 +301,10 @@ en:
     description: "You can confirm your account email through the link below:"
 
   email:
-      changed:
-        greeting: "Hello %{email}!"
-        changing: "We're contacting you to notify you that your email is being changed to %{email}."
-        changed: "We're contacting you to notify you that your email has been changed to %{email}"
+    changed:
+      greeting: "Hello %{email}!"
+      changing: "We're contacting you to notify you that your email is being changed to %{email}."
+      changed: "We're contacting you to notify you that your email has been changed to %{email}"
 
   password:
     change:
@@ -332,11 +345,98 @@ en:
         occupation: "Occupation"
         interests: "Interests"
         public-email: "Public Email"
+
         about-me:
           title: "About me... (You may use html)"
+          title2: "About %{user}"
+          nothing: "Nothing here yet..."
           placeholder: "Write something interesting..."
       current-password: "Current password"
       update: "Update"
 
+  rankings:
+    title: "Ranking %{number}"
+    title2: "Leaderboards"
+    small: "%{count} sessions played"
+    table:
+      country: "Country"
+      racer: "Racer"
+      pp: "PP"
+      pa: "PA"
+      mp: "MP"
+      po: "PO"
+      cc: "CC"
+      fj: "FJ"
+      fp: "FP"
+      sp: "SP"
+    sessions:
+      title: "Sessions"
+      no-sessions: "No sessions to display :("
 
+  repositories:
+    title: "Revisions"
+    small: "Latest git commits in our organization"
+    new-button: "New"
+    repository: "Repository"
+    table:
+      title: "Repository"
+      revision: "Revision"
+      author: "Author"
+      description: "Description"
+      when: "When"
 
+  results:
+    title: "%{category} Races (Session %{number})"
+    version: "Version: %{version}"
+    connection: "Connection: %{protocol} (Server)"
+    mode: "Mode: %{physics}"
+    pickups: "Pickups: %{pickups}"
+    teams: "Teams: %{teams}"
+    download: "Download Session Log"
+    team: "Team"
+    container:
+      tooltips:
+        session-number: "Session Number"
+        final-position: "Final Position"
+        average-position: "Average Position"
+        obtained-points: "Obtained Points"
+        race-count: "Race Count"
+        participation-multiplier: "Participation Multiplier"
+        official-score: "Official Score"
+        accumulated-score: "Accumulated Score"
+        accumulated-points: "Accumulated Points"
+        sessions-played: "Sessions Played"
+
+  teams:
+    title: "RVA Teams"
+    leader: "Leader"
+    members: "Members"
+
+  users:
+    stats:
+      title: "Stats"
+      rank: "rank"
+      race-stats:
+        title: "Race Stats"
+        win-rate: "win rate"
+        sessions: "sessions"
+        races: "races"
+        wins: "wins"
+      overall-stats:
+        title: "Overall Stats"
+        session-win: "session win"
+        session-wins: "session wins"
+        session-podium: "session podium"
+        session-podiums: "session podiums"
+        session-winrate: "session win rate"
+        obtained-point: "obtained point"
+        obtained-points: "obtained points"
+        official-score: "official score"
+        average-position: "average position"
+        participation: "participation rate"
+    general:
+      title: "General"
+
+  tournaments:
+    title: "Past Tournaments"
+    new: "New"

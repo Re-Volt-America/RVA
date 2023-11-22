@@ -9,12 +9,12 @@
   .mt-4
     %h5.pb-2.mb-0
       %span
-        = "Sessions"
+        = t("rankings.sessions.title")
         %small
           = "(#{@ranking.sessions.count})"
     - if @sessions.none?
       %h5.text-center.mt-3
-        = "No sessions to display"
+        = t("rankings.sessions.no-sessions")
     - else
       .mb-3
         = paginate @sessions
@@ -29,14 +29,14 @@
             .media-body.pb-3.mb-0.small.lh-125
               .d-flex.justify-content-between.align-items-center.w-100
                 %strong.text-gray-dark
-                  = "#{session_category_name(session)} #{session.teams? ? 'Team' : ''} Races"
+                  = "#{session.teams? ? t("application.index.recent.team-races", category: session_category_name(session)) : t("application.index.recent.races", category: session_category_name(session))}"
                 .session-date
                   = pretty_datetime(session.date)
               %span.d-block.session-host
-                = "Hosted by #{session.host}"
+                = t("application.index.recent.hosted-by", host: session.host) #{session.host}
 
 %h2.mt-4.text-center
-  = "Leaderboards"
+  = t("rankings.title2")
 
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item
@@ -51,14 +51,14 @@
         %thead
           %tr
             %th{width: "1%"} #
-            %th{width: "2%"} Country
-            %th{width: "16%"} Racer
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"} PP
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated Points"} PA
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"} MP
-            %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"} PO
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
+            %th{width: "2%"}= t("rankings.table.country")
+            %th{width: "16%"}= t("rankings.table.racer")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}= t("rankings.table.pp")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.accumulated-points")}= t("rankings.table.pa")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}= t("rankings.table.mp")
+            %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}= t("rankings.table.po")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}= t("rankings.table.cc")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.sessions-played")}= t("rankings.table.sp")
         %tbody
           - @racer_entries.each do |e|
             - @count += 1
@@ -101,3 +101,4 @@
                 %td.score.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
                   = e.points
               - @count += 1
+
