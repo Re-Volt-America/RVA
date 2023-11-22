@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    @recent_sessions = current_ranking.sessions.last(5)
+    @recent_sessions = current_ranking.sessions.last(5).reverse!
   end
 
   def authenticate_admin

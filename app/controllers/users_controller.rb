@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       count += 1
     end
 
+    @recent_sessions.reverse!
     @rank = if current_ranking
               current_ranking.get_rank(@user)
             else

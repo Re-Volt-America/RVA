@@ -16,7 +16,7 @@ class RankingsController < ApplicationController
 
   # GET /rankings/1 or /rankings/1.json
   def show
-    @sessions = @ranking.sessions
+    @sessions = @ranking.sessions.reverse!
     @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(8)
     @count = 1
     @entries = @ranking.racer_result_entries
