@@ -372,6 +372,22 @@ en:
     sessions:
       title: "Sessions"
       no-sessions: "No sessions to display :("
+    results:
+      no-team-results: "No team results to disiplay"
+    nav:
+      singles: "Singles"
+      teams: "Teams"
+    admin:
+      season:
+        edit:
+          button: "Edit Season"
+        delete:
+          button: "Delete season"
+          warning:
+            title: "Warning!"
+            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
+            close: "Close"
+            delete-season: "Delete Season"
 
   repositories:
     title: "Revisions"
@@ -436,7 +452,6 @@ en:
         participation: "participation rate"
     general:
       title: "General"
-
   tournaments:
     title: "Past Tournaments"
     new: "New"

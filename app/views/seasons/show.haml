@@ -3,13 +3,13 @@
 = render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
 %h2.mt-4.text-center
-  = "#{@season.name} Leaderboards"
+  = t("rankings.title2")
 
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item
-    %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"} Singles
+    %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"}= t("rankings.nav.singles")
   %li.nav-item
-    %a#teams-tab.nav-link{"aria-controls" => "teams", "aria-selected" => "false", "data-toggle" => "tab", href: "#teams", role: "tab"} Teams
+    %a#teams-tab.nav-link{"aria-controls" => "teams", "aria-selected" => "false", "data-toggle" => "tab", href: "#teams", role: "tab"}= t("rankings.nav.teams")
 .tab-content
   #singles.tab-pane.fade.show.active{:"aria-labelledby" => "singles-tab", role: "tabpanel"}
     .table-responsive#singles-stats-table
@@ -17,14 +17,14 @@
         %thead
           %tr
             %th{width: "1%"} #
-            %th{width: "2%"} Country
-            %th{width: "16%"} Racer
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"} PP
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated Points"} PA
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"} MP
-            %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"} PO
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
-            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
+            %th{width: "2%"}= t("rankings.table.country")
+            %th{width: "16%"}= t("rankings.table.racer")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}= t("rankings.table.pp")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.accumulated-points")}= t("rankings.table.pa")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}= t("rankings.table.mp")
+            %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}= t("rankings.table.po")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}= t("rankings.table.cc")
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.sessions-played")}= t("rankings.table.sp")
         %tbody
           - @racer_entries.each do |e|
             %tr
@@ -50,7 +50,7 @@
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
     - if @team_entries.none?
       %h5.text-center.mt-2
-        = "No team results to display"
+        = t("rankings.results.no-team-results")
     - else
       .table-responsive#teams-table
         %table.table.table-bordered.table-striped
@@ -69,20 +69,20 @@
               - @count += 1
 
 = paginate @racer_entries
-
 - if user_is_admin?
-  = link_to 'Edit Season', edit_season_path(@season), :class => "btn mt-2"
-  = link_to 'Delete Season', '', :"data-target" => "#deleteSeasonModal", :"data-toggle" => "modal", :type => "button", :class =>  "btn mt-2"
+  = link_to t("rankings.admin.season.edit.button"), edit_season_path(@season), :class => "btn mt-2"
+  = link_to t("rankings.admin.season.delete.button"), '', :"data-target" => "#deleteSeasonModal", :"data-toggle" => "modal", :type => "button", :class =>  "btn mt-2"
 
   #deleteSeasonModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "deleteSeasonModalLabel", role: "dialog", tabindex: "-1"}
     .modal-dialog{:role => "document"}
       .modal-content
         .modal-header
-          %h5#deleteSeasonModalLabel.modal-title Warning!
+          %h5#deleteSeasonModalLabel.modal-title
+            = t("rankings.admin.season.delete.warning.title")
           %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
             %span{"aria-hidden" => "true"} ×
         .modal-body
-          = "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible."
+          = t("rankings.admin.season.delete.warning.body")
         .modal-footer
-          = link_to 'Close', '', :"data-dismiss" => "modal", :type => "button", :class => "btn"
-          = link_to 'Delete Season', @season, :data => { turbo: true, turbo_method: :delete }, :class => "btn"
+          = link_to t("rankings.admin.season.delete.warning.close"), '', :"data-dismiss" => "modal", :type => "button", :class => "btn"
+          = link_to t("rankings.admin.season.delete.warning.delete-season"), @season, :data => { turbo: true, turbo_method: :delete }, :class => "btn"
