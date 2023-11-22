@@ -11,7 +11,7 @@ set :branch, 'production'
 set :user, 'deploy'
 set :stages, %w(production)
 set :deploy_to, '/home/deploy/RVA'
-set :linked_dirs, %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads)
+set :linked_dirs, %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads, node_modules)
 set :linked_files, %w(config/secrets.yml)
 set :pty, true
 set :rvm1_ruby_version, '3.2.2'
@@ -32,12 +32,21 @@ before 'rvm1:install:rvm', 'app:update_rvm_key'
 after 'deploy', 'app:restart'
 
 set :rails_env, 'production'
-set :migration_role, :app
-set :migration_servers, -> { primary(fetch(:migration_role)) }
-set :migration_command, 'db:migrate'
-set :conditionally_migrate, true
 set :assets_roles, [:web, :app]
 set :assets_manifests, ['app/assets/config/manifest.js']
 set :rails_assets_groups, :assets
-set :normalize_asset_timestamps, %w(public/images public/javascripts public/stylesheets)
 set :keep_assets, 2
+
+namespace :yarn do
+  task :install do
+    on release_roles(fetch(:assets_roles)) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "yarn:install"
+        end
+      end
+    end
+  end
+end
+
+after 'bundler:install', 'yarn:install'
