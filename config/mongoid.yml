@@ -60,6 +60,20 @@ development:
     # indexes in the background by default. (default: false)
     # background_indexing: false
 
+production:
+  clients:
+    default:
+      hosts:
+        - "localhost:27017"
+      database: rva_production
+  # Configure Mongoid specific options. (optional)
+  options:
+    # Application name that is printed to the mongodb logs upon establishing
+    # a connection in server versions >= 3.4. Note that the name cannot
+    # exceed 128 bytes. It is also used as the database name if the
+    # database name is not explicitly defined. (default: nil)
+    app_name: rva
+
 test:
   clients:
     default:
