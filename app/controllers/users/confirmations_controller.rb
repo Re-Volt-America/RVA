@@ -20,7 +20,7 @@ module Users
     # protected
 
     # The path used after resending confirmation instructions.
-    def after_resending_confirmation_instructions_path_for(resource_name)
+    def after_resending_confirmation_instructions_path_for(_resource_name)
       root_path
     end
 
