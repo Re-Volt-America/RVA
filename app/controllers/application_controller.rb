@@ -56,12 +56,22 @@ class ApplicationController < ActionController::Base
   helper_method :render_navigation
 
   def index
-    if current_ranking.nil?
+    @current_ranking = Rails.cache.fetch("current_ranking", :expires_in => 1.day) do
+      current_ranking
+    end
+
+    if @current_ranking.nil?
       @recent_sessions = []
       return
     end
 
-    @recent_sessions = current_ranking.sessions.last(5).reverse!
+    @current_sessions = Rails.cache.fetch("current_sessions", :expires_in => 1.day) do
+      current_ranking.sessions
+    end
+
+    @recent_sessions = Rails.cache.fetch("recent_sessions", :expires_in => 1.day) do
+      @current_sessions.last(5).reverse!
+    end
   end
 
   def authenticate_admin
