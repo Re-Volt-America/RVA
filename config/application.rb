@@ -198,7 +198,6 @@ module RVA
 
     config.hosts << ORG::DOMAIN
     config.hosts << "staging.#{ORG::DOMAIN}"
-    config.hosts << 'localhost:3000'
 
     config.generators.system_tests = nil
     config.generators do |g|
