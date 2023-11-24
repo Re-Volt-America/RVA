@@ -26,4 +26,25 @@ module CarsHelper
       'unknown'
     end
   end
+  
+  def category_cache_key(category)
+    case category
+    when SYS::CATEGORY::ROOKIE
+      "rookie_cars"
+    when SYS::CATEGORY::AMATEUR
+      "amateur_cars"
+    when SYS::CATEGORY::ADVANCED
+      "advanced_cars"
+    when SYS::CATEGORY::SEMI_PRO
+      "semipro_cars"
+    when SYS::CATEGORY::PRO
+      "pro_cars"
+    when SYS::CATEGORY::SUPER_PRO
+      "superpro_cars"
+    when SYS::CATEGORY::CLOCKWORK
+      "clockwork_cars"
+    else
+      'unknown'
+    end
+  end
 end

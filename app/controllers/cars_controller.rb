@@ -18,7 +18,9 @@ class CarsController < ApplicationController
 
   # GET /cars/rookie or /cars/rookie.json
   def rookie
-    @cars = cars_of_category(SYS::CATEGORY::ROOKIE)
+    @cars = Rails.cache.fetch("rookie_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::ROOKIE)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -27,7 +29,9 @@ class CarsController < ApplicationController
 
   # GET /cars/amateur or /cars/amateur.json
   def amateur
-    @cars = cars_of_category(SYS::CATEGORY::AMATEUR)
+    @cars = Rails.cache.fetch("amateur_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::AMATEUR)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -36,7 +40,9 @@ class CarsController < ApplicationController
 
   # GET /cars/advanced or /cars/advanced.json
   def advanced
-    @cars = cars_of_category(SYS::CATEGORY::ADVANCED)
+    @cars = Rails.cache.fetch("advanced_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::ADVANCED)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -45,7 +51,9 @@ class CarsController < ApplicationController
 
   # GET /cars/semipro or /cars/semipro.json
   def semipro
-    @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
+    @cars = Rails.cache.fetch("semipro_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -54,7 +62,9 @@ class CarsController < ApplicationController
 
   # GET /cars/pro or /cars/pro.json
   def pro
-    @cars = cars_of_category(SYS::CATEGORY::PRO)
+    @cars = Rails.cache.fetch("pro_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::PRO)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -63,7 +73,9 @@ class CarsController < ApplicationController
 
   # GET /cars/superpro or /cars/superpro.json
   def superpro
-    @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO)
+    @cars = Rails.cache.fetch("superpro_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -72,7 +84,9 @@ class CarsController < ApplicationController
 
   # GET /cars/clockwork or /cars/clockwork.json
   def clockwork
-    @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK)
+    @cars = Rails.cache.fetch("clockwork_cars", :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK)
+    end
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -102,6 +116,8 @@ class CarsController < ApplicationController
       if @car.save
         format.html { redirect_to car_url(@car), :notice => 'Car was successfully created.' }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
+
+        Rails.cache.delete(category_cache_key(params[:category]))
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
