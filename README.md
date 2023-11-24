@@ -105,8 +105,9 @@ Start the mongodb & redis-server services.
 service mongodb start && service redis-server start
 ```
 
-Download and Install Ruby Version Manager (RVM). Run the following commands **WITHOUT** super user rights, and
-replace `<username>` with your unix username.
+**!! Run the following commands without super user rights unless explicitly specified !!**
+
+Download and Install Ruby Version Manager (RVM). Replace `<username>` with your unix username.
 ```bash
 command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
 \curl -sSL https://get.rvm.io | bash -s stable
