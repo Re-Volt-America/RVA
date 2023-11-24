@@ -25,7 +25,7 @@ module ORG
   DESCRIPTION = 'The Website for the Re-Volt America Community'
   DOMAIN = 'rva.lat'
   EMAIL = 'support@rva.lat'
-  SMTP = 'smtp.postmarkapp.com'
+  SMTP = ENV['MAILER_SMTP']
   URL = 'https://rva.lat'
 
   CARS_REPO_URL = 'https://cars.rva.lat'
@@ -198,6 +198,7 @@ module RVA
 
     config.hosts << ORG::DOMAIN
     config.hosts << "staging.#{ORG::DOMAIN}"
+    config.hosts << 'localhost:3000'
 
     config.generators.system_tests = nil
     config.generators do |g|

@@ -75,12 +75,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => ENV['DEVISE_HOST'] || ORG::DOMAIN }
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = if ENV['POSTMARK_USERNAME'].nil?
+  config.action_mailer.smtp_settings = if ENV['MAILER_USERNAME'].nil?
                                          { :address => ENV['SMTP_HOST'] || 'localhost', :port => 25 }
                                        else
                                          {
-                                           :user_name => ENV['POSTMARK_USERNAME'],
-                                           :password => ENV.fetch('POSTMARK_PASSWORD', nil),
+                                           :user_name => ENV['MAILER_USERNAME'],
+                                           :password => ENV.fetch('MAILER_PASSWORD', nil),
                                            :domain => ORG::DOMAIN,
                                            :address => ORG::SMTP,
                                            :port => '587',
