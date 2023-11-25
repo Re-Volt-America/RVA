@@ -36,6 +36,7 @@ set :rails_env, 'production'
 set :assets_roles, [:web, :app]
 set :assets_manifests, ['app/assets/config/manifest.js']
 set :rails_assets_groups, :assets
+set :normalize_asset_timestamps, %w(public/images public/javascripts public/stylesheets)
 set :keep_assets, 2
 
 namespace :yarn do
