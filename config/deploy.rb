@@ -11,7 +11,8 @@ set :branch, 'production'
 set :user, 'deploy'
 set :stages, %w(production)
 set :deploy_to, '/home/deploy/RVA'
-set :linked_dirs, %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads, node_modules)
+set :linked_dirs,
+    %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads node_modules)
 set :linked_files, %w(config/secrets.yml)
 set :pty, true
 set :rvm1_ruby_version, '3.2.2'
@@ -41,8 +42,8 @@ namespace :yarn do
   task :install do
     on release_roles(fetch(:assets_roles)) do
       within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, "yarn:install"
+        with :rails_env => fetch(:rails_env) do
+          execute :rake, 'yarn:install'
         end
       end
     end

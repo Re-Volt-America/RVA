@@ -8,7 +8,7 @@ module RepositoriesHelper
   end
 
   def web_repo_or_first
-    r = Rails.cache.fetch("web_repo_or_first", :expires_in => 1.month) do
+    r = Rails.cache.fetch('web_repo_or_first', :expires_in => 1.month) do
       Repository.find { |r| r.repo.eql?(ORG::GIT_REPO) }
     end
 

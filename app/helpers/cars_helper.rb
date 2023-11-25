@@ -26,23 +26,23 @@ module CarsHelper
       'unknown'
     end
   end
-  
+
   def category_cache_key(category)
     case category
     when SYS::CATEGORY::ROOKIE
-      "rookie_cars"
+      'rookie_cars'
     when SYS::CATEGORY::AMATEUR
-      "amateur_cars"
+      'amateur_cars'
     when SYS::CATEGORY::ADVANCED
-      "advanced_cars"
+      'advanced_cars'
     when SYS::CATEGORY::SEMI_PRO
-      "semipro_cars"
+      'semipro_cars'
     when SYS::CATEGORY::PRO
-      "pro_cars"
+      'pro_cars'
     when SYS::CATEGORY::SUPER_PRO
-      "superpro_cars"
+      'superpro_cars'
     when SYS::CATEGORY::CLOCKWORK
-      "clockwork_cars"
+      'clockwork_cars'
     else
       'unknown'
     end

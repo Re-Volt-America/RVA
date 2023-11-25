@@ -25,7 +25,7 @@ module ORG
   DESCRIPTION = 'The Website for the Re-Volt America Community'
   DOMAIN = 'rva.lat'
   EMAIL = 'support@rva.lat'
-  SMTP = ENV['MAILER_SMTP']
+  SMTP = ENV.fetch('MAILER_SMTP', nil)
   URL = 'https://rva.lat'
 
   CARS_REPO_URL = 'https://cars.rva.lat'

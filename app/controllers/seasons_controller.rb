@@ -36,7 +36,7 @@ class SeasonsController < ApplicationController
   def create
     @season = Season.new(season_params)
 
-    Rails.cache.delete("current_season")
+    Rails.cache.delete('current_season')
 
     respond_to do |format|
       if @season.save!

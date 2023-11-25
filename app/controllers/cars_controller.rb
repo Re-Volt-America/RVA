@@ -18,7 +18,7 @@ class CarsController < ApplicationController
 
   # GET /cars/rookie or /cars/rookie.json
   def rookie
-    @cars = Rails.cache.fetch("rookie_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('rookie_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::ROOKIE)
     end
 
@@ -29,7 +29,7 @@ class CarsController < ApplicationController
 
   # GET /cars/amateur or /cars/amateur.json
   def amateur
-    @cars = Rails.cache.fetch("amateur_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('amateur_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::AMATEUR)
     end
 
@@ -40,7 +40,7 @@ class CarsController < ApplicationController
 
   # GET /cars/advanced or /cars/advanced.json
   def advanced
-    @cars = Rails.cache.fetch("advanced_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('advanced_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::ADVANCED)
     end
 
@@ -51,7 +51,7 @@ class CarsController < ApplicationController
 
   # GET /cars/semipro or /cars/semipro.json
   def semipro
-    @cars = Rails.cache.fetch("semipro_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('semipro_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
     end
 
@@ -62,7 +62,7 @@ class CarsController < ApplicationController
 
   # GET /cars/pro or /cars/pro.json
   def pro
-    @cars = Rails.cache.fetch("pro_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('pro_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::PRO)
     end
 
@@ -73,7 +73,7 @@ class CarsController < ApplicationController
 
   # GET /cars/superpro or /cars/superpro.json
   def superpro
-    @cars = Rails.cache.fetch("superpro_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('superpro_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO)
     end
 
@@ -84,7 +84,7 @@ class CarsController < ApplicationController
 
   # GET /cars/clockwork or /cars/clockwork.json
   def clockwork
-    @cars = Rails.cache.fetch("clockwork_cars", :expires_in => 1.month) do
+    @cars = Rails.cache.fetch('clockwork_cars', :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK)
     end
 
