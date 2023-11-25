@@ -260,6 +260,12 @@ textarea {
       letter-spacing: -2px;
     }
 
+    @media screen and (max-width: 400px) {
+      h1 {
+        font-size: 40px;
+      }
+    }
+
     p {
       font-size: 32px;
       font-weight: 100;
@@ -275,7 +281,6 @@ textarea {
   img {
     position: relative;
     border: 1px solid #beb8bc;
-    min-width: 300px;
   }
 
   h2 {
