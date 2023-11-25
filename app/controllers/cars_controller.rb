@@ -174,9 +174,9 @@ class CarsController < ApplicationController
           return
         end
       end
-
-      Rails.cache.delete(category_cache_key(params[:category]))
     end
+
+    Rails.cache.delete(category_cache_key(params[:category].to_i))
   end
 
   # DELETE /cars/1 or /cars/1.json
