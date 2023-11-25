@@ -68,7 +68,7 @@ module SYS
   RVGL_CAR_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro clockwork)
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
 
-  CSV_TYPE = PLATFORM.windows? ? 'application/vnd.ms-excel'.freeze : 'text/csv'.freeze
+  CSV_TYPE = %w[application/vnd.ms-excel text/csv]
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 
   module CAR
