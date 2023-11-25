@@ -39,12 +39,6 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
 
-    Rails.cache.delete('recent_sessions')
-
-    # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
-    # in cache is by expiring their keys for each new session upload.
-    Rails.cache.delete('current_ranking')
-
     respond_to do |format|
       if @session.save
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully created.' }
@@ -133,6 +127,12 @@ class SessionsController < ApplicationController
         return
       end
     end
+
+    Rails.cache.delete('recent_sessions')
+
+    # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
+    # in cache is by expiring their keys for each new session upload.
+    Rails.cache.delete('current_ranking')
   end
 
   private
