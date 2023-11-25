@@ -12,13 +12,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by!(:username => params[:username])
+    @user = User.find_by!(:username => params[:username].upcase)
     @recent_sessions = []
 
     count = 0
     Session.all.each do |session|
       break if count == 3
-      next unless session.racer_result_entries.any? { |r| r.username.eql?(params[:username]) }
+      next unless session.racer_result_entries.any? { |r| r.username.upcase.eql?(params[:username].upcase) }
 
       @recent_sessions << session
       count += 1

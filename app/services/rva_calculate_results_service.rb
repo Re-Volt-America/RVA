@@ -343,8 +343,8 @@ class RvaCalculateResultsService
   end
 
   def find_user(name)
-    Rails.cache.fetch("User##{name}") do
-      User.find { |u| u.username.eql?(name) }
+    Rails.cache.fetch("User##{name.upcase}") do
+      User.find { |u| u.username.eql?(name.upcase) }
     end
   end
 
