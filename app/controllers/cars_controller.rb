@@ -116,12 +116,13 @@ class CarsController < ApplicationController
       if @car.save
         format.html { redirect_to car_url(@car), :notice => 'Car was successfully created.' }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
-
-        Rails.cache.delete(category_cache_key(params[:category]))
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
+        return
       end
+
+      Rails.cache.delete(category_cache_key(params[:category]))
     end
   end
 
@@ -170,8 +171,11 @@ class CarsController < ApplicationController
         else
           format.html { render :new, :status => :unprocessable_entity }
           format.json { render :json => car.errors, :status => :unprocessable_entity, :layout => false }
+          return
         end
       end
+
+      Rails.cache.delete(category_cache_key(params[:category]))
     end
   end
 
