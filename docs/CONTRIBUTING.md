@@ -46,9 +46,9 @@ the following site: [RubyStyle website](https://rubystyle.guide/).
 This project utilises the [RuboCop](https://docs.rubocop.org/rubocop/1.55/index.html) gem to apply an standard format to
 the codebase. All exceptions and directives to these standards are listed in the `.rubocop.yml` file.
 
-The RuboCop gem is installed alongside the rest of the project's gems, therefore once you run `bundler install` to
-download and install dependencies you will the RuboCop dependency too. Once installed, you may inspect and auto-correct
-the code using the following commands, respectively:
+The RuboCop gem is installed alongside the rest of the project's gems. Therefore, once you run `bundler install` to
+download and install the project's dependencies, you will pull the RuboCop dependency too. Once installed, you may
+inspect and auto-correct the code using the following commands, respectively:
 ```bash
 rubocop                           # Inspect
 rubocop -A                        # Autocorrect
