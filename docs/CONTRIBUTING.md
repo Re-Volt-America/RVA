@@ -67,6 +67,12 @@ Before writing your code, verify that the following general configurations in yo
 ### System Architecture & Design Patterns
 - This project, being a Rails application, follows the MVC (Model View Controller) pattern.
 - Databases are prefixed using the term `rv` (Re-Volt). Follow this standard when naming model databases.
+- Cache keys are named in lowercase, and spaces are replaced by underscores. In case of compound cache keys,
+we use the following format:
+  - `object_type:id`
+  - `object_type:id#field`
+  - `object_type:id#embedded_object:id`
+  - `object_type:id#embedded_object:id#field`
 
 ## Repository Interaction
 ### Branches
