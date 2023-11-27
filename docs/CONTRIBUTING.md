@@ -46,9 +46,9 @@ the following site: [RubyStyle website](https://rubystyle.guide/).
 This project utilises the [RuboCop](https://docs.rubocop.org/rubocop/1.55/index.html) gem to apply an standard format to
 the codebase. All exceptions and directives to these standards are listed in the `.rubocop.yml` file.
 
-The RuboCop gem is installed alongside the rest of the project's gems, therefore once you run `bundle install` to
-download and install dependencies you will pull RuboCop too. When installed, you may inspect and auto-correct the code
-using the following commands, respectively:
+The RuboCop gem is installed alongside the rest of the project's gems, therefore once you run `bundler install` to
+download and install dependencies you will the RuboCop dependency too. Once installed, you may inspect and auto-correct
+the code using the following commands, respectively:
 ```bash
 rubocop                           # Inspect
 rubocop -A                        # Autocorrect
@@ -74,9 +74,9 @@ we use the following format:
 
 ## Repository Interaction
 ### Branches
-1. The `master` branch is where the main, stable application lives. The code sent to this branch is expected to at least
-work stably.
-2. The `dev` branch is where all the unstable and experimental code is uploaded to.
+1. The `master` branch is where all general development takes place. Things may or may not be suited for production.
+2. The `production` branch is the one that triggers the application's deployment workflow. This means that the code in
+the production branch gets sent to our servers and is served as the official website.
 
 ### How to Contribute
 1. Create an issue and a new branch originating from the master branch.
@@ -93,19 +93,8 @@ work stably.
 4. Await approval from one of the project maintainers.
 
 ### Version Control
-Do **NOT** include any of the following files in the repository (don't commit them):
-
-- `config/*`
-- `vendor/*`
-
 You may find a full list of files which are already configured to be ignored by git via the `.gitignore` file. Check it
 out to get a better picture of which files should not be version controlled.
 
-Do **NOT** add these files to production environments:
-
-- `docs/`
-- `docker/*`
-- `composer.lock`
-- `README.md`
-- `.gitignore`
-- `.git/*`
+Please be mindful when uploading new files to version control. Make sure they are appropriate to version before you send
+them in.
