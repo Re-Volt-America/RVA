@@ -343,25 +343,25 @@ class RvaCalculateResultsService
   end
 
   def find_user(name)
-    Rails.cache.fetch("User##{name.upcase}") do
+    Rails.cache.fetch("Session:#{@session.id}#User:#{name.upcase}", :expires_in => 1.minute) do
       User.find { |u| u.username.eql?(name.upcase) }
     end
   end
 
   def find_track(track_id)
-    Rails.cache.fetch("Track##{track_id}") do
+    Rails.cache.fetch("Session:#{@session.id}#Track:#{track_id}", :expires_in => 1.minute) do
       Track.find { |t| t.id.eql?(track_id) }
     end
   end
 
   def find_car(car_id)
-    Rails.cache.fetch("Car##{car_id}") do
+    Rails.cache.fetch("Session:#{@session.id}#Car:#{car_id}", :expires_in => 1.minute) do
       Car.find { |c| c.id.eql?(car_id) }
     end
   end
 
   def find_team(short_name)
-    Rails.cache.fetch("Team##{short_name}") do
+    Rails.cache.fetch("Session:#{@session.id}#Team:#{short_name}", :expires_in => 1.minute) do
       Team.find { |t| t.short_name.eql?(short_name) }
     end
   end

@@ -20,7 +20,9 @@ class SessionsController < ApplicationController
     require 'rva_calculate_results_service'
 
     @count = 0
-    @rva_results = RvaCalculateResultsService.new(@session).call
+    @rva_results = Rails.cache.fetch("Session:#{@session.id}") do
+      RvaCalculateResultsService.new(@session).call
+    end
 
     respond_with @session do |format|
       format.json { render :layout => false }
@@ -70,7 +72,10 @@ class SessionsController < ApplicationController
 
     @rva_results = RvaCalculateResultsService.new(@session).call
 
+    # Remove all stats associated to this session
     StatsService.new(@session, @rva_results).remove_stats unless @session.nil? || @session.teams?
+
+    Rails.cache.delete("Session:#{@session.id}")
 
     @session.destroy
 
