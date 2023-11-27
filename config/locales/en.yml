@@ -410,6 +410,14 @@ en:
     teams: "Teams: %{teams}"
     download: "Download Session Log"
     team: "Team"
+    admin:
+      title: "Admin Actions"
+      edit:
+        button: "Edit Session"
+      delete:
+        button: "Delete Session"
+        confirmation:
+          body: "Are you sure?"
     container:
       tooltips:
         session-number: "Session Number"
@@ -422,6 +430,8 @@ en:
         accumulated-score: "Accumulated Score"
         accumulated-points: "Accumulated Points"
         sessions-played: "Sessions Played"
+      tracks:
+        not-found: "Track not found"
 
   teams:
     title: "RVA Teams"

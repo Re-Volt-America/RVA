@@ -23,25 +23,16 @@
             = t("results.teams", teams:@session.teams? ? "Yes" : "No") #{@session.teams? ? "Yes" : "No"}
           %li
             = link_to t("results.download"), @session.session_log_url
-    - if user_is_organizer? || user_is_admin?
-      .col-xl-5.col-lg-5.col-md-12.col-xs-12
-        .session-details.mb-4
-          %h2
-            = t("results.admin.title")
-          %ul
-            %li
-              = link_to t("results.admin.edit.button"), edit_session_path(@session), :class => "btn mt-2"
-            %li
-              = link_to t("results.admin.delete.button"), @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"
+
 #results.container
   %table.table.table-sm.table-fluid.table-responsive
     %thead
       %tr
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Session Number"}
           = @rva_results[0][0] # "#"
         %th.align-middle{:width => "8%"}
           = @rva_results[0][1] # "Date"
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Final Position"}
           = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
           = t("rankings.table.racer")
@@ -50,17 +41,17 @@
             - if item.is_a?(Track)
               = link_to item.short_name, track_path(item)
             - else
-              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Track not found"}
                 = "?"
-        %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}
+        %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"}
           = t("rankings.table.pp")
-        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
+        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Obtained Points"}
           = t("rankings.table.pa")
-        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
+        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"}
           = t("rankings.table.cc")
-        %th.mp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}
+        %th.mp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"}
           = t("rankings.table.mp")
-        %th.po-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}
+        %th.po-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"}
           = t("rankings.table.po")
     %tbody
       - @rva_results.drop(1).each do |row|
