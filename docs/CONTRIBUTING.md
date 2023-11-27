@@ -2,8 +2,7 @@
 We're really excited to have you join the community of contributors for the RVA project! Make sure to read the following
 content comprehensively so that you can get a clear idea of how to contribute to this project effectively.
 
-Table of Contents
-===
+## Table of Contents
 * [Scope](#scope)
 * [Development Team](#development-team)
 * [Features](#features)
@@ -24,7 +23,7 @@ interactive site where all online session results and leaderboards are kept publ
 and the general public.
 
 ## Development Team
-* [José Benavente](https://github.com/BGMP) - bgm@rva.lat
+* [José Benavente](https://github.com/BGMP) - jose@bgm.dev
 
 ## Features
 This application's aim is to provide Re-Volt America's administrators with the ability to parse session files (.csv)
@@ -32,11 +31,10 @@ on-site and render results tables. All users should be able to visualise session
 
 1. The site allows the user to create new Seasons and Rankings for Re-Volt America.
 2. The site allows the user to create new Car and Track models and relating them to specific seasons.
-3. The site has the capacity of processing an RVGL Session Log (.csv file) uploaded on-site, and rendering its final
+3. The site has the capacity of processing RVGL Session Logs (.csv files) uploaded on-site, and rendering its final
 table representation to the user.
 
 ## Coding Standards
-
 ### Code Style
 This project's code style must follow the standard recommendations for Ruby programming:
 
