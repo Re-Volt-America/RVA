@@ -40,28 +40,6 @@ module ORG
   DISCORD_URL = 'https://discord.gg/9SCruDud7N'
 end
 
-module PLATFORM
-  def self.windows?
-    (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
-  end
-
-  def self.mac?
-    (/darwin/ =~ RUBY_PLATFORM) != nil
-  end
-
-  def self.unix?
-    !PLATFORM.windows?
-  end
-
-  def self.linux?
-    PLATFORM.unix? and !PLATFORM.mac?
-  end
-
-  def self.jruby?
-    RUBY_ENGINE == 'jruby'
-  end
-end
-
 module SYS
   RVA_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro random clockwork)
   RVA_CATEGORY_COLORS = %w(#3c3cff #00af63 #f0e764 #ff7823 #ff2323 #c337ff #6e6e6e #d7d7d7)
