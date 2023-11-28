@@ -83,6 +83,12 @@ class TracksController < ApplicationController
     @tracks = CsvImportTracksService.new(file, params[:season]).call
 
     respond_to do |format|
+      if @tracks.empty?
+        format.html { redirect_to new_track_path, :notice => 'No tracks were created. Maybe they already exist?' }
+        format.json { render :show, :status => :ok, :layout => false }
+        return
+      end
+
       @tracks.each do |track|
         if track.save!
           format.html { redirect_to new_track_path, :notice => 'Tracks successfully imported.' }

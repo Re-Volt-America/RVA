@@ -13,6 +13,10 @@ class CsvImportTracksService
 
     tracks = []
     csv.drop(1).each do |track|
+      # Don't create duplicate tracks with the same name and season
+      match = Track.find { |t| t.name.eql?(track[0]) && t.season_id.to_s.eql?(@season) }
+      next unless match.nil?
+
       track_hash = {
         :season => @season,
         :name => track[0],
