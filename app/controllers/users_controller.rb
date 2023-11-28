@@ -15,16 +15,14 @@ class UsersController < ApplicationController
     @user = User.find_by!(:username => params[:username].upcase)
     @recent_sessions = []
 
-    count = 0
     Session.all.each do |session|
-      break if count == 3
       next unless session.racer_result_entries.any? { |r| r.username.upcase.eql?(params[:username].upcase) }
 
       @recent_sessions << session
-      count += 1
     end
 
-    @recent_sessions.reverse!
+    @recent_sessions.last(5).reverse!
+
     @rank = if current_ranking
               current_ranking.get_rank(@user)
             else
