@@ -4,7 +4,7 @@
   #recent.mb-4
     - if @sessions.any?
       %h6.pb-2.mb-0
-        = "Recent Sessions"
+        = t("application.index.recent.title")
       .media-group
         - @sessions.each do |session|
           %a.media.text-muted.pt-3{:href => session_path(session) }
@@ -15,13 +15,13 @@
             .media-body.pb-3.mb-0.small.lh-125
               .d-flex.justify-content-between.align-items-center.w-100
                 %strong.text-gray-dark
-                  = "#{session_category_name(session)} Races"
+                  = t("application.index.recent.races", category:session_category_name(session)) #{session_category_name(session)
                 .session-date
                   = pretty_datetime(session.date)
               %span.d-block.session-host
-                = "Hosted by #{session.host}"
+                = t("application.index.recent.hosted-by", host:session.host) #{session.host}
     - else
       %h6.text-center
-        No Sessions to display :(
+        = t("rankings.sessions.no-sessions")
 
   = paginate @sessions
