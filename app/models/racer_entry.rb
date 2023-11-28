@@ -4,8 +4,7 @@ class RacerEntry
 
   embedded_in :race
 
-  has_one :car
-
+  field :car_name, :type => String
   field :position, :type => Integer
   field :username, :type => String
   field :time, :type => String
@@ -13,6 +12,7 @@ class RacerEntry
   field :finished, :type => Mongoid::Boolean
   field :cheating, :type => Mongoid::Boolean
 
+  validates_presence_of :car_name
   validates_presence_of :position
   validates_presence_of :username
   validates_presence_of :time

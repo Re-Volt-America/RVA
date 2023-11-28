@@ -35,9 +35,13 @@
           FP
         %th.align-middle{:width => "30%"}
           Racer
-        - @rva_results[0].slice(2, @session.races.size).each do |track|
+        - @rva_results[0].slice(2, @session.races.size).each do |item|
           %th.text-center.align-middle{:width => "4%"}
-            = link_to track.short_name, track_path(track)
+            - if item.is_a?(Track)
+              = link_to item.short_name, track_path(item)
+            - else
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Track not found"}
+                = "?"
         %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"}
           PP
         %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Obtained Points"}
@@ -62,9 +66,10 @@
               - if row[3].is_a?(User)
                 = link_to row[3].username, user_path(row[3]), :style => "color: #{row[3].username.eql?(@session.host) ? "yellow" : ""};"
               - else
-                = row[3]
+                %span{:style => "color: #{row[3].eql?(@session.host) ? "yellow" : ""}"}
+                  = row[3]
             - row[4].each do |pos|
-              %td.pos.text-center.align-middle{:class => "#{pos == "1" ? 'first-place' : ''}" "#{pos == "2" ? 'second-place' : ''} #{pos == "3" ? 'third-place' : ''}"}
+              %td.pos.text-center.align-middle{:style => "color: #{position_color(pos)};"}
                 = pos
             %td.pp.text-center.align-middle
               = row[5]
@@ -98,14 +103,14 @@
                 - i += 1
                 - next
 
-              - if item.eql?("x")
+              - if item.eql?("x") || (!item.is_a?(Car) && item.start_with?('?'))
                 - col = i
-                - while row[4][col + 1].eql?("x")
+                - while row[4][col + 1].eql?("x") || (!row[4][col + 1].is_a?(Car) && row[4][col + 1].start_with?("?"))
                   - step += 1
                   - colspan += 1
                   - col += 1
 
-              - if item.is_a?(Car)
+              - if item.is_a?(Car) || item.start_with?('!!')
                 - col = i
                 - while not row[4][col + 1].is_a?(Car) and not %w[!CC !PA !PP !MP !PO].include?(row[4][col + 1])
                   - step += 1
@@ -115,6 +120,9 @@
               - if item.is_a?(Car)
                 %td.car{:colspan => colspan}
                   = link_to item.name, car_path(item)
+              - if item.is_a?(String) && item.start_with?('?')
+                %td.car{:colspan => colspan}
+                  = item.tr('?', '')
               - if item.eql?("x")
                 %td{:colspan => (first ? colspan : 1)}
                   = ""
@@ -152,4 +160,3 @@
       %b
         MP:
       Participation Multiplier
-

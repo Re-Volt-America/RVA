@@ -7,6 +7,21 @@ module SessionsHelper
     current_ranking.sessions.last
   end
 
+  def position_color(pos)
+    case pos
+    when "1"
+      return SYS::FIRST_PLACE_COLOR
+    when "2"
+      return SYS::SECOND_PLACE_COLOR
+    when "3"
+      return SYS::THIRD_PLACE_COLOR
+    else
+      return SYS::INVALID_PLACE_COLOR if pos.start_with?("'")
+    end
+
+    ''
+  end
+
   def singles_session_meta_desc(rva_results)
     top1 = rva_results[1][3].is_a?(User) ? rva_results[1][3].username : rva_results[1][3]
     top2 = rva_results[3][3].is_a?(User) ? rva_results[3][3].username : rva_results[3][3]

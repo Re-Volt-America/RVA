@@ -4,12 +4,13 @@ class Race
 
   embedded_in :session
 
-  has_one :track
   embeds_many :racer_entries
 
+  field :track_name, :type => String
   field :laps, :type => Integer
   field :racers_count, :type => Integer
 
+  validates_presence_of :track_name
   validates_presence_of :laps
   validates_presence_of :racers_count
 

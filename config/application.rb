@@ -68,6 +68,11 @@ module SYS
   RVGL_CAR_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro clockwork)
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
 
+  FIRST_PLACE_COLOR = '#ffb400'
+  SECOND_PLACE_COLOR = '#cccccc'
+  THIRD_PLACE_COLOR = '#cd7f32'
+  INVALID_PLACE_COLOR = '#ff3228'
+
   CSV_TYPE = %w(application/vnd.ms-excel text/csv)
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 

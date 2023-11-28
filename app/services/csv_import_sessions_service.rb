@@ -58,12 +58,10 @@ class CsvImportSessionsService
       racer_entries = {}
       num_racer_entries = 0
       race_arr[2].each do |racer_entry_arr|
-        car = Car.find { |c| c.name.eql?(racer_entry_arr[2]) } # consider matching season with @ranking
-
         racer_entry_hash = {
           :position => racer_entry_arr[0],
           :username => racer_entry_arr[1],
-          :car_id => car.id,
+          :car_name => racer_entry_arr[2],
           :time => racer_entry_arr[3],
           :best_lap => racer_entry_arr[4],
           :finished => true?(racer_entry_arr[5]),
@@ -74,10 +72,8 @@ class CsvImportSessionsService
         num_racer_entries += 1
       end
 
-      track = Track.find { |t| race_arr[1][1].start_with?(t.name) }
-
       race_hash = {
-        :track_id => track.id,
+        :track_name => race_arr[1][1],
         :racer_entries => racer_entries,
         :laps => race_arr[0][4],
         :racers_count => race_arr[1][2]

@@ -32,6 +32,10 @@ class Session
   validates_presence_of :teams
   validates_presence_of :category
 
+  def season
+    ranking.season
+  end
+
   # Look for all RacerEntry models in this session which correspond to the passed racer.
   # @return An array containing each entry matching the racer.
   def get_racer_entries_arr(username)

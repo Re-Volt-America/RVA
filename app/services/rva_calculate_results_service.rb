@@ -117,7 +117,7 @@ class RvaCalculateResultsService
     tracks = []
 
     @races.each do |race|
-      tracks << find_track(race.track_id)
+      tracks << find_track(race.track_name)
     end
 
     tracks
@@ -134,10 +134,13 @@ class RvaCalculateResultsService
       end
 
       racer_entry = race.get_racer_entry_by_name(racer)
-      car_bonus = get_car_bonus(find_car(racer_entry.car_id))
+      car_bonus = get_car_bonus(find_car(racer_entry.car_name))
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
-      racer_positions_arr << "'#{racer_entry.position}" if car_bonus.nil?
+      if car_bonus.nil?
+        racer_positions_arr << "'#{racer_entry.position.to_s}"
+        next
+      end
 
       racer_positions_arr << racer_entry.position.to_s
     end
@@ -147,7 +150,7 @@ class RvaCalculateResultsService
 
   def get_racer_cars_arr(racer)
     cars_line_arr = []
-    last_car_used_id = nil
+    last_car_used_name = nil
 
     @races.each do |race|
       # The category is Random, therefore we ignore cars for results
@@ -162,15 +165,29 @@ class RvaCalculateResultsService
         next
       end
 
-      car_used_id = race.get_racer_entry_by_name(racer).car_id
+      car_used_name = race.get_racer_entry_by_name(racer).car_name
 
       # Player hasn't changed cars, so we skip
-      if car_used_id.eql?(last_car_used_id)
+      if car_used_name.eql?(last_car_used_name)
         cars_line_arr << ''
         next
       end
 
-      car = find_car(car_used_id)
+      if "?#{car_used_name}".eql?(last_car_used_name)
+        cars_line_arr << '??'
+        next
+      end
+
+      car = find_car(car_used_name)
+
+      # The car used by this player doesn't match the following criteria:
+      # - It's not part of this session's season
+      # - It's not found in our database (no car with its name exists)
+      if car.nil?
+        cars_line_arr << "?#{car_used_name}"
+        last_car_used_name = "?#{car_used_name}"
+        next
+      end
 
       # If the car is a clockwork, trim 'Clockwork' from its name and leave the rest,
       # except if it's just 'Clockwork'. This only has aesthetic purposes.
@@ -179,8 +196,7 @@ class RvaCalculateResultsService
       end
 
       cars_line_arr << car
-
-      last_car_used_id = car_used_id
+      last_car_used_name = car_used_name
     end
 
     if @session.teams
@@ -267,7 +283,7 @@ class RvaCalculateResultsService
   end
 
   def get_racer_score(race, entry)
-    car = find_car(entry.car_id)
+    car = find_car(entry.car_name)
     car_bonus = get_car_bonus(car)
 
     # Car is above the current category's class or invalid, therefore points are invalidated
@@ -289,6 +305,7 @@ class RvaCalculateResultsService
   end
 
   def get_car_bonus(car)
+    return nil if car.nil?
     return nil if car.name == SYS::CAR::MYSTERY_NAME
 
     return 1.0 if @session.category == SYS::CATEGORY::RANDOM
@@ -326,12 +343,11 @@ class RvaCalculateResultsService
     get_tracks_played(racer).size
   end
 
-  # NOTE: Returns track IDs
   def get_tracks_played(racer)
     played_tracks = []
 
     @races.each do |race|
-      played_tracks << race.track_id if race.get_racer_names.include?(racer)
+      played_tracks << race.track_name if race.get_racer_names.include?(racer)
     end
 
     played_tracks
@@ -348,15 +364,15 @@ class RvaCalculateResultsService
     end
   end
 
-  def find_track(track_id)
-    Rails.cache.fetch("Session:#{@session.id}#Track:#{track_id}", :expires_in => 1.minute) do
-      Track.find { |t| t.id.eql?(track_id) }
+  def find_track(track_name)
+    Rails.cache.fetch("Session:#{@session.id}#Track:#{track_name}", :expires_in => 1.minute) do
+      Track.find { |t| t.name.eql?(track_name) && t.season.eql?(@session.season) }
     end
   end
 
-  def find_car(car_id)
-    Rails.cache.fetch("Session:#{@session.id}#Car:#{car_id}", :expires_in => 1.minute) do
-      Car.find { |c| c.id.eql?(car_id) }
+  def find_car(car_name)
+    Rails.cache.fetch("Session:#{@session.id}#Car:#{car_name}", :expires_in => 1.minute) do
+      Car.find { |c| c.name.eql?(car_name) && c.season.eql?(@session.season) }
     end
   end
 
