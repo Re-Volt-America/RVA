@@ -435,8 +435,12 @@ en:
 
   teams:
     title: "RVA Teams"
-    leader: "Leader"
-    members: "Members"
+    no-teams: "No teams to display"
+    global-points:
+      title: "Global Team Points"
+    team:
+      leader: "Leader"
+      members: "Members"
 
   users:
     stats:
