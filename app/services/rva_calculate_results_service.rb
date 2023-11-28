@@ -173,6 +173,7 @@ class RvaCalculateResultsService
         next
       end
 
+      # Player hasn't changed cars, so we skip (unlinked cars)
       if "?#{car_used_name}".eql?(last_car_used_name)
         cars_line_arr << '??'
         next
