@@ -164,6 +164,12 @@ class CarsController < ApplicationController
     @cars = CsvImportCarsService.new(file, params[:season], params[:category]).call
 
     respond_to do |format|
+      if @cars.empty?
+        format.html { redirect_to new_car_path, :notice => 'No cars were created. Maybe they already exist?' }
+        format.json { render :show, :status => :ok, :layout => false }
+        return
+      end
+
       @cars.each do |car|
         if car.save!
           format.html { redirect_to new_car_path, :notice => 'Cars successfully imported.' }

@@ -14,6 +14,10 @@ class CsvImportCarsService
 
     cars = []
     csv.drop(1).each do |car|
+      # Don't create duplicate cars with the same name and season
+      match = Car.find { |c| c.name.eql?(car[0]) && c.season_id.to_s.eql?(@season) }
+      next unless match.nil?
+
       car_hash = {
         :season => @season,
         :category => @category,
