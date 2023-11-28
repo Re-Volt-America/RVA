@@ -20,6 +20,8 @@
             = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
           %li
             = "Teams: #{@session.teams? ? "Yes" : "No"}"
+          %li
+            = link_to "Download Session Log", @session.session_log_url
 
 #results.container
   %table.table.table-sm.table-fluid.table-responsive
