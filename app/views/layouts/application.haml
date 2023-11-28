@@ -30,7 +30,11 @@
   %link{:rel => "stylesheet", :href => "https://use.fontawesome.com/releases/v5.13.0/css/all.css"}
   %link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}
 
-  %title #{ORG::NAME_SHORT}
+  %title
+    - if content_for?(:title)
+      = yield :title
+    - else
+      = ORG::NAME
 
   %script $(function() { $("[data-toggle='tooltip']").tooltip(); });
   %script $(document).ready(function() { $('[data-toggle="popover"]').popover(); });
