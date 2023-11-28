@@ -5,10 +5,9 @@
 
   %h2
     RVA Teams
-
-  - @teams.each do |team|
-    .text-center
-      .row
+  .text-center
+    .row
+      - @teams.each do |team|
         .teams-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
           .card
             .card-header
