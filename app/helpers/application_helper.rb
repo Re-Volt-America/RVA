@@ -39,7 +39,7 @@ module ApplicationHelper
   # @param obj [Object]
   # @return true if the object can be evaluated to "true"
   def true?(obj)
-    obj.to_s.downcase == 'true'
+    obj.to_s.downcase == 'true' || obj.to_s.downcase == '1'
   end
 
   # @param datetime [DateTime]
