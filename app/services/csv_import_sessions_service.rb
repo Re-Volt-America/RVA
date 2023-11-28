@@ -25,8 +25,6 @@ class CsvImportSessionsService
       session_arr << row
     end
 
-    byebug
-
     session_hash = {
       :number => Ranking.find { |r| r.id.to_s.eql?(@ranking) }.sessions.size + 1,
       :host => true?(@teams) ? session_arr[1][2].partition(' ').last : session_arr[1][2],
