@@ -138,7 +138,7 @@ class RvaCalculateResultsService
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
       if car_bonus.nil?
-        racer_positions_arr << "'#{racer_entry.position.to_s}"
+        racer_positions_arr << "'#{racer_entry.position}"
         next
       end
 

@@ -9,11 +9,11 @@ module SessionsHelper
 
   def position_color(pos)
     case pos
-    when "1"
+    when '1'
       return SYS::FIRST_PLACE_COLOR
-    when "2"
+    when '2'
       return SYS::SECOND_PLACE_COLOR
-    when "3"
+    when '3'
       return SYS::THIRD_PLACE_COLOR
     else
       return SYS::INVALID_PLACE_COLOR if pos.start_with?("'")
