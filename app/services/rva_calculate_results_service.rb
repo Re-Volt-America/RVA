@@ -155,7 +155,7 @@ class RvaCalculateResultsService
     @races.each do |race|
       # The category is Random, therefore we ignore cars for results
       if @session.category == SYS::CATEGORY::RANDOM
-        cars_line_arr << 'x'
+        cars_line_arr << 'r'
         next
       end
 

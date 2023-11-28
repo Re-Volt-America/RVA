@@ -94,6 +94,11 @@
             - colspan = 1
             - first = true
             - row[5].each do |item|
+              - if item.eql?("r")
+                %td{:height => "34.6"}
+                  = ""
+                - next
+
               - if !step.zero?
                 - step -= 1
                 - colspan -= 1
