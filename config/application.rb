@@ -73,7 +73,7 @@ module SYS
   THIRD_PLACE_COLOR = '#cd7f32'
   INVALID_PLACE_COLOR = '#ff3228'
 
-  CSV_TYPE = %w(application/vnd.ms-excel text/csv)
+  CSV_TYPES = %w(application/vnd.ms-excel text/csv)
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 
   module CAR

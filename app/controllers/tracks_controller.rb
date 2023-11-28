@@ -71,7 +71,7 @@ class TracksController < ApplicationController
       return
     end
 
-    unless SYS::CSV_TYPE.include?(file.content_type)
+    unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
         format.html { redirect_to new_track_path, :notice => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
