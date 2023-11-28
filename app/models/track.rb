@@ -20,6 +20,10 @@ class Track
   validates_presence_of :folder_name
   validates_presence_of :stock
 
+  def name_variations
+    [name, "#{name} R", "#{name} M", "#{name} RM"]
+  end
+
   def thumbnail_url
     "#{ORG::TRACKS_REPO_URL}/gfx/#{folder_name}.bmp"
   end

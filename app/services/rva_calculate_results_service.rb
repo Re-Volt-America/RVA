@@ -367,7 +367,7 @@ class RvaCalculateResultsService
 
   def find_track(track_name)
     Rails.cache.fetch("Session:#{@session.id}#Track:#{track_name}", :expires_in => 1.minute) do
-      Track.find { |t| t.name.eql?(track_name) && t.season.eql?(@session.season) }
+      Track.find { |t| t.name_variations.include?(track_name) && t.season.eql?(@session.season) }
     end
   end
 
