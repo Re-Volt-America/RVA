@@ -345,6 +345,7 @@ en:
         occupation: "Occupation"
         interests: "Interests"
         public-email: "Public Email"
+        about: "About %{user}"
 
         about-me:
           title: "About me... (You may use html)"
@@ -353,6 +354,7 @@ en:
           placeholder: "Write something interesting..."
       current-password: "Current password"
       update: "Update"
+      update-admin: "Update %{user}"
 
   rankings:
     title: "Ranking %{number}"
@@ -445,13 +447,24 @@ en:
   users:
     stats:
       title: "Stats"
-      rank: "rank"
+      rank:
+        title: "rank"
+        tooltip: "Position in current ranking"
       race-stats:
         title: "Race Stats"
         win-rate: "win rate"
         sessions: "sessions"
         races: "races"
+        win: "win"
         wins: "wins"
+        podium: "podium"
+        podiums: "podiums"
+        session-played: "session played"
+        sessions-played: "sessions played"
+        race-played: "race played"
+        races-played: "races played"
+      session-history:
+        title: "Session History"
       overall-stats:
         title: "Overall Stats"
         session-win: "session win"
@@ -464,8 +477,11 @@ en:
         official-score: "official score"
         average-position: "average position"
         participation: "participation rate"
-    general:
+    nav:
       title: "General"
+      stats: "Stats"
+      admin: "Admin"
+
   tournaments:
     title: "Past Tournaments"
     new: "New"

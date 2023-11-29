@@ -13,8 +13,8 @@
         .well
           .rank
             .name
-              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Position in current ranking"}
-                rank
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("users.stats.rank.tooltip")}
+                = t("users.stats.rank.title")
             .number
               - if !@rank.nil? && !@rank.eql?('-')
                 %a{:href => ranking_path(current_ranking)}
@@ -24,27 +24,31 @@
               - else
                 = @rank
           .rank
-            .name win rate
+            .name
+              = t("users.stats.race-stats.win-rate")
             .number
               = @user.stats.race_win_rate
           .rule
           %div
             .total
-              .name sessions
+              .name
+                = t("users.stats.race-stats.sessions")
               .number
                 = @user.stats.session_count
             .total
-              .name races
+              .name
+                = t("users.stats.race-stats.races")
               .number
                 = @user.stats.race_count
             .total
-              .name wins
+              .name
+                = t("users.stats.race-stats.wins")
               .number
                 = @user.stats.race_wins
     .col-md-7.mt-4#recent
       .media-group
         %h6.pb-2.mb-0
-          = "Session History"
+          = t("users.stats.session-history.title")
         - @recent_sessions.each do |session|
           %a.media.text-muted.pt-3{:href => session_path(session) }
             .session-number{:style => "background-color: #{session_color_hex(session)}"}
@@ -54,21 +58,21 @@
             .media-body.pb-3.mb-0.small.lh-125
               .d-flex.justify-content-between.align-items-center.w-100
                 %strong.text-gray-dark
-                  = "#{session_category_name(session)} Races"
+                  = t("application.index.recent.races", category:session_category_name(session)) #{session_category_name(session)
                 .session-date
                   = pretty_datetime(session.date)
               %span.d-block.session-host
-                = "Hosted by #{session.host}"
+                = t("application.index.recent.hosted-by", host:session.host) #{session.host}
 
   %br/
   %ul.nav.nav-tabs{role: "tablist"}
     %li.nav-item
-      %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"} General
+      %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"}= t("users.nav.title")
     %li.nav-item
-      %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"} Stats
+      %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"}= t("users.nav.stats")
     - if user_is_admin?
       %li.nav-item
-        %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"} Admin
+        %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"}= t("users.nav.admin")
   .tab-content
     #general.tab-pane.fade.show.active{:"aria-labelledby" => "general-tab", role: "tabpanel"}
       .row.mt-2.info
@@ -124,101 +128,108 @@
       .row.info
         - if @user.profile.gender?
           .col-sm-6
-            %h6 Gender
+            %h6
+              = t("registrations.edit.info.gender")
             %pre
               = @user.profile.gender
         - if @user.profile.location?
           .col-sm-6
-            %h6 Location
+            %h6
+              = t("registrations.edit.info.location")
             %pre
               = @user.profile.location
         - if @user.profile.occupation?
           .col-sm-6
-            %h6 Occupation
+            %h6
+              = t("registrations.edit.info.occupation")
             %pre
               = @user.profile.occupation
         - if @user.profile.interests?
           .col-sm-6
-            %h6 Interests
+            %h6
+              = t("registrations.edit.info.interests")
             %pre
               = @user.profile.interests
       .row.info
         .col-md-12
           .info
             %h6
-              About #{@user.username}
+              = t("registrations.edit.info.about", user: @user.username)
             - if @user.profile.about?
               %pre#about
                 = render_safe(@user.profile.about)
             - else
               %pre
-                Nothing here yet...
+                = t("registrations.edit.info.about-me.nothing")
     #stats.tab-pane.fade{:"aria-labelledby" => "stats-tab", role: "tabpanel"}
       %h4.mt-4
-        Race Stats
+        = t("users.stats.race-stats.title")
       %hr
       .row
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_wins
             %small
-              = "#{@user.stats.race_wins == 1 ? "win" : "wins"}"
+              = "#{@user.stats.race_wins == 1 ? t("users.stats.race-stats.win") : t("users.stats.race-stats.wins")}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_podiums
             %small
-              = "#{@user.stats.race_podiums == 1 ? "podium" : "podiums"}"
+              = "#{@user.stats.race_podiums == 1 ? t("users.stats.overall-stats.session-podium") : t("users.stats.overall-stats.session-podiums")}"
         .col-md-4.col-sm-4
           %h3
             = number_to_percentage(@user.stats.race_win_rate * 100, :precision => 1)
             %small
-              win rate
+              = t("users.stats.race-stats.win-rate")
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_count
             %small
-              = "#{@user.stats.session_count == 1 ? "session played" : "sessions played"}"
+              = "#{@user.stats.session_count == 1 ? t("users.stats.race-stats.session-played") : t("users.stats.race-stats.sessions-played")}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.race_count
             %small
-              = "#{@user.stats.race_count == 1 ? "race played" : "races played"}"
+              = "#{@user.stats.race_count == 1 ? t("users.stats.race-stats.race-played") : t("users.stats.race-stats.races-played")}"
       %h4.mt-4
-        Overall Stats
+        = t("users.stats.overall-stats.title")
       %hr
       .row
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_wins
             %small
-              = "#{@user.stats.session_wins == 1 ? "session win" : "session wins"}"
+              = "#{@user.stats.session_wins == 1 ? t("users.stats.overall-stats.session-win") : t("users.stats.overall-stats.session-wins")}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.session_podiums
             %small
-              = "#{@user.stats.session_podiums == 1 ? "session podium" : "session podiums"}"
+              = "#{@user.stats.session_podiums == 1 ? t("users.stats.overall-stats.session-podium") : t("users.stats.overall-stats.session-podiums")}"
         .col-md-4.col-sm-4
           %h3
             = number_to_percentage(@user.stats.session_win_rate * 100, :precision => 1)
             %small
-              session win rate
+              = t("users.stats.overall-stats.session-winrate")
         .col-md-4.col-sm-4
           %h3
             = @user.stats.obtained_points
             %small
-              = "#{@user.stats.obtained_points == 1 ? "obtained point" : "obtained points"}"
+              = "#{@user.stats.obtained_points == 1 ? t("users.stats.overall-stats.obtained-point") : t("users.stats.overall-stats.obtained-points")}"
         .col-md-4.col-sm-4
           %h3
             = @user.stats.official_score.round(2)
-            %small official score
+            %small
+              = t("users.stats.overall-stats.official-score")
         .col-md-4.col-sm-4
           %h3
             = @user.stats.average_position
-            %small average position
+            %small
+              = t("users.stats.overall-stats.average-position")
         .col-md-4.col-sm-4
           %h3
             = number_to_percentage(@user.stats.participation_rate * 100, :precision => 1)
-            %small participation rate
+            %small
+              = t("users.stats.overall-stats.participation")
     - if user_is_admin?
       #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
         = form_for(@user, html: { method: :put }) do |f|
@@ -245,18 +256,22 @@
                 (National flag)
             .field.form-group
               = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
-            %h6 Location
+            %h6
+              = t("registrations.edit.info.location")
             .form-group
-              = profile.text_field :location, :placeholder => 'Location', :autocomplete => 'location', :class => 'form-control'
-            %h6 Occupation
+              = profile.text_field :location, :placeholder => t("registrations.edit.info.location"), :autocomplete => 'location', :class => 'form-control'
+            %h6
+              = t("registrations.edit.info.occupation")
             .form-group
-              = profile.text_field :occupation, :placeholder => 'Occupation', :autocomplete => 'occupation', :class => 'form-control'
-            %h6 Interests
+              = profile.text_field :occupation, :placeholder => t("registrations.edit.info.occupation"), :autocomplete => 'occupation', :class => 'form-control'
+            %h6
+              = t("registrations.edit.info.interests")
             .form-group
-              = profile.text_field :interests, :placeholder => 'Interests', :autocomplete => 'interests', :class => 'form-control'
-            %h6 Public Email
+              = profile.text_field :interests, :placeholder => t("registrations.edit.info.interests"), :autocomplete => 'interests', :class => 'form-control'
+            %h6
+              = t("registrations.edit.info.public-email")
             .form-group
-              = profile.text_field :public_email, :placeholder => 'Public Email', :autocomplete => 'public_email', :class => 'form-control'
+              = profile.text_field :public_email, :placeholder => t("registrations.edit.info.public-email"), :autocomplete => 'public_email', :class => 'form-control'
             %h6 Discord
             .form-group
               = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
@@ -285,10 +300,11 @@
                 .input-group-prepend
                   .input-group-text steamcommunity.com/id/
                 = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
-            %h6 About me... (You may use html)
+            %h6
+              = t("registrations.edit.info.about-me.title")
             .row
               .form-group
-                = profile.text_area :about, :placeholder => 'Write something interesting...', :autocomplete => 'about_me', :class => 'form-control'
+                = profile.text_area :about, :placeholder => t("registrations.edit.info.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control'
           .btn-toolbar
             .actions
-              = f.submit "Update #{@user.username}", :class => 'btn btn-sm'
+              = f.submit t("registrations.edit.update-admin", user: @user.username), :class => 'btn btn-sm'
