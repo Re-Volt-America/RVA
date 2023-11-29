@@ -76,6 +76,9 @@ en:
   downloads:
     title: "Downloads"
     video: "Pending video..."
+    faq:
+      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
+      button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
   rules:
     title: "Rules"

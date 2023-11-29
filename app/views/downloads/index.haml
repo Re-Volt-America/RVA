@@ -1,16 +1,19 @@
 - content_for :title, "Re-Volt America - Downloads"
 
-%h1 Downloads
+%h1
+  = t("downloads.title")
+
 %hr
 
 .container
   .text-center
     #faq-box
-      %p If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page
+      %p
+        = t("downloads.faq.title")
       %a{ href: faq_path }
-        %button.btn.btn-sm{type: "button"} Take me there!
-
-%h2 Legacy Downloads
+        %button.btn.btn-sm{type: "button"}= t("downloads.faq.button")
+%h2
+  = t("downloads.legacy-downloads ")
 
 .container
   .row
