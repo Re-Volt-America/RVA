@@ -2,7 +2,7 @@
 
 #tournaments
   %h1
-    Past Tournaments
+    =  t("tournaments.title")
 
   - if @tournaments.none?
     %h5.text-center.mt-3
@@ -16,4 +16,4 @@
 
   - if user_is_staff?
     .text-center
-      = link_to "New", new_tournament_path, :class => "btn btn-sm"
+      = link_to t("tournaments.new"), new_tournament_path, :class => "btn btn-sm"
