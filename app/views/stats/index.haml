@@ -38,7 +38,7 @@ Sorted by:
             - if user.country.nil? || user.country.eql?("??")
               = "?"
             - else
-              = ISO3166::Country.new(user.country).emoji_flag
+              %i.twf{:class => "twf-#{user.country.downcase}"}
           %td.racer.align-middle
             = link_to user.username, user_path(user)
           %td.stat-number.align-middle

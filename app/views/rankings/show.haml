@@ -30,7 +30,7 @@
             - if e.country.nil? || e.country.eql?("??")
               = "?"
             - else
-              = ISO3166::Country.new(e.country).emoji_flag
+              %i.twf{:class => "twf-#{e.country.downcase}"}
           %td.racer.align-middle.text-center
             = link_to e.username, user_path(e.username)
           %td.stat-number.align-middle.text-center
