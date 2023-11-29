@@ -1,3 +1,5 @@
+- content_for :title, "Re-Volt America - #{@season.name}"
+
 = render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
 %h2.mt-4.text-center
