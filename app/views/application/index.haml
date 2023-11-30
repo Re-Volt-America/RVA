@@ -9,22 +9,21 @@
         = t("application.index.community")
       %p We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us.
       %p
-        %a.btn{ href: play_path, role: "button" } Play »
-
+        %a.btn-important{ href: play_path, role: "button" } Play »
     .col-lg-4
       = image_tag "index/competition.png", :class => "img-fluid"
       %h2 Competition
       %p In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!
       %p
-        %a.btn{ href: seasons_path, role: "button" } Seasons »
+        %a.btn-important{ href: seasons_path, role: "button" } Seasons »
     .col-lg-4
       = image_tag "index/reliability.png", :class => "img-fluid"
       %h2 Reliability
       %p Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community.
       %p
-        %a.btn{ href: about_path, role: "button" } About Us »
+        %a.btn-important{ href: about_path, role: "button" } About Us »
 
-#recent
+#recent.mt-5
   - if @recent_sessions.any?
     %h6.pb-2.mb-0
       = "Recent Sessions"
@@ -43,5 +42,3 @@
                 = pretty_datetime(session.date)
             %span.d-block.session-host
               = "Hosted by #{session.host}"
-    %small.d-block.text-center.mt-3
-      = link_to "All Sessions", ranking_path(current_ranking), :class => "btn btn-sm"
