@@ -23,6 +23,14 @@
             = "Teams: #{@session.teams? ? "Yes" : "No"}"
           %li
             = link_to "Download Session Log", @session.session_log_url
+    - if user_is_organizer? || user_is_admin?
+      .col-xl-5.col-lg-5.col-md-12.col-xs-12
+        .session-details.mb-4
+          %h2
+            = "Admin Actions"
+          %ul
+            %li
+              = link_to 'Delete Session', @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "btn mt-2"
 
 #results.container
   %table.table.table-sm.table-fluid.table-responsive
