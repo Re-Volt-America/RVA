@@ -198,6 +198,7 @@ class StatsService
   def remove_ranking_stats
     ranking = @session.ranking
     ranking_entries = ranking.racer_result_entries
+    empty_entries = []
 
     ranking_entries.each do |ranking_entry|
       ranking_entry.country = ranking_entry.country
@@ -208,7 +209,12 @@ class StatsService
       ranking_entry.obtained_points -= ranking_entry.obtained_points.to_i
       ranking_entry.official_score -= ranking_entry.official_score.to_f
       ranking_entry.participation_multiplier = (ranking_entry.race_count.to_f / ((ranking_entry.session_count * 20).nonzero? || 1)).round(2)
+
+      empty_entries << ranking_entry if ranking_entry.race_count.zero?
     end
+
+    # If a racer entry has no races in the ranking, then it's not part of the ranking. We remove them all!
+    ranking_entries -= empty_entries
 
     ranking.racer_result_entries = ranking_entries.sort_by(&:official_score).reverse!
     ranking.update!
@@ -217,6 +223,7 @@ class StatsService
   def remove_season_stats
     season = @session.ranking.season
     season_entries = season.racer_result_entries
+    empty_entries = []
 
     season_entries.each do |season_entry|
       season_entry.country = season_entry.country
@@ -227,7 +234,12 @@ class StatsService
       season_entry.obtained_points -= season_entry.obtained_points.to_i
       season_entry.official_score -= season_entry.official_score.to_f
       season_entry.participation_multiplier = (season_entry.race_count.to_f / ((season_entry.session_count * 20).nonzero? || 1)).round(2)
+
+      empty_entries << season_entry if season_entry.race_count.zero?
     end
+
+    # If a racer entry has no races in the season, then it's not part of the season. We remove them all!
+    season_entries -= empty_entries
 
     season.racer_result_entries = season_entries.sort_by(&:official_score).reverse!
     season.update!
