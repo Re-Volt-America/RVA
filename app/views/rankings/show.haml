@@ -2,10 +2,38 @@
 
 = render :partial => "application/subnav", :locals => { :season => @ranking.season, :rankings => @ranking.season.rankings, :ranking => @ranking }
 
-%h2.mb-2
+#recent
+  .mt-4
+    %h5.pb-2.mb-0
+      %span
+        = "Sessions"
+        %small
+          = "(#{@ranking.sessions.count})"
+    - if @sessions.none?
+      %h5.text-center.mt-3
+        = "No sessions to display"
+    - else
+      .mb-3
+        = paginate @sessions
+
+      .media-group
+        - @sessions.each do |session|
+          %a.media.text-muted.pt-3{:href => session_path(session) }
+            .session-number{:style => "background-color: #{session_color_hex(session)}"}
+              .text-center
+                %span.align-middle
+                  = session.number
+            .media-body.pb-3.mb-0.small.lh-125
+              .d-flex.justify-content-between.align-items-center.w-100
+                %strong.text-gray-dark
+                  = "#{session_category_name(session)} Races"
+                .session-date
+                  = pretty_datetime(session.date)
+              %span.d-block.session-host
+                = "Hosted by #{session.host}"
+
+%h2.mb-2.mt-4.text-center
   = "Ranking #{@ranking.number}"
-  %small
-    = "#{@ranking.sessions.count} sessions played"
 
 .table-responsive#ranking-stats-table
   %table.mt-1.table.table-bordered.table-striped
@@ -45,29 +73,3 @@
             = e.race_count
           %td.stat-number.align-middle.text-center
             = e.session_count
-  #recent
-    .mt-4
-      %h5.pb-2.mb-0
-        = "Sessions"
-      - if @sessions.none?
-        %h5.text-center.mt-3
-          = "No sessions to display"
-      - else
-        .media-group
-          - @sessions.each do |session|
-            %a.media.text-muted.pt-3{:href => session_path(session) }
-              .session-number{:style => "background-color: #{session_color_hex(session)}"}
-                .text-center
-                  %span.align-middle
-                    = session.number
-              .media-body.pb-3.mb-0.small.lh-125
-                .d-flex.justify-content-between.align-items-center.w-100
-                  %strong.text-gray-dark
-                    = "#{session_category_name(session)} Races"
-                  .session-date
-                    = pretty_datetime(session.date)
-                %span.d-block.session-host
-                  = "Hosted by #{session.host}"
-
-  .mt-3
-    = paginate @sessions
