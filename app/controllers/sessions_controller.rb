@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all
-    @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(1)
+    @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(8)
 
     respond_with @sessions do |format|
       format.json { render :layout => false }
