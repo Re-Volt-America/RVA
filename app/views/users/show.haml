@@ -14,7 +14,9 @@
       .stats
         .well
           .rank
-            .name rank
+            .name
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Position in current ranking"}
+                rank
             .number
               - if !@rank.nil? && !@rank.eql?('-')
                 %a{:href => ranking_path(current_ranking)}
