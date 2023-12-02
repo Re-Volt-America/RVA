@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       @recent_sessions << session
     end
 
-    @recent_sessions.last(5).reverse!
+    @recent_sessions = @recent_sessions.last(5).reverse!
 
     @rank = if current_ranking
               current_ranking.get_rank(@user)
