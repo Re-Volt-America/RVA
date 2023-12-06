@@ -231,6 +231,7 @@ software as a network service, anyone who can use that service must also have ac
 beta-testing the site on its early stages, and helping with i18n.
 
 ### Sponsors
+* [Vicente Aguilera](https://github.com/ViceAguilera).
 * [Gabriel Carnielli](https://github.com/RVGforce).
 * [Dario Chaile](https://github.com/Burdang).
 * [Benjamín Contreras](https://github.com/Benjax14).
