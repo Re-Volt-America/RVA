@@ -49,7 +49,8 @@
         %li.dropdown
           %a.nav-link.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}
             - if user_signed_in?
-              = current_user.username
+              %span.current-username
+                = current_user.username
             - else
               %i.fa.fa-user
             %b.caret
