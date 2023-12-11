@@ -8,6 +8,7 @@ RVA::Application.routes.draw do
 
   get '/users/new', :to => 'users#new'
   post '/users/import', :to => 'users#import'
+  put '/:username', :to => 'users#edit'
 
   get ':username', :to => 'users#show', :as => :user
 end

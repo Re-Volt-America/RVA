@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   include RankingsHelper
 
   before_action :authenticate_user!, :except => [:show, :stats]
-  before_action :authenticate_admin, :only => [:new, :import]
+  before_action :authenticate_admin, :except => [:show, :stats]
 
   def members
     @users = User.all
@@ -28,6 +28,47 @@ class UsersController < ApplicationController
             else
               '-'
             end
+  end
+
+  # NOTE: This may be a bit hacky, but it gets the job done...
+  def edit
+    return if params[:username].nil?
+
+    user = User.find { |u| u.username.downcase.eql?(params[:username].downcase) }
+
+    return if user.nil?
+
+    user_attr_names = []
+    user.attributes.each do |el|
+      user_attr_names << el[0]
+    end
+
+    profile_attr_names = []
+    user.profile.attributes.each do |el|
+      profile_attr_names << el[0]
+    end
+
+    # Update user attributes
+    user_attr_names.each do |attr|
+      next if params[:user][attr].nil?
+
+      user[attr] = params[:user][attr]
+    end
+
+    # Update user.profile attributes
+    profile_attr_names.each do |attr|
+      next if params[:user][:profile_attributes][attr].nil?
+
+      user.profile[attr] = params[:user][:profile_attributes][attr]
+    end
+
+    respond_to do |format|
+      if user.update!
+        format.html { redirect_to user_path(user), :notice => 'User successfully updated.' }
+      else
+        format.html { redirect_to user_path(user), :status => :unprocessable_entity }
+      end
+    end
   end
 
   def new

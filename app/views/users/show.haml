@@ -68,8 +68,11 @@
       %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"} General
     %li.nav-item
       %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"} Stats
+    - if user_is_admin?
+      %li.nav-item
+        %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"} Admin
   .tab-content
-    #general.tab-pane.fade.show.active{"aria-labelledby" => "general-tab", role: "tabpanel"}
+    #general.tab-pane.fade.show.active{:"aria-labelledby" => "general-tab", role: "tabpanel"}
       .row.mt-2.info
         - if @user.profile.instagram?
           .col-md-4.col-sm-6
@@ -152,7 +155,7 @@
             - else
               %pre
                 Nothing here yet...
-    #stats.tab-pane.fade{"aria-labelledby" => "stats-tab", role: "tabpanel"}
+    #stats.tab-pane.fade{:"aria-labelledby" => "stats-tab", role: "tabpanel"}
       %h4.mt-4
         Race Stats
       %hr
@@ -218,3 +221,73 @@
           %h3
             = number_to_percentage(@user.stats.participation_rate, :precision => 1)
             %small participation rate
+    - if user_is_admin?
+      #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
+        = form_for(@user, html: { method: :put }) do |f|
+          = f.fields_for :profile do |profile|
+            %br/
+            .field.form-group
+              = f.check_box :admin
+              = f.label :admin
+            .field.form-group
+              = f.check_box :mod
+              = f.label :mod
+            .field.form-group
+              = f.check_box :organizer
+              = f.label :organizer
+            %h6 Gender
+            .form-group
+              = profile.text_field :gender, :placeholder => 'Gender', :autocomplete => 'gender', :class => 'form-control'
+            %h6
+              Nationality
+              %small
+                (National flag)
+            .field.form-group
+              = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
+            %h6 Location
+            .form-group
+              = profile.text_field :location, :placeholder => 'Location', :autocomplete => 'location', :class => 'form-control'
+            %h6 Occupation
+            .form-group
+              = profile.text_field :occupation, :placeholder => 'Occupation', :autocomplete => 'occupation', :class => 'form-control'
+            %h6 Interests
+            .form-group
+              = profile.text_field :interests, :placeholder => 'Interests', :autocomplete => 'interests', :class => 'form-control'
+            %h6 Public Email
+            .form-group
+              = profile.text_field :public_email, :placeholder => 'Public Email', :autocomplete => 'public_email', :class => 'form-control'
+            %h6 Discord
+            .form-group
+              = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
+            .form-group
+              .input-group
+                .input-group-prepend
+                  .input-group-text.devise-form-input-prepend instagram.com/
+                = profile.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control'
+            .form-group
+              .input-group
+                .input-group-prepend
+                  .input-group-text twitter.com/
+                = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
+            .form-group
+              .input-group
+                .input-group-prepend
+                  .input-group-text github.com/
+                = profile.text_field :github, :class => 'form-control'
+            .form-group
+              .input-group
+                .input-group-prepend
+                  .input-group-text crowdin.com/profile/
+                = profile.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control'
+            .form-group
+              .input-group
+                .input-group-prepend
+                  .input-group-text steamcommunity.com/id/
+                = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
+            %h6 About me... (You may use html)
+            .row
+              .form-group
+                = profile.text_area :about, :placeholder => 'Write something interesting...', :autocomplete => 'about_me', :class => 'form-control'
+          .btn-toolbar
+            .actions
+              = f.submit "Update #{@user.username}", :class => 'btn btn-sm'
