@@ -21,13 +21,13 @@ Sorted by:
         %th{width: "1%"} #
         %th{width: "2%"} Country
         %th{width: "15%"} Racer
-        %th{width: "2%"} Wins
-        %th{width: "2%"} Podiums
-        %th{width: "12%"} Win Ratio
-        %th{width: "15%"} Average Pos.
-        %th{width: "15%"} Race Count
-        %th{width: "17%"} Obtained Points
-        %th{width: "15%"} Official Score
+        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race wins"} Wins
+        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Arrived 3rd or higher"} Podiums
+        %th{width: "12%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Wins divided by race count"} Win Ratio
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average finish position"} Average Pos.
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Total amount of finished races"} Race Count
+        %th{width: "17%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated points"} Obtained Points
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated official score"} Official Score
     %tbody
       - @users.each do |user|
         - @count += 1
