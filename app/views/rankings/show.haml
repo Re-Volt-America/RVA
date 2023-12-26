@@ -2,6 +2,9 @@
 
 = render :partial => "application/subnav", :locals => { :season => @ranking.season, :rankings => @ranking.season.rankings, :ranking => @ranking }
 
+%h2.mt-4.text-center
+  = "Ranking #{@ranking.number}"
+
 #recent
   .mt-4
     %h5.pb-2.mb-0
@@ -32,8 +35,8 @@
               %span.d-block.session-host
                 = "Hosted by #{session.host}"
 
-%h2.mb-2.mt-4.text-center
-  = "Ranking #{@ranking.number}"
+%h2.mt-4.text-center
+  = "Leaderboard"
 
 .table-responsive#ranking-stats-table
   %table.mt-1.table.table-bordered.table-striped
