@@ -45,12 +45,12 @@
         %th{width: "1%"} #
         %th{width: "2%"} Country
         %th{width: "16%"} Racer
-        %th.text-center{width: "14%"} PP
-        %th.text-center{width: "14%"} PA
-        %th.text-center{width: "14%"} MP
-        %th.po.text-center{width: "14%"} PO
-        %th.text-center{width: "14%"} CC
-        %th.text-center{width: "14%"} FJ
+        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"} PP
+        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated Points"} PA
+        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"} MP
+        %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"} PO
+        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
+        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
     %tbody
       - @entries.each do |e|
         - @count += 1
