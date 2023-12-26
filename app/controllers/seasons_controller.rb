@@ -18,6 +18,7 @@ class SeasonsController < ApplicationController
   def show
     @count = 1
     @entries = @season.racer_result_entries
+    @entries = Kaminari.paginate_array(@entries).page(params[:page]).per(16)
 
     respond_with @season do |format|
       format.json { render :layout => false }

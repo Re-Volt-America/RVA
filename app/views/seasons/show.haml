@@ -5,8 +5,10 @@
 %h2.mt-4.text-center
   = "#{@season.name} Leaderboard"
 
+= paginate @entries
+
 .table-responsive#season-stats-table
-  %table.mt-1.table.table-bordered.table-striped
+  %table.mt-2.table.table-bordered.table-striped
     %thead
       %tr
         %th{width: "1%"} #
