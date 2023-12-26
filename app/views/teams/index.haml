@@ -7,31 +7,35 @@
 
   %h2
     RVA Teams
-  .text-center
-    .row
-      - @teams.each do |team|
-        .teams-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
-          .card
-            .card-header
-              .text-center
-                %h2.car-title
-                  = "#{team.name}"
-                  %small
-                    = "(#{team.short_name})"
-            .card-body
-              %img.card-img-top{:src => team.team_logo_url, :alt => ""}
-            .card-footer
-              .row
-                .col-5
-                  %p Leader:
-                .col-7
-                  %p
-                    = link_to team.leader.username, user_path(team.leader) if team.leader
-            - if team.members.any?
+  - if @teams.none?
+    %h5.text-center.mt-3
+      = "No teams to display"
+  - else
+    .text-center
+      .row
+        - @teams.each do |team|
+          .teams-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
+            .card
+              .card-header
+                .text-center
+                  %h2.car-title
+                    = "#{team.name}"
+                    %small
+                      = "(#{team.short_name})"
+              .card-body
+                %img.card-img-top{:src => team.team_logo_url, :alt => ""}
               .card-footer
                 .row
-                  .col-6
-                    %p Members:
-                  .col-12
-                    - team.members.each do |member|
-                      = "#{member.username}#{team.members.last.eql?(member) ? '' : ', '}"
+                  .col-5
+                    %p Leader:
+                  .col-7
+                    %p
+                      = link_to team.leader.username, user_path(team.leader) if team.leader
+              - if team.members.any?
+                .card-footer
+                  .row
+                    .col-6
+                      %p Members:
+                    .col-12
+                      - team.members.each do |member|
+                        = "#{member.username}#{team.members.last.eql?(member) ? '' : ', '}"

@@ -4,7 +4,10 @@
   %h1
     Past Tournaments
 
-  - if @tournaments.any?
+  - if @tournaments.none?
+    %h5.text-center.mt-3
+      = "No tournaments to display"
+  - else
     - @tournaments.each do |tournament|
       .row
         .col-12
