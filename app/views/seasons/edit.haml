@@ -1,27 +1,29 @@
 - content_for :title, "Re-Volt America - Edit Season"
 
-%h1 Editing Season
-= form_with(model: @season) do |form|
-  - if @season.errors.any?
-    #error-explanation
-      %h2
-        = pluralize(@season.errors.count, "error")
-        prohibited this season from being saved:
-      %ul
-        - @season.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :start_date
-    = form.date_select :start_date
-  .field
-    = form.label :end_date
-    = form.date_select :end_date
-  .actions
-    = form.submit
+= render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
-= link_to 'Show', @season
-|
-= link_to 'Back', seasons_path
+%h2
+  = "Editing Season"
+
+= form_with(model: @season) do |form|
+  .row
+    .col-md-5
+      .field.form-group
+        = form.label :name
+        = form.text_field :name, :class => "form-control"
+      .field.form-group
+        = form.label :start_date
+        = form.date_field :start_date, :class => "form-control"
+      .field.form-group
+        = form.label :end_date
+        = form.date_field :end_date, :class => "form-control"
+      .actions
+        = form.button "Update", :type => "submit", :class => "btn mb-2"
+    .col-md-7
+      - if @season.errors.any?
+        #error-explanation
+          %h5 Season could not be saved
+          %ul
+            - @season.errors.each do |error|
+              %li
+                = error.full_message
