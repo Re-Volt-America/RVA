@@ -69,12 +69,18 @@ class SeasonsController < ApplicationController
 
   # DELETE /seasons/1 or /seasons/1.json
   def destroy
-    @season.rankings.each(&:destroy)
+    @season.rankings.each do |r|
+      r.sessions.each(&:destroy)
+      r.destroy!
+    end
 
-    @season.destroy
+    @season.tracks.each(&:destroy)
+    @season.cars.each(&:destroy)
+
+    @season.destroy!
 
     respond_to do |format|
-      format.html { redirect_to seasons_url, :notice => 'Season was successfully destroyed.' }
+      format.html { redirect_to seasons_url, :notice => 'Season was successfully deleted.' }
       format.json { head :no_content }
     end
   end
