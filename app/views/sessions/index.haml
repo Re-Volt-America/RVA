@@ -1,8 +1,6 @@
 - content_for :title, "Re-Volt America - Sessions"
 
 .container
-  = render :partial => "application/subnav", :locals => { :season => current_season, :ranking => current_ranking }
-
   #recent.mb-4
     - if @sessions.any?
       %h6.pb-2.mb-0
