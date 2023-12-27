@@ -172,7 +172,7 @@
               = "#{@user.stats.race_podiums == 1 ? "podium" : "podiums"}"
         .col-md-4.col-sm-4
           %h3
-            = number_to_percentage(@user.stats.race_win_rate, :precision => 1)
+            = number_to_percentage(@user.stats.race_win_rate * 100, :precision => 1)
             %small
               win rate
         .col-md-4.col-sm-4
@@ -201,7 +201,7 @@
               = "#{@user.stats.session_podiums == 1 ? "session podium" : "session podiums"}"
         .col-md-4.col-sm-4
           %h3
-            = number_to_percentage(@user.stats.session_win_rate, :precision => 1)
+            = number_to_percentage(@user.stats.session_win_rate * 100, :precision => 1)
             %small
               session win rate
         .col-md-4.col-sm-4
@@ -219,7 +219,7 @@
             %small average position
         .col-md-4.col-sm-4
           %h3
-            = number_to_percentage(@user.stats.participation_rate, :precision => 1)
+            = number_to_percentage(@user.stats.participation_rate * 100, :precision => 1)
             %small participation rate
     - if user_is_admin?
       #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
