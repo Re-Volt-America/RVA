@@ -11,16 +11,20 @@
 #tracks
   = paginate @tracks
 
-  .row.mt-4
-    - @tracks.each do |track|
-      .col-xxl-4.col-xl-4.col-lg-4.col-md-6.col-sm-12.col-xs-12
-        %a{:href => track_path(track)}
-          .track-container.text-center
-            .track.thumbnail
-              .img
-                %img.img-responsive{:alt => "", :src => track.thumbnail_url, :height => "246", :width => "290"}
-              .caption{:style => "text-align: center;"}
-                %h1.lead
-                  = track.name
+  - if @tracks.none?
+    %h5.text-center
+      = "No tracks to display"
+  - else
+    .row.mt-4
+      - @tracks.each do |track|
+        .col-xxl-4.col-xl-4.col-lg-4.col-md-6.col-sm-12.col-xs-12
+          %a{:href => track_path(track)}
+            .track-container.text-center
+              .track.thumbnail
+                .img
+                  %img.img-responsive{:alt => "", :src => track.thumbnail_url, :height => "246", :width => "290"}
+                .caption{:style => "text-align: center;"}
+                  %h1.lead
+                    = track.name
 
-  = paginate @tracks
+      = paginate @tracks
