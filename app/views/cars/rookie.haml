@@ -17,7 +17,9 @@
         = render :partial => "car_category_selector"
 
   - if @cars.none?
-    = "No cars to display :("
-  .row
-    - @cars.each do |car|
-      = render :partial => "car_card", :locals => { :car => car }
+    %h5.text-center
+      = "No cars to display :("
+  - else
+    .row
+      - @cars.each do |car|
+        = render :partial => "car_card", :locals => { :car => car }

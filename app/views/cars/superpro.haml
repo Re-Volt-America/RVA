@@ -16,6 +16,10 @@
       .col-xl-1.col-lg-2.col-md-2.col-xs-3.col-4
         = render :partial => "car_category_selector"
 
-  .row
-    - @cars.each do |car|
-      = render :partial => "car_card", :locals => { :car => car }
+  - if @cars.none?
+    %h5.text-center
+      = "No cars to display :("
+  - else
+    .row
+      - @cars.each do |car|
+        = render :partial => "car_card", :locals => { :car => car }
