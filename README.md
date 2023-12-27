@@ -59,53 +59,46 @@ Install the following services and configure them to run on their default ports 
 The following installation instructions are specific to Linux, Ubuntu 18.04. This is the recommended OS to
 run the RVA website on.
 
-In a clean Ubuntu install, run the following commands in super-user mode to get and run all the required services and
+In a clean Ubuntu install, run the following commands to get and run all the required services and
 tools:
-
-Enable super-user mode.
-```bash
-sudo su
-```
 
 #### Download & Install
 Update & Upgrade Packages.
 ```bash
-apt-get update -y && apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
 Update GNU Privacy Guard.
 ```bash
-apt-get install gnupg2
+sudo apt-get install gnupg2
 ```
 
 Install Curl.
 ```bash
-apt-get install curl
+sudo apt-get install curl
 ```
 
 Install NodeJS.
 ```bash
-curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
+sudo curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
 sudo bash /tmp/nodesource_setup.sh
 sudo apt-get install -y nodejs
 ```
 
 Install Yarn.
-```
-npm install -g yarn
+```bash
+sudo npm install -g yarn
 ```
 
 Install MongoDB & Redis.
 ```bash
-apt-get install mongodb -y && apt-get install redis-server -y
+sudo apt-get install mongodb -y && sudo apt-get install redis-server -y
 ```
 
 Start the mongodb & redis-server services.
 ```bash
-service mongodb start && service redis-server start
+sudo service mongodb start && service redis-server start
 ```
-
-**!! Run the following commands without super user rights unless explicitly specified !!**
 
 Download and Install Ruby Version Manager (RVM). Replace `<username>` with your unix username.
 ```bash
