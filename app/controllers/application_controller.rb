@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
 
     @admin_nav = [
       { :name => 'Upload Session', :path => new_session_path },
-      { :name => 'New Season', :path => new_season_path },
-      { :name => 'Upload Tracks', :path => new_track_path },
-      { :name => 'Upload Cars', :path => new_car_path },
-      { :name => 'New Team', :path => new_team_path },
-      { :name => 'New Tournament', :path => new_tournament_path },
+      { :name => 'Create Season', :path => new_season_path },
+      { :name => 'Import Tracks', :path => new_track_path },
+      { :name => 'Import Cars', :path => new_car_path },
+      #{ :name => 'New Team', :path => new_team_path },
+      #{ :name => 'New Tournament', :path => new_tournament_path },
       { :name => 'Import Users', :path => users_new_path }
     ]
     @nav = [
