@@ -39,3 +39,7 @@
                     .col-12
                       - team.members.each do |member|
                         = "#{member.username}#{team.members.last.eql?(member) ? '' : ', '}"
+
+  - if user_is_staff?
+    .text-center
+      = link_to "New", new_team_path, :class => "btn btn-sm"
