@@ -11,12 +11,15 @@ class CsvImportUsersService
     csv = CSV.parse(File.open(@file))
 
     users = []
-    csv.each do |user|
+    csv.each do |row|
+      next if row.empty?
+      next if row.include?(nil)
+
       user_hash = {
-        :username => user[1],
-        :email => user[2],
-        :password => user[3],
-        :country => user[0]
+        :username => row[1],
+        :email => row[2],
+        :password => row[3],
+        :country => row[0]
       }
 
       user = User.new(user_hash)
