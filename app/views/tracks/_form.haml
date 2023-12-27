@@ -1,6 +1,6 @@
 = form_with(:model => track) do |f|
   - if track.errors.any?
-    #error_explanation
+    #error-explanation
       %h2
         = pluralize(track.errors.count, "error")
         prohibited this track from being saved:

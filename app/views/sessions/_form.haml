@@ -1,6 +1,6 @@
 = form_with(model: session) do |form|
   - if session.errors.any?
-    #error_explanation
+    #error-explanation
       %h2
         = pluralize(session.errors.count, "error")
         prohibited this session from being saved:

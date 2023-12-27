@@ -18,7 +18,7 @@
         = form.button "Create Team", :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if team.errors.any?
-        #error_explanation
+        #error-explanation
           %h2
             = pluralize(team.errors.count, "error")
             prohibited this team from being saved:

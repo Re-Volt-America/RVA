@@ -3,7 +3,7 @@
 %h1 Editing Season
 = form_with(model: @season) do |form|
   - if @season.errors.any?
-    #error_explanation
+    #error-explanation
       %h2
         = pluralize(@season.errors.count, "error")
         prohibited this season from being saved:

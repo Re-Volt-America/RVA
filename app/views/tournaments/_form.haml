@@ -21,7 +21,7 @@
         = f.button "Save Tournament", :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if tournament.errors.any?
-        #error_explanation
+        #error-explanation
           %h2
             = pluralize(tournament.errors.count, "error")
             prohibited this tournament from being saved:
