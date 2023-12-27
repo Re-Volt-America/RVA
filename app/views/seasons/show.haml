@@ -45,3 +45,20 @@
             = e.race_count
           %td.stat-number.align-middle.text-center
             = e.session_count
+
+- if user_is_admin?
+  = link_to 'Edit Season', edit_season_path(@season), :class => "btn mt-2"
+  = link_to 'Delete Season', '', :"data-target" => "#deleteSeasonModal", :"data-toggle" => "modal", :type => "button", :class =>  "btn mt-2"
+
+  #deleteSeasonModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "deleteSeasonModalLabel", role: "dialog", tabindex: "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %h5#deleteSeasonModalLabel.modal-title Warning!
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+        .modal-body
+          = "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible."
+        .modal-footer
+          = link_to 'Close', '', :"data-dismiss" => "modal", :type => "button", :class => "btn"
+          = link_to 'Delete Season', @season, :data => { turbo: true, turbo_method: :delete }, :class => "btn"
