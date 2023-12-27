@@ -233,6 +233,11 @@ textarea {
   border-radius: 0.15rem;
 }
 
+a.btn-important.disabled, fieldset:disabled a.btn-important {
+  pointer-events: none;
+  opacity: .65;
+}
+
 .dl-horizontal dt {
   float: left;
   width: 160px;
