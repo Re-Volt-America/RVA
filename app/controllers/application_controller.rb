@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
       { :name => 'Create Season', :path => new_season_path },
       { :name => 'Import Tracks', :path => new_track_path },
       { :name => 'Import Cars', :path => new_car_path },
-      #{ :name => 'New Team', :path => new_team_path },
-      #{ :name => 'New Tournament', :path => new_tournament_path },
+      # { :name => 'New Team', :path => new_team_path },
+      # { :name => 'New Tournament', :path => new_tournament_path },
       { :name => 'Import Users', :path => users_new_path }
     ]
     @nav = [
