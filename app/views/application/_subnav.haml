@@ -7,7 +7,7 @@
             = "Tracks #{defined?(track) ? "»" : ""}"
         - if defined?(track)
           %li.nav-item
-            %a.nav-link{:href => track_path(track), :class => "#{current_page?(track_path(track)) ? 'active' : ''}"}
+            %a.nav-link{:href => track_path(track), :class => "#{(current_page?(track_path(track)) || current_page?(edit_track_path(track))) ? 'active' : ''}"}
               = track.name
         %li.nav-item
           %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
@@ -18,14 +18,14 @@
               = "#{category_name(category)} #{defined?(car) ? "»" : ""}"
         - if defined?(car)
           %li.nav-item
-            %a.nav-link{:href => car_path(car), :class => "#{current_page?(car_path(car)) ? 'active' : ''}"}
+            %a.nav-link{:href => car_path(car), :class => "#{(current_page?(car_path(car)) || current_page?(edit_car_path(car))) ? 'active' : ''}"}
               = car.name
         %li.nav-item
           %a.nav-link{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
             = "Seasons #{(defined?(season)) ? "»" : ""}"
         - if defined?(season)
           %li.nav-item
-            %a.nav-link{:href => season_path(season), :class => "#{current_page?(season_path(season)) ? 'active' : ''}"}
+            %a.nav-link{:href => season_path(season), :class => "#{(current_page?(season_path(season)) || current_page?(edit_season_path(season))) ? 'active' : ''}"}
               = "#{season.name} #{defined?(ranking) ? "»" : ""}"
         - if defined?(rankings)
           -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
