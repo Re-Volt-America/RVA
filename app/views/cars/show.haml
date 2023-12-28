@@ -45,5 +45,5 @@
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url}
-        - if user_is_staff?
+        - if user_is_admin?
           = link_to 'Edit Car', edit_car_path(@car), :class => "btn mt-2"

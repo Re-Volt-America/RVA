@@ -68,12 +68,12 @@ module SYS
     EXTREME = 3
 
     DIFFICULTIES = {
-      :easy => EASY,
-      :medium => MEDIUM,
-      :hard => HARD,
-      :extreme => EXTREME,
+      :Easy => EASY,
+      :Medium => MEDIUM,
+      :Hard => HARD,
+      :Extreme => EXTREME,
 
-      :unknown => UNKNOWN
+      :Unknown => UNKNOWN
     }
   end
 

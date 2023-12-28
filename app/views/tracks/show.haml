@@ -39,3 +39,5 @@
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @track.thumbnail_url}
+        - if user_is_admin?
+          = link_to 'Edit Track', edit_track_path(@track), :class => "btn mt-2"
