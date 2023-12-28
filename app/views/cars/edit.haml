@@ -1,5 +1,47 @@
-%h1 Editing Car
-= render 'form', car: @car
-= link_to 'Show', @car
-|
-= link_to 'Back', cars_path
+- content_for :title, "Re-Volt America - Edit Car"
+
+= render :partial => "application/subnav", :locals => {:car => @car, :category => @car.category}
+
+%h2
+  = "Editing Car"
+
+= form_with(:model => @car) do |f|
+  .row
+    .col-md-5
+      .field.form-group
+        = f.label :season
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+      .field.form-group
+        = f.label :category
+        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => "Select Category"}, :class => "form-control"
+      .field.form-group
+        = f.label :name
+        = f.text_field :name, :class => "form-control"
+      .field.form-group
+        = f.label :speed
+        = f.text_field :speed, :class => "form-control"
+      .field.form-group
+        = f.label :accel
+        = f.text_field :accel, :class => "form-control"
+      .field.form-group
+        = f.label :weight
+        = f.text_field :weight, :class => "form-control"
+      .field.form-group
+        = f.label :multiplier
+        = f.text_field :multiplier, :class => "form-control"
+      .field.form-group
+        = f.label :folder_name
+        = f.text_field :folder_name, :class => "form-control"
+      .field.form-group
+        = f.label :stock
+        = f.check_box :stock
+      .actions
+        = f.button "Update", :type => "submit", :class => "btn mb-2"
+    .col-md-7
+      - if @car.errors.any?
+        #error-explanation
+          %h5 Car could not be saved
+          %ul
+            - @car.errors.each do |error|
+              %li
+                = error.full_message
