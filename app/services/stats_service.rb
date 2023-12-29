@@ -22,7 +22,6 @@ class StatsService
   # Adds the given @rva_results to the @session itself
   def add_session_stats
     racer_result_entries = []
-    num_entries = 0
     count = 0
 
     @rva_results.drop(1).each do |row|
@@ -59,7 +58,6 @@ class StatsService
 
       racer_result_entries << RacerResultEntry.new(racer_result_entry_hash)
       count += 1
-      num_entries += 1
     end
 
     @session.racer_result_entries = racer_result_entries
