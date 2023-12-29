@@ -52,8 +52,7 @@ class StatsService
         :average_position => average_position,
         :obtained_points => obtained_points,
         :official_score => official_score,
-        :participation_multiplier => participation_multiplier,
-        :team => nil # TODO: Extend support for team sessions
+        :participation_multiplier => participation_multiplier
       }
 
       racer_result_entries << RacerResultEntry.new(racer_result_entry_hash)
@@ -85,7 +84,6 @@ class StatsService
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
           :participation_multiplier => session_entry.participation_multiplier,
-          :team => session_entry.team
         }
 
         ranking_entries << RacerResultEntry.new(se_hash)
@@ -126,7 +124,6 @@ class StatsService
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
           :participation_multiplier => session_entry.participation_multiplier,
-          :team => session_entry.team
         }
 
         season_entries << RacerResultEntry.new(session_entry_hash)

@@ -4,6 +4,7 @@ class CsvImportSessionsService
   require 'csv'
   require 'rva_calculate_results_service'
   require 'stats_service'
+  require 'team_points_service'
 
   def initialize(file, ranking, category, number, teams)
     @file = file
@@ -41,10 +42,13 @@ class CsvImportSessionsService
     }
 
     session = Session.new(session_hash)
-    return session if session.teams
-
     rva_results = RvaCalculateResultsService.new(session).call
-    StatsService.new(session, rva_results).add_stats
+
+    if session.teams
+      TeamPointsService.new(session, rva_results).add_points
+    else
+      StatsService.new(session, rva_results).add_stats
+    end
 
     session
   end

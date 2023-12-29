@@ -8,8 +8,10 @@ class Ranking
   has_many :sessions
 
   embeds_many :racer_result_entries
+  embeds_many :team_result_entries
 
   accepts_nested_attributes_for :racer_result_entries
+  accepts_nested_attributes_for :team_result_entries
 
   field :number, :type => Integer
 

@@ -17,7 +17,6 @@ class RacerResultEntry
   field :obtained_points, :type => Integer
   field :official_score, :type => Float
   field :participation_multiplier, :type => Float
-  field :team, :type => String
 
   validates_presence_of :username
   validates_presence_of :country

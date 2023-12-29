@@ -12,6 +12,7 @@ class Team
   field :short_name, :type => String
   field :image, :type => String
   field :team_logo_data, :type => String
+  field :points, :type => Integer, :default => 0
 
   validates_presence_of :leader
   validates_presence_of :name

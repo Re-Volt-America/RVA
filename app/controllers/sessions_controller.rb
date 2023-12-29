@@ -69,11 +69,17 @@ class SessionsController < ApplicationController
   def destroy
     require 'rva_calculate_results_service'
     require 'stats_service'
+    require 'team_points_service'
 
     @rva_results = RvaCalculateResultsService.new(@session).call
 
-    # Remove all stats associated to this session
-    StatsService.new(@session, @rva_results).remove_stats unless @session.nil? || @session.teams?
+    unless @session.nil?
+      if @session.teams?
+        TeamPointsService.new(@session, @rva_results).remove_team_points
+      else
+        StatsService.new(@session, @rva_results).remove_stats
+      end
+    end
 
     Rails.cache.delete("Session:#{@session.id}")
 
