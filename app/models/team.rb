@@ -10,12 +10,13 @@ class Team
 
   field :name, :type => String
   field :short_name, :type => String
-  field :image, :type => String
+  field :color, :type => String
   field :team_logo_data, :type => String
   field :points, :type => Integer, :default => 0
 
   validates_presence_of :leader
   validates_presence_of :name
   validates_presence_of :short_name
+  validates_presence_of :color
   validates_presence_of :team_logo
 end

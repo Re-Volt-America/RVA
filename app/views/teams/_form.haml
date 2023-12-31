@@ -7,6 +7,9 @@
       .field.form-group
         = form.label :short_name
         = form.text_field :short_name, :class => "form-control"
+      .field.form-group
+        = form.label :color
+        = form.color_field :color, :class => "form-control"
       = form.label :team_image
       .field.input-group
         = form.hidden_field :team_logo, :value => team.cached_team_logo_data, :id => nil
@@ -19,9 +22,8 @@
     .col-md-7
       - if team.errors.any?
         #error-explanation
-          %h2
-            = pluralize(team.errors.count, "error")
-            prohibited this team from being saved:
+          %h5
+            = "Team could not be saved"
           %ul
             - team.errors.each do |error|
               %li= error.full_message
