@@ -5,7 +5,7 @@
 %h2.mt-4.text-center
   = "#{@season.name} Leaderboards"
 
-= paginate @entries
+= paginate @racer_entries
 
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item
@@ -28,11 +28,10 @@
             %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
             %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
         %tbody
-          - @entries.each do |e|
-            - @count += 1
+          - @racer_entries.each do |e|
             %tr
               %td.rank.text-center
-                = "#{@count - 1}"
+                = "#{@count}"
               %td.country-flag.text-center
                 - if e.country.nil? || e.country.eql?("??")
                   = "?"
@@ -52,8 +51,30 @@
                 = e.race_count
               %td.stat-number.align-middle.text-center
                 = e.session_count
+            - @count += 1
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
-    = "Teams stuff"
+    .table-responsive#teams-table
+      %table.table.table-bordered.table-striped
+        %thead
+          %tr
+            %th{width: "1%"}
+            %th{width: "9%"}
+            %th{width: "80%"}
+            %th{width: "10%"}
+        %tbody
+          - @count = 1
+          - @team_entries.each do |e|
+            %tr
+              %td
+                = @count
+              %td
+                %img{:src => e.team_logo_url, :alt => "", :height => 50, :width => 50}
+              %td
+                = e.name
+              %td
+                = e.points
+            - @count += 1
+
 
 - if user_is_admin?
   = link_to 'Edit Season', edit_season_path(@season), :class => "btn mt-2"
