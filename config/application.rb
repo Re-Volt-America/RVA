@@ -46,6 +46,9 @@ module SYS
   RVGL_CAR_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro clockwork)
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
 
+  RGB_REGEXP = /\A#(..)(..)(..)\z/
+  VALID_HEX_FORMAT = /\A#[a-fA-F0-9]{6}\z/
+
   FIRST_PLACE_COLOR = '#ffb400'
   SECOND_PLACE_COLOR = '#cccccc'
   THIRD_PLACE_COLOR = '#cd7f32'

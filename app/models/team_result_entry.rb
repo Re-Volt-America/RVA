@@ -11,6 +11,7 @@ class TeamResultEntry
   field :name, :type => String
   field :short_name, :type => String
   field :team_logo_data, :type => String
+  field :color, :type => String
   field :points, :type => Integer
 
   validates_presence_of :name

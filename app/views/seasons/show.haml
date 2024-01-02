@@ -55,26 +55,19 @@
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
     .table-responsive#teams-table
       %table.table.table-bordered.table-striped
-        %thead
-          %tr
-            %th{width: "1%"}
-            %th{width: "9%"}
-            %th{width: "80%"}
-            %th{width: "10%"}
         %tbody
           - @count = 1
           - @team_entries.each do |e|
             %tr
-              %td
-                = @count
-              %td
-                %img{:src => e.team_logo_url, :alt => "", :height => 50, :width => 50}
-              %td
+              %td.pos{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                = "#{@count}°"
+              %td.logo.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                %img{:src => e.team_logo_url, :alt => ""}
+              %td.name.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
                 = e.name
-              %td
+              %td.score.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
                 = e.points
             - @count += 1
-
 
 - if user_is_admin?
   = link_to 'Edit Season', edit_season_path(@season), :class => "btn mt-2"

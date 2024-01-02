@@ -1,4 +1,4 @@
-#season {
+#seasons {
   h3 {
     color: #fff;
 
@@ -150,14 +150,30 @@
 #teams-table {
   table {
     font-family: "Bahnschrift-Light", sans-serif;
-    border: 1px solid #646464;
+    border: transparent;
   }
 
+  tbody {
+    font-size: 20px;
+    font-weight: bold;
+  }
 
+  .table-bordered td, .table-bordered th {
+    border: transparent;
+  }
 
+  .pos {}
 
+  .logo {
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
 
+  .name {}
 
+  .score {}
 }
 
 

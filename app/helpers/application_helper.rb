@@ -121,4 +121,22 @@ module ApplicationHelper
 
     string
   end
+
+  # Converts a colour in hex format into its opposite colour in the spectrum.
+  # @param hex [String] Colour in hex format (e.g. #2e2e2e)
+  # @param black_white [Boolean] True to convert the resulting colour into black or white depending on which side of
+  # the spectrum it's the closest to. False to just return the inverted colour hex.
+  # @return [String] Hex string representing the inverse equivalent of colour 'hex'
+  def invert_color(hex, black_white = false)
+    return hex unless hex =~ SYS::VALID_HEX_FORMAT
+
+    red, green, blue = hex.match(SYS::RGB_REGEXP).captures.map(&:hex)
+
+    return (red * 0.299 + green * 0.587 + blue * 0.114) > 186 ? '#000000' : '#FFFFFF' if black_white
+
+    red = (255 - red).to_s(16)
+    green = (255 - green).to_s(16)
+    blue = (255 - blue).to_s(16)
+    ['#', *[red, green, blue].map { |c| c.rjust(2, '0') }].join
+  end
 end
