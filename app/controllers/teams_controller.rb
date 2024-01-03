@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_admin, :except => [:show, :index]
   before_action :set_team, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
