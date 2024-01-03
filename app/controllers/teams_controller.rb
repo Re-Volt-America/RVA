@@ -51,6 +51,16 @@ class TeamsController < ApplicationController
     end
   end
 
+  # GET /teams/1 or /teams/1.json
+  def show
+    @leader = @team.leader
+    @members = @team.members
+
+    respond_with @team do |format|
+      format.json { render :layout => false }
+    end
+  end
+
   # DELETE /teams/1 or /teams/1.json
   def destroy
     @team.destroy

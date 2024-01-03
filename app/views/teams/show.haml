@@ -1,0 +1,46 @@
+%h1
+  = @team.name
+  %small
+    = "(#{@team.short_name})"
+%hr
+
+%h3.text-center
+  .row
+    .col-md-12
+      %img.img-fluid{:src => @team.team_logo_url, :alt => "", :width => 250}
+    .col-md-12
+      = "#{@team.points} total points"
+
+%h3
+  = "Members"
+%hr
+
+.table-responsive#team-members-table
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Country
+        %th Role
+    %tbody
+      %tr
+        %td
+          = link_to @leader.username, user_path(@leader)
+        %td
+          - if @leader.country.nil? || @leader.eql?("??")
+            = "?"
+          - else
+            %i.twf{:class => "twf-#{@leader.country.downcase}"}
+        %td
+          Leader
+        - @members.each do |m|
+          %tr
+            %td
+              = link_to m.username, user_path(m)
+            %td
+              - if m.country.nil? || m.eql?("??")
+                = "?"
+              - else
+                %i.twf{:class => "twf-#{m.country.downcase}"}
+            %td
+              Member
