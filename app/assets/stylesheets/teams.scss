@@ -53,10 +53,6 @@
       background-color: #ffffff;
     }
 
-    .card {
-      margin-top: 30px;
-    }
-
     .car-title {
       font-size: 22px;
     }
@@ -101,6 +97,7 @@
       -ms-flex-negative: 0;
       flex-shrink: 0;
       width: 128px;
+      margin-bottom: 25px;
     }
 
     .btn-outline-secondary {
@@ -122,4 +119,33 @@
       padding: 1.25rem;
     }
   }
+}
+
+#teams-table {
+  table {
+    font-family: "Bahnschrift-Light", sans-serif;
+    border: transparent;
+  }
+
+  tbody {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .table-bordered td, .table-bordered th {
+    border: transparent;
+  }
+
+  .pos {}
+
+  .logo {
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .name {}
+
+  .score {}
 }

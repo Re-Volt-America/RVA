@@ -44,6 +44,7 @@ class TeamPointsService
           :name => team.name,
           :short_name => team.short_name,
           :team_logo_data => team.team_logo_data,
+          :color => team.color,
           :points => points
         }
 
@@ -73,6 +74,7 @@ class TeamPointsService
           :name => session_entry.name,
           :short_name => session_entry.short_name,
           :team_logo_data => session_entry.team_logo_data,
+          :color => session_entry.color,
           :points => session_entry.points
         }
 
@@ -100,6 +102,7 @@ class TeamPointsService
           :name => session_entry.name,
           :short_name => session_entry.short_name,
           :team_logo_data => session_entry.team_logo_data,
+          :color => session_entry.color,
           :points => session_entry.points
         }
 

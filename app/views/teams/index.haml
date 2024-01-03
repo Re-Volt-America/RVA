@@ -1,12 +1,32 @@
 - content_for :title, "Re-Volt America - Teams"
 
 #teams
-  %h2
-    RVA Teams
   - if @teams.none?
+    %h2
+      RVA Teams
     %h5.text-center.mt-3
       = "No teams to display"
   - else
+    %h1
+      Global Team Points
+    #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
+    .table-responsive#teams-table
+      %table.table.table-bordered.table-striped
+        %tbody
+          - @count = 1
+          - @sorted_teams.each do |t|
+            %tr
+              %td.pos{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
+                = "#{@count}°"
+              %td.logo.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
+                %img{:src => t.team_logo_url, :alt => ""}
+              %td.name.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
+                = t.name
+              %td.score.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
+                = t.points
+            - @count += 1
+    %h2
+      RVA Teams
     .text-center
       .row
         - @teams.each do |team|
