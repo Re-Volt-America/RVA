@@ -235,6 +235,9 @@
             .field.form-group
               = f.check_box :organizer
               = f.label :organizer
+            .field.form-group
+              = f.label :team
+              = f.collection_select :team_id, Team.all, :id, :name, {:include_blank => true}, {:class => "form-control"}
             %h6 Gender
             .form-group
               = profile.text_field :gender, :placeholder => 'Gender', :autocomplete => 'gender', :class => 'form-control'

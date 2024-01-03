@@ -40,7 +40,11 @@ RVA::Application.routes.draw do
   end
 
   resources :tournaments
-  resources :teams
+  resources :teams do
+    collection do
+      post :update
+    end
+  end
 
   resources :sessions do
     collection do

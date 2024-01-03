@@ -40,13 +40,14 @@ class TeamsController < ApplicationController
 
   # PATCH/PUT /teams/1 or /teams/1.json
   def update
+    new_member = User.find_by(:id => team_params[:members])
+    @team.members << new_member
+
     respond_to do |format|
-      if @team.update(team_params)
-        format.html { redirect_to teams_path, :notice => 'Team was successfully updated.' }
-        format.json { render :show, :status => :ok, :location => @team, :layout => false }
+      if @team.update!
+        format.html { redirect_to team_path(@team), :notice => "#{new_member.username} was successfully added to #{@team.name}." }
       else
-        format.html { render :edit, :status => :unprocessable_entity }
-        format.json { render :json => @team.errors, :status => :unprocessable_entity, :layout => false }
+        format.html { redirect_to team_path(@team), :status => :unprocessable_entity }
       end
     end
   end

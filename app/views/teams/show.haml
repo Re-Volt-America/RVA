@@ -33,14 +33,23 @@
             %i.twf{:class => "twf-#{@leader.country.downcase}"}
         %td
           Leader
-        - @members.each do |m|
-          %tr
-            %td
-              = link_to m.username, user_path(m)
-            %td
-              - if m.country.nil? || m.eql?("??")
-                = "?"
-              - else
-                %i.twf{:class => "twf-#{m.country.downcase}"}
-            %td
-              Member
+      - @members.each do |m|
+        %tr
+          %td
+            = link_to m.username, user_path(m)
+          %td
+            - if m.country.nil? || m.eql?("??")
+              = "?"
+            - else
+              %i.twf{:class => "twf-#{m.country.downcase}"}
+          %td
+            Member
+
+- if user_is_admin?
+  = form_for(@team, html: { method: :put }) do |f|
+    .row
+      .col-md-5
+        .input-group
+          = f.select :members, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
+          .input-group-append
+            = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"

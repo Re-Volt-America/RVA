@@ -10,7 +10,7 @@ class User
   validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 2, :maximum => 16 }
   validates_format_of :username, :with => USERNAME_REGEX
 
-  belongs_to :team, :optional => true
+  belongs_to :team, :optional => true, :inverse_of => :members
   has_one :team
 
   embeds_one :profile
