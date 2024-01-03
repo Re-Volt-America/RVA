@@ -36,43 +36,67 @@
                 = "Hosted by #{session.host}"
 
 %h2.mt-4.text-center
-  = "Leaderboard"
+  = "Leaderboards"
 
-.table-responsive#ranking-stats-table
-  %table.mt-1.table.table-bordered.table-striped
-    %thead
-      %tr
-        %th{width: "1%"} #
-        %th{width: "2%"} Country
-        %th{width: "16%"} Racer
-        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"} PP
-        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated Points"} PA
-        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"} MP
-        %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"} PO
-        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
-        %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
-    %tbody
-      - @entries.each do |e|
-        - @count += 1
-        %tr
-          %td.rank.text-center
-            = "#{@count - 1}"
-          %td.country-flag.text-center
-            - if e.country.nil? || e.country.eql?("??")
-              = "?"
-            - else
-              %i.twf{:class => "twf-#{e.country.downcase}"}
-          %td.racer.align-middle.text-center
-            = link_to e.username, user_path(e.username)
-          %td.stat-number.align-middle.text-center
-            = e.average_position.round(3)
-          %td.stat-number.align-middle.text-center
-            = e.obtained_points
-          %td.stat-number.align-middle.text-center
-            = e.participation_multiplier.round(3)
-          %td.po.align-middle.text-center
-            = e.official_score.round(2)
-          %td.stat-number.align-middle.text-center
-            = e.race_count
-          %td.stat-number.align-middle.text-center
-            = e.session_count
+%ul.nav.nav-tabs{role: "tablist"}
+  %li.nav-item
+    %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"} Singles
+  %li.nav-item
+    %a#teams-tab.nav-link{"aria-controls" => "teams", "aria-selected" => "false", "data-toggle" => "tab", href: "#teams", role: "tab"} Teams
+
+.tab-content
+  #singles.tab-pane.fade.show.active{:"aria-labelledby" => "singles-tab", role: "tabpanel"}
+    .table-responsive#singles-stats-table
+      %table.table.table-bordered.table-striped
+        %thead
+          %tr
+            %th{width: "1%"} #
+            %th{width: "2%"} Country
+            %th{width: "16%"} Racer
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"} PP
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated Points"} PA
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"} MP
+            %th.po.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"} PO
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"} CC
+            %th.text-center{width: "14%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Sessions Played"} SP
+        %tbody
+          - @racer_entries.each do |e|
+            - @count += 1
+            %tr
+              %td.rank.text-center
+                = "#{@count - 1}"
+              %td.country-flag.text-center
+                - if e.country.nil? || e.country.eql?("??")
+                  = "?"
+                - else
+                  %i.twf{:class => "twf-#{e.country.downcase}"}
+              %td.racer.align-middle.text-center
+                = link_to e.username, user_path(e.username)
+              %td.stat-number.align-middle.text-center
+                = e.average_position.round(3)
+              %td.stat-number.align-middle.text-center
+                = e.obtained_points
+              %td.stat-number.align-middle.text-center
+                = e.participation_multiplier.round(3)
+              %td.po.align-middle.text-center
+                = e.official_score.round(2)
+              %td.stat-number.align-middle.text-center
+                = e.race_count
+              %td.stat-number.align-middle.text-center
+                = e.session_count
+  #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
+    .table-responsive#teams-table
+      %table.table.table-bordered.table-striped
+        %tbody
+          - @count = 1
+          - @team_entries.each do |e|
+            %tr
+              %td.pos{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                = "#{@count}°"
+              %td.logo.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                %img{:src => e.team_logo_url, :alt => ""}
+              %td.name.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                = e.name
+              %td.score.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                = e.points
+            - @count += 1

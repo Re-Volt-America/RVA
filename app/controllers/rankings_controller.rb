@@ -20,7 +20,8 @@ class RankingsController < ApplicationController
     @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(8)
 
     @count = 1
-    @entries = @ranking.racer_result_entries
+    @racer_entries = @ranking.racer_result_entries
+    @team_entries = @ranking.team_result_entries
 
     respond_with @ranking do |format|
       format.json { render :layout => false }
