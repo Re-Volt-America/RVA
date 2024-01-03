@@ -6,9 +6,7 @@
     .col-md-12
       %h1.username
         = "#{@user.username}"
-        - if !@user.country.nil? && !@user.country.eql?("??")
-          %small
-            %i.twf{:class => "twf-#{@user.country.downcase}"}
+        = render :partial => 'country_flag', :locals => {:user => @user}
       = render :partial => 'badges', locals: { user: @user }
     .col-md-4.mt-4
       .stats

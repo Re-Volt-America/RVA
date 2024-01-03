@@ -1,0 +1,6 @@
+- if user.country.nil? || user.country.eql?("??")  # NOTE: '??' countries come from legacy imports
+  %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Unknown"}
+    = image_tag 'unknown.png', :width => 45
+- else
+  %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => ISO3166::Country.new(user.country)}
+    %i.twf{:class => "twf-#{user.country.downcase}"}

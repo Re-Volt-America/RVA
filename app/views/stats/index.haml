@@ -35,10 +35,7 @@ Sorted by:
           %td.rank.text-center
             = "#{@count - 1}"
           %td.country-flag.text-center
-            - if user.country.nil? || user.country.eql?("??")
-              = "?"
-            - else
-              %i.twf{:class => "twf-#{user.country.downcase}"}
+            = render :partial => 'users/country_flag', :locals => {:user => user}
           %td.racer.align-middle
             = link_to user.username, user_path(user)
           %td.stat-number.align-middle
