@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
   # GET /teams or /teams.json
   def index
     @teams = Team.all
+    @sorted_teams = Team.all.sort_by(&:points).reverse!
 
     respond_with @teams do |format|
       format.json { render :layout => false }
