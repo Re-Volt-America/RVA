@@ -1,2 +1,42 @@
-%h2
-  About Re-Volt America
+#about
+  %section.jumbotron.text-center
+    .container
+      %h1 About Re-Volt America
+      %p.lead
+        The largest Re-Volt community you'll find in the American Continent.
+        Join our racing sessions, compete in our seasons and meet other Re-Volt players around the world!
+
+  :markdown
+    ## Who we are
+
+    Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game
+    <a href="https://en.wikipedia.org/wiki/Re-Volt" target="_blank">Re-Volt</a> from 1999.
+
+    In order to play online, we use <a href="https://rvgl.org/" target="_blank">RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs
+    natively on a wide variety of platforms. This version of the game is also known for extending the original game
+    experience with support for custom, community-made content such as tracks and cars.
+
+    In RVA, we organise a series of online sessions where players from all around the world (primarily from the American
+    continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt
+    Americas' official rankings.
+
+    <a href="#{DISTRIBUTE::RVGL_LAUNCHER}" target="_blank">Download RVGL</a>, get
+    the <a href="#{downloads_path}">RVA Pack</a>, and <a href="#{play_path}">Play</a> with us!
+
+  %h2.text-center
+    See you on track!
+  #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+      %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+      %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+    .carousel-inner
+      - 1.upto(3) do |n|
+        %div{:class => "carousel-item #{n == 1 ? 'active' : ''}"}
+          = image_tag "about/#{n}.png", :class => "d-block w-100"
+    %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
+      %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+      %span.sr-only Previous
+    %a.carousel-control-next{"data-slide" => "next", href: "#carouselExampleIndicators", role: "button"}
+      %span.carousel-control-next-icon{"aria-hidden" => "true"}
+      %span.sr-only Next
