@@ -1,7 +1,7 @@
 - content_for :title, "Re-Volt America - Edit Session"
 
+= render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
+
 %h1 Editing Session
+
 = render 'form', session: @session
-= link_to 'Show', @session
-|
-= link_to 'Back', sessions_path

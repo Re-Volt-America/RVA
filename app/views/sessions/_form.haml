@@ -1,32 +1,31 @@
-= form_with(model: session) do |form|
-  - if session.errors.any?
-    #error-explanation
-      %h2
-        = pluralize(session.errors.count, "error")
-        prohibited this session from being saved:
-      %ul
-        - session.errors.each do |error|
-          %li= error.full_message
-  .field
-    = form.label :host
-    = form.text_field :host
-  .field
-    = form.label :version
-    = form.text_field :version
-  .field
-    = form.label :physics
-    = form.text_field :physics
-  .field
-    = form.label :protocol
-    = form.text_field :protocol
-  .field
-    = form.label :number
-    = form.number_field :number
-  .field
-    = form.label :date
-    = form.date_select :date
-  .field
-    = form.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
-    = form.file_upload :session_log
-  .actions
-    = form.submit
+= form_with(:model => session) do |form|
+  .row
+    .col-md-5
+      .field.form-group
+        = form.label :host
+        = form.text_field :host, :class => "form-control"
+      .field.form-group
+        = form.label :version
+        = form.text_field :version, :class => "form-control"
+      .field.form-group
+        = form.label :physics
+        = form.text_field :physics, :class => "form-control"
+      .field.form-group
+        = form.label :protocol
+        = form.text_field :protocol, :class => "form-control"
+      .field.form-group
+        = form.label :number
+        = form.number_field :number, :class => "form-control"
+      .field.form-group
+        = form.label :date
+        = form.date_field :date, :class => "form-control"
+      .actions
+        = form.button "Update Session", :type => "submit", :"data-turbo" => false, :class => "btn"
+    .col-md-7
+      - if session.errors.any?
+        #error-explanation
+          %h5
+            = "Session could not be saved"
+          %ul
+            - session.errors.each do |error|
+              %li= error.full_message

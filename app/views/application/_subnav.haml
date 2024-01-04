@@ -49,5 +49,5 @@
         -# definition is ours ...
         - if defined?(session) && session.is_a?(Session)
           %li.nav-item
-            %a.nav-link{:href => session_path(session), :class => "#{current_page?(session_path(session)) ? 'active' : ''}"}
+            %a.nav-link{:href => session_path(session), :class => "#{(current_page?(session_path(session)) || current_page?(edit_session_path(session))) ? 'active' : ''}"}
               = "Session #{session.number}"

@@ -30,6 +30,8 @@
             = "Admin Actions"
           %ul
             %li
+              = link_to 'Edit Session', edit_session_path(@session), :class => "btn mt-2"
+            %li
               = link_to 'Delete Session', @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "btn mt-2"
 
 #results.container
