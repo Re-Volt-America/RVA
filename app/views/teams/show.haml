@@ -40,10 +40,11 @@
             Member
 
 - if user_is_admin?
-  = form_for(@team, html: { method: :put }) do |f|
+  = form_with :url => add_member_teams_path, method: :put do |f|
     .row
       .col-md-5
         .input-group
-          = f.select :members, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
+          = f.select :member, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
           .input-group-append
             = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
+    = f.hidden_field :id, :value => @team.id

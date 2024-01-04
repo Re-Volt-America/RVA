@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
   before_action :authenticate_admin, :except => [:show, :index]
-  before_action :set_team, :only => [:show, :edit, :update, :destroy]
+  before_action :set_team, :only => [:show, :edit, :update, :add_member, :destroy]
 
   respond_to :html, :json
 
@@ -40,7 +40,19 @@ class TeamsController < ApplicationController
 
   # PATCH/PUT /teams/1 or /teams/1.json
   def update
-    new_member = User.find_by(:id => team_params[:members])
+    respond_to do |format|
+      if @team.update(team_params)
+        format.html { redirect_to teams_path, :notice => 'Team was successfully updated.' }
+        format.json { render :show, :status => :ok, :location => @team, :layout => false }
+      else
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @team.errors, :status => :unprocessable_entity, :layout => false }
+      end
+    end
+  end
+
+  def add_member
+    new_member = User.find_by(:id => params[:member])
     @team.members << new_member
 
     respond_to do |format|
