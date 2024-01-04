@@ -4,7 +4,7 @@
       %h1 About Re-Volt America
       %p.lead
         The largest Re-Volt community you'll find in the American Continent.
-        Join our racing sessions, compete in our seasons and meet other Re-Volt players around the world!
+        Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!
 
   :markdown
     ## Who we are
@@ -25,18 +25,18 @@
 
   %h2.text-center
     See you on track!
-  #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+  #carouselIndicators.carousel.slide{"data-ride" => "carousel"}
     %ol.carousel-indicators
-      %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
-      %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
-      %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+      %li.active{"data-slide-to" => "0", "data-target" => "#carouselIndicators"}
+      %li{"data-slide-to" => "1", "data-target" => "#carouselIndicators"}
+      %li{"data-slide-to" => "2", "data-target" => "#carouselIndicators"}
     .carousel-inner
       - 1.upto(3) do |n|
         %div{:class => "carousel-item #{n == 1 ? 'active' : ''}"}
           = image_tag "about/#{n}.png", :class => "d-block w-100"
-    %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
+    %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselIndicators", role: "button"}
       %span.carousel-control-prev-icon{"aria-hidden" => "true"}
       %span.sr-only Previous
-    %a.carousel-control-next{"data-slide" => "next", href: "#carouselExampleIndicators", role: "button"}
+    %a.carousel-control-next{"data-slide" => "next", href: "#carouselIndicators", role: "button"}
       %span.carousel-control-next-icon{"aria-hidden" => "true"}
       %span.sr-only Next
