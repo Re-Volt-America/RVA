@@ -48,3 +48,5 @@
           .input-group-append
             = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
     = f.hidden_field :id, :value => @team.id
+
+  = link_to 'Edit', edit_team_path(@team), :class => "btn"
