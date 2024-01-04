@@ -29,7 +29,7 @@
             Length
           %dd
             = "#{@track.length} meters"
-          %dt
+          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Original Re-Volt Content"}
             Stock?
           %dd
             = @track.stock ? "Yes" : "No"

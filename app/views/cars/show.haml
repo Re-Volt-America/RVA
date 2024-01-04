@@ -37,7 +37,7 @@
             Category
           %dd
             = category_name(@car.category)
-          %dt
+          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Original Re-Volt Content"}
             Stock?
           %dd
             = "#{@car.stock? ? "Yes" : "No"}"
