@@ -5,7 +5,7 @@
 = form_with :url => import_sessions_path, :method => :post do |f|
   .row
     .col-md-5
-      .field.input-group
+      .field.file-input-group
         = f.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
         = f.file_field :session_log, :accept => ".csv", :class => "form-control-file"
 

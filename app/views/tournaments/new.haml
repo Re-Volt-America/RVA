@@ -12,7 +12,7 @@
         = f.label :date
         = f.date_field :date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
       = f.label :tournament_banner
-      .field.input-group
+      .field.file-input-group
         = f.hidden_field :tournament_banner, :value => @tournament.cached_tournament_banner_data, :id => nil
         = f.file_field :tournament_banner, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group

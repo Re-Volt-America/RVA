@@ -5,7 +5,7 @@
 = form_with :url => import_tracks_path, :method => :post do |f|
   .row
     .col-md-5
-      .field.input-group
+      .field.file-input-group
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
       .field.form-group

@@ -11,7 +11,7 @@
         = f.label :season
         = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
       = f.label :tournament_banner
-      .field.input-group
+      .field.file-input-group
         = f.hidden_field :tournament_banner, :value => tournament.cached_tournament_banner_data, :id => nil
         = f.file_field :tournament_banner, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
