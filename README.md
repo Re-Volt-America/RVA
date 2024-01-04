@@ -6,7 +6,7 @@ In order to play online, we use [RVGL](https://rvgl.org/), a cross-platform rewr
 on a wide variety of platforms. This version of the game is also known for extending the original game experience with
 support for custom, community-made content such as tracks and cars.
 
-On RVA, we organise a series of online sessions where players from all around the world (primarily from the American
+In RVA, we organise a series of online sessions where players from all around the world (primarily from the American
 continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas'
 official rankings.
 
