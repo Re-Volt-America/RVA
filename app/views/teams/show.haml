@@ -27,10 +27,7 @@
         %td
           = link_to @leader.username, user_path(@leader)
         %td
-          - if @leader.country.nil? || @leader.eql?("??")
-            = "?"
-          - else
-            %i.twf{:class => "twf-#{@leader.country.downcase}"}
+          = render :partial => 'users/country_flag', :locals => {:user => @leader}
         %td
           Leader
       - @members.each do |m|
