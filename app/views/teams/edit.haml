@@ -22,7 +22,8 @@
         = form.label :leader
         = form.select :leader, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
       .actions
-        = form.button "Update", :type => "submit", :"data-turbo" => false, :class => "btn"
+        = link_to 'Back', team_path(@team), :class => 'btn btn-sm'
+        = form.button "Update", :type => "submit", :"data-turbo" => false, :class => "btn btn-sm"
     .col-md-7
       - if @team.errors.any?
         #error-explanation

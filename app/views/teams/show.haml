@@ -49,4 +49,5 @@
             = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
     = f.hidden_field :id, :value => @team.id
 
-  = link_to 'Edit', edit_team_path(@team), :class => "btn"
+  = link_to 'Back', teams_path, :class => "btn btn-sm"
+  = link_to 'Edit Team', edit_team_path(@team), :class => "btn btn-sm"

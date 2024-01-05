@@ -10,47 +10,22 @@
     %h1
       Global Team Points
     #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
+
+    %table.table.table-hover
     .table-responsive#teams-table
-      %table.table.table-bordered.table-striped
+      %table.table.table-bordered.table-striped.table-hover
         %tbody
           - @count = 1
           - @sorted_teams.each do |t|
-            %tr
-              %td.pos{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
-                = "#{@count}°"
+            %tr{style: "transform: rotate(0);"}
+              %th.pos{:scope => "row", :style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
+                %a.stretched-link{:href => team_path(t), :style => "color: #{invert_color(t.color, black_white=true)};"}
+                  = "#{@count}°"
               %td.logo.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
-                %img{:src => t.team_logo_url, :alt => ""}
+                %a{:href => team_path(t)}
+                  %img{:src => t.team_logo_url, :alt => ""}
               %td.name.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
                 = t.name
               %td.score.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
                 = t.points
             - @count += 1
-    %h2
-      RVA Teams
-    .text-center
-      .row
-        - @teams.each do |team|
-          .team-card.col-xl-3.col-lg-4.cl-md-4.col-sm-6.col-12
-            %a{:href => team_path(team)}
-              .card
-                .card-header
-                  .text-center
-                    %h2
-                      = "#{team.name}"
-                      %small
-                        = "(#{team.short_name})"
-                .card-body
-                  %img.card-img-top{:src => team.team_logo_url, :alt => ""}
-                .card-footer
-                  .row
-                    .col-5
-                      %p
-                        Leader:
-                    .col-7
-                      %p
-                        - if team.leader
-                          = team.leader.username
-
-  - if user_is_staff?
-    .text-center
-      = link_to "New", new_team_path, :class => "btn btn-sm"
