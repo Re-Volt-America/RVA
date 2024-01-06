@@ -11,7 +11,7 @@
         = form.label :color
         = form.color_field :color, :class => "form-control"
       = form.label :team_image
-      .field.input-group
+      .field.file-input-group
         = form.hidden_field :team_logo, :value => team.cached_team_logo_data, :id => nil
         = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
