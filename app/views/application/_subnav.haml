@@ -17,7 +17,7 @@
         / Rankings dropdown
         - if defined?(rankings)
           %li.nav-item.dropdown
-            %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false", :class => "#{defined?(ranking) ? 'active' : ''}"}
+            %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false", :class => "#{defined?(ranking) && current_page?(ranking_path(ranking)) ? 'active' : ''}"}
               - if defined?(ranking)
                 = "Ranking #{ranking.number}"
               - else
