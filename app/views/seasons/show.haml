@@ -5,8 +5,6 @@
 %h2.mt-4.text-center
   = "#{@season.name} Leaderboards"
 
-= paginate @racer_entries
-
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item
     %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"} Singles
@@ -53,21 +51,27 @@
                 = e.session_count
             - @count += 1
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
-    .table-responsive#teams-table
-      %table.table.table-bordered.table-striped
-        %tbody
-          - @count = 1
-          - @team_entries.each do |e|
-            %tr
-              %td.pos{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
-                = "#{@count}°"
-              %td.logo.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
-                %img{:src => e.team_logo_url, :alt => ""}
-              %td.name.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
-                = e.name
-              %td.score.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
-                = e.points
-            - @count += 1
+    - if @team_entries.none?
+      %h5.text-center.mt-2
+        = "No team results to display"
+    - else
+      .table-responsive#teams-table
+        %table.table.table-bordered.table-striped
+          %tbody
+            - @count = 1
+            - @team_entries.each do |e|
+              %tr
+                %td.pos{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                  = "#{@count}°"
+                %td.logo.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                  %img{:src => e.team_logo_url, :alt => ""}
+                %td.name.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                  = e.name
+                %td.score.text-center{:style => "background-color: #{e.color}; color: #{invert_color(e.color, black_white=true)};"}
+                  = e.points
+              - @count += 1
+
+= paginate @racer_entries
 
 - if user_is_admin?
   = link_to 'Edit Season', edit_season_path(@season), :class => "btn mt-2"
