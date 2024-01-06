@@ -20,7 +20,7 @@
         = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
         = form.label :leader
-        = form.select :leader, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
+        = form.select :leader, @sorted_members.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
       .actions
         = link_to 'Back', team_path(@team), :class => 'btn btn-sm'
         = form.button "Update", :type => "submit", :"data-turbo" => false, :class => "btn btn-sm"

@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
   # GET /teams or /teams.json
   def index
     @teams = Team.all
-    @sorted_teams = Team.all.sort_by(&:points).reverse!
+    @sorted_teams = @teams.sort_by(&:points).reverse!
 
     respond_with @teams do |format|
       format.json { render :layout => false }
@@ -18,14 +18,22 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    @no_team_users = User.all.filter { |u| u.team_id.nil? }
   end
 
   # GET /teams/1/edit
-  def edit; end
+  def edit
+    @sorted_members = @team.members.sort_by { |u| u.username.downcase }
+
+    # NOTE: Select leader by default
+    @sorted_members.insert(0, @sorted_members.delete(@team.leader))
+  end
 
   # POST /teams or /teams.json
   def create
     @team = Team.new(team_params)
+    @team.members << @team.leader
+    @team.leader.save!
 
     respond_to do |format|
       if @team.save
@@ -42,7 +50,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to teams_path, :notice => 'Team was successfully updated.' }
+        format.html { redirect_to team_path(@team), :notice => 'Team was successfully updated.' }
         format.json { render :show, :status => :ok, :location => @team, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -57,7 +65,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.update!
-        format.html { redirect_to team_path(@team), :notice => "#{new_member.username} was successfully added to #{@team.name}." }
+        format.html { redirect_to team_path(@team), :notice => "#{new_member.username} was successfully added to #{@team.name}" }
       else
         format.html { redirect_to team_path(@team), :status => :unprocessable_entity }
       end
@@ -67,7 +75,10 @@ class TeamsController < ApplicationController
   # GET /teams/1 or /teams/1.json
   def show
     @leader = @team.leader
-    @members = @team.members
+
+    @members = @team.members.filter { |m| !m.username.eql?(@leader.username) }
+
+    @no_team_users = User.all.filter { |u| u.team_id.nil? }
 
     respond_with @team do |format|
       format.json { render :layout => false }

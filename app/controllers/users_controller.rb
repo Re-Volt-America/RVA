@@ -52,6 +52,17 @@ class UsersController < ApplicationController
     user_attr_names.each do |attr|
       next if params[:user][attr].nil?
 
+      if attr.eql?("team_id")
+        team = Team.all.find { |t| t.leader.id.eql?(user.id) }
+
+        # If user is team leader, we cannot move them to a different team ... we abort
+        if !team.nil? && !team.id.to_s.eql?(params[:user][attr])
+          respond_to do |format|
+            format.html { redirect_to user_path(user), :notice => "#{user.username} is the leader of #{team.name}, therefore they cannot be removed from it" }
+          end and return
+        end
+      end
+
       user[attr] = params[:user][attr]
     end
 

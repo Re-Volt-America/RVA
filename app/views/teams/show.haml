@@ -44,7 +44,7 @@
     .row
       .col-md-5
         .input-group
-          = f.select :member, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
+          = f.select :member, @no_team_users.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
           .input-group-append
             = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
     = f.hidden_field :id, :value => @team.id

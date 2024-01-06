@@ -62,6 +62,10 @@ class User
   field :locale, :type => String, :default => 'en_us'
   field :country, :type => String
 
+  def has_team?
+    !self.team.nil?
+  end
+
   def to_param
     username
   end

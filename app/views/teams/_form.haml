@@ -16,7 +16,7 @@
         = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
         = form.label :leader
-        = form.select :leader, User.all.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
+        = form.select :leader, @no_team_users.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
       .actions
         = form.button "Create Team", :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7

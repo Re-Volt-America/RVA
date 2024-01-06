@@ -29,3 +29,7 @@
               %td.score.text-center{:style => "background-color: #{t.color}; color: #{invert_color(t.color, black_white=true)};"}
                 = t.points
             - @count += 1
+
+  - if user_is_admin?
+    .text-center
+      = link_to "New", new_team_path, :class => "btn btn-sm"
