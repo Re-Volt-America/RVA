@@ -6,11 +6,32 @@
   }
 
   table {
-    h1, h2, h3 {
-      font-family: "Segoe UI", sans-serif;
-    }
+    background-color: #212121;
+    border: 1px solid #646464;
+  }
 
+  th {
+    background-color: #1a1a1a;
+    color: #ffd966;
+    border: 0;
+    height: 40px;
+
+    a {
+      color: #ffd966;
+    }
+  }
+
+  tr {
     color: #beb8bc;
+    border: 0;
+  }
+
+  td {
+    border: 0;
+  }
+
+  a {
+    color: #fff;
   }
 
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
