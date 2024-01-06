@@ -184,6 +184,7 @@ module RVA
 
     config.hosts << ORG::DOMAIN
     config.hosts << "staging.#{ORG::DOMAIN}"
+    config.hosts << "production.#{ORG::DOMAIN}"
 
     config.generators.system_tests = nil
     config.generators do |g|
