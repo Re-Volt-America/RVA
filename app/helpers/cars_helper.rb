@@ -1,7 +1,12 @@
 module CarsHelper
-  # @return [Array] All the cars of the passed category
+  # @return [Array] All the cars of the passed category from the current season. If there is no current season, then
+  # from all cars in the database.
   def cars_of_category(category)
-    Car.all.filter { |c| c.category == category }
+    if current_season.nil?
+      Car.all.filter { |c| c.category == category }
+    else
+      current_season.cars.filter { |c| c.category == category }
+    end
   end
 
   # @param category [Integer] Category number
