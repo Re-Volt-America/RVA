@@ -7,7 +7,12 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.all
+    if current_season.nil?
+      @tracks = Track.all
+    else
+      @tracks = current_season.tracks
+    end
+
     @tracks = Kaminari.paginate_array(@tracks).page(params[:page]).per(12)
 
     respond_with @tracks do |format|
