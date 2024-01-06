@@ -6,7 +6,7 @@
 %h2.mb-4
   = t('rva.tracks.title')
 
-= render :partial => "application/subnav"
+= render :partial => "application/subnav", :locals => {:season => current_season}
 
 #tracks
   = paginate @tracks

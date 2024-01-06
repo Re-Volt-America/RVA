@@ -7,7 +7,7 @@
 %h2.mb-4
   = t('rva.cars.title')
 
-= render :partial => "application/subnav", :locals => {:car => @car, :category => @car.category}
+= render :partial => "application/subnav", :locals => {:season => @car.season, :category => @car.category, :car => @car}
 
 #tracks
   .container

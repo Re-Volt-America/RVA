@@ -5,7 +5,7 @@
 %h2
   = t('rva.cars.title')
 
-= render :partial => "application/subnav"
+= render :partial => "application/subnav", :locals => {:season => current_season}
 
 #cars
   .row

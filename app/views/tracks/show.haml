@@ -7,7 +7,7 @@
 %h2
   = t('rva.tracks.title')
 
-= render :partial => "application/subnav", :locals => {:track => @track}
+= render :partial => "application/subnav", :locals => {:season => @track.season, :track => @track}
 
 #tracks
   .container

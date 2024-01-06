@@ -7,7 +7,7 @@
   %h2
     = "#{t('rva.cars.title')} - #{t("classes.pro")}"
 
-  = render :partial => "application/subnav", :locals => {:category => SYS::CATEGORY::PRO}
+  = render :partial => "application/subnav", :locals => {:season => current_season, :category => SYS::CATEGORY::PRO}
 
   .sticky-top.search-bar
     .row
