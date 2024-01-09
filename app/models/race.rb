@@ -8,11 +8,18 @@ class Race
 
   field :track_name, :type => String
   field :laps, :type => Integer
-  field :racers_count, :type => Integer
+
+  # NOTE: total_racers is the number of racers that STARTED the race, not the number of racers that FINISHED it.
+  # For the latter, use the finished_racers_count method.
+  field :total_racers, :type => Integer
 
   validates_presence_of :track_name
   validates_presence_of :laps
-  validates_presence_of :racers_count
+  validates_presence_of :total_racers
+
+  def finished_racers_count
+    racer_entries.length
+  end
 
   def get_racer_names
     names = []

@@ -287,16 +287,16 @@ class RvaCalculateResultsService
     car = find_car(entry.car_name)
     car_bonus = get_car_bonus(car)
 
-    # Car is above the current category's class or invalid, therefore points are invalidated
+    # Car is above the current category or is invalid, therefore points are invalidated
     return 0.0 if car_bonus.nil?
 
     final_multiplier = (car.multiplier * car_bonus).round(3)
     final_multiplier = 4.0 if final_multiplier > 4.0
 
-    big_race = race.racer_entries.length >= 10
+    big_race = race.finished_racers_count >= 10
 
-    # Racer score
-    (get_position_score(entry.position, big_race) * final_multiplier).round(3)
+    racer_score = get_position_score(entry.position, big_race) * final_multiplier
+    racer_score.round(3)
   end
 
   def get_position_score(position, big_scoring)

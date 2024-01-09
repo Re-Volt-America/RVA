@@ -80,7 +80,7 @@ class CsvImportSessionsService
         :track_name => race_arr[1][1],
         :racer_entries => racer_entries,
         :laps => race_arr[0][4],
-        :racers_count => race_arr[1][2]
+        :total_racers => race_arr[1][2]
       }
 
       races_hash = races_hash.merge(num_races.to_s => race_hash)
