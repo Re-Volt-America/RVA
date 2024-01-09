@@ -293,7 +293,7 @@ class RvaCalculateResultsService
     final_multiplier = (car.multiplier * car_bonus).round(3)
     final_multiplier = 4.0 if final_multiplier > 4.0
 
-    big_race = race.racers_count >= 10
+    big_race = race.racer_entries.length >= 10
 
     # Racer score
     (get_position_score(entry.position, big_race) * final_multiplier).round(3)
