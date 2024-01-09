@@ -13,6 +13,7 @@ RVA::Application.routes.draw do
   get 'staff' => 'staff#index'
   get 'points' => 'points#index'
   get 'stats' => 'stats#index'
+  get 'faq' => 'faq#index'
 
   resources :repositories
 
