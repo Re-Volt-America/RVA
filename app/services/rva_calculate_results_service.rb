@@ -268,7 +268,7 @@ class RvaCalculateResultsService
       positions_sum += entry.position
     end
 
-    (positions_sum / @races.size).round(2)
+    (positions_sum / race_count).round(2)
   end
 
   def get_obtained_points(racer)
