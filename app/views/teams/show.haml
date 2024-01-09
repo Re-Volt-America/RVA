@@ -27,7 +27,7 @@
         %td
           = link_to @leader.username, user_path(@leader)
         %td
-          = render :partial => 'users/country_flag', :locals => {:user => @leader}
+          = render :partial => 'users/country_flag', :locals => {:country => @leader.country}
         %td
           Leader
       - @members.each do |m|
@@ -35,7 +35,7 @@
           %td
             = link_to m.username, user_path(m)
           %td
-            = render :partial => 'users/country_flag', :locals => {:user => m}
+            = render :partial => 'users/country_flag', :locals => {:country => m.country}
           %td
             Member
 

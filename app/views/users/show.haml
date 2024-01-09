@@ -6,7 +6,7 @@
     .col-md-12
       %h1.username
         = "#{@user.username}"
-        = render :partial => 'country_flag', :locals => {:user => @user}
+        = render :partial => 'country_flag', :locals => {:country => @user.country}
       = render :partial => 'badges', locals: { user: @user }
     .col-md-4.mt-4
       .stats

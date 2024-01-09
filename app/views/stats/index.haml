@@ -35,7 +35,7 @@ Sorted by:
           %td.rank.text-center
             = "#{@count - 1}"
           %td.country-flag.text-center
-            = render :partial => 'users/country_flag', :locals => {:user => user}
+            = render :partial => 'users/country_flag', :locals => {:country => user.country}
           %td.racer.align-middle
             = link_to user.username, user_path(user)
           %td.stat-number.align-middle
