@@ -117,3 +117,24 @@ nav {
     color: #000 !important;
   }
 }
+
+.nav-pills > ul > li > a,
+.nav-pills > li > a {
+  position: relative;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #beb8bc;
+}
+
+.nav-pills > ul > li > a:hover,
+.nav-pills > li > a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #fff !important;
+  color: #000 !important;
+}
