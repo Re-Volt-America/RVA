@@ -41,10 +41,10 @@
   %script $(document).ready(function() { $('span.highlight > code').each(function(i, block) { hljs.highlightBlock(block); }); });
   %script{async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-20N51BL34X"}
   :javascript
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-20N51BL34X');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-20N51BL34X');
 
   = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
   = javascript_include_tag 'application', 'data-turbo-track': 'reload'
