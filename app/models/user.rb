@@ -21,6 +21,9 @@ class User
   before_create :create_profile
   before_create :create_stats
 
+  # NOTE: This should never happen, but we cannot allow negative counts under any circumstances
+  before_save :filter_negatives
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :lockable,
          :trackable, :omniauthable
 
@@ -105,5 +108,21 @@ class User
       :official_score => 0.0,
       :obtained_points => 0
     )
+  end
+
+  def filter_negatives
+    stats.race_wins = 0 if stats.race_wins && stats.race_wins < 0
+    stats.race_win_rate = 0 if stats.race_win_rate && stats.race_win_rate < 0
+    stats.race_podiums = 0 if stats.race_podiums && stats.race_podiums < 0
+    stats.race_count = 0 if stats.race_count && stats.race_count < 0
+    stats.positions_sum = 0 if stats.positions_sum && stats.positions_sum < 0
+    stats.session_wins = 0 if stats.session_wins && stats.session_wins < 0
+    stats.session_win_rate = 0 if stats.session_win_rate && stats.session_win_rate < 0
+    stats.session_podiums = 0 if stats.session_podiums && stats.session_podiums < 0
+    stats.session_count = 0 if stats.session_count && stats.session_count < 0
+    stats.average_position = 0.0 if stats.average_position && stats.average_position < 0.0
+    stats.participation_rate = 0.0 if stats.participation_rate && stats.participation_rate < 0.0
+    stats.official_score = 0.0 if stats.official_score && stats.official_score < 0.0
+    stats.obtained_points = 0 if stats.obtained_points && stats.obtained_points < 0
   end
 end
