@@ -16,9 +16,9 @@ class SeasonsController < ApplicationController
 
   # GET /seasons/1 or /seasons/1.json
   def show
-    @count = 1
     @racer_entries = @season.racer_result_entries
     @racer_entries = Kaminari.paginate_array(@racer_entries).page(params[:page]).per(16)
+    @count = ((@racer_entries.current_page - 1) * @racer_entries.limit_value) + 1
 
     @team_entries = @season.team_result_entries
 
