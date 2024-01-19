@@ -10,7 +10,7 @@
               = "Seasons #{(defined?(season)) ? "»" : ""}"
 
           / Season »
-          - if defined?(season)
+          - if defined?(season) && !season.nil?
             %li.nav-item
               %a.nav-link{:href => season_path(season), :class => "#{(current_page?(season_path(season)) || current_page?(edit_season_path(season))) ? 'active' : ''}"}
                 = "#{season.name} #{(defined?(ranking) || current_page?(tracks_path) || defined?(track) || current_page?(cars_path) || defined?(category) || defined?(car)) ? "»" : ""}"
@@ -92,7 +92,7 @@
           = "Seasons"
 
       / Season »
-      - if defined?(season)
+      - if defined?(season) && !season.nil?
         %li
           %a{:href => season_path(season), :class => "#{(current_page?(season_path(season)) || current_page?(edit_season_path(season))) ? 'active' : ''}"}
             = season.name
