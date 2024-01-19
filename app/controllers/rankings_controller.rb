@@ -20,7 +20,7 @@ class RankingsController < ApplicationController
     @sessions = Kaminari.paginate_array(@sessions).page(params[:page]).per(8)
 
     @racer_entries = @ranking.racer_result_entries
-    @count = ((@racer_entries.current_page - 1) * @racer_entries.limit_value) + 1
+    @count = 1
 
     @team_entries = @ranking.team_result_entries
 
