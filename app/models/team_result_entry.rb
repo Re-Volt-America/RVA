@@ -2,7 +2,8 @@ class TeamResultEntry
   include Mongoid::Document
   include TeamLogoUploader::Attachment(:team_logo)
 
-  before_save :filter_negatives
+  # NOTE: This should never happen, but we cannot allow negative counts under any circumstances
+  before_save :filter_negative_points
 
   embedded_in :season
   embedded_in :ranking
@@ -17,7 +18,9 @@ class TeamResultEntry
   validates_presence_of :name
   validates_presence_of :short_name
 
-  def filter_negatives
+  def filter_negative_points
+    return if points.nil?
+
     points = 0 if points && points < 0
   end
 end
