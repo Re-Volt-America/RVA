@@ -67,12 +67,18 @@ class RankingsController < ApplicationController
 
   # DELETE /rankings/1 or /rankings/1.json
   def destroy
-    @ranking.sessions.each(&:destroy)
-    @ranking.destroy
+    sessions = @ranking.sessions
 
     respond_to do |format|
-      format.html { redirect_to rankings_url, :notice => 'Ranking was successfully deleted.' }
-      format.json { head :no_content }
+      if @ranking.destroy!
+        sessions.each(&destroy)
+
+        format.html { redirect_to rankings_url, :notice => 'Ranking was successfully deleted.' }
+        format.json { head :no_content }
+      else
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @ranking.errors, :status => :unprocessable_entity, :layout => false }
+      end
     end
   end
 

@@ -113,16 +113,15 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
 
     respond_to do |format|
-      if @car.save
+      if @car.save!
         format.html { redirect_to car_url(@car), :notice => 'Car was successfully created.' }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
+
+        Rails.cache.delete(category_cache_key(params[:category]))
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
-        return
-      end
-
-      Rails.cache.delete(category_cache_key(params[:category]))
+      end and return
     end
   end
 
@@ -147,18 +146,28 @@ class CarsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to new_car_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
         format.html { redirect_to new_car_path, :notice => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
-      end
+      end and return
+    end
 
-      return
+    if params[:season].nil? || params[:season].empty?
+      respond_to do |format|
+        format.html { redirect_to new_car_path, :notice => 'You must select a Season.' }
+        format.json { render :json => 'You must select a Season.', :status => :bad_request, :layout => false }
+      end and return
+    end
+
+    if params[:category].nil? || params[:category].empty?
+      respond_to do |format|
+        format.html { redirect_to new_car_path, :notice => 'You must select a Category.' }
+        format.json { render :json => 'You must select a car Category.', :status => :bad_request, :layout => false }
+      end and return
     end
 
     @cars = CsvImportCarsService.new(file, params[:season], params[:category]).call
@@ -167,22 +176,20 @@ class CarsController < ApplicationController
       if @cars.empty?
         format.html { redirect_to new_car_path, :notice => 'No cars were created. Maybe they already exist?' }
         format.json { render :show, :status => :ok, :layout => false }
-        return
-      end
+      end and return
 
       @cars.each do |car|
         if car.save!
           format.html { redirect_to new_car_path, :notice => 'Cars successfully imported.' }
           format.json { render :show, :status => :created, :location => car, :layout => false }
+
+          Rails.cache.delete(category_cache_key(params[:category].to_i))
         else
           format.html { render :new, :status => :unprocessable_entity }
           format.json { render :json => car.errors, :status => :unprocessable_entity, :layout => false }
-          return
-        end
+        end and return
       end
     end
-
-    Rails.cache.delete(category_cache_key(params[:category].to_i))
   end
 
   # DELETE /cars/1 or /cars/1.json

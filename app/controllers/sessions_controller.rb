@@ -71,23 +71,26 @@ class SessionsController < ApplicationController
     require 'stats_service'
     require 'team_points_service'
 
-    @rva_results = RvaCalculateResultsService.new(@session).call
-
-    unless @session.nil?
-      if @session.teams?
-        TeamPointsService.new(@session, @rva_results).remove_team_points
-      else
-        StatsService.new(@session, @rva_results).remove_stats
-      end
-    end
-
-    Rails.cache.delete("Session:#{@session.id}")
-
-    @session.destroy
+    session = Session.new(@session.attributes) # copy
 
     respond_to do |format|
-      format.html { redirect_to sessions_url, :notice => 'Session was successfully deleted.' }
-      format.json { head :no_content }
+      if @session.destroy!
+        rva_results = RvaCalculateResultsService.new(session).call
+
+        if session.teams?
+          TeamPointsService.new(session, rva_results).remove_team_points
+        else
+          StatsService.new(session, rva_results).remove_stats
+        end
+
+        format.html { redirect_to sessions_url, :notice => 'Session was successfully deleted.' }
+        format.json { head :no_content }
+
+        Rails.cache.delete("Session:#{@session.id}")
+      else
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
+      end
     end
   end
 
@@ -110,18 +113,14 @@ class SessionsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
         format.html { redirect_to new_session_path, :note => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
@@ -131,19 +130,17 @@ class SessionsController < ApplicationController
       if @session.save!
         format.html { redirect_to session_url(@session), :notice => 'Session was successfully imported.' }
         format.json { render :show, :status => :created, :location => @session, :layout => false }
+
+        Rails.cache.delete('recent_sessions')
+
+        # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
+        # in cache is by expiring their keys for each new session upload.
+        Rails.cache.delete('current_ranking')
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
-
-        return
-      end
+      end and return
     end
-
-    Rails.cache.delete('recent_sessions')
-
-    # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
-    # in cache is by expiring their keys for each new session upload.
-    Rails.cache.delete('current_ranking')
   end
 
   private

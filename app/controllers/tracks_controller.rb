@@ -71,18 +71,21 @@ class TracksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to new_track_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
         format.html { redirect_to new_track_path, :notice => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
-      end
+      end and return
+    end
 
-      return
+    if params[:season].nil? || params[:season].empty?
+      respond_to do |format|
+        format.html { redirect_to new_track_path, :notice => 'You must select a Season.' }
+        format.json { render :json => 'You must select a Season.', :status => :bad_request, :layout => false }
+      end and return
     end
 
     @tracks = CsvImportTracksService.new(file, params[:season]).call
@@ -91,8 +94,7 @@ class TracksController < ApplicationController
       if @tracks.empty?
         format.html { redirect_to new_track_path, :notice => 'No tracks were created. Maybe they already exist?' }
         format.json { render :show, :status => :ok, :layout => false }
-        return
-      end
+      end and return
 
       @tracks.each do |track|
         if track.save!

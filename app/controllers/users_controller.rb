@@ -96,23 +96,24 @@ class UsersController < ApplicationController
       respond_to do |format|
         format.html { redirect_to users_new_path, :notice => 'You must select a CSV file.' }
         format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
         format.html { redirect_to users_new_path, :notice => 'You may only upload CSV files.' }
         format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
-      end
-
-      return
+      end and return
     end
 
     @users = CsvImportUsersService.new(file).call
 
     respond_to do |format|
+      if @users.empty?
+        format.html { redirect_to users_new_path, :notice => 'No users were created. Maybe the file format is incorrect?' }
+        format.json { render :show, :status => :ok, :layout => false }
+      end and return
+
       @users.each do |user|
         if user.save!
           format.html { redirect_to root_path, :notice => 'Users successfully imported.' }

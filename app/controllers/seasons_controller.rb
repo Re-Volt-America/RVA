@@ -39,8 +39,6 @@ class SeasonsController < ApplicationController
   def create
     @season = Season.new(season_params)
 
-    Rails.cache.delete('current_season')
-
     respond_to do |format|
       if @season.save!
         6.times do |n|
@@ -49,6 +47,8 @@ class SeasonsController < ApplicationController
 
         format.html { redirect_to season_url(@season), :notice => 'Season was successfully created.' }
         format.json { render :show, :status => :created, :location => @season, :layout => false }
+
+        Rails.cache.delete('current_season')
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }
@@ -76,14 +76,18 @@ class SeasonsController < ApplicationController
       r.destroy!
     end
 
-    @season.tracks.each(&:destroy)
-    @season.cars.each(&:destroy)
-
-    @season.destroy!
-
     respond_to do |format|
-      format.html { redirect_to seasons_url, :notice => 'Season was successfully deleted.' }
-      format.json { head :no_content }
+      if @season.destroy!
+        rankings.each(&destroy)
+        tracks.each(&destroy)
+        cars.each(&destroy)
+
+        format.html { redirect_to seasons_url, :notice => 'Season was successfully deleted.' }
+        format.json { head :no_content }
+      else
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }
+      end
     end
   end
 
