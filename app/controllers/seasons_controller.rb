@@ -71,17 +71,34 @@ class SeasonsController < ApplicationController
 
   # DELETE /seasons/1 or /seasons/1.json
   def destroy
+    require 'rva_calculate_results_service'
+    require 'stats_service'
+    require 'team_points_service'
+
     @season.rankings.each do |r|
-      r.sessions.each(&:destroy)
+      r.sessions.each do |s|
+
+        rva_results = RvaCalculateResultsService.new(s).call
+
+        if s.teams?
+          TeamPointsService.new(s, rva_results).remove_team_points
+        else
+          StatsService.new(s, rva_results).remove_stats
+        end
+
+        Rails.cache.delete("Session:#{s.id}")
+
+        s.destroy!
+      end
+
       r.destroy!
     end
 
+    @season.tracks.each(&:destroy)
+    @season.cars.each(&:destroy)
+
     respond_to do |format|
       if @season.destroy!
-        rankings.each(&destroy)
-        tracks.each(&destroy)
-        cars.each(&destroy)
-
         format.html { redirect_to seasons_url, :notice => 'Season was successfully deleted.' }
         format.json { head :no_content }
       else

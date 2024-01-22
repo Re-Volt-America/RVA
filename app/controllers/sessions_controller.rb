@@ -71,18 +71,16 @@ class SessionsController < ApplicationController
     require 'stats_service'
     require 'team_points_service'
 
-    session = Session.new(@session.attributes) # copy
+    rva_results = RvaCalculateResultsService.new(@session).call
+
+    if @session.teams?
+      TeamPointsService.new(@session, rva_results).remove_team_points
+    else
+      StatsService.new(@session, rva_results).remove_stats
+    end
 
     respond_to do |format|
       if @session.destroy!
-        rva_results = RvaCalculateResultsService.new(session).call
-
-        if session.teams?
-          TeamPointsService.new(session, rva_results).remove_team_points
-        else
-          StatsService.new(session, rva_results).remove_stats
-        end
-
         format.html { redirect_to sessions_url, :notice => 'Session was successfully deleted.' }
         format.json { head :no_content }
 
