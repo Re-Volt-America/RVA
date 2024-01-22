@@ -9,6 +9,10 @@
         = t("staff.description")
   %hr
 
+  - if @admins.none? && @mods.none? && @organizers.none?
+    %h5.text-center
+      = "No staff members to display"
+
   - if @admins.any?
     .row.staff-group
       .col-md-12
