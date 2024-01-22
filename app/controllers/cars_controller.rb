@@ -187,7 +187,7 @@ class CarsController < ApplicationController
         else
           format.html { render :new, :status => :unprocessable_entity }
           format.json { render :json => car.errors, :status => :unprocessable_entity, :layout => false }
-        end and return
+        end
       end
     end
   end
