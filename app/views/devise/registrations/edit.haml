@@ -1,111 +1,126 @@
 .container
-  %h3 Edit User
+  %h3 Settings
   %hr/
-  = render "devise/shared/error_messages", resource: resource
-  .row
-    .col-md-5.pull-right
-      %h4 Change Email
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        .form-group
-          .input-group
-            = f.email_field :email, autofocus: true, :placeholder => 'New Email', :class => 'form-control'
-        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-          .devise-text-pleasant
-            %i.fa.fa-exclamation-triangle{"aria-hidden" => "true"}
-            Awaiting confirmation for: #{resource.unconfirmed_email}
-        .form-group
-          .input-group
-            = f.password_field :current_password, :placeholder => 'Current password', :class => 'form-control'
-        .btn-toolbar
-          .actions
-            = f.submit "Update", :class => 'btn btn-sm'
-      %br/
-      %h4 Change password
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        .form-group
-          .input-group
-            - if @minimum_password_length
-              = f.password_field :password, autocomplete: "new-password", :placeholder => "New password (#{@minimum_password_length} characters minimum)", :class => 'form-control'
-            - else
-              = f.password_field :password, autocomplete: "new-password", :placeholder => "New password", :class => 'form-control'
-        .form-group
-          .input-group
-            = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirm new password', :class => 'form-control'
-        .form-group
-          .input-group
-            = f.password_field :current_password, autocomplete: "current-password", :placeholder => 'Current password', :class => 'form-control'
-        .btn-toolbar
-          .actions
-            = f.submit "Update", :class => 'btn btn-sm'
-        %br/
-    .col-sm-1
-    .col.pull-left
-      %h4 Change your info
-      = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
-        = f.fields_for :profile do |profile|
-          %br/
-          %h6 Gender
-          .form-group
-            .input-group
-              = profile.text_field :gender, :placeholder => 'Gender', :autocomplete => 'gender', :class => 'form-control'
-          %h6
-            Nationality
-            %small
-              (National flag)
-          .field.form-group
-            = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
-          %h6 Location
-          .form-group
-            .input-group
-              = profile.text_field :location, :placeholder => 'Location', :autocomplete => 'location', :class => 'form-control'
-          %h6 Occupation
-          .form-group
-            .input-group
-              = profile.text_field :occupation, :placeholder => 'Occupation', :autocomplete => 'occupation', :class => 'form-control'
-          %h6 Interests
-          .form-group
-            .input-group
-              = profile.text_field :interests, :placeholder => 'Interests', :autocomplete => 'interests', :class => 'form-control'
-          %h6 Public Email
-          .form-group
-            .input-group
-              = profile.text_field :public_email, :placeholder => 'Public Email', :autocomplete => 'public_email', :class => 'form-control'
-          %h6 Discord
-          .form-group
-            .input-group
-              = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
-          .form-group
-            .input-group
-              .input-group-prepend
-                .input-group-text.devise-form-input-prepend instagram.com/
-              = profile.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control'
-          .form-group
-            .input-group
-              .input-group-prepend
-                .input-group-text.devise-form-input-prepend twitter.com/
-              = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
-          .form-group
-            .input-group
-              .input-group-prepend
-                .input-group-text.devise-form-input-prepend github.com/
-              = profile.text_field :github, :class => 'form-control'
-          .form-group
-            .input-group
-              .input-group-prepend
-                .input-group-text.devise-form-input-prepend crowdin.com/profile/
-              = profile.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control'
-          .form-group
-            .input-group
-              .input-group-prepend
-                .input-group-text.devise-form-input-prepend steamcommunity.com/id/
-              = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
-          %h6 About me... (You may use html)
-          .row
+
+  .mb-3
+    = render "devise/shared/error_messages", resource: resource
+
+  %ul.nav.nav-tabs.mb-3{role: "tablist"}
+    %li.nav-item
+      %a#edit-profile-tab.nav-link.active{"aria-controls" => "edit-profile", "aria-selected" => "true", "data-toggle" => "tab", href: "#edit-profile", role: "tab"} Edit Profile
+    %li.nav-item
+      %a#change-email-tab.nav-link{"aria-controls" => "change-email", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-email", role: "tab"} Change Email
+    %li.nav-item
+      %a#change-password-tab.nav-link{"aria-controls" => "change-password", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-password", role: "tab"} Change Password
+
+  .tab-content
+    #edit-profile.tab-pane.fade.show.active{:"aria-labelledby" => "edit-profile-tab", role: "tabpanel"}
+      .row
+        .col.pull-left
+          = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+            = f.fields_for :profile do |profile|
+              %h6 Gender
+              .form-group
+                .input-group
+                  = profile.text_field :gender, :placeholder => 'Gender', :autocomplete => 'gender', :class => 'form-control'
+              %h6
+                Nationality
+                %small
+                  (National flag)
+              .field.form-group
+                = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
+              %h6 Location
+              .form-group
+                .input-group
+                  = profile.text_field :location, :placeholder => 'Location', :autocomplete => 'location', :class => 'form-control'
+              %h6 Occupation
+              .form-group
+                .input-group
+                  = profile.text_field :occupation, :placeholder => 'Occupation', :autocomplete => 'occupation', :class => 'form-control'
+              %h6 Interests
+              .form-group
+                .input-group
+                  = profile.text_field :interests, :placeholder => 'Interests', :autocomplete => 'interests', :class => 'form-control'
+              %h6 Public Email
+              .form-group
+                .input-group
+                  = profile.text_field :public_email, :placeholder => 'Public Email', :autocomplete => 'public_email', :class => 'form-control'
+              %h6 Discord
+              .form-group
+                .input-group
+                  = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
+              .form-group
+                .input-group
+                  .input-group-prepend
+                    .input-group-text.devise-form-input-prepend instagram.com/
+                  = profile.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control'
+              .form-group
+                .input-group
+                  .input-group-prepend
+                    .input-group-text.devise-form-input-prepend twitter.com/
+                  = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
+              .form-group
+                .input-group
+                  .input-group-prepend
+                    .input-group-text.devise-form-input-prepend github.com/
+                  = profile.text_field :github, :class => 'form-control'
+              .form-group
+                .input-group
+                  .input-group-prepend
+                    .input-group-text.devise-form-input-prepend crowdin.com/profile/
+                  = profile.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control'
+              .form-group
+                .input-group
+                  .input-group-prepend
+                    .input-group-text.devise-form-input-prepend steamcommunity.com/id/
+                  = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
+              %h6 About me... (You may use html)
+              .row
+                .form-group
+                  = profile.text_area :about, :placeholder => 'Write something interesting...', :autocomplete => 'about_me', :class => 'form-control'
+              .form-group
+                .input-group
+                  = f.password_field :current_password, :placeholder => 'Current password', :class => 'form-control'
+              .btn-toolbar
+                .actions
+                  = f.submit "Update", :class => 'btn btn-sm'
+
+    #change-email.tab-pane.fade.show{:"aria-labelledby" => "change-email-tab", role: "tabpanel"}
+      .row
+        .col-md-5
+          %h4 Change Email
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
             .form-group
-              = profile.text_area :about, :placeholder => 'Write something interesting...', :autocomplete => 'about_me', :class => 'form-control'
-          .form-group
-            .input-group
-              = f.password_field :current_password, :placeholder => 'Current password', :class => 'form-control'
-          .btn-toolbar
-            .actions
-              = f.submit "Update", :class => 'btn btn-sm'
+              .input-group
+                = f.email_field :email, autofocus: true, :placeholder => 'New Email', :class => 'form-control'
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              .devise-text-pleasant
+                %i.fa.fa-exclamation-triangle{"aria-hidden" => "true"}
+                Awaiting confirmation for: #{resource.unconfirmed_email}
+            .form-group
+              .input-group
+                = f.password_field :current_password, :placeholder => 'Current password', :class => 'form-control'
+            .btn-toolbar
+              .actions
+                = f.submit "Update", :class => 'btn btn-sm'
+
+    #change-password.tab-pane.fade.show{:"aria-labelledby" => "change-password-tab", role: "tabpanel"}
+      .row
+        .col-md-5
+          %h4 Change password
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            .form-group
+              .input-group
+                - if @minimum_password_length
+                  = f.password_field :password, autocomplete: "new-password", :placeholder => "New password (#{@minimum_password_length} characters minimum)", :class => 'form-control'
+                - else
+                  = f.password_field :password, autocomplete: "new-password", :placeholder => "New password", :class => 'form-control'
+            .form-group
+              .input-group
+                = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirm new password', :class => 'form-control'
+            .form-group
+              .input-group
+                = f.password_field :current_password, autocomplete: "current-password", :placeholder => 'Current password', :class => 'form-control'
+            .btn-toolbar
+              .actions
+                = f.submit "Update", :class => 'btn btn-sm'
