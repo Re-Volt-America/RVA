@@ -71,3 +71,23 @@
     line-height: inherit;
   }
 }
+
+#faq-box {
+  background-color: #000000;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 5px;
+  display: inline-block;
+
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
