@@ -50,6 +50,12 @@ hr {
   padding: 0;
 }
 
+#rounded hr {
+    margin-top: 40px;
+    border-top: 8px solid #ffffff;
+    border-radius: 5px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizelegibility;
 }
