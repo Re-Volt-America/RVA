@@ -11,3 +11,13 @@
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVGL Launcher", :img_file => "rvgl_launcher.png", :download_link => DISTRIBUTE::RVGL_LAUNCHER, :target => "_blank"}
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Car Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_CARS, :target => "_self"}
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Track Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_TRACKS, :target => "_self"}
+
+  #rounded
+    %hr
+
+.container
+  #faq-box
+    %p Have a question? Need answers?
+    %a{ href: faq_path }
+      %button.btn.btn-sm{type: "button"} Check our FAQ!
+
