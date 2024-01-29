@@ -46,8 +46,6 @@
             %i.fa.fa-download{:"aria-hidden" => "true"}
             = t('nav.downloads')
         %li.nav-item
-          %a.nav-link{:href => faq_path}
-            = "FAQ"
       %ul.navbar-nav
         %li.dropdown
           %a.nav-link.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}
