@@ -34,17 +34,18 @@ en:
     play: "Play"
     tracks: "Tracks"
     cars: "Cars"
+    seasons: "Seasons"
     league:
       title: "League"
-      seasons: "Seasons"
+      leaderboard: "Leaderboard"
       point-system: "Points System"
       teams: "Teams"
       tournaments: "Tournaments"
     discussions: "Discussions"
-    players:
-      title: "Players"
-      staff: "Staff"
-      stats: "Stats"
+    user-menu:
+      log-out: "Log out"
+      login: "Login"
+      register: "Register"
     downloads: "Downloads"
   footer:
     policies:
