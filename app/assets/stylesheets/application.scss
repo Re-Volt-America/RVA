@@ -3,6 +3,7 @@
 @import "cars";
 @import "downloads";
 @import "footer";
+@import "faq";
 @import "kaminari";
 @import "nav";
 @import "play";
@@ -535,21 +536,4 @@ a.btn-important.disabled, fieldset:disabled a.btn-important {
   .country-flag {
     font-size: 25px;
   }
-}
-
-#faq {
-
-  h4 {
-    font-weight: bold;
-  }
-
-  h5 {
-    font-weight: bold;
-  }
-
-  a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
 }
