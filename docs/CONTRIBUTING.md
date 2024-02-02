@@ -24,6 +24,7 @@ and the general public.
 
 ## Development Team
 * [José Benavente](https://github.com/BGMP) - jose@bgm.dev
+* [Nicolás Duque](https://github.com/nickskyline) - nicolas@nickskyline.dev
 
 ## Features
 This application's aim is to provide Re-Volt America's administrators with the ability to parse session files (.csv)
