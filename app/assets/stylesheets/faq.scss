@@ -1,0 +1,98 @@
+#faq {
+  margin: 50px 0;
+}
+
+#faq .card .card-header .card-body {
+  margin-bottom: 10px;
+}
+
+#faq .card .card-body {
+
+  a {
+    color: #eaeaea;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  h4:first-of-type {
+    font-weight: bold;
+  }
+
+  h4:not(:first-child) {
+    padding-top: 15px;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-weight: bold;
+    padding-top: 15px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+}
+
+#faq .card .card-header {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+#faq .card .card-header .btn-header-link {
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+  display: block;
+  text-align: left;
+  background: #ffffff;
+  padding: 20px;
+}
+
+#faq .card .card-header .btn-header-link:hover {
+  font-weight: bold;
+  font-size: large;
+  display: block;
+  text-align: left;
+  padding: 20px;
+}
+
+#faq .card .card-header .btn-header-link:after {
+  content: "\f107";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  float: right;
+}
+
+#faq .card .card-header .btn-header-link.collapsed {
+  background: #2a2a2a;
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
+}
+
+#faq .card .card-header .btn-header-link.collapsed:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+#faq .card .card-header .btn-header-link.collapsed:after {
+  content: "\f106";
+}
+
+#faq .card .collapsing {
+  color: #ffffff;
+  background: #2a2a2a;
+}
+
+#faq .card .collapse.show {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+
