@@ -1,98 +1,108 @@
 #faq {
-  margin: 50px 0;
-}
+  .card .card-header {
+    border: 0;
+    border-radius: 0 !important;
+    padding: 0;
+  }
 
-#faq .card .card-header .card-body {
-  margin-bottom: 10px;
-}
+  .card .card-body {
+    a {
+      color: #eaeaea;
+      font-weight: bold;
+      text-decoration: underline;
+    }
 
-#faq .card .card-body {
+    a:hover {
+      color: #ffffff;
+    }
 
-  a {
-    color: #eaeaea;
+    h4:first-of-type {
+      font-weight: bold;
+    }
+
+    h4:not(:first-child) {
+      padding-top: 15px;
+      font-weight: bold;
+    }
+
+    h5 {
+      font-weight: bold;
+      padding-top: 15px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  .card .card-header .btn-header-link {
     font-weight: bold;
-    text-decoration: underline;
+    font-size: large;
+    display: block;
+    text-align: left;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
   }
 
-  a:hover {
-    color: #ffffff;
-  }
-
-  h4:first-of-type {
+  .card .card-header .btn-header-link:hover {
     font-weight: bold;
+    font-size: large;
+    display: block;
+    text-align: left;
+    background: #1a1a1a;
+    padding: 20px;
   }
 
-  h4:not(:first-child) {
-    padding-top: 15px;
+  .card .card-header .btn-header-link:after {
+    font-family: 'Font Awesome 5 Free', serif;
+    content: "\f107";
     font-weight: bold;
+    float: right;
   }
 
-  h5 {
-    font-weight: bold;
-    padding-top: 15px;
+  .card .card-header .btn-header-link.collapsed:hover {
+    background: #1a1a1a;
+    color: #fff;
   }
 
-  p {
-    margin-bottom: 5px;
+  .card .collapsing {
+    background: #212121;
+    color: #beb8bc;
+
+    h1, h2, h3, h4, h5 {
+      color: #fff;
+    }
   }
 
+  .card .collapse.show {
+    background: #212121;
+    color: #beb8bc;
+
+    h1, h2, h3, h4, h5 {
+      color: #fff;
+    }
+  }
+
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+  }
+
+  .btn {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-radius: .25rem;
+  }
 }
-
-#faq .card .card-header {
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-}
-
-#faq .card .card-header .btn-header-link {
-  color: #000000;
-  font-weight: bold;
-  font-size: large;
-  display: block;
-  text-align: left;
-  background: #ffffff;
-  padding: 20px;
-}
-
-#faq .card .card-header .btn-header-link:hover {
-  font-weight: bold;
-  font-size: large;
-  display: block;
-  text-align: left;
-  padding: 20px;
-}
-
-#faq .card .card-header .btn-header-link:after {
-  content: "\f107";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: bold;
-  float: right;
-}
-
-#faq .card .card-header .btn-header-link.collapsed {
-  background: #2a2a2a;
-  color: #fff;
-  font-size: large;
-  font-weight: bold;
-}
-
-#faq .card .card-header .btn-header-link.collapsed:hover {
-  background: #ffffff;
-  color: #000000;
-}
-
-#faq .card .card-header .btn-header-link.collapsed:after {
-  content: "\f106";
-}
-
-#faq .card .collapsing {
-  color: #ffffff;
-  background: #2a2a2a;
-}
-
-#faq .card .collapse.show {
-  background: #2a2a2a;
-  color: #ffffff;
-}
-
-
