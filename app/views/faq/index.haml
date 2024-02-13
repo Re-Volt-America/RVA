@@ -1,45 +1,55 @@
 - content_for :title, "Re-Volt America - FAQ"
 
-%h2
+%h2.mb-3
   %i.fa.fa-comment{:"aria-hidden" => true}
   %b
     FAQ
+
+%hr
 
 .container
   #faq
     .card
       .card-header#faqhead1
-        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq1", "aria-expanded": "true", "aria-controls": "faq1"} How to Download Re-Volt?
+        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq1", "aria-expanded": "true", "aria-controls": "faq1"} How do I download Re-Volt?
       #faq1.collapse{"aria-labelledby" => "faqhead1", "data-parent" => "#faq"}
         .card-body
           %h4
             Recommended way: RVGL Launcher
           %p
-            With this program you can download and manage custom content for the game with just a few clicks. Go to the following link to download it:
+            With this program, you can download and manage custom content for the game with just a few clicks. Go to the
+            following link to download it:
             <a href="https://re-volt.gitlab.io/rvgl-launcher/#download" target="_blank" rel="noopener noreferrer">Re-Volt Launcher</a>
           %p
-            When you open the launcher for the first time, you will be able to select the folder where the game will be installed and the \"Game Preset\",
-            in this option we recommend that you select Original.
+            When you open the launcher for the first time, you will be able to select the folder where the game will be
+            installed, along with a \"Game Preset\". For the latter, we recommend that you select "Original".
           %h4
             Classic way
           %p
             Enter the following <a href="https://re-volt.io/downloads/game" target="_blank">link</a>
-            and choose the version of the game for your operating system (Windows, Android, Linux or macOS).
+            and choose the version of the game for your operating system (Windows, Linux or MacOS).
           %p
-            When the download is finished, unzip the file in the folder of your choice and run RVGL to start playing.
+            When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.
           %h4
-            Way for mobile phones
+            Mobile players
           %p
             In the case of Android, when you try to run the game installer
             (click this <a href= "https://distribute.re-volt.io/releases/rvgl_full_android_original.apk" target="_blank", rel="noopener noreferrer">link</a> to download)
             you need to grant permissions to install external applications.
           %p
-            After accepting the permission and installing the game the app can be opened normally from the app drawer of your phone.
+            After accepting granting the permissions and installing the game, the app can be opened normally from the app
+            drawer of your phone.
           %p
-            ⚠️ The Steam version of Re-Volt is not compatible to play online races, since it is an obsolete version. For this and other reasons we <b>do not</b> recommend its purchase.
+            IOS is still not supported :(.
+          %h4
+            Steam Re-Volt
+          %p
+            The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version.
+            For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for
+            it either.
     .card
       .card-header#faqhead2
-        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq2", "aria-expanded": "true", "aria-controls": "faq2"} How to install RVA Packs?
+        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq2", "aria-expanded": "true", "aria-controls": "faq2"} How do I install the RVA packs?
       #faq2.collapse{"aria-labelledby" => "faqhead2", "data-parent" => "#faq"}
         .card-body
           %h4
@@ -54,7 +64,7 @@
           %p
             Open the folder where you have RVGL installed and unzip the newly downloaded files there.
           %h4
-            Way for mobile phones
+            Mobile players
           %p
             Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files,
             you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager.
@@ -62,19 +72,19 @@
             Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.
     .card
       .card-header#faqhead3
-        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"} How to play Online?
+        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"} How can I play online?
       #faq3.collapse{"aria-labelledby" => "faqhead3", "data-parent" => "#faq"}
         .card-body
           %p
-            In Re-Volt America we open a room every day at 23:00 UTC and it is announced in the lobby-rva channel of the discord server,
-            <a href="play" target="_blank" rel="noopener noreferrer">here</a> you can see the countdown for the next session.
+            In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on
+            a channel called "#lobby-rva". <a href="play">Here</a> you can see the countdown for the next session.
             %h5
               Keep this in mind
             %ul
               %li
-                Before joining our rooms it is necessary that you have our content packs.
+                Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information.
               %li
-                When there is an open room to join and enter to play a message will appear in lobby-rva as follows,
+                When there is an open room to join and enter to play a message will appear in #lobby-rva,
                 %br for example: "<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>"
               %li
-                Open RVGL, go to Play Multiplayer and in Join Game copy and paste the IP address. This is an example IP, each Organizer will have a different IP address.
+                Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address.
