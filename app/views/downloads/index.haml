@@ -1,8 +1,14 @@
 - content_for :title, "Re-Volt America - Downloads"
 
 %h1 Downloads
+%hr
 
-%p Pending video...
+.container
+  .text-center
+    #faq-box
+      %p If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page
+      %a{ href: faq_path }
+        %button.btn.btn-sm{type: "button"} Take me there!
 
 %h2 Legacy Downloads
 
@@ -11,3 +17,6 @@
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVGL Launcher", :img_file => "rvgl_launcher.png", :download_link => DISTRIBUTE::RVGL_LAUNCHER, :target => "_blank"}
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Car Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_CARS, :target => "_self"}
     = render :partial => "downloads/download_card", :locals => {:icon => "fa-folder-open", :name => "RVA Track Pack", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_TRACKS, :target => "_self"}
+
+
+
