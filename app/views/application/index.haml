@@ -24,7 +24,7 @@
         %a.btn-important{ href: about_path, role: "button" } About Us »
 
 #recent.mt-5
-  - if @recent_sessions.any?
+  - if @recent_sessions&.any?
     %h6.pb-2.mb-0
       = "Recent Sessions"
     .media-group
