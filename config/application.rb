@@ -59,6 +59,7 @@ module SYS
 
   LOCALES_MAP = {
     'English, US' => :en,
+    'English, UK' => :en_gb,
     'Spanish' => :es
   }
 
@@ -191,7 +192,7 @@ module RVA
     config.hosts << "staging.#{ORG::DOMAIN}"
     config.hosts << "production.#{ORG::DOMAIN}"
 
-    config.i18n.available_locales = [:en, :es]
+    config.i18n.available_locales = [:en, :es, :en_gb]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
 
