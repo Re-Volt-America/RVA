@@ -58,8 +58,8 @@ module SYS
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 
   LOCALES_MAP = {
-    'English, US' => 'en_us',
-    'Spanish' => 'es_es'
+    'English, US' => :en,
+    'Spanish' => :es
   }
 
   module CAR

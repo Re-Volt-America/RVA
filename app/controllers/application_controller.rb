@@ -2,7 +2,16 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   include RankingsHelper
 
+  before_action :set_locale
   before_action :build_navigation
+
+  def set_locale
+    I18n.locale = if user_signed_in?
+                    current_user.locale
+                  else
+                    I18n.default_locale
+                  end
+  end
 
   def build_navigation
     return unless user_signed_in?
