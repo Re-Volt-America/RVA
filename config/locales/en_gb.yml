@@ -23,7 +23,7 @@ en_gb:
       terms: "Terms of Service"
       privacy: "Privacy Policy"
     organization:
-      title: "Organization"
+      title: "Organisation"
       logs: "Development Logs"
       bugs: "Report a Bug"
       sponsor: "Sponsor"
@@ -42,7 +42,7 @@ en_gb:
     download-button: "Downloads »"
   play:
     subheader: "We play daily at 00:00 UTC"
-    subheader2: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -56,8 +56,8 @@ en_gb:
       a:
         title: "A. General Composure"
         1: "Always keep a calm atmosphere towards other users."
-        2: "Do not <em>Spam</em>. Within reasonable limits you may promote yourself and others, just do not cross the line and you should be fine."
-        3: "<a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> other users is <b>prohibited</b>. If you endorse it or take part in it RVA <b>WILL</b> take action."
+        2_html: "Do not <em>Spam</em>. Within reasonable limits you may promote yourself and others, just do not cross the line and you should be fine."
+        3_html: "<a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> other users is <b>prohibited</b>. If you endorse it or take part in it RVA <b>WILL</b> take action."
         4: "Follow directions given by staff members at all times."
         5: "Use your common sense. It really is not that difficult!"
       b:
@@ -72,14 +72,14 @@ en_gb:
         1: "You may use cars from the class in course & below. (rookie, amateur, advanced, etc.)"
         2:
           title: "Using a car below the class in course will grant the following score bonuses:"
-          bullet1: "One class below: <b>25%</b>."
-          bullet2: "Two classes below: <b>50%</b>."
-          bullet3: "Three classes below: <b>75%</b>."
-          bullet4: "Four classes below: <b>100%</b>."
-          bullet5: "Five classes below: <b>125%</b>."
-        3: "Do <b>NOT</b> use cars from a higher class than the one in course. <b>Doing so will invalidate the points you get with it</b>."
-        4: "Do <b>NOT</b> purposely shoot or mess up non-immediate positions (players who lap you)."
-        5: "Do <b>NOT</b> ask for RE <small class='text-success'>(1)</small> unless you are late to a race or experience technical difficulties. Other reasons are deemed invalid."
+          bullet1_html: "One class below: <b>25%</b>."
+          bullet2_html: "Two classes below: <b>50%</b>."
+          bullet3_html: "Three classes below: <b>75%</b>."
+          bullet4_html: "Four classes below: <b>100%</b>."
+          bullet5_html: "Five classes below: <b>125%</b>."
+        3_html: "Do <b>NOT</b> use cars from a higher class than the one in course. <b>Doing so will invalidate the points you get with it</b>."
+        4_html: "Do <b>NOT</b> purposely shoot or mess up non-immediate positions (players who lap you)."
+        5_html: "Do <b>NOT</b> ask for RE <small class='text-success'>(1)</small> unless you are late to a race or experience technical difficulties. Other reasons are deemed invalid."
         6: "Avoid changing your name in the middle of lobbies, as this may difficult the process of calculating the final scores."
         7:
           title: "You may type RE during the first 40 seconds of a race due to an external non-game related factor."
@@ -87,14 +87,14 @@ en_gb:
         8: "The accumulated multiplier of any car will never exceed 4.0."
       d:
         title: "D. Discord Server"
-        1: "You must follow and abide to the <a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord Terms of Service</a>. Failure to do so will get you banned from Re-Volt America."
+        1_html: "You must follow and abide to the <a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord Terms of Service</a>. Failure to do so will get you banned from Re-Volt America."
         2: "Stay on-topic within channels."
         3: "Do not harass other users."
-        4: "Media that may cause other users' Discord client to crash or <em>very explicit</em> content will be deleted, and you may be punished for posting it."
+        4_html: "Media that may cause other users' Discord client to crash or <em>very explicit</em> content will be deleted, and you may be punished for posting it."
       e:
         title: "E. Punishments"
-        1: "Failure to follow any of the Races & Scoring rules may get you speced <small class='text-success'>(2)</small> in our lobbies, or <em>kicked</em> if you insist on breaking our rules."
-        2: "Users may be <em>kicked</em> from our Discord server for breaking the rules. If the rule violation is severe, you may be <em>banned</em> instead."
+        1_html: "Failure to follow any of the Races & Scoring rules may get you speced <small class='text-success'>(2)</small> in our lobbies, or <em>kicked</em> if you insist on breaking our rules."
+        2_html: "Users may be <em>kicked</em> from our Discord server for breaking the rules. If the rule violation is severe, you may be <em>banned</em> instead."
         3: "Evading Discord bans will get you banned eventually. We will find out."
         4: "All infractions are subject to staff team's discretion"
     precisions:
@@ -168,7 +168,7 @@ en_gb:
         title: "Classes"
   assets:
     title: "LOGOS & USAGE"
-    subtitle: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
+    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
     allowed:
       title: "Allowed Usage"
       1: "Use our logo to link to our website."
@@ -191,7 +191,7 @@ en_gb:
     attribution:
       title: "Attribution"
       1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
-      2: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
+      2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
   error:
     404:
       title: "Error 404"
@@ -242,9 +242,9 @@ en_gb:
       moderator: "Moderators"
       organizer: "Organizers"
   privacy:
-    title: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
-    title: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
 
   application:
     index:
