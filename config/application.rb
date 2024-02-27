@@ -191,6 +191,10 @@ module RVA
     config.hosts << "staging.#{ORG::DOMAIN}"
     config.hosts << "production.#{ORG::DOMAIN}"
 
+    config.i18n.available_locales = [:en, :es]
+    config.i18n.default_locale = :en
+    config.i18n.fallbacks = true
+
     config.generators.system_tests = nil
     config.generators do |g|
       g.test_framework(

@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+en_us:
   nav:
     play: "Play"
     tracks: "Tracks"
@@ -292,7 +292,7 @@ en:
         description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
         about-us-button: "About Us »"
       recent:
-        title: "Recent Sessions."
+        title: "Recent Sessions"
         races: "%{category} Races"
         team-races: "%{category} Team Races"
         hosted-by: "Hosted by %{host}"
@@ -489,4 +489,3 @@ en:
   tournaments:
     title: "Past Tournaments"
     new: "New"
-
