@@ -60,7 +60,7 @@ module SYS
   LOCALES_MAP = {
     'English, US' => :en,
     'English, UK' => :en_gb,
-    'Spanish' => :es
+    'Español' => :es
   }
 
   module CAR
