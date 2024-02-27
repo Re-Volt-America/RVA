@@ -12,6 +12,8 @@
       %a#change-email-tab.nav-link{"aria-controls" => "change-email", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-email", role: "tab"} Change Email
     %li.nav-item
       %a#change-password-tab.nav-link{"aria-controls" => "change-password", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-password", role: "tab"} Change Password
+    %li.nav-item
+      %a#change-language-tab.nav-link{"aria-controls" => "change-language", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-language", role: "tab"} Change Language
 
   .tab-content
     #edit-profile.tab-pane.fade.show.active{:"aria-labelledby" => "edit-profile-tab", role: "tabpanel"}
@@ -118,6 +120,21 @@
             .form-group
               .input-group
                 = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirm new password', :class => 'form-control'
+            .form-group
+              .input-group
+                = f.password_field :current_password, autocomplete: "current-password", :placeholder => 'Current password', :class => 'form-control'
+            .btn-toolbar
+              .actions
+                = f.submit "Update", :class => 'btn btn-sm'
+
+    #change-language.tab-pane.fade.show{:"aria-labelledby" => "change-language-tab", role: "tabpanel"}
+      .row
+        .col-md-5
+          %h4 Change language
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            .form-group
+              .input-group
+                = f.select :locale, SYS::LOCALES_MAP, {:prompt => "Select Language"}, {:class => "form-control"}
             .form-group
               .input-group
                 = f.password_field :current_password, autocomplete: "current-password", :placeholder => 'Current password', :class => 'form-control'

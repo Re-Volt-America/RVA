@@ -57,6 +57,11 @@ module SYS
   CSV_TYPES = %w(application/vnd.ms-excel text/csv)
   XLSM_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.freeze
 
+  LOCALES_MAP = {
+    'English, US' => 'en_us',
+    'Spanish' => 'es_es'
+  }
+
   module CAR
     MYSTERY_NAME = 'Mystery'
     CLOCKWORK_NAME = 'Clockwork'
