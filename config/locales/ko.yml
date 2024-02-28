@@ -1,4 +1,5 @@
 ko:
+  #Navigation
   nav:
     play: "플레이"
     tracks: "트랙"
@@ -10,11 +11,32 @@ ko:
       point-system: "Points System"
       teams: "Teams"
       tournaments: "Tournaments"
-    user-menu:
+    downloads: "다운로드"
+    user:
+      my-profile: "My Profile"
+      settings: "Settings"
+      admin:
+        title: "Admin"
+        upload-session: "Upload Session"
+        create-season: "Create Season"
+        import-tracks: "Import Tracks"
+        import-cars: "Import Cars"
+        new-team: "New Team"
+        new-tournament: "New Tournament"
+        import-users: "Import Users"
       log-out: "Log out"
       login: "Login"
       register: "Register"
-    downloads: "다운로드"
+  #Sub-navigation
+  sub-nav:
+    seasons: "Seasons"
+    rankings: "Rankings"
+    ranking: "Ranking"
+    ranking-n: "Ranking %{n}"
+    session-n: "Session %{n}"
+    tracks: "Tracks"
+    cars: "Cars"
+  #Footer
   footer:
     policies:
       title: "정책"
@@ -36,13 +58,40 @@ ko:
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
-  splash:
-    description1: "The Website for the American community of Re-Volt, 1999"
-    description2: "Download the game and meet players from all over the Americas!"
-    download-button: "Downloads »"
+  #Landing page, Splash, About
+  application:
+    splash:
+      description1: "The Website for the American community of Re-Volt, 1999"
+      description2: "Download the game and meet players from all over the Americas!"
+      download-button: "Downloads »"
+    index:
+      community:
+        title: "Community"
+        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
+        play-button: "Play »"
+      competition:
+        title: "Competition"
+        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        seasons-button: "Seasons »"
+      reliability:
+        title: "Reliabilty"
+        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
+        about-us-button: "About Us »"
+      recent:
+        title: "Recent Sessions"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        hosted-by: "Hosted by %{host}"
+        all-sessions-button: "All Sessions"
+        no-sessions: "N"
+    about:
+      title: "About Re-Volt America"
+      description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
+  #Play page
   play:
     subheader: "매일 00:00 UTC에 플레이합니다"
     subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
+  #Downloads page
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -50,6 +99,7 @@ ko:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
+  #Rules page
   rules:
     title: "규칙"
     sections:
@@ -83,9 +133,8 @@ ko:
         6: "로비의 중간에서 이름을 변경하지 마세요. 최종 점수를 계산하는 과정이 어려울 수 있습니다."
         7:
           title: "외부 비 게임 관련 요인으로 인해 레이스의 처음 40초 동안 RE(재시작)을 입력할 수 있습니다."
-          subtitle: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
-        8_html: "세션을 플레이하려면 고유한 이름을 사용해야 합니다. 이미 같은 이름의 준비된 플레이어가 있을 경우 <b>무조건</b> 다른 이름을 선택해야합니다."
-        9: "The accumulated multiplier of any car will never exceed 4.0."
+          bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
+        8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
         title: "D. Discord 서버"
         1_html: "<a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord 서비스 이용 약관</a>을 따르고 준수해야 합니다. 그렇지 않으면 Re-Volt America에서 차단될 것입니다."
@@ -105,6 +154,21 @@ ko:
       2:
         term: "(2) Speced:"
         precision: "로비 호스트가 레이서를 강제로 관중으로 변경할 때. 이런 상황을, 처벌로 한 형태입니다."
+  #Privacy & Terms pages
+  privacy:
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+  terms:
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+  #Staff page
+  staff:
+    title: "직원"
+    description: "Re-volt America를 운영하는 사람들!"
+    groups:
+      administrator: "관리자"
+      developer: "개발자"
+      moderator: "운영자"
+      organizer: "주최자"
+  #Points page
   points:
     title: "포인트 시스템"
     introduction:
@@ -120,6 +184,7 @@ ko:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
+  #RVA strings
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -167,6 +232,7 @@ ko:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
+  #Assets page
   assets:
     title: "로고 & 사용법"
     subtitle_html: "유능한 인재들이 만든 주요 자산의 컬렉션 <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, RVA와 통합하거나 저희에게 링크하기 위해 다운로드 할 수 있습니다."
@@ -193,80 +259,54 @@ ko:
       title: "출처"
       1: "차량 등급 이미지, 트랙 이미지, 이모티콘 등과 같은 다른 자산은 우리 커뮤니티의 구성원에 의해 만들어지며, 모든 권리는 각 저자의 것입니다."
       2_html: "이 지침은 <a href='https://github.com/logos' target='_blank'>GitHub의 로고 및 사용 지침</a>에 큰 기본이 되었습니다."
-  error:
-    404:
-      title: "Error 404"
-      caption: "페이지를 찾을 수 없습니다 ㅠㅠ"
-  alerts:
-    1: "We're playing right now! Lobby IP:"
-    2: "New RVA Pack Update Available!"
+  #Seasons page
   seasons:
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
-          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
-          points for every race."
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
       current-season: "Current Season"
       learn-more: "Learn More"
     bottom:
       title: "All Seasons"
       present: "Present"
-  classes:
-    rookie: "루키"
-    amateur: "아마추어"
-    advanced: "상급자"
-    semi-pro: "준프로"
-    pro: "프로"
-    super-pro: "슈퍼프로"
-    clockwork: "태엽"
-    random: "무작위"
-  misc:
-    download: "다운로드"
-    search: "찾기"
-    and: "&"
-  car-card:
-    speed: "속도"
-    kmh: "km/h"
-    acc: "Acc"
-    ms2: "ms²"
-    weight: "중량"
-    kg: "Kg"
-    multiplier: "배율"
-  staff:
-    title: "직원"
-    description: "Re-volt America를 운영하는 사람들!"
-    groups:
-      administrator: "관리자"
-      developer: "개발자"
-      moderator: "운영자"
-      organizer: "주최자"
-  privacy:
-    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
-  terms:
-    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-  application:
-    index:
-      community:
-        title: "Community"
-        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
-        play-button: "Play »"
-      competition:
-        title: "Competition"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
-        seasons-button: "Seasons »"
-      reliability:
-        title: "Reliabilty"
-        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
-        about-us-button: "About Us »"
-      recent:
-        title: "Recent Sessions"
-        races: "%{category} Races"
-        team-races: "%{category} Team Races"
-        hosted-by: "Hosted by %{host}"
-        all-sessions-button: "All Sessions"
-        no-sessions: "N"
+  #Rankings page
+  rankings:
+    title: "Ranking %{number}"
+    title2: "Leaderboards"
+    small: "%{count} sessions played"
+    table:
+      country: "Country"
+      racer: "Racer"
+      pp: "PP"
+      pa: "PA"
+      mp: "MP"
+      po: "PO"
+      cc: "CC"
+      fj: "FJ"
+      fp: "FP"
+      sp: "SP"
+    sessions:
+      title: "Sessions"
+      no-sessions: "No sessions to display :("
+    results:
+      no-team-results: "No team results to disiplay"
+    nav:
+      singles: "Singles"
+      teams: "Teams"
+    admin:
+      season:
+        edit:
+          button: "Edit Season"
+        delete:
+          button: "Delete season"
+          warning:
+            title: "Warning!"
+            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
+            close: "Close"
+            delete-season: "Delete Season"
+  #Devise strings
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
@@ -321,40 +361,7 @@ ko:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-  rankings:
-    title: "Ranking %{number}"
-    title2: "Leaderboards"
-    small: "%{count} sessions played"
-    table:
-      country: "Country"
-      racer: "Racer"
-      pp: "PP"
-      pa: "PA"
-      mp: "MP"
-      po: "PO"
-      cc: "CC"
-      fj: "FJ"
-      fp: "FP"
-      sp: "SP"
-    sessions:
-      title: "Sessions"
-      no-sessions: "No sessions to display :("
-    results:
-      no-team-results: "No team results to disiplay"
-    nav:
-      singles: "Singles"
-      teams: "Teams"
-    admin:
-      season:
-        edit:
-          button: "Edit Season"
-        delete:
-          button: "Delete season"
-          warning:
-            title: "Warning!"
-            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
-            delete-season: "Delete Season"
+  #Development logs
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -366,6 +373,7 @@ ko:
       author: "Author"
       description: "Description"
       when: "When"
+  #RVA results page
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -397,6 +405,7 @@ ko:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+  #Teams page
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -405,6 +414,7 @@ ko:
     team:
       leader: "Leader"
       members: "Members"
+  #User profile page
   users:
     stats:
       title: "Stats"
@@ -438,10 +448,49 @@ ko:
         official-score: "official score"
         average-position: "average position"
         participation: "participation rate"
-    nav:
+    tabs:
       title: "General"
       stats: "Stats"
       admin: "Admin"
+  #Tournaments page
   tournaments:
     title: "Past Tournaments"
     new: "New"
+  #Re-Volt car classes
+  classes:
+    rookie: "루키"
+    amateur: "아마추어"
+    advanced: "상급자"
+    semi-pro: "준프로"
+    pro: "프로"
+    super-pro: "슈퍼프로"
+    clockwork: "태엽"
+    random: "무작위"
+  #Car metrics
+  car-card:
+    speed: "속도"
+    kmh: "km/h"
+    acc: "Acc"
+    ms2: "ms²"
+    weight: "중량"
+    kg: "Kg"
+    multiplier: "배율"
+  #Alert message boxes
+  alerts:
+    no-permission: "You do not have permission"
+  #Error pages
+  error:
+    404:
+      title: "Error 404"
+      message: "Not Found"
+    422:
+      title: "Error 404"
+      message: "Illegal Error"
+    500:
+      title: "Error 404"
+      message: "Internal Server Error"
+  #Misc strings
+  misc:
+    download: "다운로드"
+    search: "찾기"
+    and: "&"

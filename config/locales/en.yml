@@ -1,4 +1,6 @@
 en:
+
+  # Navigation
   nav:
     play: "Play"
     tracks: "Tracks"
@@ -10,11 +12,34 @@ en:
       point-system: "Points System"
       teams: "Teams"
       tournaments: "Tournaments"
-    user-menu:
+    downloads: "Downloads"
+    user:
+      my-profile: "My Profile"
+      settings: "Settings"
+      admin:
+        title: "Admin"
+        upload-session: "Upload Session"
+        create-season: "Create Season"
+        import-tracks: "Import Tracks"
+        import-cars: "Import Cars"
+        new-team: "New Team"
+        new-tournament: "New Tournament"
+        import-users: "Import Users"
       log-out: "Log out"
       login: "Login"
       register: "Register"
-    downloads: "Downloads"
+
+  # Sub-navigation
+  sub-nav:
+    seasons: "Seasons"
+    rankings: "Rankings"
+    ranking: "Ranking"
+    ranking-n: "Ranking %{n}"
+    session-n: "Session %{n}"
+    tracks: "Tracks"
+    cars: "Cars"
+
+  # Footer
   footer:
     policies:
       title: "Policies"
@@ -36,13 +61,43 @@ en:
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
-  splash:
-    description1: "The Website for the American community of Re-Volt, 1999"
-    description2: "Download the game and meet players from all over the Americas!"
-    download-button: "Downloads »"
+
+  # Landing page, Splash, About
+  application:
+    splash:
+      description1: "The Website for the American community of Re-Volt, 1999"
+      description2: "Download the game and meet players from all over the Americas!"
+      download-button: "Downloads »"
+    index:
+      community:
+        title: "Community"
+        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
+        play-button: "Play »"
+      competition:
+        title: "Competition"
+        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        seasons-button: "Seasons »"
+      reliability:
+        title: "Reliabilty"
+        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
+        about-us-button: "About Us »"
+      recent:
+        title: "Recent Sessions"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        hosted-by: "Hosted by %{host}"
+        all-sessions-button: "All Sessions"
+        no-sessions: "N"
+    about:
+      title: "About Re-Volt America"
+      description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
+
+  # Play page
   play:
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+
+  # Downloads page
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -50,6 +105,8 @@ en:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
+
+  # Rules page
   rules:
     title: "Rules"
     sections:
@@ -104,6 +161,24 @@ en:
       2:
         term: "(2) Speced:"
         precision: "When the lobby host forces a racer into spectator. In this context, as a form of punishment."
+
+  # Privacy & Terms pages
+  privacy:
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+  terms:
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+
+  # Staff page
+  staff:
+    title: "Staff"
+    description: "The people who help run Re-Volt America!"
+    groups:
+      administrator: "Administrators"
+      developer: "Developers"
+      moderator: "Moderators"
+      organizer: "Organizers"
+
+  # Points page
   points:
     title: "RVA Points System"
     introduction:
@@ -119,6 +194,8 @@ en:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
+
+  # RVA strings
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -166,6 +243,8 @@ en:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
+
+  # Assets page
   assets:
     title: "LOGOS & USAGE"
     subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
@@ -192,13 +271,8 @@ en:
       title: "Attribution"
       1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
       2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
-  error:
-    404:
-      title: "Error 404"
-      caption: "Page not found :("
-  alerts:
-    1: "We're playing right now! Lobby IP:"
-    2: "New RVA Pack Update Available!"
+
+  # Seasons page
   seasons:
     title: "The RVA Seasons"
     explanation:
@@ -212,60 +286,44 @@ en:
     bottom:
       title: "All Seasons"
       present: "Present"
-  classes:
-    rookie: "Rookie"
-    amateur: "Amateur"
-    advanced: "Advanced"
-    semi-pro: "Semi-Pro"
-    pro: "Pro"
-    super-pro: "Super-Pro"
-    clockwork: "Clockwork"
-    random: "Random"
-  misc:
-    download: "Download"
-    search: "Search"
-    and: "&"
-  car-card:
-    speed: "Speed"
-    kmh: "km/h"
-    acc: "Acc"
-    ms2: "ms²"
-    weight: "Weight"
-    kg: "Kg"
-    multiplier: "Multiplier"
-  staff:
-    title: "Staff"
-    description: "The people who help run Re-Volt America!"
-    groups:
-      administrator: "Administrators"
-      developer: "Developers"
-      moderator: "Moderators"
-      organizer: "Organizers"
-  privacy:
-    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
-  terms:
-    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-  application:
-    index:
-      community:
-        title: "Community"
-        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
-        play-button: "Play »"
-      competition:
-        title: "Competition"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
-        seasons-button: "Seasons »"
-      reliability:
-        title: "Reliabilty"
-        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
-        about-us-button: "About Us »"
-      recent:
-        title: "Recent Sessions"
-        races: "%{category} Races"
-        team-races: "%{category} Team Races"
-        hosted-by: "Hosted by %{host}"
-        all-sessions-button: "All Sessions"
-        no-sessions: "N"
+
+  # Rankings page
+  rankings:
+    title: "Ranking %{number}"
+    title2: "Leaderboards"
+    small: "%{count} sessions played"
+    table:
+      country: "Country"
+      racer: "Racer"
+      pp: "PP"
+      pa: "PA"
+      mp: "MP"
+      po: "PO"
+      cc: "CC"
+      fj: "FJ"
+      fp: "FP"
+      sp: "SP"
+    sessions:
+      title: "Sessions"
+      no-sessions: "No sessions to display :("
+    results:
+      no-team-results: "No team results to disiplay"
+    nav:
+      singles: "Singles"
+      teams: "Teams"
+    admin:
+      season:
+        edit:
+          button: "Edit Season"
+        delete:
+          button: "Delete season"
+          warning:
+            title: "Warning!"
+            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
+            close: "Close"
+            delete-season: "Delete Season"
+
+  # Devise strings
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
@@ -320,40 +378,8 @@ en:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-  rankings:
-    title: "Ranking %{number}"
-    title2: "Leaderboards"
-    small: "%{count} sessions played"
-    table:
-      country: "Country"
-      racer: "Racer"
-      pp: "PP"
-      pa: "PA"
-      mp: "MP"
-      po: "PO"
-      cc: "CC"
-      fj: "FJ"
-      fp: "FP"
-      sp: "SP"
-    sessions:
-      title: "Sessions"
-      no-sessions: "No sessions to display :("
-    results:
-      no-team-results: "No team results to disiplay"
-    nav:
-      singles: "Singles"
-      teams: "Teams"
-    admin:
-      season:
-        edit:
-          button: "Edit Season"
-        delete:
-          button: "Delete season"
-          warning:
-            title: "Warning!"
-            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
-            delete-season: "Delete Season"
+
+  # Development logs
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -365,6 +391,8 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
+
+  # RVA results page
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -396,6 +424,8 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+
+  # Teams page
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -404,6 +434,8 @@ en:
     team:
       leader: "Leader"
       members: "Members"
+
+  # User profile page
   users:
     stats:
       title: "Stats"
@@ -437,10 +469,55 @@ en:
         official-score: "official score"
         average-position: "average position"
         participation: "participation rate"
-    nav:
+    tabs:
       title: "General"
       stats: "Stats"
       admin: "Admin"
+
+  # Tournaments page
   tournaments:
     title: "Past Tournaments"
     new: "New"
+
+  # Re-Volt car classes
+  classes:
+    rookie: "Rookie"
+    amateur: "Amateur"
+    advanced: "Advanced"
+    semi-pro: "Semi-Pro"
+    pro: "Pro"
+    super-pro: "Super-Pro"
+    clockwork: "Clockwork"
+    random: "Random"
+
+  # Car metrics
+  car-card:
+    speed: "Speed"
+    kmh: "km/h"
+    acc: "Acc"
+    ms2: "ms²"
+    weight: "Weight"
+    kg: "Kg"
+    multiplier: "Multiplier"
+
+  # Alert message boxes
+  alerts:
+    no-permission: "You do not have permission"
+
+  # Error pages
+  error:
+    404:
+      title: "Error 404"
+      message: "Not Found"
+    422:
+      title: "Error 404"
+      message: "Illegal Error"
+    500:
+      title: "Error 404"
+      message: "Internal Server Error"
+
+  # Misc strings
+  misc:
+    download: "Download"
+    search: "Search"
+    and: "&"

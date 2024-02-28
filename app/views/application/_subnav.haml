@@ -7,7 +7,7 @@
           / | Seasons | Tracks | Cars
           %li.nav-item
             %a.nav-link{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
-              = "Seasons #{(defined?(season)) ? "»" : ""}"
+              = "#{t('sub-nav.seasons')} #{(defined?(season)) ? "»" : ""}"
 
           / Season »
           - if defined?(season) && !season.nil?
@@ -20,26 +20,26 @@
             %li.nav-item.dropdown
               %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false", :class => "#{defined?(ranking) && current_page?(ranking_path(ranking)) ? 'active' : ''}"}
                 - if defined?(ranking)
-                  = "Ranking #{ranking.number}"
+                  = "#{t('sub-nav.ranking')} #{ranking.number}"
                 - else
-                  = "Rankings"
+                  = t('sub-nav.rankings')
               .dropdown-menu{:"aria-labelledby" => "dropdown04"}
                 - rankings.each do |r|
                   %a.dropdown-item{:href => ranking_path(r), :class => "#{(defined?(ranking) && ranking == r) ? 'active' : ''}"}
-                    = "Ranking #{r.number}"
+                    = t('sub-nav.ranking-n', :n => r.number)
 
           -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
           -# definition is ours ...
           - if defined?(session) && session.is_a?(Session) && !session.nil?
             %li.nav-item
               %a.nav-link{:href => session_path(session), :class => "#{(current_page?(session_path(session)) || current_page?(edit_session_path(session))) ? 'active' : ''}"}
-                = "Session #{session.number}"
+                = t('sub-nav.session-n', :n => session.number)
 
           - if current_page?(tracks_path) || (defined?(track) && !track.nil?)
             / Tracks »
             %li.nav-item
               %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
-                = "Tracks #{defined?(track) ? "»" : ""}"
+                = "#{t('sub-nav.tracks')} #{defined?(track) ? "»" : ""}"
             - if defined?(track) && !track.nil?
               %li.nav-item
                 %a.nav-link{:href => track_path(track), :class => "#{(current_page?(track_path(track)) || current_page?(edit_track_path(track))) ? 'active' : ''}"}
@@ -47,7 +47,7 @@
             / Cars »
             %li.nav-item
               %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
-                = "Cars #{defined?(category) ? "»" : ""}"
+                = "#{t('sub-nav.cars')} #{defined?(category) ? "»" : ""}"
             - if defined?(category) && !category.nil?
               %li.nav-item
                 %a.nav-link{:href => car_category_path(category), :class => "#{current_page?(car_category_path(category)) ? 'active' : ''}"}
@@ -60,7 +60,7 @@
             / Cars »
             %li.nav-item
               %a.nav-link{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
-                = "Cars #{defined?(category) ? "»" : ""}"
+                = "#{t('sub-nav.cars')} #{defined?(category) ? "»" : ""}"
             - if defined?(category) && !category.nil?
               %li.nav-item
                 %a.nav-link{:href => car_category_path(category), :class => "#{current_page?(car_category_path(category)) ? 'active' : ''}"}
@@ -72,7 +72,7 @@
             / Tracks »
             %li.nav-item
               %a.nav-link{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
-                = "Tracks #{defined?(track) ? "»" : ""}"
+                = "#{t('sub-nav.tracks')} #{defined?(track) ? "»" : ""}"
             - if defined?(track) && !track.nil?
               %li.nav-item
                 %a.nav-link{:href => track_path(track), :class => "#{(current_page?(track_path(track)) || current_page?(edit_track_path(track))) ? 'active' : ''}"}
@@ -88,7 +88,7 @@
       / | Seasons | Tracks | Cars
       %li.nav-item
         %a{:href => seasons_path, :class => "#{current_page?(seasons_path) ? 'active' : ''}"}
-          = "Seasons"
+          = t('sub-nav.seasons')
 
       / Season »
       - if defined?(season) && !season.nil?
@@ -101,26 +101,26 @@
         %li.nav-item.dropdown
           %a.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false", :class => "#{defined?(ranking) && current_page?(ranking_path(ranking)) ? 'active' : ''}"}
             - if defined?(ranking)
-              = "Ranking #{ranking.number}"
+              = t('sub-nav.ranking-n', :n => ranking.number)
             - else
-              = "Rankings"
+              = t('sub-nav.rankings')
           .dropdown-menu{:"aria-labelledby" => "dropdown04"}
             - rankings.each do |r|
               %a.dropdown-item{:href => ranking_path(r), :class => "#{(defined?(ranking) && ranking == r) ? 'active' : ''}"}
-                = "Ranking #{r.number}"
+                = t('sub-nav.ranking-n', :n => r.number)
 
       -# NOTE: Our Session model name conflicts with ActionDispatch::Request::Session, so we have to check if the
       -# definition is ours ...
       - if defined?(session) && session.is_a?(Session)
         %li.nav-item
           %a{:href => session_path(session), :class => "#{(current_page?(session_path(session)) || current_page?(edit_session_path(session))) ? 'active' : ''}"}
-            = "Session #{session.number}"
+            = t('sub-nav.session-n', :n => session.number)
 
           - if current_page?(tracks_path) || defined?(track)
             / Tracks »
             %li.nav-item
               %a{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
-                = "Tracks"
+                = t('sub-nav.tracks')
             - if defined?(track) && !track.nil?
               %li.nav-item
                 %a{:href => track_path(track), :class => "#{(current_page?(track_path(track)) || current_page?(edit_track_path(track))) ? 'active' : ''}"}
@@ -128,7 +128,7 @@
             / Cars »
             %li.nav-item
               %a{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
-                = "Cars"
+                = t('sub-nav.cars')
             - if defined?(category) && !category.nil?
               %li.nav-item
                 %a{:href => car_category_path(category), :class => "#{current_page?(car_category_path(category)) ? 'active' : ''}"}
@@ -141,7 +141,7 @@
             / Cars »
             %li.nav-item
               %a{:href => cars_path, :class => "#{current_page?(cars_path) ? 'active' : ''}"}
-                = "Cars"
+                = t('sub-nav.cars')
             - if defined?(category) && !category.nil?
               %li.nav-item
                 %a{:href => car_category_path(category), :class => "#{current_page?(car_category_path(category)) ? 'active' : ''}"}
@@ -153,7 +153,7 @@
             / Tracks »
             %li.nav-item
               %a{:href => tracks_path, :class => "#{current_page?(tracks_path) ? 'active' : ''}"}
-                = "Tracks"
+                = t('sub-nav.tracks')
             - if defined?(track) && !track.nil?
               %li.nav-item
                 %a{:href => track_path(track), :class => "#{(current_page?(track_path(track)) || current_page?(edit_track_path(track))) ? 'active' : ''}"}

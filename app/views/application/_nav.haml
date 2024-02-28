@@ -60,9 +60,9 @@
               - @nav.each do |item|
                 = render_navigation(item)
               %li
-                = link_to t("nav.user-menu.log-out"), destroy_user_session_path, :class => "dropdown-item", data: { turbo: true, turbo_method: :delete }
+                = link_to t("nav.user.log-out"), destroy_user_session_path, :class => "dropdown-item", data: { turbo: true, turbo_method: :delete }
             - else
               %li
-                = link_to t("nav.user-menu.login"), new_user_session_path, :class => "dropdown-item"
+                = link_to t("nav.user.login"), new_user_session_path, :class => "dropdown-item"
               %li
-                = link_to t("nav.user-menu.register"), new_user_registration_path, :class => "dropdown-item"
+                = link_to t("nav.user.register"), new_user_registration_path, :class => "dropdown-item"
