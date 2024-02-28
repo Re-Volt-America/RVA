@@ -1,3 +1,446 @@
 es:
   nav:
     play: "Jugar"
+    tracks: "Pistas"
+    cars: "Coches"
+    seasons: "Temporadas"
+    league:
+      title: "Liga"
+      leaderboard: "Tabla de Posiciones"
+      point-system: "Sistema de Puntos"
+      teams: "Equipos"
+      tournaments: "Torneos"
+    user-menu:
+      log-out: "Log out"
+      login: "Login"
+      register: "Register"
+    downloads: "Descargas"
+  footer:
+    policies:
+      title: "Políticas"
+      rules: "Reglas"
+      terms: "Términos de servicio"
+      privacy: "Política de Privacidad"
+    organization:
+      title: "Organización"
+      staff: "Staff"
+      logs: "Registros de desarrollo"
+      bugs: "Reportar un bug"
+      sponsor: "Patrocinar"
+    trademark:
+      title: "Marca comercial"
+      assets: "Recursos"
+      emoji: "Emoticono"
+    social:
+      title: "Encuéntranos"
+      discord: "Discord"
+      github: "GitHub"
+      crowdin: "Crowdin"
+  splash:
+    description1: "The Website for the American community of Re-Volt, 1999"
+    description2: "Download the game and meet players from all over the Americas!"
+    download-button: "Downloads »"
+  play:
+    subheader: "We play daily at 00:00 UTC"
+    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+  downloads:
+    title: "Downloads"
+    video: "Pending video..."
+    faq:
+      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
+      button: "Take me there!"
+    legacy-downloads: "Legacy Downloads"
+  rules:
+    title: "Reglas"
+    sections:
+      a:
+        title: "A. Compostura general"
+        1: "Mantén siempre un ambiente tranquilo con otros usuarios."
+        2_html: "No hagas <em>Spam</em>. Puedes autopromoverte a tí mismo y a otros dentro de ciertos límites, sólo no cruces la línea y estarás bien."
+        3_html: "<a class='text-primary' href='https://es.wikipedia.org/wiki/Doxing' target='_blank'>Doxear</a> a otros usuarios está <b>prohibido</b>. Si participas o promueves estos actos RVA <b>TOMARÁ</b> acciones."
+        4: "Sigue siempre las directrices dadas por los miembros del personal."
+        5: "Usa tu sentido común. No es tan difícil, ¡en serio!"
+      b:
+        title: "B. Crear un nombre de usuario"
+        1:
+          title: "Para jugar a Re-Volt debes elegir un nombre de usuario. Para ser indexado en las clasificaciones oficiales de RVA los jugadores deben elegir un nombre de usuario el cual se ajuste a las siguientes directrices:"
+          bullet1: "Tu nombre de usuario debe tener de 1 a 16 caracteres."
+          bullet2: "Tu nombre de usuario puede contener cualquier carácter de la A a la Z (mayúscula y minúscula), números, guiones bajos y espacios en blanco."
+          bullet3: "¡Tu nombre de usuario debe ser único! Si no estás seguro, puedes preguntarle al personal para ver si el nombre de usuario que quieres ya está siendo usado por otro jugador."
+      c:
+        title: "C. Carreras y puntuación"
+        1: "Puedes utilizar coches de la clase en curso e inferiores. (novato, amateur, avanzado, etc.)"
+        2:
+          title: "Usar un coche por debajo de la clase en curso otorgará las siguientes bonificaciones de puntaje:"
+          bullet1_html: "Una clase por debajo: <b>25%</b>."
+          bullet2_html: "Dos clases por debajo: <b>50%</b>."
+          bullet3_html: "Tres clases por debajo: <b>75%</b>."
+          bullet4_html: "Cuatro clases por debajo: <b>100%</b>."
+          bullet5_html: "Cinco clases por debajo: <b>125%</b>."
+        3_html: "<b>NO</b> utilices coches de una clase superior a la que esté en curso. <b>Hacerlo invalidará los puntos que obtengas jugando con él</b>."
+        4_html: "<b>NO</b> dispares o molestes a corredores en posiciones no inmediatas a la tuya (jugadores que te saquen una vuelta)."
+        5_html: "<b>NO</b> pidas RE <small class='text-success'>(1)</small> a menos que llegues tarde a una carrera o experimentes dificultades técnicas. Otras razones son consideradas inválidas."
+        6: "Evita cambiar tu nombre a mitad de las sesiones, ya que esto puede dificultar el calcular las puntuaciones finales."
+        7:
+          title: "Puedes escribir RE durante los primeros 40 segundos de una carrera sólo en caso de tratarse de un factor no relacionado con el juego (llegas tarde, problemas de conexión)."
+          bullet1: "Solo 1 RE por pista será garantizado. Si alguien ha pedido RE antes de que tú lo hicieses, entonces el anfitrión no reiniciará de nuevo."
+        8: "El multiplicador acumulado de cualquier coche nunca excederá 4.0."
+      d:
+        title: "D. Servidor de Discord"
+        1_html: "Debes seguir y atenerte a los <a class='text-primary' href='https://discord.com/terms' target='_blank'>Términos de servicio de Discord</a>. El no hacerlo hará que te expulsemos de Re-Volt America."
+        2: "Mantente en el tema de los canales."
+        3: "No acoses a otros usuarios."
+        4_html: "Cualquier archivo multimedia malicioso que cause que el cliente de Discord de otros usuarios crashee o contenido <em>muy explícito</em> se eliminará y probablemente te infraccionaremos por publicarlo."
+      e:
+        title: "E. Infracciones"
+        1_html: "El no seguir el reglamento de Carreras y puntuación puede hacer que quedes speced <small class='text-success'>(2)</small> en nuestras salas, o <em>expulsado</em> si insistes en romper nuestras reglas."
+        2_html: "Los usuarios podrán ser <em>expulsados</em> de nuestro servidor de Discord por romper las reglas. Si la violación al reglamento es grave, podrás ser <em>baneado</em> en su lugar."
+        3: "Evadir bans de Discord conseguirá que te volvamos a banear eventualmente. Los averiguaremos."
+        4: "Todas las infracciones están sujetas a la discreción de nuestro personal"
+    precisions:
+      1:
+        term: "(1) RE:"
+        precision: "Solicitar al anfitrión de una sala que reinicie la carrera en curso."
+      2:
+        term: "(2) Speced:"
+        precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
+  points:
+    title: "RVA Points System"
+    introduction:
+      title: "Introduction"
+      description: "In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores will depend on two things: their final position in the race, and the amount of racers in that race. If a race has 10 or more racers in it, then it's considered a to be a \"big\" race."
+      normal-race: "Normal Race Scoring"
+      big-race: "Big Race Scoring"
+    car-ratings:
+      title: "Car Ratings"
+      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+    desktop-parser:
+      title: "RVA Desktop Points Parser"
+      description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
+    downloads:
+      title: "Download RVA Points"
+  rva:
+    tracks:
+      all-tracks: "All Tracks"
+      season: "Season"
+      title: "The RVA Tracks"
+      format:
+        title: "Format"
+        short-name:
+          title: "Short Name"
+        difficulty:
+          title: "Difficulty"
+          easy: "Easy"
+          medium: "Medium"
+          hard: "Hard"
+          extreme: "Extreme"
+        length:
+          title: "Length"
+          short: "Short"
+          medium: "Medium"
+          long: "Long"
+          extralong: "Extra Long"
+          meters: "%{length} meters"
+        stock:
+          title: "Stock?"
+          true: "Yes"
+          false: "No"
+      featured:
+        description: "This track has been featured in RVA %{season}"
+      rotation:
+        title: "Re-Volt America Rotation"
+      collection:
+        title: "Re-Volt America Track Collection"
+    cars:
+      title: "The RVA Cars"
+      ratings-link: "Car Ratings"
+      features:
+        speed: "Speed"
+        acceleration: "Acceleration"
+        weight: "Weight"
+        multiplier: "Multiplier"
+        category: "Category"
+        stock: "Stock"
+        stock-tooltip:
+          tooltip: "Original Re-Volt Content"
+        featured-session: "This car has been featured in RVA %{season}"
+      class-selector:
+        title: "Classes"
+  assets:
+    title: "LOGOS Y USO"
+    subtitle_html: "¡Una colección de nuestros principales recursos, realizados por la talentosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, los cuales puedes descargar para integrar con RVA o enlazar hacia nuestra web!"
+    allowed:
+      title: "Uso permitido"
+      1: "Usar nuestro logo para enlazar a nuestro sitio web"
+      2: "Usar nuestro logo para anunciar que te integras con RVA"
+      3: "Usar nuestro logo en blogs o artículos acerca de RVA"
+    prohibited:
+      title: "Uso prohibido"
+      1: "Usar nuestro logo como el ícono de tu aplicación"
+      2: "Crear una versión modificada de cualquiera de nuestros logos"
+      3: "Integrar cualquiera de nuestros logos en tu logo"
+      4: "Usar nuestro arte sin nuestro consentimiento"
+      5: "Cambiar los colores, dimensiones o añadir tu propio texto o imágenes"
+    contact:
+      title: "Por favor, contáctanos"
+      1: "Si quieres usar arte no incluído en este repositorio"
+      2: "Si quieres usar estas imágenes en un video o medio de comunicación"
+    naming:
+      title: "Nombrar proyectos y productos"
+      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
+    attribution:
+      title: "Atribución"
+      1: "Otros recursos como imágenes de clasificación de coches, imágenes de pistas, emoticonos, etc... son hechos por miembros de nuestra comunidad y todos los derechos pertenecen a sus respectivos autores"
+      2: "Estos lineamientos fueron fuertemente basados en los <a href='https://github.com/logos' target='_blank'>lineamientos de uso de logos de GitHub</a>"
+  error:
+    404:
+      title: "Error 404"
+      caption: "Page not found :("
+  alerts:
+    1: "We're playing right now! Lobby IP:"
+    2: "New RVA Pack Update Available!"
+  seasons:
+    title: "The RVA Seasons"
+    explanation:
+      title: "What are RVA Seasons?"
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
+          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
+          points for every race."
+    buttons:
+      current-season: "Current Season"
+      learn-more: "Learn More"
+    bottom:
+      title: "All Seasons"
+      present: "Present"
+  classes:
+    rookie: "Rookie"
+    amateur: "Amateur"
+    advanced: "Advanced"
+    semi-pro: "Semi-Pro"
+    pro: "Pro"
+    super-pro: "Super-Pro"
+    clockwork: "Clockwork"
+    random: "Random"
+  misc:
+    download: "Download"
+    search: "Search"
+    and: "&"
+  car-card:
+    speed: "Speed"
+    kmh: "km/h"
+    acc: "Acc"
+    ms2: "ms²"
+    weight: "Weight"
+    kg: "Kg"
+    multiplier: "Multiplier"
+  staff:
+    title: "Staff"
+    description: "The people who help run Re-Volt America!"
+    groups:
+      administrator: "Administrators"
+      developer: "Developers"
+      moderator: "Moderators"
+      organizer: "Organizers"
+  privacy:
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+  terms:
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+  application:
+    index:
+      community:
+        title: "Community"
+        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
+        play-button: "Play »"
+      competition:
+        title: "Competition"
+        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        seasons-button: "Seasons »"
+      reliability:
+        title: "Reliabilty"
+        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
+        about-us-button: "About Us »"
+      recent:
+        title: "Recent Sessions"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        hosted-by: "Hosted by %{host}"
+        all-sessions-button: "All Sessions"
+        no-sessions: "N"
+  confirmation:
+    welcome: "Welcome %{email}"
+    description: "You can confirm your account email through the link below:"
+  email:
+    changed:
+      greeting: "Hello %{email}!"
+      changing: "We're contacting you to notify you that your email is being changed to %{email}."
+      changed: "We're contacting you to notify you that your email has been changed to %{email}"
+  password:
+    change:
+      greeting: "Hello %{email}!"
+      description: "We're contacting you to notify you that your password has been changed."
+    reset:
+      greeting: "Hello %{email}!"
+      advise: "Someone has requested a link to change your password. You can do this through the link below."
+      advise2: "If you didn't request this, please ignore this email."
+      advise3: "Your password won't change until you access the link above and create a new one."
+  account:
+    unlock:
+      greeting: "Hello %{email}!"
+      advise: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      instruction: "Click the link below to unlock your account:"
+      url: "Unlock my account"
+  registrations:
+    edit:
+      title: "Edit User"
+      email:
+        title: "Change Email"
+        new: "New email"
+      password:
+        title: "Change Password"
+        new-length: "New password (%{length} characters minimum)"
+        new: "New password"
+        confirm: "Confirm new password"
+      info:
+        title: "Change your info"
+        gender: "Gender"
+        nationality:
+          title: "Nationality"
+          small: "(National flag)"
+          placeholder: "Select nationality"
+        location: "Location"
+        occupation: "Occupation"
+        interests: "Interests"
+        public-email: "Public Email"
+        about: "About %{user}"
+        about-me:
+          title: "About me... (You may use html)"
+          title2: "About %{user}"
+          nothing: "Nothing here yet..."
+          placeholder: "Write something interesting..."
+      current-password: "Current password"
+      update: "Update"
+      update-admin: "Update %{user}"
+  rankings:
+    title: "Ranking %{number}"
+    title2: "Leaderboards"
+    small: "%{count} sessions played"
+    table:
+      country: "Country"
+      racer: "Racer"
+      pp: "PP"
+      pa: "PA"
+      mp: "MP"
+      po: "PO"
+      cc: "CC"
+      fj: "FJ"
+      fp: "FP"
+      sp: "SP"
+    sessions:
+      title: "Sessions"
+      no-sessions: "No sessions to display :("
+    results:
+      no-team-results: "No team results to disiplay"
+    nav:
+      singles: "Singles"
+      teams: "Teams"
+    admin:
+      season:
+        edit:
+          button: "Edit Season"
+        delete:
+          button: "Delete season"
+          warning:
+            title: "Warning!"
+            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
+            close: "Close"
+            delete-season: "Delete Season"
+  repositories:
+    title: "Revisions"
+    small: "Latest git commits in our organization"
+    new-button: "New"
+    repository: "Repository"
+    table:
+      title: "Repository"
+      revision: "Revision"
+      author: "Author"
+      description: "Description"
+      when: "When"
+  results:
+    title: "%{category} Races (Session %{number})"
+    version: "Version: %{version}"
+    connection: "Connection: %{protocol} (Server)"
+    mode: "Mode: %{physics}"
+    pickups: "Pickups: %{pickups}"
+    teams: "Teams: %{teams}"
+    download: "Download Session Log"
+    team: "Team"
+    admin:
+      title: "Admin Actions"
+      edit:
+        button: "Edit Session"
+      delete:
+        button: "Delete Session"
+        confirmation:
+          body: "Are you sure?"
+    container:
+      tooltips:
+        session-number: "Session Number"
+        final-position: "Final Position"
+        average-position: "Average Position"
+        obtained-points: "Obtained Points"
+        race-count: "Race Count"
+        participation-multiplier: "Participation Multiplier"
+        official-score: "Official Score"
+        accumulated-score: "Accumulated Score"
+        accumulated-points: "Accumulated Points"
+        sessions-played: "Sessions Played"
+      tracks:
+        not-found: "Track not found"
+  teams:
+    title: "RVA Teams"
+    no-teams: "No teams to display"
+    global-points:
+      title: "Global Team Points"
+    team:
+      leader: "Leader"
+      members: "Members"
+  users:
+    stats:
+      title: "Stats"
+      rank:
+        title: "rank"
+        tooltip: "Position in current ranking"
+      race-stats:
+        title: "Race Stats"
+        win-rate: "win rate"
+        sessions: "sessions"
+        races: "races"
+        win: "win"
+        wins: "wins"
+        podium: "podium"
+        podiums: "podiums"
+        session-played: "session played"
+        sessions-played: "sessions played"
+        race-played: "race played"
+        races-played: "races played"
+      session-history:
+        title: "Session History"
+      overall-stats:
+        title: "Overall Stats"
+        session-win: "session win"
+        session-wins: "session wins"
+        session-podium: "session podium"
+        session-podiums: "session podiums"
+        session-winrate: "session win rate"
+        obtained-point: "obtained point"
+        obtained-points: "obtained points"
+        official-score: "official score"
+        average-position: "average position"
+        participation: "participation rate"
+    nav:
+      title: "General"
+      stats: "Stats"
+      admin: "Admin"
+  tournaments:
+    title: "Past Tournaments"
+    new: "New"
