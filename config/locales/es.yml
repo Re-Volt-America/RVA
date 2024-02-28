@@ -41,8 +41,8 @@ es:
     description2: "Download the game and meet players from all over the Americas!"
     download-button: "Downloads »"
   play:
-    subheader: "We play daily at 00:00 UTC"
-    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+    subheader: "Jugamos diariamente a las 00:00 UTC"
+    subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -84,7 +84,7 @@ es:
         7:
           title: "Puedes escribir RE durante los primeros 40 segundos de una carrera sólo en caso de tratarse de un factor no relacionado con el juego (llegas tarde, problemas de conexión)."
           bullet1: "Solo 1 RE por pista será garantizado. Si alguien ha pedido RE antes de que tú lo hicieses, entonces el anfitrión no reiniciará de nuevo."
-        8: "El multiplicador acumulado de cualquier coche nunca excederá 4.0."
+        8_html: "El multiplicador acumulado de cualquier coche nunca excederá 4.0."
       d:
         title: "D. Servidor de Discord"
         1_html: "Debes seguir y atenerte a los <a class='text-primary' href='https://discord.com/terms' target='_blank'>Términos de servicio de Discord</a>. El no hacerlo hará que te expulsemos de Re-Volt America."
@@ -226,13 +226,13 @@ es:
     search: "Search"
     and: "&"
   car-card:
-    speed: "Speed"
+    speed: "Velocidad"
     kmh: "km/h"
     acc: "Acc"
     ms2: "ms²"
-    weight: "Weight"
+    weight: "Peso"
     kg: "Kg"
-    multiplier: "Multiplier"
+    multiplier: "Multiplicador"
   staff:
     title: "Staff"
     description: "The people who help run Re-Volt America!"
