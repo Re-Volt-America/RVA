@@ -55,6 +55,7 @@ en:
       privacy: "Privacy Policy"
     organization:
       title: "Organization"
+      staff: "Staff listing"
       logs: "Development Logs"
       bugs: "Report a Bug"
       sponsor: "Sponsor"

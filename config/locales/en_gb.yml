@@ -24,6 +24,7 @@ en_gb:
       privacy: "Privacy Policy"
     organization:
       title: "Organisation"
+      staff: "Staff listing"
       logs: "Development Logs"
       bugs: "Report a Bug"
       sponsor: "Sponsor"
