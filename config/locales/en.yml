@@ -1,34 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   nav:
     play: "Play"
@@ -276,7 +245,6 @@ en:
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-
   application:
     index:
       community:
@@ -298,18 +266,14 @@ en:
         hosted-by: "Hosted by %{host}"
         all-sessions-button: "All Sessions"
         no-sessions: "N"
-
-
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
-
   email:
     changed:
       greeting: "Hello %{email}!"
       changing: "We're contacting you to notify you that your email is being changed to %{email}."
       changed: "We're contacting you to notify you that your email has been changed to %{email}"
-
   password:
     change:
       greeting: "Hello %{email}!"
@@ -319,14 +283,12 @@ en:
       advise: "Someone has requested a link to change your password. You can do this through the link below."
       advise2: "If you didn't request this, please ignore this email."
       advise3: "Your password won't change until you access the link above and create a new one."
-
   account:
     unlock:
       greeting: "Hello %{email}!"
       advise: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
       instruction: "Click the link below to unlock your account:"
       url: "Unlock my account"
-
   registrations:
     edit:
       title: "Edit User"
@@ -350,7 +312,6 @@ en:
         interests: "Interests"
         public-email: "Public Email"
         about: "About %{user}"
-
         about-me:
           title: "About me... (You may use html)"
           title2: "About %{user}"
@@ -359,7 +320,6 @@ en:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-
   rankings:
     title: "Ranking %{number}"
     title2: "Leaderboards"
@@ -394,7 +354,6 @@ en:
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
-
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -406,7 +365,6 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
-
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -438,7 +396,6 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
-
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -447,7 +404,6 @@ en:
     team:
       leader: "Leader"
       members: "Members"
-
   users:
     stats:
       title: "Stats"
@@ -485,7 +441,6 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
-
   tournaments:
     title: "Past Tournaments"
     new: "New"
