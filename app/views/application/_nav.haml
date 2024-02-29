@@ -53,7 +53,7 @@
               = image_tag "i18n/#{I18n.locale}.png", :class => "locale-flag"
             %ul.dropdown-menu.dropdown-menu-right{:"aria-labelledby" => "dropdown02"}
               - I18n.available_locales.each do |l|
-                %a.dropdown-item{:"data-turbo" => "true", :"data-turbo-method" => "put", :href => users_locale_path(:username => current_user.username, :locale => l)}
+                %a.dropdown-item{:"data-turbo" => "true", :"data-turbo-method" => "put", :href => users_locale_path(:locale => l)}
                   = image_tag "i18n/#{l}.png", :class => "locale-flag"
                   = SYS::LOCALES_MAP.key(l)
 
