@@ -55,109 +55,17 @@ Install the following services and configure them to run on their default ports 
 * [NodeJS 16+](https://nodejs.org/en/download/)
 * [Yarn 1.22+](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable/)
 
-### Ubuntu 18.04
-The following installation instructions are specific to Linux, Ubuntu 18.04. This is the recommended OS to
-run the RVA website on.
-
-In a clean Ubuntu install, run the following commands to get and run all the required services and
-tools:
-
-#### Download & Install
-Update & Upgrade Packages.
-```bash
-sudo apt-get update -y && sudo apt-get upgrade -y
-```
-
-Update GNU Privacy Guard.
-```bash
-sudo apt-get install gnupg2
-```
-
-Install Curl.
-```bash
-sudo apt-get install curl
-```
-
-Install NodeJS.
-```bash
-sudo curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
-sudo bash /tmp/nodesource_setup.sh
-sudo apt-get install -y nodejs
-```
-
-Install Yarn.
-```bash
-sudo npm install -g yarn
-```
-
-Install MongoDB & Redis.
-```bash
-sudo apt-get install mongodb -y && sudo apt-get install redis-server -y
-```
-
-Start the mongodb & redis-server services.
-```bash
-sudo service mongodb start && service redis-server start
-```
-
-Download and Install Ruby Version Manager (RVM). Replace `<username>` with your unix username.
-```bash
-command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
-\curl -sSL https://get.rvm.io | bash -s stable
-source /home/<username>/.rvm/scripts/rvm
-```
-
-Install Ruby 3.2.2 via RVM.
-```bash
-rvm install 3.2.2
-```
-
-With the following commands, you should be able to see your installed Ruby versions and use version 2.7.3
-```bash
-rvm list
-rvm use 3.2.2
-```
-
-#### Mounting
-Install Git.
-```bash
-sudo apt-get install git -y
-```
-
-Clone this repository to your machine and cd into it:
-```bash
-git clone https://github.com/Re-Volt-America/RVA
-cd RVA
-```
-
-Ensure bundler is installed:
-```bash
-gem install bundler
-```
-
-Download and install dependencies:
-```bash
-bundler install
-```
-
-Run yarn install tasks:
-```bash
-yarn install
-yarn build
-yarn build:css
-```
-
-#### Database Setup
+## Database Setup
 Both MongoDB and Redis come configured to work on "localhost" by default. If you run the application with Docker, make
 sure to change "localhost" for "mongo" and "redis" respectively. For example, in the `mongoid.yml` file, you would have
 to change `- "localhost:27017"` to `- "mongo:27017"`.
 
-##### MongoDB
+### MongoDB
 You may edit your MongoDB client configuration from the `config/mongoid.yml` file. Since Mongo is running on its default
 port, you don't need to do anything here. Default settings should suffice. You may modify this file in case you want to
 change the default connection strategy or other mongoid options.
 
-##### Redis
+### Redis
 The caching configuration and connection to the Redis database you may find here:
 * [config/environments/development.rb](https://github.com/Re-Volt-America/RVA/blob/3774cd04472ea3e1aff52f9f602339083721af00/config/environments/development.rb#L23)
 * [config/environments/production.rb](https://github.com/Re-Volt-America/RVA/blob/3774cd04472ea3e1aff52f9f602339083721af00/config/environments/production.rb#L58)
@@ -166,7 +74,7 @@ Very much like it happens with Mongo, since Redis is running on its default port
 Default settings should suffice. You may modify this file in case you want to change the default connection info or
 other Redis options.
 
-#### Environment
+### Environment
 Run the following shell command from the RVA repo to start the application:
 ```
 rails rva -b HOST -p PORT              # Public website on http://`<host>`:`<port>`
@@ -177,45 +85,15 @@ could run the application on host 0.0.0.0 and port 80 to make the site accessibl
 
 At this point, you should be able to visit the website at http://`<host>`:`<port>`.
 
-## Docker
-This project includes a `docker-compose.yml` file ready to use in order to run using Docker.
-
-The Docker configuration is designed to work from the project folder itself, so in order to run it you must first clone
-this repository and cd into it:
-```bash
-git clone https://github.com/Re-Volt-America/RVA
-cd RVA
-```
-
-Once inside, simply run docker compose and let it do its thing:
-```bash
-docker-compose up
-```
-
-When it finishes building and setting up, you should be able to access the site on `localhost:3000`.
-
 ## Contributing
 Please read the full instructions on how to contribute to this project found in the
 [CONTRIBUTING.md](https://github.com/Re-Volt-America/RVA/blob/master/docs/CONTRIBUTING.md) file.
 
+You may also have a look at the [repository wiki](https://github.com/Re-Volt-America/RVA/wiki).
+
 ## Governance
 The lead maintainer of this project is [BGM](https://github.com/BGMP). As the project grows, we'll scale the governance
 model to meet its needs.
-
-## Licence
-RVA Website/Backend is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General
-Public Licence as published by the Free Software Foundation, either version 3 of the License, or (at your option) any
-later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public Licence for more
-details.
-
-A copy of the GNU Affero General Public Licence is included in the file LICENCE, and can also be found at
-https://www.gnu.org/licenses/agpl-3.0.en.html.
-
-The AGPL license is quite restrictive, please make sure you understand it. If you run a modified version of this
-software as a network service, anyone who can use that service must also have access to the modified source code.
 
 ## Thanks to
 ### Developers
