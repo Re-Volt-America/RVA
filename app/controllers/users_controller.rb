@@ -82,6 +82,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_locale
+    return if params[:username].nil? || params[:locale].nil?
+
+    user = User.find { |u| u.username.downcase.eql?(params[:username].downcase) }
+
+    return if user.nil?
+
+    user.locale = params[:locale]
+    user.update!
+
+    respond_to do |format|
+      if user.update!
+        format.html { redirect_back fallback_location: root_path, :notice => "Language set to #{SYS::LOCALES_MAP.key(params[:locale].to_sym)}" }
+      else
+        format.html { redirect_to root_path, :status => :unprocessable_entity }
+      end
+    end
+  end
+
   def new
     @user = User.new
     @user.build_profile
