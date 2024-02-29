@@ -1,5 +1,7 @@
 %p
-  Hello #{@resource.email}!
-%p Your account has been locked due to an excessive number of unsuccessful sign in attempts.
-%p Click the link below to unlock your account:
+  = t("account.unlock.greeting", email:@resource.email) #{@resource.email}!
+%p
+  = t("account.unlock.advise")
+%p
+  = t("account.unlock.instruction")
 %p= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token)

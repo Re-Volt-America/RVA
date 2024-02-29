@@ -1,6 +1,5 @@
-en:
-
-  # Navigation
+pt_br:
+  #Navigation
   nav:
     play: "Play"
     tracks: "Tracks"
@@ -28,8 +27,7 @@ en:
       log-out: "Log out"
       login: "Login"
       register: "Register"
-
-  # Sub-navigation
+  #Sub-navigation
   sub-nav:
     seasons: "Seasons"
     rankings: "Rankings"
@@ -38,31 +36,29 @@ en:
     session-n: "Session %{n}"
     tracks: "Tracks"
     cars: "Cars"
-
-  # Footer
+  #Footer
   footer:
     policies:
-      title: "Policies"
-      rules: "Rules"
-      terms: "Terms of Service"
-      privacy: "Privacy Policy"
+      title: "Políticas"
+      rules: "Regras"
+      terms: "Termos de Serviço"
+      privacy: "Política de Privacidade"
     organization:
-      title: "Organization"
-      staff: "Staff listing"
-      logs: "Development Logs"
-      bugs: "Report a Bug"
-      sponsor: "Sponsor"
+      title: "Organização"
+      staff: "Equipe"
+      logs: "Logs de Desenvolvimento"
+      bugs: "Reportar um Bug"
+      sponsor: "Patrocínio"
     trademark:
-      title: "Trademark"
-      assets: "Assets"
-      emoji: "Emoji"
+      title: "Marca"
+      assets: "Recursos"
+      emoji: "Emojis"
     social:
-      title: "Find Us"
+      title: "Contato"
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
-
-  # Landing page, Splash, About
+  #Landing page, Splash, About
   application:
     splash:
       description1: "The Website for the American community of Re-Volt, 1999"
@@ -91,13 +87,11 @@ en:
     about:
       title: "About Re-Volt America"
       description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-
-  # Play page
+  #Play page
   play:
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
-
-  # Downloads page
+  #Downloads page
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -105,80 +99,76 @@ en:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
-
-  # Rules page
+  #Rules page
   rules:
-    title: "Rules"
+    title: "Regras"
     sections:
       a:
-        title: "A. General Composure"
-        1: "Always keep a calm atmosphere towards other users."
-        2_html: "Do not <em>Spam</em>. Within reasonable limits you may promote yourself and others, just do not cross the line and you should be fine."
-        3_html: "<a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> other users is <b>prohibited</b>. If you endorse it or take part in it RVA <b>WILL</b> take action."
-        4: "Follow directions given by staff members at all times."
-        5: "Use your common sense. It really is not that difficult!"
+        title: "A. Comportamento Geral"
+        1: "Sempre manter o respeito e ser cordial com outros usuários."
+        2_html: "Não <em>\"Spame\"</em>. Você pode se promover ou promover aos outros, mas sempre respeitando os limites."
+        3_html: "<a class='text-primary' href='https://pt.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> outros usuários é <b>proibido</b>. Se você participar ou incentivar isso no servidor RVA, você <b>SERÁ</b> penalizado."
+        4: "Sempre obedecer as instruções dos administradores do servidor."
+        5: "Use seu senso comum. Não é difícil!"
       b:
-        title: "B. Creating a Username"
+        title: "B. Criando um nome de usuário"
         1:
-          title: "To play Re-Volt you must choose a username, and to be indexed into the official RVA rankings players must choose a nickname which abides to the following guidelines:"
-          bullet1: "Your nickname must have from 1 to 16 characters."
-          bullet2: "Your nickname may contain any characters from A-Z (uppercase or lowercase), numbers, underscores and blank spaces."
-          bullet3: "Your nickname must be unique! If you are not sure, you may ask the staff team to find out if the username you want is already being used by another player."
+          title: "Para jogar Re-Volt você deve escolher um nome de usuário, e para ser indexado nas classificações oficiais de RVA os jogadores devem escolher um apelido que respeite as seguintes condições:"
+          bullet1: "Seu apelido deve ter entre 1 e 16 caracteres."
+          bullet2: "Seu apelido pode conter caracteres de A-Z (maiúsculas ou minúsculas), números, sublinhados e espaços em branco."
+          bullet3: "Seu apelido deve ser único! Se não tiver certeza, você pode pedir à equipe de equipe para saber se o nome de usuário que você deseja já está sendo usado por outro jogador."
       c:
-        title: "C. Races & Scoring"
-        1: "You may use cars from the class in course & below. (rookie, amateur, advanced, etc.)"
+        title: "C. Corridas e Pontuação"
+        1: "Você pode utilizar carros de classes equivalentes ou menor. (Novato, Amador, Avançado, etc.)"
         2:
-          title: "Using a car below the class in course will grant the following score bonuses:"
-          bullet1_html: "One class below: <b>25%</b>."
-          bullet2_html: "Two classes below: <b>50%</b>."
-          bullet3_html: "Three classes below: <b>75%</b>."
-          bullet4_html: "Four classes below: <b>100%</b>."
-          bullet5_html: "Five classes below: <b>125%</b>."
-        3_html: "Do <b>NOT</b> use cars from a higher class than the one in course. <b>Doing so will invalidate the points you get with it</b>."
-        4_html: "Do <b>NOT</b> purposely shoot or mess up non-immediate positions (players who lap you)."
-        5_html: "Do <b>NOT</b> ask for RE <small class='text-success'>(1)</small> unless you are late to a race or experience technical difficulties. Other reasons are deemed invalid."
-        6: "Avoid changing your name in the middle of lobbies, as this may difficult the process of calculating the final scores."
+          title: "Usar um carro de classe menor lhe dará os seguintes benefícios de pontuação:"
+          bullet1_html: "Uma classe abaixo: <b>25%</b>."
+          bullet2_html: "Duas classes abaixo: <b>50%</b>."
+          bullet3_html: "Três classes abaixo: <b>75%</b>."
+          bullet4_html: "Quatro classes abaixo: <b>100%</b>."
+          bullet5_html: "Cinco classes abaixo: <b>125%</b>."
+        3_html: "<b>NÃO</b> utilize carros de classes maiores do que está sendo jogado. <b>Os pontos acumulados com eles serão invalidados</b>."
+        4_html: "<b>NÃO</b> atirar propositalmente em oponentes que não estão disputando posição (Retardatários)."
+        5_html: "<b>NÃO</b> pedir por \"RE\" <small class='text-success'>(1)</small> a não ser que esteja atrasado para a corrida ou tenha dificuldades técnicas. Outras razões são inválidas."
+        6: "Evite mudar seu nome no meio da sessão, isso dificulta no processo de calculo das pontuações."
         7:
-          title: "You may type RE during the first 40 seconds of a race due to an external non-game related factor."
+          title: "Você pode pedir \"RE\" durante os primeiros 40 segundos de uma corrida por razões externas somente."
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
         8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
-        title: "D. Discord Server"
-        1_html: "You must follow and abide to the <a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord Terms of Service</a>. Failure to do so will get you banned from Re-Volt America."
-        2: "Stay on-topic within channels."
-        3: "Do not harass other users."
-        4_html: "Media that may cause other users' Discord client to crash or <em>very explicit</em> content will be deleted, and you may be punished for posting it."
+        title: "D. Servidor Discord"
+        1_html: "Você deve seguir e obedecer aos <a class='text-primary' href='https://discord.com/terms' target='_blank'>Termos de Serviço do Discord</a>. O não cumprimento poderá resultar em seu banimento."
+        2: "Siga os tópicos de cada canal."
+        3: "Não insultar outros usuários."
+        4_html: "Qualquer mídia que cause o discord de outros usuários de travar ou de conteúdo <em>explícito</em> será deletado, você poderá ser penalizado."
       e:
-        title: "E. Punishments"
-        1_html: "Failure to follow any of the Races & Scoring rules may get you speced <small class='text-success'>(2)</small> in our lobbies, or <em>kicked</em> if you insist on breaking our rules."
-        2_html: "Users may be <em>kicked</em> from our Discord server for breaking the rules. If the rule violation is severe, you may be <em>banned</em> instead."
-        3: "Evading Discord bans will get you banned eventually. We will find out."
-        4: "All infractions are subject to staff team's discretion"
+        title: "E. Punições"
+        1_html: "Não seguir as regras de \"Corrida & Pontuação\" pode resultar no host te forçar a spectator <small class='text-success'>(2)</small> nos nossos lobbies, ou <em>expulso</em> se você insistir em quebrar nossas regras."
+        2_html: "Usuários podem ser <em>expulsos</em> do nosso servidor do Discord por violar as regras. Se a violação da regra for severa, você pode ser <em>banido</em>."
+        3: "Evitar banimentos no Discord vai te banir eventualmente. Nós vamos descobrir."
+        4: "Todas as infrações estão sujeitas a critério da equipe"
     precisions:
       1:
         term: "(1) RE:"
-        precision: "Requesting the lobby host to restart the current race."
+        precision: "O pedido pra que o anfitrião reinicie a corrida."
       2:
         term: "(2) Speced:"
-        precision: "When the lobby host forces a racer into spectator. In this context, as a form of punishment."
-
-  # Privacy & Terms pages
+        precision: "Quando o anfitrião força um corredor a estar em modo espectador, neste contexto, como uma forma de punição."
+  #Privacy & Terms pages
   privacy:
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-
-  # Staff page
+  #Staff page
   staff:
-    title: "Staff"
-    description: "The people who help run Re-Volt America!"
+    title: "Equipe"
+    description: "A equipe que mantem Re-volt America rodando!"
     groups:
-      administrator: "Administrators"
-      developer: "Developers"
-      moderator: "Moderators"
-      organizer: "Organizers"
-
-  # Points page
+      administrator: "Administradores"
+      developer: "Desenvolvedores"
+      moderator: "Moderadores"
+      organizer: "Organizadores"
+  #Points page
   points:
     title: "RVA Points System"
     introduction:
@@ -194,8 +184,7 @@ en:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
-
-  # RVA strings
+  #RVA strings
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -243,51 +232,46 @@ en:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
-
-  # Assets page
+  #Assets page
   assets:
-    title: "LOGOS & USAGE"
+    title: "LOGOS & UTILIZAÇÃO"
     subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
     allowed:
-      title: "Allowed Usage"
-      1: "Use our logo to link to our website."
-      2: "Use our logo to advertise that you integrate with RVA."
-      3: "Use our logo in blog posts or articles about RVA."
+      title: "Uso permitido"
+      1: "Use o nosso logotipo pra vincular ao nosso site"
+      2: "Use nosso logotipo para anunciar que você integra com a RVA"
+      3: "Use nosso logo em postagens ou artigos sobre RVA"
     prohibited:
-      title: "Forbidden Usage"
-      1: "Use our logo as your application's icon."
-      2: "Create a modified version of any of our logos."
-      3: "Integrate any of our logos into your logo."
-      4: "Use any of our artwork without permission."
-      5: "Change the colours, dimensions or add your own text/images."
+      title: "Uso Proibido"
+      1: "Use nosso logotipo como ícone da sua aplicação"
+      2: "Criar uma versão modificada de qualquer logotipo da nossa organização"
+      3: "Integrar qualquer logotipo da nossa organização ao seu logotipo"
+      4: "Use qualquer uma de nossas artes sem permissão"
+      5: "Alterar cores, dimensões ou adicionar seu próprio texto/imagens"
     contact:
-      title: "Please Contact Us"
-      1: "If you want to use artwork not included in this repository."
-      2: "If you want to use these images in a video/mainstream media."
+      title: "Por favor, entre em contato"
+      1: "Se você quiser usar arte, não incluída neste repositório"
+      2: "Se você quiser usar estas imagens em uma mídia de vídeo/mainstream"
     naming:
-      title: "Naming Projects and Products"
-      1: "Please avoid naming your projects anything that implies Re-Volt America's endorsement. This also applies to domain names."
+      title: "Nomear projetos e produtos"
+      1: "Por favor, evite nomear os seus projetos que implique Re-Volt America. Isso também se aplica aos nomes de domínio."
     attribution:
-      title: "Attribution"
-      1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
+      title: "Atribuições"
+      1: "Outros recursos como imagens, efeitos sonoros/sons, emojis, etc. são feitos por membros da nossa comunidade, e todos os direitos pertencem aos seus respectivos autores"
       2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
-
-  # Seasons page
+  #Seasons page
   seasons:
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
-          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
-          points for every race."
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
       current-season: "Current Season"
       learn-more: "Learn More"
     bottom:
       title: "All Seasons"
       present: "Present"
-
-  # Rankings page
+  #Rankings page
   rankings:
     title: "Ranking %{number}"
     title2: "Leaderboards"
@@ -322,8 +306,7 @@ en:
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
-
-  # Devise strings
+  #Devise strings
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
@@ -378,8 +361,7 @@ en:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-
-  # Development logs
+  #Development logs
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -391,8 +373,7 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
-
-  # RVA results page
+  #RVA results page
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -424,8 +405,7 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
-
-  # Teams page
+  #Teams page
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -434,8 +414,7 @@ en:
     team:
       leader: "Leader"
       members: "Members"
-
-  # User profile page
+  #User profile page
   users:
     stats:
       title: "Stats"
@@ -473,38 +452,33 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
-
-  # Tournaments page
+  #Tournaments page
   tournaments:
     title: "Past Tournaments"
     new: "New"
-
-  # Re-Volt car classes
+  #Re-Volt car classes
   classes:
-    rookie: "Rookie"
-    amateur: "Amateur"
-    advanced: "Advanced"
+    rookie: "Novato"
+    amateur: "Amador"
+    advanced: "Avançado"
     semi-pro: "Semi-Pro"
     pro: "Pro"
     super-pro: "Super-Pro"
     clockwork: "Clockwork"
-    random: "Random"
-
-  # Car metrics
+    random: "Aleatório"
+  #Car metrics
   car-card:
-    speed: "Speed"
+    speed: "Velocidade"
     kmh: "km/h"
-    acc: "Acc"
+    acc: "Aceleração"
     ms2: "ms²"
-    weight: "Weight"
+    weight: "Peso"
     kg: "Kg"
-    multiplier: "Multiplier"
-
-  # Alert message boxes
+    multiplier: "Multiplicador"
+  #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
-
-  # Error pages
+  #Error pages
   error:
     404:
       title: "Error 404"
@@ -515,9 +489,8 @@ en:
     500:
       title: "Error 404"
       message: "Internal Server Error"
-
-  # Misc strings
+  #Misc strings
   misc:
     download: "Download"
-    search: "Search"
+    search: "Busca"
     and: "&"

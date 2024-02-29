@@ -1,34 +1,31 @@
 - content_for :title, "Re-Volt America - Points"
 
 %h2
-  RVA Points System
+  = t("points.title")
 
 %br
 %h3
-  Introduction
+  = t("points.introduction.title")
 
 %p
-  In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores
-  will depend on two things: their final position in the race, and the amount of racers in that race. If a race has
-  10 or more racers in it, then it's considered a to be a "big" race.
+  = t("points.introduction.description")
 
 .row
   .col-sm-12.col-md-6.col-lg-6.col-xl-6
-    %h4 Normal Race Scoring
+    %h4
+      = t("points.introduction.normal-race")
     = image_tag "points.png", :class => "img-fluid"
   .col-sm-12.col-md-6.col-lg-6.col-xl-6
-    %h4 Big Race Scoring
+    %h4
+      = t("points.introduction.big-race")
     = image_tag "points-10.png", :class => "img-fluid"
 
 %br
 %h3
-  Car Ratings
+  = t("points.car-ratings.title")
 
 %p
-  In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other
-  characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for
-  playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied
-  each race with different car multipliers:
+  = t("points.car-ratings.description")
 
 .row
   .col-12.text-center
@@ -36,17 +33,14 @@
 
 %br
 %h3
-  RVA Desktop Points Parser
+  = t("points.desktop-parser.titles")
 
 %p
-  The RVA Desktop Points Parser is a Desktop application designed to calculate result tables in the RVA format from
-  a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system
-  locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:
-
+  = t("points.desktop-parser.description")
 = image_tag 'rva-points.png', :class => 'img-fluid'
 
 %h3.mt-4
-  Download RVA Points
+  = t("points.downloads.title")
 
 .row
   = render :partial => "downloads/download_card", :locals => {:icon => "fa-windows", :name => "RVA Points", :img_file => "rva-logo-dark.png", :download_link => DISTRIBUTE::RVA_POINTS_WIN64, :target => "_self"}

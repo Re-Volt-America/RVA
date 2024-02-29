@@ -9,60 +9,59 @@
     .col-xl-5.col-lg-5.col-md-12.col-xs-12
       .session-details.mb-4
         %h2
-          = "#{category_name(@session.category)} Races (Session #{@session.number})"
+          = t("results.title", category:category_name(@session.category), number:@session.number ) #{category_name(@session.category)} Races (Session #{@session.number})
         %ul
           %li
-            = "Version: #{@session.version}"
+            = t("results.version", version:@session.version) #{@session.version}"
           %li
-            = "Connection: #{@session.protocol} (Server)"
+            = t("results.connection", protocol:@session.protocol) #{@session.protocol}
           %li
-            = "Mode: #{@session.physics}"
+            = t("results.mode", physics:@session.physics) #{@session.physics}
           %li
-            = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
+            = t("results.pickups", pickups:@session.pickups ? "Enabled" : "Disabled") #{@session.pickups ? "Enabled" : "Disabled"}
           %li
-            = "Teams: #{@session.teams? ? "Yes" : "No"}"
+            = t("results.teams", teams:@session.teams? ? "Yes" : "No") #{@session.teams? ? "Yes" : "No"}
           %li
-            = link_to "Download Session Log", @session.session_log_url
+            = link_to t("results.download"), @session.session_log_url
     - if user_is_organizer? || user_is_admin?
       .col-xl-5.col-lg-5.col-md-12.col-xs-12
         .session-details.mb-4
           %h2
-            = "Admin Actions"
+            = t("results.admin.title")
           %ul
             %li
-              = link_to 'Edit Session', edit_session_path(@session), :class => "btn mt-2"
+              = link_to t("results.admin.edit.button"), edit_session_path(@session), :class => "btn mt-2"
             %li
-              = link_to 'Delete Session', @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "btn mt-2"
-
+              = link_to t("results.admin.delete.button"), @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"
 #results.container
   %table.table.table-sm.table-fluid.table-responsive
     %thead
       %tr
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Session Number"}
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
           = @rva_results[0][0] # "#"
         %th.align-middle{:width => "8%"}
           = @rva_results[0][1] # "Date"
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Final Position"}
-          FP
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
+          = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
-          Racer
+          = t("rankings.table.racer")
         - @rva_results[0].slice(2, @session.races.size).each do |item|
           %th.text-center.align-middle{:width => "4%"}
             - if item.is_a?(Track)
               = link_to item.short_name, track_path(item)
             - else
-              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Track not found"}
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
                 = "?"
-        %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average Position"}
-          PP
-        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Obtained Points"}
-          PA
-        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"}
-          CC
-        %th.mp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Participation Multiplier"}
-          MP
-        %th.po-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Official Score"}
-          PO
+        %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}
+          = t("rankings.table.pp")
+        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
+          = t("rankings.table.pa")
+        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
+          = t("rankings.table.cc")
+        %th.mp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}
+          = t("rankings.table.mp")
+        %th.po-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}
+          = t("rankings.table.po")
     %tbody
       - @rva_results.drop(1).each do |row|
         - if @count.even?
@@ -154,25 +153,25 @@
   .row
     .col-4
       %b
-        FP:
-      Final Position
+        = t("rankings.table.fp") + ":"
+      = t("results.container.tooltips.final-position")
     .col-4
       %b
-        PP:
-      Average Position
+        = t("rankings.table.pa") + ":"
+      = t("results.container.tooltips.average-position")
     .col-4
       %b
-        PA:
-      Accumulated Score
+        = t("rankings.table.pa") + ":"
+      = t("results.container.tooltips.accumulated-score")
     .col-4
       %b
-        PO:
-      Official Score
+        = t("rankings.table.po") + ":"
+      = t("results.container.tooltips.official-score")
     .col-4
       %b
-        CC:
-      Race Count
+        = t("rankings.table.cc") + ":"
+      = t("results.container.tooltips.race-count")
     .col-4
       %b
-        MP:
-      Participation Multiplier
+        = t("rankings.table.mp") + ":"
+      = t("results.container.tooltips.participation-multiplier")

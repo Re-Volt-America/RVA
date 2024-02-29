@@ -4,7 +4,8 @@
       %h1
         = ORG::NAME
       %p
-        The Website for the American community of Re-Volt, 1999
-        %br/
-        Download the game and meet players from all over the Americas!
-      %a.btn-important{ href: downloads_path } Downloads »
+        = t("application.splash.description1")
+        %br
+        = t("application.splash.description2")
+      %a.btn-important{ href: downloads_path }
+        = t("application.splash.download-button")

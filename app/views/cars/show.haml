@@ -18,32 +18,32 @@
         %br
         %dl.dl-horizontal
           %dt
-            Speed
+            = t("rva.cars.features.speed")
           %dd
             = "#{@car.speed} km/h"
           %dt
-            Acceleration
+            = t("rva.cars.features.acceleration")
           %dd
             = "#{@car.accel} ms²"
           %dt
-            Weight
+            = t("rva.cars.features.weight")
           %dd
             = "#{@car.weight} Kg"
           %dt
-            Multiplier
+            = t("rva.cars.features.multiplier")
           %dd
             = @car.multiplier
           %dt
-            Category
+            = t("rva.cars.features.category")
           %dd
             = category_name(@car.category)
-          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Original Re-Volt Content"}
-            Stock?
+          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
+            = t("rva.cars.features.stock")
           %dd
             = "#{@car.stock? ? "Yes" : "No"}"
         - if @car.season
           %i
-            = "This car has been featured in RVA #{@car.season.name}"
+            = t("rva.cars.features.featured-session", season:@car.season.name) #{@car.season.name}
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url}

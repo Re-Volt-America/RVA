@@ -9,45 +9,44 @@
     .col-xl-5.col-lg-5.col-md-12.col-xs-12
       .session-details.mb-4
         %h2
-          = "#{category_name(@session.category)} Races (Session #{@session.number})"
+          = t("results.title", category:category_name(@session.category), number:@session.number )
         %ul
           %li
-            = "Version: #{@session.version}"
+            = t("results.version", version:@session.version) #{@session.version}"
           %li
-            = "Connection: #{@session.protocol} (Server)"
+            = t("results.connection", protocol:@session.protocol) #{@session.protocol}
           %li
-            = "Mode: #{@session.physics}"
+            = t("results.mode", physics:@session.physics) #{@session.physics}
           %li
-            = "Pickups: #{@session.pickups ? "Enabled" : "Disabled"}"
+            = t("results.pickups", pickups:@session.pickups ? "Enabled" : "Disabled") #{@session.pickups ? "Enabled" : "Disabled"}
           %li
-            = "Teams: #{@session.teams? ? "Yes" : "No"}"
+            = t("results.teams", teams:@session.teams? ? "Yes" : "No") #{@session.teams? ? "Yes" : "No"}
           %li
             = link_to "Download Session Log", @session.session_log_url
     - if user_is_organizer? || user_is_admin?
       .col-xl-5.col-lg-5.col-md-12.col-xs-12
         .session-details.mb-4
           %h2
-            = "Admin Actions"
+            = t("results.admin.title")
           %ul
             %li
-              = link_to 'Edit Session', edit_session_path(@session), :class => "btn mt-2"
+              = link_to t("results.admin.edit.button"), edit_session_path(@session), :class => "btn mt-2"
             %li
-              = link_to 'Delete Session', @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "btn mt-2"
-
+              = link_to t("results.admin.delete.button"), @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"
 #results.container
   %table.table.table-sm.table-fluid.table-responsive
     %thead
       %tr
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Session Number"}
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
           = @rva_results[0][0] # "#"
         %th.align-middle{:width => "8%"}
           = @rva_results[0][1] # "Date"
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Final Position"}
-          FP
+        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
+          = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
-          Racer
+          = t("rankings.table.racer")
         %th.align-middle{:width => "6%"}
-          Team
+          = t("results.team")
         - @rva_results[0].slice(2, @session.races.size).each do |item|
           %th.text-center.align-middle{:width => "4%"}
             - if item.is_a?(Track)
@@ -55,10 +54,10 @@
             - else
               %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Track not found"}
                 = "?"
-        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race Count"}
-          CC
-        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Obtained Points"}
-          PA
+        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
+          = t("rankings.table.cc")
+        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
+          = t("rankings.table.pa")
     %tbody
       - @rva_results.drop(1).each do |row|
         - if @count.even?
@@ -151,13 +150,13 @@
   .row
     .col-4
       %b
-        FP:
-      Final Position
+        = t("rankings.table.fp") + ":"
+      = t("results.container.tooltips.final-position")
     .col-4
       %b
-        CC:
-      Race Count
+        = t("rankings.table.cc") + ":"
+      = t("results.container.tooltips.race-count")
     .col-4
       %b
-        PA:
-      Accumulated Score
+        = t("rankings.table.pa") + ":"
+      = t("results.container.tooltips.accumulated-score")

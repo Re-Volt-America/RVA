@@ -3,10 +3,11 @@
 .container#repositories
   .page-header
     %h3
-      Revisions
-      %small Latest git commits in our organization
+      = t("repositories.title")
+      %small
+        = t("repositories.small")
       - if user_is_admin?
-        %a.btn.btn-sm.float-right{:href => new_repository_path} New
+        %a.btn.btn-sm.float-right{:href => new_repository_path}= t("repositories.new-button")
     %hr.mt-1/
   .row
     .col-md-12
@@ -20,16 +21,16 @@
         .col
           %p= @repository.description
         .ml-auto.mb-1.mr-3
-          %a.btn.btn-sm{:href => @repository.get_url, :target => '_blank'} Repository
+          %a.btn.btn-sm{:href => @repository.get_url, :target => '_blank'}= t("repositories.repository")
       .table-container
         %table.table.table-bordered
           %thead
             %tr
               %th{width: "1%"} #
-              %th{width: "10%"} Revision
-              %th{width: "10%"} Author
-              %th{width: "62%"} Description
-              %th{width: "17%"} When
+              %th{width: "10%"}= t("repositories.table.revision")
+              %th{width: "10%"}= t("repositories.table.author")
+              %th{width: "62%"}= t("repositories.table.description")
+              %th{width: "17%"}= t("repositories.table.when")
           %tbody
             - @revs.each do |r|
               %tr

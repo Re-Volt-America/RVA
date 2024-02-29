@@ -1,6 +1,5 @@
-en:
-
-  # Navigation
+lol:
+  #Navigation
   nav:
     play: "Play"
     tracks: "Tracks"
@@ -28,8 +27,7 @@ en:
       log-out: "Log out"
       login: "Login"
       register: "Register"
-
-  # Sub-navigation
+  #Sub-navigation
   sub-nav:
     seasons: "Seasons"
     rankings: "Rankings"
@@ -38,31 +36,29 @@ en:
     session-n: "Session %{n}"
     tracks: "Tracks"
     cars: "Cars"
-
-  # Footer
+  #Footer
   footer:
     policies:
-      title: "Policies"
-      rules: "Rules"
-      terms: "Terms of Service"
-      privacy: "Privacy Policy"
+      title: "Politicals"
+      rules: "Rulz"
+      terms: "How 2 use"
+      privacy: "Can kat see?"
     organization:
-      title: "Organization"
-      staff: "Staff listing"
-      logs: "Development Logs"
-      bugs: "Report a Bug"
-      sponsor: "Sponsor"
+      title: "organisashun"
+      staff: "staff lstin"
+      logs: "smart kitteh stooff"
+      bugs: "SNITCH ON MICE"
+      sponsor: "giev luv"
     trademark:
-      title: "Trademark"
-      assets: "Assets"
-      emoji: "Emoji"
+      title: "our stuff"
+      assets: "azzetz"
+      emoji: "EMOJI THE MOVIE"
     social:
-      title: "Find Us"
-      discord: "Discord"
-      github: "GitHub"
+      title: "Find uz"
+      discord: "Discoword"
+      github: "Da codin site"
       crowdin: "Crowdin"
-
-  # Landing page, Splash, About
+  #Landing page, Splash, About
   application:
     splash:
       description1: "The Website for the American community of Re-Volt, 1999"
@@ -91,13 +87,11 @@ en:
     about:
       title: "About Re-Volt America"
       description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-
-  # Play page
+  #Play page
   play:
     subheader: "We play daily at 00:00 UTC"
-    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
-
-  # Downloads page
+    subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-rva</code>"
+  #Downloads page
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -105,80 +99,76 @@ en:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
-
-  # Rules page
+  #Rules page
   rules:
-    title: "Rules"
+    title: "Rulz"
     sections:
       a:
-        title: "A. General Composure"
-        1: "Always keep a calm atmosphere towards other users."
-        2_html: "Do not <em>Spam</em>. Within reasonable limits you may promote yourself and others, just do not cross the line and you should be fine."
-        3_html: "<a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> other users is <b>prohibited</b>. If you endorse it or take part in it RVA <b>WILL</b> take action."
-        4: "Follow directions given by staff members at all times."
-        5: "Use your common sense. It really is not that difficult!"
+        title: "A. Kat Composure"
+        1: "DOnt annuy kitteh"
+        2_html: "Non spam plzz"
+        3_html: "being a stalkin ktiteh iz bad n prohibited bu the RvA. iv u endoers it or taek part in it rVa <b>WILLLLL</b> taek acshun"
+        4: "Respecc importnt kittheh :3"
+        5: "Thonk. it not diffikult!"
       b:
-        title: "B. Creating a Username"
+        title: "B. Maek ur usernaem"
         1:
-          title: "To play Re-Volt you must choose a username, and to be indexed into the official RVA rankings players must choose a nickname which abides to the following guidelines:"
-          bullet1: "Your nickname must have from 1 to 16 characters."
-          bullet2: "Your nickname may contain any characters from A-Z (uppercase or lowercase), numbers, underscores and blank spaces."
-          bullet3: "Your nickname must be unique! If you are not sure, you may ask the staff team to find out if the username you want is already being used by another player."
+          title: "2 play rivol u must chose a usernaem, an 2 be indxd into da iffishul rVa rankingz catz must choos a naem which abdiz 2 da followin:"
+          bullet1: "ur nicknaem muzrt haev frawm 1 to 16 chars!"
+          bullet2: "ur nicknaem can has any chars frawm A2Z (big or smol), numbrz, underscors and blanks"
+          bullet3: "ur nicknaem muzt be uniqueEE!! if ur not suer, u may ask da important kittehs team 2 find out if the useaernaem u want is lrdy taekn by another kitteh."
       c:
-        title: "C. Races & Scoring"
-        1: "You may use cars from the class in course & below. (rookie, amateur, advanced, etc.)"
+        title: "C. Raecs n scorin"
+        1: "u mya uz kars fraem da class ov rn and below. (rookei, amatueur, avdancd etc)"
         2:
-          title: "Using a car below the class in course will grant the following score bonuses:"
-          bullet1_html: "One class below: <b>25%</b>."
-          bullet2_html: "Two classes below: <b>50%</b>."
-          bullet3_html: "Three classes below: <b>75%</b>."
-          bullet4_html: "Four classes below: <b>100%</b>."
-          bullet5_html: "Five classes below: <b>125%</b>."
-        3_html: "Do <b>NOT</b> use cars from a higher class than the one in course. <b>Doing so will invalidate the points you get with it</b>."
-        4_html: "Do <b>NOT</b> purposely shoot or mess up non-immediate positions (players who lap you)."
-        5_html: "Do <b>NOT</b> ask for RE <small class='text-success'>(1)</small> unless you are late to a race or experience technical difficulties. Other reasons are deemed invalid."
-        6: "Avoid changing your name in the middle of lobbies, as this may difficult the process of calculating the final scores."
+          title: "Using sluw kar better for kat:"
+          bullet1_html: "Sluw 25%"
+          bullet2_html: "Vewy sluw 50%"
+          bullet3_html: "Slowerer kar :o 75%"
+          bullet4_html: "Harkur kat 100%"
+          bullet5_html: "Hardkore kat :o 125%"
+        3_html: "Do non use fasterer karz. racecat wont get traits if race so"
+        4_html: "Dont be bad racekat againSt fasterer racekats >:("
+        5_html: "NON ask RE unlez late kitten or krashd kat."
+        6: "racecat may not get trait if chang name in kittenrace"
         7:
-          title: "You may type RE during the first 40 seconds of a race due to an external non-game related factor."
+          title: "u mya typ REEEEEEEEEEE durin da firzt 40 sekondz ov a raec deu 2 an extrnal nom-gaem relatd factr."
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
         8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
-        title: "D. Discord Server"
-        1_html: "You must follow and abide to the <a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord Terms of Service</a>. Failure to do so will get you banned from Re-Volt America."
-        2: "Stay on-topic within channels."
-        3: "Do not harass other users."
-        4_html: "Media that may cause other users' Discord client to crash or <em>very explicit</em> content will be deleted, and you may be punished for posting it."
+        title: "D. Discoword Servur"
+        1_html: "u must folow n abaid 2 da <a class='text-primary' href='https://discord.com/terms' target='_blank'>discord rulez</a>. Failur to do dat wil get chu a bath"
+        2: "stya on-topicz in channulz."
+        3: "do NOT harass other kittehs"
+        4_html: "Non krash kats' Discoword"
       e:
-        title: "E. Punishments"
-        1_html: "Failure to follow any of the Races & Scoring rules may get you speced <small class='text-success'>(2)</small> in our lobbies, or <em>kicked</em> if you insist on breaking our rules."
-        2_html: "Users may be <em>kicked</em> from our Discord server for breaking the rules. If the rule violation is severe, you may be <em>banned</em> instead."
-        3: "Evading Discord bans will get you banned eventually. We will find out."
-        4: "All infractions are subject to staff team's discretion"
+        title: "E. BAD KAT!!"
+        1_html: "bad racecat wil be spectacated, or keek'd if rul are kept borked."
+        2_html: "kitteh may get kik if dont respect cat rulz. If beeg rul breakening, kat get baff."
+        3: "Dun't dodge bath!"
+        4: "adminkat will decide ur fate"
     precisions:
       1:
-        term: "(1) RE:"
-        precision: "Requesting the lobby host to restart the current race."
+        term: "(!) RE (-.-):"
+        precision: "ask katrace to restart"
       2:
-        term: "(2) Speced:"
-        precision: "When the lobby host forces a racer into spectator. In this context, as a form of punishment."
-
-  # Privacy & Terms pages
+        term: "(!2) Speced:"
+        precision: "when host cat puts racekat in spec"
+  #Privacy & Terms pages
   privacy:
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-
-  # Staff page
+  #Staff page
   staff:
-    title: "Staff"
-    description: "The people who help run Re-Volt America!"
+    title: "Stuuuff"
+    description: "The Kittehs cat hilp run Rivult Murica!"
     groups:
-      administrator: "Administrators"
-      developer: "Developers"
-      moderator: "Moderators"
-      organizer: "Organizers"
-
-  # Points page
+      administrator: "Kitteminitrutorz"
+      developer: "Divilupurrrz"
+      moderator: "Modekatorzzz"
+      organizer: "Urganizurrzzz"
+  #Points page
   points:
     title: "RVA Points System"
     introduction:
@@ -194,8 +184,7 @@ en:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
-
-  # RVA strings
+  #RVA strings
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -243,51 +232,46 @@ en:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
-
-  # Assets page
+  #Assets page
   assets:
-    title: "LOGOS & USAGE"
-    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
+    title: "LOGOWOS & USAEG"
+    subtitle_html: "Logos maed by Hylia! u can get :DDDD"
     allowed:
-      title: "Allowed Usage"
-      1: "Use our logo to link to our website."
-      2: "Use our logo to advertise that you integrate with RVA."
-      3: "Use our logo in blog posts or articles about RVA."
+      title: "Good kitteh usaeg"
+      1: "uz our logowo 2 link to ur websiet"
+      2: "Tell kitten taht u with rVA"
+      3: "uz our logowo in vligz postz or articlcs aboutt rvA"
     prohibited:
-      title: "Forbidden Usage"
-      1: "Use our logo as your application's icon."
-      2: "Create a modified version of any of our logos."
-      3: "Integrate any of our logos into your logo."
-      4: "Use any of our artwork without permission."
-      5: "Change the colours, dimensions or add your own text/images."
+      title: "Cat non do:"
+      1: "use ur logo az ur applicashun icon"
+      2: "modifierify our logo"
+      3: "intagraet any ov our logoows into ur logowo"
+      4: "Dont use kat art!!! >:c"
+      5: "chang colour, saiz or add cat text and immagery"
     contact:
-      title: "Please Contact Us"
-      1: "If you want to use artwork not included in this repository."
-      2: "If you want to use these images in a video/mainstream media."
+      title: "plz cotnact da staf kittehs"
+      1: "iv u want 2 use artowork nawt includd in dis respritry"
+      2: "Iv u wnat to uz dis imaegs in a vidoe/meowstream mediza"
     naming:
-      title: "Naming Projects and Products"
-      1: "Please avoid naming your projects anything that implies Re-Volt America's endorsement. This also applies to domain names."
+      title: "naeming projectz n stuff"
+      1: "plz aviod namin ur projectz anythin impliez revolt america's endrsmet. dis also appliez 2 domaen naems."
     attribution:
-      title: "Attribution"
-      1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
-      2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
-
-  # Seasons page
+      title: "GIMME"
+      1: "othar azzetz liek cars and otherz stuffz, imaegz r maed bai memberz ov our comunity n' al rihgts belongz to da respectiev kittehs"
+      2_html: "dis guidelinz wer haevely baesd on da githbu site logowos and usaeg thing <a href='https://github.com/logos' target='_blank'>her</a>"
+  #Seasons page
   seasons:
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
-          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
-          points for every race."
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
       current-season: "Current Season"
       learn-more: "Learn More"
     bottom:
       title: "All Seasons"
       present: "Present"
-
-  # Rankings page
+  #Rankings page
   rankings:
     title: "Ranking %{number}"
     title2: "Leaderboards"
@@ -322,8 +306,7 @@ en:
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
-
-  # Devise strings
+  #Devise strings
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
@@ -378,8 +361,7 @@ en:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-
-  # Development logs
+  #Development logs
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -391,8 +373,7 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
-
-  # RVA results page
+  #RVA results page
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -424,8 +405,7 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
-
-  # Teams page
+  #Teams page
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -434,8 +414,7 @@ en:
     team:
       leader: "Leader"
       members: "Members"
-
-  # User profile page
+  #User profile page
   users:
     stats:
       title: "Stats"
@@ -473,38 +452,33 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
-
-  # Tournaments page
+  #Tournaments page
   tournaments:
     title: "Past Tournaments"
     new: "New"
-
-  # Re-Volt car classes
+  #Re-Volt car classes
   classes:
-    rookie: "Rookie"
-    amateur: "Amateur"
-    advanced: "Advanced"
-    semi-pro: "Semi-Pro"
-    pro: "Pro"
-    super-pro: "Super-Pro"
-    clockwork: "Clockwork"
-    random: "Random"
-
-  # Car metrics
+    rookie: "noob"
+    amateur: "Less Noob"
+    advanced: "Progressive"
+    semi-pro: "ALMOST PROFESSIONAL"
+    pro: "PROFESSIONAL"
+    super-pro: "f1 kat driver"
+    clockwork: "clockiesss"
+    random: "U nevur know"
+  #Car metrics
   car-card:
-    speed: "Speed"
-    kmh: "km/h"
-    acc: "Acc"
-    ms2: "ms²"
-    weight: "Weight"
-    kg: "Kg"
-    multiplier: "Multiplier"
-
-  # Alert message boxes
+    speed: "sped"
+    kmh: "litres"
+    acc: "Accz"
+    ms2: "kg"
+    weight: "how haevy"
+    kg: "ms²"
+    multiplier: "math thing"
+  #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
-
-  # Error pages
+  #Error pages
   error:
     404:
       title: "Error 404"
@@ -515,9 +489,8 @@ en:
     500:
       title: "Error 404"
       message: "Internal Server Error"
-
-  # Misc strings
+  #Misc strings
   misc:
-    download: "Download"
-    search: "Search"
-    and: "&"
+    download: "dowuload"
+    search: "Scratch"
+    and: "N"

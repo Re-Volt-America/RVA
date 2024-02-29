@@ -2,24 +2,33 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   include RankingsHelper
 
+  before_action :set_locale
   before_action :build_navigation
+
+  def set_locale
+    I18n.locale = if user_signed_in?
+                    current_user.locale
+                  else
+                    I18n.default_locale
+                  end
+  end
 
   def build_navigation
     return unless user_signed_in?
 
     @admin_nav = [
-      { :name => 'Upload Session', :path => new_session_path },
-      { :name => 'Create Season', :path => new_season_path },
-      { :name => 'Import Tracks', :path => new_track_path },
-      { :name => 'Import Cars', :path => new_car_path },
-      # { :name => 'New Team', :path => new_team_path },
-      # { :name => 'New Tournament', :path => new_tournament_path },
-      { :name => 'Import Users', :path => users_new_path }
+      { :name => t('nav.user.admin.upload-session'), :path => new_session_path },
+      { :name => t('nav.user.admin.create-season'), :path => new_season_path },
+      { :name => t('nav.user.admin.import-tracks'), :path => new_track_path },
+      { :name => t('nav.user.admin.import-cars'), :path => new_car_path },
+      # { :name => t('nav.user.admin.new-team'), :path => new_team_path },
+      # { :name => t('nav.user.admin.new-tournament'), :path => new_tournament_path },
+      { :name => t('nav.user.admin.import-users'), :path => users_new_path }
     ]
     @nav = [
-      { :name => 'Admin', :path => '', :sub => @admin_nav, :admin => true },
-      { :name => 'My Profile', :path => user_path(current_user.username) },
-      { :name => 'Settings', :path => main_app.edit_user_registration_path }
+      { :name => t('nav.user.admin.title'), :path => '', :sub => @admin_nav, :admin => true },
+      { :name => t('nav.user.my-profile'), :path => user_path(current_user.username) },
+      { :name => t('nav.user.settings'), :path => main_app.edit_user_registration_path }
     ]
   end
 
@@ -75,18 +84,18 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    redirect_to root_path, :notice => 'You do not have permission' unless user_is_admin?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_admin?
   end
 
   def authenticate_mod
-    redirect_to root_path, :notice => 'You do not have permission' unless user_is_mod?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_mod?
   end
 
   def authenticate_organizer
-    redirect_to root_path, :notice => 'You do not have permission' unless user_is_organizer?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_organizer?
   end
 
   def authenticate_staff
-    redirect_to root_path, :notice => 'You do not have permission' unless user_is_staff?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_staff?
   end
 end

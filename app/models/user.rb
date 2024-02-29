@@ -62,7 +62,7 @@ class User
   field :admin, :type => Boolean, :default => false
   field :mod, :type => Boolean, :default => false
   field :organizer, :type => Boolean, :default => false
-  field :locale, :type => String, :default => 'en_us'
+  field :locale, :type => String, :default => :en
   field :country, :type => String
 
   def has_team?

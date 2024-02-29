@@ -18,24 +18,26 @@
         %br
         %dl.dl-horizontal
           %dt
-            Short Name
+            = t("rva.tracks.format.short-name.title")
           %dd
             = @track.short_name
           %dt
-            Difficulty
+            = t("rva.tracks.format.difficulty.title")
           %dd
             = @track.difficulty_name
           %dt
-            Length
+            = t("rva.tracks.format.length.title")
           %dd
-            = "#{@track.length} meters"
-          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Original Re-Volt Content"}
-            Stock?
+            = t("rva.tracks.format.length.meters", length:@track.length) #{@track.length}
+          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
+            = t("rva.tracks.format.stock.title")
+          %dt
+
           %dd
-            = @track.stock ? "Yes" : "No"
+            = @track.stock ? t("rva.tracks.format.stock.true") : t("rva.tracks.format.stock.false")
         - if @track.season
           %i
-            = "This track has been featured in RVA #{@track.season.name}"
+            = t("rva.tracks.featured.description", season:@track.season.name) #{@track.season.name}
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @track.thumbnail_url}

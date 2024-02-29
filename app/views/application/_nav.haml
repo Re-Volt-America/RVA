@@ -15,26 +15,26 @@
         %li.nav-item
           %a.nav-link{:href => tracks_path}
             %i.fa.fa-map{:"aria-hidden" => "true"}
-            = "Tracks"
+            = t("nav.tracks")
         %li.nav-item
           %a.nav-link{:href => cars_path}
             %i.fa.fa-car{:"aria-hidden" => "true"}
-            = "Cars"
+            = t("nav.cars")
         %li.nav-item
           %a.nav-link{:href => seasons_path}
             %i.fa.fa-calendar
-            = "Seasons"
+            = t("nav.seasons")
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => "true", :"aria-expanded" => "false"}
             %i.fa.fa-trophy{:"aria-hidden" => true}
-            = "League"
+            = t("nav.league.title")
           %div.dropdown-menu{:"aria-labelledby" => "dropdown01"}
             %a.dropdown-item{:href => stats_path}
               %i.fa.fa-line-chart{:"aria-hidden" => "true"}
-              = "Leaderboard"
+              = t("nav.league.leaderboard")
             %a.dropdown-item{:href => points_path}
               %i.fa.fa-list-ol{:"aria-hidden" => "true"}
-              = t('nav.rva.points')
+              = t('nav.league.point-system')
             %a.dropdown-item{:href => teams_path}
               %i.fa.fa-users
               = t('nav.league.teams')
@@ -47,8 +47,18 @@
             = t('nav.downloads')
         %li.nav-item
       %ul.navbar-nav
+        - if user_signed_in?
+          %li.dropdown
+            %a.nav-link.dropdown-toggle{:href => "", :"data-toggle" => "dropdown", :"aria-haspopup" => true, :"aria-expanded" => false}
+              = image_tag "i18n/#{I18n.locale}.png", :class => "locale-flag"
+            %ul.dropdown-menu.dropdown-menu-right{:"aria-labelledby" => "dropdown02"}
+              - I18n.available_locales.each do |l|
+                %a.dropdown-item{:"data-turbo" => "true", :"data-turbo-method" => "put", :href => users_locale_path(:locale => l)}
+                  = image_tag "i18n/#{l}.png", :class => "locale-flag"
+                  = SYS::LOCALES_MAP.key(l)
+
         %li.dropdown
-          %a.nav-link.dropdown-toggle{:id => "access-toggle", :style => "outline: none; #{user_signed_in? ? 'line-height: 0px' : ''};", :"data-toggle" => "dropdown", :href => "#"}
+          %a.nav-link.dropdown-toggle{:id => "access-toggle", :"data-toggle" => "dropdown", :href => "#"}
             - if user_signed_in?
               %span.current-username
                 = current_user.username
@@ -60,9 +70,9 @@
               - @nav.each do |item|
                 = render_navigation(item)
               %li
-                = link_to "Log out", destroy_user_session_path, :class => "dropdown-item", data: { turbo: true, turbo_method: :delete }
+                = link_to t("nav.user.log-out"), destroy_user_session_path, :class => "dropdown-item", data: { turbo: true, turbo_method: :delete }
             - else
               %li
-                = link_to "Login", new_user_session_path, :class => "dropdown-item"
+                = link_to t("nav.user.login"), new_user_session_path, :class => "dropdown-item"
               %li
-                = link_to "Register", new_user_registration_path, :class => "dropdown-item"
+                = link_to t("nav.user.register"), new_user_registration_path, :class => "dropdown-item"

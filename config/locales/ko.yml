@@ -1,10 +1,9 @@
-en:
-
-  # Navigation
+ko:
+  #Navigation
   nav:
-    play: "Play"
-    tracks: "Tracks"
-    cars: "Cars"
+    play: "플레이"
+    tracks: "트랙"
+    cars: "차량"
     seasons: "Seasons"
     league:
       title: "League"
@@ -12,7 +11,7 @@ en:
       point-system: "Points System"
       teams: "Teams"
       tournaments: "Tournaments"
-    downloads: "Downloads"
+    downloads: "다운로드"
     user:
       my-profile: "My Profile"
       settings: "Settings"
@@ -28,8 +27,7 @@ en:
       log-out: "Log out"
       login: "Login"
       register: "Register"
-
-  # Sub-navigation
+  #Sub-navigation
   sub-nav:
     seasons: "Seasons"
     rankings: "Rankings"
@@ -38,31 +36,29 @@ en:
     session-n: "Session %{n}"
     tracks: "Tracks"
     cars: "Cars"
-
-  # Footer
+  #Footer
   footer:
     policies:
-      title: "Policies"
-      rules: "Rules"
-      terms: "Terms of Service"
-      privacy: "Privacy Policy"
+      title: "정책"
+      rules: "규칙"
+      terms: "서비스 이용약관"
+      privacy: "개인정보처리방침"
     organization:
-      title: "Organization"
-      staff: "Staff listing"
-      logs: "Development Logs"
-      bugs: "Report a Bug"
-      sponsor: "Sponsor"
+      title: "기관"
+      staff: "직원"
+      logs: "개발 로그"
+      bugs: "버그 신고"
+      sponsor: "스폰서"
     trademark:
-      title: "Trademark"
-      assets: "Assets"
-      emoji: "Emoji"
+      title: "상표"
+      assets: "자산"
+      emoji: "이모지"
     social:
-      title: "Find Us"
+      title: "문의하기"
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
-
-  # Landing page, Splash, About
+  #Landing page, Splash, About
   application:
     splash:
       description1: "The Website for the American community of Re-Volt, 1999"
@@ -91,13 +87,11 @@ en:
     about:
       title: "About Re-Volt America"
       description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-
-  # Play page
+  #Play page
   play:
-    subheader: "We play daily at 00:00 UTC"
-    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
-
-  # Downloads page
+    subheader: "매일 00:00 UTC에 플레이합니다"
+    subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
+  #Downloads page
   downloads:
     title: "Downloads"
     video: "Pending video..."
@@ -105,18 +99,17 @@ en:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
-
-  # Rules page
+  #Rules page
   rules:
-    title: "Rules"
+    title: "규칙"
     sections:
       a:
-        title: "A. General Composure"
-        1: "Always keep a calm atmosphere towards other users."
-        2_html: "Do not <em>Spam</em>. Within reasonable limits you may promote yourself and others, just do not cross the line and you should be fine."
-        3_html: "<a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>Doxing</a> other users is <b>prohibited</b>. If you endorse it or take part in it RVA <b>WILL</b> take action."
-        4: "Follow directions given by staff members at all times."
-        5: "Use your common sense. It really is not that difficult!"
+        title: "A. 기본 평정"
+        1: "다른 사용자에게는 항상 침착한 분위기를 유지해야 합니다."
+        2_html: "메시지를 <em>도배</em> 하지 마세요. 다른 사람과 귀하 자신의 홍보는 사유 없이 제한됩니다. 도배에 대한 경계를 넘지 말고 잘 지내주세요."
+        3_html: "다른 유저를 <a class='text-primary' href='https://en.wikipedia.org/wiki/Doxing' target='_blank'>독싱</a> 하는 것은 <b>금지</b>되어 있습니다. 만약 귀하가 독싱을 RVA에서 지지한다면 <b>곧</b> 처분이 내려질 것입니다."
+        4: "직원분들의 설명을 따라주세요."
+        5: "네티켓을 지켜주세요. 정말 어렵지 않습니다!"
       b:
         title: "B. Creating a Username"
         1:
@@ -125,62 +118,59 @@ en:
           bullet2: "Your nickname may contain any characters from A-Z (uppercase or lowercase), numbers, underscores and blank spaces."
           bullet3: "Your nickname must be unique! If you are not sure, you may ask the staff team to find out if the username you want is already being used by another player."
       c:
-        title: "C. Races & Scoring"
-        1: "You may use cars from the class in course & below. (rookie, amateur, advanced, etc.)"
+        title: "C. 레이스 & 점수"
+        1: "코스 & 아래에 있는 규칙을 따르는 클래스의 차량만 사용이 가능합니다. (입문자, 아마추어, 숙련자 등)"
         2:
-          title: "Using a car below the class in course will grant the following score bonuses:"
-          bullet1_html: "One class below: <b>25%</b>."
-          bullet2_html: "Two classes below: <b>50%</b>."
-          bullet3_html: "Three classes below: <b>75%</b>."
-          bullet4_html: "Four classes below: <b>100%</b>."
-          bullet5_html: "Five classes below: <b>125%</b>."
-        3_html: "Do <b>NOT</b> use cars from a higher class than the one in course. <b>Doing so will invalidate the points you get with it</b>."
-        4_html: "Do <b>NOT</b> purposely shoot or mess up non-immediate positions (players who lap you)."
-        5_html: "Do <b>NOT</b> ask for RE <small class='text-success'>(1)</small> unless you are late to a race or experience technical difficulties. Other reasons are deemed invalid."
-        6: "Avoid changing your name in the middle of lobbies, as this may difficult the process of calculating the final scores."
+          title: "아래에 있는 차량을 사용할 시 큰 점수 보너스가 지급됩니다:"
+          bullet1_html: "1 클래스 아래: <b>25%</b>."
+          bullet2_html: "2 클래스 아래: <b>50%</b>."
+          bullet3_html: "3 클래스 아래: <b>75%</b>."
+          bullet4_html: "4 클래스 아래: <b>100%</b>."
+          bullet5_html: "5 클래스 아래: <b>125%</b>."
+        3_html: "한 코스보다 높은 클래스의 차량을 사용하지 <b>마세요</b>. <b>얻은 점수는 무효화될 것입니다</b>."
+        4_html: "가깝지 않은 (한 바퀴 차이 나는) 순위의 플레이어를 일부로 쏘거나 괴롭히지 <b>마세요</b>."
+        5_html: "레이스에 늦거나 기술적 어려움을 겪지 않는 한, RE<small class='text-success'>(1)</small>을 요청하지 <b>마세요</b>. 그 밖의 사유는 유효하지 않은 것으로 간주됩니다."
+        6: "로비의 중간에서 이름을 변경하지 마세요. 최종 점수를 계산하는 과정이 어려울 수 있습니다."
         7:
-          title: "You may type RE during the first 40 seconds of a race due to an external non-game related factor."
+          title: "외부 비 게임 관련 요인으로 인해 레이스의 처음 40초 동안 RE(재시작)을 입력할 수 있습니다."
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
         8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
-        title: "D. Discord Server"
-        1_html: "You must follow and abide to the <a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord Terms of Service</a>. Failure to do so will get you banned from Re-Volt America."
-        2: "Stay on-topic within channels."
-        3: "Do not harass other users."
-        4_html: "Media that may cause other users' Discord client to crash or <em>very explicit</em> content will be deleted, and you may be punished for posting it."
+        title: "D. Discord 서버"
+        1_html: "<a class='text-primary' href='https://discord.com/terms' target='_blank'>Discord 서비스 이용 약관</a>을 따르고 준수해야 합니다. 그렇지 않으면 Re-Volt America에서 차단될 것입니다."
+        2: "채널 내에서 주제를 벗어나지 마세요."
+        3: "다른 사용자를 괴롭히지 마세요."
+        4_html: "다른 사용자의 Discord 클라이언트를 중단시킬 수 있는 미디어 또는 매우 노골적인 콘텐츠는 삭제되며 게시한 것에 대해 처벌을 받을 수 있습니다."
       e:
-        title: "E. Punishments"
-        1_html: "Failure to follow any of the Races & Scoring rules may get you speced <small class='text-success'>(2)</small> in our lobbies, or <em>kicked</em> if you insist on breaking our rules."
-        2_html: "Users may be <em>kicked</em> from our Discord server for breaking the rules. If the rule violation is severe, you may be <em>banned</em> instead."
-        3: "Evading Discord bans will get you banned eventually. We will find out."
-        4: "All infractions are subject to staff team's discretion"
+        title: "E. 처벌"
+        1_html: "레이스 및 채점 규칙을 따르지 않으면 로비에 speced<small class='text-success'>(2)</small> 될 수 있으며 규칙 위반을 고집하면 <em>추방</em>당할 수 있습니다."
+        2_html: "Discord 서버의 규칙을 위반 시 사용자는 <em>추방</em>당할 것 입니다. 규칙의 위반이 심하다면 <em>차단</em>될 것입니다."
+        3: "Discord 금지를 회피하면 결국 금지됩니다. 저희는 찾아낼 것입니다."
+        4: "모든 위반 사항은 직원 팀의 재량에 따라 결정됩니다."
     precisions:
       1:
         term: "(1) RE:"
-        precision: "Requesting the lobby host to restart the current race."
+        precision: "로비 호스트에게 현재 레이스를 다시 시작하도록 요청합니다."
       2:
         term: "(2) Speced:"
-        precision: "When the lobby host forces a racer into spectator. In this context, as a form of punishment."
-
-  # Privacy & Terms pages
+        precision: "로비 호스트가 레이서를 강제로 관중으로 변경할 때. 이런 상황을, 처벌로 한 형태입니다."
+  #Privacy & Terms pages
   privacy:
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
-
-  # Staff page
+  #Staff page
   staff:
-    title: "Staff"
-    description: "The people who help run Re-Volt America!"
+    title: "직원"
+    description: "Re-volt America를 운영하는 사람들!"
     groups:
-      administrator: "Administrators"
-      developer: "Developers"
-      moderator: "Moderators"
-      organizer: "Organizers"
-
-  # Points page
+      administrator: "관리자"
+      developer: "개발자"
+      moderator: "운영자"
+      organizer: "주최자"
+  #Points page
   points:
-    title: "RVA Points System"
+    title: "포인트 시스템"
     introduction:
       title: "Introduction"
       description: "In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores will depend on two things: their final position in the race, and the amount of racers in that race. If a race has 10 or more racers in it, then it's considered a to be a \"big\" race."
@@ -194,8 +184,7 @@ en:
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
       title: "Download RVA Points"
-
-  # RVA strings
+  #RVA strings
   rva:
     tracks:
       all-tracks: "All Tracks"
@@ -243,51 +232,46 @@ en:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
-
-  # Assets page
+  #Assets page
   assets:
-    title: "LOGOS & USAGE"
-    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
+    title: "로고 & 사용법"
+    subtitle_html: "유능한 인재들이 만든 주요 자산의 컬렉션 <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, RVA와 통합하거나 저희에게 링크하기 위해 다운로드 할 수 있습니다."
     allowed:
-      title: "Allowed Usage"
-      1: "Use our logo to link to our website."
-      2: "Use our logo to advertise that you integrate with RVA."
-      3: "Use our logo in blog posts or articles about RVA."
+      title: "허용된 사용법"
+      1: "웹 사이트의 출처를 밝힌 로고 사용"
+      2: "RVA와 통합 홍보용으로 로고 사용"
+      3: "RVA에 대한 블로그 게시물 또는 글에서 로고 사용"
     prohibited:
-      title: "Forbidden Usage"
-      1: "Use our logo as your application's icon."
-      2: "Create a modified version of any of our logos."
-      3: "Integrate any of our logos into your logo."
-      4: "Use any of our artwork without permission."
-      5: "Change the colours, dimensions or add your own text/images."
+      title: "금지된 사용법"
+      1: "어플리케이션 아이콘으로 로고 사용"
+      2: "로고를 사용하여 2차 창작물 제작"
+      3: "로고를 귀하의 로고로 통합"
+      4: "저희의 모든 예술품 무단 사용"
+      5: "색상, 치수 변경 또는 자신의 텍스트/이미지 추가"
     contact:
-      title: "Please Contact Us"
-      1: "If you want to use artwork not included in this repository."
-      2: "If you want to use these images in a video/mainstream media."
+      title: "연락해주세요"
+      1: "위 정보에 포함되지 않은 이유로 아트워크를 사용하실 경우"
+      2: "비디오/주요 미디어에서 이미지를 사용하실 경우"
     naming:
-      title: "Naming Projects and Products"
-      1: "Please avoid naming your projects anything that implies Re-Volt America's endorsement. This also applies to domain names."
+      title: "프로젝트 및 제품 명명"
+      1: "Re-Volt America의 승인을 암시하는 프로젝트를 명명하지 마세요. 이는 도메인 이름에도 적용됩니다."
     attribution:
-      title: "Attribution"
-      1: "Other assets like car rating images, track images, emojis, etc. are made by members of our community, and all rights belong to their respective authors."
-      2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
-
-  # Seasons page
+      title: "출처"
+      1: "차량 등급 이미지, 트랙 이미지, 이모티콘 등과 같은 다른 자산은 우리 커뮤니티의 구성원에 의해 만들어지며, 모든 권리는 각 저자의 것입니다."
+      2_html: "이 지침은 <a href='https://github.com/logos' target='_blank'>GitHub의 로고 및 사용 지침</a>에 큰 기본이 되었습니다."
+  #Seasons page
   seasons:
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
-          consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score
-          points for every race."
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
       current-season: "Current Season"
       learn-more: "Learn More"
     bottom:
       title: "All Seasons"
       present: "Present"
-
-  # Rankings page
+  #Rankings page
   rankings:
     title: "Ranking %{number}"
     title2: "Leaderboards"
@@ -322,8 +306,7 @@ en:
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
-
-  # Devise strings
+  #Devise strings
   confirmation:
     welcome: "Welcome %{email}"
     description: "You can confirm your account email through the link below:"
@@ -378,8 +361,7 @@ en:
       current-password: "Current password"
       update: "Update"
       update-admin: "Update %{user}"
-
-  # Development logs
+  #Development logs
   repositories:
     title: "Revisions"
     small: "Latest git commits in our organization"
@@ -391,8 +373,7 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
-
-  # RVA results page
+  #RVA results page
   results:
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
@@ -424,8 +405,7 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
-
-  # Teams page
+  #Teams page
   teams:
     title: "RVA Teams"
     no-teams: "No teams to display"
@@ -434,8 +414,7 @@ en:
     team:
       leader: "Leader"
       members: "Members"
-
-  # User profile page
+  #User profile page
   users:
     stats:
       title: "Stats"
@@ -473,38 +452,33 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
-
-  # Tournaments page
+  #Tournaments page
   tournaments:
     title: "Past Tournaments"
     new: "New"
-
-  # Re-Volt car classes
+  #Re-Volt car classes
   classes:
-    rookie: "Rookie"
-    amateur: "Amateur"
-    advanced: "Advanced"
-    semi-pro: "Semi-Pro"
-    pro: "Pro"
-    super-pro: "Super-Pro"
-    clockwork: "Clockwork"
-    random: "Random"
-
-  # Car metrics
+    rookie: "루키"
+    amateur: "아마추어"
+    advanced: "상급자"
+    semi-pro: "준프로"
+    pro: "프로"
+    super-pro: "슈퍼프로"
+    clockwork: "태엽"
+    random: "무작위"
+  #Car metrics
   car-card:
-    speed: "Speed"
+    speed: "속도"
     kmh: "km/h"
     acc: "Acc"
     ms2: "ms²"
-    weight: "Weight"
+    weight: "중량"
     kg: "Kg"
-    multiplier: "Multiplier"
-
-  # Alert message boxes
+    multiplier: "배율"
+  #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
-
-  # Error pages
+  #Error pages
   error:
     404:
       title: "Error 404"
@@ -515,9 +489,8 @@ en:
     500:
       title: "Error 404"
       message: "Internal Server Error"
-
-  # Misc strings
+  #Misc strings
   misc:
-    download: "Download"
-    search: "Search"
+    download: "다운로드"
+    search: "찾기"
     and: "&"
