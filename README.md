@@ -22,13 +22,10 @@ Table of Contents
 ===
 * [Architecture](#architecture)
 * [Installation](#installation)
-    * [Ubuntu 18.04](#ubuntu-1804)
-        * [Download & Install](#download--install)
-        * [Mounting](#mounting)
-        * [Database Setup](#database-setup)
-            * [MongoDB](#mongodb)
-            * [Redis](#redis)
-        * [Environment](#environment)
+* [Database Setup](#database-setup)
+  * [MongoDB](#mongodb)
+  * [Redis](#redis)
+* [Environment](#environment)
 * [Docker](#docker)
 * [Contributing](#contributing)
 * [Governance](#governance)
@@ -74,7 +71,7 @@ Very much like it happens with Mongo, since Redis is running on its default port
 Default settings should suffice. You may modify this file in case you want to change the default connection info or
 other Redis options.
 
-### Environment
+## Environment
 Run the following shell command from the RVA repo to start the application:
 ```
 rails rva -b HOST -p PORT              # Public website on http://`<host>`:`<port>`
