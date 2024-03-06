@@ -1,5 +1,0 @@
-%p
-  = t("confirmation.welcome", email:@email) #{@email}!
-%p
-  = t("confirmation.description")
-%p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)

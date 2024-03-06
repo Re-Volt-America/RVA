@@ -1,7 +1,0 @@
-%p
-  = t("account.unlock.greeting", email:@resource.email) #{@resource.email}!
-%p
-  = t("account.unlock.advise")
-%p
-  = t("account.unlock.instruction")
-%p= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token)
