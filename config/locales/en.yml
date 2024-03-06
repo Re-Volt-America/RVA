@@ -106,6 +106,63 @@ en:
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
 
+  # FAQ page
+  faq:
+    title: "Frequently Asked Questions"
+    description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
+    accordion:
+      download:
+        title: "How do I download Re-Volt?"
+        recommended-way:
+          description-html: "With this program, you can download and manage custom content for the game with just a few clicks. 
+                             Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>.
+                             <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be
+                             installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
+        classic-way:
+          description-html: "Enter the following <a href='https://re-volt.io/downloads/game' target='_blank'>link</a>
+                             and choose the version of the game for your operating system (Windows, Linux or MacOS).
+                             <p>When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.</p>"
+        mobile-players:
+          description-html: "In the case of Android, when you try to run the game installer
+                           (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download)
+                            you need to grant permissions to install external applications.
+                            <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app
+                            drawer of your phone.</p> 
+                            <p>iOS is still not supported :("
+        steam-revolt:
+          title: "Steam Re-Volt"
+          description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version.
+                             For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for
+                             it either."
+      install:
+        title: "How do I install RVA packs?"
+        recommended-way:
+          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list,
+                             then click the Install Packages button in the lower right corner to start downloading and installing them."
+        classic-way:
+          description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack.
+                            <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
+        mobile-players:
+          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files,
+                            you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager.
+                            <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that
+                             is in the internal memory.</p>"
+      play-online:
+        title: "How can I play online?"
+        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on
+                           a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        reminder:
+          title: "Keep this in mind"
+          li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
+          li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva,
+                      </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
+          li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
+      generics:
+        recommended-way: "Recommended way: RVGL Launcher"
+        classic-way: "Classic way"
+        mobile-players: "Mobile Players"
+
+
   # Rules page
   rules:
     title: "Rules"
