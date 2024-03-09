@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   include RankingsHelper
 
   before_action :authenticate_user!, :except => [:show, :stats]
-  before_action :authenticate_admin, :except => [:show, :stats]
+  before_action :authenticate_admin, :except => [:show, :stats, :update_locale]
 
   def members
     @users = User.all
