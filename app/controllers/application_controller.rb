@@ -88,11 +88,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_mod
-    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_mod?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_mod? || user_is_admin?
   end
 
   def authenticate_organizer
-    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_organizer?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_organizer? || user_is_admin?
   end
 
   def authenticate_staff
