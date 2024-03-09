@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     return unless user_signed_in?
 
     @admin_nav = [
-      { :name => t('nav.user.admin.upload-session'), :path => new_session_path },
+      { :name => t('nav.user.admin.upload-session'), :path => new_session_path, :organizer => true },
       { :name => t('nav.user.admin.create-season'), :path => new_season_path },
       { :name => t('nav.user.admin.import-tracks'), :path => new_track_path },
       { :name => t('nav.user.admin.import-cars'), :path => new_car_path },
@@ -26,9 +26,9 @@ class ApplicationController < ActionController::Base
       { :name => t('nav.user.admin.import-users'), :path => users_new_path }
     ]
     @nav = [
-      { :name => t('nav.user.admin.title'), :path => '', :sub => @admin_nav, :admin => true },
-      { :name => t('nav.user.my-profile'), :path => user_path(current_user.username) },
-      { :name => t('nav.user.settings'), :path => main_app.edit_user_registration_path }
+      { :name => t('nav.user.admin.title'), :path => '', :sub => @admin_nav, :organizer => true },
+      { :name => t('nav.user.my-profile'), :path => user_path(current_user.username), :user => true },
+      { :name => t('nav.user.settings'), :path => main_app.edit_user_registration_path, :user => true }
     ]
   end
 
@@ -46,19 +46,26 @@ class ApplicationController < ActionController::Base
 
   def render_navigation(item)
     if item[:sub]
-      return if item[:admin] && !user_is_admin?
+      subs = item[:sub].map do |sub|
+        if sub[:user] || user_is_admin? || ((sub[:organizer] && user_is_organizer?) || (sub[:mod] && user_is_mod?))
+          render_navigation(sub)
+        end
+      end
 
-      subs = item[:sub].map { |sub| render_navigation(sub) }.compact
-      %(
-          <li class="dropdown-submenu">
-              <a class="dropdown-item dropdown-toggle" href="#">#{item[:name]}</a>
-              <ul class="dropdown-menu">
-                  #{subs.join}
-              </ul>
-          </li>
-        ).html_safe
+      if item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
+        %(
+            <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">#{item[:name]}</a>
+                <ul class="dropdown-menu">
+                    #{subs.join}
+                </ul>
+            </li>
+          ).html_safe
+      end
     else
-      %(<li>#{nav_link(item)}</li>).html_safe
+      if item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
+        %(<li>#{nav_link(item)}</li>).html_safe
+      end
     end
   end
 
