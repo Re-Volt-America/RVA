@@ -70,7 +70,7 @@
       %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"}= t("users.tabs.title")
     %li.nav-item
       %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"}= t("users.tabs.stats")
-    - if user_is_admin?
+    - if user_is_mod?
       %li.nav-item
         %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"}= t("users.tabs.admin")
   .tab-content
@@ -230,7 +230,7 @@
             = number_to_percentage(@user.stats.participation_rate * 100, :precision => 1)
             %small
               = t("users.stats.overall-stats.participation")
-    - if user_is_admin?
+    - if user_is_mod?
       #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
         = form_for(@user, html: { method: :put }) do |f|
           = f.fields_for :profile do |profile|
