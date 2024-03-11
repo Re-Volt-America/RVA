@@ -102,7 +102,7 @@
             - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               .devise-text-pleasant
                 %i.fa.fa-exclamation-triangle{"aria-hidden" => "true"}
-                Awaiting confirmation for: #{resource.unconfirmed_email}
+                = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email)
             .form-group
               .input-group
                 = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
