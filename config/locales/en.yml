@@ -597,6 +597,12 @@ en:
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       edit:
+        are_you_sure: Are you sure?
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
+        unhappy: Unhappy?
+        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
         title: "User settings"
         email:
           title: "Change Email"
