@@ -1,0 +1,12 @@
+%h2.mb-3= t('.resend_unlock_instructions')
+= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+  .row
+    .col-md-5
+      .field.form-group
+        = f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
+      .actions
+        = f.button t('.resend_unlock_instructions'), :type => "submit", :class => "btn mb-2"
+      = render "devise/shared/links"
+    .col-md-7
+      = render "devise/shared/error_messages", resource: resource
