@@ -306,61 +306,6 @@ es_cl:
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
-  #Devise strings
-  confirmation:
-    welcome: "Welcome %{email}"
-    description: "You can confirm your account email through the link below:"
-  email:
-    changed:
-      greeting: "Hello %{email}!"
-      changing: "We're contacting you to notify you that your email is being changed to %{email}."
-      changed: "We're contacting you to notify you that your email has been changed to %{email}"
-  password:
-    change:
-      greeting: "Hello %{email}!"
-      description: "We're contacting you to notify you that your password has been changed."
-    reset:
-      greeting: "Hello %{email}!"
-      advise: "Someone has requested a link to change your password. You can do this through the link below."
-      advise2: "If you didn't request this, please ignore this email."
-      advise3: "Your password won't change until you access the link above and create a new one."
-  account:
-    unlock:
-      greeting: "Hello %{email}!"
-      advise: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
-      instruction: "Click the link below to unlock your account:"
-      url: "Unlock my account"
-  registrations:
-    edit:
-      title: "Edit User"
-      email:
-        title: "Change Email"
-        new: "New email"
-      password:
-        title: "Change Password"
-        new-length: "New password (%{length} characters minimum)"
-        new: "New password"
-        confirm: "Confirm new password"
-      info:
-        title: "Change your info"
-        gender: "Gender"
-        nationality:
-          title: "Nationality"
-          small: "(National flag)"
-          placeholder: "Select nationality"
-        location: "Location"
-        occupation: "Occupation"
-        interests: "Interests"
-        public-email: "Public Email"
-        about: "About %{user}"
-        about-me:
-          title: "About me... (You may use html)"
-          title2: "About %{user}"
-          nothing: "Nothing here yet..."
-          placeholder: "Write something interesting..."
-      current-password: "Current password"
-      update: "Update"
-      update-admin: "Update %{user}"
   #Development logs
   repositories:
     title: "Revisions"
@@ -587,7 +532,7 @@ es_cl:
           new: "New password"
           confirm: "Confirm new password"
         profile:
-          title: "Edit Profile"
+          title: "Editar Perfil"
           gender: "Gender"
           nationality:
             title: "Nationality"
