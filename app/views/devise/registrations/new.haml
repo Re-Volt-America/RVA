@@ -3,10 +3,10 @@
   .row
     .col-md-5
       .field.form-group
-        = f.label(:username, "Re-Volt Username")
+        = f.label(:username, t(".username"))
         = f.text_field :username, autocomplete: "username", :class => "form-control", :style => "text-transform: uppercase;"
       .field.form-group
-        = f.label :email
+        = f.label :email, t("activerecord.attributes.user.email")
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .field.form-group
         = f.label :password, t("devise.shared.links.password")

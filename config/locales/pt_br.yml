@@ -552,6 +552,7 @@ pt_br:
         update-admin: "Update %{user}"
       new:
         sign_up: Inscrever-se
+        username: "Re-Volt Username"
       signed_up: Bem vindo! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.

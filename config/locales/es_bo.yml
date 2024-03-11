@@ -552,6 +552,7 @@ es_bo:
         update-admin: "Update %{user}"
       new:
         sign_up: Crear cuenta
+        username: "Re-Volt Username"
       signed_up: Bienvenida/o. Tu cuenta ha sido creada.
       signed_up_but_inactive: Tu cuenta ha sido creada. Sin embargo, no puedes iniciar sesión ya que tu cuenta aún no ha sido activada.
       signed_up_but_locked: Tu cuenta ha sido creada. Sin embargo, no es posible iniciar la sesión porque que tu cuenta se encuentra bloqueada.

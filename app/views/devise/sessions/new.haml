@@ -3,15 +3,15 @@
   .row
     .col-md-5
       .field.form-group
-        = f.label :email
+        = f.label :email, t("activerecord.attributes.user.email")
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .field.form-group
-        = f.label :password
+        = f.label :password, t("activerecord.attributes.user.password")
         = f.password_field :password, autocomplete: "current-password", :class => "form-control"
       - if devise_mapping.rememberable?
         .field.form-group
           = f.check_box :remember_me
-          = f.label :remember_me
+          = f.label :remember_me, t("activerecord.attributes.user.remember_me")
       .actions
         = f.button t('.sign_in'), :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"

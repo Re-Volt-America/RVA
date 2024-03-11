@@ -3,7 +3,7 @@
   .row
     .col-md-5
       .field.form-group
-        = f.label :email
+        = f.label :email, t("activerecord.attributes.user.email")
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .actions
         = f.button t('.resend_unlock_instructions'), :type => "submit", :class => "btn mb-2"

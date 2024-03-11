@@ -551,6 +551,7 @@ it:
         update-admin: "Update %{user}"
       new:
         sign_up: Registrati
+        username: "Re-Volt Username"
       signed_up: Iscrizione eseguita correttamente. Se abilitata, una conferma è stata inviata al tuo indirizzo email.
       signed_up_but_inactive: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account non è ancora attivo.
       signed_up_but_locked: Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account è bloccato.

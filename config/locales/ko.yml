@@ -560,6 +560,7 @@ ko:
       already_signed_out: 성공적으로 로그아웃 되었습니다.
       new:
         sign_in: 로그인
+        username: "Re-Volt Username"
       signed_in: 성공적으로 로그인 되었습니다.
       signed_out: 성공적으로 로그아웃 되었습니다.
     shared:
