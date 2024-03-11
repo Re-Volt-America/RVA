@@ -677,7 +677,6 @@ en:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
-
   # Alert message boxes
   alerts:
     no-permission: "You do not have permission"
