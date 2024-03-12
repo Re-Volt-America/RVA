@@ -628,8 +628,8 @@ en-GB:
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:
-        one: '1 error prohibited this %{resource} from being saved:'
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: 'Unable to create %{resource}:'
+        other: "Unable to create %{resource} (%{count} errors):"
   #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
