@@ -1,41 +1,41 @@
 lol:
   #Navigation
   nav:
-    play: "Play"
-    tracks: "Tracks"
-    cars: "Cars"
-    seasons: "Seasons"
+    play: "Pley"
+    tracks: "trakz"
+    cars: "carz"
+    seasons: "Seashuns"
     league:
-      title: "League"
-      leaderboard: "Leaderboard"
-      point-system: "Points System"
-      teams: "Teams"
-      tournaments: "Tournaments"
-    downloads: "Downloads"
+      title: "LOL"
+      leaderboard: "katboard"
+      point-system: "pointz systm"
+      teams: "Teamz"
+      tournaments: "INVASION CUPS"
+    downloads: "dowolondas"
     user:
-      my-profile: "My Profile"
-      settings: "Settings"
+      my-profile: "mysekf"
+      settings: "myconfig"
       admin:
         title: "Admin"
-        upload-session: "Upload Session"
-        create-season: "Create Season"
-        import-tracks: "Import Tracks"
-        import-cars: "Import Cars"
-        new-team: "New Team"
-        new-tournament: "New Tournament"
-        import-users: "Import Users"
-      log-out: "Log out"
-      login: "Login"
-      register: "Register"
+        upload-session: "Uplod seshun"
+        create-season: "Craet seesun"
+        import-tracks: "giev Trakcz"
+        import-cars: "giev carz 2"
+        new-team: "new team"
+        new-tournament: "NEW INVASION CUP"
+        import-users: "giev cats"
+      log-out: "GET ME OUT"
+      login: "LET ME INNNNNNNN"
+      register: "Sign rVa Contract 4 acc"
   #Sub-navigation
   sub-nav:
-    seasons: "Seasons"
-    rankings: "Rankings"
-    ranking: "Ranking"
-    ranking-n: "Ranking %{n}"
-    session-n: "Session %{n}"
-    tracks: "Tracks"
-    cars: "Cars"
+    seasons: "Seashunz"
+    rankings: "da ranks"
+    ranking: "rank"
+    ranking-n: "Rank #%{n}"
+    session-n: "Sesshun #%{n}"
+    tracks: "Trackz"
+    cars: "Carz"
   #Footer
   footer:
     policies:
@@ -61,80 +61,80 @@ lol:
   #Landing page, Splash, About
   application:
     splash:
-      description1: "The Website for the American community of Re-Volt, 1999"
-      description2: "Download the game and meet players from all over the Americas!"
-      download-button: "Downloads »"
+      description1: "Da websiet of da Re-Volt Americz of Re-Volt of katz, 1999"
+      description2: "dowonload da gaem and meet da catz from all ovur da AMERICA"
+      download-button: "Dowomnloads »"
     index:
       community:
-        title: "Community"
-        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
-        play-button: "Play »"
+        title: "Kingdom of Cats"
+        description: "We'r an amazin RE-volt kingdom of Katz mainly made up of souht american catz, but u will find kittehs from ALL THE PLANET racin onlien wit us"
+        play-button: "PLAY!!!! »"
       competition:
-        title: "Competition"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
-        seasons-button: "Seasons »"
+        title: "Cat Races"
+        description: "Within da re-volt Americas we raec in seashunz form. In da seasons, u wil raec onlien all day everyday, and get da pointz 4 evry raec u polay"
+        seasons-button: "Seashunz"
       reliability:
-        title: "Reliabilty"
-        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
-        about-us-button: "About Us »"
+        title: "U CAN TRUST"
+        description: "Re-Volt Amerika has been maed with stedinezz and skalabity in mind. Most ov teh thingz u see here u wont find in any other Re-Volt fam."
+        about-us-button: "Who r we? »"
       recent:
-        title: "Recent Sessions"
-        races: "%{category} Races"
-        team-races: "%{category} Team Races"
-        hosted-by: "Hosted by %{host}"
-        all-sessions-button: "All Sessions"
+        title: "seshuns rn"
+        races: "%{category} raecs"
+        team-races: "%{category} team raecs"
+        hosted-by: "hostd bai %{host}"
+        all-sessions-button: "ALL SESHYUNZ"
         no-sessions: "N"
     about:
-      title: "About Re-Volt America"
-      description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
+      title: "aboat Re-Volt Amerik"
+      description: "Teh largest Re-Volt family u'll find in teh Big Land ov Amerika. Join our raecin' sesshuns, be da lead in our seesunz and meet other Re-Volt pleyrz frum arond teh wurld!"
   #Play page
   play:
-    subheader: "We play daily at 00:00 UTC"
+    subheader: "WE GO RACIN $@ 00:00 UTC"
     subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-rva</code>"
   #Downloads page
   downloads:
-    title: "Downloads"
-    video: "Pending video..."
+    title: "dowonloads"
+    video: "pending vid..."
     faq:
-      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
-      button: "Take me there!"
-    legacy-downloads: "Legacy Downloads"
+      title: "If ur new to our family, go read the FAQ page u'll learn smth"
+      button: "TAKE ME THERE"
+    legacy-downloads: "Old dowonloads"
   #FAQ page
   faq:
-    title: "Frequently Asked Questions"
-    description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
+    title: "kitteh ask these all da tiem"
+    description: "Dis is a colleckshun ov teh FAQ by new frindz when they first want 2 pley Re-Volt onlain with us in RVA. Maek sure 2 read if u r new 2 our family!"
     accordion:
       download:
-        title: "How do I download Re-Volt?"
+        title: "How 2 get Re-Volt?"
         recommended-way:
           description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
         classic-way:
-          description-html: "Enter the following <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> and choose the version of the game for your operating system (Windows, Linux or MacOS). <p>When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.</p>"
+          description-html: "Go to this <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> and chooz teh vershun of teh gaem for ur os (Windows, Linux or MacOS). <p>When teh dowonload iz finishd, unzip teh archive in a foldr of ur choice and run RVGL to pley.</p>"
         mobile-players:
-          description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
+          description-html: "In teh case ov Android, when u try to run the gaem installr (clic dis <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> 2 download) u need to giv passes 2 install ousid appz. <p> After acceptin' givin' da passes n' installin' da gaem, teh app can be opend normally frum teh app drawr of ur phone.</p> <p>iOS is still not ok sadge"
         steam-revolt:
-          title: "Steam Re-Volt"
+          title: "counterfit revolt"
           description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
       install:
-        title: "How do I install RVA packs?"
+        title: "How do i get RVA pax?"
         recommended-way:
-          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
+          description-html: "In the Pax tab chec teh rva_cars n' rva_tracks opshuns @ teh last of teh list, then click teh Get Packgz thingey in teh lower right cornr to start dowonloadin' and installin' them."
         classic-way:
           description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
         mobile-players:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
-        title: "How can I play online?"
+        title: "How can i raec other catz onlein?"
         description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
-          title: "Keep this in mind"
+          title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
       generics:
-        recommended-way: "Recommended way: RVGL Launcher"
-        classic-way: "Classic way"
-        mobile-players: "Mobile Players"
+        recommended-way: "Good way: RVGL Launcher"
+        classic-way: "OG wae"
+        mobile-players: "ROG"
   #Rules page
   rules:
     title: "Rulz"
@@ -149,7 +149,7 @@ lol:
       b:
         title: "B. Maek ur usernaem"
         1:
-          title: "2 play rivol u must chose a usernaem, an 2 be indxd into da iffishul rVa rankingz catz must choos a naem which abdiz 2 da followin:"
+          title: "2 play Re-Volt u must chose a usernaem, an 2 be indxd into da iffishul RVA rankingz catz must choos a naem which abdiz 2 da followin:"
           bullet1: "ur nicknaem muzrt haev frawm 1 to 16 chars!"
           bullet2: "ur nicknaem can has any chars frawm A2Z (big or smol), numbrz, underscors and blanks"
           bullet3: "ur nicknaem muzt be uniqueEE!! if ur not suer, u may ask da important kittehs team 2 find out if the useaernaem u want is lrdy taekn by another kitteh."
@@ -172,33 +172,33 @@ lol:
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
         8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
-        title: "D. Discoword Servur"
-        1_html: "u must folow n abaid 2 da <a class='text-primary' href='https://discord.com/terms' target='_blank'>discord rulez</a>. Failur to do dat wil get chu a bath"
+        title: "D. Discord Servur"
+        1_html: "u must folow n abaid 2 da <a class='text-primary' href='https://discord.com/terms' target='_blank'>discord rulez</a>. Faild to do dat wil get u a bath (also get kickd frum RVA!!)"
         2: "stya on-topicz in channulz."
         3: "do NOT harass other kittehs"
-        4_html: "Non krash kats' Discoword"
+        4_html: "Stuff dat may crash Discord kilent from othur kittehz or <em>very evul</em> stuff will be deltd, and u may get some truhbelz for postin' it."
       e:
         title: "E. BAD KAT!!"
-        1_html: "bad racecat wil be spectacated, or keek'd if rul are kept borked."
-        2_html: "kitteh may get kik if dont respect cat rulz. If beeg rul breakening, kat get baff."
+        1_html: "Fail 2 follow any ov teh Raecs & Skorin rulz may get u gostd <small class='text-success'>(2)</small> in our lobbies, or <em>kickd</em> if u dont care abt the rulz."
+        2_html: "kitteh may get <em>kiked</em> if dont respect cat rulz. If u brek the rulz intense-ly, kat get bath."
         3: "Dun't dodge bath!"
         4: "adminkat will decide ur fate"
     precisions:
       1:
-        term: "(!) RE (-.-):"
+        term: "(1) RE (-.-):"
         precision: "ask katrace to restart"
       2:
         term: "(!2) Speced:"
         precision: "when host cat puts racekat in spec"
   #Privacy & Terms pages
   privacy:
-    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> FBI CAT"
   terms:
-    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> dA TERMS OF DA SSERVIC"
   #Staff page
   staff:
-    title: "Stuuuff"
-    description: "The Kittehs cat hilp run Rivult Murica!"
+    title: "Boss kittehz"
+    description: "The Kittehs cat hilp run RVA!"
     groups:
       administrator: "Kitteminitrutorz"
       developer: "Divilupurrrz"
@@ -206,68 +206,68 @@ lol:
       organizer: "Urganizurrzzz"
   #Points page
   points:
-    title: "RVA Points System"
+    title: "rVa pointz systm"
     introduction:
-      title: "Introduction"
-      description: "In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores will depend on two things: their final position in the race, and the amount of racers in that race. If a race has 10 or more racers in it, then it's considered a to be a \"big\" race."
-      normal-race: "Normal Race Scoring"
-      big-race: "Big Race Scoring"
+      title: "INTRO"
+      description: "In RVA, pleyrz skor pontz for each raec they gut 2 done. Teh amt of pontz each pleyr skoor will depnd on 2 thingz: their finel posishun in teh raec, n' teh amt ov racerz in dat raec. If a raec haz ≥10 racerz, its a 'big' raec :ooo."
+      normal-race: "Nurmal Raec Skorin'"
+      big-race: "BIG raec scorin"
     car-ratings:
-      title: "Car Ratings"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+      title: "Carz 2 ratin"
+      description: "In RVA, carz R given a 'multiplr' considerin how FAST they go, how FAST they accel, and how FAT they R. if car is bad multiplr is HIGH, if gud then LOW. LOOK AT MATHS:"
     desktop-parser:
-      title: "RVA Desktop Points Parser"
+      title: "Da RVA desk pointz calculatr"
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
     downloads:
-      title: "Download RVA Points"
+      title: "dOWOnload da RVA Pointz"
   #RVA strings
   rva:
     tracks:
-      all-tracks: "All Tracks"
-      season: "Season"
-      title: "The RVA Tracks"
+      all-tracks: "all trackz"
+      season: "Seashun"
+      title: "Teh RVA trax"
       format:
-        title: "Format"
+        title: "Furmat"
         short-name:
-          title: "Short Name"
+          title: "Shurt Naem"
         difficulty:
-          title: "Difficulty"
-          easy: "Easy"
-          medium: "Medium"
-          hard: "Hard"
-          extreme: "Extreme"
+          title: "hardinezz"
+          easy: "Ez"
+          medium: "Meh"
+          hard: "NOT EZ"
+          extreme: "TOO HARD :("
         length:
-          title: "Length"
-          short: "Short"
-          medium: "Medium"
-          long: "Long"
-          extralong: "Extra Long"
-          meters: "%{length} meters"
+          title: "leng"
+          short: "Smol"
+          medium: "Meh"
+          long: "Large"
+          extralong: "EXTRA LARGE :OOO"
+          meters: "%{length} metrz"
         stock:
-          title: "Stock?"
-          true: "Yes"
-          false: "No"
+          title: "og?"
+          true: "YE"
+          false: "Nahhh"
       featured:
-        description: "This track has been featured in RVA %{season}"
+        description: "Dis trak appaerd in RVA %{season}"
       rotation:
-        title: "Re-Volt America Rotation"
+        title: "Re-Volt Amerika rotashun"
       collection:
-        title: "Re-Volt America Track Collection"
+        title: "Re-volt Amerika Trackzz Cullikshun"
     cars:
-      title: "The RVA Cars"
-      ratings-link: "Car Ratings"
+      title: "Teh RVA Carz"
+      ratings-link: "Car gud or bad"
       features:
-        speed: "Speed"
-        acceleration: "Acceleration"
-        weight: "Weight"
-        multiplier: "Multiplier"
-        category: "Category"
-        stock: "Stock"
+        speed: "sped"
+        acceleration: "Acceleraishun"
+        weight: "how haevy"
+        multiplier: "math thing"
+        category: "KATogry"
+        stock: "OG"
         stock-tooltip:
-          tooltip: "Original Re-Volt Content"
-        featured-session: "This car has been featured in RVA %{season}"
+          tooltip: "OG Re-Volt stuff"
+        featured-session: "Dis car appaerd in RVA %{season}"
       class-selector:
-        title: "Classes"
+        title: "clazzes"
   #Assets page
   assets:
     title: "LOGOWOS & USAEG"
@@ -278,7 +278,7 @@ lol:
       2: "Tell kitten taht u with rVA"
       3: "uz our logowo in vligz postz or articlcs aboutt rvA"
     prohibited:
-      title: "Cat non do:"
+      title: "Cat non do"
       1: "use ur logo az ur applicashun icon"
       2: "modifierify our logo"
       3: "intagraet any ov our logoows into ur logowo"
@@ -297,24 +297,24 @@ lol:
       2_html: "dis guidelinz wer haevely baesd on da githbu site logowos and usaeg thing <a href='https://github.com/logos' target='_blank'>her</a>"
   #Seasons page
   seasons:
-    title: "The RVA Seasons"
+    title: "da RVA seasunz"
     explanation:
-      title: "What are RVA Seasons?"
+      title: "Whut are RVA seasunz?"
       description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
-      current-season: "Current Season"
-      learn-more: "Learn More"
+      current-season: "seashun rn"
+      learn-more: "Laern moar"
     bottom:
-      title: "All Seasons"
-      present: "Present"
+      title: "Awl Sesonz"
+      present: "Presnt"
   #Rankings page
   rankings:
-    title: "Ranking %{number}"
-    title2: "Leaderboards"
-    small: "%{count} sessions played"
+    title: "Rank #%{number}"
+    title2: "Kittehbordz"
+    small: "%{count} sesshunz playd"
     table:
-      country: "Country"
-      racer: "Racer"
+      country: "Land"
+      racer: "Kitteh"
       pp: "PP"
       pa: "PA"
       mp: "MP"
@@ -324,126 +324,126 @@ lol:
       fp: "FP"
       sp: "SP"
     sessions:
-      title: "Sessions"
-      no-sessions: "No sessions to display :("
+      title: "Sesshuns"
+      no-sessions: "No sesshunz 2 show U_U"
     results:
-      no-team-results: "No team results to disiplay"
+      no-team-results: "Nu team resulz to show"
     nav:
-      singles: "Singles"
-      teams: "Teams"
+      singles: "Alone"
+      teams: "with friendz"
     admin:
       season:
         edit:
-          button: "Edit Season"
+          button: "Edit Seashun"
         delete:
-          button: "Delete season"
+          button: "Kill seesun"
           warning:
-            title: "Warning!"
-            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
-            delete-season: "Delete Season"
+            title: "WARNING"
+            body: "Killin' a Seesun will maek all itz rankz, sesshunz, carz n' trax b DEAD 4EVAR! Also u cant redo dat. "
+            close: "exit"
+            delete-season: "Kill Seesun"
   #Development logs
   repositories:
-    title: "Revisions"
-    small: "Latest git commits in our organization"
+    title: "Revishunz"
+    small: "Lates git comandz in our orgnizashun"
     new-button: "New"
-    repository: "Repository"
+    repository: "repo"
     table:
-      title: "Repository"
-      revision: "Revision"
-      author: "Author"
-      description: "Description"
-      when: "When"
+      title: "Repo"
+      revision: "Revishun"
+      author: "kitteh"
+      description: "Dezkripshun"
+      when: "WHEN"
   #RVA results page
   results:
-    title: "%{category} Races (Session %{number})"
-    version: "Version: %{version}"
-    connection: "Connection: %{protocol} (Server)"
-    mode: "Mode: %{physics}"
-    pickups: "Pickups: %{pickups}"
-    teams: "Teams: %{teams}"
-    download: "Download Session Log"
+    title: "%{category} races (sesshun %{number})"
+    version: "veshun: %{version}"
+    connection: "Konnecshun: %{protocol} (Servur)"
+    mode: "Moed: %{physics}"
+    pickups: "Pickapz: %{pickups}"
+    teams: "Teamz: %{teams}"
+    download: "dowonload Sesshun log"
     team: "Team"
     admin:
-      title: "Admin Actions"
+      title: "Admin Akshunz"
       edit:
-        button: "Edit Session"
+        button: "Edit Sesshun"
       delete:
-        button: "Delete Session"
+        button: "Kill sesshun"
         confirmation:
-          body: "Are you sure?"
+          body: "r u suer?"
     container:
       tooltips:
-        session-number: "Session Number"
-        final-position: "Final Position"
-        average-position: "Average Position"
-        obtained-points: "Obtained Points"
-        race-count: "Race Count"
-        participation-multiplier: "Participation Multiplier"
-        official-score: "Official Score"
-        accumulated-score: "Accumulated Score"
-        accumulated-points: "Accumulated Points"
-        sessions-played: "Sessions Played"
+        session-number: "Sesshun numbr"
+        final-position: "Fainal Posishun"
+        average-position: "Avg Posishun"
+        obtained-points: "Gottn Pontz"
+        race-count: "Racc cownt"
+        participation-multiplier: "Joinin' markipler"
+        official-score: "Offishal skor"
+        accumulated-score: "Acumulaitd Skoor"
+        accumulated-points: "Acumulaitd Pontz"
+        sessions-played: "Sesshunz Playd"
       tracks:
-        not-found: "Track not found"
+        not-found: "Trak not finded"
   #Teams page
   teams:
-    title: "RVA Teams"
-    no-teams: "No teams to display"
+    title: "RVA Teamz"
+    no-teams: "Nu teamz to show"
     global-points:
-      title: "Global Team Points"
+      title: "Wurld Team Pontz"
     team:
-      leader: "Leader"
-      members: "Members"
+      leader: "TOP CAT"
+      members: "Kittehz"
   #User profile page
   users:
     stats:
-      title: "Stats"
+      title: "Katistics"
       rank:
-        title: "rank"
-        tooltip: "Position in current ranking"
+        title: "rnk"
+        tooltip: "posishubn in da ranking rn"
       race-stats:
-        title: "Race Stats"
-        win-rate: "win rate"
-        sessions: "sessions"
-        races: "races"
-        win: "win"
-        wins: "wins"
-        podium: "podium"
-        podiums: "podiums"
-        session-played: "session played"
-        sessions-played: "sessions played"
-        race-played: "race played"
-        races-played: "races played"
+        title: "Raec katistics"
+        win-rate: "#1 rate"
+        sessions: "sesshuns"
+        races: "rqaces"
+        win: "WIN"
+        wins: "WINSSS"
+        podium: "almost win"
+        podiums: "almost wins"
+        session-played: "sesshun playd"
+        sessions-played: "sesshuns playd"
+        race-played: "raec playd"
+        races-played: "raecs playd"
       session-history:
-        title: "Session History"
+        title: "Sesshun history"
       overall-stats:
-        title: "Overall Stats"
-        session-win: "session win"
-        session-wins: "session wins"
-        session-podium: "session podium"
-        session-podiums: "session podiums"
-        session-winrate: "session win rate"
-        obtained-point: "obtained point"
-        obtained-points: "obtained points"
-        official-score: "official score"
-        average-position: "average position"
-        participation: "participation rate"
+        title: "all katistics"
+        session-win: "sesshun win"
+        session-wins: "sesshun winz"
+        session-podium: "sesshum almost win"
+        session-podiums: "sesshum almost wins"
+        session-winrate: "sesshun winraet"
+        obtained-point: "obtie nad point"
+        obtained-points: "obtie nad points"
+        official-score: "offishul scoar"
+        average-position: "medium posishun"
+        participation: "playin rate"
     tabs:
-      title: "General"
-      stats: "Stats"
-      admin: "Admin"
+      title: "Genrul"
+      stats: "Katistics"
+      admin: "admin"
   #Tournaments page
   tournaments:
-    title: "Past Tournaments"
+    title: "Old cat competitionz"
     new: "New"
   #Re-Volt car classes
   classes:
     rookie: "noob"
     amateur: "Less Noob"
-    advanced: "Progressive"
-    semi-pro: "ALMOST PROFESSIONAL"
-    pro: "PROFESSIONAL"
+    advanced: "Bettr"
+    semi-pro: "Bettr than bettr"
+    pro: "Pro gamer"
     super-pro: "f1 kat driver"
     clockwork: "clockiesss"
     random: "U nevur know"
@@ -460,136 +460,136 @@ lol:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: "Confirmation sent at"
-        confirmation_token: "Confirmation token"
-        confirmed_at: "Confirmed at"
-        created_at: "Created at"
-        current_password: "Current password"
-        current_sign_in_at: "Current sign in at"
-        current_sign_in_ip: "Current sign in IP"
+        confirmation_sent_at: "OK sent at"
+        confirmation_token: "OK!"
+        confirmed_at: "Was ok at"
+        created_at: "Maed at"
+        current_password: "Pw rn"
+        current_sign_in_at: "Get in at rn"
+        current_sign_in_ip: "Get-in IP adress rn"
         email: "Email"
-        encrypted_password: "Encrypted password"
-        failed_attempts: "Failed attempts"
-        last_sign_in_at: "Last sign in at"
-        last_sign_in_ip: "Last sign in IP"
-        locked_at: "Locked at"
-        password: "Password"
-        password_confirmation: "Password confirmation"
-        remember_created_at: "Remember created at"
-        remember_me: "Remember me"
-        reset_password_sent_at: "Reset password sent at"
-        reset_password_token: "Reset password token"
-        sign_in_count: "Sign in count"
-        unconfirmed_email: "Unconfirmed email"
-        unlock_token: "Unlock token"
-        updated_at: "Updated at"
+        encrypted_password: "Sneakeh pw"
+        failed_attempts: "Faild traiz"
+        last_sign_in_at: "Sign in at las taim"
+        last_sign_in_ip: "Sign in IP las taim"
+        locked_at: "Locc at"
+        password: "Pw"
+        password_confirmation: "Confurm ur pw"
+        remember_created_at: "Remebur maed at"
+        remember_me: "dont lose it i dont wanna type my pw again"
+        reset_password_sent_at: "Remaed pw sent at"
+        reset_password_token: "Remaed pw thingey"
+        sign_in_count: "Numbr that u sign in b4"
+        unconfirmed_email: "Red flag email"
+        unlock_token: "Unloc thingey"
+        updated_at: "New at"
     models:
       user:
         one: "User"
-        other: "Users"
+        other: "Userz"
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
+      confirmed: "YASSS! Magic internet address got confirmd!"
       new:
-        resend_confirmation_instructions: "Resend confirmation instructions"
+        resend_confirmation_instructions: "Resnd confurmashun instrucshunz"
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      last_attempt: "You have one more attempt before your account is locked."
-      locked: "Your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
+      already_authenticated: "U r alr signd in."
+      inactive: "Ur acc not aktivatd yet."
+      invalid: "Not-ok %{authentication_keys} or pw."
+      last_attempt: "U hav ONE moar try left b4 ur acc is getting LOCKD UP."
+      locked: "Ur acc is lockd."
+      not_found_in_database: "Not-ok %{authentication_keys} or pw."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        action: "Confirm my account"
-        greeting: "Welcome %{recipient}!"
+        action: "Konfirm mah acc"
+        greeting: "Hello there fella, %{recipient}!"
         instruction: "You can confirm your account email through the link below: blue label"
-        subject: "Confirmation instructions"
+        subject: "Konfurmashun instrucshunz"
       email_changed:
-        greeting: "Hello %{recipient}!"
+        greeting: "Hi %{recipient}!"
         message: "We're contacting you to notify you that your email has been changed to %{email}."
         message_unconfirmed: "We're contacting you to notify you that your email is being changed to %{email}."
-        subject: "Email Changed"
+        subject: "Email chanjd"
       password_change:
-        greeting: "Hello %{recipient}!"
+        greeting: "Hi %{recipient}!"
         message: "We're contacting you to notify you that your password has been changed."
-        subject: "Password Changed"
+        subject: "Pw chanjd"
       reset_password_instructions:
-        action: "Change my password"
-        greeting: "Hello %{recipient}!"
-        instruction: "Someone has requested a link to change your password. You can do this through the link below."
+        action: "Chanj mah pw"
+        greeting: "Hi %{recipient}!"
+        instruction: "Someone haz rekwestd a link to chanj ur pw. U can do dis by da link below."
         instruction_2: "If you didn't request this, please ignore this email."
         instruction_3: "Your password won't change until you access the link above and create a new one."
-        subject: "Reset password instructions"
+        subject: "Remaek pw instrukshunz"
       unlock_instructions:
-        action: "Unlock my account"
-        greeting: "Hello %{recipient}!"
-        instruction: 'Click the link below to unlock your account:'
-        message: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
-        subject: "Unlock instructions"
+        action: "Unlocc mah acc"
+        greeting: "Hi %{recipient}!"
+        instruction: 'Clicc da link below 2 unlocc ur acc'
+        message: "Ur acc haz bean lockd up bc u try too mach wrung pwz."
+        subject: "Unloc instrucshunz"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "Kitteh cant reconaiz u frum %{kind} bc \"%{reason}\"."
+      success: "Kitteh can recognaiz u frun %{kind} acc."
     passwords:
       edit:
-        change_my_password: "Change my password"
-        change_your_password: "Change your password"
-        confirm_new_password: "Confirm new password"
-        new_password: "New password"
+        change_my_password: "Chanj mah pw"
+        change_your_password: "Chanj ur pw"
+        confirm_new_password: "Konfirm new pw"
+        new_password: "New pw"
       new:
-        forgot_your_password: "Forgot your password?"
-        send_me_reset_password_instructions: "Send me reset password instructions"
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+        forgot_your_password: "Dont remembur ur pw huh?"
+        send_me_reset_password_instructions: "Send me remaek pw instrukshunz"
+      no_token: "Kitteh kant go in dis page w/o comin' frum a pw reset email. If u aktualy come frum a pw email thingy, pls use the full URL dat i gave u."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      destroyed: "Bai! Ur acc has been rested in peace. We hope to see u again l8r."
       edit:
-        are_you_sure: Are you sure?
-        cancel_my_account: Cancel my account
-        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
-        unhappy: Unhappy?
-        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
-        title: "User settings"
+        are_you_sure: r u suer?
+        cancel_my_account: Say goodbai 2 mah acc
+        currently_waiting_confirmation_for_email: 'Waitin'' for konfurm now: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: blank if u dont wanna chanj it
+        unhappy: Sad? Not gud enouff?
+        we_need_your_current_password_to_confirm_your_changes: we need ur pw now to konfirm ur chanjz
+        title: "User konfig"
         email:
-          title: "Change Email"
+          title: "Chanj email"
           new: "New email"
         password:
-          title: "Change Password"
-          new-length: "New password (%{length} characters minimum)"
-          new: "New password"
-          confirm: "Confirm new password"
+          title: "Chanj pw"
+          new-length: "New pw (%{length} charz atlest)"
+          new: "New pw"
+          confirm: "Konfirm new pw"
         profile:
-          title: "Edit Profile"
+          title: "Edit Profil"
           gender: "Gender"
           nationality:
-            title: "Nationality"
-            small: "(National flag)"
-          location: "Location"
-          occupation: "Occupation"
-          interests: "Interests"
-          public-email: "Public Email"
-          about: "About %{user}"
+            title: "Where u frum"
+            small: "(Land flag)"
+          location: "Whereabwtz"
+          occupation: "Whut u do"
+          interests: "Intreztz"
+          public-email: "Publik email"
+          about: "Abt %{user}"
           about-me:
-            title: "About me... (You may use html)"
-            title2: "About %{user}"
-            nothing: "Nothing here yet..."
-            placeholder: "Write something interesting..."
-        current-password: "Current password"
-        update: "Update"
-        update-admin: "Update %{user}"
+            title: "Mah info... (kitteh kan use html)"
+            title2: "Abt %{user}"
+            nothing: "Void..."
+            placeholder: "Drop down smth dat kitteh will be intrztin'..."
+        current-password: "Pw rn"
+        update: "Updaet"
+        update-admin: "Updaet %{user}"
       new:
-        sign_up: "Sign up"
-        username: "Re-Volt Username"
-      signed_up: "Welcome! You have signed up successfully."
+        sign_up: "Sine up"
+        username: "Re-Volt usrnaem"
+      signed_up: "Hello fella! U've sined up alr!"
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
       signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
@@ -597,71 +597,71 @@ lol:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
-      already_signed_out: "Signed out successfully."
+      already_signed_out: "Sined owt sukcessfuly."
       new:
-        sign_in: "Log in"
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+        sign_in: "Lug in"
+      signed_in: "Sined in suksessfuly."
+      signed_out: "Sined owt sukcessfuly."
     shared:
       links:
-        back: "Back"
-        didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
-        didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
-        forgot_your_password: "Forgot your password?"
-        sign_in: "Log in"
-        sign_in_with_provider: "Sign in with %{provider}"
-        sign_up: "Sign up"
+        back: "Bacc"
+        didn_t_receive_confirmation_instructions: "Didnt get teh konfirmashun inztrukshunz?"
+        didn_t_receive_unlock_instructions: "Didnt get teh unlocc inztrukshunz?"
+        forgot_your_password: "Dont remembur ur pw huh?"
+        sign_in: "Lug in"
+        sign_in_with_provider: "Sine in wif %{provider}"
+        sign_up: "Sine up"
       minimum_password_length:
-        one: "(%{count} character minimum)"
-        other: "(%{count} characters minimum)"
+        one: "(%{count} char atleast)"
+        other: "(%{count} charz atlest)"
     unlocks:
       new:
-        resend_unlock_instructions: "Resend unlock instructions"
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+        resend_unlock_instructions: "Resnd unlocc instrukshunz"
+      send_instructions: "U will get a email wiff inzstrukshunz 4 how 2 unlok ur acc in a kouple of minz just wait rn."
+      send_paranoid_instructions: "If ur acc esiztz, u will get a email wif inztrukcshunz 2 how 2 unlocc it in a koupel of minz."
+      unlocked: "Ur acc haz bean unlokd suksesfuly. Plez sine in 2 go on."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: "waz alr konfirmd, plez try signin' in"
+      confirmation_period_expired: "nedz 2 b konfurmd within %{period}, plez rekwezt a new wan"
+      expired: "haz alr ded, plz rekwezt a new wan"
+      not_found: "cant find"
+      not_locked: "wasnt lockd"
       not_saved:
-        one: '1 error prohibited this %{resource} from being saved:'
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: '1 mistwkz prohibitd dis %{resource} frum bein'' savd:'
+        other: "%{count} mistwks prohibitd 'tis %{resource} frum bein' savd:"
   #Alert message boxes
   alerts:
-    no-permission: "You do not have permission"
+    no-permission: "Kitteh dont hav teh passes"
   #Error pages
   error:
     404:
-      title: "Error 404"
-      message: "Not Found"
+      title: "Kitteh got lost 404"
+      message: "Not finded"
     422:
-      title: "Error 404"
-      message: "Illegal Error"
+      title: "Kitteh got lost 404"
+      message: "Red flag errur"
     500:
-      title: "Error 404"
-      message: "Internal Server Error"
+      title: "Kitteh got lost 404"
+      message: "Intrnel survuh errur"
   #Misc strings
   misc:
     download: "dowuload"
     search: "Scratch"
-    and: "N"
+    and: "n'"
   #Kaminari
   helpers:
     page_entries_info:
       more_pages:
-        display_entries: Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total
+        display_entries: Dizpleyin' %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> ov <b>%{total}</b> in total
       one_page:
         display_entries:
-          one: Displaying <b>%{count}</b> %{entry_name}
-          other: Displaying <b>all %{count}</b> %{entry_name}
+          one: Dizpleyin' <b>%{count}</b> %{entry_name}
+          other: Dizpleyin' <b>awl %{count}</b> %{entry_name}
   views:
     pagination:
-      first: "&laquo; First"
-      last: Last &raquo;
-      next: Next &rsaquo;
-      previous: "&lsaquo; Prev"
+      first: "&laquo; 1ST"
+      last: LAST &raquo;
+      next: nxt &rsaquo;
+      previous: "&lsaquo; b4"
       truncate: "&hellip;"
