@@ -1,0 +1,6 @@
+project_identifier: RVA
+commit_message: Update %language% translations
+append_commit_message: false
+files:
+  - source: /config/locales/en.yml
+    translation: /config/locales/%locale_with_underscore%.%file_extension%
