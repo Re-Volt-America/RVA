@@ -1,4 +1,4 @@
-pt_br:
+pt:
   #Navigation
   nav:
     play: "Play"
@@ -99,6 +99,42 @@ pt_br:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
+  #FAQ page
+  faq:
+    title: "Frequently Asked Questions"
+    description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
+    accordion:
+      download:
+        title: "How do I download Re-Volt?"
+        recommended-way:
+          description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
+        classic-way:
+          description-html: "Enter the following <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> and choose the version of the game for your operating system (Windows, Linux or MacOS). <p>When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.</p>"
+        mobile-players:
+          description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
+        steam-revolt:
+          title: "Steam Re-Volt"
+          description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
+      install:
+        title: "How do I install RVA packs?"
+        recommended-way:
+          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
+        classic-way:
+          description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
+        mobile-players:
+          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
+      play-online:
+        title: "How can I play online?"
+        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        reminder:
+          title: "Keep this in mind"
+          li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
+          li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
+          li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
+      generics:
+        recommended-way: "Recommended way: RVGL Launcher"
+        classic-way: "Classic way"
+        mobile-players: "Mobile Players"
   #Rules page
   rules:
     title: "Regras"
@@ -424,97 +460,97 @@ pt_br:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: Confirmação enviada em
-        confirmation_token: Token de confirmação
-        confirmed_at: Confirmado em
-        created_at: Criado em
-        current_password: Senha atual
-        current_sign_in_at: Atualmente logado em
-        current_sign_in_ip: IP do acesso atual
-        email: E-mail
-        encrypted_password: Senha criptografada
-        failed_attempts: Tentativas sem sucesso
-        last_sign_in_at: Último acesso em
-        last_sign_in_ip: Último IP de acesso
-        locked_at: Bloqueado em
-        password: Senha
-        password_confirmation: Confirme sua senha
-        remember_created_at: Lembrar criado em
-        remember_me: Lembre-se de mim
-        reset_password_sent_at: Resetar senha enviado em
-        reset_password_token: Resetar token de senha
-        sign_in_count: Contagem de acessos
-        unconfirmed_email: E-mail não confirmado
-        unlock_token: Token de desbloqueio
-        updated_at: Atualizado em
+        confirmation_sent_at: "Confirmação enviada em"
+        confirmation_token: "Token de confirmação"
+        confirmed_at: "Confirmado em"
+        created_at: "Criado em"
+        current_password: "Senha atual"
+        current_sign_in_at: "Atualmente logado em"
+        current_sign_in_ip: "IP do acesso atual"
+        email: "E-mail"
+        encrypted_password: "Senha criptografada"
+        failed_attempts: "Tentativas sem sucesso"
+        last_sign_in_at: "Último acesso em"
+        last_sign_in_ip: "Último IP de acesso"
+        locked_at: "Bloqueado em"
+        password: "Senha"
+        password_confirmation: "Confirme sua senha"
+        remember_created_at: "Lembrar criado em"
+        remember_me: "Lembre-se de mim"
+        reset_password_sent_at: "Resetar senha enviado em"
+        reset_password_token: "Resetar token de senha"
+        sign_in_count: "Contagem de acessos"
+        unconfirmed_email: "E-mail não confirmado"
+        unlock_token: "Token de desbloqueio"
+        updated_at: "Atualizado em"
     models:
       user:
-        one: Usuário
-        other: Usuários
+        one: "Usuário"
+        other: "Usuários"
   devise:
     confirmations:
-      confirmed: A sua conta foi confirmada com sucesso.
+      confirmed: "A sua conta foi confirmada com sucesso."
       new:
-        resend_confirmation_instructions: Reenviar instruções de confirmação
-      send_instructions: Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.
-      send_paranoid_instructions: Se o seu e-mail existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos.
+        resend_confirmation_instructions: "Reenviar instruções de confirmação"
+      send_instructions: "Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta."
+      send_paranoid_instructions: "Se o seu e-mail existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos."
     failure:
-      already_authenticated: Você já está autenticado.
-      inactive: A sua conta ainda não foi ativada.
+      already_authenticated: "Você já está autenticado."
+      inactive: "A sua conta ainda não foi ativada."
       invalid: "%{authentication_keys} ou senha inválidos."
-      last_attempt: Você tem mais uma única tentativa antes de sua conta ser bloqueada.
-      locked: A sua conta está bloqueada.
+      last_attempt: "Você tem mais uma única tentativa antes de sua conta ser bloqueada."
+      locked: "A sua conta está bloqueada."
       not_found_in_database: "%{authentication_keys} ou senha inválidos."
-      timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
-      unauthenticated: Para continuar, faça login ou registre-se.
-      unconfirmed: Antes de continuar, confirme a sua conta.
+      timeout: "A sua sessão expirou, por favor, faça login novamente para continuar."
+      unauthenticated: "Para continuar, faça login ou registre-se."
+      unconfirmed: "Antes de continuar, confirme a sua conta."
     mailer:
       confirmation_instructions:
-        action: Confirmar minha conta
-        greeting: Bem-vindo %{recipient}!
-        instruction: 'Você pode confirmar sua conta através do link abaixo:'
-        subject: Instruções de confirmação
+        action: "Confirmar minha conta"
+        greeting: "Bem-vindo %{recipient}!"
+        instruction: "Você pode confirmar sua conta através do link abaixo:"
+        subject: "Instruções de confirmação"
       email_changed:
-        greeting: Olá %{recipient}!
-        message: Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}.
-        message_unconfirmed: Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}.
-        subject: E-mail alterado
+        greeting: "Olá %{recipient}!"
+        message: "Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}."
+        message_unconfirmed: "Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}."
+        subject: "E-mail alterado"
       password_change:
-        greeting: Olá %{recipient}!
-        message: Estamos entrando em contato para notificá-lo de que sua senha foi alterada.
-        subject: Senha alterada
+        greeting: "Olá %{recipient}!"
+        message: "Estamos entrando em contato para notificá-lo de que sua senha foi alterada."
+        subject: "Senha alterada"
       reset_password_instructions:
-        action: Redefinir minha senha
-        greeting: Olá %{recipient}!
-        instruction: Alguém fez o pedido para redefinir sua senha, e você pode fazer isso clicando no link abaixo.
-        instruction_2: Se você não fez este pedido, por favor ignore este e-mail.
-        instruction_3: Sua senha não será alterada até que você acesse o link acima e crie uma nova.
-        subject: Instruções de redefinição de senha
+        action: "Redefinir minha senha"
+        greeting: "Olá %{recipient}!"
+        instruction: "Alguém fez o pedido para redefinir sua senha, e você pode fazer isso clicando no link abaixo."
+        instruction_2: "Se você não fez este pedido, por favor ignore este e-mail."
+        instruction_3: "Sua senha não será alterada até que você acesse o link acima e crie uma nova."
+        subject: "Instruções de redefinição de senha"
       unlock_instructions:
-        action: Desbloquear minha conta
-        greeting: Olá %{recipient}!
+        action: "Desbloquear minha conta"
+        greeting: "Olá %{recipient}!"
         instruction: 'Clique no link abaixo para desbloquear sua conta:'
-        message: Sua conta foi bloqueada devido ao excessivo número de tentativas acesso inválidas.
-        subject: Instruções de desbloqueio
+        message: "Sua conta foi bloqueada devido ao excessivo número de tentativas acesso inválidas."
+        subject: "Instruções de desbloqueio"
     omniauth_callbacks:
-      failure: Não foi possível autorizar de uma conta de %{kind} porque "%{reason}".
-      success: Autorizado com sucesso de uma conta de %{kind}.
+      failure: "Não foi possível autorizar de uma conta de %{kind} porque \"%{reason}\"."
+      success: "Autorizado com sucesso de uma conta de %{kind}."
     passwords:
       edit:
-        change_my_password: Alterar minha senha
-        change_your_password: Alterar sua senha
-        confirm_new_password: Confirme sua nova senha
-        new_password: Nova senha
+        change_my_password: "Alterar minha senha"
+        change_your_password: "Alterar sua senha"
+        confirm_new_password: "Confirme sua nova senha"
+        new_password: "Nova senha"
       new:
-        forgot_your_password: Esqueceu sua senha?
-        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
-      no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente.
-      send_instructions: Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha.
-      send_paranoid_instructions: Se o seu email existir em nosso banco de dados, você receberá um email com um link para recuperação da senha.
-      updated: A sua senha foi alterada com sucesso. Você está autenticado.
-      updated_not_active: Sua senha foi alterada com sucesso.
+        forgot_your_password: "Esqueceu sua senha?"
+        send_me_reset_password_instructions: "Enviar instruções para redefinição da senha"
+      no_token: "Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente."
+      send_instructions: "Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha."
+      send_paranoid_instructions: "Se o seu email existir em nosso banco de dados, você receberá um email com um link para recuperação da senha."
+      updated: "A sua senha foi alterada com sucesso. Você está autenticado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
     registrations:
-      destroyed: Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
+      destroyed: "Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
       edit:
         are_you_sure: Você tem certeza?
         cancel_my_account: Cancelar minha conta
@@ -551,49 +587,49 @@ pt_br:
         update: "Update"
         update-admin: "Update %{user}"
       new:
-        sign_up: Inscrever-se
+        sign_up: "Inscrever-se"
         username: "Re-Volt Username"
-      signed_up: Bem vindo! Você realizou seu registro com sucesso.
-      signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
-      signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
-      signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada para o seu e-mail. Por favor, acesse o link para ativar sua conta.
-      update_needs_confirmation: Sua conta foi atualizada com sucesso, mas nós precisamos verificar o novo endereço de email. Por favor, verifique seu e-mail e clique no link de confirmação para finalizar confirmando o seu novo e-mail.
-      updated: A sua conta foi atualizada com sucesso.
-      updated_but_not_signed_in: Sua conta foi atualizada com sucesso, uma vez que sua senha foi alterada será necessário realizar o login novamente.
+      signed_up: "Bem vindo! Você realizou seu registro com sucesso."
+      signed_up_but_inactive: "Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada."
+      signed_up_but_locked: "Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada."
+      signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu e-mail. Por favor, acesse o link para ativar sua conta."
+      update_needs_confirmation: "Sua conta foi atualizada com sucesso, mas nós precisamos verificar o novo endereço de email. Por favor, verifique seu e-mail e clique no link de confirmação para finalizar confirmando o seu novo e-mail."
+      updated: "A sua conta foi atualizada com sucesso."
+      updated_but_not_signed_in: "Sua conta foi atualizada com sucesso, uma vez que sua senha foi alterada será necessário realizar o login novamente."
     sessions:
-      already_signed_out: Logout efetuado com sucesso.
+      already_signed_out: "Logout efetuado com sucesso."
       new:
-        sign_in: Login
-      signed_in: Login efetuado com sucesso.
-      signed_out: Logout efetuado com sucesso.
+        sign_in: "Login"
+      signed_in: "Login efetuado com sucesso."
+      signed_out: "Logout efetuado com sucesso."
     shared:
       links:
-        back: Voltar
-        didn_t_receive_confirmation_instructions: Não recebeu instruções de confirmação?
-        didn_t_receive_unlock_instructions: Não recebeu instruções de desbloqueio?
-        forgot_your_password: Esqueceu sua senha?
-        sign_in: Login
-        sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        back: "Voltar"
+        didn_t_receive_confirmation_instructions: "Não recebeu instruções de confirmação?"
+        didn_t_receive_unlock_instructions: "Não recebeu instruções de desbloqueio?"
+        forgot_your_password: "Esqueceu sua senha?"
+        sign_in: "Login"
+        sign_in_with_provider: "Entrar com %{provider}"
+        sign_up: "Inscrever-se"
       minimum_password_length:
         one: "(Mínimo de %{count} caractere)"
         other: "(Mínimo de %{count} caracteres)"
     unlocks:
       new:
-        resend_unlock_instructions: Reenviar instruções de desbloqueio
-      send_instructions: Dentro de minutos, você receberá um e-mail com instruções de desbloqueio da sua conta.
-      send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela.
-      unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.
+        resend_unlock_instructions: "Reenviar instruções de desbloqueio"
+      send_instructions: "Dentro de minutos, você receberá um e-mail com instruções de desbloqueio da sua conta."
+      send_paranoid_instructions: "Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela."
+      unlocked: "A sua conta foi desbloqueada com sucesso. Efetue login para continuar."
   errors:
     messages:
-      already_confirmed: já foi confirmado
-      confirmation_period_expired: É necessário ser confirmado dentro do período %{period}, por favor requisite um novo usuário.
-      expired: expirou, por favor solicite uma nova
-      not_found: não encontrado
-      not_locked: não foi bloqueado
+      already_confirmed: "já foi confirmado"
+      confirmation_period_expired: "É necessário ser confirmado dentro do período %{period}, por favor requisite um novo usuário."
+      expired: "expirou, por favor solicite uma nova"
+      not_found: "não encontrado"
+      not_locked: "não foi bloqueado"
       not_saved:
         one: 'Não foi possível salvar %{resource}: 1 erro'
-        other: 'Não foi possível salvar %{resource}: %{count} erros.'
+        other: "Não foi possível salvar %{resource}: %{count} erros."
   #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
@@ -613,20 +649,19 @@ pt_br:
     download: "Download"
     search: "Busca"
     and: "&"
-  # Kaminari
+  #Kaminari
   helpers:
     page_entries_info:
       more_pages:
         display_entries: Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de um total de <b>%{total}</b>
       one_page:
         display_entries:
-          one: Exibindo <b>1</b> %{entry_name}
+          one: Displaying <b>%{count}</b> %{entry_name}
           other: Exibindo <b>%{count}</b> %{entry_name}
-          zero: Nenhum %{entry_name} encontrado
   views:
     pagination:
       first: "&laquo; Primeiro"
-      last: "Último &raquo;"
+      last: Último &raquo;
       next: Próximo &rsaquo;
       previous: "&lsaquo; Anterior"
       truncate: "&hellip;"
