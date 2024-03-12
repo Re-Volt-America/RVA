@@ -1,19 +1,18 @@
-%h2.mb-3 Change your password
+%h2.mb-3= t('.change_your_password')
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
   .row
     .col-md-5
       = f.hidden_field :reset_password_token
       .field.form-group
-        = f.label :password, "New password"
+        = f.label :password, t('.new_password')
         - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
+          %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
         = f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "form-control"
       .field.form-group
-        = f.label :password_confirmation, "Confirm new password"
+        = f.label :password_confirmation, t('.confirm_new_password')
         = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
       .actions
-        = f.button "Change my password", :type => "submit", :class => "btn mb-2"
+        = f.button t('.change_my_password'), :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"
     .col-md-7
       = render "devise/shared/error_messages", resource: resource

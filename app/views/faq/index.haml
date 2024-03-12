@@ -3,11 +3,10 @@
 %h2.mb-3
   %i.fa.fa-comment{:"aria-hidden" => true}
   %b
-    Frequently Asked Questions
+    = t("faq.title")
 
 %p
-  This is a collection of the most frequently asked questions (FAQ) by new community members when they first want
-  to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community.
+  = t("faq.description")
 
 %hr
 
@@ -15,80 +14,55 @@
   #faq
     .card
       .card-header#faqhead1
-        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq1", "aria-expanded": "true", "aria-controls": "faq1"} How do I download Re-Volt?
+        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq1", "aria-expanded": "true", "aria-controls": "faq1"}= t("faq.accordion.download.title")
       #faq1.collapse{"aria-labelledby" => "faqhead1", "data-parent" => "#faq"}
         .card-body
           %h4
-            Recommended way: RVGL Launcher
+            = t("faq.accordion.generics.recommended-way")
           %p
-            With this program, you can download and manage custom content for the game with just a few clicks. Go to the
-            following link to download it:
-            <a href="https://re-volt.gitlab.io/rvgl-launcher/#download" target="_blank" rel="noopener noreferrer">Re-Volt Launcher</a>
-          %p
-            When you open the launcher for the first time, you will be able to select the folder where the game will be
-            installed, along with a \"Game Preset\". For the latter, we recommend that you select "Original".
+            = t("faq.accordion.download.recommended-way.description-html")
           %h4
-            Classic way
+            = t("faq.accordion.generics.classic-way")
           %p
-            Enter the following <a href="https://re-volt.io/downloads/game" target="_blank">link</a>
-            and choose the version of the game for your operating system (Windows, Linux or MacOS).
-          %p
-            When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.
+            = t("faq.accordion.download.classic-way.description-html")
           %h4
-            Mobile players
+            = t("faq.accordion.generics.mobile-players")
           %p
-            In the case of Android, when you try to run the game installer
-            (click this <a href= "https://distribute.re-volt.io/releases/rvgl_full_android_original.apk" target="_blank", rel="noopener noreferrer">link</a> to download)
-            you need to grant permissions to install external applications.
-          %p
-            After accepting granting the permissions and installing the game, the app can be opened normally from the app
-            drawer of your phone.
-          %p
-            IOS is still not supported :(.
+            = t("faq.accordion.download.mobile-players.description-html")
           %h4
-            Steam Re-Volt
+            = t("faq.accordion.download.steam-revolt.title")
           %p
-            The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version.
-            For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for
-            it either.
+            = t("faq.accordion.download.steam-revolt.description-html")
     .card
       .card-header#faqhead2
-        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq2", "aria-expanded": "true", "aria-controls": "faq2"} How do I install the RVA packs?
+        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq2", "aria-expanded": "true", "aria-controls": "faq2"}= t("faq.accordion.install.title")
       #faq2.collapse{"aria-labelledby" => "faqhead2", "data-parent" => "#faq"}
         .card-body
           %h4
-            Recommended way: RVGL Launcher
+            = t("faq.accordion.generics.recommended-way")
           %p
-            In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list,
-            then click the Install Packages button in the lower right corner to start downloading and installing them.
+            = t("faq.accordion.install.recommended-way.description-html")
           %h4
-            Classic way
+            = t("faq.accordion.generics.classic-way")
           %p
-            Enter the following <a href="downloads" target="_blank" rel="noopener noreferrer">link</a> and download RVA Car Pack and RVA Track Pack.
-          %p
-            Open the folder where you have RVGL installed and unzip the newly downloaded files there.
+            = t("faq.accordion.install.classic-way.description-html")
           %h4
-            Mobile players
+            = t("faq.accordion.generics.mobile-players")
           %p
-            Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files,
-            you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager.
-          %p
-            Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.
+            = t("faq.accordion.install.mobile-players.description-html")
     .card
       .card-header#faqhead3
-        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"} How can I play online?
+        %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"}= t("faq.accordion.play-online.title")
       #faq3.collapse{"aria-labelledby" => "faqhead3", "data-parent" => "#faq"}
         .card-body
           %p
-            In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on
-            a channel called "#lobby-rva". <a href="play">Here</a> you can see the countdown for the next session.
+            = t("faq.accordion.play-online.description-html")
             %h5
-              Keep this in mind
+              = t("faq.accordion.play-online.reminder.title")
             %ul
               %li
-                Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information.
+                = t("faq.accordion.play-online.reminder.li-1")
               %li
-                When there is an open room to join and enter to play a message will appear in #lobby-rva,
-                %br for example: "<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>"
+                = t("faq.accordion.play-online.reminder.li-2-html")
               %li
-                Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address.
+                = t("faq.accordion.play-online.reminder.li-3")

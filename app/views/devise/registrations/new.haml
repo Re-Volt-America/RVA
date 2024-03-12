@@ -1,24 +1,24 @@
-%h2.mb-3 Register
+%h2.mb-3=t('.sign_up')
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .row
     .col-md-5
       .field.form-group
-        = f.label(:username, "Re-Volt Username")
+        = f.label(:username, t(".username"))
         = f.text_field :username, autocomplete: "username", :class => "form-control", :style => "text-transform: uppercase;"
       .field.form-group
-        = f.label :email
+        = f.label :email, t("activerecord.attributes.user.email")
         = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
       .field.form-group
-        = f.label :password
+        = f.label :password, t("devise.shared.links.password")
         - if @minimum_password_length
           %em
-            (#{@minimum_password_length} characters minimum)
+            = t('devise.shared.minimum_password_length', count: @minimum_password_length)
         = f.password_field :password, autocomplete: "new-password", :class => "form-control"
       .field.form-group
-        = f.label :password_confirmation
+        = f.label :password_confirmation, t("devise.shared.links.password-confirm")
         = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
       .actions
-        = f.button "Sign up", :type => "submit", :class => "btn mb-2"
+        = f.button t('.sign_up'), :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"
     .col-md-7
       = render "devise/shared/error_messages", resource: resource
