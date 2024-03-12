@@ -55,8 +55,8 @@ lol:
       emoji: "EMOJI THE MOVIE"
     social:
       title: "Find uz"
-      discord: "Discoword"
-      github: "Da codin site"
+      discord: "Discord"
+      github: "GitHub"
       crowdin: "Crowdin"
   #Landing page, Splash, About
   application:
@@ -450,11 +450,11 @@ lol:
   #Car metrics
   car-card:
     speed: "sped"
-    kmh: "litres"
+    kmh: "km/h"
     acc: "Accz"
-    ms2: "kg"
+    ms2: "ms²"
     weight: "how haevy"
-    kg: "ms²"
+    kg: "Kg"
     multiplier: "math thing"
   #Devise
   activerecord:
