@@ -55,8 +55,8 @@ lol:
       emoji: "EMOJI THE MOVIE"
     social:
       title: "Find uz"
-      discord: "Discord"
-      github: "GitHub"
+      discord: "Discoword"
+      github: "Da codin site"
       crowdin: "Crowdin"
   #Landing page, Splash, About
   application:
@@ -188,7 +188,7 @@ lol:
         term: "(1) RE (-.-):"
         precision: "ask katrace to restart"
       2:
-        term: "(2) Speced:"
+        term: "(!2) Speced:"
         precision: "when host cat puts racekat in spec"
   #Privacy & Terms pages
   privacy:
@@ -450,11 +450,11 @@ lol:
   #Car metrics
   car-card:
     speed: "sped"
-    kmh: "km/h"
+    kmh: "litres"
     acc: "Accz"
-    ms2: "ms²"
+    ms2: "kg"
     weight: "how haevy"
-    kg: "Kg"
+    kg: "ms²"
     multiplier: "math thing"
   #Devise
   activerecord:
