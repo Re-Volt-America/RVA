@@ -3,7 +3,7 @@ es_cl:
   nav:
     play: "Jugar"
     tracks: "Pistas"
-    cars: "Coches"
+    cars: "Autos"
     seasons: "Temporadas"
     league:
       title: "Liga"
@@ -155,7 +155,7 @@ es_cl:
           bullet3: "¡Tu nombre de usuario debe ser único! Si no estás seguro, puedes preguntarle al personal para ver si el nombre de usuario que quieres ya está siendo usado por otro jugador."
       c:
         title: "C. Carreras y puntuación"
-        1: "Puedes utilizar coches de la clase en curso e inferiores. (novato, amateur, avanzado, etc.)"
+        1: "Puedes utilizar autos de la categoría en curso e inferiores. (novato, amateur, avanzado, etc.)"
         2:
           title: "Usar un coche por debajo de la clase en curso otorgará las siguientes bonificaciones de puntaje:"
           bullet1_html: "Una clase por debajo: <b>25%</b>."
@@ -163,7 +163,7 @@ es_cl:
           bullet3_html: "Tres clases por debajo: <b>75%</b>."
           bullet4_html: "Cuatro clases por debajo: <b>100%</b>."
           bullet5_html: "Cinco clases por debajo: <b>125%</b>."
-        3_html: "<b>NO</b> utilices coches de una clase superior a la que esté en curso. <b>Hacerlo invalidará los puntos que obtengas jugando con él</b>."
+        3_html: "<b>NO</b> utilices autos de una categoría superior a la que esté en curso. <b>Hacerlo invalidará los puntos que obtengas jugando con él</b>."
         4_html: "<b>NO</b> dispares o molestes a corredores en posiciones no inmediatas a la tuya (jugadores que te saquen una vuelta)."
         5_html: "<b>NO</b> pidas RE <small class='text-success'>(1)</small> a menos que llegues tarde a una carrera o experimentes dificultades técnicas. Otras razones son consideradas inválidas."
         6: "Evita cambiar tu nombre a mitad de las sesiones, ya que esto puede dificultar el calcular las puntuaciones finales."
@@ -293,7 +293,7 @@ es_cl:
       1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
     attribution:
       title: "Atribución"
-      1: "Otros recursos como imágenes de clasificación de coches, imágenes de pistas, emoticonos, etc... son hechos por miembros de nuestra comunidad y todos los derechos pertenecen a sus respectivos autores"
+      1: "Otros recursos como imágenes de clasificación de autos, imágenes de pistas, emoticonos, etc., son hechos por miembros de nuestra comunidad. Todos los derechos pertenecen a sus respectivos autores."
       2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
   #Seasons page
   seasons:
