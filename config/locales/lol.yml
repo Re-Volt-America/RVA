@@ -300,7 +300,7 @@ lol:
     title: "da RVA seasunz"
     explanation:
       title: "Whut are RVA seasunz?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
+      description: "In RVA, we hav seesunz for onlain raecin'. Evy Seesun ther ar 6 rankin'z, n' each rankin ther r 28 sesshunz, 18 of wich r 4 singel raecz n da othr 10 for Team raecz. Plyerz get pontz for evy raecz."
     buttons:
       current-season: "seashun rn"
       learn-more: "Laern moar"
@@ -492,7 +492,7 @@ lol:
       confirmed: "YASSS! Magic internet address got confirmd!"
       new:
         resend_confirmation_instructions: "Resnd confurmashun instrucshunz"
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_instructions: "U will get a email wiff inzstrukshunz 4 how 2 chec ur email kod in a kouple of minz just wait rn."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "U r alr signd in."
@@ -523,7 +523,7 @@ lol:
         action: "Chanj mah pw"
         greeting: "Hi %{recipient}!"
         instruction: "Someone haz rekwestd a link to chanj ur pw. U can do dis by da link below."
-        instruction_2: "If you didn't request this, please ignore this email."
+        instruction_2: "If yu didnt ask 4 dis, plez ingor dis email."
         instruction_3: "Your password won't change until you access the link above and create a new one."
         subject: "Remaek pw instrukshunz"
       unlock_instructions:
@@ -547,8 +547,8 @@ lol:
       no_token: "Kitteh kant go in dis page w/o comin' frum a pw reset email. If u aktualy come frum a pw email thingy, pls use the full URL dat i gave u."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      updated: "Ur pw haz bean chanjd suksesfuly. U r nao sined in."
+      updated_not_active: "Ur pw haz been chanjd sukssesfuly."
     registrations:
       destroyed: "Bai! Ur acc has been rested in peace. We hope to see u again l8r."
       edit:
