@@ -430,13 +430,13 @@ it:
         average-position: "average position"
         participation: "participation rate"
     tabs:
-      title: "General"
-      stats: "Stats"
+      title: "Generale"
+      stats: "Statistiche"
       admin: "Admin"
   #Tournaments page
   tournaments:
     title: "Past Tournaments"
-    new: "New"
+    new: "Nuovo"
   #Re-Volt car classes
   classes:
     rookie: "Principiante"
