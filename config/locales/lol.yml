@@ -524,7 +524,7 @@ lol:
         greeting: "Hi %{recipient}!"
         instruction: "Someone haz rekwestd a link to chanj ur pw. U can do dis by da link below."
         instruction_2: "If yu didnt ask 4 dis, plez ingor dis email."
-        instruction_3: "Your password won't change until you access the link above and create a new one."
+        instruction_3: "Ur pw wont chanj til u go to da link abov n maek a new wan."
         subject: "Remaek pw instrukshunz"
       unlock_instructions:
         action: "Unlocc mah acc"
@@ -545,8 +545,8 @@ lol:
         forgot_your_password: "Dont remembur ur pw huh?"
         send_me_reset_password_instructions: "Send me remaek pw instrukshunz"
       no_token: "Kitteh kant go in dis page w/o comin' frum a pw reset email. If u aktualy come frum a pw email thingy, pls use the full URL dat i gave u."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      send_instructions: "U will get a email wiff inzstrukshunz on how 2 reset ur pw in a kouple of minz."
+      send_paranoid_instructions: "If ur email cod esistz in out databez, u'll get a pw rekovry link at ur email kod in a koupel of minz."
       updated: "Ur pw haz bean chanjd suksesfuly. U r nao sined in."
       updated_not_active: "Ur pw haz been chanjd sukssesfuly."
     registrations:
@@ -595,7 +595,7 @@ lol:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+      updated_but_not_signed_in: "Ur acc haz ben updaetd sukcesfuly, but since ur pw wuz chanjd, u ned 2 sine in again."
     sessions:
       already_signed_out: "Sined owt sukcessfuly."
       new:
