@@ -30,9 +30,28 @@
       padding-top: 15px;
     }
 
+    h6 {
+      font-weight: bold;
+      margin-bottom: 1em;
+      margin-left: 1em;
+    }
+
     p {
       margin-bottom: 5px;
     }
+
+    img {
+      display: block;
+      max-width: 80%;
+      height: auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .parameters {
+      font-size: 120%;
+    }
+
   }
 
   .card .card-header .btn-header-link {
