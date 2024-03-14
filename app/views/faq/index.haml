@@ -9,7 +9,7 @@
   = t("faq.description")
 
 %hr
-
+%h6 Installing and setup
 .container
   #faq
     .card
@@ -50,6 +50,10 @@
             = t("faq.accordion.generics.mobile-players")
           %p
             = t("faq.accordion.install.mobile-players.description-html")
+%hr
+%h6 Playing online
+.container
+  #faq
     .card
       .card-header#faqhead3
         %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"}= t("faq.accordion.play-online.title")
@@ -66,3 +70,38 @@
                 = t("faq.accordion.play-online.reminder.li-2-html")
               %li
                 = t("faq.accordion.play-online.reminder.li-3")
+    .card
+      .card-header#faqhead4
+        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq4", "aria-expanded": "true", "aria-controls": "faq4"} How to join a session with password?
+      #faq4.collapse{"aria-labelledby" => "faqhead4", "data-parent" => "#faq"}
+        .card-body
+          %p Write the following Launch Parameters (Don't write the brackets []).
+          .parameters
+            %b -lobby [IP address] -pass [password]
+          %h5 RVGL Launcher
+          %p Enter the IP and password at Launch Parameters field in the following way, for example:
+          = image_tag "faq/launcher.png", :class => "img-fluid rounded mx-auto"
+          %h5 Game Shortcut
+          %p Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below.
+          = image_tag "faq/shortcut.png", :class => "img-fluid rounded mx-auto"
+          %h5 Android
+          %ol
+            %li Download and install "<b>Termux</b>", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it.
+            %li Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong.
+          = image_tag "faq/android.png", :class => "img-fluid rounded mx-auto"
+    .card
+      .card-header#faqhead5
+        %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq5", "aria-expanded": "true", "aria-controls": "faq5"} How does works rankings and punctuations?
+      #faq5.collapse{"aria-labelledby" => "faqhead5", "data-parent" => "#faq"}
+        .card-body
+          %h4 Seasons and Rankings
+          %p Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions, in this way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced in #lobby-rva consists of playing the 20 tracks assigned for the day with the corresponding category, the weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:
+          = image_tag "faq/schedule.png", :class => "img-fluid rounded mx-auto d-block"
+          %h4 Punctuation of a Session
+          %p At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races influence.
+          %ul
+            %li The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars.
+            %li The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players.
+            %li Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session.
+          %p You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>.
+
