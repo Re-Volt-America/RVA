@@ -125,7 +125,7 @@ lol:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
-        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-rva\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
         reminder:
           title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
@@ -170,7 +170,7 @@ lol:
         7:
           title: "u mya typ REEEEEEEEEEE durin da firzt 40 sekondz ov a raec deu 2 an extrnal nom-gaem relatd factr."
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
-        8_html: "The accumulated multiplier of any car will never exceed 4.0."
+        8_html: "carz multiplir will nevur exced 4.0."
       d:
         title: "D. Discord Servur"
         1_html: "u must folow n abaid 2 da <a class='text-primary' href='https://discord.com/terms' target='_blank'>discord rulez</a>. Faild to do dat wil get u a bath (also get kickd frum RVA!!)"
@@ -493,7 +493,7 @@ lol:
       new:
         resend_confirmation_instructions: "Resnd confurmashun instrucshunz"
       send_instructions: "U will get a email wiff inzstrukshunz 4 how 2 chec ur email kod in a kouple of minz just wait rn."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If ur email adrez esistz in our daytuh-beiz, u wil get a email w/ inztrukshunz 4 how 2 konfirm ur email adres in a kupel of minz."
     failure:
       already_authenticated: "U r alr signd in."
       inactive: "Ur acc not aktivatd yet."
@@ -501,8 +501,8 @@ lol:
       last_attempt: "U hav ONE moar try left b4 ur acc is getting LOCKD UP."
       locked: "Ur acc is lockd."
       not_found_in_database: "Not-ok %{authentication_keys} or pw."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
+      timeout: "Ur sesshun wuz ded. Plez sine in again to go on."
+      unauthenticated: "U needa sine in or sin up b4 goin on."
       unconfirmed: "U havv 2 konfurm ur email adress b4 goin on."
     mailer:
       confirmation_instructions:
@@ -512,12 +512,12 @@ lol:
         subject: "Konfurmashun instrucshunz"
       email_changed:
         greeting: "Hi %{recipient}!"
-        message: "We're contacting you to notify you that your email has been changed to %{email}."
-        message_unconfirmed: "We're contacting you to notify you that your email is being changed to %{email}."
+        message: "Kittehz email haz ben chanjd to %{email}."
+        message_unconfirmed: "Kittehz email is bein' chanjd to %{email}."
         subject: "Email chanjd"
       password_change:
         greeting: "Hi %{recipient}!"
-        message: "We're contacting you to notify you that your password has been changed."
+        message: "Kittehz pw haz ben chanjd."
         subject: "Pw chanjd"
       reset_password_instructions:
         action: "Chanj mah pw"
@@ -592,7 +592,7 @@ lol:
       signed_up: "Hello fella! U've sined up alr!"
       signed_up_but_inactive: "U havv sined up suksessfuly. Howevar, we kuld nut sine u in bc ur acc is not yet aktivatd."
       signed_up_but_locked: "U havv sined up suksessfuly. Howevar, we kuld nut sine u in bc ur acc is lockd."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      signed_up_but_unconfirmed: "1 msg w/ a konfurmashun link haz bean sent 2 ur email. Pls follow da link 2 aktivet ur acc."
       update_needs_confirmation: "U updaetd ur acc suksessfuly, but we ned 2 verif ur new email kod. Pls chck ur email n follw teh konfurmahun link 2 confum ur email adrezz."
       updated: "Ur acc haz been updaetd sukssesfuly."
       updated_but_not_signed_in: "Ur acc haz ben updaetd sukcesfuly, but since ur pw wuz chanjd, u ned 2 sine in again."
