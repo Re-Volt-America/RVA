@@ -174,7 +174,7 @@ en:
         title: "How does works rankings and punctuations?"
         seasons:
           title: "Seasons and Rankings"
-          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions, in this way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced in #lobby-rva consists of playing the 20 tracks assigned for the day with the corresponding category, the weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions, in this way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced in discord #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category, the weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         punctuation:
           title: "Punctuation of a Session"
           description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races influence."
