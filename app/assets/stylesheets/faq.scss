@@ -30,12 +30,6 @@
       padding-top: 15px;
     }
 
-    h6 {
-      font-weight: bold;
-      margin-bottom: 1em;
-      margin-left: 1em;
-    }
-
     p {
       margin-bottom: 5px;
     }
@@ -124,4 +118,10 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     border-radius: .25rem;
   }
+}
+
+h6 {
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
