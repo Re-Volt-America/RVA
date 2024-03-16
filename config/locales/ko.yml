@@ -662,10 +662,10 @@ ko:
       title: "Error 404"
       message: "Not Found"
     422:
-      title: "Error 422"
+      title: "Error 404"
       message: "Illegal Error"
     500:
-      title: "Error 500"
+      title: "Error 404"
       message: "Internal Server Error"
   #Misc strings
   misc:
