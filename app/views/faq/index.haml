@@ -8,15 +8,16 @@
 %p
   = t("faq.description")
 
-%hr
-%h6
-  = t("faq.section-1")
-.container
-  #faq
+#faq
+
+  %hr
+  %h6
+    = t("faq.section-1")
+  .container
     .card
       .card-header#faqhead1
         %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq1", "aria-expanded": "true", "aria-controls": "faq1"}= t("faq.accordion.download.title")
-      #faq1.collapse{"aria-labelledby" => "faqhead1", "data-parent" => "#faq"}
+      #faq1.collapse{"aria-labelledby" => "faqhead1", "data-parent" => ""}
         .card-body
           %h4
             = t("faq.accordion.generics.recommended-way")
@@ -37,7 +38,7 @@
     .card
       .card-header#faqhead2
         %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq2", "aria-expanded": "true", "aria-controls": "faq2"}= t("faq.accordion.install.title")
-      #faq2.collapse{"aria-labelledby" => "faqhead2", "data-parent" => "#faq"}
+      #faq2.collapse{"aria-labelledby" => "faqhead2", "data-parent" => ""}
         .card-body
           %h4
             = t("faq.accordion.generics.recommended-way")
@@ -51,15 +52,13 @@
             = t("faq.accordion.generics.mobile-players")
           %p
             = t("faq.accordion.install.mobile-players.description-html")
-%hr
-%h6
-  = t("faq.section-2")
-.container
-  #faq
+  %h6.mt-3
+    = t("faq.section-2")
+  .container
     .card
       .card-header#faqhead3
         %a.btn.btn-header-link.collapsed{href: "#", "data-toggle": "collapse", "data-target": "#faq3", "aria-expanded": "true", "aria-controls": "faq3"}= t("faq.accordion.play-online.title")
-      #faq3.collapse{"aria-labelledby" => "faqhead3", "data-parent" => "#faq"}
+      #faq3.collapse{"aria-labelledby" => "faqhead3", "data-parent" => ""}
         .card-body
           %p
             = t("faq.accordion.play-online.description-html")
@@ -75,7 +74,7 @@
     .card
       .card-header#faqhead4
         %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq4", "aria-expanded": "true", "aria-controls": "faq4"}= t("faq.accordion.password-sessions.title")
-      #faq4.collapse{"aria-labelledby" => "faqhead4", "data-parent" => "#faq"}
+      #faq4.collapse{"aria-labelledby" => "faqhead4", "data-parent" => ""}
         .card-body
           %p
             = t("faq.accordion.password-sessions.description")
@@ -100,7 +99,7 @@
     .card
       .card-header#faqhead5
         %a.btn.btn-header-link{href: "#", "data-toggle": "collapse", "data-target": "#faq5", "aria-expanded": "true", "aria-controls": "faq5"}= t("faq.accordion.rankings.title")
-      #faq5.collapse{"aria-labelledby" => "faqhead5", "data-parent" => "#faq"}
+      #faq5.collapse{"aria-labelledby" => "faqhead5", "data-parent" => ""}
         .card-body
           %h4
             = t("faq.accordion.rankings.seasons.title")
