@@ -1,4 +1,4 @@
-es_bo:
+es-BO:
   #Navigation
   nav:
     play: "Jugar"
@@ -103,6 +103,8 @@ es_bo:
   faq:
     title: "Frequently Asked Questions"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
+    section-1: "Installing and setup"
+    section-2: "Playing online"
     accordion:
       download:
         title: "How do I download Re-Volt?"
@@ -131,6 +133,30 @@ es_bo:
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
+      password-sessions:
+        title: "How to join a session with password?"
+        description: "Write the following Launch Parameters (Don't write the brackets [])."
+        launcher:
+          description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
+        shortcut:
+          title: "Game shortcut"
+          description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
+        android:
+          li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
+          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+      rankings:
+        title: "How do rankings and points work?"
+        seasons:
+          title: "Seasons and Rankings"
+          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+        punctuation:
+          title: "Punctuation of a Session"
+          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
+          description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
+          list:
+            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
+            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
+            li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
       generics:
         recommended-way: "Recommended way: RVGL Launcher"
         classic-way: "Classic way"
