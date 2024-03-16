@@ -103,6 +103,8 @@ es-AR:
   faq:
     title: "Preguntas Frecuentes"
     description: "Esta es una recolección de preguntas frecuentes (FAQ) hechas por miembros nuevos de la comunidad cuando quieren jugar Re-Volt en línea con nosotros por primera vez. Asegurate de leerlas si sos nuevo en nuestra comunidad."
+    section-1: "Installing and setup"
+    section-2: "Playing online"
     accordion:
       download:
         title: "¿Cómo puedo descargar Re-Volt?"
@@ -131,6 +133,30 @@ es-AR:
           li-1: "Antes de unirte a nuestras salas, tenés que instalar los Packs de RVA. Revisá la página de Preguntas Frecuentes para saber más."
           li-2-html: "Cuando hay una sala abierta, un mensaje va a aparecer en #lobby-rva, </br> por ejemplo: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Abra RVGL, seleccione Multijugador >> Unirse a Partida, y copie y pegue la dirección IP. Esta IP es un ejemplo, cada organizador tendrá una dirección IP distinta."
+      password-sessions:
+        title: "How to join a session with password?"
+        description: "Write the following Launch Parameters (Don't write the brackets [])."
+        launcher:
+          description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
+        shortcut:
+          title: "Game shortcut"
+          description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
+        android:
+          li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
+          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+      rankings:
+        title: "How does works rankings and punctuations?"
+        seasons:
+          title: "Seasons and Rankings"
+          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions, in this way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced in discord #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category, the weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+        punctuation:
+          title: "Punctuation of a Session"
+          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races influence."
+          description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
+          list:
+            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
+            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
+            li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
       generics:
         recommended-way: "Método recomendado: RVGL Launcher"
         classic-way: "Método clásico"
@@ -639,10 +665,10 @@ es-AR:
       title: "Error 404"
       message: "No encontrado"
     422:
-      title: "Error 404"
+      title: "Error 422"
       message: "Error ilegal"
     500:
-      title: "Error 404"
+      title: "Error 500"
       message: "Error interno del servidor"
   #Misc strings
   misc:
