@@ -42,7 +42,7 @@ es-CL:
       title: "Políticas"
       rules: "Reglas"
       terms: "Términos de servicio"
-      privacy: "Política de privacidad"
+      privacy: "Política de Privacidad"
     organization:
       title: "Organización"
       staff: "Staff"
@@ -312,11 +312,11 @@ es-CL:
       5: "Cambiar los colores, dimensiones o añadir tu propio texto o imágenes"
     contact:
       title: "Por favor, contáctanos"
-      1: "Si quieres usar arte no incluido en este repositorio"
+      1: "Si quieres usar arte no incluído en este repositorio"
       2: "Si quieres usar estas imágenes en un video o medio de comunicación"
     naming:
       title: "Nombrar proyectos y productos"
-      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el respaldo de Re-Volt America. Esto también aplica a nombres de dominio."
+      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
     attribution:
       title: "Atribución"
       1: "Otros recursos como imágenes de clasificación de autos, imágenes de pistas, emoticonos, etc., son hechos por miembros de nuestra comunidad. Todos los derechos pertenecen a sus respectivos autores."
@@ -523,7 +523,7 @@ es-CL:
     failure:
       already_authenticated: "Ya has iniciado sesión."
       inactive: "Tu cuenta aún no ha sido activada."
-      invalid: "%{authentication_keys} o contraseña inválido(s)"
+      invalid: "%{authentication_keys} o password inválido(s)"
       last_attempt: "Tienes un intento más antes de que tu cuenta se bloquee."
       locked: "Tu cuenta está bloqueada."
       not_found_in_database: "%{authentication_keys} o contraseña inválida(s)"
@@ -564,13 +564,13 @@ es-CL:
     passwords:
       edit:
         change_my_password: "Cambiar mi contraseña"
-        change_your_password: "Cambia tu contraseña"
+        change_your_password: "Cambie tu contraseña"
         confirm_new_password: "Confirme la nueva contraseña"
         new_password: "Contraseña nueva"
       new:
         forgot_your_password: "¿Has olvidado tu contraseña?"
         send_me_reset_password_instructions: "Send me reset password instructions"
-      no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer tu contraseña. Si has llegado hasta aquí desde el correo para restablecer tu contraseña, por favor asegúrate de que la URL introducida esté completa."
+      no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer tu contraseña. Si has llegado hasta aquí desde el correo para restablecer tu contraseña, por favor asegúrate de que la URL introducida está completa."
       send_instructions: "En unos minutos recibirás un correo con instrucciones sobre cómo restablecer tu contraseña."
       send_paranoid_instructions: "Si tu correo existe en nuestra base de datos, recibirás en tu bandeja de entrada un correo con instrucciones sobre cómo restablecer tu contraseña."
       updated: "Tu contraseña ha sido cambiada. Ya puedes iniciar sesión."
@@ -578,11 +578,11 @@ es-CL:
     registrations:
       destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto."
       edit:
-        are_you_sure: '¿Estás seguro?'
+        are_you_sure: '¿Está usted seguro?'
         cancel_my_account: Eliminar mi cuenta
         currently_waiting_confirmation_for_email: 'Actualmente esperando la confirmación de: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no deseas cambiarlo
-        unhappy: '¿Insatisfecho?'
+        leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no desea cambiarlo
+        unhappy: No se encuentra feliz
         we_need_your_current_password_to_confirm_your_changes: necesitamos tu contraseña actual para confirmar los cambios
         title: "User settings"
         email:
@@ -665,10 +665,10 @@ es-CL:
       title: "Error 404"
       message: "Not Found"
     422:
-      title: "Error 422"
+      title: "Error 404"
       message: "Illegal Error"
     500:
-      title: "Error 500"
+      title: "Error 404"
       message: "Internal Server Error"
   #Misc strings
   misc:
