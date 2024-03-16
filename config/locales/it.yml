@@ -456,13 +456,13 @@ it:
         average-position: "average position"
         participation: "participation rate"
     tabs:
-      title: "Generale"
-      stats: "Statistiche"
+      title: "General"
+      stats: "Stats"
       admin: "Admin"
   #Tournaments page
   tournaments:
     title: "Past Tournaments"
-    new: "Nuovo"
+    new: "New"
   #Re-Volt car classes
   classes:
     rookie: "Principiante"
@@ -665,10 +665,10 @@ it:
       title: "Error 404"
       message: "Not Found"
     422:
-      title: "Error 422"
+      title: "Error 404"
       message: "Illegal Error"
     500:
-      title: "Error 500"
+      title: "Error 404"
       message: "Internal Server Error"
   #Misc strings
   misc:
