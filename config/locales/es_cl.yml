@@ -42,7 +42,7 @@ es-CL:
       title: "Políticas"
       rules: "Reglas"
       terms: "Términos de servicio"
-      privacy: "Política de Privacidad"
+      privacy: "Política de privacidad"
     organization:
       title: "Organización"
       staff: "Staff"
@@ -145,13 +145,13 @@ es-CL:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
           li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
       rankings:
-        title: "How does works rankings and punctuations?"
+        title: "How do rankings and points work?"
         seasons:
           title: "Seasons and Rankings"
-          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions, in this way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced in discord #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category, the weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         punctuation:
           title: "Punctuation of a Session"
-          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races influence."
+          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
             li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
@@ -312,11 +312,11 @@ es-CL:
       5: "Cambiar los colores, dimensiones o añadir tu propio texto o imágenes"
     contact:
       title: "Por favor, contáctanos"
-      1: "Si quieres usar arte no incluído en este repositorio"
+      1: "Si quieres usar arte no incluido en este repositorio"
       2: "Si quieres usar estas imágenes en un video o medio de comunicación"
     naming:
       title: "Nombrar proyectos y productos"
-      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
+      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el respaldo de Re-Volt America. Esto también aplica a nombres de dominio."
     attribution:
       title: "Atribución"
       1: "Otros recursos como imágenes de clasificación de autos, imágenes de pistas, emoticonos, etc., son hechos por miembros de nuestra comunidad. Todos los derechos pertenecen a sus respectivos autores."
@@ -523,7 +523,7 @@ es-CL:
     failure:
       already_authenticated: "Ya has iniciado sesión."
       inactive: "Tu cuenta aún no ha sido activada."
-      invalid: "%{authentication_keys} o password inválido(s)"
+      invalid: "%{authentication_keys} o contraseña inválido(s)"
       last_attempt: "Tienes un intento más antes de que tu cuenta se bloquee."
       locked: "Tu cuenta está bloqueada."
       not_found_in_database: "%{authentication_keys} o contraseña inválida(s)"
@@ -564,13 +564,13 @@ es-CL:
     passwords:
       edit:
         change_my_password: "Cambiar mi contraseña"
-        change_your_password: "Cambie tu contraseña"
+        change_your_password: "Cambia tu contraseña"
         confirm_new_password: "Confirme la nueva contraseña"
         new_password: "Contraseña nueva"
       new:
         forgot_your_password: "¿Has olvidado tu contraseña?"
         send_me_reset_password_instructions: "Send me reset password instructions"
-      no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer tu contraseña. Si has llegado hasta aquí desde el correo para restablecer tu contraseña, por favor asegúrate de que la URL introducida está completa."
+      no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer tu contraseña. Si has llegado hasta aquí desde el correo para restablecer tu contraseña, por favor asegúrate de que la URL introducida esté completa."
       send_instructions: "En unos minutos recibirás un correo con instrucciones sobre cómo restablecer tu contraseña."
       send_paranoid_instructions: "Si tu correo existe en nuestra base de datos, recibirás en tu bandeja de entrada un correo con instrucciones sobre cómo restablecer tu contraseña."
       updated: "Tu contraseña ha sido cambiada. Ya puedes iniciar sesión."
@@ -578,11 +578,11 @@ es-CL:
     registrations:
       destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto."
       edit:
-        are_you_sure: '¿Está usted seguro?'
+        are_you_sure: '¿Estás seguro?'
         cancel_my_account: Eliminar mi cuenta
         currently_waiting_confirmation_for_email: 'Actualmente esperando la confirmación de: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no desea cambiarlo
-        unhappy: No se encuentra feliz
+        leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no deseas cambiarlo
+        unhappy: '¿Insatisfecho?'
         we_need_your_current_password_to_confirm_your_changes: necesitamos tu contraseña actual para confirmar los cambios
         title: "User settings"
         email:
