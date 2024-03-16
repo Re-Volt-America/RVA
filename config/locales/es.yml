@@ -115,7 +115,7 @@ es:
         mobile-players:
           description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
         steam-revolt:
-          title: "Re-Volt Steam"
+          title: "Steam Re-Volt"
           description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
       install:
         title: "¿Cómo instalo los paquetes RVA?"
@@ -211,10 +211,10 @@ es:
         4: "Todas las infracciones están sujetas a la discreción de nuestro personal"
     precisions:
       1:
-        term: "(1) Reiniciar:"
+        term: "(1) RE:"
         precision: "Solicitar al anfitrión de una sala que reinicie la carrera en curso."
       2:
-        term: "(2) Espectador:"
+        term: "(2) Speced:"
         precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
@@ -665,10 +665,10 @@ es:
       title: "Error 404"
       message: "No encontrado"
     422:
-      title: "Error 422"
+      title: "Error 404"
       message: "Error ilegal"
     500:
-      title: "Error 500"
+      title: "Error 404"
       message: "Error Interno del servidor"
   #Misc strings
   misc:
