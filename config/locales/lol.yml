@@ -55,8 +55,8 @@ lol:
       emoji: "EMOJI THE MOVIE"
     social:
       title: "Find uz"
-      discord: "Discord"
-      github: "GitHub"
+      discord: "Discoword"
+      github: "Da codin site"
       crowdin: "Crowdin"
   #Landing page, Splash, About
   application:
@@ -127,12 +127,12 @@ lol:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
-        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-rva\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
+        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
           title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
-          li-3: "Open RVGL, go 2 Play Manikittehgaem >> Join Gaem, n copy n paste da IP. Dis is a exempel IP, each kitteh will havv a different IP."
+          li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
       password-sessions:
         title: "How to join a session with password?"
         description: "Write the following Launch Parameters (Don't write the brackets [])."
@@ -196,7 +196,7 @@ lol:
         7:
           title: "u mya typ REEEEEEEEEEE durin da firzt 40 sekondz ov a raec deu 2 an extrnal nom-gaem relatd factr."
           bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
-        8_html: "carz multiplir will nevur exced 4.0."
+        8_html: "The accumulated multiplier of any car will never exceed 4.0."
       d:
         title: "D. Discord Servur"
         1_html: "u must folow n abaid 2 da <a class='text-primary' href='https://discord.com/terms' target='_blank'>discord rulez</a>. Faild to do dat wil get u a bath (also get kickd frum RVA!!)"
@@ -326,7 +326,7 @@ lol:
     title: "da RVA seasunz"
     explanation:
       title: "Whut are RVA seasunz?"
-      description: "In RVA, we hav seesunz for onlain raecin'. Evy Seesun ther ar 6 rankin'z, n' each rankin ther r 28 sesshunz, 18 of wich r 4 singel raecz n da othr 10 for Team raecz. Plyerz get pontz for evy raecz."
+      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
     buttons:
       current-season: "seashun rn"
       learn-more: "Laern moar"
@@ -476,11 +476,11 @@ lol:
   #Car metrics
   car-card:
     speed: "sped"
-    kmh: "km/h"
+    kmh: "litres"
     acc: "Accz"
-    ms2: "ms²"
+    ms2: "kg"
     weight: "how haevy"
-    kg: "Kg"
+    kg: "ms²"
     multiplier: "math thing"
   #Devise
   activerecord:
@@ -518,8 +518,8 @@ lol:
       confirmed: "YASSS! Magic internet address got confirmd!"
       new:
         resend_confirmation_instructions: "Resnd confurmashun instrucshunz"
-      send_instructions: "U will get a email wiff inzstrukshunz 4 how 2 chec ur email kod in a kouple of minz just wait rn."
-      send_paranoid_instructions: "If ur email adrez esistz in our daytuh-beiz, u wil get a email w/ inztrukshunz 4 how 2 konfirm ur email adres in a kupel of minz."
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "U r alr signd in."
       inactive: "Ur acc not aktivatd yet."
@@ -527,30 +527,30 @@ lol:
       last_attempt: "U hav ONE moar try left b4 ur acc is getting LOCKD UP."
       locked: "Ur acc is lockd."
       not_found_in_database: "Not-ok %{authentication_keys} or pw."
-      timeout: "Ur sesshun wuz ded. Plez sine in again to go on."
-      unauthenticated: "U needa sine in or sin up b4 goin on."
-      unconfirmed: "U havv 2 konfurm ur email adress b4 goin on."
+      timeout: "Your session expired. Please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
         action: "Konfirm mah acc"
         greeting: "Hello there fella, %{recipient}!"
-        instruction: "U kan konfirm ur acc email thru da link Blow: blue label"
+        instruction: "You can confirm your account email through the link below: blue label"
         subject: "Konfurmashun instrucshunz"
       email_changed:
         greeting: "Hi %{recipient}!"
-        message: "Kittehz email haz ben chanjd to %{email}."
-        message_unconfirmed: "Kittehz email is bein' chanjd to %{email}."
+        message: "We're contacting you to notify you that your email has been changed to %{email}."
+        message_unconfirmed: "We're contacting you to notify you that your email is being changed to %{email}."
         subject: "Email chanjd"
       password_change:
         greeting: "Hi %{recipient}!"
-        message: "Kittehz pw haz ben chanjd."
+        message: "We're contacting you to notify you that your password has been changed."
         subject: "Pw chanjd"
       reset_password_instructions:
         action: "Chanj mah pw"
         greeting: "Hi %{recipient}!"
         instruction: "Someone haz rekwestd a link to chanj ur pw. U can do dis by da link below."
-        instruction_2: "If yu didnt ask 4 dis, plez ingor dis email."
-        instruction_3: "Ur pw wont chanj til u go to da link abov n maek a new wan."
+        instruction_2: "If you didn't request this, please ignore this email."
+        instruction_3: "Your password won't change until you access the link above and create a new one."
         subject: "Remaek pw instrukshunz"
       unlock_instructions:
         action: "Unlocc mah acc"
@@ -571,10 +571,10 @@ lol:
         forgot_your_password: "Dont remembur ur pw huh?"
         send_me_reset_password_instructions: "Send me remaek pw instrukshunz"
       no_token: "Kitteh kant go in dis page w/o comin' frum a pw reset email. If u aktualy come frum a pw email thingy, pls use the full URL dat i gave u."
-      send_instructions: "U will get a email wiff inzstrukshunz on how 2 reset ur pw in a kouple of minz."
-      send_paranoid_instructions: "If ur email cod esistz in out databez, u'll get a pw rekovry link at ur email kod in a koupel of minz."
-      updated: "Ur pw haz bean chanjd suksesfuly. U r nao sined in."
-      updated_not_active: "Ur pw haz been chanjd sukssesfuly."
+      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: "Your password has been changed successfully. You are now signed in."
+      updated_not_active: "Your password has been changed successfully."
     registrations:
       destroyed: "Bai! Ur acc has been rested in peace. We hope to see u again l8r."
       edit:
@@ -616,12 +616,12 @@ lol:
         sign_up: "Sine up"
         username: "Re-Volt usrnaem"
       signed_up: "Hello fella! U've sined up alr!"
-      signed_up_but_inactive: "U havv sined up suksessfuly. Howevar, we kuld nut sine u in bc ur acc is not yet aktivatd."
-      signed_up_but_locked: "U havv sined up suksessfuly. Howevar, we kuld nut sine u in bc ur acc is lockd."
-      signed_up_but_unconfirmed: "1 msg w/ a konfurmashun link haz bean sent 2 ur email. Pls follow da link 2 aktivet ur acc."
-      update_needs_confirmation: "U updaetd ur acc suksessfuly, but we ned 2 verif ur new email kod. Pls chck ur email n follw teh konfurmahun link 2 confum ur email adrezz."
-      updated: "Ur acc haz been updaetd sukssesfuly."
-      updated_but_not_signed_in: "Ur acc haz ben updaetd sukcesfuly, but since ur pw wuz chanjd, u ned 2 sine in again."
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
+      updated: "Your account has been updated successfully."
+      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
       already_signed_out: "Sined owt sukcessfuly."
       new:
@@ -665,10 +665,10 @@ lol:
       title: "Kitteh got lost 404"
       message: "Not finded"
     422:
-      title: "Error 422"
+      title: "Kitteh got lost 404"
       message: "Red flag errur"
     500:
-      title: "Error 500"
+      title: "Kitteh got lost 404"
       message: "Intrnel survuh errur"
   #Misc strings
   misc:
