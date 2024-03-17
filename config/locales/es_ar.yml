@@ -1,4 +1,4 @@
-es_ar:
+es-AR:
   #Navigation
   nav:
     play: "Jugar"
@@ -45,7 +45,7 @@ es_ar:
       privacy: "Política de Privacidad"
     organization:
       title: "Organización"
-      staff: "Staff"
+      staff: "Equipo"
       logs: "Registros de desarrollo"
       bugs: "Reportar un problema"
       sponsor: "Patrocinar"
@@ -54,7 +54,7 @@ es_ar:
       assets: "Recursos"
       emoji: "Emoticono"
     social:
-      title: "Encuéntranos"
+      title: "Encontranos"
       discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
@@ -204,7 +204,7 @@ es_ar:
         3: "No acoses a otros usuarios."
         4_html: "Cualquier archivo multimedia malicioso que cause que el cliente de Discord de otros usuarios deje de funcionar o contenido <em>muy explícito</em> se eliminará y probablemente te advertiremos por publicarlo."
       e:
-        title: "E. Advertencias"
+        title: "E. Infracciones"
         1_html: "El no seguir el reglamento de Carreras y puntuación puede hacer que quedes speced <small class='text-success'>(2)</small> en nuestras salas, o <em>expulsado</em> si insistes en romper nuestras reglas."
         2_html: "Los usuarios podrán ser <em>expulsados</em> de nuestro servidor de Discord por romper las reglas. Si la violación al reglamento es grave, podrás ser <em>baneado</em> en su lugar."
         3: "Evadir prohibiciones (Baneos) de Discord conseguirá que te volvamos a prohibirte eventualmente. Los averiguaremos."
@@ -286,7 +286,7 @@ es_ar:
         speed: "Velocidad"
         acceleration: "Aceleración"
         weight: "Peso"
-        multiplier: "Multiplicador"
+        multiplier: "Multip."
         category: "Categoría"
         stock: "Original"
         stock-tooltip:
@@ -319,7 +319,7 @@ es_ar:
       1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
     attribution:
       title: "Atribución"
-      1: "Otros recursos como imágenes de clasificación de coches, imágenes de pistas, emoticonos, etc... son hechos por miembros de nuestra comunidad y todos los derechos pertenecen a sus respectivos autores"
+      1: "Otros recursos como imágenes de clasificación de coches, imágenes de pistas, emoticonos, etc. son hechos por miembros de nuestra comunidad y todos los derechos pertenecen a sus respectivos autores."
       2_html: "Estas indicaciones fueron fuertemente basadas en las <a href='https://github.com/logos' target='_blank'>indicaciones de Logos y Utilización de GitHub</a>."
   #Seasons page
   seasons:
