@@ -71,7 +71,7 @@ es-CL:
         play-button: "Jugar »"
       competition:
         title: "Competencia"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        description: "En Re-Volt America corremos en un formato de temporadas. A lo largo de cada temporada, podrás correr a diario, ¡y hacer puntos por cada carrera en la que participes!"
         seasons-button: "Temporadas »"
       reliability:
         title: "Confiabilidad"
@@ -98,16 +98,16 @@ es-CL:
     faq:
       title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
       button: "¡Llévame ahí!"
-    legacy-downloads: "Legacy Downloads"
+    legacy-downloads: "Descargas antiguas"
   #FAQ page
   faq:
-    title: "Frequently Asked Questions"
+    title: "Preguntas frecuentes"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
-    section-1: "Installing and setup"
+    section-1: "Instalación y configuración"
     section-2: "Playing online"
     accordion:
       download:
-        title: "How do I download Re-Volt?"
+        title: "¿Cómo descargo Re-Volt?"
         recommended-way:
           description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
         classic-way:
@@ -118,7 +118,7 @@ es-CL:
           title: "Re-Volt de Steam"
           description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
       install:
-        title: "How do I install RVA packs?"
+        title: "¿Cómo instalo los paquetes de RVA?"
         recommended-way:
           description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
         classic-way:
@@ -126,7 +126,7 @@ es-CL:
         mobile-players:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
-        title: "How can I play online?"
+        title: "¿Cómo puedo jugar online?"
         description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
           title: "Ten en cuenta lo siguiente"
@@ -134,7 +134,7 @@ es-CL:
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
       password-sessions:
-        title: "How to join a session with password?"
+        title: "¿Cómo unirse a una sesión con contraseña?"
         description: "Write the following Launch Parameters (Don't write the brackets [])."
         launcher:
           description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
@@ -145,9 +145,9 @@ es-CL:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
           li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
       rankings:
-        title: "How do rankings and points work?"
+        title: "¿Cómo funcionan los rankings y los puntos?"
         seasons:
-          title: "Seasons and Rankings"
+          title: "Temporadas y rankings"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         punctuation:
           title: "Punctuation of a Session"
@@ -218,9 +218,9 @@ es-CL:
         precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
-    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de privacidad"
   terms:
-    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Términos de servicio"
   #Staff page
   staff:
     title: "Staff"
@@ -249,11 +249,11 @@ es-CL:
   #RVA strings
   rva:
     tracks:
-      all-tracks: "All Tracks"
-      season: "Season"
+      all-tracks: "Todas las pistas"
+      season: "Temporadas"
       title: "The RVA Tracks"
       format:
-        title: "Format"
+        title: "Formato"
         short-name:
           title: "Short Name"
         difficulty:
@@ -285,9 +285,9 @@ es-CL:
       features:
         speed: "Velocidad"
         acceleration: "Accel"
-        weight: "Weight"
+        weight: "Peso"
         multiplier: "Mult."
-        category: "Category"
+        category: "Categoría"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenido de Re-Volt original"
@@ -331,16 +331,16 @@ es-CL:
       current-season: "Current Season"
       learn-more: "Learn More"
     bottom:
-      title: "All Seasons"
-      present: "Present"
+      title: "Todas las temporadas"
+      present: "Presente"
   #Rankings page
   rankings:
     title: "Ranking %{number}"
     title2: "Leaderboards"
     small: "%{count} sessions played"
     table:
-      country: "Country"
-      racer: "Racer"
+      country: "País"
+      racer: "Corredor"
       pp: "PP"
       pa: "PA"
       mp: "MP"
@@ -360,17 +360,17 @@ es-CL:
     admin:
       season:
         edit:
-          button: "Edit Season"
+          button: "Editar temporada"
         delete:
           button: "Delete season"
           warning:
-            title: "Warning!"
+            title: "¡Advertencia!"
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
             close: "Close"
             delete-season: "Delete Season"
   #Development logs
   repositories:
-    title: "Revisions"
+    title: "Revisiones"
     small: "Latest git commits in our organization"
     new-button: "New"
     repository: "Repositorio"
@@ -461,7 +461,7 @@ es-CL:
       admin: "Admin"
   #Tournaments page
   tournaments:
-    title: "Past Tournaments"
+    title: "Torneos anteriores"
     new: "New"
   #Re-Volt car classes
   classes:
