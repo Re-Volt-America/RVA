@@ -16,7 +16,7 @@ lol:
       my-profile: "mysekf"
       settings: "myconfig"
       admin:
-        title: "Admin"
+        title: "Pow peeple"
         upload-session: "Uplod seshun"
         create-season: "Craet seesun"
         import-tracks: "giev Trakcz"
@@ -55,8 +55,8 @@ lol:
       emoji: "EMOJI THE MOVIE"
     social:
       title: "Find uz"
-      discord: "Discoword"
-      github: "Da codin site"
+      discord: "Discord"
+      github: "GitHub"
       crowdin: "Crowdin"
   #Landing page, Splash, About
   application:
@@ -83,7 +83,7 @@ lol:
         team-races: "%{category} team raecs"
         hosted-by: "hostd bai %{host}"
         all-sessions-button: "ALL SESHYUNZ"
-        no-sessions: "n"
+        no-sessions: "N"
     about:
       title: "aboat Re-Volt Amerik"
       description: "Teh largest Re-Volt family u'll find in teh Big Land ov Amerika. Join our raecin' sesshuns, be da lead in our seesunz and meet other Re-Volt pleyrz frum arond teh wurld!"
@@ -104,7 +104,7 @@ lol:
     title: "kitteh ask these all da tiem"
     description: "Dis is a colleckshun ov teh FAQ by new frindz when they first want 2 pley Re-Volt onlain with us in RVA. Maek sure 2 read if u r new 2 our family!"
     section-1: "Installing and setup"
-    section-2: "Playing online"
+    section-2: "Pleyin onlain"
     accordion:
       download:
         title: "How 2 get Re-Volt?"
@@ -139,18 +139,18 @@ lol:
         launcher:
           description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
         shortcut:
-          title: "gaem short"
+          title: "gaem shotkat"
           description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
         android:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
           li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
       rankings:
-        title: "How do rankings and points work?"
+        title: "How do rankz n pontz wok?"
         seasons:
-          title: "Seasons and Rankings"
+          title: "Seesunz n' Rankz"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         punctuation:
-          title: "Punctuation of a Session"
+          title: "Stop ov a sesshun"
           description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
