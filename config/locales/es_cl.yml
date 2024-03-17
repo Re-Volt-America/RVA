@@ -1,4 +1,4 @@
-es_cl:
+es-CL:
   #Navigation
   nav:
     play: "Jugar"
@@ -78,7 +78,7 @@ es_cl:
         description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
         about-us-button: "Sobre nosotros »"
       recent:
-        title: "Recent Sessions"
+        title: "Sesiones recientes"
         races: "Carreras %{category}"
         team-races: "%{category} Team Races"
         hosted-by: "Hosteado por %{host}"
@@ -129,7 +129,7 @@ es_cl:
         title: "How can I play online?"
         description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
-          title: "Keep this in mind"
+          title: "Ten en cuenta lo siguiente"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
