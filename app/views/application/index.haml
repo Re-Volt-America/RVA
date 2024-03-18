@@ -10,7 +10,8 @@
       %p
         = t("application.index.community.description")
       %p
-        %a.btn-important{ href: play_path, role: "button" } Play »
+        %a.btn-important{ href: play_path, role: "button" }
+          = t("application.index.community.play-button")
     .col-lg-4
       = image_tag "index/competition.png", :class => "img-fluid"
       %h2
@@ -18,7 +19,8 @@
       %p
         = t("application.index.competition.description")
       %p
-        %a.btn-important{ href: seasons_path, role: "button" } Seasons »
+        %a.btn-important{ href: seasons_path, role: "button" }
+          = t("application.index.competition.seasons-button")
     .col-lg-4
       = image_tag "index/reliability.png", :class => "img-fluid"
       %h2
@@ -26,7 +28,8 @@
       %p
         = t("application.index.reliability.description")
       %p
-        %a.btn-important{ href: about_path, role: "button" } About Us »
+        %a.btn-important{ href: about_path, role: "button" }
+          = t("application.index.reliability.about-us-button")
 
 #recent.mt-5
   - if @recent_sessions&.any?
