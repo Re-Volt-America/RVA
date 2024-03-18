@@ -87,6 +87,12 @@ lol:
     about:
       title: "aboat Re-Volt Amerik"
       description: "Teh largest Re-Volt family u'll find in teh Big Land ov Amerika. Join our raecin' sesshuns, be da lead in our seesunz and meet other Re-Volt pleyrz frum arond teh wurld!"
+      subtitle: "Who we are"
+      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
+      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
+      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
+      see_you: "See you on track!"
   #Play page
   play:
     subheader: "WE GO RACIN $@ 00:00 UTC"
@@ -109,7 +115,7 @@ lol:
       download:
         title: "How 2 get Re-Volt?"
         recommended-way:
-          description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
+          description-html: "Wid dis progrum, u canz dowonload n' manaeg custom stuff 4 da gaem wit juts a fwe scratchs. Go 2 dis link two dowonload it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Rivol Luanchr</a>. <p>Wahen u oen da launchr 4 da 1st tiem, u wil be aebl 2 seklet da foldr whaer da gaem wil instal, also wit da \"Gaem Preset'-. 4 da lastt, kitteh recomend u selekt da \"OG\".</p>"
         classic-way:
           description-html: "Go to this <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> and chooz teh vershun of teh gaem for ur os (Windows, Linux or MacOS). <p>When teh dowonload iz finishd, unzip teh archive in a foldr of ur choice and run RVGL to pley.</p>"
         mobile-players:
@@ -149,8 +155,8 @@ lol:
         seasons:
           title: "Seesunz n' Rankz"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
-        punctuation:
-          title: "Stop ov a sesshun"
+        scoring:
+          title: "Scoring points in a Session"
           description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
@@ -672,6 +678,7 @@ lol:
       message: "Intrnel survuh errur"
   #Misc strings
   misc:
+    create: "Create"
     download: "dowuload"
     search: "Scratch"
     and: "n'"
