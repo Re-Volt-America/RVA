@@ -726,6 +726,7 @@ en:
 
   # Misc strings
   misc:
+    create: "Create"
     download: "Download"
     search: "Search"
     and: "&"
