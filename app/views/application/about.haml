@@ -7,24 +7,18 @@
         = t('application.about.description')
 
   :markdown
-    ## Who we are
+    ## #{t('application.about.subtitle')}
 
-    Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game
-    <a href="https://en.wikipedia.org/wiki/Re-Volt" target="_blank">Re-Volt</a> from 1999.
+    #{t('application.about.text1_html')}
 
-    In order to play online, we use <a href="https://rvgl.org/" target="_blank">RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs
-    natively on a wide variety of platforms. This version of the game is also known for extending the original game
-    experience with support for custom, community-made content such as tracks and cars.
+    #{t('application.about.text2_html')}
 
-    In RVA, we organise a series of online sessions where players from all around the world (primarily from the American
-    continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt
-    Americas' official rankings.
+    #{t('application.about.text3_html')}
 
-    <a href="#{DISTRIBUTE::RVGL_LAUNCHER}" target="_blank">Download RVGL</a>, get
-    the <a href="#{downloads_path}">RVA Pack</a>, and <a href="#{play_path}">Play</a> with us!
+    #{t('application.about.text4_html', :distribute_launcher => DISTRIBUTE::RVGL_LAUNCHER, :downloads_path => downloads_path, :play_path => play_path)}
 
   %h2.text-center
-    See you on track!
+    = t('application.about.see_you')
   #carouselIndicators.carousel.slide{"data-ride" => "carousel"}
     %ol.carousel-indicators
       %li.active{"data-slide-to" => "0", "data-target" => "#carouselIndicators"}
