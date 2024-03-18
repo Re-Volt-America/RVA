@@ -38,7 +38,7 @@
               %tr
                 %td
                   = @count += 1
-                %td
+                %td.rev
                   %a{href: "#{commit_url(r.sha)}", target: "_blank"}= r.sha_brief
                 %td
                   - user = user_by_github(r.author_name)
