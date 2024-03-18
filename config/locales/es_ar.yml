@@ -87,6 +87,12 @@ es-AR:
     about:
       title: "Acerca de Re-Volt América"
       description: "La comunidad más grande de Re-Volt que encontrarás en el Continente Americano. ¡Participá en nuestras carreras, competí en nuestras temporadas y conocé a otros jugadores de Re-Volt de todo el mundo!"
+      subtitle: "Who we are"
+      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
+      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
+      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
+      see_you: "See you on track!"
   #Play page
   play:
     subheader: "Jugamos todos los días a las 00:00 UTC"
@@ -149,14 +155,14 @@ es-AR:
         seasons:
           title: "Temporadas y Rankings"
           description: "Cada temporada consiste de 6 rankings, y cada ranking consiste de 18 fechas individuales y 10 fechas por equipo. De esta manera, cada ranking tiene una duración de un mes y cada temporada dura aproximadamente 6 meses. Una fecha anunciada en el canal #lobby-rva de Discord consiste de jugar las 20 pistas asignadas del día con la categoría correspondiente. El cronograma semanal que determina las carreras a jugar cada día es anunciado cada Lunes y se ve de la siguiente forma:"
-        punctuation:
-          title: "Puntaje de una fecha"
-          description-1: "Al final de cada fecha los resultados obtenidos por cada jugador son publicados en el canal #rank-global. En RVA tenemos una manera única de determinar los puntajes donde el Multiplicador, el Puntaje Acumulado, la Posición Promedio y las Carreras Completadas influyen en el resultado."
-          description-2-html: "Podés ver en detalle cómo son calculados los puntos en una sesión en el siguiente <a href='points', rel='noopener noreferrer'>enlace</a>."
+        scoring:
+          title: "Scoring points in a Session"
+          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
+          description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
-            li-1: "El Multiplicador le da a cada auto un valor que determina su dificultad: cuanto mayor sea el número del Multiplicador, más puntos podrá sumar, pero no le servirá si termina las carreras en último lugar intentando manejar los autos más difíciles."
-            li-2: "El Puntaje Acumulado es la suma de los puntos obtenidos acorde a tu posición final en cada carrera. Más puntos serán otorgados en la sesión si se comienza con 10 o más jugadores."
-            li-3: " La Posición Promedio y Carreras Completadas afectan tu Puntaje Acumulado en una sesión. Terminar en últimas posiciones o completando pocas carreras va a reducir la cantidad de puntos que puede obtener en una sesión."
+            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
+            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
+            li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
       generics:
         recommended-way: "Método recomendado: RVGL Launcher"
         classic-way: "Método clásico"
@@ -672,6 +678,7 @@ es-AR:
       message: "Error interno del servidor"
   #Misc strings
   misc:
+    create: "Create"
     download: "Descarga"
     search: "Buscar"
     and: "&"
