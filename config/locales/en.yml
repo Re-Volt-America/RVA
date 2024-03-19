@@ -307,10 +307,6 @@ en:
           long: "Long"
           extralong: "Extra Long"
           meters: "%{length} meters"
-        stock:
-          title: "Stock?"
-          true: "Yes"
-          false: "No"
       featured:
         description: "This track has been featured in RVA %{season}"
       rotation:
@@ -332,6 +328,35 @@ en:
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
+      shared:
+        placeholder: "Search..."
+        no-cars: "No cars to display"
+      edit:
+        title: "Editing Car"
+        button: "Edit Car"
+        season: "Season"
+        name: "Name"
+        folder-name: "Folder name"
+        update: "Update"
+        error: "Car could not be saved"
+      import:
+        title: "Import Cars"
+    shared:
+      stock:
+        title: "Stock"
+        true: "Yes"
+        false: "No"
+
+  # Shared
+  shared:
+    prompt:
+      season: "Select Season"
+      category: "Select Category"
+    submit:
+      import: "Import"
+
+
+
 
   # Assets page
   assets:
