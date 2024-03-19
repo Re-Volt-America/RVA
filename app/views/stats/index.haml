@@ -3,9 +3,9 @@
 - meta :description, "Global statistics leaderboard for Re-Volt America's online sessions."
 
 %h1.mb-4
-  Global Stats
+  = t("rankings.stats.title")
 
-Sorted by:
+= t("rankings.stats.sorted")
 
 %select#sorter.form-control{style: "display: inline-block; width: 130px; cursor: pointer;"}
   - @sorts.each do |key, label|
@@ -21,15 +21,15 @@ Sorted by:
     %thead
       %tr
         %th{width: "1%"} #
-        %th{width: "2%"} Country
-        %th{width: "15%"} Racer
-        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race wins"} Wins
-        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Arrived 3rd or higher"} Podiums
-        %th{width: "12%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Wins divided by race count"} Win Ratio
-        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average finish position"} Average Pos.
-        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Total amount of finished races"} Race Count
-        %th{width: "17%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated points"} Obtained Points
-        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated official score"} Official Score
+        %th{width: "2%"}= t("rankings.table.country")
+        %th{width: "15%"}= t("rankings.table.racer")
+        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Race wins"}= t("rankings.stats.table.wins")
+        %th{width: "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Arrived 3rd or higher"}= t("rankings.stats.table.podiums")
+        %th{width: "12%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Wins divided by race count"}= t("rankings.stats.table.win-ratio")
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Average finish position"}= t("rankings.stats.table.average-pos")
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Total amount of finished races"}= t("rankings.stats.table.race-count")
+        %th{width: "17%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated points"}= t("rankings.stats.table.obtained-points")
+        %th{width: "15%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Accumulated official score"}= t("rankings.stats.table.official-score")
     %tbody
       - @users.each do |user|
         - @count += 1

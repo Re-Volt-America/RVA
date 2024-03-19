@@ -431,6 +431,18 @@ en:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    stats:
+      title: "Global Stats"
+      sorted: "Sorted by:"
+      table:
+        wins: "Wins"
+        podiums: "Podiums"
+        win-ratio: "Win Ratio"
+        average-pos: "Average Pos"
+        race-count: "Race Count"
+        obtained-points: "Obtained Points"
+        official-score: "Official Score"
+
     sessions:
       title: "Sessions"
       no-sessions: "No sessions to display :("
