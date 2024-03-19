@@ -290,6 +290,7 @@ en:
       all-tracks: "All Tracks"
       season: "Season"
       title: "The RVA Tracks"
+      no-tracks: "No tracks to display"
       format:
         title: "Format"
         short-name:
@@ -313,6 +314,17 @@ en:
         title: "Re-Volt America Rotation"
       collection:
         title: "Re-Volt America Track Collection"
+      edit:
+        title: "Editing Track"
+        season: "Season"
+        name: "Name"
+        short-name: "Short name"
+        difficulty: "Difficulty"
+        length: "Length (meters"
+        folder-name: "Folder name"
+        error: "Track could not be saved"
+      import:
+        title: "Import Tracks"
     cars:
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
@@ -354,6 +366,7 @@ en:
       ranking: "Select Ranking"
       category: "Select Category"
       leader: "Select Leader"
+      difficulty: "Select Difficulty"
     submit:
       import: "Import"
       update: "Update"

@@ -3,35 +3,36 @@
 = render :partial => "application/subnav", :locals => {:track => @track}
 
 %h2
-  = "Editing Track"
+  = t("rva.tracks.edit.title")
 
 = form_with(:model => @track) do |f|
   .row
     .col-md-5
       .field.form-group
-        = f.label :season
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.label :season, t("rva.tracks.edit.season")
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
       .field.form-group
-        = f.label :name
+        = f.label :name, t("rva.tracks.edit.name")
         = f.text_field :name, :class => "form-control"
       .field.form-group
-        = f.label :short_name
+        = f.label :short_name, t("rva.tracks.edit.short-name")
         = f.text_field :short_name, :class => "form-control"
       .field.form-group
-        = f.label :difficulty
-        = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => "Select Difficulty"}, :class => "form-control"
+        = f.label :difficulty, t("rva.tracks.edit.difficulty")
+        = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => t("shared.prompt.difficulty")}, :class => "form-control"
       .field.form-group
-        = f.label "Length (meters)"
+        = f.label t("rva.tracks.edit.length")
         = f.number_field :length, :class => "form-control"
       .field.form-group
-        = f.label :folder_name
+        = f.label :folder_name, t("rva.tracks.edit.folder-name")
         = f.text_field :folder_name, :class => "form-control"
       .actions
-        = f.button "Update", :type => "submit", :class => "btn mb-2"
+        = f.button t("shared.submit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
       - if @track.errors.any?
         #error-explanation
-          %h5 Track could not be saved
+          %h5
+            = t("rva.tracks.edit.error")
           %ul
             - @track.errors.each do |error|
               %li

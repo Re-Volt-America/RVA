@@ -13,7 +13,7 @@
 
   - if @tracks.none?
     %h5.text-center
-      = "No tracks to display"
+      = t("rva.tracks.no-tracks")
   - else
     .row.mt-4
       - @tracks.each do |track|

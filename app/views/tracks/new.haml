@@ -1,6 +1,7 @@
 - content_for :title, "Re-Volt America - Import Tracks"
 
-%h2.mb-4 Import Tracks
+%h2.mb-4
+  = t("rva.tracks.import.title")
 
 = form_with :url => import_tracks_path, :method => :post do |f|
   .row
@@ -9,6 +10,6 @@
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
       .field.form-group
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
 
-      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
+      = f.button t("shared.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"
