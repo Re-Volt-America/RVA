@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { :locale => I18n.locale }
+    unless user_signed_in?
+      { :locale => I18n.locale }
+    end
+
+    {}
   end
 
   # Detect Browser's locale and use that by default
