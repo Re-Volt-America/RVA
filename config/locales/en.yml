@@ -608,7 +608,21 @@ en:
   # Tournaments page
   tournaments:
     title: "Past Tournaments"
-    new: "New"
+    no-tournaments: "No tournaments to display"
+    notice: "notice"
+    edit:
+      title: "Editing Tournament"
+      name: "Name"
+      date: "Date"
+      season: "Season"
+      banner: "Tournament banner"
+      format: "Format"
+      save: "Save Tournament"
+      error: "prohibited this tournament from being saved:"
+    new:
+      title: "New Tournament"
+      button: "New Tournament"
+
 
   # Re-Volt car classes
   classes:
