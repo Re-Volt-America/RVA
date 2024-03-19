@@ -21,7 +21,7 @@
         = f.text_area :format, :class => "form-control"
       .field.form-group
         = f.label :season, t("tournaments.edit.season")
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
       .actions
         = f.button t("tournaments.new.button"), :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
