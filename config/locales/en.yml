@@ -449,6 +449,14 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
+    new:
+      title: "New Repository"
+      placeholder:
+        title: "Title"
+        description: "Description"
+        namespace: "Namespace"
+        branch: "branch"
+      create: "Create"
 
   # RVA results page
   results:
