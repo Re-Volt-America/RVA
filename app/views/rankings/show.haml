@@ -3,7 +3,7 @@
 = render :partial => "application/subnav", :locals => { :season => @ranking.season, :rankings => @ranking.season.rankings, :ranking => @ranking }
 
 %h2.mt-4.text-center
-  = "Ranking #{@ranking.number}"
+  = t("rankings.title", number:@ranking.number)
 
 #recent
   .mt-4
@@ -40,9 +40,9 @@
 
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item
-    %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"} Singles
+    %a#singles-tab.nav-link.active{"aria-controls" => "singles", "aria-selected" => "true", "data-toggle" => "tab", href: "#singles", role: "tab"}= t("rankings.nav.singles")
   %li.nav-item
-    %a#teams-tab.nav-link{"aria-controls" => "teams", "aria-selected" => "false", "data-toggle" => "tab", href: "#teams", role: "tab"} Teams
+    %a#teams-tab.nav-link{"aria-controls" => "teams", "aria-selected" => "false", "data-toggle" => "tab", href: "#teams", role: "tab"}= t("rankings.nav.teams")
 
 .tab-content
   #singles.tab-pane.fade.show.active{:"aria-labelledby" => "singles-tab", role: "tabpanel"}
@@ -84,7 +84,7 @@
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
     - if @team_entries.none?
       %h5.text-center.mt-2
-        = "No team results to display"
+        = t("rankings.results.no-team-results")
     - else
       .table-responsive#teams-table
         %table.table.table-bordered.table-striped
