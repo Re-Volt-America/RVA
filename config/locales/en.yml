@@ -449,6 +449,7 @@ en:
       author: "Author"
       description: "Description"
       when: "When"
+      ago: "ago"
     new:
       title: "New Repository"
       placeholder:
