@@ -1,6 +1,7 @@
 - content_for :title, "Re-Volt America - New Season"
 
-%h2.mb-3 Create Season
+%h2.mb-3
+  = t("seasons.create.title")
 = form_with(model: @season) do |form|
   .row
     .col-md-5
@@ -8,15 +9,15 @@
         #error-explanation
           %h2
             = pluralize(@season.errors.count, "error")
-            prohibited this season from being saved:
+            = t("seasons.create.error")
           %ul
             - @season.errors.each do |error|
               %li= error.full_message
       .field.form-group
-        = form.label :name
+        = form.label :name, t("seasons.edit.name")
         = form.text_field :name, :class => "form-control"
       .field.form-group
-        = form.label :start_date
+        = form.label :start_date, t("seasons.edit.start-date")
         = form.date_field :start_date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
       .actions
-        = form.button "Create Season", :type => "submit", :class => "btn mb-2"
+        = form.button t("seasons.create.title"), :type => "submit", :class => "btn mb-2"

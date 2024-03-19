@@ -354,6 +354,7 @@ en:
       category: "Select Category"
     submit:
       import: "Import"
+      update: "Update"
 
 
 
@@ -400,6 +401,16 @@ en:
     bottom:
       title: "All Seasons"
       present: "Present"
+    edit:
+      title: "Editing season"
+      name: "Name"
+      start-date: "Start date"
+      end-date: "End date"
+      error: "Season could not be saved"
+    create:
+      title: "Create Season"
+      error: "prohibited this season from being saved"
+
 
   # Rankings page
   rankings:
