@@ -1,6 +1,7 @@
 - content_for :title, "Re-Volt America - New Session"
 
-%h2.mb-4 Upload Session
+%h2.mb-4
+  = t("rankings.sessions.upload.title")
 
 = form_with :url => import_sessions_path, :method => :post do |f|
   .row
@@ -11,13 +12,13 @@
 
       %div{:"data-controller" => "season"}
         .field.form-group
-          = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"},  {:data => {:action => "change->season#change"}, :class => "form-control" }
+          = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
         .field.form-group
-          = f.select :ranking, [], {:prompt => "Select Ranking"}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
+          = f.select :ranking, [], {:prompt => t("shared.prompt.ranking")}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
       .field.form-group
-        = f.select :category, SYS::CATEGORY::RVA_NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
+        = f.select :category, SYS::CATEGORY::RVA_NUMBERS_MAP, {:prompt => t("shared.prompt.category")}, {:class => "form-control"}
       .field.form-group
         = f.check_box :teams
-        = f.label :teams
+        = f.label :teams, t("shared.checkbox.teams")
 
-      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
+      = f.button t("shared.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"

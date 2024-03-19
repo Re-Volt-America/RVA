@@ -351,10 +351,13 @@ en:
   shared:
     prompt:
       season: "Select Season"
+      ranking: "Select Ranking"
       category: "Select Category"
     submit:
       import: "Import"
       update: "Update"
+    checkbox:
+      teams: "Teams"
 
 
 
@@ -431,6 +434,19 @@ en:
     sessions:
       title: "Sessions"
       no-sessions: "No sessions to display :("
+      edit:
+        title: "Editing Session"
+        host: "Host"
+        version: "Version"
+        physics: "Physics"
+        protocol: "Protocol"
+        number: "Number"
+        date: "Date"
+        update: "Update Session"
+        error: "Session could not be saved"
+      upload:
+        title: "Upload Session"
+
     results:
       no-team-results: "No team results to disiplay"
     nav:
