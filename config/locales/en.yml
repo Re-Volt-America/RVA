@@ -353,11 +353,16 @@ en:
       season: "Select Season"
       ranking: "Select Ranking"
       category: "Select Category"
+      leader: "Select Leader"
     submit:
       import: "Import"
       update: "Update"
     checkbox:
       teams: "Teams"
+    button:
+      back: "Back"
+      new: "New"
+
 
 
 
@@ -540,6 +545,26 @@ en:
     team:
       leader: "Leader"
       members: "Members"
+    table:
+      name: "Name"
+      country: "Country"
+      role:
+        title: "Role"
+        leader: "Leader"
+        member: "Member"
+    edit:
+      title: "Editing Team"
+      name: "Name"
+      short-name: "Short name"
+      color: "Color"
+      team-img: "Team image"
+      leader: "Leader"
+      add-member: "Add Member"
+      edit-team: "Edit Team"
+      create: "Create Team"
+      error: "Team could not be saved"
+    new:
+      title: "New Team"
 
   # User profile page
   users:
