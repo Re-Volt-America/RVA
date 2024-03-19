@@ -1,6 +1,6 @@
 - if user.admin?
-  %a.label{:href => staff_path, :style => "background-color: #f89406; color: white;"} Administrator
+  %a.label{:href => staff_path, :style => "background-color: #f89406; color: white;"}= t(".admin")
 - if user.mod?
-  %a.label{:href => staff_path, :style => "background-color: #ff2200; color: white;"} Moderator
+  %a.label{:href => staff_path, :style => "background-color: #ff2200; color: white;"}= t(".mod")
 - if user.organizer?
-  %a.label{:href => staff_path, :style => "background-color: #36f971; color: white;"} Organizer
+  %a.label{:href => staff_path, :style => "background-color: #36f971; color: white;"}= t(".organizer")

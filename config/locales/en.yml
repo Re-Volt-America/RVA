@@ -617,6 +617,12 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
+    badges:
+      admin: "Administrator"
+      mod: "Mod"
+      organizer: "Organizer"
+    import:
+      title: "Import users"
 
   # Tournaments page
   tournaments:
