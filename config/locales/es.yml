@@ -87,6 +87,12 @@ es:
     about:
       title: "Acerca de Re-Volt America"
       description: "¡La comunidad más grande de Re-Volt que encontrarás en el Continente Americano, únete a nuestras sesiones diarias de carreras, compita en nuestras temporadas y conozca a otros jugadores de Re-Volt de todo el mundo!"
+      subtitle: "Who we are"
+      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
+      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
+      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
+      see_you: "See you on track!"
   #Play page
   play:
     subheader: "Jugamos diariamente a las 00:00 UTC"
@@ -149,8 +155,8 @@ es:
         seasons:
           title: "Seasons and Rankings"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
-        punctuation:
-          title: "Punctuation of a Session"
+        scoring:
+          title: "Scoring points in a Session"
           description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
@@ -672,6 +678,7 @@ es:
       message: "Error Interno del servidor"
   #Misc strings
   misc:
+    create: "Create"
     download: "Descarga"
     search: "Buscar"
     and: "&"
