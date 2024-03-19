@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     unless user_signed_in?
-      { :locale => I18n.locale }
+      return { :locale => I18n.locale }
     end
 
     {}
