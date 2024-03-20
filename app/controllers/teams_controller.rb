@@ -37,7 +37,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to teams_path, :notice => 'Team was successfully created.' }
+        format.html { redirect_to teams_path, :notice => t(".controller.create") }
         format.json { render :show, :status => :created, :location => @team, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -50,7 +50,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to team_path(@team), :notice => 'Team was successfully updated.' }
+        format.html { redirect_to team_path(@team), :notice => t(".controller.update") }
         format.json { render :show, :status => :ok, :location => @team, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -65,7 +65,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.update!
-        format.html { redirect_to team_path(@team), :notice => "#{new_member.username} was successfully added to #{@team.name}" }
+        format.html { redirect_to team_path(@team), :notice => t(".controller.add-member", member:new_member.username, team:@team.name) }
       else
         format.html { redirect_to team_path(@team), :status => :unprocessable_entity }
       end
@@ -90,7 +90,7 @@ class TeamsController < ApplicationController
     @team.destroy
 
     respond_to do |format|
-      format.html { redirect_to teams_url, :notice => 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url, :notice => t(".controller.destroy") }
       format.json { head :no_content }
     end
   end

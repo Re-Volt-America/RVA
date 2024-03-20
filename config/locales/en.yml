@@ -602,6 +602,11 @@ en:
       error: "Team could not be saved"
     new:
       title: "New Team"
+    controller:
+      create: "Team was successfully created."
+      update: "Team was successfully updated."
+      destroy: "Team was successfully destroyed."
+      add-member: "%{member} was successfully added to %{team}"
 
   # User profile page
   users:
