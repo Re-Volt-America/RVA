@@ -87,10 +87,10 @@ es:
     about:
       title: "Acerca de Re-Volt America"
       description: "¡La comunidad más grande de Re-Volt que encontrarás en el Continente Americano, únete a nuestras sesiones diarias de carreras, compita en nuestras temporadas y conozca a otros jugadores de Re-Volt de todo el mundo!"
-      subtitle: "Who we are"
+      subtitle: "Quiénes somos"
       text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
-      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
+      text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
       see_you: "See you on track!"
   #Play page
@@ -153,7 +153,7 @@ es:
       rankings:
         title: "How do rankings and points work?"
         seasons:
-          title: "Seasons and Rankings"
+          title: "Sesiones y rankings"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         scoring:
           title: "Scoring points in a Session"
@@ -220,7 +220,7 @@ es:
         term: "(1) RE:"
         precision: "Solicitar al anfitrión de una sala que reinicie la carrera en curso."
       2:
-        term: "(2) Speced:"
+        term: "(2) Especteado:"
         precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
@@ -246,7 +246,7 @@ es:
       big-race: "Puntuación de gran carrera"
     car-ratings:
       title: "Clasificación de autos"
-      description: "En Re-Volt America, los autos tienen asignado un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso, y otras características que pueden hacerlas mejores o peores para las carreras en línea. Utilizamos este multijugador para recompensar a los corredores por jugar autos dificiles y por regular también autos realmente buenos o demasiado buenos. Esta es la forma en que se aplica la fórmula de cada carrera con diferentes multiplicadores de coches:"
+      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
     desktop-parser:
       title: "Analizador de puntos de escritorio de RVA"
       description: "RVA Desktop Points Parser es una aplicación de escritorio diseñada para calcular una tabla de resultados en formato RVA a partir de un registro de sesión RVA. A través de esta herramienta portátil, permitimos que cualquiera analice los resultados de la sesión usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de lo que obtendrá analizando usted mismo una de nuestras sesiones:"
@@ -338,7 +338,7 @@ es:
       learn-more: "Más información"
     bottom:
       title: "Todas las temporadas"
-      present: "Present"
+      present: "Presente"
   #Rankings page
   rankings:
     title: "Clasificación %{number}"
@@ -438,29 +438,29 @@ es:
         title: "Estadísticas de carrera"
         win-rate: "porcentaje de victorias"
         sessions: "sesiones"
-        races: "Carreras"
-        win: "Victoria"
+        races: "carreras"
+        win: "victoria"
         wins: "victorias"
-        podium: "Podio"
-        podiums: "Podios"
-        session-played: "Sesión jugada"
-        sessions-played: "Sesiones jugadas"
-        race-played: "Carrera jugada"
-        races-played: "Carreras jugadas"
+        podium: "podio"
+        podiums: "podios"
+        session-played: "sesión jugada"
+        sessions-played: "sesiones jugadas"
+        race-played: "carrera jugada"
+        races-played: "carreras jugadas"
       session-history:
         title: "Historial de sesión"
       overall-stats:
         title: "Estadísticas generales"
-        session-win: "Sesión Ganada"
-        session-wins: "Sesiones ganadas"
-        session-podium: "Podio de la sesión"
-        session-podiums: "Podio de las sesiones"
+        session-win: "sesión Ganada"
+        session-wins: "sesiones ganadas"
+        session-podium: "podio de la sesión"
+        session-podiums: "podio de las sesiones"
         session-winrate: "Tasa de victoria de la sesión"
-        obtained-point: "Punto obtenido"
-        obtained-points: "Puntos obtenidos"
-        official-score: "Puntuación Oficial"
-        average-position: "Posición promedio"
-        participation: "Tasa de participación"
+        obtained-point: "punto obtenido"
+        obtained-points: "puntos obtenidos"
+        official-score: "puntuación oficial"
+        average-position: "posición promedio"
+        participation: "porcentaje de participación"
     tabs:
       title: "General"
       stats: "Estadísticas"
@@ -596,7 +596,7 @@ es:
           new: "Nuevo correo electrónico"
         password:
           title: "Change Password"
-          new-length: "New password (%{length} characters minimum)"
+          new-length: "Nueva contraseña (%{length} caracteres mínimos)"
           new: "New password"
           confirm: "Confirm new password"
         profile:
@@ -678,7 +678,7 @@ es:
       message: "Error Interno del servidor"
   #Misc strings
   misc:
-    create: "Create"
+    create: "Crear"
     download: "Descarga"
     search: "Buscar"
     and: "&"
