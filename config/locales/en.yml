@@ -499,6 +499,13 @@ en:
         error: "Session could not be saved"
       upload:
         title: "Upload Session"
+      controller:
+        create: "Session was successfully created."
+        update: "Session was successfully updated."
+        delete: "'Session was successfully deleted."
+        import:
+          success: "Session was successfully imported."
+
 
     results:
       no-team-results: "No team results to disiplay"
