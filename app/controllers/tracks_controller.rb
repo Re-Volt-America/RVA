@@ -41,7 +41,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to track_url(@track), :notice => 'Track was successfully created.' }
+        format.html { redirect_to track_url(@track), :notice => t("rva.tracks.controller.create") }
         format.json { render :show, :status => :created, :location => @track, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -54,7 +54,7 @@ class TracksController < ApplicationController
   def update
     respond_to do |format|
       if @track.update(track_params)
-        format.html { redirect_to track_url(@track), :notice => 'Track was successfully updated.' }
+        format.html { redirect_to track_url(@track), :notice => t("rva.tracks.controller.update") }
         format.json { render :show, :status => :ok, :location => @track, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -69,22 +69,22 @@ class TracksController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => 'You must select a CSV file.' }
-        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.select") }
+        format.json { render :json => t("shared.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => 'You may only upload CSV files.' }
-        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.upload") }
+        format.json { render :json => t("shared.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:season].nil? || params[:season].empty?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => 'You must select a Season.' }
-        format.json { render :json => 'You must select a Season.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.season") }
+        format.json { render :json => t("shared.controller.import.season"), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -92,13 +92,13 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @tracks.empty?
-        format.html { redirect_to new_track_path, :notice => 'No tracks were created. Maybe they already exist?' }
+        format.html { redirect_to new_track_path, :notice => t("rva.tracks.controller.import.exists") }
         format.json { render :show, :status => :ok, :layout => false }
       end and return
 
       @tracks.each do |track|
         if track.save!
-          format.html { redirect_to new_track_path, :notice => 'Tracks successfully imported.' }
+          format.html { redirect_to new_track_path, :notice => t("rva.tracks.controller.import.success") }
           format.json { render :show, :status => :created, :location => track, :layout => false }
         else
           format.html { render :new, :status => :unprocessable_entity }
@@ -113,7 +113,7 @@ class TracksController < ApplicationController
     @track.destroy
 
     respond_to do |format|
-      format.html { redirect_to tracks_url, :notice => 'Track was successfully destroyed.' }
+      format.html { redirect_to tracks_url, :notice => t("rva.tracks.controller.destroy") }
       format.json { head :no_content }
     end
   end

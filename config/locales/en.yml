@@ -325,6 +325,14 @@ en:
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
+      controller:
+        create: "Track was successfully created."
+        update: "Track was successfully updated."
+        destroy: "Track was successfully destroyed."
+        import:
+          exists: "No tracks were created. Maybe they already exist?"
+          success: "Tracks successfully imported."
+
     cars:
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
