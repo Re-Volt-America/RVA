@@ -670,6 +670,10 @@ en:
     new:
       title: "New Tournament"
       button: "New Tournament"
+    controller:
+      create: "Tournament was successfully created."
+      update: "Tournament was successfully updated."
+      destroy: "Tournament was successfully destroyed."
 
 
   # Re-Volt car classes
