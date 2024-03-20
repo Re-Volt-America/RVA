@@ -10,12 +10,12 @@ class StatsController < ApplicationController
 
     @count = ((@users.current_page - 1) * @users.limit_value) + 1
     @sorts = {
-      :race_wins => 'Wins',
-      :race_podiums => 'Podiums',
-      :race_win_rate => 'Win Ratio',
-      # average_position: 'Average Position',
-      :obtained_points => 'Obtained Points',
-      :official_score => 'Official Score'
+      :race_wins => I18n.t("rankings.stats.table.wins"),
+      :race_podiums => I18n.t("rankings.stats.table.podiums"),
+      :race_win_rate => I18n.t("rankings.stats.table.win-ratio"),
+      # average_position: I18n.t("rankings.stats.table.average-pos"),
+      :obtained_points => I18n.t("rankings.stats.table.obtained-points"),
+      :official_score => I18n.t("rankings.stats.table.official-score")
     }
   end
 end
