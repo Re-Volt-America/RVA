@@ -8,8 +8,17 @@ class ApplicationController < ActionController::Base
   def set_locale
     if user_signed_in?
       I18n.locale = current_user.locale
+      return
+    end
+
+    # If user is guest, we try to determine their locale ...
+
+    locale = params[:locale] || locale_from_header
+
+    if SYS::LOCALES_MAP.values.include?(locale.to_sym)
+      I18n.locale = locale
     else
-      I18n.locale = params[:locale] || locale_from_header || I18n.default_locale
+      I18n.locale = I18n.default_locale
     end
   end
 
