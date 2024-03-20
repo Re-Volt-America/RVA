@@ -670,6 +670,15 @@ en:
       organizer: "Organizer"
     import:
       title: "Import users"
+    controller:
+      update:
+        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
+        locale: "Language set to %{locale}"
+        success: "User successfully updated."
+      import:
+        exists: "No users were created. Maybe the file format is incorrect?"
+        success: "Users successfully imported."
+
 
   # Tournaments page
   tournaments:
