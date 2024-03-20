@@ -353,6 +353,18 @@ en:
         error: "Car could not be saved"
       import:
         title: "Import Cars"
+      controller:
+        create: "Car was successfully created."
+        update: "Car was successfully updated"
+        destroy: "Car was successfully destroyed."
+        import:
+          select: "You must select a CSV file."
+          upload: "You may only upload CSV files."
+          season: "You must select a Season."
+          category: "You must select a Category."
+          exists: "No cars were created. Maybe they already exist?"
+          success: "Cars successfully imported."
+
     shared:
       stock:
         title: "Stock"
