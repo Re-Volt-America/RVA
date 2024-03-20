@@ -531,6 +531,10 @@ en:
         namespace: "Namespace"
         branch: "branch"
       create: "Create"
+    controller:
+      create: "Repository was successfully created."
+      update: "Repository was successfully updated."
+      destroy: "Repository was successfully destroyed."
 
   # RVA results page
   results:
