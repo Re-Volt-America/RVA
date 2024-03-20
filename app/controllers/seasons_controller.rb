@@ -45,7 +45,7 @@ class SeasonsController < ApplicationController
           @season.rankings << Ranking.new({ :number => n + 1, :season => @season })
         end
 
-        format.html { redirect_to season_url(@season), :notice => 'Season was successfully created.' }
+        format.html { redirect_to season_url(@season), :notice => t(".controller.create") }
         format.json { render :show, :status => :created, :location => @season, :layout => false }
 
         Rails.cache.delete('current_season')
@@ -60,7 +60,7 @@ class SeasonsController < ApplicationController
   def update
     respond_to do |format|
       if @season.update(season_params)
-        format.html { redirect_to season_url(@season), :notice => 'Season was successfully updated.' }
+        format.html { redirect_to season_url(@season), :notice => t(".controller.update") }
         format.json { render :show, :status => :ok, :location => @season, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -99,7 +99,7 @@ class SeasonsController < ApplicationController
 
     respond_to do |format|
       if @season.destroy!
-        format.html { redirect_to seasons_url, :notice => 'Season was successfully deleted.' }
+        format.html { redirect_to seasons_url, :notice => t(".controller.destroy") }
         format.json { head :no_content }
       else
         format.html { render :edit, :status => :unprocessable_entity }

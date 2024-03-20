@@ -443,6 +443,10 @@ en:
     create:
       title: "Create Season"
       error: "prohibited this season from being saved"
+    controller:
+      create: "Season was successfully created."
+      update: "Season was successfully updated."
+      destroy: "Season was successfully deleted."
 
 
   # Rankings page
