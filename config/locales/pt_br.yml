@@ -1,41 +1,41 @@
 pt:
   #Navigation
   nav:
-    play: "Play"
-    tracks: "Tracks"
-    cars: "Cars"
-    seasons: "Seasons"
+    play: "Jogar"
+    tracks: "Pistas"
+    cars: "Carros"
+    seasons: "Temporadas"
     league:
-      title: "League"
-      leaderboard: "Leaderboard"
-      point-system: "Points System"
-      teams: "Teams"
-      tournaments: "Tournaments"
+      title: "Ligas"
+      leaderboard: "Tabela de classificação"
+      point-system: "Sistema de Pontos"
+      teams: "Times"
+      tournaments: "Torneios"
     downloads: "Downloads"
     user:
-      my-profile: "My Profile"
-      settings: "Settings"
+      my-profile: "Meu Perfil"
+      settings: "Configurações"
       admin:
         title: "Admin"
-        upload-session: "Upload Session"
-        create-season: "Create Season"
-        import-tracks: "Import Tracks"
-        import-cars: "Import Cars"
-        new-team: "New Team"
-        new-tournament: "New Tournament"
-        import-users: "Import Users"
-      log-out: "Log out"
-      login: "Login"
-      register: "Register"
+        upload-session: "Carregar Sessão"
+        create-season: "Criar Temporada"
+        import-tracks: "Importar Pistas"
+        import-cars: "Importar Carros"
+        new-team: "Novo Time"
+        new-tournament: "Novo torneio"
+        import-users: "Importar Usuários"
+      log-out: "Sair"
+      login: "Efetuar Login"
+      register: "Registrar"
   #Sub-navigation
   sub-nav:
-    seasons: "Seasons"
-    rankings: "Rankings"
+    seasons: "Temporadas"
+    rankings: "Ranking"
     ranking: "Ranking"
     ranking-n: "Ranking %{n}"
-    session-n: "Session %{n}"
-    tracks: "Tracks"
-    cars: "Cars"
+    session-n: "Sessão %{n}"
+    tracks: "Pistas"
+    cars: "Carros"
   #Footer
   footer:
     policies:
@@ -61,112 +61,112 @@ pt:
   #Landing page, Splash, About
   application:
     splash:
-      description1: "The Website for the American community of Re-Volt, 1999"
-      description2: "Download the game and meet players from all over the Americas!"
+      description1: "O site para a comunidade americana de Re-volt, 1999"
+      description2: "Baixe o jogo e encontre jogadores por toda a América!"
       download-button: "Downloads »"
     index:
       community:
-        title: "Community"
-        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
-        play-button: "Play »"
+        title: "Comunidade"
+        description: "Somos uma incrível comunidade de Re-volt composta principalmente por jogadores sul-americanos, mas você também encontrará pessoas de todo o mundo jogando online conosco."
+        play-button: "Jogar"
       competition:
-        title: "Competition"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
-        seasons-button: "Seasons »"
+        title: "Competição"
+        description: "Em Re-volt América, jogamos em formato sazonal. Ao longo de cada temporada, você poderá competir online diariamente e marcar pontos para cada corrida que você participar!"
+        seasons-button: "Temporadas »"
       reliability:
-        title: "Reliabilty"
-        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
-        about-us-button: "About Us »"
+        title: "Confiabilidade"
+        description: "O Re-Volt América foi concebida tendo em mente a sustentabilidade e a escalabilidade. A maioria dos recursos que você vê aqui não irá encontrar em nenhuma outra comunidade de Re-Volt."
+        about-us-button: "Sobre nós »"
       recent:
-        title: "Recent Sessions"
-        races: "%{category} Races"
-        team-races: "%{category} Team Races"
-        hosted-by: "Hosted by %{host}"
-        all-sessions-button: "All Sessions"
+        title: "Sessões Recentes"
+        races: "Corridas %{category}"
+        team-races: "Corridas em Times %{category}"
+        hosted-by: "Hosteado por %{host}"
+        all-sessions-button: "Todas as sessões"
         no-sessions: "N"
     about:
-      title: "About Re-Volt America"
-      description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-      subtitle: "Who we are"
-      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
-      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
-      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
-      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
-      see_you: "See you on track!"
+      title: "Sobre Re-Volt América"
+      description: "A maior comunidade de Re-Volt que encontrará no continente americano. Junte-se às nossas sessões, compita em nossas temporadas e conheça outros jogadores de todo o mundo!"
+      subtitle: "Quem somos"
+      text1_html: "Fundada em 2017, Re-Volt América (RVA) é a comunidade americana do popular jogo de corrida de carros de controle remoto <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
+      text2_html: "Para jogar online, utilizamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, uma versão reescrita multi-plataformas / port do Re-Volt que é executada em uma grande variedade de plataformas. Esta versão do jogo é também conhecida por estender a experiência original do jogo, com suporte para conteúdo personalizado e feito pela comunidade, como pistas e carros."
+      text3_html: "No RVA, organizamos uma série de sessões online em que jogadores de todo o mundo (principalmente do continente americano) competem uns contra os outros. marque pontos em corridas e entre no ranking oficial do Re-Volt América."
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Baixe RVGL</a>, instale o <a href='%{downloads_path}'>Pacote RVA</a>, e <a href='%{play_path}'>Jogue</a> conosco!"
+      see_you: "Vejo você na pista!"
   #Play page
   play:
-    subheader: "We play daily at 00:00 UTC"
-    subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+    subheader: "Jogamos diariamente às 00:00 UTC"
+    subheader2_html: "Lobbies são postados em <code class='nissan-code'>#lobby-rva</code>"
   #Downloads page
   downloads:
     title: "Downloads"
-    video: "Pending video..."
+    video: "Vídeo pendente..."
     faq:
-      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
-      button: "Take me there!"
-    legacy-downloads: "Legacy Downloads"
+      title: "Se você é novo na comunidade, recomendamos vivamente que leia a nossa página de Perguntas Frequentes"
+      button: "Leva-me lá!"
+    legacy-downloads: "Downloads: Legado"
   #FAQ page
   faq:
-    title: "Frequently Asked Questions"
-    description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
-    section-1: "Installing and setup"
-    section-2: "Playing online"
+    title: "Perguntas Frequentes"
+    description: "Esta é uma coleção das perguntas mais frequentes (FAQ) por novos membros da comunidade quando querem jogar Re-Volt On-line conosco. Não se esqueça de ler se você for novo em nossa comunidade."
+    section-1: "Instalação e configuração"
+    section-2: "Jogando online"
     accordion:
       download:
-        title: "How do I download Re-Volt?"
+        title: "Como faço para baixar Re-Volt?"
         recommended-way:
-          description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
+          description-html: "Com este programa, você pode baixar e gerenciar conteúdo personalizado para o jogo com apenas alguns cliques. Vá para o seguinte link para baixá-lo: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> Quando você abrir o launcher pela primeira vez você poderá selecionar a pasta onde o jogo será instalado, juntamente com uma \"Predefinição de Jogo\". Para este último, recomendamos que selecione \"Original\". </p>"
         classic-way:
-          description-html: "Enter the following <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> and choose the version of the game for your operating system (Windows, Linux or MacOS). <p>When the download is finished, unzip the archive in a folder of your choice and run RVGL to start playing.</p>"
+          description-html: "Digite o seguinte <a href='https://re-volt.io/downloads/game' target='_blank'>link</a> e escolha a versão do seu sistema operacional (Windows, Linux ou MacOS). <p>Quando o download terminar, descompacte o arquivo em uma pasta de sua escolha e execute RVGL para começar a jogar.</p>"
         mobile-players:
-          description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
+          description-html: "No caso do Android, quando você tentar executar o instalador de jogo (clique neste <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> para baixar) você precisa conceder permissões para instalar aplicativos externos. <p> Depois de conceder as permissões e a instalação do jogo, o aplicativo pode ser aberto normalmente no seu telefone.</p> <p>iOS ainda não é suportado :("
         steam-revolt:
-          title: "Steam Re-Volt"
-          description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
+          title: "Re-Volt na Steam"
+          description-html: "A versão de Re-Volt da Steam não é compatível para jogar corridas on-line porque é uma versão obsoleta. Por esta e muitas outras razões, nós <b>não</b> recomendamos a sua compra e também não podemos hostear eventos on-line para ela."
       install:
-        title: "How do I install RVA packs?"
+        title: "Como faço para instalar pacotes RVA?"
         recommended-way:
-          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
+          description-html: "Na aba de pacotes, verifique as opções \"rva_cars\" e \"rva_track\" na parte inferior da lista, então clique no botão instalar pacotes no canto inferior direito para começar a baixar e instalá-los."
         classic-way:
-          description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
+          description-html: "Entre neste <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> e baixe os pacotes de carros e pistas do RVA. <p>Abra a pasta onde instalou o RVGL e descompacte os arquivos baixados lá.</p>"
         mobile-players:
-          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
+          description-html: "Execute os seguintes passos para o método clássico, apenas no Android você precisa de uma gerenciador de arquivos capas de descompactar arquivos ZIP, você pode buscar na Play Store aplicações como o ZArchiver, RAR ou outros se o seu telefone não tem um gerenciador de arquivos. <p>Dentro do gerenciador de arquivos, vá até a pasta de Downloads (ou onde baixou os pacotes) e os descompacte na pasta RVGL que está na memória interna do seu aparelho.</p>"
       play-online:
-        title: "How can I play online?"
-        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        title: "Como posso jogar online?"
+        description-html: "No Re-Volt América, hosteamos sessões diariamente às 00:00 UTC, e todos são anunciados via Discord, em um canal chamado \"#lobby-rva\". <a href='play'>Aqui</a> você pode ver a contagem regressiva para a próxima sessão."
         reminder:
-          title: "Keep this in mind"
-          li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
-          li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
-          li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
+          title: "Tenha isso em mente"
+          li-1: "Antes de se juntar as nossas sessões, você deve instalar os pacotes RVA. Verifique o FAQ para mais informações."
+          li-2-html: "Quando há uma sessão aberta para jogo, uma mensagem aparecerá em #lobby-rva, </br> por exemplo: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
+          li-3: "Abra RVGL, vá em \"Começar Corrida\", depois \"Multi-jogador\", então em \"Entrar no jogo\", copie e cole o endereço IP. Este é um exemplo de IP, cada host terá um endereço IP diferente."
       password-sessions:
-        title: "How to join a session with password?"
-        description: "Write the following Launch Parameters (Don't write the brackets [])."
+        title: "Como participar de uma sessão com senha?"
+        description: "Escreva os seguintes Parâmetros de Lançamento (Não escreva os parênteses [])."
         launcher:
-          description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
+          description: "Digite o IP e a senha no campo \"Parâmetros de Lançamento\" (\"Launch Parameters\" se estiver em inglês) da seguinte maneira, por exemplo:"
         shortcut:
-          title: "Game shortcut"
-          description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
+          title: "Atalho do jogo"
+          description: "Pressione Alt+Enter no seu atalho do RVGL, então no final do campo \"Destino\" escreva os parâmetros conforme mostrado na captura de tela abaixo."
         android:
-          li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
-          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+          li-1-html: "Baixe e instale \"<b>Termux</b>\", se você não conseguir encontrá-lo na Play Store, então use este link <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> para baixá-lo."
+          li-2-html: "Copie e cole dentro do aplicativo este comando; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> você deve escrever o IP e a senha dentro do texto antes de pressionar Enter como mostrado na tela; se o jogo não abrir inmediatamente, feche o aplicativo das notificações e tente novamente, você pode ter copiado algo errado."
       rankings:
-        title: "How do rankings and points work?"
+        title: "Como funcionam os ranking e pontuações?"
         seasons:
-          title: "Seasons and Rankings"
-          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+          title: "Temporadas e Rankings"
+          description: "Cada uma de nossas temporadas consiste em 6 rankings, e cada ranking consiste em 18 sessões individuais e 10 sessões em equipe. Desta forma, cada ranking terá uma duração de um mês e cada temporada durará aproximadamente 6 meses. Uma sessão anunciada no Discord no canal #lobby-rva consiste em jogar as 20 pistas atribuídas no dia com a categoria correspondente. O cronograma semanal que determina as pistas a serem jogadas todos os dias é anunciado todas as segundas feiras, como demonstrado abaixo:"
         scoring:
-          title: "Scoring points in a Session"
-          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
-          description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
+          title: "Marcar pontos em uma sessão"
+          description-1: "No final de cada sessão, os resultados obtidos por cada jogador são publicados no canal #rank-global, no RVA temos um modo único de determinar as pontuações em que o multiplicador do carro, os pontos acumulados, a posição média e as corridas concluídas têm influência."
+          description-2-html: "Você pode ver em detalhes como os pontos são calculados em uma sessão no link <a href='points', rel='noopener noreferrer'>a seguir</a>."
           list:
-            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
-            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
-            li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
+            li-1: "O multiplicador de carros dá a cada carro um valor que determina sua dificuldade, quanto maior for seu número, mais pontos vai acumular, mas não ajuda em nada se terminar todas as corridas nas últimas posições tentando dirigir os carros mais difíceis."
+            li-2: "Os Pontos Acumulados é a soma dos pontos obtidos de acordo com sua posição final em cada corrida. Mais pontos serão concedidos em uma sessão se começar com 10 ou mais jogadores."
+            li-3: " A Posição Média e as Corridas Concluídas afetam seus pontos acumulados em uma sessão, Terminar em posições baixas ou completar poucas corridas diminuirá a quantidade de pontos que você pode obter em uma sessão."
       generics:
-        recommended-way: "Recommended way: RVGL Launcher"
-        classic-way: "Classic way"
-        mobile-players: "Mobile Players"
+        recommended-way: "Recomendado: RVGL Launcher"
+        classic-way: "Download Classico"
+        mobile-players: "Download para Smartphones"
   #Rules page
   rules:
     title: "Regras"
@@ -201,8 +201,8 @@ pt:
         6: "Evite mudar seu nome no meio da sessão, isso dificulta no processo de calculo das pontuações."
         7:
           title: "Você pode pedir \"RE\" durante os primeiros 40 segundos de uma corrida por razões externas somente."
-          bullet1: "Only 1 RE per track will be granted. If somebody asked for RE before you did, then the host will not restart again."
-        8_html: "The accumulated multiplier of any car will never exceed 4.0."
+          bullet1: "Apenas 1 RE por pista será concedida. Se alguém pedir RE antes de você, o host não irá reiniciar novamente."
+        8_html: "O multiplicador acumulado de qualquer carro nunca excederá 4.0."
       d:
         title: "D. Servidor Discord"
         1_html: "Você deve seguir e obedecer aos <a class='text-primary' href='https://discord.com/terms' target='_blank'>Termos de Serviço do Discord</a>. O não cumprimento poderá resultar em seu banimento."
@@ -224,9 +224,9 @@ pt:
         precision: "Quando o anfitrião força um corredor a estar em modo espectador, neste contexto, como uma forma de punição."
   #Privacy & Terms pages
   privacy:
-    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
+    title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de Privacidade"
   terms:
-    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
+    title_html: "<i class='fa fa-book' aria-hidden='true'></i> Termos de Serviço"
   #Staff page
   staff:
     title: "Equipe"
@@ -238,72 +238,72 @@ pt:
       organizer: "Organizadores"
   #Points page
   points:
-    title: "RVA Points System"
+    title: "Sistema de Pontos"
     introduction:
-      title: "Introduction"
-      description: "In Re-Volt America, players score points for each race they get to finish. The amount of points each player scores will depend on two things: their final position in the race, and the amount of racers in that race. If a race has 10 or more racers in it, then it's considered a to be a \"big\" race."
-      normal-race: "Normal Race Scoring"
-      big-race: "Big Race Scoring"
+      title: "Introdução"
+      description: "No Re-Volt América, os jogadores marcam pontos para cada corrida que eles terminam. A quantidade de pontos que cada jogador receberá é baseado em dois parâmetros: sua posição final, e a quantidade de jogadores na corrida. Se uma corrida tem 10 ou mais jogadores nela, então ela é considerada uma corrida \"grande\"."
+      normal-race: "Pontuação de corrida \"normal\""
+      big-race: "Pontuação de corrida \"grande\""
     car-ratings:
-      title: "Car Ratings"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+      title: "Classificações de Carros"
+      description: "Em Re-Volt América, os carros recebem um 'multiplicador' baseado na sua velocidade final, aceleração, peso, e outras características que podem torná-los melhores ou piores para corridas on-line. Utilizámos este multiplicador para recompensar os jogadores por jogarem com carros difíceis e para balancear carros muito boms ou overpowered. Veja como a fórmula é aplicada em cada corrida com diferentes carros:"
     desktop-parser:
-      title: "RVA Desktop Points Parser"
-      description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
+      title: "Calculador de Pontos RVA"
+      description: "O calculador de pontos RVA é uma aplicação Desktop projetada para calcular resultados no formato do RVA a partir de um log de sessão do RVGL. Através desta ferramenta portátil, permitimos que qualquer pessoa calcule resultados da sessão utilizando o nosso sistema localmente, se assim o desejar. Aqui está um exemplo de resultado que terá ao calcular uma sessão:"
     downloads:
-      title: "Download RVA Points"
+      title: "Baixar Pontos RVA"
   #RVA strings
   rva:
     tracks:
-      all-tracks: "All Tracks"
-      season: "Season"
-      title: "The RVA Tracks"
+      all-tracks: "Todas as pistas"
+      season: "Temporada"
+      title: "As pistas do RVA"
       format:
-        title: "Format"
+        title: "Formato"
         short-name:
-          title: "Short Name"
+          title: "Nome Abreviado"
         difficulty:
-          title: "Difficulty"
-          easy: "Easy"
-          medium: "Medium"
-          hard: "Hard"
-          extreme: "Extreme"
+          title: "Dificuldade"
+          easy: "Fácil"
+          medium: "Médio"
+          hard: "Difícil"
+          extreme: "Extremo"
         length:
-          title: "Length"
-          short: "Short"
-          medium: "Medium"
-          long: "Long"
-          extralong: "Extra Long"
-          meters: "%{length} meters"
+          title: "Distância"
+          short: "Curta"
+          medium: "Média"
+          long: "Longa"
+          extralong: "Extra Longa"
+          meters: "%{length} metros"
         stock:
           title: "Stock?"
-          true: "Yes"
-          false: "No"
+          true: "Sim"
+          false: "Não"
       featured:
-        description: "This track has been featured in RVA %{season}"
+        description: "Esta pista foi jogada na %{season}"
       rotation:
-        title: "Re-Volt America Rotation"
+        title: "Rotação"
       collection:
-        title: "Re-Volt America Track Collection"
+        title: "Re-volt America - Coleção de Pistas"
     cars:
-      title: "The RVA Cars"
-      ratings-link: "Car Ratings"
+      title: "Re-Volt América - Carros"
+      ratings-link: "Classificações de Carros"
       features:
-        speed: "Speed"
-        acceleration: "Acceleration"
-        weight: "Weight"
-        multiplier: "Multiplier"
-        category: "Category"
+        speed: "Velocidade"
+        acceleration: "Aceleração"
+        weight: "Peso"
+        multiplier: "Multiplicador"
+        category: "Categoria"
         stock: "Stock"
         stock-tooltip:
-          tooltip: "Original Re-Volt Content"
-        featured-session: "This car has been featured in RVA %{season}"
+          tooltip: "Conteúdo original do Re-Volt"
+        featured-session: "Este carro estava disponível na %{season}"
       class-selector:
         title: "Classes"
   #Assets page
   assets:
     title: "LOGOS & UTILIZAÇÃO"
-    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
+    subtitle_html: "Uma coleção dos nossos principais recursos, elaborados pela talentosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, que você pode baixar para integrar com o RVA ou \"linkar\" de volta para nós!"
     allowed:
       title: "Uso permitido"
       1: "Use o nosso logotipo pra vincular ao nosso site"
@@ -326,157 +326,157 @@ pt:
     attribution:
       title: "Atribuições"
       1: "Outros recursos como imagens, efeitos sonoros/sons, emojis, etc. são feitos por membros da nossa comunidade, e todos os direitos pertencem aos seus respectivos autores"
-      2_html: "These guidelines were heavily based on <a href='https://github.com/logos' target='_blank'>GitHub's Logos and Usage Guidelines</a>."
+      2_html: "Estas diretrizes foram fortemente baseadas no <a href='https://github.com/logos' target='_blank'>Logos e Guias de Uso do GitHub</a>."
   #Seasons page
   seasons:
-    title: "The RVA Seasons"
+    title: "Temporadas RVA"
     explanation:
-      title: "What are RVA Seasons?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
+      title: "O que são temporadas RVA?"
+      description: "No RVA, seguimos um formato sazonal para corridas on-line. Toda temporada consiste em 6 Rankings, e cada ranking consiste em 28 sessões, 18 das quais são para corridas individuais e as outras 10 para corridas em equipes. Os jogadores marcam pontos em cada corrida."
     buttons:
-      current-season: "Current Season"
-      learn-more: "Learn More"
+      current-season: "Temporada atual"
+      learn-more: "Saiba mais"
     bottom:
-      title: "All Seasons"
-      present: "Present"
+      title: "Todas as temporadas"
+      present: "Presente"
   #Rankings page
   rankings:
     title: "Ranking %{number}"
-    title2: "Leaderboards"
-    small: "%{count} sessions played"
+    title2: "Tabelas de classificação"
+    small: "%{count} sessões jogadas"
     table:
-      country: "Country"
-      racer: "Racer"
-      pp: "PP"
+      country: "País"
+      racer: "Piloto"
+      pp: "PM"
       pa: "PA"
       mp: "MP"
       po: "PO"
-      cc: "CC"
+      cc: "CF"
       fj: "FJ"
       fp: "FP"
       sp: "SP"
     sessions:
-      title: "Sessions"
-      no-sessions: "No sessions to display :("
+      title: "Sessões"
+      no-sessions: "Nenhuma sessão para exibir :("
     results:
-      no-team-results: "No team results to disiplay"
+      no-team-results: "Nenhum resultado para exibir :("
     nav:
-      singles: "Singles"
-      teams: "Teams"
+      singles: "Individuais"
+      teams: "Times"
     admin:
       season:
         edit:
-          button: "Edit Season"
+          button: "Editar Temporada"
         delete:
-          button: "Delete season"
+          button: "Excluir temporada"
           warning:
-            title: "Warning!"
-            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
-            delete-season: "Delete Season"
+            title: "Atenção!"
+            body: "Deletar uma temporada apagará todos os rankings, sessões, carros e pistas! Essa ação é irreversível."
+            close: "Fechar"
+            delete-season: "Excluir temporada"
   #Development logs
   repositories:
-    title: "Revisions"
-    small: "Latest git commits in our organization"
-    new-button: "New"
-    repository: "Repository"
+    title: "Revisões"
+    small: "Últimas atualizações do Git da nossa organização"
+    new-button: "Novo"
+    repository: "Repositório"
     table:
-      title: "Repository"
-      revision: "Revision"
-      author: "Author"
-      description: "Description"
-      when: "When"
+      title: "Repositório"
+      revision: "Revisão"
+      author: "Autor"
+      description: "Descrição"
+      when: "Quando"
   #RVA results page
   results:
-    title: "%{category} Races (Session %{number})"
-    version: "Version: %{version}"
-    connection: "Connection: %{protocol} (Server)"
-    mode: "Mode: %{physics}"
+    title: "Corridas %{category} (Sessão %{number})"
+    version: "Versão: %{version}"
+    connection: "Conexão: %{protocol} (Servidor)"
+    mode: "Modo: %{physics}"
     pickups: "Pickups: %{pickups}"
-    teams: "Teams: %{teams}"
-    download: "Download Session Log"
-    team: "Team"
+    teams: "Times: %{teams}"
+    download: "Baixar log da sessão"
+    team: "Time"
     admin:
-      title: "Admin Actions"
+      title: "Ações de admin"
       edit:
-        button: "Edit Session"
+        button: "Editar sessão"
       delete:
-        button: "Delete Session"
+        button: "Excluir sessão"
         confirmation:
-          body: "Are you sure?"
+          body: "Você tem certeza?"
     container:
       tooltips:
-        session-number: "Session Number"
-        final-position: "Final Position"
-        average-position: "Average Position"
-        obtained-points: "Obtained Points"
-        race-count: "Race Count"
-        participation-multiplier: "Participation Multiplier"
-        official-score: "Official Score"
-        accumulated-score: "Accumulated Score"
-        accumulated-points: "Accumulated Points"
-        sessions-played: "Sessions Played"
+        session-number: "Número da sessão"
+        final-position: "Posição final"
+        average-position: "Posição média"
+        obtained-points: "Pontos Obtidos"
+        race-count: "Contagem de corridas"
+        participation-multiplier: "Multiplicador de Participação"
+        official-score: "Pontuação Oficial"
+        accumulated-score: "Pontuação Acumulada"
+        accumulated-points: "Pontos acumulados"
+        sessions-played: "Sessões jogadas"
       tracks:
-        not-found: "Track not found"
+        not-found: "Pista não encontrada"
   #Teams page
   teams:
-    title: "RVA Teams"
-    no-teams: "No teams to display"
+    title: "RVA Times"
+    no-teams: "Sem time"
     global-points:
-      title: "Global Team Points"
+      title: "Pontos da Equipe Global"
     team:
-      leader: "Leader"
-      members: "Members"
+      leader: "Líder"
+      members: "Membros"
   #User profile page
   users:
     stats:
-      title: "Stats"
+      title: "Estatísticas"
       rank:
         title: "rank"
-        tooltip: "Position in current ranking"
+        tooltip: "Posição no ranking atual"
       race-stats:
-        title: "Race Stats"
-        win-rate: "win rate"
-        sessions: "sessions"
-        races: "races"
-        win: "win"
-        wins: "wins"
-        podium: "podium"
-        podiums: "podiums"
-        session-played: "session played"
-        sessions-played: "sessions played"
-        race-played: "race played"
-        races-played: "races played"
+        title: "Estatísticas da corrida"
+        win-rate: "taxa de vitória"
+        sessions: "sessões"
+        races: "corridas"
+        win: "vitória"
+        wins: "vitórias"
+        podium: "pódio"
+        podiums: "pódios"
+        session-played: "sessões jogadas"
+        sessions-played: "sessões jogadas"
+        race-played: "corrida jogada"
+        races-played: "corridas jogadas"
       session-history:
-        title: "Session History"
+        title: "Histórico da sessão"
       overall-stats:
-        title: "Overall Stats"
-        session-win: "session win"
-        session-wins: "session wins"
-        session-podium: "session podium"
-        session-podiums: "session podiums"
-        session-winrate: "session win rate"
-        obtained-point: "obtained point"
-        obtained-points: "obtained points"
-        official-score: "official score"
-        average-position: "average position"
-        participation: "participation rate"
+        title: "Estatísticas gerais"
+        session-win: "vitória na sessão"
+        session-wins: "vitórias na sessão"
+        session-podium: "pódio da sessão"
+        session-podiums: "pódios da sessão"
+        session-winrate: "taxa de vitória da sessão"
+        obtained-point: "ponto obtido"
+        obtained-points: "pontos obtidos"
+        official-score: "pontuação oficial"
+        average-position: "posição média"
+        participation: "taxa de participação"
     tabs:
-      title: "General"
-      stats: "Stats"
+      title: "Geral"
+      stats: "Estatísticas"
       admin: "Admin"
   #Tournaments page
   tournaments:
-    title: "Past Tournaments"
-    new: "New"
+    title: "Torneios Passados"
+    new: "Novo"
   #Re-Volt car classes
   classes:
     rookie: "Novato"
     amateur: "Amador"
     advanced: "Avançado"
-    semi-pro: "Semi-Pro"
-    pro: "Pro"
-    super-pro: "Super-Pro"
+    semi-pro: "Semi-Prof."
+    pro: "Profissional"
+    super-pro: "Super Prof."
     clockwork: "Clockwork"
     random: "Aleatório"
   #Car metrics
@@ -590,37 +590,37 @@ pt:
         leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
         unhappy: Não está contente?
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
-        title: "User settings"
+        title: "Configurações de usuário"
         email:
-          title: "Change Email"
-          new: "New email"
+          title: "Alterar e-mail"
+          new: "Novo e-mail"
         password:
-          title: "Change Password"
-          new-length: "New password (%{length} characters minimum)"
-          new: "New password"
-          confirm: "Confirm new password"
+          title: "Alterar senha"
+          new-length: "Nova senha ( mínimo de%{length} caracteres)"
+          new: "Nova senha"
+          confirm: "Confirme nova senha"
         profile:
-          title: "Edit Profile"
-          gender: "Gender"
+          title: "Editar perfil"
+          gender: "Sexo"
           nationality:
-            title: "Nationality"
-            small: "(National flag)"
-          location: "Location"
-          occupation: "Occupation"
-          interests: "Interests"
-          public-email: "Public Email"
-          about: "About %{user}"
+            title: "Nacionalidade"
+            small: "(Bandeira)"
+          location: "Localização"
+          occupation: "Ocupação"
+          interests: "Interesses"
+          public-email: "E-mail Público"
+          about: "Sobre %{user}"
           about-me:
-            title: "About me... (You may use html)"
-            title2: "About %{user}"
-            nothing: "Nothing here yet..."
-            placeholder: "Write something interesting..."
-        current-password: "Current password"
-        update: "Update"
-        update-admin: "Update %{user}"
+            title: "Sobre mim... (Você pode usar html)"
+            title2: "Sobre %{user}"
+            nothing: "Nada por aqui, ainda..."
+            placeholder: "Escreva algo interessante..."
+        current-password: "Senha atual"
+        update: "Atualizar"
+        update-admin: "Atualizar %{user}"
       new:
         sign_up: "Inscrever-se"
-        username: "Re-Volt Username"
+        username: "Nome de usuário Re-Volt"
       signed_up: "Bem vindo! Você realizou seu registro com sucesso."
       signed_up_but_inactive: "Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada."
       signed_up_but_locked: "Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada."
@@ -664,21 +664,21 @@ pt:
         other: "Não foi possível salvar %{resource}: %{count} erros."
   #Alert message boxes
   alerts:
-    no-permission: "You do not have permission"
+    no-permission: "Você não tem permissão"
   #Error pages
   error:
     404:
-      title: "Error 404"
-      message: "Not Found"
+      title: "Erro 404"
+      message: "Não Encontrado"
     422:
       title: "Error 404"
-      message: "Illegal Error"
+      message: "Erro ilegal"
     500:
       title: "Error 404"
-      message: "Internal Server Error"
+      message: "Erro interno do servidor"
   #Misc strings
   misc:
-    create: "Create"
+    create: "Criar"
     download: "Download"
     search: "Busca"
     and: "&"
@@ -689,7 +689,7 @@ pt:
         display_entries: Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de um total de <b>%{total}</b>
       one_page:
         display_entries:
-          one: Displaying <b>%{count}</b> %{entry_name}
+          one: Exibindo <b>todos %{count}</b> %{entry_name}
           other: Exibindo <b>%{count}</b> %{entry_name}
   views:
     pagination:
