@@ -472,6 +472,10 @@ en:
         race-count: "Race Count"
         obtained-points: "Obtained Points"
         official-score: "Official Score"
+    controller:
+      create: "Ranking was successfully created."
+      update: "Ranking was successfully updated."
+      delete: "Ranking was successfully deleted."
 
     sessions:
       title: "Sessions"
