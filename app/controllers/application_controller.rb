@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
     locale = params[:locale] || locale_from_header
 
-    if SYS::LOCALES_MAP.values.include?(locale.to_sym)
+    if !locale.nil? && SYS::LOCALES_MAP.values.include?(locale.to_sym)
       I18n.locale = locale
     else
       I18n.locale = I18n.default_locale
