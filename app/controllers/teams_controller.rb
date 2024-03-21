@@ -65,7 +65,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.update!
-        format.html { redirect_to team_path(@team), :notice => "#{new_member.username} was successfully added to #{@team.name}" }
+        format.html { redirect_to team_path(@team), :notice => t(".controller.add-member", :member => new_member.username, :team => @team.name) }
       else
         format.html { redirect_to team_path(@team), :status => :unprocessable_entity }
       end
