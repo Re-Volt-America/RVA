@@ -9,7 +9,7 @@
         = f.date_field :date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
       .field.form-group
         = f.label :season, t("tournaments.edit.season")
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       = f.label :tournament_banner, t("tournaments.edit.banner")
       .field.file-input-group
         = f.hidden_field :tournament_banner, :value => tournament.cached_tournament_banner_data, :id => nil

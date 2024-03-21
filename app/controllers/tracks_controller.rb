@@ -69,22 +69,22 @@ class TracksController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.select") }
-        format.json { render :json => t("shared.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.upload") }
-        format.json { render :json => t("shared.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.upload") }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:season].nil? || params[:season].empty?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("shared.controller.import.season") }
-        format.json { render :json => t("shared.controller.import.season"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.season") }
+        format.json { render :json => t("misc.controller.import.season"), :status => :bad_request, :layout => false }
       end and return
     end
 

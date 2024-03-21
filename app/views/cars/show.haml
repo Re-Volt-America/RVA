@@ -40,7 +40,7 @@
           %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
             = t("rva.shared.stock.title")
           %dd
-            = "#{@car.stock? ? t("rva.shared.stock.true") : t("rva.shared.stock.false")}"
+            = "#{@car.stock? ? t("misc.bool.true") : t("misc.bool.false")}"
         - if @car.season
           %i
             = t("rva.cars.features.featured-session", season:@car.season.name) #{@car.season.name}

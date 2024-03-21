@@ -10,7 +10,7 @@
     .col-md-5
       .field.form-group
         = f.label :season, t("rva.tracks.edit.season")
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
         = f.label :name, t("rva.tracks.edit.name")
         = f.text_field :name, :class => "form-control"
@@ -19,7 +19,7 @@
         = f.text_field :short_name, :class => "form-control"
       .field.form-group
         = f.label :difficulty, t("rva.tracks.edit.difficulty")
-        = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => t("shared.prompt.difficulty")}, :class => "form-control"
+        = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => t("misc.prompt.difficulty")}, :class => "form-control"
       .field.form-group
         = f.label t("rva.tracks.edit.length")
         = f.number_field :length, :class => "form-control"
@@ -27,7 +27,7 @@
         = f.label :folder_name, t("rva.tracks.edit.folder-name")
         = f.text_field :folder_name, :class => "form-control"
       .actions
-        = f.button t("shared.submit.update"), :type => "submit", :class => "btn mb-2"
+        = f.button t("misc.submit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
       - if @track.errors.any?
         #error-explanation

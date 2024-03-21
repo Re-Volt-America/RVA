@@ -52,5 +52,5 @@
             = f.button t("teams.edit.add-member"), :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
     = f.hidden_field :id, :value => @team.id
 
-  = link_to t("shared.button.back"), teams_path, :class => "btn btn-sm"
+  = link_to t("misc.button.back"), teams_path, :class => "btn btn-sm"
   = link_to t("teams.edit.edit-team"), edit_team_path(@team), :class => "btn btn-sm"

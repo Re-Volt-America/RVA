@@ -144,29 +144,29 @@ class CarsController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => t("shared.controller.import.select") }
-        format.json { render :json => t("shared.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => t("shared.controller.import.upload") }
-        format.json { render :json => t("shared.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.upload") }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:season].nil? || params[:season].empty?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => t("shared.controller.import.season") }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.season") }
         format.json { render :json => 'You must select a Season.', :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:category].nil? || params[:category].empty?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => t("shared.controller.import.category") }
-        format.json { render :json => t("shared.controller.import.category"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.category") }
+        format.json { render :json => t("misc.controller.import.category"), :status => :bad_request, :layout => false }
       end and return
     end
 

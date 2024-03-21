@@ -110,15 +110,15 @@ class UsersController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => t("shared.controller.import.select") }
-        format.json { render :json => t("shared.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => t("shared.controller.import.upload")  }
-        format.json { render :json => t("shared.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.upload")  }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 

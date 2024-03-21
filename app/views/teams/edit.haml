@@ -21,10 +21,10 @@
         = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
         = form.label :leader, t(".leader")
-        = form.select :leader, @sorted_members.collect { |u| [u.username, u.id] }, { :prompt => t("shared.prompt.leader")}, :class => "form-control"
+        = form.select :leader, @sorted_members.collect { |u| [u.username, u.id] }, { :prompt => t("misc.prompt.leader")}, :class => "form-control"
       .actions
-        = link_to t("shared.button.back"), team_path(@team), :class => 'btn btn-sm'
-        = form.button t("shared.submit.update"), :type => "submit", :"data-turbo" => false, :class => "btn btn-sm"
+        = link_to t("misc.button.back"), team_path(@team), :class => 'btn btn-sm'
+        = form.button t("misc.submit.update"), :type => "submit", :"data-turbo" => false, :class => "btn btn-sm"
     .col-md-7
       - if @team.errors.any?
         #error-explanation

@@ -10,10 +10,10 @@
     .col-md-5
       .field.form-group
         = f.label :season, t("rva.cars.edit.season")
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("shared.prompt.season")}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
         = f.label :category, t("rva.cars.features.category")
-        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => t("shared.prompt.category")}, :class => "form-control"
+        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, :class => "form-control"
       .field.form-group
         = f.label :name, t("rva.cars.edit.name")
         = f.text_field :name, :class => "form-control"
