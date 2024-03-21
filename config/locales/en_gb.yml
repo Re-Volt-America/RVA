@@ -288,7 +288,7 @@ en-GB:
         name: "Name"
         short-name: "Short name"
         difficulty: "Difficulty"
-        length: "Length (meters)"
+        length: "Length (metres)"
         folder-name: "Folder name"
         error: "Track could not be saved"
       import:
@@ -535,7 +535,7 @@ en-GB:
       title: "Editing Team"
       name: "Name"
       short-name: "Short name"
-      color: "Color"
+      color: "Colour"
       team-img: "Team image"
       leader: "Leader"
       add-member: "Add Member"
@@ -590,7 +590,7 @@ en-GB:
     badges:
       admin: "Administrator"
       mod: "Mod"
-      organizer: "Organizer"
+      organizer: "Organiser"
     import:
       title: "Import users"
     controller:
