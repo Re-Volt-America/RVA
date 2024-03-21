@@ -320,7 +320,7 @@ en:
         name: "Name"
         short-name: "Short name"
         difficulty: "Difficulty"
-        length: "Length (meters"
+        length: "Length (meters)"
         folder-name: "Folder name"
         error: "Track could not be saved"
       import:
