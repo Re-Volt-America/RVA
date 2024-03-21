@@ -258,6 +258,7 @@ es:
       all-tracks: "Todas las pistas"
       season: "Temporada"
       title: "Pistas de RVA"
+      no-tracks: "No tracks to display"
       format:
         title: "Formato"
         short-name:
@@ -275,16 +276,30 @@ es:
           long: "Largo"
           extralong: "Extra Largo"
           meters: "%{length} metros"
-        stock:
-          title: "Autos de serie?"
-          true: "Sí"
-          false: "No"
       featured:
         description: "Este circuito ha sido presentado en RVA %{season}"
       rotation:
         title: "Rotación de Re-Volt America"
       collection:
         title: "Colección de pistas de Re-Volt America"
+      edit:
+        title: "Editing Track"
+        season: "Season"
+        name: "Name"
+        short-name: "Short name"
+        difficulty: "Difficulty"
+        length: "Length (meters)"
+        folder-name: "Folder name"
+        error: "Track could not be saved"
+      import:
+        title: "Import Tracks"
+      controller:
+        create: "Track was successfully created."
+        update: "Track was successfully updated."
+        destroy: "Track was successfully destroyed."
+        import:
+          exists: "No tracks were created. Maybe they already exist?"
+          success: "Tracks successfully imported."
     cars:
       title: "Autos de RVA"
       ratings-link: "Clasificación de autos"
@@ -300,6 +315,29 @@ es:
         featured-session: "Este auto ha sido presentado en RVA %{season}"
       class-selector:
         title: "Clases"
+      shared:
+        placeholder: "Search..."
+        no-cars: "No cars to display"
+      edit:
+        title: "Editing Car"
+        button: "Edit Car"
+        season: "Season"
+        name: "Name"
+        folder-name: "Folder name"
+        update: "Update"
+        error: "Car could not be saved"
+      import:
+        title: "Import Cars"
+      controller:
+        create: "Car was successfully created."
+        update: "Car was successfully updated"
+        destroy: "Car was successfully destroyed."
+        import:
+          exists: "No cars were created. Maybe they already exist?"
+          success: "Cars successfully imported."
+    shared:
+      stock:
+        title: "Stock"
   #Assets page
   assets:
     title: "LOGOS Y USO"
@@ -339,6 +377,19 @@ es:
     bottom:
       title: "Todas las temporadas"
       present: "Presente"
+    edit:
+      title: "Editing season"
+      name: "Name"
+      start-date: "Start date"
+      end-date: "End date"
+      error: "Season could not be saved"
+    create:
+      title: "Create Season"
+      error: "prohibited this season from being saved"
+    controller:
+      create: "Season was successfully created."
+      update: "Season was successfully updated."
+      destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
     title: "Clasificación %{number}"
@@ -355,9 +406,42 @@ es:
       fj: "Fiyi"
       fp: "FP"
       sp: "D"
+    stats:
+      title: "Global Stats"
+      sorted: "Sorted by:"
+      table:
+        wins: "Wins"
+        podiums: "Podiums"
+        win-ratio: "Win Ratio"
+        average-pos: "Average Pos"
+        race-count: "Race Count"
+        obtained-points: "Obtained Points"
+        official-score: "Official Score"
+    controller:
+      create: "Ranking was successfully created."
+      update: "Ranking was successfully updated."
+      delete: "Ranking was successfully deleted."
     sessions:
       title: "Sesiones"
       no-sessions: "No hay sesiones para mostrar :("
+      edit:
+        title: "Editing Session"
+        host: "Host"
+        version: "Version"
+        physics: "Physics"
+        protocol: "Protocol"
+        number: "Number"
+        date: "Date"
+        update: "Update Session"
+        error: "Session could not be saved"
+      upload:
+        title: "Upload Session"
+      controller:
+        create: "Session was successfully created."
+        update: "Session was successfully updated."
+        delete: "'Session was successfully deleted."
+        import:
+          success: "Session was successfully imported."
     results:
       no-team-results: "No hay resultados de equipo por mostrar"
     nav:
@@ -386,6 +470,19 @@ es:
       author: "Autor"
       description: "Descripción"
       when: "Cuándo"
+      ago: "ago"
+    new:
+      title: "New Repository"
+      placeholder:
+        title: "Title"
+        description: "Description"
+        namespace: "Namespace"
+        branch: "branch"
+      create: "Create"
+    controller:
+      create: "Repository was successfully created."
+      update: "Repository was successfully updated."
+      destroy: "Repository was successfully destroyed."
   #RVA results page
   results:
     title: "%{category} Carreras (Sesión %{number})"
@@ -427,6 +524,31 @@ es:
     team:
       leader: "Líder"
       members: "Miembros"
+    table:
+      name: "Name"
+      country: "Country"
+      role:
+        title: "Role"
+        leader: "Leader"
+        member: "Member"
+    edit:
+      title: "Editing Team"
+      name: "Name"
+      short-name: "Short name"
+      color: "Color"
+      team-img: "Team image"
+      leader: "Leader"
+      add-member: "Add Member"
+      edit-team: "Edit Team"
+      create: "Create Team"
+      error: "Team could not be saved"
+    new:
+      title: "New Team"
+    controller:
+      create: "Team was successfully created."
+      update: "Team was successfully updated."
+      destroy: "Team was successfully destroyed."
+      add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
     stats:
@@ -465,10 +587,41 @@ es:
       title: "General"
       stats: "Estadísticas"
       admin: "Administrador"
+    badges:
+      admin: "Administrator"
+      mod: "Mod"
+      organizer: "Organizer"
+    import:
+      title: "Import users"
+    controller:
+      update:
+        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
+        locale: "Language set to %{locale}"
+        success: "User successfully updated."
+      import:
+        exists: "No users were created. Maybe the file format is incorrect?"
+        success: "Users successfully imported."
   #Tournaments page
   tournaments:
     title: "Últimos torneos"
-    new: "Nuevo"
+    no-tournaments: "No tournaments to display"
+    notice: "notice"
+    edit:
+      title: "Editing Tournament"
+      name: "Name"
+      date: "Date"
+      season: "Season"
+      banner: "Tournament banner"
+      format: "Format"
+      save: "Save Tournament"
+      error: "prohibited this tournament from being saved:"
+    new:
+      title: "New Tournament"
+      button: "New Tournament"
+    controller:
+      create: "Tournament was successfully created."
+      update: "Tournament was successfully updated."
+      destroy: "Tournament was successfully destroyed."
   #Re-Volt car classes
   classes:
     rookie: "Novato"
@@ -682,6 +835,29 @@ es:
     download: "Descarga"
     search: "Buscar"
     and: "&"
+    bool:
+      true: "Yes"
+      false: "No"
+    prompt:
+      season: "Select Season"
+      ranking: "Select Ranking"
+      category: "Select Category"
+      leader: "Select Leader"
+      difficulty: "Select Difficulty"
+    submit:
+      import: "Import"
+      update: "Update"
+    checkbox:
+      teams: "Teams"
+    button:
+      back: "Back"
+      new: "New"
+    controller:
+      import:
+        select: "You must select a CSV file."
+        upload: "You may only upload CSV files."
+        season: "You must select a Season."
+        category: "You must select a Category."
   #Kaminari
   helpers:
     page_entries_info:
