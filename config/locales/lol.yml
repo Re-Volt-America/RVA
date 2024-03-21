@@ -258,6 +258,7 @@ lol:
       all-tracks: "all trackz"
       season: "Seashun"
       title: "Teh RVA trax"
+      no-tracks: "No tracks to display"
       format:
         title: "Furmat"
         short-name:
@@ -275,16 +276,30 @@ lol:
           long: "Large"
           extralong: "EXTRA LARGE :OOO"
           meters: "%{length} metrz"
-        stock:
-          title: "og?"
-          true: "YE"
-          false: "Nahhh"
       featured:
         description: "Dis trak appaerd in RVA %{season}"
       rotation:
         title: "Re-Volt Amerika rotashun"
       collection:
         title: "Re-volt Amerika Trackzz Cullikshun"
+      edit:
+        title: "Editing Track"
+        season: "Season"
+        name: "Name"
+        short-name: "Short name"
+        difficulty: "Difficulty"
+        length: "Length (meters)"
+        folder-name: "Folder name"
+        error: "Track could not be saved"
+      import:
+        title: "Import Tracks"
+      controller:
+        create: "Track was successfully created."
+        update: "Track was successfully updated."
+        destroy: "Track was successfully destroyed."
+        import:
+          exists: "No tracks were created. Maybe they already exist?"
+          success: "Tracks successfully imported."
     cars:
       title: "Teh RVA Carz"
       ratings-link: "Car gud or bad"
@@ -300,6 +315,29 @@ lol:
         featured-session: "Dis car appaerd in RVA %{season}"
       class-selector:
         title: "clazzes"
+      shared:
+        placeholder: "Search..."
+        no-cars: "No cars to display"
+      edit:
+        title: "Editing Car"
+        button: "Edit Car"
+        season: "Season"
+        name: "Name"
+        folder-name: "Folder name"
+        update: "Update"
+        error: "Car could not be saved"
+      import:
+        title: "Import Cars"
+      controller:
+        create: "Car was successfully created."
+        update: "Car was successfully updated"
+        destroy: "Car was successfully destroyed."
+        import:
+          exists: "No cars were created. Maybe they already exist?"
+          success: "Cars successfully imported."
+    shared:
+      stock:
+        title: "Stock"
   #Assets page
   assets:
     title: "LOGOWOS & USAEG"
@@ -339,6 +377,19 @@ lol:
     bottom:
       title: "Awl Sesonz"
       present: "Presnt"
+    edit:
+      title: "Editing season"
+      name: "Name"
+      start-date: "Start date"
+      end-date: "End date"
+      error: "Season could not be saved"
+    create:
+      title: "Create Season"
+      error: "prohibited this season from being saved"
+    controller:
+      create: "Season was successfully created."
+      update: "Season was successfully updated."
+      destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
     title: "Rank #%{number}"
@@ -355,9 +406,42 @@ lol:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    stats:
+      title: "Global Stats"
+      sorted: "Sorted by:"
+      table:
+        wins: "Wins"
+        podiums: "Podiums"
+        win-ratio: "Win Ratio"
+        average-pos: "Average Pos"
+        race-count: "Race Count"
+        obtained-points: "Obtained Points"
+        official-score: "Official Score"
+    controller:
+      create: "Ranking was successfully created."
+      update: "Ranking was successfully updated."
+      delete: "Ranking was successfully deleted."
     sessions:
       title: "Sesshuns"
       no-sessions: "No sesshunz 2 show U_U"
+      edit:
+        title: "Editing Session"
+        host: "Host"
+        version: "Version"
+        physics: "Physics"
+        protocol: "Protocol"
+        number: "Number"
+        date: "Date"
+        update: "Update Session"
+        error: "Session could not be saved"
+      upload:
+        title: "Upload Session"
+      controller:
+        create: "Session was successfully created."
+        update: "Session was successfully updated."
+        delete: "'Session was successfully deleted."
+        import:
+          success: "Session was successfully imported."
     results:
       no-team-results: "Nu team resulz to show"
     nav:
@@ -386,6 +470,19 @@ lol:
       author: "kitteh"
       description: "Dezkripshun"
       when: "WHEN"
+      ago: "ago"
+    new:
+      title: "New Repository"
+      placeholder:
+        title: "Title"
+        description: "Description"
+        namespace: "Namespace"
+        branch: "branch"
+      create: "Create"
+    controller:
+      create: "Repository was successfully created."
+      update: "Repository was successfully updated."
+      destroy: "Repository was successfully destroyed."
   #RVA results page
   results:
     title: "%{category} races (sesshun %{number})"
@@ -427,6 +524,31 @@ lol:
     team:
       leader: "TOP CAT"
       members: "Kittehz"
+    table:
+      name: "Name"
+      country: "Country"
+      role:
+        title: "Role"
+        leader: "Leader"
+        member: "Member"
+    edit:
+      title: "Editing Team"
+      name: "Name"
+      short-name: "Short name"
+      color: "Color"
+      team-img: "Team image"
+      leader: "Leader"
+      add-member: "Add Member"
+      edit-team: "Edit Team"
+      create: "Create Team"
+      error: "Team could not be saved"
+    new:
+      title: "New Team"
+    controller:
+      create: "Team was successfully created."
+      update: "Team was successfully updated."
+      destroy: "Team was successfully destroyed."
+      add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
     stats:
@@ -465,10 +587,41 @@ lol:
       title: "Genrul"
       stats: "Katistics"
       admin: "admin"
+    badges:
+      admin: "Administrator"
+      mod: "Mod"
+      organizer: "Organizer"
+    import:
+      title: "Import users"
+    controller:
+      update:
+        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
+        locale: "Language set to %{locale}"
+        success: "User successfully updated."
+      import:
+        exists: "No users were created. Maybe the file format is incorrect?"
+        success: "Users successfully imported."
   #Tournaments page
   tournaments:
     title: "Old cat competitionz"
-    new: "New"
+    no-tournaments: "No tournaments to display"
+    notice: "notice"
+    edit:
+      title: "Editing Tournament"
+      name: "Name"
+      date: "Date"
+      season: "Season"
+      banner: "Tournament banner"
+      format: "Format"
+      save: "Save Tournament"
+      error: "prohibited this tournament from being saved:"
+    new:
+      title: "New Tournament"
+      button: "New Tournament"
+    controller:
+      create: "Tournament was successfully created."
+      update: "Tournament was successfully updated."
+      destroy: "Tournament was successfully destroyed."
   #Re-Volt car classes
   classes:
     rookie: "noob"
@@ -682,6 +835,29 @@ lol:
     download: "dowuload"
     search: "Scratch"
     and: "n'"
+    bool:
+      true: "Yes"
+      false: "No"
+    prompt:
+      season: "Select Season"
+      ranking: "Select Ranking"
+      category: "Select Category"
+      leader: "Select Leader"
+      difficulty: "Select Difficulty"
+    submit:
+      import: "Import"
+      update: "Update"
+    checkbox:
+      teams: "Teams"
+    button:
+      back: "Back"
+      new: "New"
+    controller:
+      import:
+        select: "You must select a CSV file."
+        upload: "You may only upload CSV files."
+        season: "You must select a Season."
+        category: "You must select a Category."
   #Kaminari
   helpers:
     page_entries_info:
