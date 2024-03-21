@@ -415,7 +415,7 @@ en:
       title: "All Seasons"
       present: "Present"
     edit:
-      title: "Editing season"
+      title: "Editing Season"
       name: "Name"
       start-date: "Start date"
       end-date: "End date"
@@ -479,7 +479,7 @@ en:
       controller:
         create: "Session was successfully created."
         update: "Session was successfully updated."
-        delete: "'Session was successfully deleted."
+        delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
 
