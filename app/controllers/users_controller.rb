@@ -59,7 +59,7 @@ class UsersController < ApplicationController
         # If user is team leader, we cannot move them to a different team ... we abort
         if !team.nil? && !team.id.to_s.eql?(params[:user][attr])
           respond_to do |format|
-            format.html { redirect_to user_path(user), :notice => t(".controller.update.leader", user:user.username, team:team.name) }
+            format.html { redirect_to user_path(user), :notice => t(".controller.update.leader", :user => user.username, :team => team.name) }
           end and return
         end
       end
