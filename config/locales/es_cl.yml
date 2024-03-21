@@ -14,7 +14,7 @@ es-CL:
     downloads: "Descargas"
     user:
       my-profile: "Mi perfil"
-      settings: "Opciones"
+      settings: "Editar perfil"
       admin:
         title: "Admin"
         upload-session: "Subir sesión"
@@ -130,7 +130,7 @@ es-CL:
         classic-way:
           description-html: "Entra al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> y descarga el pack de autos de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime los packs descargados ahí.</p>"
         mobile-players:
-          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
+          description-html: "Sigue los pasos del método clásico, solo que en Android necesitas instalar un explorador de archivos capaz de descomprimir archivos ZIP (en la Play Store puedes encontrar aplicaciones como ZArchiver o RAR si tu teléfono no tiene instalada una). <p>Dentro del explorador de archivos, ve a la carpeta Download y descomprime los packs en la carpeta RVGL que encontrarás en la memoria interna.</p>"
       play-online:
         title: "¿Cómo puedo jugar online?"
         description-html: "En Re-Volt America, organizamos sesiones de carreras diarias a las 23:00 UTC, y todas se anuncian vía Discord, en un canal llamado \"#lobby-va\". <a href='play'>Aquí</a> puedes ver la cuenta regresiva para la próxima sesión."
@@ -146,7 +146,7 @@ es-CL:
           description: "Escribe la IP y la contraseña en el campo de parámetros de lanzamiento de la siguiente manera, por ejemplo:"
         shortcut:
           title: "Acceso directo al juego"
-          description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
+          description: "Selecciona el acceso directo de RVGL y presiona Alt+Enter, al final del campo \"Destino\" escribe los parámetros tal como aparece en la imagen a continuación."
         android:
           li-1-html: "Descarga e instala \"<b>Termux</b>\", si no puedes encontrarlo en Play Store, usa este enlace <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>(F-Droid)</a> para descargarlo."
           li-2-html: "Copia y pega dentro de la aplicación este comando; <code> am start -n com.rvgl.rvgl/. VGLActivity -e args \"-lobby &lt;ip&gt -pass &lt;password&gt </code> debes escribir la IP y la contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla; si el juego no se abre inmediatamente, cierra la aplicación de las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal."
@@ -246,7 +246,7 @@ es-CL:
       big-race: "Puntuación de carrera grande"
     car-ratings:
       title: "Car Ratings"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+      description: "En RVA, a cada auto se le asigna un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recopensar a quienes juegen con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula el puntaje en cada carrera con distintos multiplicadores:"
     desktop-parser:
       title: "Calculadora de puntos de RVA de escritorio"
       description: "La Calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en formato RVA cuando se le ingresa un session log proveniente de RVGL. A través de esta aplicación portable, permitimos que cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de que puedes observar tras calcular los puntos de una nuestras sesiones por tu cuenta:"
