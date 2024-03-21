@@ -12,13 +12,13 @@
   .sticky-top.search-bar
     .row
       .col-xl-11.col-lg-10.col-md-10.col-xs-9.col-8.sticky-top
-        %input#input.form-control{placeholder: "Search...", type: "text"}/
+        %input#input.form-control{placeholder: t("rva.cars.shared.placeholder"), type: "text"}/
       .col-xl-1.col-lg-2.col-md-2.col-xs-3.col-4
         = render :partial => "car_category_selector"
 
   - if @cars.none?
     %h5.text-center
-      = "No cars to display"
+      = t("rva.cars.shared.no-cars")
   - else
     .row
       - @cars.each do |car|

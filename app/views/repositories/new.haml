@@ -1,24 +1,25 @@
 - content_for :title, "Re-Volt America - New Repository"
 
-%h2.mb-4 New Repository
+%h2.mb-4
+  = t("repositories.new.title")
 
 = form_with :model => @repository do |f|
   .row
     .col-md-5
       .field.form-group
-        = f.text_field :title, :class => "form-control", :placeholder => "Title"
+        = f.text_field :title, :class => "form-control", :placeholder => t(".placeholder.title")
 
       .field.form-group
-        = f.text_field :description, :class => "form-control", :placeholder => "Description"
+        = f.text_field :description, :class => "form-control", :placeholder => t(".placeholder.description")
 
       .field.form-group
-        = f.text_field :namespace, :class => "form-control", :placeholder => "Namespace"
+        = f.text_field :namespace, :class => "form-control", :placeholder => t(".placeholder.namespace")
 
       .field.form-group
-        = f.text_field :repo, :class => "form-control", :placeholder => "Repository"
+        = f.text_field :repo, :class => "form-control", :placeholder => t("repositories.repository")
 
       .field.form-group
-        = f.text_field :branch, :class => "form-control", :placeholder => "branch"
+        = f.text_field :branch, :class => "form-control", :placeholder => t(".placeholder.branch")
 
       .field.form-group
         = f.select :provider, ['GitHub'], {}, {:class => 'form-control'}
@@ -31,4 +32,4 @@
         = f.check_box :visible
         = f.label :visible
 
-      = f.button "Create", :type => "submit", :"data-turbo" => false, :class => "btn"
+      = f.button t(".create"), :type => "submit", :"data-turbo" => false, :class => "btn"

@@ -1,34 +1,35 @@
 - content_for :title, "Re-Volt America - New Tournament"
 
-%h2.mb-4 New Tournament
+%h2.mb-4
+  = t("tournaments.new.title")
 
 = form_with(:model => @tournament) do |f|
   .row
     .col-md-5
       .field.form-group
-        = f.label :name
+        = f.label :name, t("tournaments.edit.name")
         = f.text_field :name, :class => "form-control"
       .field.form-group
-        = f.label :date
+        = f.label :datem, t("tournaments.edit.date")
         = f.date_field :date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
-      = f.label :tournament_banner
+      = f.label :tournament_banner, t("tournaments.edit.banner")
       .field.file-input-group
         = f.hidden_field :tournament_banner, :value => @tournament.cached_tournament_banner_data, :id => nil
         = f.file_field :tournament_banner, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
-        = f.label :format
+        = f.label :format, t("tournaments.edit.format")
         = f.text_area :format, :class => "form-control"
       .field.form-group
-        = f.label :season
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.label :season, t("tournaments.edit.season")
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .actions
-        = f.button "Create Tournament", :type => "submit", :"data-turbo" => false, :class => "btn"
+        = f.button t("tournaments.new.button"), :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if @tournament.errors.any?
         #error-explanation
           %h2
             = pluralize(@tournament.errors.count, "error")
-            prohibited this tournament from being saved:
+            = t("tournaments.edit.error")
           %ul
             - @tournament.errors.each do |error|
               %li= error.full_message

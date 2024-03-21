@@ -3,26 +3,27 @@
 = render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
 %h2
-  = "Editing Season"
+  = t("seasons.edit.title")
 
 = form_with(model: @season) do |form|
   .row
     .col-md-5
       .field.form-group
-        = form.label :name
+        = form.label :name, t(".name")
         = form.text_field :name, :class => "form-control"
       .field.form-group
-        = form.label :start_date
+        = form.label :start_date, t(".start-date")
         = form.date_field :start_date, :class => "form-control"
       .field.form-group
-        = form.label :end_date
+        = form.label :end_date, t(".end-date")
         = form.date_field :end_date, :class => "form-control"
       .actions
-        = form.button "Update", :type => "submit", :class => "btn mb-2"
+        = form.button t("misc.submit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
       - if @season.errors.any?
         #error-explanation
-          %h5 Season could not be saved
+          %h5
+            = t(".error")
           %ul
             - @season.errors.each do |error|
               %li

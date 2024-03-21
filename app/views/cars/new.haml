@@ -1,4 +1,5 @@
-%h2.mb-4 Import Cars
+%h2.mb-4
+  = t("rva.cars.import.title")
 
 = form_with :url => import_cars_path, :method => :post do |f|
   .row
@@ -7,8 +8,8 @@
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
       .field.form-group
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
-        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => "Select Category"}, {:class => "form-control"}
+        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, {:class => "form-control"}
 
-      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
+      = f.button t("misc.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"

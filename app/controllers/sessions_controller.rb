@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to session_url(@session), :notice => 'Session was successfully created.' }
+        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.create") }
         format.json { render :show, :status => :created, :location => @session, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -56,7 +56,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to session_url(@session), :notice => 'Session was successfully updated.' }
+        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.update") }
         format.json { render :show, :status => :ok, :location => @session, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -81,7 +81,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.destroy!
-        format.html { redirect_to sessions_url, :notice => 'Session was successfully deleted.' }
+        format.html { redirect_to sessions_url, :notice => t("rankings.sessions.controller.delete") }
         format.json { head :no_content }
 
         Rails.cache.delete("Session:#{@session.id}")
@@ -109,15 +109,15 @@ class SessionsController < ApplicationController
 
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_session_path, :notice => 'You must select a CSV file.' }
-        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_session_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_session_path, :note => 'You may only upload CSV files.' }
-        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_session_path, :note => t("misc.controller.import.upload") }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -126,7 +126,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save!
-        format.html { redirect_to session_url(@session), :notice => 'Session was successfully imported.' }
+        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.import.success") }
         format.json { render :show, :status => :created, :location => @session, :layout => false }
 
         Rails.cache.delete('recent_sessions')

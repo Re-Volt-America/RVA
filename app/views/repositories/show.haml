@@ -53,6 +53,6 @@
                     = r.message
                 %td
                   = time_ago_in_words(r.date)
-                  ago
+                  = t("repositories.table.ago")
 
       = paginate @revs

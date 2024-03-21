@@ -2,30 +2,30 @@
   .row
     .col-md-5
       .field.form-group
-        = form.label :host
+        = form.label :host, t("rankings.sessions.edit.host")
         = form.text_field :host, :class => "form-control"
       .field.form-group
-        = form.label :version
+        = form.label :version, t("rankings.sessions.edit.version")
         = form.text_field :version, :class => "form-control"
       .field.form-group
-        = form.label :physics
+        = form.label :physics, t("rankings.sessions.edit.physics")
         = form.text_field :physics, :class => "form-control"
       .field.form-group
-        = form.label :protocol
+        = form.label :protocol, t("rankings.sessions.edit.protocol")
         = form.text_field :protocol, :class => "form-control"
       .field.form-group
-        = form.label :number
+        = form.label :number, t("rankings.sessions.edit.number")
         = form.number_field :number, :class => "form-control"
       .field.form-group
-        = form.label :date
+        = form.label :date, t("rankings.sessions.edit.date")
         = form.date_field :date, :class => "form-control"
       .actions
-        = form.button "Update Session", :type => "submit", :"data-turbo" => false, :class => "btn"
+        = form.button t("rankings.sessions.edit.update"), :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if session.errors.any?
         #error-explanation
           %h5
-            = "Session could not be saved"
+            = t("rankings.sessions.edit.error")
           %ul
             - session.errors.each do |error|
               %li= error.full_message

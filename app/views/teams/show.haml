@@ -19,9 +19,12 @@
   %table.table.table-bordered.table-striped
     %thead
       %tr
-        %th Name
-        %th Country
-        %th Role
+        %th
+          = t("teams.table.name")
+        %th
+          = t("teams.table.country")
+        %th
+          = t("teams.table.role.title")
     %tbody
       %tr
         %td
@@ -29,7 +32,7 @@
         %td
           = render :partial => 'users/country_flag', :locals => {:country => @leader.country}
         %td
-          Leader
+          = t("teams.table.role.leader")
       - @members.each do |m|
         %tr
           %td
@@ -37,7 +40,7 @@
           %td
             = render :partial => 'users/country_flag', :locals => {:country => m.country}
           %td
-            Member
+            = t("teams.table.role.member")
 
 - if user_is_admin?
   = form_with :url => add_member_teams_path, method: :put do |f|
@@ -46,8 +49,8 @@
         .input-group
           = f.select :member, @no_team_users.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, {}, :class => "custom-select form-control"
           .input-group-append
-            = f.button "Add Member", :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
+            = f.button t("teams.edit.add-member"), :type => "submit", :"data-turbo" => false, :class => "btn btn-outline-secondary"
     = f.hidden_field :id, :value => @team.id
 
-  = link_to 'Back', teams_path, :class => "btn btn-sm"
-  = link_to 'Edit Team', edit_team_path(@team), :class => "btn btn-sm"
+  = link_to t("misc.button.back"), teams_path, :class => "btn btn-sm"
+  = link_to t("teams.edit.edit-team"), edit_team_path(@team), :class => "btn btn-sm"

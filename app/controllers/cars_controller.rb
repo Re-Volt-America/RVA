@@ -114,7 +114,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save!
-        format.html { redirect_to car_url(@car), :notice => 'Car was successfully created.' }
+        format.html { redirect_to car_url(@car), :notice => t("rva.cars.controller.create") }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
 
         Rails.cache.delete(category_cache_key(params[:category]))
@@ -129,7 +129,7 @@ class CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to car_url(@car), :notice => 'Car was successfully updated.' }
+        format.html { redirect_to car_url(@car), :notice => t("rva.cars.controller.update") }
         format.json { render :show, :status => :ok, :location => @car, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -144,29 +144,29 @@ class CarsController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => 'You must select a CSV file.' }
-        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => 'You may only upload CSV files.' }
-        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.upload") }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:season].nil? || params[:season].empty?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => 'You must select a Season.' }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.season") }
         format.json { render :json => 'You must select a Season.', :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:category].nil? || params[:category].empty?
       respond_to do |format|
-        format.html { redirect_to new_car_path, :notice => 'You must select a Category.' }
-        format.json { render :json => 'You must select a car Category.', :status => :bad_request, :layout => false }
+        format.html { redirect_to new_car_path, :notice => t("misc.controller.import.category") }
+        format.json { render :json => t("misc.controller.import.category"), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -174,13 +174,13 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @cars.empty?
-        format.html { redirect_to new_car_path, :notice => 'No cars were created. Maybe they already exist?' }
+        format.html { redirect_to new_car_path, :notice => t("rva.cars.controller.import.exists") }
         format.json { render :show, :status => :ok, :layout => false }
       end and return
 
       @cars.each do |car|
         if car.save!
-          format.html { redirect_to new_car_path, :notice => 'Cars successfully imported.' }
+          format.html { redirect_to new_car_path, :notice => t("rva.cars.controller.import.success") }
           format.json { render :show, :status => :created, :location => car, :layout => false }
 
           Rails.cache.delete(category_cache_key(params[:category].to_i))
@@ -197,7 +197,7 @@ class CarsController < ApplicationController
     @car.destroy
 
     respond_to do |format|
-      format.html { redirect_to cars_url, :notice => 'Car was successfully destroyed.' }
+      format.html { redirect_to cars_url, :notice => t("rva.cars.controller.destroy") }
       format.json { head :no_content }
     end
   end

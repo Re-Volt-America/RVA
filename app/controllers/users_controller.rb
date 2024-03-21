@@ -59,7 +59,7 @@ class UsersController < ApplicationController
         # If user is team leader, we cannot move them to a different team ... we abort
         if !team.nil? && !team.id.to_s.eql?(params[:user][attr])
           respond_to do |format|
-            format.html { redirect_to user_path(user), :notice => "#{user.username} is the leader of #{team.name}, therefore they cannot be removed from it" }
+            format.html { redirect_to user_path(user), :notice => t(".controller.update.leader", :user => user.username, :team => team.name) }
           end and return
         end
       end
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if user.update!
-        format.html { redirect_to user_path(user), :notice => 'User successfully updated.' }
+        format.html { redirect_to user_path(user), :notice => t(".controller.update.success") }
       else
         format.html { redirect_to user_path(user), :status => :unprocessable_entity }
       end
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if current_user.update!
-        format.html { redirect_back fallback_location: root_path, :notice => "Language set to #{SYS::LOCALES_MAP.key(params[:locale].to_sym)}" }
+        format.html { redirect_back fallback_location: root_path, :notice => t(".controller.update.locale", locale:SYS::LOCALES_MAP.key(params[:locale].to_sym)) }
       else
         format.html { redirect_to root_path, :status => :unprocessable_entity }
       end
@@ -110,15 +110,15 @@ class UsersController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => 'You must select a CSV file.' }
-        format.json { render :json => 'You must select a CSV file.', :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.select") }
+        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => 'You may only upload CSV files.' }
-        format.json { render :json => 'You may only upload CSV files.', :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.upload")  }
+        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -126,13 +126,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @users.empty?
-        format.html { redirect_to users_new_path, :notice => 'No users were created. Maybe the file format is incorrect?' }
+        format.html { redirect_to users_new_path, :notice => t(".controller.import.exists") }
         format.json { render :show, :status => :ok, :layout => false }
       end and return
 
       @users.each do |user|
         if user.save!
-          format.html { redirect_to root_path, :notice => 'Users successfully imported.' }
+          format.html { redirect_to root_path, :notice => t(".controller.import.success") }
           format.json { render :show, :status => :created, :location => user, :layout => false }
         else
           format.html { render :new, :status => :unprocessable_entity }

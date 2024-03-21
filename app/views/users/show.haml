@@ -129,38 +129,38 @@
         - if @user.profile.gender?
           .col-sm-6
             %h6
-              = t("registrations.edit.info.gender")
+              = t("devise.registrations.edit.profile.gender")
             %pre
               = @user.profile.gender
         - if @user.profile.location?
           .col-sm-6
             %h6
-              = t("registrations.edit.info.location")
+              = t("devise.registrations.edit.profile.location")
             %pre
               = @user.profile.location
         - if @user.profile.occupation?
           .col-sm-6
             %h6
-              = t("registrations.edit.info.occupation")
+              = t("devise.registrations.edit.profile.occupation")
             %pre
               = @user.profile.occupation
         - if @user.profile.interests?
           .col-sm-6
             %h6
-              = t("registrations.edit.info.interests")
+              = t("devise.registrations.edit.profile.interests")
             %pre
               = @user.profile.interests
       .row.info
         .col-md-12
           .info
             %h6
-              = t("registrations.edit.info.about", user: @user.username)
+              = t("devise.registrations.edit.profile.about", user: @user.username)
             - if @user.profile.about?
               %pre#about
                 = render_safe(@user.profile.about)
             - else
               %pre
-                = t("registrations.edit.info.about-me.nothing")
+                = t("devise.registrations.edit.profile.about-me.nothing")
     #stats.tab-pane.fade{:"aria-labelledby" => "stats-tab", role: "tabpanel"}
       %h4.mt-4
         = t("users.stats.race-stats.title")
@@ -237,41 +237,42 @@
             %br/
             .field.form-group
               = f.check_box :admin
-              = f.label :admin
+              = f.label :admin, t("users.badges.admin")
             .field.form-group
               = f.check_box :mod
-              = f.label :mod
+              = f.label :mod, t("users.badges.mod")
             .field.form-group
               = f.check_box :organizer
-              = f.label :organizer
+              = f.label :organizer, t("users.badges.organizer")
             .field.form-group
-              = f.label :team
+              = f.label :team, t("results.team")
               = f.collection_select :team_id, Team.all, :id, :name, {:include_blank => true}, {:class => "form-control"}
-            %h6 Gender
-            .form-group
-              = profile.text_field :gender, :placeholder => 'Gender', :autocomplete => 'gender', :class => 'form-control'
             %h6
-              Nationality
+              = t("devise.registrations.edit.profile.gender")
+            .form-group
+              = profile.text_field :gender, :placeholder => t("devise.registrations.edit.profile.gender"), :autocomplete => 'gender', :class => 'form-control'
+            %h6
+              = t("devise.registrations.edit.profile.nationality.title")
               %small
-                (National flag)
+                = t("devise.registrations.edit.profile.nationality.small")
             .field.form-group
               = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
             %h6
-              = t("registrations.edit.info.location")
+              = t("devise.registrations.edit.profile.location")
             .form-group
-              = profile.text_field :location, :placeholder => t("registrations.edit.info.location"), :autocomplete => 'location', :class => 'form-control'
+              = profile.text_field :location, :placeholder => t("devise.registrations.edit.profile.location"), :autocomplete => 'location', :class => 'form-control'
             %h6
-              = t("registrations.edit.info.occupation")
+              = t("devise.registrations.edit.profile.occupation")
             .form-group
-              = profile.text_field :occupation, :placeholder => t("registrations.edit.info.occupation"), :autocomplete => 'occupation', :class => 'form-control'
+              = profile.text_field :occupation, :placeholder => t("devise.registrations.edit.profile.occupation"), :autocomplete => 'occupation', :class => 'form-control'
             %h6
-              = t("registrations.edit.info.interests")
+              = t("devise.registrations.edit.profile.interests")
             .form-group
-              = profile.text_field :interests, :placeholder => t("registrations.edit.info.interests"), :autocomplete => 'interests', :class => 'form-control'
+              = profile.text_field :interests, :placeholder => t("devise.registrations.edit.profile.interests"), :autocomplete => 'interests', :class => 'form-control'
             %h6
-              = t("registrations.edit.info.public-email")
+              = t("devise.registrations.edit.profile.public-email")
             .form-group
-              = profile.text_field :public_email, :placeholder => t("registrations.edit.info.public-email"), :autocomplete => 'public_email', :class => 'form-control'
+              = profile.text_field :public_email, :placeholder => t("devise.registrations.edit.profile.public-email"), :autocomplete => 'public_email', :class => 'form-control'
             %h6 Discord
             .form-group
               = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
@@ -301,10 +302,10 @@
                   .input-group-text steamcommunity.com/id/
                 = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
             %h6
-              = t("registrations.edit.info.about-me.title")
+              = t("devise.registrations.edit.profile.about-me.title")
             .row
               .form-group
-                = profile.text_area :about, :placeholder => t("registrations.edit.info.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control'
+                = profile.text_area :about, :placeholder => t("devise.registrations.edit.profile.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control'
           .btn-toolbar
             .actions
-              = f.submit t("registrations.edit.update-admin", user: @user.username), :class => 'btn btn-sm'
+              = f.submit t("devise.registrations.edit.update-admin", user: @user.username), :class => 'btn btn-sm'

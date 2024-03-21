@@ -6,7 +6,7 @@
 
   - if @tournaments.none?
     %h5.text-center.mt-3
-      = "No tournaments to display"
+      = t("tournaments.no-tournaments")
   - else
     - @tournaments.each do |tournament|
       .row
@@ -16,4 +16,4 @@
 
   - if user_is_staff?
     .text-center
-      = link_to t("tournaments.new"), new_tournament_path, :class => "btn btn-sm"
+      = link_to t("misc.button.new"), new_tournament_path, :class => "btn btn-sm"

@@ -38,9 +38,9 @@
           %dd
             = category_name(@car.category)
           %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
-            = t("rva.cars.features.stock")
+            = t("rva.shared.stock.title")
           %dd
-            = "#{@car.stock? ? "Yes" : "No"}"
+            = "#{@car.stock? ? t("misc.bool.true") : t("misc.bool.false")}"
         - if @car.season
           %i
             = t("rva.cars.features.featured-session", season:@car.season.name) #{@car.season.name}
@@ -48,4 +48,4 @@
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url}
         - if user_is_admin?
-          = link_to 'Edit Car', edit_car_path(@car), :class => "btn mt-2"
+          = link_to t("rva.cars.edit.button"), edit_car_path(@car), :class => "btn mt-2"

@@ -1,5 +1,6 @@
 - content_for :title, "Re-Volt America - Import Users"
-%h2.mb-4 Import Users
+%h2.mb-4
+  = t("users.import.title")
 
 = form_with :url => users_import_path, :method => :post do |f|
   .row
@@ -7,4 +8,4 @@
       .field.file-input-group
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
-      = f.button "Import", :type => "submit", :"data-turbo" => false, :class => "btn"
+      = f.button t("misc.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"

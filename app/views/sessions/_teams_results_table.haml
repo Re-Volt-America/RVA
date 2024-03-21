@@ -22,7 +22,7 @@
           %li
             = t("results.teams", teams:@session.teams? ? "Yes" : "No") #{@session.teams? ? "Yes" : "No"}
           %li
-            = link_to "Download Session Log", @session.session_log_url
+            = link_to  t("results.download"), @session.session_log_url
     - if user_is_organizer? || user_is_admin?
       .col-xl-5.col-lg-5.col-md-12.col-xs-12
         .session-details.mb-4
@@ -52,7 +52,7 @@
             - if item.is_a?(Track)
               = link_to item.short_name, track_path(item)
             - else
-              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => "Track not found"}
+              %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
                 = "?"
         %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
           = t("rankings.table.cc")

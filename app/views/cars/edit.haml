@@ -9,38 +9,39 @@
   .row
     .col-md-5
       .field.form-group
-        = f.label :season
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => "Select Season"}, :class => "form-control"
+        = f.label :season, t("rva.cars.edit.season")
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
-        = f.label :category
-        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => "Select Category"}, :class => "form-control"
+        = f.label :category, t("rva.cars.features.category")
+        = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, :class => "form-control"
       .field.form-group
-        = f.label :name
+        = f.label :name, t("rva.cars.edit.name")
         = f.text_field :name, :class => "form-control"
       .field.form-group
-        = f.label :speed
+        = f.label :speed, t("rva.cars.features.speed")
         = f.text_field :speed, :class => "form-control"
       .field.form-group
-        = f.label :accel
+        = f.label :accel, t("rva.cars.features.acceleration")
         = f.text_field :accel, :class => "form-control"
       .field.form-group
-        = f.label :weight
+        = f.label :weight, t("rva.cars.features.weight")
         = f.text_field :weight, :class => "form-control"
       .field.form-group
-        = f.label :multiplier
+        = f.label :multiplier, t("rva.cars.features.multiplier")
         = f.text_field :multiplier, :class => "form-control"
       .field.form-group
-        = f.label :folder_name
+        = f.label :folder_name, t("rva.cars.edit.folder-name")
         = f.text_field :folder_name, :class => "form-control"
       .field.form-group
-        = f.label :stock
+        = f.label :stock, t("rva.cars.features.stock")
         = f.check_box :stock
       .actions
-        = f.button "Update", :type => "submit", :class => "btn mb-2"
+        = f.button t("rva.cars.edit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
       - if @car.errors.any?
         #error-explanation
-          %h5 Car could not be saved
+          %h5
+            = t("rva.cars.edit.error")
           %ul
             - @car.errors.each do |error|
               %li

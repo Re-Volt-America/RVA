@@ -2,6 +2,7 @@
 
 = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
 
-%h1 Editing Session
+%h1
+  = t("rankings.sessions.edit.title")
 
 = render 'form', session: @session

@@ -2,28 +2,28 @@
   .row
     .col-md-5
       .field.form-group
-        = form.label :name
+        = form.label :name, t("teams.edit.name")
         = form.text_field :name, :class => "form-control"
       .field.form-group
-        = form.label :short_name
+        = form.label :short_name, t("teams.edit.short-name")
         = form.text_field :short_name, :class => "form-control"
       .field.form-group
-        = form.label :color
+        = form.label :color, t("teams.edit.color")
         = form.color_field :color, :class => "form-control"
-      = form.label :team_image
+      = form.label :team_image, t("teams.edit.team-img")
       .field.file-input-group
         = form.hidden_field :team_logo, :value => team.cached_team_logo_data, :id => nil
         = form.file_field :team_logo, :accept => "image/png, image/jpeg", :class => "form-control-file"
       .field.form-group
-        = form.label :leader
-        = form.select :leader, @no_team_users.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => "Select Leader" }, :class => "form-control"
+        = form.label :leader, t("teams.edit.leader")
+        = form.select :leader, @no_team_users.sort_by { |u| u.username.downcase }.collect { |u| [u.username, u.id] }, { :prompt => t("misc.prompt.leader")}, :class => "form-control"
       .actions
-        = form.button "Create Team", :type => "submit", :"data-turbo" => false, :class => "btn"
+        = form.button t("teams.edit.create"), :type => "submit", :"data-turbo" => false, :class => "btn"
     .col-md-7
       - if team.errors.any?
         #error-explanation
           %h5
-            = "Team could not be saved"
+            = t("teams.edit.error")
           %ul
             - team.errors.each do |error|
               %li= error.full_message
