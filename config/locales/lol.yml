@@ -87,12 +87,12 @@ lol:
     about:
       title: "aboat Re-Volt Amerik"
       description: "Teh largest Re-Volt family u'll find in teh Big Land ov Amerika. Join our raecin' sesshuns, be da lead in our seesunz and meet other Re-Volt pleyrz frum arond teh wurld!"
-      subtitle: "Who we are"
+      subtitle: "Whut r we"
       text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
       text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
-      see_you: "See you on track!"
+      see_you: "C u on trak!!~"
   #Play page
   play:
     subheader: "WE GO RACIN $@ 00:00 UTC"
@@ -140,7 +140,7 @@ lol:
           li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Open RVGL, go 2 Play Manikittehgaem >> Join Gaem, n copy n paste da IP. Dis is a exempel IP, each kitteh will havv a different IP."
       password-sessions:
-        title: "ho2w 2 join da sessun protecktud??"
+        title: "how 2 join da sessun protecktud??"
         description: "Write the following Launch Parameters (Don't write the brackets [])."
         launcher:
           description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
@@ -678,7 +678,7 @@ lol:
       message: "Intrnel survuh errur"
   #Misc strings
   misc:
-    create: "Create"
+    create: "Maek"
     download: "dowuload"
     search: "Scratch"
     and: "n'"
