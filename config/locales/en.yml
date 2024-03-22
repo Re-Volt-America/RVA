@@ -339,6 +339,19 @@ en:
 
     # RVA Cars
     cars:
+      meta:
+        classes:
+          page-title: "Re-Volt America - %{class} Cars"
+          title: "%{class} Cars - %{org}"
+          description: "Cars of the %{class} class. These are the cars from the %{class} class required to race online on RVA!"
+        edit:
+          page-title: "Re-Volt America - Edit Car"
+        index:
+          page-title: "Re-Volt America - Cars"
+          title: "RVA Cars"
+          description: "The cars in the RVA Car Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
       features:

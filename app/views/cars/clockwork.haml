@@ -1,6 +1,6 @@
-- content_for :title, "Re-Volt America - #{t("classes.clockwork")} Cars"
-- meta :title, "#{t("classes.clockwork")} Cars - #{ORG::NAME_SHORT}"
-- meta :description, "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+- content_for :title, t("rva.cars.meta.classes.page-title", class: t("classes.clockwork"))
+- meta :title, t("rva.cars.meta.classes.title", class: t("classes.clockwork"), org: ORG::NAME_SHORT)
+- meta :description, t("rva.cars.meta.classes.description", class: t("classes.clockwork"))
 - meta :image, "https://rva.lat/assets/img/og/clockwork.png"
 
 #car-cards-display
