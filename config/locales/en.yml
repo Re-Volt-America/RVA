@@ -101,6 +101,10 @@ en:
 
   # Play page
   play:
+    page-title: "Re-Volt America - Play"
+    meta:
+      title: "RVA - Play"
+      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
 
