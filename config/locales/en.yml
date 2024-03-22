@@ -379,6 +379,7 @@ en:
 
   # Assets page
   assets:
+    page-title: "Re-Volt America - Assets"
     title: "LOGOS & USAGE"
     subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
     allowed:
