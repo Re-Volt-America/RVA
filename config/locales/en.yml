@@ -116,6 +116,7 @@ en:
 
   # FAQ page
   faq:
+    page-title: "Re-Volt America - FAQ"
     title: "Frequently Asked Questions"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
     section-1: "Installing and setup"
