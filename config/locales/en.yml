@@ -528,6 +528,13 @@ en:
 
   # Development logs
   repositories:
+    meta:
+      show:
+        page-title: "Re-Volt America - Repositories"
+        title: "RVA - Repositories"
+        description: "Re-Volt America's version control repositories for content packs and other software."
+      new:
+        page-title: "Re-Volt America - New Repository"
     title: "Revisions"
     small: "Latest git commits in our organization"
     new-button: "New"
