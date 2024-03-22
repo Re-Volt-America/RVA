@@ -207,6 +207,7 @@ en:
 
   # Rules page
   rules:
+    page-title: "Re-Volt America - Rules"
     title: "Rules"
     sections:
       a:
@@ -263,8 +264,17 @@ en:
 
   # Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacy"
+    meta:
+      title: "RVA - Privacy Policy"
+      description: "The privacy policy that applies in Re-Volt America's platform."
+
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
+    page-title: "Re-Volt America - Terms"
+    meta:
+      title: "RVA - Terms of Service"
+      description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
 
   # Staff page
