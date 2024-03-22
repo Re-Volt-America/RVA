@@ -495,6 +495,10 @@ en:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Stats"
+      meta:
+        title: "RVA - Leaderboard"
+        description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Global Stats"
       sorted: "Sorted by:"
       table:
