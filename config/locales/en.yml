@@ -279,6 +279,10 @@ en:
 
   # Staff page
   staff:
+    page-title: "Re-Volt America - Staff"
+    meta:
+      title: "RVA - Staff"
+      description: "The people who help run Re-Volt America."
     title: "Staff"
     description: "The people who help run Re-Volt America!"
     groups:
