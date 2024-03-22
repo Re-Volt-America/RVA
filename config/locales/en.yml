@@ -634,6 +634,13 @@ en:
 
   # Teams page
   teams:
+    meta:
+      index:
+        page-title: "Re-Volt America - Teams"
+      new:
+        page-title: "Re-Volt America - New Team"
+      edit:
+        page-title: "Re-Volt America - Edit Team"
     title: "RVA Teams"
     no-teams: "No teams to display"
     global-points:
