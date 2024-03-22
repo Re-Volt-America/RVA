@@ -284,15 +284,15 @@ lol:
         title: "Re-volt Amerika Trackzz Cullikshun"
       edit:
         title: "Editing Track"
-        season: "Season"
-        name: "Name"
-        short-name: "Short name"
-        difficulty: "Difficulty"
-        length: "Length (meters)"
-        folder-name: "Folder name"
-        error: "Track could not be saved"
+        season: "Seasun"
+        name: "Naem"
+        short-name: "Shurt naem"
+        difficulty: "hardinezz"
+        length: "Long in m"
+        folder-name: "Fuldr naem"
+        error: "Trak kuld nut b savd"
       import:
-        title: "Import Tracks"
+        title: "Gif Trakz"
       controller:
         create: "Track was successfully created."
         update: "Track was successfully updated."
@@ -316,18 +316,18 @@ lol:
       class-selector:
         title: "clazzes"
       shared:
-        placeholder: "Search..."
-        no-cars: "No cars to display"
+        placeholder: "Surch..."
+        no-cars: "Nu kaz to show"
       edit:
         title: "Editing Car"
         button: "Edit Car"
-        season: "Season"
-        name: "Name"
-        folder-name: "Folder name"
-        update: "Update"
-        error: "Car could not be saved"
+        season: "Seasun"
+        name: "Naem"
+        folder-name: "Fuldr naem"
+        update: "Updaet"
+        error: "Ka kuld nut b savd"
       import:
-        title: "Import Cars"
+        title: "Gif Kaz"
       controller:
         create: "Car was successfully created."
         update: "Car was successfully updated"
@@ -410,7 +410,7 @@ lol:
       title: "Global Stats"
       sorted: "Sorted by:"
       table:
-        wins: "Wins"
+        wins: "Viktori royelz"
         podiums: "Podiums"
         win-ratio: "Win Ratio"
         average-pos: "Average Pos"
@@ -427,10 +427,10 @@ lol:
       edit:
         title: "Editing Session"
         host: "Host"
-        version: "Version"
-        physics: "Physics"
+        version: "Vurshun"
+        physics: "harder math"
         protocol: "Protocol"
-        number: "Number"
+        number: "No."
         date: "Date"
         update: "Update Session"
         error: "Session could not be saved"
@@ -472,7 +472,7 @@ lol:
       when: "WHEN"
       ago: "ago"
     new:
-      title: "New Repository"
+      title: "New Repo"
       placeholder:
         title: "Title"
         description: "Description"
@@ -525,25 +525,25 @@ lol:
       leader: "TOP CAT"
       members: "Kittehz"
     table:
-      name: "Name"
-      country: "Country"
+      name: "Naem"
+      country: "Land"
       role:
-        title: "Role"
-        leader: "Leader"
-        member: "Member"
+        title: "Roe"
+        leader: "Hedkat"
+        member: "Kitteh"
     edit:
       title: "Editing Team"
-      name: "Name"
-      short-name: "Short name"
-      color: "Color"
-      team-img: "Team image"
-      leader: "Leader"
-      add-member: "Add Member"
+      name: "Naem"
+      short-name: "Shurt naem"
+      color: "Kala"
+      team-img: "Team pic"
+      leader: "Hedkitth"
+      add-member: "Ad Kitteh"
       edit-team: "Edit Team"
-      create: "Create Team"
-      error: "Team could not be saved"
+      create: "Maek Tem"
+      error: "Tem kuld nut b savd"
     new:
-      title: "New Team"
+      title: "new team"
     controller:
       create: "Team was successfully created."
       update: "Team was successfully updated."
@@ -588,15 +588,15 @@ lol:
       stats: "Katistics"
       admin: "admin"
     badges:
-      admin: "Administrator"
+      admin: "Kitteminitrutor"
       mod: "Mod"
-      organizer: "Organizer"
+      organizer: "Urganizurr"
     import:
-      title: "Import users"
+      title: "Giv usrz"
     controller:
       update:
         leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{lang}"
+        locale: "Kitteh spek %{lang} nao"
         success: "User successfully updated."
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
@@ -605,12 +605,12 @@ lol:
   tournaments:
     title: "Old cat competitionz"
     no-tournaments: "No tournaments to display"
-    notice: "notice"
+    notice: "note"
     edit:
       title: "Editing Tournament"
-      name: "Name"
+      name: "Naem"
       date: "Date"
-      season: "Season"
+      season: "Seasun"
       banner: "Tournament banner"
       format: "Format"
       save: "Save Tournament"
@@ -836,28 +836,28 @@ lol:
     search: "Scratch"
     and: "n'"
     bool:
-      true: "Yes"
-      false: "No"
+      true: "Ys"
+      false: "Nahhh"
     prompt:
       season: "Select Season"
       ranking: "Select Ranking"
       category: "Select Category"
-      leader: "Select Leader"
-      difficulty: "Select Difficulty"
+      leader: "Cwooz Hedkitteh"
+      difficulty: "Cwoos hardinezz"
     submit:
       import: "Import"
-      update: "Update"
+      update: "Updaet"
     checkbox:
-      teams: "Teams"
+      teams: "Teamz"
     button:
-      back: "Back"
+      back: "Bacc"
       new: "New"
     controller:
       import:
-        select: "You must select a CSV file."
-        upload: "You may only upload CSV files."
-        season: "You must select a Season."
-        category: "You must select a Category."
+        select: "U mus cwoos a CSV thing"
+        upload: "U mei olny uplod CSV thinz."
+        season: "U mus cwoos a seesun."
+        category: "U mus cwoos a kain."
   #Kaminari
   helpers:
     page_entries_info:
