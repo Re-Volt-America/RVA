@@ -106,6 +106,7 @@ en:
 
   # Downloads page
   downloads:
+    page-title: "Re-Volt America - Downloads"
     title: "Downloads"
     video: "Pending video..."
     faq:
