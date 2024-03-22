@@ -91,7 +91,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if current_user.update!
-        format.html { redirect_back fallback_location: root_path, :notice => t(".controller.update.locale", locale:SYS::LOCALES_MAP.key(params[:locale].to_sym)) }
+        format.html { redirect_back fallback_location: root_path, :notice => t(".controller.update.locale", :lang => SYS::LOCALES_MAP.key(params[:locale].to_sym)) }
       else
         format.html { redirect_to root_path, :status => :unprocessable_entity }
       end

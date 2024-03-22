@@ -483,7 +483,6 @@ en:
         import:
           success: "Session was successfully imported."
 
-
     results:
       no-team-results: "No team results to disiplay"
     nav:
@@ -642,7 +641,7 @@ en:
     controller:
       update:
         leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{locale}"
+        locale: "Language set to %{lang}"
         success: "User successfully updated."
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
