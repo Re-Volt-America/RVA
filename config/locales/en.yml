@@ -729,6 +729,15 @@ en:
 
   # Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Tournaments"
+      show:
+        page-title: "Re-Volt America - %{@name}"
+      new:
+        page-title: "Re-Volt America - New Tournament"
+      edit:
+        page-title: "Re-Volt America - Edit Tournament"
     title: "Past Tournaments"
     no-tournaments: "No tournaments to display"
     notice: "notice"
