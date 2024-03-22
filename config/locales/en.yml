@@ -580,6 +580,19 @@ en:
 
   # RVA results page
   results:
+    meta:
+      index:
+        page-title: "Re-Volt America - Sessions"
+      new:
+        page-title: "Re-Volt America - New Session"
+      edit:
+        page-title: "Re-Volt America - Edit Session"
+      singles:
+        page-title: "Re-Volt America - Session %{number}"
+        title: "RVA Singles Session"
+      teams:
+        page-title: "Re-Volt America - Session #{@session.number}"
+        title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
     connection: "Connection: %{protocol} (Server)"

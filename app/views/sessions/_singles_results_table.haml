@@ -1,5 +1,5 @@
-- content_for :title, "Re-Volt America - Session #{@session.number}"
-- meta :title, "RVA Singles Session"
+- content_for :title, t("results.meta.singles.page-title", number: @session.number)
+- meta :title, t("results.meta.singles.title")
 - meta :description, singles_session_meta_desc(@rva_results)
 
 .container
