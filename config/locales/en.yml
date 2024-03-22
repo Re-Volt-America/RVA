@@ -687,6 +687,9 @@ en:
 
   # User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Import Users"
     stats:
       title: "Stats"
       rank:
