@@ -438,6 +438,15 @@ en:
 
   # Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "Re-Volt America - Seasons"
+      show:
+        page-title: "Re-Volt America - %{season}"
+      new:
+        page-title: "Re-Volt America - New Season"
+      edit:
+        page-title: "Re-Volt America - Edit Season"
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
