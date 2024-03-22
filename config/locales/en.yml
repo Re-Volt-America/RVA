@@ -456,6 +456,7 @@ en:
 
   # Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Ranking %{number}"
     title2: "Leaderboards"
     small: "%{count} sessions played"
