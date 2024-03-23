@@ -337,7 +337,7 @@ lol:
           success: "Cars successfully imported."
     shared:
       stock:
-        title: "Stock"
+        title: "OG"
   #Assets page
   assets:
     title: "LOGOWOS & USAEG"
@@ -378,8 +378,8 @@ lol:
       title: "Awl Sesonz"
       present: "Presnt"
     edit:
-      title: "Editing Season"
-      name: "Name"
+      title: "Edit Seasun"
+      name: "Naem"
       start-date: "Start date"
       end-date: "End date"
       error: "Season could not be saved"
@@ -407,16 +407,16 @@ lol:
       fp: "FP"
       sp: "SP"
     stats:
-      title: "Global Stats"
+      title: "Wurld stez"
       sorted: "Sorted by:"
       table:
         wins: "Viktori royelz"
-        podiums: "Podiums"
-        win-ratio: "Win Ratio"
-        average-pos: "Average Pos"
-        race-count: "Race Count"
-        obtained-points: "Obtained Points"
-        official-score: "Official Score"
+        podiums: "Almost win"
+        win-ratio: "Win ratio + l"
+        average-pos: "Avg almuzwinz"
+        race-count: "Racc cownt"
+        obtained-points: "Gottn Pontz"
+        official-score: "Offishal skor"
     controller:
       create: "Ranking was successfully created."
       update: "Ranking was successfully updated."
@@ -429,9 +429,9 @@ lol:
         host: "Host"
         version: "Vurshun"
         physics: "harder math"
-        protocol: "Protocol"
+        protocol: "Protuhkul"
         number: "No."
-        date: "Date"
+        date: "Deit"
         update: "Update Session"
         error: "Session could not be saved"
       upload:
@@ -474,11 +474,11 @@ lol:
     new:
       title: "New Repo"
       placeholder:
-        title: "Title"
-        description: "Description"
-        namespace: "Namespace"
-        branch: "branch"
-      create: "Create"
+        title: "Naem"
+        description: "Dezkripshun"
+        namespace: "Naemspecc"
+        branch: "branj"
+      create: "Maek"
     controller:
       create: "Repository was successfully created."
       update: "Repository was successfully updated."
@@ -609,10 +609,10 @@ lol:
     edit:
       title: "Editing Tournament"
       name: "Naem"
-      date: "Date"
+      date: "Det"
       season: "Seasun"
       banner: "Tournament banner"
-      format: "Format"
+      format: "Furmat"
       save: "Save Tournament"
       error: "prohibited this tournament from being saved:"
     new:
@@ -845,7 +845,7 @@ lol:
       leader: "Cwooz Hedkitteh"
       difficulty: "Cwoos hardinezz"
     submit:
-      import: "Import"
+      import: "Giv"
       update: "Updaet"
     checkbox:
       teams: "Teamz"
