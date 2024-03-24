@@ -432,16 +432,16 @@ lol:
         protocol: "Protuhkul"
         number: "No."
         date: "Deit"
-        update: "Update Session"
+        update: "Updet Sesshun"
         error: "Session could not be saved"
       upload:
-        title: "Upload Session"
+        title: "Uplod seshun"
       controller:
-        create: "Session was successfully created."
-        update: "Session was successfully updated."
-        delete: "Session was successfully deleted."
+        create: "Kitteh alr maed sehshun."
+        update: "Kitteh alredy updetd seshun."
+        delete: "Kitteh scratchd sesshun :("
         import:
-          success: "Session was successfully imported."
+          success: "Kitteh alredy givn seshun."
     results:
       no-team-results: "Nu team resulz to show"
     nav:
@@ -480,9 +480,9 @@ lol:
         branch: "branj"
       create: "Maek"
     controller:
-      create: "Repository was successfully created."
-      update: "Repository was successfully updated."
-      destroy: "Repository was successfully destroyed."
+      create: "Kitteh maed repo alredy."
+      update: "Kitteh awredy updatd repo."
+      destroy: "Kitteh ate the repo :3"
   #RVA results page
   results:
     title: "%{category} races (sesshun %{number})"
@@ -532,14 +532,14 @@ lol:
         leader: "Hedkat"
         member: "Kitteh"
     edit:
-      title: "Editing Team"
+      title: "Editin Tem"
       name: "Naem"
       short-name: "Shurt naem"
       color: "Kala"
       team-img: "Team pic"
       leader: "Hedkitth"
       add-member: "Ad Kitteh"
-      edit-team: "Edit Team"
+      edit-team: "Edit Tem"
       create: "Maek Tem"
       error: "Tem kuld nut b savd"
     new:
