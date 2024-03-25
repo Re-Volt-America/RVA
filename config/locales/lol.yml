@@ -34,7 +34,7 @@ lol:
     ranking: "rank"
     ranking-n: "Rank #%{n}"
     session-n: "Sesshun #%{n}"
-    tracks: "Trackz"
+    tracks: "Trakz"
     cars: "Carz"
   #Footer
   footer:
@@ -61,7 +61,7 @@ lol:
   #Landing page, Splash, About
   application:
     splash:
-      description1: "Da websiet of da Re-Volt Americz of Re-Volt of katz, 1999"
+      description1: "Da websiet of da Re-Volt America of Re-Volt of katz, 1999"
       description2: "dowonload da gaem and meet da catz from all ovur da AMERICA"
       download-button: "Dowomnloads »"
     index:
@@ -71,7 +71,7 @@ lol:
         play-button: "PLAY!!!! »"
       competition:
         title: "Cat Races"
-        description: "Within da re-volt Americas we raec in seashunz form. In da seasons, u wil raec onlien all day everyday, and get da pointz 4 evry raec u polay"
+        description: "Within da re-volt America we raec in seashunz form. In da seasons, u wil raec onlien all day everyday, and get da pointz 4 evry raec u polay"
         seasons-button: "Seashunz"
       reliability:
         title: "U CAN TRUST"
@@ -88,7 +88,7 @@ lol:
       title: "aboat Re-Volt Amerik"
       description: "Teh largest Re-Volt family u'll find in teh Big Land ov Amerika. Join our raecin' sesshuns, be da lead in our seesunz and meet other Re-Volt pleyrz frum arond teh wurld!"
       subtitle: "Whut r we"
-      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
+      text1_html: "Kittehz maed us 2017. RVA iz da desendinz of eagel fam ov <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> frum 1999."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
       text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
@@ -96,7 +96,7 @@ lol:
   #Play page
   play:
     subheader: "WE GO RACIN $@ 00:00 UTC"
-    subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-rva</code>"
+    subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-RVA</code>"
   #Downloads page
   downloads:
     title: "dowonloads"
@@ -121,19 +121,19 @@ lol:
         mobile-players:
           description-html: "In teh case ov Android, when u try to run the gaem installr (clic dis <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> 2 download) u need to giv passes 2 install ousid appz. <p> After acceptin' givin' da passes n' installin' da gaem, teh app can be opend normally frum teh app drawr of ur phone.</p> <p>iOS is still not ok sadge"
         steam-revolt:
-          title: "counterfit revolt"
+          title: "counterfit Re-Volt"
           description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
       install:
         title: "How do i get RVA pax?"
         recommended-way:
-          description-html: "In the Pax tab chec teh rva_cars n' rva_tracks opshuns @ teh last of teh list, then click teh Get Packgz thingey in teh lower right cornr to start dowonloadin' and installin' them."
+          description-html: "In the Pax tab chec teh RVA_cars n' RVA_tracks opshuns @ teh last of teh list, then click teh Get Packgz thingey in teh lower right cornr to start dowonloadin' and installin' them."
         classic-way:
           description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
         mobile-players:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
-        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-rva\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
+        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
         reminder:
           title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
@@ -156,7 +156,7 @@ lol:
           title: "Seesunz n' Rankz"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         scoring:
-          title: "Scoring points in a Session"
+          title: "Skoorin pontz in a Sehshun"
           description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
@@ -283,7 +283,7 @@ lol:
       collection:
         title: "Re-volt Amerika Trackzz Cullikshun"
       edit:
-        title: "Editing Track"
+        title: "Editin Trac"
         season: "Seasun"
         name: "Naem"
         short-name: "Shurt naem"
@@ -341,7 +341,7 @@ lol:
   #Assets page
   assets:
     title: "LOGOWOS & USAEG"
-    subtitle_html: "Logos maed by Hylia! u can get :DDDD"
+    subtitle_html: "Logos n stuff maed by <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>! u can get :DDDD"
     allowed:
       title: "Good kitteh usaeg"
       1: "uz our logowo 2 link to ur websiet"
@@ -360,7 +360,7 @@ lol:
       2: "Iv u wnat to uz dis imaegs in a vidoe/meowstream mediza"
     naming:
       title: "naeming projectz n stuff"
-      1: "plz aviod namin ur projectz anythin impliez revolt america's endrsmet. dis also appliez 2 domaen naems."
+      1: "plz aviod namin ur projectz anythin impliez Re-Volt america's endrsmet. dis also appliez 2 domaen naems."
     attribution:
       title: "GIMME"
       1: "othar azzetz liek cars and otherz stuffz, imaegz r maed bai memberz ov our comunity n' al rihgts belongz to da respectiev kittehs"
@@ -613,7 +613,7 @@ lol:
       season: "Seasun"
       banner: "Tournament banner"
       format: "Furmat"
-      save: "Save Tournament"
+      save: "Saev kat kompetishun"
       error: "prohibited this tournament from being saved:"
     new:
       title: "New Tournament"
@@ -841,7 +841,7 @@ lol:
     prompt:
       season: "Select Season"
       ranking: "Select Ranking"
-      category: "Select Category"
+      category: "Cwos KATegury"
       leader: "Cwooz Hedkitteh"
       difficulty: "Cwoos hardinezz"
     submit:
