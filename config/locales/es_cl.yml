@@ -14,7 +14,7 @@ es-CL:
     downloads: "Descargas"
     user:
       my-profile: "Mi perfil"
-      settings: "Opciones"
+      settings: "Editar perfil"
       admin:
         title: "Admin"
         upload-session: "Subir sesión"
@@ -87,12 +87,12 @@ es-CL:
     about:
       title: "Sobre Re-Volt America"
       description: "¡La comunidad más grande de Re-Volt que encontrarás en el Continente Americano, únete a nuestras sesiones diarias de carreras, compite en nuestras temporadas y conoce a otros jugadores de Re-Volt de todo el mundo!"
-      subtitle: "Who we are"
-      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
-      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
-      text3_html: "In RVA, we organise a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
-      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
-      see_you: "See you on track!"
+      subtitle: "Quiénes somos"
+      text1_html: "Fundada en 2017, Re-Volt America (RVA) es la comunidad americana alrededor del popular juego de carreras de autos a control remoto <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
+      text2_html: "Para jugar en línea, usamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, una reescritura multiplataforma / porteo de Re-Volt que se ejecuta nativamente en una amplia variedad de plataformas. Esta versión del juego también es conocida por ampliar la experiencia de juego original con soporte para contenido personalizado hecho por la comunidad, tales como pistas y coches."
+      text3_html: "En RVA, organizamos una serie de sesiones en línea en las que jugadores de todo el mundo (principalmente del continente americano) compiten entre sí, obtienen puntos tras cada carrera jugada, y se indexan en el ranking oficial de Re-Volt America."
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Descarga RVGL</a>, consigue el Pack <a href='%{downloads_path}'>RVA</a>y <a href='%{play_path}'>¡Juega</a> con nosotros!"
+      see_you: "¡Nos vemos en la pista!"
   #Play page
   play:
     subheader: "Jugamos diariamente a las 00:00 UTC"
@@ -126,46 +126,46 @@ es-CL:
       install:
         title: "¿Cómo instalo los paquetes de RVA?"
         recommended-way:
-          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
+          description-html: "En la pestaña Packs revisa las opciones rva_cars y rva_tracks al final de la lista, luego clickea el botón Instalar paquetes en la esquina inferior derecha para comenzar la descarga e instalación."
         classic-way:
-          description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
+          description-html: "Entra al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> y descarga el pack de autos de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime los packs descargados ahí.</p>"
         mobile-players:
-          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
+          description-html: "Sigue los pasos del método clásico, solo que en Android necesitas instalar un explorador de archivos capaz de descomprimir archivos ZIP (en la Play Store puedes encontrar aplicaciones como ZArchiver o RAR si tu teléfono no tiene instalada una). <p>Dentro del explorador de archivos, ve a la carpeta Download y descomprime los packs en la carpeta RVGL que encontrarás en la memoria interna.</p>"
       play-online:
         title: "¿Cómo puedo jugar online?"
-        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        description-html: "En Re-Volt America, organizamos sesiones de carreras diarias a las 23:00 UTC, y todas se anuncian vía Discord, en un canal llamado \"#lobby-va\". <a href='play'>Aquí</a> puedes ver la cuenta regresiva para la próxima sesión."
         reminder:
           title: "Ten en cuenta lo siguiente"
-          li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
-          li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
-          li-3: "Open RVGL, go to Play Multiplayer >> Join Game, and copy and paste the IP address. This is an example IP, each organizer will have a different IP address."
+          li-1: "Antes de unirte a las partidas, debes instalar el Pack de RVA, Revisa la casilla de Preguntas frecuentes para mayor información."
+          li-2-html: "Cuando haya una sala abierta para unirse y entrar para jugar un mensaje aparecerá en #lobby-rva, </br> por ejemplo: \"<b>¡Lobby is UP! - IP: gforce-rva. dns.net</b>\""
+          li-3: "Abre RVGL, ve a Multijugador >> Unirse al Juego, copia y pega la dirección IP. Este es un ejemplo de IP, cada organizador tendrá una dirección IP diferente."
       password-sessions:
         title: "¿Cómo unirse a una sesión con contraseña?"
-        description: "Write the following Launch Parameters (Don't write the brackets [])."
+        description: "Escriba los siguientes parámetros de lanzamiento (No escriba los paréntesis [])."
         launcher:
           description: "Escribe la IP y la contraseña en el campo de parámetros de lanzamiento de la siguiente manera, por ejemplo:"
         shortcut:
-          title: "Game shortcut"
-          description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
+          title: "Acceso directo al juego"
+          description: "Selecciona el acceso directo de RVGL y presiona Alt+Enter, al final del campo \"Destino\" escribe los parámetros tal como aparece en la imagen a continuación."
         android:
-          li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
-          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+          li-1-html: "Descarga e instala \"<b>Termux</b>\", si no puedes encontrarlo en Play Store, usa este enlace <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>(F-Droid)</a> para descargarlo."
+          li-2-html: "Copia y pega dentro de la aplicación este comando; <code> am start -n com.rvgl.rvgl/. VGLActivity -e args \"-lobby &lt;ip&gt -pass &lt;password&gt </code> debes escribir la IP y la contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla; si el juego no se abre inmediatamente, cierra la aplicación de las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal."
       rankings:
         title: "¿Cómo funcionan los rankings y los puntos?"
         seasons:
           title: "Temporadas y rankings"
-          description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
+          description: "Cada una de nuestras temporadas consta de 6 rankings, y cada ranking consta de 18 sesiones individuales y 10 sesiones de equipo. De esta manera, cada clasificación tendrá una duración de un mes y cada temporada durará aproximadamente 6 meses. Una sesión anunciada en Discord en el canal #lobby-rva consiste enjugar las 20 pistas asignadas para el día con la categoría correspondiente. El horario semanal que determina las carreras a jugar cada día se anuncian cada lunes y se ve de la siguiente manera:"
         scoring:
           title: "Scoring points in a Session"
-          description-1: "At the end of each session the results obtained by each player are published in the #rank-global channel, in RVA we have a unique way of determining the scores where the Car Multiplier, the Accumulated Points, the Average Position and the Completed Races have influence."
-          description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
+          description-1: "Al final de cada sesión los resultados obtenidos por cada jugador se publican en el canal #rank-global, en RVA tenemos una forma única de determinar los puntos donde el Multiplicador del Auto, Los puntos acumulados, la posición promedio y las carreras completadas tienen influencia."
+          description-2-html: "Puedes ver en detalle como los puntos son calculados en una sesión en el siguiente <a href='points', rel='noopener noreferrer'>link</a>."
           list:
-            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
-            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
-            li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
+            li-1: "El Multiplicador del Auto asigna a cada coche un valor que determina su dificultad, cuanto mayor sea su número de Multiplicador, más puntos obtendrás tras cada carrera, pero no te ayudará si terminas último intentando conducir los coches más difíciles."
+            li-2: "Los puntos acumulados son la suma de los puntos obtenidos de acuerdo a su posición final en cada carrera. Se otorgarán más puntos en una sesión si comienza con 10 o más jugadores."
+            li-3: " Posición promedio y carreras completadas afectan los puntos acumulados en una sesión, terminar en las últimas posiciones o completar pocas carreras reducirá la cantidad de puntos que obtendrás en una sesión."
       generics:
         recommended-way: "Vía recomendada: RVGL Launcher"
-        classic-way: "Classic way"
+        classic-way: "Modo clásico"
         mobile-players: "Jugadores de celular"
   #Rules page
   rules:
@@ -202,7 +202,7 @@ es-CL:
         7:
           title: "Puedes escribir RE durante los primeros 40 segundos de una carrera sólo en caso de tratarse de un factor no relacionado con el juego (llegas tarde, problemas de conexión)."
           bullet1: "Solo 1 RE por pista será garantizado. Si alguien ha pedido RE antes de que tú lo hicieses, entonces el anfitrión no reiniciará de nuevo."
-        8_html: "El multiplicador de cualquiera auto nunca excederá el valor de 4.0."
+        8_html: "El multiplicador de cualquier auto nunca excederá el valor de 4.0."
       d:
         title: "D. Servidor de Discord"
         1_html: "Debes seguir y atenerte a los <a class='text-primary' href='https://discord.com/terms' target='_blank'>Términos de servicio de Discord</a>. El no hacerlo hará que te expulsemos de Re-Volt America."
@@ -220,7 +220,7 @@ es-CL:
         term: "(1) RE:"
         precision: "Solicitar al anfitrión de una sala que reinicie la carrera en curso."
       2:
-        term: "(2) Speced:"
+        term: "(2) Especteado:"
         precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
@@ -246,18 +246,19 @@ es-CL:
       big-race: "Puntuación de carrera grande"
     car-ratings:
       title: "Car Ratings"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We used this multiplayer to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+      description: "En RVA, a cada auto se le asigna un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recopensar a quienes juegen con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula el puntaje en cada carrera con distintos multiplicadores:"
     desktop-parser:
-      title: "RVA Desktop Points Parser"
-      description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
+      title: "Calculadora de puntos de RVA de escritorio"
+      description: "La Calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en formato RVA cuando se le ingresa un session log proveniente de RVGL. A través de esta aplicación portable, permitimos que cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de que puedes observar tras calcular los puntos de una nuestras sesiones por tu cuenta:"
     downloads:
-      title: "Download RVA Points"
+      title: "Descargar RVA Points"
   #RVA strings
   rva:
     tracks:
       all-tracks: "Todas las pistas"
       season: "Temporadas"
       title: "Pistas de RVA"
+      no-tracks: "No tracks to display"
       format:
         title: "Formato"
         short-name:
@@ -275,16 +276,30 @@ es-CL:
           long: "Larga"
           extralong: "Extra larga"
           meters: "%{length} metros"
-        stock:
-          title: "Stock?"
-          true: "Sí"
-          false: "No"
       featured:
         description: "Esta pista estuvo en RVA %{season}"
       rotation:
         title: "Rotación de Re-Volt America"
       collection:
         title: "Colección de pistas de Re-Volt America"
+      edit:
+        title: "Editing Track"
+        season: "Season"
+        name: "Name"
+        short-name: "Short name"
+        difficulty: "Difficulty"
+        length: "Length (meters)"
+        folder-name: "Folder name"
+        error: "Track could not be saved"
+      import:
+        title: "Import Tracks"
+      controller:
+        create: "Track was successfully created."
+        update: "Track was successfully updated."
+        destroy: "Track was successfully destroyed."
+        import:
+          exists: "No tracks were created. Maybe they already exist?"
+          success: "Tracks successfully imported."
     cars:
       title: "Autos de RVA"
       ratings-link: "Car Ratings"
@@ -292,14 +307,37 @@ es-CL:
         speed: "Velocidad"
         acceleration: "Accel"
         weight: "Peso"
-        multiplier: "Mult."
+        multiplier: "Multiplicador"
         category: "Categoría"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenido de Re-Volt original"
-        featured-session: "This car has been featured in RVA %{season}"
+        featured-session: "Este auto fue añadido en RVA %{season}"
       class-selector:
         title: "Clases"
+      shared:
+        placeholder: "Search..."
+        no-cars: "No cars to display"
+      edit:
+        title: "Editing Car"
+        button: "Edit Car"
+        season: "Season"
+        name: "Name"
+        folder-name: "Folder name"
+        update: "Update"
+        error: "Car could not be saved"
+      import:
+        title: "Import Cars"
+      controller:
+        create: "Car was successfully created."
+        update: "Car was successfully updated"
+        destroy: "Car was successfully destroyed."
+        import:
+          exists: "No cars were created. Maybe they already exist?"
+          success: "Cars successfully imported."
+    shared:
+      stock:
+        title: "Stock"
   #Assets page
   assets:
     title: "LOGOS Y USO"
@@ -332,18 +370,31 @@ es-CL:
     title: "Temporadas de RVA"
     explanation:
       title: "¿Qué son las temporadas de RVA?"
-      description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
+      description: "En RVA, seguimos un formato de Temporadas para las carreras en línea. Cada Temporada consiste en 6 Rankings, y cada Ranking consta de 28 Sesiones, 18 de las cuales son carreras individuales y los otros 10 son carreras en equipos. Los jugadores obtienen puntos tras cada carrera."
     buttons:
-      current-season: "Current Season"
-      learn-more: "Learn More"
+      current-season: "Temporada actual"
+      learn-more: "Más información"
     bottom:
       title: "Todas las temporadas"
       present: "Presente"
+    edit:
+      title: "Editing Season"
+      name: "Name"
+      start-date: "Start date"
+      end-date: "End date"
+      error: "Season could not be saved"
+    create:
+      title: "Create Season"
+      error: "prohibited this season from being saved"
+    controller:
+      create: "Season was successfully created."
+      update: "Season was successfully updated."
+      destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
     title: "Ranking %{number}"
-    title2: "Leaderboards"
-    small: "%{count} sessions played"
+    title2: "Tablas de clasificación"
+    small: "%{count} Sesiones jugadas"
     table:
       country: "País"
       racer: "Corredor"
@@ -355,13 +406,46 @@ es-CL:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    stats:
+      title: "Global Stats"
+      sorted: "Sorted by:"
+      table:
+        wins: "Wins"
+        podiums: "Podiums"
+        win-ratio: "Win Ratio"
+        average-pos: "Average Pos"
+        race-count: "Race Count"
+        obtained-points: "Obtained Points"
+        official-score: "Official Score"
+    controller:
+      create: "Ranking was successfully created."
+      update: "Ranking was successfully updated."
+      delete: "Ranking was successfully deleted."
     sessions:
       title: "Sesiones"
       no-sessions: "No hay sesiones para mostrar :("
+      edit:
+        title: "Editing Session"
+        host: "Host"
+        version: "Version"
+        physics: "Physics"
+        protocol: "Protocol"
+        number: "Number"
+        date: "Date"
+        update: "Update Session"
+        error: "Session could not be saved"
+      upload:
+        title: "Upload Session"
+      controller:
+        create: "Session was successfully created."
+        update: "Session was successfully updated."
+        delete: "Session was successfully deleted."
+        import:
+          success: "Session was successfully imported."
     results:
       no-team-results: "No hay resultados por equipos para mostrar"
     nav:
-      singles: "Singles"
+      singles: "Individuales"
       teams: "Equipos"
     admin:
       season:
@@ -371,13 +455,13 @@ es-CL:
           button: "Eliminar temporada"
           warning:
             title: "¡Advertencia!"
-            body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
+            body: "¡Eliminar una temporada borrará PERMANENTAMENTE todos sus rankings, sesiones, autos y pistas! Esta acción es irreversible. "
             close: "Cerrar"
             delete-season: "Borrar temporada"
   #Development logs
   repositories:
     title: "Revisiones"
-    small: "Latest git commits in our organization"
+    small: "Últimos commits de git en nuestra organización"
     new-button: "Nuevo"
     repository: "Repositorio"
     table:
@@ -386,9 +470,22 @@ es-CL:
       author: "Autor"
       description: "Descripción"
       when: "Cuándo"
+      ago: "ago"
+    new:
+      title: "New Repository"
+      placeholder:
+        title: "Title"
+        description: "Description"
+        namespace: "Namespace"
+        branch: "branch"
+      create: "Create"
+    controller:
+      create: "Repository was successfully created."
+      update: "Repository was successfully updated."
+      destroy: "Repository was successfully destroyed."
   #RVA results page
   results:
-    title: "%{category} Races (Session %{number})"
+    title: "%{category} Carreras (Sesión %{number})"
     version: "Versión: %{version}"
     connection: "Conexión: %{protocol} (Servidor)"
     mode: "Modo: %{physics}"
@@ -420,23 +517,48 @@ es-CL:
         not-found: "Pista no encontrada"
   #Teams page
   teams:
-    title: "RVA Teams"
-    no-teams: "No teams to display"
+    title: "Equipos de RVA"
+    no-teams: "No hay equipos que mostrar"
     global-points:
-      title: "Global Team Points"
+      title: "Puntos de equipos globales"
     team:
       leader: "Líder"
       members: "Miembros"
+    table:
+      name: "Name"
+      country: "Country"
+      role:
+        title: "Role"
+        leader: "Leader"
+        member: "Member"
+    edit:
+      title: "Editing Team"
+      name: "Name"
+      short-name: "Short name"
+      color: "Color"
+      team-img: "Team image"
+      leader: "Leader"
+      add-member: "Add Member"
+      edit-team: "Edit Team"
+      create: "Create Team"
+      error: "Team could not be saved"
+    new:
+      title: "New Team"
+    controller:
+      create: "Team was successfully created."
+      update: "Team was successfully updated."
+      destroy: "Team was successfully destroyed."
+      add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
     stats:
       title: "Estadísticas"
       rank:
-        title: "rank"
+        title: "clasificación"
         tooltip: "Posición en el ranking actual"
       race-stats:
-        title: "Race Stats"
-        win-rate: "win rate"
+        title: "Estadísticas de carrera"
+        win-rate: "porcentaje de victorias"
         sessions: "sesiones"
         races: "carreras"
         win: "victoria"
@@ -451,32 +573,63 @@ es-CL:
         title: "Historial de sesiones"
       overall-stats:
         title: "Estadísticas generales"
-        session-win: "session win"
-        session-wins: "session wins"
-        session-podium: "session podium"
-        session-podiums: "session podiums"
-        session-winrate: "session win rate"
-        obtained-point: "obtained point"
-        obtained-points: "obtained points"
-        official-score: "official score"
-        average-position: "average position"
-        participation: "participation rate"
+        session-win: "sesión ganada"
+        session-wins: "sesiones ganadas"
+        session-podium: "podio en sesión"
+        session-podiums: "podios en sesión"
+        session-winrate: "porcentaje de sesiones ganadas"
+        obtained-point: "punto obtenido"
+        obtained-points: "puntos obtenidos"
+        official-score: "puntuación oficial"
+        average-position: "posición promedio"
+        participation: "porcentaje de participación"
     tabs:
       title: "General"
       stats: "Estadísticas"
-      admin: "Admin"
+      admin: "Administrador"
+    badges:
+      admin: "Administrator"
+      mod: "Mod"
+      organizer: "Organizer"
+    import:
+      title: "Import users"
+    controller:
+      update:
+        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
+        locale: "Language set to %{lang}"
+        success: "User successfully updated."
+      import:
+        exists: "No users were created. Maybe the file format is incorrect?"
+        success: "Users successfully imported."
   #Tournaments page
   tournaments:
     title: "Torneos anteriores"
-    new: "New"
+    no-tournaments: "No tournaments to display"
+    notice: "notice"
+    edit:
+      title: "Editing Tournament"
+      name: "Name"
+      date: "Date"
+      season: "Season"
+      banner: "Tournament banner"
+      format: "Format"
+      save: "Save Tournament"
+      error: "prohibited this tournament from being saved:"
+    new:
+      title: "New Tournament"
+      button: "New Tournament"
+    controller:
+      create: "Tournament was successfully created."
+      update: "Tournament was successfully updated."
+      destroy: "Tournament was successfully destroyed."
   #Re-Volt car classes
   classes:
     rookie: "Novato"
     amateur: "Amateur"
-    advanced: "Advanced"
+    advanced: "Avanzado"
     semi-pro: "Semi-Pro"
     pro: "Pro"
-    super-pro: "Super-Pro"
+    super-pro: "Súper-Pro"
     clockwork: "Clockwork"
     random: "Random"
   #Car metrics
@@ -487,7 +640,7 @@ es-CL:
     ms2: "ms²"
     weight: "Peso"
     kg: "Kg"
-    multiplier: "Multiplicador"
+    multiplier: "Mult."
   #Devise
   activerecord:
     attributes:
@@ -575,7 +728,7 @@ es-CL:
         new_password: "Contraseña nueva"
       new:
         forgot_your_password: "¿Has olvidado tu contraseña?"
-        send_me_reset_password_instructions: "Send me reset password instructions"
+        send_me_reset_password_instructions: "Enviarme las instrucciones para reestablecer la contraseña"
       no_token: "No puedes acceder a esta página si no es a través de un enlace para restablecer tu contraseña. Si has llegado hasta aquí desde el correo para restablecer tu contraseña, por favor asegúrate de que la URL introducida esté completa."
       send_instructions: "En unos minutos recibirás un correo con instrucciones sobre cómo restablecer tu contraseña."
       send_paranoid_instructions: "Si tu correo existe en nuestra base de datos, recibirás en tu bandeja de entrada un correo con instrucciones sobre cómo restablecer tu contraseña."
@@ -644,8 +797,8 @@ es-CL:
         sign_in_with_provider: "Iniciar sesión con %{provider}"
         sign_up: "Registrarse"
       minimum_password_length:
-        one: "(%{count} character minimum)"
-        other: "(%{count} characters minimum)"
+        one: "(%{count} caracter como mínimo)"
+        other: "(%{count} caracteres como mínimo)"
     unlocks:
       new:
         resend_unlock_instructions: "Reenviar instrucciones para desbloquear la cuenta"
@@ -678,10 +831,33 @@ es-CL:
       message: "Error interno del servidor"
   #Misc strings
   misc:
-    create: "Create"
+    create: "Crear"
     download: "Descargar"
     search: "Buscar"
     and: "&"
+    bool:
+      true: "Yes"
+      false: "No"
+    prompt:
+      season: "Select Season"
+      ranking: "Select Ranking"
+      category: "Select Category"
+      leader: "Select Leader"
+      difficulty: "Select Difficulty"
+    submit:
+      import: "Import"
+      update: "Update"
+    checkbox:
+      teams: "Teams"
+    button:
+      back: "Back"
+      new: "New"
+    controller:
+      import:
+        select: "You must select a CSV file."
+        upload: "You may only upload CSV files."
+        season: "You must select a Season."
+        category: "You must select a Category."
   #Kaminari
   helpers:
     page_entries_info:
