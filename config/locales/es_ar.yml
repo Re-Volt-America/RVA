@@ -79,8 +79,8 @@ es-AR:
         about-us-button: "Acerca de nosotros »"
       recent:
         title: "Fechas recientes"
-        races: "%{category} Carreras"
-        team-races: "%{category} Carreras por Equipos"
+        races: "Carreras %{category}"
+        team-races: "Carreras por Equipos %{category}"
         hosted-by: "Organizado por %{host}"
         all-sessions-button: "Más fechas"
         no-sessions: "N/A"
