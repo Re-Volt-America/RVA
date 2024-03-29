@@ -115,18 +115,18 @@ es-CL:
       download:
         title: "¿Cómo descargo Re-Volt?"
         recommended-way:
-          description-html: "Con este programa, podrás descargar y manejar contenido personalizado del juego con tan solo unos clicks. Utilice el siguiente enlace para descargar:  <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'> Re-Volt Launcher</a>. <p>Cuando abras el Launcher por primera vez, podrás selecionar la carpeta en donde se instalará el juego, además de la configuración del juego predeterminada. Para esto le recomendamos que seleccione el preset \"Original\".</p>"
+          description-html: "Con este programa, podrás descargar y manejar contenido personalizado del juego con tan solo unos clicks. Haz clic en <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a> para descargarlo. <p>Cuando abras el Launcher por primera vez, podrás seleccionar la carpeta en donde se instalará el juego, además de la configuración del juego predeterminada. Para esto le recomendamos que seleccione el preset \"Original\".</p>"
         classic-way:
-          description-html: "Entra al siguiente <a href='https://re-volt.io/downloads/game' target='_blank'>enlace</a> y elige la versión del juego correspondiente con tu sistema operativo (Windows, Linux o macOS). <p>Al finalizar, descomprime el archivo en una carpeta de tu elección e inicia RVGL para empezar a jugar.</p>"
+          description-html: "Entra a <a href='https://re-volt.io/downloads/game' target='_blank'>Descargar RVGL</a> y elige la versión del juego correspondiente con tu sistema operativo (Windows, Linux o macOS). <p>Al finalizar, descomprime el archivo en una carpeta de tu elección e inicia RVGL para empezar a jugar.</p>"
         mobile-players:
-          description-html: "En el caso de Android, cuando intentes abrir el <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>instalador del juego</a>, deberás otorgar el permiso para instalar aplicaciones de origen externo. <p> Después de otorgar los permisos requeridos e instalar el juego, la aplicación puede ser iniciada normalmente desde el cajón de aplicaciones de tu celular</p>. RVGL no está disponible para iOS."
+          description-html: "En el caso de Android, cuando intentes abrir el <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>instalador del juego</a>, deberás otorgar el permiso para instalar aplicaciones de origen externo. <p>Después de otorgar los permisos requeridos e instalar el juego, la aplicación puede ser iniciada normalmente desde el cajón de aplicaciones de tu celular.</p> <p>RVGL no está disponible para iOS."
         steam-revolt:
           title: "Re-Volt de Steam"
-          description-html: "La versión de Steam de Re-volt no es compatible para jugar carreras en línea, dado que es una versión obsoleta. Por esto y muchas otras rasones nosotros <b>no</b> recomendamos su compra y tampoco organizaremos eventos en ella."
+          description-html: "La versión de Steam de Re-Volt no es compatible para jugar carreras en línea, dado que es una versión obsoleta. Por este y muchos otros motivos, nosotros <b>no recomendamos</b> su compra ni tampoco organizaremos eventos en ella."
       install:
-        title: "¿Cómo instalo los paquetes de RVA?"
+        title: "¿Cómo instalo los Packs de RVA?"
         recommended-way:
-          description-html: "En la pestaña Packs revisa las opciones rva_cars y rva_tracks al final de la lista, luego clickea el botón Instalar paquetes en la esquina inferior derecha para comenzar la descarga e instalación."
+          description-html: "En la pestaña \"Packs\" revisa las opciones rva_cars y rva_tracks al final de la lista, luego presiona el botón \"Install Packages\" en la esquina inferior derecha para comenzar la descarga e instalación."
         classic-way:
           description-html: "Entra al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> y descarga el pack de autos de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime los packs descargados ahí.</p>"
         mobile-players:
