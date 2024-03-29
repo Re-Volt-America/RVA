@@ -194,7 +194,6 @@ en:
         classic-way: "Classic way"
         mobile-players: "Mobile Players"
 
-
   # Rules page
   rules:
     title: "Rules"
@@ -333,6 +332,7 @@ en:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
 
+    # RVA Cars
     cars:
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
@@ -427,7 +427,6 @@ en:
       create: "Season was successfully created."
       update: "Season was successfully updated."
       destroy: "Season was successfully deleted."
-
 
   # Rankings page
   rankings:
@@ -647,7 +646,6 @@ en:
         exists: "No users were created. Maybe the file format is incorrect?"
         success: "Users successfully imported."
 
-
   # Tournaments page
   tournaments:
     title: "Past Tournaments"
@@ -669,7 +667,6 @@ en:
       create: "Tournament was successfully created."
       update: "Tournament was successfully updated."
       destroy: "Tournament was successfully destroyed."
-
 
   # Re-Volt car classes
   classes:
