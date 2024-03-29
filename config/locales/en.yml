@@ -157,7 +157,7 @@ en:
                              is in the internal memory.</p>"
       play-online:
         title: "How can I play online?"
-        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on
+        description-html: "In Re-Volt America, we host racing sessions daily at 00:00 UTC, and they are all announced via Discord, on
                            a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
           title: "Keep this in mind"
