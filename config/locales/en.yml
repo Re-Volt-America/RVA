@@ -487,7 +487,7 @@ en:
           success: "Session was successfully imported."
 
     results:
-      no-team-results: "No team results to disiplay"
+      no-team-results: "No team results to display"
     nav:
       singles: "Singles"
       teams: "Teams"
