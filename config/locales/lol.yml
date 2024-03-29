@@ -425,7 +425,7 @@ lol:
       title: "Sesshuns"
       no-sessions: "No sesshunz 2 show U_U"
       edit:
-        title: "Editing Session"
+        title: "Editin Sesshun"
         host: "Host"
         version: "Vurshun"
         physics: "harder math"
@@ -839,8 +839,8 @@ lol:
       true: "Ys"
       false: "Nahhh"
     prompt:
-      season: "Select Season"
-      ranking: "Select Ranking"
+      season: "Cwooz Sesun"
+      ranking: "Chwse Rank"
       category: "Cwos KATegury"
       leader: "Cwooz Hedkitteh"
       difficulty: "Cwoos hardinezz"
