@@ -49,6 +49,7 @@ es:
       logs: "Registros de desarrollo"
       bugs: "Reportar un bug"
       sponsor: "Patrocinar"
+      faq: "Frequently Asked Questions"
     trademark:
       title: "Marca comercial"
       assets: "Recursos"
@@ -133,7 +134,7 @@ es:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "¿Cómo puedo jugar en línea?"
-        description-html: "En Re-Volt America, organizamos sesiones de carreras diarias a las 23:00 UTC, y todas se anuncian vía Discord, en un canal llamado \"#lobby-va\". <a href='play'>Aquí</a> puedes ver la cuenta regresiva para la próxima sesión."
+        description-html: "In Re-Volt America, we host racing sessions daily at 00:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
         reminder:
           title: "Ten esto en cuenta"
           li-1: "Antes de unirte a las partidas, debes instalar el Pack de RVA, Revisa la casilla de Preguntas frecuentes para mayor información."
@@ -149,7 +150,11 @@ es:
           description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
         android:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
-          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+          li-2-html: |
+            Copy and paste the following command inside the app:<br/><br/>
+            <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby IP -pass password"</code><br/><br/>
+            Replace the IP and password accordingly before pressing Enter, as shown in the screenshot;
+            if the game doesn't open up immediately, close the app from the notifications and try again, you may have copied something wrong.
       rankings:
         title: "How do rankings and points work?"
         seasons:
@@ -300,6 +305,7 @@ es:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+    #RVA Cars
     cars:
       title: "Autos de RVA"
       ratings-link: "Clasificación de autos"
@@ -443,7 +449,7 @@ es:
         import:
           success: "Session was successfully imported."
     results:
-      no-team-results: "No hay resultados de equipo por mostrar"
+      no-team-results: "No team results to display"
     nav:
       singles: "Individuales"
       teams: "Equipos"
