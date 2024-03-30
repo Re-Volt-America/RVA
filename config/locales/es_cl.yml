@@ -49,6 +49,7 @@ es-CL:
       logs: "Registros de desarrollo"
       bugs: "Reportar un bug"
       sponsor: "Patrocinar"
+      faq: "Preguntas frecuentes"
     trademark:
       title: "Marca comercial"
       assets: "Recursos"
@@ -115,11 +116,11 @@ es-CL:
       download:
         title: "¿Cómo descargo Re-Volt?"
         recommended-way:
-          description-html: "Con este programa, podrás descargar y manejar contenido personalizado del juego con tan solo unos clicks. Haz clic en <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a> para descargarlo. <p>Cuando abras el Launcher por primera vez, podrás seleccionar la carpeta en donde se instalará el juego, además de la configuración del juego predeterminada. Para esto le recomendamos que seleccione el preset \"Original\".</p>"
+          description-html: "Con <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>RVGL Launcher</a>, podrás descargar y manejar todo el contenido personalizado del juego con tan solo unos clicks. <p>Cuando abras el Launcher por primera vez, podrás seleccionar la carpeta en donde se instalará el juego, además de la configuración del juego predeterminada, nosotros recomendamos que seleccione el preset \"Original\" y en la siguiente pregunta explicaremos cómo instalar nuestros packs de contenido.</p>"
         classic-way:
           description-html: "Entra a <a href='https://re-volt.io/downloads/game' target='_blank'>Descargar RVGL</a> y elige la versión del juego correspondiente con tu sistema operativo (Windows, Linux o macOS). <p>Al finalizar, descomprime el archivo en una carpeta de tu elección e inicia RVGL para empezar a jugar.</p>"
         mobile-players:
-          description-html: "En el caso de Android, cuando intentes abrir el <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>instalador del juego</a>, deberás otorgar el permiso para instalar aplicaciones de origen externo. <p>Después de otorgar los permisos requeridos e instalar el juego, la aplicación puede ser iniciada normalmente desde el cajón de aplicaciones de tu celular.</p> <p>RVGL no está disponible para iOS."
+          description-html: "En celulares Android, cuando intentes abrir el <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>instalador del juego</a>, deberás otorgar el permiso para instalar aplicaciones de origen externo. <p>Después de otorgar los permisos requeridos e instalar el juego, la aplicación puede ser iniciada normalmente desde el cajón de aplicaciones de tu celular; la primera vez puede tardar un poco en abrir el juego.</p> <p>RVGL no está disponible para iOS."
         steam-revolt:
           title: "Re-Volt de Steam"
           description-html: "La versión de Steam de Re-Volt no es compatible para jugar carreras en línea, dado que es una versión obsoleta. Por este y muchos otros motivos, nosotros <b>no recomendamos</b> su compra ni tampoco organizaremos eventos en ella."
@@ -128,20 +129,20 @@ es-CL:
         recommended-way:
           description-html: "En la pestaña \"Packs\" revisa las opciones rva_cars y rva_tracks al final de la lista, luego presiona el botón \"Install Packages\" en la esquina inferior derecha para comenzar la descarga e instalación."
         classic-way:
-          description-html: "Entra al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> y descarga el pack de autos de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime los packs descargados ahí.</p>"
+          description-html: "En la página de <a href='downloads' target='_blank' rel='noopener noreferrer'>Descargas</a> encontrarás el pack de coches de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime ahí mismo los packs descargados.</p>"
         mobile-players:
           description-html: "Sigue los pasos del método clásico, solo que en Android necesitas instalar un explorador de archivos capaz de descomprimir archivos ZIP (en la Play Store puedes encontrar aplicaciones como ZArchiver o RAR si tu teléfono no tiene instalada una). <p>Dentro del explorador de archivos, ve a la carpeta Download y descomprime los packs en la carpeta RVGL que encontrarás en la memoria interna.</p>"
       play-online:
         title: "¿Cómo puedo jugar online?"
-        description-html: "En Re-Volt America, organizamos sesiones de carreras diarias a las 23:00 UTC, y todas se anuncian vía Discord, en un canal llamado \"#lobby-va\". <a href='play'>Aquí</a> puedes ver la cuenta regresiva para la próxima sesión."
+        description-html: "En Re-Volt America organizamos sesiones de carreras todos los días a las 00:00 UTC, se anuncian por Discord en el canal #lobby-rva. <a href='play'>Aquí</a> puedes ver la cuenta regresiva para la próxima sesión."
         reminder:
           title: "Ten en cuenta lo siguiente"
           li-1: "Antes de unirte a las partidas, debes instalar el Pack de RVA, Revisa la casilla de Preguntas frecuentes para mayor información."
-          li-2-html: "Cuando haya una sala abierta para unirse y entrar para jugar un mensaje aparecerá en #lobby-rva, </br> por ejemplo: \"<b>¡Lobby is UP! - IP: gforce-rva. dns.net</b>\""
+          li-2-html: "Cuando haya una sala abierta para unirse y entrar para jugar, habrá un anuncio en #lobby-rva, </br> por ejemplo: \"<b>Lobby is UP! - IP: mkko.rv.gl</b>\""
           li-3: "Abre RVGL, ve a Multijugador >> Unirse al Juego, copia y pega la dirección IP. Este es un ejemplo de IP, cada organizador tendrá una dirección IP diferente."
       password-sessions:
         title: "¿Cómo unirse a una sesión con contraseña?"
-        description: "Escriba los siguientes parámetros de lanzamiento (No escriba los paréntesis [])."
+        description: "Escriba los siguientes parámetros de lanzamiento (No copie los corchetes [ ] )."
         launcher:
           description: "Escribe la IP y la contraseña en el campo de parámetros de lanzamiento de la siguiente manera, por ejemplo:"
         shortcut:
@@ -149,7 +150,10 @@ es-CL:
           description: "Selecciona el acceso directo de RVGL y presiona Alt+Enter, al final del campo \"Destino\" escribe los parámetros tal como aparece en la imagen a continuación."
         android:
           li-1-html: "Descarga e instala \"<b>Termux</b>\", si no puedes encontrarlo en Play Store, usa este enlace <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>(F-Droid)</a> para descargarlo."
-          li-2-html: "Copia y pega dentro de la aplicación este comando; <code> am start -n com.rvgl.rvgl/. VGLActivity -e args \"-lobby &lt;ip&gt -pass &lt;password&gt </code> debes escribir la IP y la contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla; si el juego no se abre inmediatamente, cierra la aplicación de las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal."
+          li-2-html: |
+            Copia y pega dentro de Termux este comando:<br/><br/>
+            <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby IP -pass password"</code><br/><br/>
+            Debes escribir la IP y la contraseña antes de presionar Enter tal y como se ve en la captura de pantalla. Si el juego no se abre inmediatamente, cierra la aplicación desde las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal.
       rankings:
         title: "¿Cómo funcionan los rankings y los puntos?"
         seasons:
@@ -157,8 +161,8 @@ es-CL:
           description: "Cada una de nuestras temporadas consta de 6 rankings, y cada ranking consta de 18 sesiones individuales y 10 sesiones de equipo. De esta manera, cada clasificación tendrá una duración de un mes y cada temporada durará aproximadamente 6 meses. Una sesión anunciada en Discord en el canal #lobby-rva consiste enjugar las 20 pistas asignadas para el día con la categoría correspondiente. El horario semanal que determina las carreras a jugar cada día se anuncian cada lunes y se ve de la siguiente manera:"
         scoring:
           title: "Puntaje en una sesión"
-          description-1: "Al final de cada sesión los resultados obtenidos por cada jugador se publican en el canal #rank-global, en RVA tenemos una forma única de determinar los puntos donde el Multiplicador del Auto, Los puntos acumulados, la posición promedio y las carreras completadas tienen influencia."
-          description-2-html: "Puedes ver en detalle como los puntos son calculados en una sesión en el siguiente <a href='points', rel='noopener noreferrer'>link</a>."
+          description-1: "Después de completar una sesión, los resultados obtenidos son publicados en el canal #rank-global. En RVA tenemos una forma única para determinar el puntaje obtenido de cada jugador teniendo en cuenta el multiplicador del coche, el puntaje acumulado, la posición promedio y las carreras completadas."
+          description-2-html: "En <a href='points', rel='noopener noreferrer'>Sistema de puntos</a> puedes leer acerca de cómo se calculan los puntos obtenidos en una sesión."
           list:
             li-1: "El Multiplicador del Auto asigna a cada coche un valor que determina su dificultad, cuanto mayor sea su número de Multiplicador, más puntos obtendrás tras cada carrera, pero no te ayudará si terminas último intentando conducir los coches más difíciles."
             li-2: "Los puntos acumulados son la suma de los puntos obtenidos de acuerdo a su posición final en cada carrera. Se otorgarán más puntos en una sesión si comienza con 10 o más jugadores."
@@ -221,7 +225,7 @@ es-CL:
         precision: "Solicitar al anfitrión de una sala que reinicie la carrera en curso."
       2:
         term: "(2) Especteado:"
-        precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
+        precision: "Cuando el anfitrión de la sala fuerza a un jugador al modo espectador. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de privacidad"
@@ -241,15 +245,15 @@ es-CL:
     title: "Sistema de puntos de RVA"
     introduction:
       title: "Introducción"
-      description: "En Re-Volt America, los jugadores ganan puntos por cada carrera que consigan terminar. La cantidad de puntos obtenidos por cada jugar dependerá de dos cosas: su posición final en la carrera y la cantidad de jugadores que terminen la carrera. Si una carrera tiene 10 o más jugadores, entonces se considera una carrera \"grande\"."
-      normal-race: "Puntuación de carrera normal"
-      big-race: "Puntuación de carrera grande"
+      description: "En Re-Volt America, los jugadores ganan puntos por cada carrera completada. La cantidad de puntos obtenidos por cada jugador dependerá de dos factores: su posición final en la carrera y la cantidad de jugadores que terminen la carrera. Si una carrera tiene 10 o más jugadores, entonces la carrera se considera como \"grande\"."
+      normal-race: "Puntuación en una carrera normal"
+      big-race: "Puntuación en una carrera grande"
     car-ratings:
-      title: "Clases de los coches"
-      description: "En RVA, a cada auto se le asigna un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recopensar a quienes juegen con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula el puntaje en cada carrera con distintos multiplicadores:"
+      title: "Multiplicadores en los coches"
+      description: "En RVA, cada coche tiene un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recopensar a quienes juegen con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula la puntuación de una carrera con distintos multiplicadores:"
     desktop-parser:
-      title: "Calculadora de puntos de RVA de escritorio"
-      description: "La Calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en formato RVA cuando se le ingresa un session log proveniente de RVGL. A través de esta aplicación portable, permitimos que cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de que puedes observar tras calcular los puntos de una nuestras sesiones por tu cuenta:"
+      title: "RVA Points: Calculadora de resultados"
+      description: "RVA Points es una aplicación de escritorio diseñada para calcular la tabla de resultados en el formato RVA a partir del archivo de resultados de una sesión (session log) generado por RVGL. Con esta aplicación portable, cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de como se vería la tabla de resultados de una sesión generada por tu cuenta:"
     downloads:
       title: "Descargar RVA Points"
   #RVA strings
@@ -277,7 +281,7 @@ es-CL:
           extralong: "Extra larga"
           meters: "%{length} metros"
       featured:
-        description: "Esta pista estuvo en RVA %{season}"
+        description: "Esta pista ha estado en RVA desde %{season}"
       rotation:
         title: "Rotación de Re-Volt America"
       collection:
@@ -296,23 +300,24 @@ es-CL:
       controller:
         create: "La pista se ha creado correctamente."
         update: "La pista se ha actualizado correctamente."
-        destroy: "La pista fue destruida con éxito."
+        destroy: "Pista eliminada correctamente."
         import:
           exists: "No se han creado pistas, puede ser que ya existan."
           success: "Pistas importadas correctamente."
+    #RVA Cars
     cars:
-      title: "Autos de RVA"
+      title: "Coches de RVA"
       ratings-link: "Clases de los coches"
       features:
         speed: "Velocidad"
-        acceleration: "Accel"
+        acceleration: "Aceleración"
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoría"
         stock: "Stock"
         stock-tooltip:
-          tooltip: "Contenido de Re-Volt original"
-        featured-session: "Este auto fue añadido en RVA %{season}"
+          tooltip: "Contenido original de Re-Volt"
+        featured-session: "Este coche ha estado en RVA desde %{season}"
       class-selector:
         title: "Clases"
       shared:
@@ -331,7 +336,7 @@ es-CL:
       controller:
         create: "El coche se ha creado correctamente."
         update: "El coche se ha actualizado correctamente"
-        destroy: "El coche fue destruido con éxito."
+        destroy: "Coche eliminado correctamente."
         import:
           exists: "No se han creado coches, puede ser que ya existan."
           success: "Coches correctamente importados."
@@ -389,15 +394,15 @@ es-CL:
     controller:
       create: "La temporada se ha creado correctamente."
       update: "La temporada se ha actualizado correctamente."
-      destroy: "La temporada se ha eliminado correctamente."
+      destroy: "Temporada eliminada correctamente."
   #Rankings page
   rankings:
     title: "Ranking %{number}"
     title2: "Tablas de clasificación"
-    small: "%{count} Sesiones jugadas"
+    small: "%{count} sesiones jugadas"
     table:
       country: "País"
-      racer: "Corredor"
+      racer: "Jugador"
       pp: "PP"
       pa: "PA"
       mp: "MP"
@@ -412,11 +417,11 @@ es-CL:
       table:
         wins: "Victorias"
         podiums: "Podios"
-        win-ratio: "Ratio de victorias"
-        average-pos: "Pos. Promedio"
-        race-count: "Núm. Carreras"
+        win-ratio: "Ratio Victorias"
+        average-pos: "Posición Promedio"
+        race-count: "Carreras Completadas"
         obtained-points: "Puntos Obtenidos"
-        official-score: "Puntos Totales"
+        official-score: "Puntaje Oficial"
     controller:
       create: "El ranking se ha creado correctamente."
       update: "El ranking se ha actualizado correctamente."
@@ -603,25 +608,25 @@ es-CL:
         success: "Usuarios importados correctamente."
   #Tournaments page
   tournaments:
-    title: "Copas anteriores"
-    no-tournaments: "No hay copas para mostrar"
+    title: "Torneos anteriores"
+    no-tournaments: "No hay torneos para mostrar"
     notice: "aviso"
     edit:
-      title: "Editando Copa"
+      title: "Editando Torneo"
       name: "Nombre"
       date: "Fecha"
       season: "Temporada"
-      banner: "Encabezado de la copa"
+      banner: "Encabezado del torneo"
       format: "Formato"
-      save: "Guardar Copa"
-      error: "no se pudo guardar esta copa:"
+      save: "Guardar Torneo"
+      error: "no se pudo guardar este torneo:"
     new:
-      title: "Nueva Copa"
-      button: "Nueva Copa"
+      title: "Nuevo Torneo"
+      button: "Nuevo Torneo"
     controller:
-      create: "La copa se ha creado correctamente."
-      update: "La copa se ha actualizado correctamente."
-      destroy: "Copa destruida correctamente."
+      create: "El torneo se ha creado correctamente."
+      update: "El torneo se ha actualizado correctamente."
+      destroy: "Torneo eliminado correctamente."
   #Re-Volt car classes
   classes:
     rookie: "Novato"
