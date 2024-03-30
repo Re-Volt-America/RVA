@@ -164,9 +164,9 @@ es-CL:
           description-1: "Después de completar una sesión, los resultados obtenidos son publicados en el canal #rank-global. En RVA tenemos una forma única para determinar el puntaje obtenido de cada jugador teniendo en cuenta el multiplicador del coche, el puntaje acumulado, la posición promedio y las carreras completadas."
           description-2-html: "En <a href='points', rel='noopener noreferrer'>Sistema de puntos</a> puedes leer acerca de cómo se calculan los puntos obtenidos en una sesión."
           list:
-            li-1: "El Multiplicador del Auto asigna a cada coche un valor que determina su dificultad, cuanto mayor sea su número de Multiplicador, más puntos obtendrás tras cada carrera, pero no te ayudará si terminas último intentando conducir los coches más difíciles."
-            li-2: "Los puntos acumulados son la suma de los puntos obtenidos de acuerdo a su posición final en cada carrera. Se otorgarán más puntos en una sesión si comienza con 10 o más jugadores."
-            li-3: " Posición promedio y carreras completadas afectan los puntos acumulados en una sesión, terminar en las últimas posiciones o completar pocas carreras reducirá la cantidad de puntos que obtendrás en una sesión."
+            li-1: "El Multiplicador se asigna a cada coche con un valor que determina su dificultad. Cuanto mayor sea su número de Multiplicador, más puntos obtendrás tras cada carrera, pero no te ayudará si terminas último constantemente intentando conducir los coches más difíciles."
+            li-2: "Los Puntos Acumulados (PA) son la suma de los puntos obtenidos de acuerdo a su posición final en cada carrera. Se otorgarán más puntos en una sesión si esta comienza con 10 o más jugadores."
+            li-3: " Las Carreras Completadas (CC) y la Posición Promedio (PP) afectan los puntos acumulados en una sesión, completar pocas carreras o terminar en las últimas posiciones reducirá la cantidad de puntos que obtendrás en una sesión."
       generics:
         recommended-way: "Vía recomendada: RVGL Launcher"
         classic-way: "Modo clásico"
