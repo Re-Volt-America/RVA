@@ -89,7 +89,7 @@ pt:
       title: "Sobre Re-Volt América"
       description: "A maior comunidade de Re-Volt que encontrará no continente americano. Junte-se às nossas sessões, compita em nossas temporadas e conheça outros jogadores de todo o mundo!"
       subtitle: "Quem somos"
-      text1_html: "Fundada em 2017, Re-Volt América (RVA) é a comunidade americana do popular jogo de corrida de carros de controle remoto <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
+      text1_html: "Fundada em 2017, Re-Volt América (RVA) é a comunidade americana do popular jogo de corrida de carros de controle remoto <a href='https://pt.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
       text2_html: "Para jogar online, utilizamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, uma versão reescrita multi-plataformas / port do Re-Volt que é executada em uma grande variedade de plataformas. Esta versão do jogo é também conhecida por estender a experiência original do jogo, com suporte para conteúdo personalizado e feito pela comunidade, como pistas e carros."
       text3_html: "No RVA, organizamos uma série de sessões online em que jogadores de todo o mundo (principalmente do continente americano) competem uns contra os outros. marque pontos em corridas e entre no ranking oficial do Re-Volt América."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Baixe RVGL</a>, instale o <a href='%{downloads_path}'>Pacote RVA</a>, e <a href='%{play_path}'>Jogue</a> conosco!"
