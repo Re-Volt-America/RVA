@@ -594,7 +594,7 @@ es-CL:
       admin: "Administrador"
     badges:
       admin: "Administrador"
-      mod: "Moderador"
+      mod: "Moderator"
       organizer: "Organizador"
     import:
       title: "Importar usuarios"
