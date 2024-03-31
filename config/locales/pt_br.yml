@@ -592,7 +592,7 @@ pt:
       admin: "Admin"
     badges:
       admin: "Administrator"
-      mod: "Mod"
+      mod: "Moderator"
       organizer: "Organizer"
     import:
       title: "Import users"
