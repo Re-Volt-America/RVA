@@ -20,7 +20,7 @@ es:
         upload-session: "Subir sesión"
         create-season: "Crear Temporada"
         import-tracks: "Importar pistas"
-        import-cars: "Importar autos"
+        import-cars: "Importar coches"
         new-team: "Nuevo equipo"
         new-tournament: "Nuevo torneo"
         import-users: "Importar usuarios"
@@ -35,7 +35,7 @@ es:
     ranking-n: "Clasificación %{n}"
     session-n: "Sesión %{n}"
     tracks: "Pistas"
-    cars: "Autos"
+    cars: "Coches"
   #Footer
   footer:
     policies:
@@ -49,7 +49,7 @@ es:
       logs: "Registros de desarrollo"
       bugs: "Reportar un bug"
       sponsor: "Patrocinar"
-      faq: "Frequently Asked Questions"
+      faq: "Preguntas Frecuentes"
     trademark:
       title: "Marca comercial"
       assets: "Recursos"
@@ -183,7 +183,7 @@ es:
       b:
         title: "B. Crear un nombre de usuario"
         1:
-          title: "Para jugar a Re-Volt debes elegir un nombre de usuario. Para ser indexado en las clasificaciones oficiales de RVA los jugadores deben elegir un nombre de usuario el cual se ajuste a las siguientes directrices:"
+          title: "Para jugar a Re-Volt debes elegir un nombre de usuario. Para ser indexado en las clasificaciones oficiales de RVA, los jugadores deben elegir un nombre de usuario el cual se ajuste a las siguientes directrices:"
           bullet1: "Tu nombre de usuario debe tener de 1 a 16 caracteres."
           bullet2: "Tu nombre de usuario puede contener cualquier carácter de la A a la Z (mayúscula y minúscula), números, guiones bajos y espacios en blanco."
           bullet3: "¡Tu nombre de usuario debe ser único! Si no estás seguro, puedes preguntarle al personal para ver si el nombre de usuario que quieres ya está siendo usado por otro jugador."
@@ -247,7 +247,7 @@ es:
       normal-race: "Puntuación de carrera normal"
       big-race: "Puntuación de gran carrera"
     car-ratings:
-      title: "Clasificación de autos"
+      title: "Clasificación de coches"
       description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
     desktop-parser:
       title: "Analizador de puntos de escritorio de RVA"
@@ -304,15 +304,15 @@ es:
           success: "Tracks successfully imported."
     #RVA Cars
     cars:
-      title: "Autos de RVA"
-      ratings-link: "Clasificación de autos"
+      title: "Coches de RVA"
+      ratings-link: "Clasificación de coches"
       features:
         speed: "Velocidad"
         acceleration: "Aceleración"
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoría"
-        stock: "Autos de Serie"
+        stock: "Coches de Serie"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"
         featured-session: "Este auto ha sido presentado en RVA %{season}"
