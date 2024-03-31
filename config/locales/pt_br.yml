@@ -286,9 +286,9 @@ pt:
         title: "Re-volt America - Coleção de Pistas"
       edit:
         title: "Editing Track"
-        season: "Season"
-        name: "Name"
-        short-name: "Short name"
+        season: "Temporada"
+        name: "Nome"
+        short-name: "Nome Abreviado"
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
@@ -324,8 +324,8 @@ pt:
       edit:
         title: "Editing Car"
         button: "Edit Car"
-        season: "Season"
-        name: "Name"
+        season: "Temporada"
+        name: "Nome"
         folder-name: "Folder name"
         update: "Update"
         error: "Car could not be saved"
@@ -382,7 +382,7 @@ pt:
       present: "Presente"
     edit:
       title: "Editing Season"
-      name: "Name"
+      name: "Nome"
       start-date: "Start date"
       end-date: "End date"
       error: "Season could not be saved"
@@ -528,7 +528,7 @@ pt:
       leader: "Líder"
       members: "Membros"
     table:
-      name: "Name"
+      name: "Nome"
       country: "Country"
       role:
         title: "Role"
@@ -536,8 +536,8 @@ pt:
         member: "Member"
     edit:
       title: "Editing Team"
-      name: "Name"
-      short-name: "Short name"
+      name: "Nome"
+      short-name: "Nome Abreviado"
       color: "Color"
       team-img: "Team image"
       leader: "Leader"
@@ -611,9 +611,9 @@ pt:
     notice: "notice"
     edit:
       title: "Editing Tournament"
-      name: "Name"
+      name: "Nome"
       date: "Date"
-      season: "Season"
+      season: "Temporada"
       banner: "Tournament banner"
       format: "Format"
       save: "Save Tournament"
