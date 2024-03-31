@@ -595,7 +595,7 @@ en-GB:
       admin: "Admin"
     badges:
       admin: "Administrator"
-      mod: "Mod"
+      mod: "Moderator"
       organizer: "Organiser"
     import:
       title: "Import users"
