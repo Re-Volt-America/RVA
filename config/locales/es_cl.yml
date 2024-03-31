@@ -49,6 +49,7 @@ es-CL:
       logs: "Registros de desarrollo"
       bugs: "Reportar un bug"
       sponsor: "Patrocinar"
+      faq: "Frequently Asked Questions"
     trademark:
       title: "Marca comercial"
       assets: "Recursos"
@@ -149,7 +150,8 @@ es-CL:
           description: "Selecciona el acceso directo de RVGL y presiona Alt+Enter, al final del campo \"Destino\" escribe los parámetros tal como aparece en la imagen a continuación."
         android:
           li-1-html: "Descarga e instala \"<b>Termux</b>\", si no puedes encontrarlo en Play Store, usa este enlace <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>(F-Droid)</a> para descargarlo."
-          li-2-html: "Copia y pega dentro de la aplicación este comando; <code> am start -n com.rvgl.rvgl/. VGLActivity -e args \"-lobby &lt;ip&gt -pass &lt;password&gt </code> debes escribir la IP y la contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla; si el juego no se abre inmediatamente, cierra la aplicación de las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal."
+          li-2-html: |
+            Copia y pega dentro de la aplicación este comando; <code> am start -n com.rvgl.rvgl/. VGLActivity -e args "-lobby &lt;ip&gt -pass &lt;password&gt </code> debes escribir la IP y la contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla; si el juego no se abre inmediatamente, cierra la aplicación de las notificaciones e inténtalo de nuevo, puede que hayas copiado algo mal.
       rankings:
         title: "¿Cómo funcionan los rankings y los puntos?"
         seasons:
@@ -300,6 +302,7 @@ es-CL:
         import:
           exists: "No se han creado pistas, puede ser que ya existan."
           success: "Pistas importadas correctamente."
+    #RVA Cars
     cars:
       title: "Autos de RVA"
       ratings-link: "Clases de los coches"
