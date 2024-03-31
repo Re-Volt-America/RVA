@@ -62,7 +62,6 @@ module SYS
     'English, UK' => :'en-GB',
     'Español' => :es,
     'Español, Argentina' => :'es-AR',
-    'Español, Bolivia' => :'es-BO',
     'Español, Chile' => :'es-CL',
     'Italiano' => :it,
     'LOLCAT' => :lol,
@@ -199,7 +198,7 @@ module RVA
     config.hosts << "staging.#{ORG::DOMAIN}"
     config.hosts << "production.#{ORG::DOMAIN}"
 
-    config.i18n.available_locales = [:en, :'en-GB', :es, :'es-AR', :'es-BO', :'es-CL', :it, :lol, :pt, :ko]
+    config.i18n.available_locales = [:en, :'en-GB', :es, :'es-AR', :'es-CL', :it, :lol, :pt, :ko]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
 
