@@ -49,6 +49,7 @@ lol:
       logs: "smart kitteh stooff"
       bugs: "SNITCH ON MICE"
       sponsor: "giev luv"
+      faq: "Kittehz askd dem all da taim"
     trademark:
       title: "our stuff"
       assets: "azzetz"
@@ -149,7 +150,8 @@ lol:
           description: "Press Alt+Enter in your RVGL shortcut, then at the end of Target field write the parameters as shown in the screenshot below."
         android:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
-          li-2-html: "Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong."
+          li-2-html: |
+            Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong.
       rankings:
         title: "How do rankz n pontz wok?"
         seasons:
@@ -300,6 +302,7 @@ lol:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+    #RVA Cars
     cars:
       title: "Teh RVA Carz"
       ratings-link: "Car gud or bad"
@@ -425,7 +428,7 @@ lol:
       title: "Sesshuns"
       no-sessions: "No sesshunz 2 show U_U"
       edit:
-        title: "Editing Session"
+        title: "Editin Sesshun"
         host: "Host"
         version: "Vurshun"
         physics: "harder math"
@@ -839,8 +842,8 @@ lol:
       true: "Ys"
       false: "Nahhh"
     prompt:
-      season: "Select Season"
-      ranking: "Select Ranking"
+      season: "Cwooz Sesun"
+      ranking: "Chwse Rank"
       category: "Cwos KATegury"
       leader: "Cwooz Hedkitteh"
       difficulty: "Cwoos hardinezz"
