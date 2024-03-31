@@ -49,6 +49,7 @@ es-AR:
       logs: "Registros de desarrollo"
       bugs: "Reportar un problema"
       sponsor: "Patrocinar"
+      faq: "Frequently Asked Questions"
     trademark:
       title: "Marca comercial"
       assets: "Recursos"
@@ -149,7 +150,8 @@ es-AR:
           description: "Presione Alt + Enter en tu acceso directo de RVGL, y luego al final de \"Iniciar en\" escriba los parámetros como se muestra en la siguiente captura de pantalla."
         android:
           li-1-html: "Descargá e instalá <b>Termux</b>, si no podés encontrar la aplicación en la Play Store, entonces usa este <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>enlace (F-Droid)</a> para descargarlo."
-          li-2-html: "Copiá y pegá dentro de la app este comando; <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args \"-lobby &lt;ip&gt  -pass &lt;password&gt </code>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo."
+          li-2-html: |
+            Copiá y pegá dentro de la app este comando; <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo.
       rankings:
         title: "¿Cómo funcionan los Rankings y los puntos?"
         seasons:
@@ -300,6 +302,7 @@ es-AR:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+    #RVA Cars
     cars:
       title: "Lista de autos de RVA"
       ratings-link: "Categorías"
