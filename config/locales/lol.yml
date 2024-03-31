@@ -332,7 +332,7 @@ lol:
       import:
         title: "Gif Kaz"
       controller:
-        create: "Car was successfully created."
+        create: "Kitty alr maed kaa."
         update: "Car was successfully updated"
         destroy: "Car was successfully destroyed."
         import:
@@ -383,8 +383,8 @@ lol:
     edit:
       title: "Edit Seasun"
       name: "Naem"
-      start-date: "Start date"
-      end-date: "End date"
+      start-date: "Staat deit"
+      end-date: "En deit"
       error: "Season could not be saved"
     create:
       title: "Create Season"
@@ -411,7 +411,7 @@ lol:
       sp: "SP"
     stats:
       title: "Wurld stez"
-      sorted: "Sorted by:"
+      sorted: "sotd bai:"
       table:
         wins: "Viktori royelz"
         podiums: "Almost win"
