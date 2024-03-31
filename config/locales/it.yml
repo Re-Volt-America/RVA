@@ -9,7 +9,7 @@ it:
       title: "Lega"
       leaderboard: "Classifica"
       point-system: "Sistema di punteggio"
-      teams: "Teams"
+      teams: "Squadra"
       tournaments: "Tornei"
     downloads: "Downloads"
     user:
@@ -88,7 +88,7 @@ it:
     about:
       title: "About Re-Volt America"
       description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-      subtitle: "Who we are"
+      subtitle: "Chi siamo"
       text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
       text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
@@ -291,7 +291,7 @@ it:
         short-name: "Short name"
         difficulty: "Difficulty"
         length: "Length (meters)"
-        folder-name: "Folder name"
+        folder-name: "Nome di cartella"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -319,15 +319,15 @@ it:
       class-selector:
         title: "Classi"
       shared:
-        placeholder: "Search..."
+        placeholder: "Cerca..."
         no-cars: "No cars to display"
       edit:
         title: "Editing Car"
         button: "Edit Car"
         season: "Season"
-        name: "Name"
-        folder-name: "Folder name"
-        update: "Update"
+        name: "Nome"
+        folder-name: "Nome di cartella"
+        update: "Aggiorna"
         error: "Car could not be saved"
       import:
         title: "Import Cars"
@@ -430,11 +430,11 @@ it:
       edit:
         title: "Editing Session"
         host: "Host"
-        version: "Version"
+        version: "Versione"
         physics: "Physics"
-        protocol: "Protocol"
-        number: "Number"
-        date: "Date"
+        protocol: "Protocollo"
+        number: "Numero"
+        date: "Data"
         update: "Update Session"
         error: "Session could not be saved"
       upload:
@@ -449,7 +449,7 @@ it:
       no-team-results: "No team results to disiplay"
     nav:
       singles: "Singles"
-      teams: "Teams"
+      teams: "Squadre"
     admin:
       season:
         edit:
@@ -459,7 +459,7 @@ it:
           warning:
             title: "Warning!"
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
+            close: "Chiudi"
             delete-season: "Delete Season"
   #Development logs
   repositories:
@@ -526,27 +526,27 @@ it:
       title: "Global Team Points"
     team:
       leader: "Leader"
-      members: "Members"
+      members: "Membri"
     table:
-      name: "Name"
+      name: "Nome"
       country: "Country"
       role:
-        title: "Role"
+        title: "Ruolo"
         leader: "Leader"
-        member: "Member"
+        member: "Membro"
     edit:
       title: "Editing Team"
-      name: "Name"
+      name: "Nome"
       short-name: "Short name"
-      color: "Color"
+      color: "Colore"
       team-img: "Team image"
-      leader: "Leader"
+      leader: "Capitano"
       add-member: "Add Member"
       edit-team: "Edit Team"
       create: "Create Team"
       error: "Team could not be saved"
     new:
-      title: "New Team"
+      title: "Nuova squadra"
     controller:
       create: "Team was successfully created."
       update: "Team was successfully updated."
@@ -599,7 +599,7 @@ it:
     controller:
       update:
         leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{lang}"
+        locale: "Lingua impostata su %{lang}"
         success: "User successfully updated."
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
@@ -772,8 +772,8 @@ it:
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
         current-password: "Current password"
-        update: "Update"
-        update-admin: "Update %{user}"
+        update: "Aggiorna"
+        update-admin: "Aggiorna %{user}"
       new:
         sign_up: "Registrati"
         username: "Re-Volt Username"
@@ -849,9 +849,9 @@ it:
       difficulty: "Select Difficulty"
     submit:
       import: "Import"
-      update: "Update"
+      update: "Aggiorna"
     checkbox:
-      teams: "Teams"
+      teams: "Squadre"
     button:
       back: "Back"
       new: "New"
