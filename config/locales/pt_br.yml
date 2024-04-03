@@ -9,7 +9,7 @@ pt:
       title: "Ligas"
       leaderboard: "Tabela de classificação"
       point-system: "Sistema de Pontos"
-      teams: "Times"
+      teams: "Equipes"
       tournaments: "Torneios"
     downloads: "Downloads"
     user:
@@ -21,7 +21,7 @@ pt:
         create-season: "Criar Temporada"
         import-tracks: "Importar Pistas"
         import-cars: "Importar Carros"
-        new-team: "Novo Time"
+        new-team: "Nova equipe"
         new-tournament: "Novo torneio"
         import-users: "Importar Usuários"
       log-out: "Sair"
@@ -81,7 +81,7 @@ pt:
       recent:
         title: "Sessões Recentes"
         races: "Corridas %{category}"
-        team-races: "Corridas em Times %{category}"
+        team-races: "Corridas em equipes %{category}"
         hosted-by: "Hosteado por %{host}"
         all-sessions-button: "Todas as sessões"
         no-sessions: "N"
@@ -418,38 +418,38 @@ pt:
         win-ratio: "Taxa de vitória"
         average-pos: "Posição média"
         race-count: "Contagem de corridas"
-        obtained-points: "Obtained Points"
-        official-score: "Official Score"
+        obtained-points: "Pontos obtidos"
+        official-score: "Pontuação Oficial"
     controller:
-      create: "Ranking was successfully created."
-      update: "Ranking was successfully updated."
-      delete: "Ranking was successfully deleted."
+      create: "Ranking criado com sucesso."
+      update: "Ranking atualizado com sucesso."
+      delete: "Ranking deletado com sucesso."
     sessions:
       title: "Sessões"
       no-sessions: "Nenhuma sessão para exibir :("
       edit:
-        title: "Editing Session"
+        title: "Editando sessão"
         host: "Host"
-        version: "Version"
-        physics: "Physics"
-        protocol: "Protocol"
-        number: "Number"
-        date: "Date"
-        update: "Update Session"
-        error: "Session could not be saved"
+        version: "Versão"
+        physics: "Física"
+        protocol: "Protocolo"
+        number: "Número"
+        date: "Data"
+        update: "Atualizar sessão"
+        error: "Sessão não pôde ser salva"
       upload:
-        title: "Upload Session"
+        title: "Enviar sessão"
       controller:
-        create: "Session was successfully created."
-        update: "Session was successfully updated."
-        delete: "Session was successfully deleted."
+        create: "Sessão criada com sucesso."
+        update: "Sessão atualizada com sucesso."
+        delete: "Sessão deletada com sucesso."
         import:
-          success: "Session was successfully imported."
+          success: "Sessão importada com sucesso."
     results:
       no-team-results: "Nenhum resultado para exibir :("
     nav:
       singles: "Individuais"
-      teams: "Times"
+      teams: "Equipes"
     admin:
       season:
         edit:
@@ -473,19 +473,19 @@ pt:
       author: "Autor"
       description: "Descrição"
       when: "Quando"
-      ago: "ago"
+      ago: "atrás"
     new:
-      title: "New Repository"
+      title: "Novo repositório"
       placeholder:
-        title: "Title"
-        description: "Description"
+        title: "Título"
+        description: "Descrição"
         namespace: "Namespace"
-        branch: "branch"
-      create: "Create"
+        branch: "filial"
+      create: "Criar"
     controller:
-      create: "Repository was successfully created."
-      update: "Repository was successfully updated."
-      destroy: "Repository was successfully destroyed."
+      create: "Repositório criado com sucesso."
+      update: "Repositório atualizado com sucesso."
+      destroy: "Repositório destruido com sucesso."
   #RVA results page
   results:
     title: "Corridas %{category} (Sessão %{number})"
@@ -493,9 +493,9 @@ pt:
     connection: "Conexão: %{protocol} (Servidor)"
     mode: "Modo: %{physics}"
     pickups: "Pickups: %{pickups}"
-    teams: "Times: %{teams}"
+    teams: "Equipes: %{teams}"
     download: "Baixar log da sessão"
-    team: "Time"
+    team: "Equipe"
     admin:
       title: "Ações de admin"
       edit:
@@ -520,8 +520,8 @@ pt:
         not-found: "Pista não encontrada"
   #Teams page
   teams:
-    title: "RVA Times"
-    no-teams: "Sem time"
+    title: "Equipes do RVA"
+    no-teams: "Sem equipe para exibir"
     global-points:
       title: "Pontos da Equipe Global"
     team:
@@ -529,29 +529,29 @@ pt:
       members: "Membros"
     table:
       name: "Nome"
-      country: "Country"
+      country: "País"
       role:
-        title: "Role"
-        leader: "Leader"
-        member: "Member"
+        title: "Função"
+        leader: "Líder"
+        member: "Membro"
     edit:
-      title: "Editing Team"
+      title: "Editando equipe"
       name: "Nome"
       short-name: "Nome Abreviado"
-      color: "Color"
-      team-img: "Team image"
-      leader: "Leader"
-      add-member: "Add Member"
-      edit-team: "Edit Team"
-      create: "Create Team"
-      error: "Team could not be saved"
+      color: "Cor"
+      team-img: "Símbolo da equipe"
+      leader: "Líder"
+      add-member: "Adicionar membro"
+      edit-team: "Editar equipe"
+      create: "Criar Equipe"
+      error: "Equipe não pôde ser salva"
     new:
-      title: "New Team"
+      title: "Nova equipe"
     controller:
-      create: "Team was successfully created."
-      update: "Team was successfully updated."
-      destroy: "Team was successfully destroyed."
-      add-member: "%{member} was successfully added to %{team}"
+      create: "Equipe criada com sucesso."
+      update: "Equipe atualizada com sucesso."
+      destroy: "Equipe destruida com sucesso."
+      add-member: "%{member} foi adicionado com sucesso ao %{team}"
   #User profile page
   users:
     stats:
@@ -591,40 +591,40 @@ pt:
       stats: "Estatísticas"
       admin: "Admin"
     badges:
-      admin: "Administrator"
-      mod: "Moderator"
-      organizer: "Organizer"
+      admin: "Administrador"
+      mod: "Moderador"
+      organizer: "Organizador"
     import:
-      title: "Import users"
+      title: "Importar usuários"
     controller:
       update:
-        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{lang}"
-        success: "User successfully updated."
+        leader: "%{user} é o líder do %{team}, logo não pode ser removido"
+        locale: "Idioma definido para %{lang}"
+        success: "Usuário atualizado com sucesso."
       import:
-        exists: "No users were created. Maybe the file format is incorrect?"
-        success: "Users successfully imported."
+        exists: "Usuários não criados. Talves o formato do arquivo está incorreto?"
+        success: "Usuários importados com sucesso."
   #Tournaments page
   tournaments:
     title: "Torneios Passados"
-    no-tournaments: "No tournaments to display"
-    notice: "notice"
+    no-tournaments: "Sem torneios para exibir"
+    notice: "aviso"
     edit:
-      title: "Editing Tournament"
+      title: "Editando torneio"
       name: "Nome"
-      date: "Date"
+      date: "Data"
       season: "Temporada"
-      banner: "Tournament banner"
-      format: "Format"
-      save: "Save Tournament"
-      error: "prohibited this tournament from being saved:"
+      banner: "Banner de Torneio"
+      format: "Formato"
+      save: "Salvar torneio"
+      error: "torneio proibido de ser salvo:"
     new:
-      title: "New Tournament"
-      button: "New Tournament"
+      title: "Novo torneio"
+      button: "Novo torneio"
     controller:
-      create: "Tournament was successfully created."
-      update: "Tournament was successfully updated."
-      destroy: "Tournament was successfully destroyed."
+      create: "Torneio criado com sucesso."
+      update: "Torneio atualizado com sucesso."
+      destroy: "Torneio destruido com sucesso."
   #Re-Volt car classes
   classes:
     rookie: "Novato"
@@ -839,28 +839,28 @@ pt:
     search: "Busca"
     and: "&"
     bool:
-      true: "Yes"
-      false: "No"
+      true: "Sim"
+      false: "Não"
     prompt:
-      season: "Select Season"
-      ranking: "Select Ranking"
-      category: "Select Category"
-      leader: "Select Leader"
-      difficulty: "Select Difficulty"
+      season: "Selecionar sessão"
+      ranking: "Selecionar ranking"
+      category: "Selecionar categoria"
+      leader: "Selecionar líder"
+      difficulty: "Selecionar dificuldade"
     submit:
-      import: "Import"
-      update: "Update"
+      import: "Importar"
+      update: "Atualizar"
     checkbox:
-      teams: "Teams"
+      teams: "Equipes"
     button:
-      back: "Back"
-      new: "New"
+      back: "Voltar"
+      new: "Novo"
     controller:
       import:
-        select: "You must select a CSV file."
-        upload: "You may only upload CSV files."
-        season: "You must select a Season."
-        category: "You must select a Category."
+        select: "Você deve selecionar um arquivo CSV."
+        upload: "Você deve selecionar somente arquivos CSV."
+        season: "Você deve selecionar uma temporada."
+        category: "Você deve selecionar uma categoria."
   #Kaminari
   helpers:
     page_entries_info:
