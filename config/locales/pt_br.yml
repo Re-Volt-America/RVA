@@ -49,7 +49,7 @@ pt:
       logs: "Logs de Desenvolvimento"
       bugs: "Reportar um Bug"
       sponsor: "Patrocínio"
-      faq: "Frequently Asked Questions"
+      faq: "FAQ - Perguntas Frequentes"
     trademark:
       title: "Marca"
       assets: "Recursos"
@@ -260,7 +260,7 @@ pt:
       all-tracks: "Todas as pistas"
       season: "Temporada"
       title: "As pistas do RVA"
-      no-tracks: "No tracks to display"
+      no-tracks: "Sem pistas para exibir"
       format:
         title: "Formato"
         short-name:
@@ -285,23 +285,23 @@ pt:
       collection:
         title: "Re-volt America - Coleção de Pistas"
       edit:
-        title: "Editing Track"
+        title: "Editando pista"
         season: "Temporada"
         name: "Nome"
         short-name: "Nome Abreviado"
-        difficulty: "Difficulty"
-        length: "Length (meters)"
-        folder-name: "Folder name"
-        error: "Track could not be saved"
+        difficulty: "Dificuldade"
+        length: "Distância (metros)"
+        folder-name: "Nome da pasta"
+        error: "Pista não pôde ser salva"
       import:
-        title: "Import Tracks"
+        title: "Importar pistas"
       controller:
-        create: "Track was successfully created."
-        update: "Track was successfully updated."
-        destroy: "Track was successfully destroyed."
+        create: "Pista criada com sucesso."
+        update: "Pista atualizada com sucesso."
+        destroy: "Pista destruida com sucesso."
         import:
-          exists: "No tracks were created. Maybe they already exist?"
-          success: "Tracks successfully imported."
+          exists: "Pista já criada. Talves ela já exista?"
+          success: "Pista importada com sucesso."
     #RVA Cars
     cars:
       title: "Re-Volt América - Carros"
@@ -319,25 +319,25 @@ pt:
       class-selector:
         title: "Classes"
       shared:
-        placeholder: "Search..."
-        no-cars: "No cars to display"
+        placeholder: "Buscando..."
+        no-cars: "Sem carro para exibir"
       edit:
-        title: "Editing Car"
-        button: "Edit Car"
+        title: "Editando carro"
+        button: "Editar carro"
         season: "Temporada"
         name: "Nome"
-        folder-name: "Folder name"
-        update: "Update"
-        error: "Car could not be saved"
+        folder-name: "Nome da pasta"
+        update: "Atualizar"
+        error: "Carro não pode ser salvo"
       import:
-        title: "Import Cars"
+        title: "Importar carros"
       controller:
-        create: "Car was successfully created."
-        update: "Car was successfully updated"
-        destroy: "Car was successfully destroyed."
+        create: "Carro foi criado com sucesso."
+        update: "Carro atualizado com sucesso"
+        destroy: "Carro destruido com sucesso."
         import:
-          exists: "No cars were created. Maybe they already exist?"
-          success: "Cars successfully imported."
+          exists: "Carros não foram criados. Talvez eles já existam?"
+          success: "Carros importados com sucesso."
     shared:
       stock:
         title: "Stock"
@@ -381,18 +381,18 @@ pt:
       title: "Todas as temporadas"
       present: "Presente"
     edit:
-      title: "Editing Season"
+      title: "Editando temporada"
       name: "Nome"
-      start-date: "Start date"
-      end-date: "End date"
-      error: "Season could not be saved"
+      start-date: "Data de início"
+      end-date: "Data de término"
+      error: "Temporada não pôde ser salva"
     create:
-      title: "Create Season"
-      error: "prohibited this season from being saved"
+      title: "Criar temporada"
+      error: "temporada proibida de ser salva"
     controller:
-      create: "Season was successfully created."
-      update: "Season was successfully updated."
-      destroy: "Season was successfully deleted."
+      create: "Temporada criada com sucesso."
+      update: "Temporada atualizada com sucesso."
+      destroy: "Temporada deletada com sucesso."
   #Rankings page
   rankings:
     title: "Ranking %{number}"
@@ -410,14 +410,14 @@ pt:
       fp: "FP"
       sp: "SP"
     stats:
-      title: "Global Stats"
-      sorted: "Sorted by:"
+      title: "Estatísticas globais"
+      sorted: "Ordenado por:"
       table:
-        wins: "Wins"
-        podiums: "Podiums"
-        win-ratio: "Win Ratio"
-        average-pos: "Average Pos"
-        race-count: "Race Count"
+        wins: "Vitórias"
+        podiums: "Pódios"
+        win-ratio: "Taxa de vitória"
+        average-pos: "Posição média"
+        race-count: "Contagem de corridas"
         obtained-points: "Obtained Points"
         official-score: "Official Score"
     controller:
