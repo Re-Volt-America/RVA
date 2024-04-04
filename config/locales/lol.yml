@@ -134,7 +134,7 @@ lol:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
-        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
+        description-html: "In RVA, we got raecin sesshunz at 12am UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
         reminder:
           title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
