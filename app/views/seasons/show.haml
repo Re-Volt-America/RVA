@@ -1,4 +1,4 @@
-- content_for :title, "Re-Volt America - #{@season.name}"
+- content_for :title, t("seasons.meta.show.page-title", season: @season.name)
 
 = render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
