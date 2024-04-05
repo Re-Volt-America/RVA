@@ -96,10 +96,15 @@ pt:
       see_you: "Vejo você na pista!"
   #Play page
   play:
+    page-title: "Re-Volt America - Play"
+    meta:
+      title: "RVA - Play"
+      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "Jogamos diariamente às 00:00 UTC"
     subheader2_html: "Lobbies são postados em <code class='nissan-code'>#lobby-rva</code>"
   #Downloads page
   downloads:
+    page-title: "Re-Volt America - Downloads"
     title: "Downloads"
     video: "Vídeo pendente..."
     faq:
@@ -108,6 +113,7 @@ pt:
     legacy-downloads: "Downloads: Legado"
   #FAQ page
   faq:
+    page-title: "Re-Volt America - FAQ"
     title: "Perguntas Frequentes"
     description: "Esta é uma coleção das perguntas mais frequentes (FAQ) por novos membros da comunidade quando querem jogar Re-Volt On-line conosco. Não se esqueça de ler se você for novo em nossa comunidade."
     section-1: "Instalação e configuração"
@@ -171,6 +177,7 @@ pt:
         mobile-players: "Download para Smartphones"
   #Rules page
   rules:
+    page-title: "Re-Volt America - Rules"
     title: "Regras"
     sections:
       a:
@@ -226,11 +233,23 @@ pt:
         precision: "Quando o anfitrião força um corredor a estar em modo espectador, neste contexto, como uma forma de punição."
   #Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacy"
+    meta:
+      title: "RVA - Privacy Policy"
+      description: "The privacy policy that applies in Re-Volt America's platform."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de Privacidade"
   terms:
+    page-title: "Re-Volt America - Terms"
+    meta:
+      title: "RVA - Terms of Service"
+      description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Termos de Serviço"
   #Staff page
   staff:
+    page-title: "Re-Volt America - Staff"
+    meta:
+      title: "RVA - Staff"
+      description: "The people who help run Re-Volt America."
     title: "Equipe"
     description: "A equipe que mantem Re-volt America rodando!"
     groups:
@@ -240,6 +259,7 @@ pt:
       organizer: "Organizadores"
   #Points page
   points:
+    page-title: "Re-Volt America - Points"
     title: "Sistema de Pontos"
     introduction:
       title: "Introdução"
@@ -257,6 +277,17 @@ pt:
   #RVA strings
   rva:
     tracks:
+      meta:
+        index:
+          page-title: "Re-Volt America - Tracks"
+          title: "RVA Tracks"
+          description: "The tracks in the RVA Track Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
+        new:
+          page-title: "Re-Volt America - Import Tracks"
+        edit:
+          page-title: "Re-Volt America - Edit Track"
       all-tracks: "Todas as pistas"
       season: "Temporada"
       title: "As pistas do RVA"
@@ -304,6 +335,44 @@ pt:
           success: "Pista importada com sucesso."
     #RVA Cars
     cars:
+      meta:
+        classes:
+          rookie:
+            page-title: "Re-Volt America - Rookie Cars"
+            title: "Rookie Cars - %{org}"
+            description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
+          amateur:
+            page-title: "Re-Volt America - Amateur Cars"
+            title: "Amateur Cars - %{org}"
+            description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
+          advanced:
+            page-title: "Re-Volt America - Advanced Cars"
+            title: "Advanced Cars - %{org}"
+            description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
+          semi-pro:
+            page-title: "Re-Volt America - Semi-Pro Cars"
+            title: "Semi-Pro Cars - %{org}"
+            description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
+          pro:
+            page-title: "Re-Volt America - Pro Cars"
+            title: "Pro Cars - %{org}"
+            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+          super-pro:
+            page-title: "Re-Volt America - Super-Pro Cars"
+            title: "Super-Pro Cars - %{org}"
+            description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
+          clockwork:
+            page-title: "Re-Volt America - Clockwork Cars"
+            title: "Clockwork Cars - %{org}"
+            description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+        edit:
+          page-title: "Re-Volt America - Edit Car"
+        index:
+          page-title: "Re-Volt America - Cars"
+          title: "RVA Cars"
+          description: "The cars in the RVA Car Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
       title: "Re-Volt América - Carros"
       ratings-link: "Classificações de Carros"
       features:
@@ -343,6 +412,7 @@ pt:
         title: "Stock"
   #Assets page
   assets:
+    page-title: "Re-Volt America - Assets"
     title: "LOGOS & UTILIZAÇÃO"
     subtitle_html: "Uma coleção dos nossos principais recursos, elaborados pela talentosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, que você pode baixar para integrar com o RVA ou \"linkar\" de volta para nós!"
     allowed:
@@ -370,6 +440,15 @@ pt:
       2_html: "Estas diretrizes foram fortemente baseadas no <a href='https://github.com/logos' target='_blank'>Logos e Guias de Uso do GitHub</a>."
   #Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "Re-Volt America - Seasons"
+      show:
+        page-title: "Re-Volt America - %{season}"
+      new:
+        page-title: "Re-Volt America - New Season"
+      edit:
+        page-title: "Re-Volt America - Edit Season"
     title: "Temporadas RVA"
     explanation:
       title: "O que são temporadas RVA?"
@@ -395,6 +474,7 @@ pt:
       destroy: "Temporada deletada com sucesso."
   #Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Ranking %{number}"
     title2: "Tabelas de classificação"
     small: "%{count} sessões jogadas"
@@ -410,6 +490,10 @@ pt:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Stats"
+      meta:
+        title: "RVA - Leaderboard"
+        description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Estatísticas globais"
       sorted: "Ordenado por:"
       table:
@@ -463,6 +547,13 @@ pt:
             delete-season: "Excluir temporada"
   #Development logs
   repositories:
+    meta:
+      show:
+        page-title: "Re-Volt America - Repositories"
+        title: "RVA - Repositories"
+        description: "Re-Volt America's version control repositories for content packs and other software."
+      new:
+        page-title: "Re-Volt America - New Repository"
     title: "Revisões"
     small: "Últimas atualizações do Git da nossa organização"
     new-button: "Novo"
@@ -488,6 +579,19 @@ pt:
       destroy: "Repositório destruido com sucesso."
   #RVA results page
   results:
+    meta:
+      index:
+        page-title: "Re-Volt America - Sessions"
+      new:
+        page-title: "Re-Volt America - New Session"
+      edit:
+        page-title: "Re-Volt America - Edit Session"
+      singles:
+        page-title: "Re-Volt America - Session %{number}"
+        title: "RVA Singles Session"
+      teams:
+        page-title: "Re-Volt America - Session #{@session.number}"
+        title: "RVA Teams Session"
     title: "Corridas %{category} (Sessão %{number})"
     version: "Versão: %{version}"
     connection: "Conexão: %{protocol} (Servidor)"
@@ -520,6 +624,13 @@ pt:
         not-found: "Pista não encontrada"
   #Teams page
   teams:
+    meta:
+      index:
+        page-title: "Re-Volt America - Teams"
+      new:
+        page-title: "Re-Volt America - New Team"
+      edit:
+        page-title: "Re-Volt America - Edit Team"
     title: "Equipes do RVA"
     no-teams: "Sem equipe para exibir"
     global-points:
@@ -554,6 +665,9 @@ pt:
       add-member: "%{member} foi adicionado com sucesso ao %{team}"
   #User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Import Users"
     stats:
       title: "Estatísticas"
       rank:
@@ -606,6 +720,15 @@ pt:
         success: "Usuários importados com sucesso."
   #Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Tournaments"
+      show:
+        page-title: "Re-Volt America - %{@name}"
+      new:
+        page-title: "Re-Volt America - New Tournament"
+      edit:
+        page-title: "Re-Volt America - Edit Tournament"
     title: "Torneios Passados"
     no-tournaments: "Sem torneios para exibir"
     notice: "aviso"
