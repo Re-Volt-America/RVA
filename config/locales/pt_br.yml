@@ -819,7 +819,7 @@ pt:
       confirmation_instructions:
         action: "Confirmar minha conta"
         greeting: "Bem-vindo %{recipient}!"
-        instruction: "Você pode confirmar sua conta através do link abaixo:"
+        instruction: "You can confirm your account email through the link below:"
         subject: "Instruções de confirmação"
       email_changed:
         greeting: "Olá %{recipient}!"
