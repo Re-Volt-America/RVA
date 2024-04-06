@@ -96,15 +96,15 @@ lol:
       see_you: "C u on trak!!~"
   #Play page
   play:
-    page-title: "Re-Volt America - Play"
+    page-title: "Rva - pley :D"
     meta:
-      title: "RVA - Play"
+      title: "Rva -- pley :3"
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "WE GO RACIN $@ 00:00 UTC"
     subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-RVA</code>"
   #Downloads page
   downloads:
-    page-title: "Re-Volt America - Downloads"
+    page-title: "Rva -- Daawnlodz"
     title: "dowonloads"
     video: "pending vid..."
     faq:
@@ -113,7 +113,7 @@ lol:
     legacy-downloads: "Old dowonloads"
   #FAQ page
   faq:
-    page-title: "Re-Volt America - FAQ"
+    page-title: "Rva - kitteh aks dem awleyz"
     title: "kitteh ask these all da tiem"
     description: "Dis is a colleckshun ov teh FAQ by new frindz when they first want 2 pley Re-Volt onlain with us in RVA. Maek sure 2 read if u r new 2 our family!"
     section-1: "Instowllin n setap"
@@ -248,8 +248,8 @@ lol:
   staff:
     page-title: "Re-Volt America - Staff"
     meta:
-      title: "RVA - Staff"
-      description: "The people who help run Re-Volt America."
+      title: "Rva -- Pow kittehz"
+      description: "Kitthz hoo help run rva"
     title: "Boss kittehz"
     description: "The Kittehs cat hilp run RVA!"
     groups:
@@ -259,7 +259,7 @@ lol:
       organizer: "Urganizurrzzz"
   #Points page
   points:
-    page-title: "Re-Volt America - Points"
+    page-title: "Rva - pontz"
     title: "rVa pointz systm"
     introduction:
       title: "INTRO"
@@ -363,7 +363,7 @@ lol:
             description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
           clockwork:
             page-title: "Re-Volt America - Clockwork Cars"
-            title: "Clockwork Cars - %{org}"
+            title: "Cluccie karz -- %{org}"
             description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
         edit:
           page-title: "Re-Volt America - Edit Car"
@@ -392,7 +392,7 @@ lol:
         no-cars: "Nu kaz to show"
       edit:
         title: "Editing Car"
-        button: "Edit Car"
+        button: "Edit karzz"
         season: "Seasun"
         name: "Naem"
         folder-name: "Fuldr naem"
@@ -588,7 +588,7 @@ lol:
         page-title: "Re-Volt America - Edit Session"
       singles:
         page-title: "Re-Volt America - Session %{number}"
-        title: "RVA Singles Session"
+        title: "Rva alon sesshun"
       teams:
         page-title: "Re-Volt America - Session #{@session.number}"
         title: "RVA Teams Session"
