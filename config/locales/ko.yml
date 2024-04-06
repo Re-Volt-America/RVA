@@ -818,7 +818,7 @@ ko:
       confirmation_instructions:
         action: "본인 계정 인증"
         greeting: "%{recipient}님"
-        instruction: "아래 링크를 클릭하시면 이메일 인증이 완료됩니다:"
+        instruction: "You can confirm your account email through the link below:"
         subject: "이메일 인증 안내"
       email_changed:
         greeting: "%{recipient}님 환영합니다!"
