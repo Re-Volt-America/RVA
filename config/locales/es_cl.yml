@@ -821,7 +821,7 @@ es-CL:
       confirmation_instructions:
         action: "Confirmar mi cuenta"
         greeting: "¡Te damos la bienvenida, %{recipient}!"
-        instruction: "Se puede confirmar el correo electrónico de la cuenta a través de este enlace:"
+        instruction: "You can confirm your account email through the link below:"
         subject: "Instrucciones de confirmación"
       email_changed:
         greeting: "Hola %{recipient}!"
