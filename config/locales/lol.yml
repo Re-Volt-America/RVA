@@ -330,11 +330,11 @@ lol:
       import:
         title: "Gif Trakz"
       controller:
-        create: "Track was successfully created."
-        update: "Track was successfully updated."
-        destroy: "Track was successfully destroyed."
+        create: "Kiteh maed trak sukcessfuly"
+        update: "Kitteh alredy updetd trak."
+        destroy: "Kiteh alredy killd trak."
         import:
-          exists: "No tracks were created. Maybe they already exist?"
+          exists: "Kitteh didnt maed any trax. Maybe dey alr hear?"
           success: "Tracks successfully imported."
     #RVA Cars
     cars:
@@ -727,7 +727,7 @@ lol:
       index:
         page-title: "Re-Volt America - Tournaments"
       show:
-        page-title: "Re-Volt America - %{@name}"
+        page-title: "RVa - %{@name}"
       new:
         page-title: "Re-Volt America - New Tournament"
       edit:
