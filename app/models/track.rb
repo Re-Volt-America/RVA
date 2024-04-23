@@ -11,14 +11,18 @@ class Track
   field :difficulty, :type => Integer
   field :length, :type => Integer
   field :folder_name, :type => String
+  field :author, :type => String
   field :stock, :type => Boolean, :default => false
+  field :average_lap_time, :type => Integer
 
   validates_presence_of :name
   validates_presence_of :short_name
   validates_presence_of :difficulty
   validates_presence_of :length
   validates_presence_of :folder_name
+  validates_presence_of :author
   validates_presence_of :stock
+  validates_presence_of :average_lap_time
 
   def name_variations
     [name, "#{name} R", "#{name} M", "#{name} RM"]

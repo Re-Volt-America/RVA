@@ -16,9 +16,15 @@ class CsvImportTracksService
       next if row.empty?
       next if row.include?(nil)
 
-      # Don't create duplicate tracks with the same name and season
+      # If the track already exists in this season, then only reassign its author and average_lap_time
       match = Track.find { |t| t.name.eql?(row[0]) && t.season_id.to_s.eql?(@season) }
-      next unless match.nil?
+      unless match.nil?
+        match.update_attribute(:author, row[5])
+        match.update_attribute(:average_lap_time, row[7])
+
+        tracks << match
+        next
+      end
 
       track_hash = {
         :season => @season,
@@ -27,7 +33,9 @@ class CsvImportTracksService
         :difficulty => row[2],
         :length => row[3],
         :folder_name => row[4],
-        :stock => row[5]
+        :author => row[5],
+        :stock => row[6],
+        :average_lap_time => row[7]
       }
 
       tracks << Track.new(track_hash)
