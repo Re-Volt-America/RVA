@@ -495,7 +495,7 @@ lol:
     stats:
       page-title: "Re-Volt America - Stats"
       meta:
-        title: "RVA - Leaderboard"
+        title: "RVa - Kitehbord"
         description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Wurld stez"
       sorted: "sotd bai:"
@@ -552,8 +552,8 @@ lol:
   repositories:
     meta:
       show:
-        page-title: "Re-Volt America - Repositories"
-        title: "RVA - Repositories"
+        page-title: "RVA - Repo'z"
+        title: "Rva - Repo'z"
         description: "Re-Volt America's version control repositories for content packs and other software."
       new:
         page-title: "Re-Volt America - New Repository"
@@ -584,17 +584,17 @@ lol:
   results:
     meta:
       index:
-        page-title: "Re-Volt America - Sessions"
+        page-title: "RvA - Sesshunz"
       new:
-        page-title: "Re-Volt America - New Session"
+        page-title: "RVa - New sesshun"
       edit:
-        page-title: "Re-Volt America - Edit Session"
+        page-title: "rVA - Edit sesshun"
       singles:
-        page-title: "Re-Volt America - Session %{number}"
+        page-title: "RVA - Sesshun #%{number}"
         title: "Rva alon sesshun"
       teams:
-        page-title: "Re-Volt America - Session #{@session.number}"
-        title: "RVA Teams Session"
+        page-title: "RvA - Seshun #{@session.number}"
+        title: "rva Tem sesshun"
     title: "%{category} races (sesshun %{number})"
     version: "veshun: %{version}"
     connection: "Konnecshun: %{protocol} (Servur)"
@@ -629,11 +629,11 @@ lol:
   teams:
     meta:
       index:
-        page-title: "Re-Volt America - Teams"
+        page-title: "Rva - Temz"
       new:
-        page-title: "Re-Volt America - New Team"
+        page-title: "RVa - New tem"
       edit:
-        page-title: "Re-Volt America - Edit Team"
+        page-title: "RVA - Edit Team"
     title: "RVA Teamz"
     no-teams: "Nu teamz to show"
     global-points:
@@ -662,9 +662,9 @@ lol:
     new:
       title: "new team"
     controller:
-      create: "Team was successfully created."
-      update: "Team was successfully updated."
-      destroy: "Team was successfully destroyed."
+      create: "Kitey maed da tem alredy."
+      update: "Kiteh updaetd da tem sukcesfuly."
+      destroy: "Kitteh kild teh team alredy."
       add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
