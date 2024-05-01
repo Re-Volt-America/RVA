@@ -772,7 +772,7 @@ en:
       index:
         page-title: "Re-Volt America - Tournaments"
       show:
-        page-title: "Re-Volt America - %{@name}"
+        page-title: "Re-Volt America - %{name}"
       new:
         page-title: "Re-Volt America - New Tournament"
       edit:
