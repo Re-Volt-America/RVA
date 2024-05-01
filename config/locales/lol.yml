@@ -727,7 +727,7 @@ lol:
       index:
         page-title: "Re-Volt America - Tournaments"
       show:
-        page-title: "RVa - %{@name}"
+        page-title: "Re-Volt America - %{name}"
       new:
         page-title: "Re-Volt America - New Tournament"
       edit:
