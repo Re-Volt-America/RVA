@@ -726,7 +726,7 @@ es-CL:
       index:
         page-title: "Re-Volt America - Torneos"
       show:
-        page-title: "Re-Volt America - %{@name}"
+        page-title: "Re-Volt America - %{name}"
       new:
         page-title: "Re-Volt America - Nuevo torneo"
       edit:
