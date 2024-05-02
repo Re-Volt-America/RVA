@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @weekly_schedule %>
+
+<div>
+  <%= link_to "Edit this weekly schedule", edit_weekly_schedule_path(@weekly_schedule) %> |
+  <%= link_to "Back to weekly schedules", weekly_schedules_path %>
+
+  <%= button_to "Destroy this weekly schedule", @weekly_schedule, method: :delete %>
+</div>

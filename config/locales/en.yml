@@ -19,6 +19,7 @@ en:
       admin:
         title: "Admin"
         upload-session: "Upload Session"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Create Season"
         import-tracks: "Import Tracks"
         import-cars: "Import Cars"
@@ -817,6 +818,13 @@ en:
     weight: "Weight"
     kg: "Kg"
     multiplier: "Multiplier"
+
+  weekly-schedules:
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+    create:
+      title: "Create Weekly Schedule"
 
   # Devise
   activerecord:

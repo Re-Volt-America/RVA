@@ -120,6 +120,15 @@ module SYS
       :'Super-Pro' => CATEGORY::SUPER_PRO,
       :Clockwork => CATEGORY::CLOCKWORK
     }
+    LAP_COUNT_CONSTANT = {
+      CATEGORY::ROOKIE => 1.2,
+      CATEGORY::AMATEUR => 1.15,
+      CATEGORY::ADVANCED => 1.075,
+      CATEGORY::SEMI_PRO => 1,
+      CATEGORY::PRO => 0.95,
+      CATEGORY::SUPER_PRO => 0.9,
+      CATEGORY::CLOCKWORK => 1.25
+    }
     BONUSES_PER_DIFF = {
       0 => 1.0,
       1 => 1.25,
