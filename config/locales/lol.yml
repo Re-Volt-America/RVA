@@ -345,9 +345,9 @@ lol:
             title: "Nooby karz - %{org}"
             description: "Kaz ov teh noobie claz. Dis r teh kaz frum teh noobie claz ned 2 raec onlain on rva!!"
           amateur:
-            page-title: "Re-Volt America - Amateur Cars"
-            title: "Amateur Cars - %{org}"
-            description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
+            page-title: "RvA - Les noob kaz"
+            title: "Les noobier kaz - %{org}"
+            description: "Kaz ov teh amator kal. Dis r da kaz 4 les noobier playr and neded to raec onlain in rva!"
           advanced:
             page-title: "Re-Volt America - Advanced Cars"
             title: "Advanced Cars - %{org}"
@@ -365,9 +365,9 @@ lol:
             title: "Super-Pro Cars - %{org}"
             description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
           clockwork:
-            page-title: "Re-Volt America - Clockwork Cars"
+            page-title: "rVA - Cluckwok kaz"
             title: "Cluccie karz -- %{org}"
-            description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+            description: "Kaz ov teh clucky kaz. DIs r teh kaz frum teh clckwok klaz neded to raec onlaim on Rva!"
         edit:
           page-title: "Re-Volt America - Edit Car"
         index:
@@ -415,7 +415,7 @@ lol:
         title: "OG"
   #Assets page
   assets:
-    page-title: "Re-Volt America - Assets"
+    page-title: "RVA - assez"
     title: "LOGOWOS & USAEG"
     subtitle_html: "Logos n stuff maed by <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>! u can get :DDDD"
     allowed:
@@ -445,13 +445,13 @@ lol:
   seasons:
     meta:
       index:
-        page-title: "Re-Volt America - Seasons"
+        page-title: "rva - seesuhnz"
       show:
         page-title: "Re-Volt America - %{season}"
       new:
         page-title: "Re-Volt America - New Season"
       edit:
-        page-title: "Re-Volt America - Edit Season"
+        page-title: "RvA - Edit Seesun"
     title: "da RVA seasunz"
     explanation:
       title: "Whut are RVA seasunz?"
@@ -469,7 +469,7 @@ lol:
       end-date: "En deit"
       error: "Season could not be saved"
     create:
-      title: "Create Season"
+      title: "Craet seesun"
       error: "prohibited this season from being saved"
     controller:
       create: "Season was successfully created."
