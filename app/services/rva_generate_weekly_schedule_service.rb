@@ -36,7 +36,7 @@ class RvaGenerateWeeklyScheduleService
         track = season_tracks.pop.clone
 
         track_entry_hash = {
-          :name => track.name,
+          :track_name => track.name,
           :stock => track.stock,
           :lap_count => track.lap_count(n)
         }

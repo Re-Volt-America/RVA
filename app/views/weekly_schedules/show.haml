@@ -1,8 +1,43 @@
-%p{style: "color: green"}= notice
-= render @weekly_schedule
-%div
-  = link_to "Edit this weekly schedule", edit_weekly_schedule_path(@weekly_schedule)
-  |
-  \#{link_to "Back to weekly schedules", weekly_schedules_path}
+%h1
+  = t("weekly-schedules.singular")
 
-  \#{button_to "Destroy this weekly schedule", @weekly_schedule, method: :delete}
+%h3
+  %small
+    = "#{pretty_datetime(@weekly_schedule.start_date)} - #{pretty_datetime(@weekly_schedule.start_date + 7.days)}"
+
+= link_to t('misc.go-back'), weekly_schedules_path, :class => "btn"
+
+#weekly-schedule
+  - start_date = @weekly_schedule.start_date
+  - @weekly_schedule.track_lists.each do |tl|
+    .table-responsive.mt-4#track-list-table
+      %table.mt-3.table.table-bordered.table-striped
+        %thead
+          %tr.text-center
+            %th.header{width: "1%", :colspan => 3}
+              = "#{localized_weekday(start_date.wday)} (#{localized_category_name(tl.category)})"
+        %tbody
+          %tr
+            %td.text-center
+              = t('weekly-schedules.track-list.track')
+            %td.text-center
+              = t('weekly-schedules.track-list.type')
+            %td.text-center
+              = t('weekly-schedules.track-list.laps')
+
+          - tl.track_list_entries.each do |tle|
+            %tr{:class => @count.even? ? "red" : ""}
+              %td.text-center
+                = tle.track_name
+              %td.text-center
+                = tle.stock ? t('misc.stock') : t('misc.custom')
+              %td.text-center
+                = tle.lap_count
+
+            - @count += 1
+
+    - start_date = start_date + 1.day
+
+  - @count = 0
+
+= link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn"

@@ -820,11 +820,20 @@ en:
     multiplier: "Multiplier"
 
   weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    controller:
+      destroy: "Delete Weekly Schedule"
     meta:
       new:
         page-title: "New Weekly Schedule"
     create:
       title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
 
   # Devise
   activerecord:
@@ -1020,9 +1029,22 @@ en:
   # Misc strings
   misc:
     create: "Create"
+    view: "View"
+    go-back: "Go Back"
     download: "Download"
     search: "Search"
     and: "&"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Yes"
       false: "No"

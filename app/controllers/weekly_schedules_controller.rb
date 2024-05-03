@@ -4,10 +4,12 @@ class WeeklySchedulesController < ApplicationController
   # GET /weekly_schedules or /weekly_schedules.json
   def index
     @weekly_schedules = WeeklySchedule.all
+    @count = 1
   end
 
   # GET /weekly_schedules/1 or /weekly_schedules/1.json
   def show
+    @count = 0
   end
 
   # GET /weekly_schedules/new
