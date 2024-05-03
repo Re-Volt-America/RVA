@@ -10,6 +10,7 @@ class WeeklySchedulesController < ApplicationController
   # GET /weekly_schedules/1 or /weekly_schedules/1.json
   def show
     @count = 0
+    @table_count = 0
   end
 
   # GET /weekly_schedules/new

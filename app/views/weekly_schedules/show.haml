@@ -11,22 +11,22 @@
   - start_date = @weekly_schedule.start_date
   - @weekly_schedule.track_lists.each do |tl|
     .table-responsive.mt-4#track-list-table
-      %table.mt-3.table.table-bordered.table-striped
+      %table.mt-3.table.table-bordered.table-striped{:id => "tracklist-#{@table_count}"}
         %thead
           %tr.text-center
             %th.header{width: "1%", :colspan => 3}
               = "#{localized_weekday(start_date.wday)} (#{localized_category_name(tl.category)})"
         %tbody
           %tr
-            %td.text-center
+            %td.black.text-center
               = t('weekly-schedules.track-list.track')
-            %td.text-center
+            %td.black.text-center
               = t('weekly-schedules.track-list.type')
-            %td.text-center
+            %td.black.text-center
               = t('weekly-schedules.track-list.laps')
 
           - tl.track_list_entries.each do |tle|
-            %tr{:class => @count.even? ? "red" : ""}
+            %tr{:class => @count.even? ? "red" : "black"}
               %td.text-center
                 = tle.track_name
               %td.text-center
@@ -36,8 +36,10 @@
 
             - @count += 1
 
-    - start_date = start_date + 1.day
+    %button{:id => "dl-png-#{@table_count}", :class => "btn"}
+      Download as PNG
 
-  - @count = 0
+    - start_date = start_date + 1.day
+    - @table_count += 1
 
 = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn"
