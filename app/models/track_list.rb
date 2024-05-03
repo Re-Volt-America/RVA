@@ -3,7 +3,7 @@ class TrackList
 
   embedded_in :weekly_schedule
 
-  embeds_many :tracks
+  embeds_many :track_list_entries
 
   field :category, :type => Integer
   field :track_count, :type => Integer

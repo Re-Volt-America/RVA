@@ -127,6 +127,7 @@ module SYS
       CATEGORY::SEMI_PRO => 1,
       CATEGORY::PRO => 0.95,
       CATEGORY::SUPER_PRO => 0.9,
+      CATEGORY::RANDOM => 1,
       CATEGORY::CLOCKWORK => 1.25
     }
     BONUSES_PER_DIFF = {

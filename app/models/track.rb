@@ -25,7 +25,10 @@ class Track
   validates_presence_of :average_lap_time
 
   def lap_count(category)
-    lap_count = 135 / average_lap_time * SYS::CATEGORY::LAP_COUNT_CONSTANT[category]
+    normalized_avg_time = average_lap_time * SYS::CATEGORY::LAP_COUNT_CONSTANT[category]
+    return 3 if normalized_avg_time.zero?
+
+    lap_count = 135 / normalized_avg_time
     return 2 if lap_count < 2
 
     lap_count
