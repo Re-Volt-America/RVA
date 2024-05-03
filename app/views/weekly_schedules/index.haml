@@ -1,0 +1,8 @@
+%p{style: "color: green"}= notice
+%h1 Weekly schedules
+#weekly_schedules
+  - @weekly_schedules.each do |weekly_schedule|
+    = render weekly_schedule
+    %p
+      = link_to "Show this weekly schedule", weekly_schedule
+= link_to "New weekly schedule", new_weekly_schedule_path
