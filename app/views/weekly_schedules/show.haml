@@ -1,3 +1,7 @@
+- content_for :title, t("weekly-schedules.meta.show.page-title", :start_date => pretty_datetime(@weekly_schedule.start_date))
+- meta :title, t("weekly-schedules.meta.show.title", :start_date => pretty_datetime(@weekly_schedule.start_date))
+- meta :description, t("weekly-schedules.meta.show.description", :start_date => pretty_datetime(@weekly_schedule.start_date))
+
 %h1
   = t("weekly-schedules.singular")
 

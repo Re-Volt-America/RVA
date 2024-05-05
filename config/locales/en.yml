@@ -828,6 +828,16 @@ en:
     meta:
       new:
         page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
     create:
       title: "Create Weekly Schedule"
     track-list:
