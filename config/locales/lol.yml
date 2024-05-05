@@ -18,6 +18,7 @@ lol:
       admin:
         title: "Pow peeple"
         upload-session: "Uplod seshun"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Craet seesun"
         import-tracks: "giev Trakcz"
         import-cars: "giev carz 2"
@@ -96,10 +97,15 @@ lol:
       see_you: "C u on trak!!~"
   #Play page
   play:
+    page-title: "Rva - pley :D"
+    meta:
+      title: "Rva -- pley :3"
+      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "WE GO RACIN $@ 00:00 UTC"
     subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-RVA</code>"
   #Downloads page
   downloads:
+    page-title: "Rva -- Daawnlodz"
     title: "dowonloads"
     video: "pending vid..."
     faq:
@@ -108,6 +114,7 @@ lol:
     legacy-downloads: "Old dowonloads"
   #FAQ page
   faq:
+    page-title: "Rva - kitteh aks dem awleyz"
     title: "kitteh ask these all da tiem"
     description: "Dis is a colleckshun ov teh FAQ by new frindz when they first want 2 pley Re-Volt onlain with us in RVA. Maek sure 2 read if u r new 2 our family!"
     section-1: "Instowllin n setap"
@@ -134,7 +141,7 @@ lol:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
-        description-html: "In RVA, we got raecin sesshunz at 11pm UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
+        description-html: "In RVA, we got raecin sesshunz at 12am UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
         reminder:
           title: "Dont forgwt!!"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
@@ -151,7 +158,10 @@ lol:
         android:
           li-1-html: "Download and install \"<b>Termux</b>\", if you can't find it at the Play Store, then use this <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>link (F-Droid)</a> to download it."
           li-2-html: |
-            Copy and paste inside the app this command; <code> am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code> you ought write the IP and password inside the text before pressing Enter as shown in the screenshot; if the game doesn't open up inmediatly, close the app from the notifications and try again, you may have copied something wrong.
+            Copy and paste the following command inside the app:<br/><br/>
+            <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby IP -pass password"</code><br/><br/>
+            Replace the IP and password accordingly before pressing Enter, as shown in the screenshot;
+            if the game doesn't open up immediately, close the app from the notifications and try again, you may have copied something wrong.
       rankings:
         title: "How do rankz n pontz wok?"
         seasons:
@@ -171,6 +181,7 @@ lol:
         mobile-players: "ROG"
   #Rules page
   rules:
+    page-title: "Rva - rulz"
     title: "Rulz"
     sections:
       a:
@@ -226,11 +237,23 @@ lol:
         precision: "when host cat puts racekat in spec"
   #Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacy"
+    meta:
+      title: "RVA - Privacy Policy"
+      description: "The privacy policy that applies in Re-Volt America's platform."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> FBI CAT"
   terms:
+    page-title: "Re-Volt America - Terms"
+    meta:
+      title: "RVA - Terms of Service"
+      description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> dA TERMS OF DA SSERVIC"
   #Staff page
   staff:
+    page-title: "Rva - pwerfuwl katz"
+    meta:
+      title: "Rva -- Pow kittehz"
+      description: "Kitthz hoo help run rva"
     title: "Boss kittehz"
     description: "The Kittehs cat hilp run RVA!"
     groups:
@@ -240,6 +263,7 @@ lol:
       organizer: "Urganizurrzzz"
   #Points page
   points:
+    page-title: "Rva - pontz"
     title: "rVa pointz systm"
     introduction:
       title: "INTRO"
@@ -257,10 +281,21 @@ lol:
   #RVA strings
   rva:
     tracks:
+      meta:
+        index:
+          page-title: "RVA - trakzz"
+          title: "Rva trax"
+          description: "The tracks in the RVA Track Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
+        new:
+          page-title: "Re-Volt America - Import Tracks"
+        edit:
+          page-title: "Re-Volt America - Edit Track"
       all-tracks: "all trackz"
       season: "Seashun"
       title: "Teh RVA trax"
-      no-tracks: "No tracks to display"
+      no-tracks: "Kitteh nu trax 2 show"
       format:
         title: "Furmat"
         short-name:
@@ -296,14 +331,52 @@ lol:
       import:
         title: "Gif Trakz"
       controller:
-        create: "Track was successfully created."
-        update: "Track was successfully updated."
-        destroy: "Track was successfully destroyed."
+        create: "Kiteh maed trak sukcessfuly"
+        update: "Kitteh alredy updetd trak."
+        destroy: "Kiteh alredy killd trak."
         import:
-          exists: "No tracks were created. Maybe they already exist?"
+          exists: "Kitteh didnt maed any trax. Maybe dey alr hear?"
           success: "Tracks successfully imported."
     #RVA Cars
     cars:
+      meta:
+        classes:
+          rookie:
+            page-title: "Rva - kaz for NOOBZ"
+            title: "Nooby karz - %{org}"
+            description: "Kaz ov teh noobie claz. Dis r teh kaz frum teh noobie claz ned 2 raec onlain on rva!!"
+          amateur:
+            page-title: "RvA - Les noob kaz"
+            title: "Les noobier kaz - %{org}"
+            description: "Kaz ov teh amator kal. Dis r da kaz 4 les noobier playr and neded to raec onlain in rva!"
+          advanced:
+            page-title: "Re-Volt America - Advanced Cars"
+            title: "Advanced Cars - %{org}"
+            description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
+          semi-pro:
+            page-title: "Rva - bettr karz"
+            title: "Bettr kaz - %{org}"
+            description: "Kaz ov teh bettr claz. Diz r teh karz frum teh Bettr claz ned 2 raec onlain on rva!1"
+          pro:
+            page-title: "Rva - gaemrzz karz"
+            title: "Gaemr kaz - %{org}"
+            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+          super-pro:
+            page-title: "Re-Volt America - Super-Pro Cars"
+            title: "Super-Pro Cars - %{org}"
+            description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
+          clockwork:
+            page-title: "rVA - Cluckwok kaz"
+            title: "Cluccie karz -- %{org}"
+            description: "Kaz ov teh clucky kaz. DIs r teh kaz frum teh clckwok klaz neded to raec onlaim on Rva!"
+        edit:
+          page-title: "Re-Volt America - Edit Car"
+        index:
+          page-title: "Re-Volt America - Cars"
+          title: "Rva kaz"
+          description: "The cars in the RVA Car Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
       title: "Teh RVA Carz"
       ratings-link: "Car gud or bad"
       features:
@@ -322,8 +395,8 @@ lol:
         placeholder: "Surch..."
         no-cars: "Nu kaz to show"
       edit:
-        title: "Editing Car"
-        button: "Edit Car"
+        title: "Editin' kaa"
+        button: "Edit karzz"
         season: "Seasun"
         name: "Naem"
         folder-name: "Fuldr naem"
@@ -332,7 +405,7 @@ lol:
       import:
         title: "Gif Kaz"
       controller:
-        create: "Car was successfully created."
+        create: "Kitty alr maed kaa."
         update: "Car was successfully updated"
         destroy: "Car was successfully destroyed."
         import:
@@ -343,6 +416,7 @@ lol:
         title: "OG"
   #Assets page
   assets:
+    page-title: "RVA - assez"
     title: "LOGOWOS & USAEG"
     subtitle_html: "Logos n stuff maed by <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>! u can get :DDDD"
     allowed:
@@ -370,6 +444,15 @@ lol:
       2_html: "dis guidelinz wer haevely baesd on da githbu site logowos and usaeg thing <a href='https://github.com/logos' target='_blank'>her</a>"
   #Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "rva - seesuhnz"
+      show:
+        page-title: "RVa - %{season}"
+      new:
+        page-title: "RVA -- new seesuhn"
+      edit:
+        page-title: "RvA - Edit Seesun"
     title: "da RVA seasunz"
     explanation:
       title: "Whut are RVA seasunz?"
@@ -383,11 +466,11 @@ lol:
     edit:
       title: "Edit Seasun"
       name: "Naem"
-      start-date: "Start date"
-      end-date: "End date"
+      start-date: "Staat deit"
+      end-date: "En deit"
       error: "Season could not be saved"
     create:
-      title: "Create Season"
+      title: "Craet seesun"
       error: "prohibited this season from being saved"
     controller:
       create: "Season was successfully created."
@@ -395,6 +478,7 @@ lol:
       destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Rank #%{number}"
     title2: "Kittehbordz"
     small: "%{count} sesshunz playd"
@@ -410,8 +494,12 @@ lol:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Stats"
+      meta:
+        title: "RVa - Kitehbord"
+        description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Wurld stez"
-      sorted: "Sorted by:"
+      sorted: "sotd bai:"
       table:
         wins: "Viktori royelz"
         podiums: "Almost win"
@@ -463,6 +551,13 @@ lol:
             delete-season: "Kill Seesun"
   #Development logs
   repositories:
+    meta:
+      show:
+        page-title: "RVA - Repo'z"
+        title: "Rva - Repo'z"
+        description: "Re-Volt America's version control repositories for content packs and other software."
+      new:
+        page-title: "Re-Volt America - New Repository"
     title: "Revishunz"
     small: "Lates git comandz in our orgnizashun"
     new-button: "New"
@@ -488,6 +583,19 @@ lol:
       destroy: "Kitteh ate the repo :3"
   #RVA results page
   results:
+    meta:
+      index:
+        page-title: "RvA - Sesshunz"
+      new:
+        page-title: "RVa - New sesshun"
+      edit:
+        page-title: "rVA - Edit sesshun"
+      singles:
+        page-title: "RVA - Sesshun #%{number}"
+        title: "Rva alon sesshun"
+      teams:
+        page-title: "RvA - Seshun #{@session.number}"
+        title: "rva Tem sesshun"
     title: "%{category} races (sesshun %{number})"
     version: "veshun: %{version}"
     connection: "Konnecshun: %{protocol} (Servur)"
@@ -520,6 +628,13 @@ lol:
         not-found: "Trak not finded"
   #Teams page
   teams:
+    meta:
+      index:
+        page-title: "Rva - Temz"
+      new:
+        page-title: "RVa - New tem"
+      edit:
+        page-title: "RVA - Edit Team"
     title: "RVA Teamz"
     no-teams: "Nu teamz to show"
     global-points:
@@ -548,12 +663,15 @@ lol:
     new:
       title: "new team"
     controller:
-      create: "Team was successfully created."
-      update: "Team was successfully updated."
-      destroy: "Team was successfully destroyed."
+      create: "Kitey maed da tem alredy."
+      update: "Kiteh updaetd da tem sukcesfuly."
+      destroy: "Kitteh kild teh team alredy."
       add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Import Users"
     stats:
       title: "Katistics"
       rank:
@@ -592,7 +710,7 @@ lol:
       admin: "admin"
     badges:
       admin: "Kitteminitrutor"
-      mod: "Mod"
+      mod: "Modekatorzzz"
       organizer: "Urganizurr"
     import:
       title: "Giv usrz"
@@ -606,6 +724,15 @@ lol:
         success: "Users successfully imported."
   #Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Tournaments"
+      show:
+        page-title: "Re-Volt America - %{name}"
+      new:
+        page-title: "Re-Volt America - New Tournament"
+      edit:
+        page-title: "Re-Volt America - Edit Tournament"
     title: "Old cat competitionz"
     no-tournaments: "No tournaments to display"
     notice: "note"
@@ -644,6 +771,32 @@ lol:
     weight: "how haevy"
     kg: "ms²"
     multiplier: "math thing"
+  weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    download-as-png: "Download as PNG"
+    controller:
+      destroy: "Delete Weekly Schedule"
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+    create:
+      title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
   #Devise
   activerecord:
     attributes:
@@ -696,7 +849,7 @@ lol:
       confirmation_instructions:
         action: "Konfirm mah acc"
         greeting: "Hello there fella, %{recipient}!"
-        instruction: "U kan konfirm ur acc email thru da link Blow: blue label"
+        instruction: "You can confirm your account email through the link below:"
         subject: "Konfurmashun instrucshunz"
       email_changed:
         greeting: "Hi %{recipient}!"
@@ -835,9 +988,22 @@ lol:
   #Misc strings
   misc:
     create: "Maek"
+    view: "View"
+    go-back: "Go Back"
     download: "dowuload"
     search: "Scratch"
     and: "n'"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Ys"
       false: "Nahhh"
