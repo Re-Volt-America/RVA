@@ -19,11 +19,11 @@ class RvaGenerateWeeklyScheduleService
     ].shuffle
 
     season_tracks = @season.tracks.clone.shuffle
-
     reverse_tracks = []
+    reverse = false
+
     track_lists = {}
     num_track_lists = 0
-    reverse = false
     category_numbers.each do |n|
       season_tracks = @season.tracks.clone if season_tracks.length < 20
 
