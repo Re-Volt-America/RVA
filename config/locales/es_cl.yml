@@ -18,6 +18,7 @@ es-CL:
       admin:
         title: "Admin"
         upload-session: "Subir sesión"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Crear temporada"
         import-tracks: "Importar pistas"
         import-cars: "Importar autos"
@@ -89,17 +90,22 @@ es-CL:
       title: "Sobre Re-Volt America"
       description: "¡La comunidad más grande de Re-Volt que encontrarás en el Continente Americano, únete a nuestras sesiones diarias de carreras, compite en nuestras temporadas y conoce a otros jugadores de Re-Volt de todo el mundo!"
       subtitle: "Quiénes somos"
-      text1_html: "Fundada en 2017, Re-Volt America (RVA) es la comunidad americana alrededor del popular juego de carreras de autos a control remoto <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
-      text2_html: "Para jugar en línea, usamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, una reescritura multiplataforma (porteo) de Re-Volt que corre nativamente en una amplia variedad de plataformas. Esta versión del juego también es conocida por ampliar la experiencia de juego original con soporte para contenido personalizado hecho por la comunidad, tales como pistas y coches."
+      text1_html: "Fundada en 2017, Re-Volt America (RVA) es la comunidad americana alrededor del popular juego de carreras de autos a control remoto <a href='https://es.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
+      text2_html: "Para jugar en línea, usamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, una reescritura multiplataforma (porteo) de Re-Volt que corre nativamente en una amplia variedad de plataformas. Esta versión del juego también es conocida por ampliar la experiencia de juego original con soporte para contenido personalizado hecho por la comunidad, tales como pistas y autos."
       text3_html: "En RVA, organizamos una serie de sesiones en línea en las que jugadores de todo el mundo (principalmente del continente americano) compiten entre sí, obtienen puntos tras cada carrera jugada, y se indexan en el ranking oficial de Re-Volt America."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Descarga RVGL</a>, consigue los <a href='%{downloads_path}'>Packs de RVA</a> y <a href='%{play_path}'>¡Juega</a> con nosotros!"
       see_you: "¡Nos vemos en la pista!"
   #Play page
   play:
+    page-title: "Re-Volt America - Jugar"
+    meta:
+      title: "RVA - Jugar"
+      description: "Calendario y anuncios de salas para las sesiones multijugador de Re-Volt America."
     subheader: "Jugamos diariamente a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
   #Downloads page
   downloads:
+    page-title: "Re-Volt America - Descargas"
     title: "Descargas"
     video: "Video pendiente..."
     faq:
@@ -108,6 +114,7 @@ es-CL:
     legacy-downloads: "Descargas antiguas"
   #FAQ page
   faq:
+    page-title: "Re-Volt America - Preguntas frecuentes"
     title: "Preguntas frecuentes"
     description: "Esto es un compilado de las preguntas más frecuentes dirigida a los nuevos miembros que vayan a jugar Re-Volt en línea por primera vez con nosotros en RVA. Asegúrate de leerlas si recién te uniste a nuestra comunidad."
     section-1: "Instalación y configuración"
@@ -129,7 +136,7 @@ es-CL:
         recommended-way:
           description-html: "En la pestaña \"Packs\" revisa las opciones rva_cars y rva_tracks al final de la lista, luego presiona el botón \"Install Packages\" en la esquina inferior derecha para comenzar la descarga e instalación."
         classic-way:
-          description-html: "En la página de <a href='downloads' target='_blank' rel='noopener noreferrer'>Descargas</a> encontrarás el pack de coches de RVA y el pack de pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime ahí mismo los packs descargados.</p>"
+          description-html: "En la página de <a href='downloads' target='_blank' rel='noopener noreferrer'>Descargas</a> encontrarás el Pack de Autos de RVA y el Pack de Pistas de RVA. <p>Abre la carpeta en donde tienes instalado RVGL y descomprime ahí mismo los packs descargados.</p>"
         mobile-players:
           description-html: "Sigue los pasos del método clásico, solo que en Android necesitas instalar un explorador de archivos capaz de descomprimir archivos ZIP (en la Play Store puedes encontrar aplicaciones como ZArchiver o RAR si tu teléfono no tiene instalada una). <p>Dentro del explorador de archivos, ve a la carpeta Download y descomprime los packs en la carpeta RVGL que encontrarás en la memoria interna.</p>"
       play-online:
@@ -161,7 +168,7 @@ es-CL:
           description: "Cada una de nuestras temporadas consta de 6 rankings, y cada ranking consta de 18 sesiones individuales y 10 sesiones de equipo. De esta manera, cada clasificación tendrá una duración de un mes y cada temporada durará aproximadamente 6 meses. Una sesión anunciada en Discord en el canal #lobby-rva consiste en jugar las 20 pistas asignadas para el día con la categoría correspondiente. El horario semanal que determina las carreras a jugar cada día se anuncia cada lunes y se ve de la siguiente manera:"
         scoring:
           title: "Puntaje en una sesión"
-          description-1: "Después de completar una sesión, los resultados obtenidos son publicados en el canal #rank-global. En RVA tenemos una forma única para determinar el puntaje obtenido de cada jugador teniendo en cuenta el multiplicador del coche, el puntaje acumulado, la posición promedio y las carreras completadas."
+          description-1: "Después de completar una sesión, los resultados obtenidos son publicados en el canal #rank-global. En RVA tenemos una forma única para determinar el puntaje obtenido de cada jugador teniendo en cuenta el multiplicador del auto, el puntaje acumulado, la posición promedio y las carreras completadas."
           description-2-html: "En <a href='points', rel='noopener noreferrer'>Sistema de puntos</a> puedes leer acerca de cómo se calculan los puntos obtenidos en una sesión."
           list:
             li-1: "El multiplicador del auto asigna a cada auto un valor que determina su dificultad. Cuanto mayor es el multiplicador de un auto, más puntos obtendrás por jugarlo en cada carrera. Sin embargo, tener un multiplicador alto no te ayudará si terminas último intentando conducir los autos más difíciles."
@@ -173,6 +180,7 @@ es-CL:
         mobile-players: "Jugadores de celular"
   #Rules page
   rules:
+    page-title: "Re-Volt America - Reglas"
     title: "Reglas"
     sections:
       a:
@@ -193,7 +201,7 @@ es-CL:
         title: "C. Carreras y puntuación"
         1: "Puedes utilizar autos de la categoría en curso e inferiores. (novato, amateur, avanzado, etc.)"
         2:
-          title: "Usar un coche por debajo de la clase en curso otorgará las siguientes bonificaciones de puntaje:"
+          title: "Usar un auto por debajo de la clase en curso otorgará las siguientes bonificaciones de puntaje:"
           bullet1_html: "Una clase por debajo: <b>25%</b>."
           bullet2_html: "Dos clases por debajo: <b>50%</b>."
           bullet3_html: "Tres clases por debajo: <b>75%</b>."
@@ -228,11 +236,23 @@ es-CL:
         precision: "Cuando el anfitrión de la sala fuerza a un jugador al modo espectador. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacidad"
+    meta:
+      title: "RVA - Política de privacidad"
+      description: "La política de privacidad que aplica en la plataforma de Re-Volt America."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de privacidad"
   terms:
+    page-title: "Re-Volt America - Términos"
+    meta:
+      title: "RVA - Términos de Servicio"
+      description: "Los términos de servicio que aplican en la plataforma de Re-Volt America."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Términos de servicio"
   #Staff page
   staff:
+    page-title: "Re-Volt America - Staff"
+    meta:
+      title: "RVA - Staff"
+      description: "Las personas que ayudan a dirigir Re-Volt America."
     title: "Staff"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
     groups:
@@ -242,6 +262,7 @@ es-CL:
       organizer: "Organizadores"
   #Points page
   points:
+    page-title: "Re-Volt America - Puntaje"
     title: "Sistema de puntos de RVA"
     introduction:
       title: "Introducción"
@@ -249,8 +270,8 @@ es-CL:
       normal-race: "Puntuación en una carrera normal"
       big-race: "Puntuación en una carrera grande"
     car-ratings:
-      title: "Multiplicadores en los coches"
-      description: "En RVA, cada coche tiene un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recopensar a quienes juegen con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula la puntuación de una carrera con distintos multiplicadores:"
+      title: "Multiplicadores en los autos"
+      description: "En RVA, cada auto tiene un Multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un auto mejor o peor para las carreras en línea. El propósito de los multiplicadores es recompensar a quienes corran con autos más difíciles y balancear a los autos que son muy buenos la mayoría del tiempo. Así es como se calcula la puntuación de una carrera con distintos multiplicadores:"
     desktop-parser:
       title: "RVA Points: Calculadora de resultados"
       description: "RVA Points es una aplicación de escritorio diseñada para calcular la tabla de resultados en el formato RVA a partir del archivo de resultados de una sesión (session log) generado por RVGL. Con esta aplicación portable, cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de como se vería la tabla de resultados de una sesión generada por tu cuenta:"
@@ -259,6 +280,17 @@ es-CL:
   #RVA strings
   rva:
     tracks:
+      meta:
+        index:
+          page-title: "Re-Volt America - Pistas"
+          title: "Pistas RVA"
+          description: "Las pistas en el Pack de RVA para la temporada actual."
+        show:
+          description: "Parte del Pack de Autos de RVA para la temporada actual."
+        new:
+          page-title: "Re-Volt America - Importar pistas"
+        edit:
+          page-title: "Re-Volt America - Editar pista"
       all-tracks: "Todas las pistas"
       season: "Temporadas"
       title: "Pistas de RVA"
@@ -306,7 +338,45 @@ es-CL:
           success: "Pistas importadas correctamente."
     #RVA Cars
     cars:
-      title: "Coches de RVA"
+      meta:
+        classes:
+          rookie:
+            page-title: "Re-Volt America - Autos Novato"
+            title: "Autos Novato - %{org}"
+            description: "Autos de la clase Novato. ¡Estos son los autos de la clase Novato requeridos para jugar online en RVA!"
+          amateur:
+            page-title: "Re-Volt America - Autos Amateur"
+            title: "Autos Amateur - %{org}"
+            description: "Autos de la clase Amateur. ¡Estos son los autos de la clase Amateur requeridos para jugar online en RVA!"
+          advanced:
+            page-title: "Re-Volt America - Autos Avanzado"
+            title: "Autos Avanzado - %{org}"
+            description: "Autos de la clase Avanzado. ¡Estos son los autos de la clase Avanzado requeridos para jugar online en RVA!"
+          semi-pro:
+            page-title: "Re-Volt America - Autos Semi-Pro"
+            title: "Autos Semi-Pro - %{org}"
+            description: "Autos de la clase Semi-Pro. ¡Estos son los autos de la clase Semi-Pro requeridos para jugar online en RVA!"
+          pro:
+            page-title: "Re-Volt America - Autos Pro"
+            title: "Autos Pro - %{org}"
+            description: "Autos de la clase Pro. ¡Estos son los autos de la clase Pro requeridos para jugar online en RVA!"
+          super-pro:
+            page-title: "Re-Volt America - Autos Súper Pro"
+            title: "Autos Súper Pro - %{org}"
+            description: "Autos de la clase Súper Pro. ¡Estos son los autos de la clase Súper Pro requeridos para jugar online en RVA!"
+          clockwork:
+            page-title: "Re-Volt America - Autos Clockwork"
+            title: "Autos Clockwork - %{org}"
+            description: "Autos de la clase Clockwork. ¡Estos son los autos de la clase Clockwork requeridos para jugar online en RVA!"
+        edit:
+          page-title: "Re-Volt America - Editar auto"
+        index:
+          page-title: "Re-Volt America - Autos"
+          title: "Autos RVA"
+          description: "Los autos en el Pack de RVA para la temporada actual."
+        show:
+          description: "Parte del Pack de Autos de RVA para la temporada actual."
+      title: "Autos de RVA"
       ratings-link: "Clases de autos"
       features:
         speed: "Velocidad"
@@ -317,34 +387,35 @@ es-CL:
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenido original de Re-Volt"
-        featured-session: "Este coche ha estado en RVA desde %{season}"
+        featured-session: "Este auto ha estado en RVA desde la %{season}"
       class-selector:
         title: "Clases"
       shared:
         placeholder: "Buscar..."
-        no-cars: "No hay coches para mostrar"
+        no-cars: "No hay autos para mostrar"
       edit:
-        title: "Editando coche"
-        button: "Editar coche"
+        title: "Editando auto"
+        button: "Editar auto"
         season: "Temporada"
         name: "Nombre"
         folder-name: "Nombre de carpeta"
         update: "Actualizar"
-        error: "No se pudo guardar el coche"
+        error: "No se pudo guardar el auto"
       import:
-        title: "Importar coches"
+        title: "Importar autos"
       controller:
-        create: "El coche se ha creado correctamente."
-        update: "El coche se ha actualizado correctamente"
-        destroy: "Coche eliminado correctamente."
+        create: "El auto se ha creado correctamente."
+        update: "El auto se ha actualizado correctamente"
+        destroy: "Auto eliminado correctamente."
         import:
-          exists: "No se han creado coches, puede ser que ya existan."
-          success: "Coches correctamente importados."
+          exists: "No se han creado autos, puede ser que ya existan."
+          success: "Autos correctamente importados."
     shared:
       stock:
         title: "Stock"
   #Assets page
   assets:
+    page-title: "Re-Volt America - Recursos"
     title: "LOGOS Y USO"
     subtitle_html: "¡Una colección de nuestros principales recursos, realizados por la talentosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, los cuales puedes descargar para integrar con RVA o enlazar hacia nuestra web!"
     allowed:
@@ -372,6 +443,15 @@ es-CL:
       2_html: "Estos lineamientos fueron fuertemente basados en los <a href='https://github.com/logos' target='_blank'>lineamientos de uso de logos de GitHub</a>."
   #Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "Re-Volt America - Temporadas"
+      show:
+        page-title: "Re-Volt America - %{season}"
+      new:
+        page-title: "Re-Volt America - Nueva temporada"
+      edit:
+        page-title: "Re-Volt America - Editar temporada"
     title: "Temporadas de RVA"
     explanation:
       title: "¿Qué son las temporadas de RVA?"
@@ -397,8 +477,9 @@ es-CL:
       destroy: "Temporada eliminada correctamente."
   #Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Ranking %{number}"
-    title2: "Tablas de clasificación"
+    title2: "Tabla de Posiciones"
     small: "%{count} sesiones jugadas"
     table:
       country: "País"
@@ -412,6 +493,10 @@ es-CL:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Estadísticas"
+      meta:
+        title: "RVA - Tabla de Posiciones"
+        description: "Tabla de estadísticas globales para las sesiones online de RVA."
       title: "Estadísticas Globales"
       sorted: "Ordenado por:"
       table:
@@ -465,6 +550,13 @@ es-CL:
             delete-season: "Borrar temporada"
   #Development logs
   repositories:
+    meta:
+      show:
+        page-title: "Re-Volt America - Repositorios"
+        title: "RVA - Repositorios"
+        description: "Los repositorios de control de versiones para RVA de los packs de contenido y otro software."
+      new:
+        page-title: "Re-Volt America - Nuevo repositorio"
     title: "Revisiones"
     small: "Últimos commits de git en nuestra organización"
     new-button: "Nuevo"
@@ -490,6 +582,19 @@ es-CL:
       destroy: "Repositorio eliminado correctamente."
   #RVA results page
   results:
+    meta:
+      index:
+        page-title: "Re-Volt America - Sesiones"
+      new:
+        page-title: "Re-Volt America - Nueva sesión"
+      edit:
+        page-title: "Re-Volt America - Editar sesión"
+      singles:
+        page-title: "Re-Volt America - Sesión %{number}"
+        title: "RVA Sesión en sólo"
+      teams:
+        page-title: "Re-Volt America - Sesión #{@session.number}"
+        title: "RVA Sesión por equipos"
     title: "Carreras %{category} (Sesión %{number})"
     version: "Versión: %{version}"
     connection: "Conexión: %{protocol} (Servidor)"
@@ -522,6 +627,13 @@ es-CL:
         not-found: "Pista no encontrada"
   #Teams page
   teams:
+    meta:
+      index:
+        page-title: "Re-Volt America - Equipos"
+      new:
+        page-title: "Re-Volt America - Nuevo equipo"
+      edit:
+        page-title: "Re-Volt America - Editar equipo"
     title: "Equipos de RVA"
     no-teams: "No hay equipos que mostrar"
     global-points:
@@ -556,6 +668,9 @@ es-CL:
       add-member: "%{member} se agregó correctamente a %{team}"
   #User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Importar usuarios"
     stats:
       title: "Estadísticas"
       rank:
@@ -608,6 +723,15 @@ es-CL:
         success: "Usuarios importados correctamente."
   #Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Torneos"
+      show:
+        page-title: "Re-Volt America - %{name}"
+      new:
+        page-title: "Re-Volt America - Nuevo torneo"
+      edit:
+        page-title: "Re-Volt America - Editar torneo"
     title: "Torneos anteriores"
     no-tournaments: "No hay torneos para mostrar"
     notice: "aviso"
@@ -646,6 +770,32 @@ es-CL:
     weight: "Peso"
     kg: "Kg"
     multiplier: "Mult."
+  weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    download-as-png: "Download as PNG"
+    controller:
+      destroy: "Delete Weekly Schedule"
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+    create:
+      title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
   #Devise
   activerecord:
     attributes:
@@ -698,7 +848,7 @@ es-CL:
       confirmation_instructions:
         action: "Confirmar mi cuenta"
         greeting: "¡Te damos la bienvenida, %{recipient}!"
-        instruction: "Se puede confirmar el correo electrónico de la cuenta a través de este enlace:"
+        instruction: "Puedes confirmar el correo de tu cuenta en el enlace debajo:"
         subject: "Instrucciones de confirmación"
       email_changed:
         greeting: "Hola %{recipient}!"
@@ -837,9 +987,22 @@ es-CL:
   #Misc strings
   misc:
     create: "Crear"
+    view: "View"
+    go-back: "Go Back"
     download: "Descargar"
     search: "Buscar"
     and: "&"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Sí"
       false: "No"

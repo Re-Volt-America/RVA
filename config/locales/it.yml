@@ -9,7 +9,7 @@ it:
       title: "Lega"
       leaderboard: "Classifica"
       point-system: "Sistema di punteggio"
-      teams: "Teams"
+      teams: "Squadra"
       tournaments: "Tornei"
     downloads: "Downloads"
     user:
@@ -18,6 +18,7 @@ it:
       admin:
         title: "Admin"
         upload-session: "Carica sessione"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Crea la stagione"
         import-tracks: "Aggiungi Tracciati"
         import-cars: "Aggiungi auto"
@@ -88,7 +89,7 @@ it:
     about:
       title: "About Re-Volt America"
       description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-      subtitle: "Who we are"
+      subtitle: "Chi siamo"
       text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
       text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
@@ -96,10 +97,15 @@ it:
       see_you: "See you on track!"
   #Play page
   play:
+    page-title: "Re-Volt America - Play"
+    meta:
+      title: "RVA - Play"
+      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Le stanze per le partite vengono pubblicate nel canale <code class='nissan-code'>#lobby-rva</code>"
   #Downloads page
   downloads:
+    page-title: "Re-Volt America - Downloads"
     title: "Downloads"
     video: "Pending video..."
     faq:
@@ -108,6 +114,7 @@ it:
     legacy-downloads: "Legacy Downloads"
   #FAQ page
   faq:
+    page-title: "Re-Volt America - FAQ"
     title: "Frequently Asked Questions"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
     section-1: "Installing and setup"
@@ -171,6 +178,7 @@ it:
         mobile-players: "Mobile Players"
   #Rules page
   rules:
+    page-title: "Re-Volt America - Rules"
     title: "Regole"
     sections:
       a:
@@ -226,11 +234,23 @@ it:
         precision: "Quando il gestore della sessione imposta un giocatore da \"in gioco\" a spettatore. In questo caso, come forma di punizione."
   #Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacy"
+    meta:
+      title: "RVA - Privacy Policy"
+      description: "The privacy policy that applies in Re-Volt America's platform."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
+    page-title: "Re-Volt America - Terms"
+    meta:
+      title: "RVA - Terms of Service"
+      description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
   #Staff page
   staff:
+    page-title: "Re-Volt America - Staff"
+    meta:
+      title: "RVA - Staff"
+      description: "The people who help run Re-Volt America."
     title: "Staff"
     description: "Le persone che contribuiscono alla gestione di Re-Volt America!"
     groups:
@@ -240,6 +260,7 @@ it:
       organizer: "Organizzatori"
   #Points page
   points:
+    page-title: "Re-Volt America - Points"
     title: "RVA Points System"
     introduction:
       title: "Introduction"
@@ -257,6 +278,17 @@ it:
   #RVA strings
   rva:
     tracks:
+      meta:
+        index:
+          page-title: "Re-Volt America - Tracks"
+          title: "RVA Tracks"
+          description: "The tracks in the RVA Track Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
+        new:
+          page-title: "Re-Volt America - Import Tracks"
+        edit:
+          page-title: "Re-Volt America - Edit Track"
       all-tracks: "Tutti i tracciati"
       season: "Stagione"
       title: "I tracciati di RVA"
@@ -291,7 +323,7 @@ it:
         short-name: "Short name"
         difficulty: "Difficulty"
         length: "Length (meters)"
-        folder-name: "Folder name"
+        folder-name: "Nome di cartella"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -304,6 +336,44 @@ it:
           success: "Tracks successfully imported."
     #RVA Cars
     cars:
+      meta:
+        classes:
+          rookie:
+            page-title: "Re-Volt America - Rookie Cars"
+            title: "Rookie Cars - %{org}"
+            description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
+          amateur:
+            page-title: "Re-Volt America - Amateur Cars"
+            title: "Amateur Cars - %{org}"
+            description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
+          advanced:
+            page-title: "Re-Volt America - Advanced Cars"
+            title: "Advanced Cars - %{org}"
+            description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
+          semi-pro:
+            page-title: "Re-Volt America - Semi-Pro Cars"
+            title: "Semi-Pro Cars - %{org}"
+            description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
+          pro:
+            page-title: "Re-Volt America - Pro Cars"
+            title: "Pro Cars - %{org}"
+            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+          super-pro:
+            page-title: "Re-Volt America - Super-Pro Cars"
+            title: "Super-Pro Cars - %{org}"
+            description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
+          clockwork:
+            page-title: "Re-Volt America - Clockwork Cars"
+            title: "Clockwork Cars - %{org}"
+            description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+        edit:
+          page-title: "Re-Volt America - Edit Car"
+        index:
+          page-title: "Re-Volt America - Cars"
+          title: "RVA Cars"
+          description: "The cars in the RVA Car Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
       title: "Le auto di RVA"
       ratings-link: "Valutazioni Auto"
       features:
@@ -319,15 +389,15 @@ it:
       class-selector:
         title: "Classi"
       shared:
-        placeholder: "Search..."
+        placeholder: "Cerca..."
         no-cars: "No cars to display"
       edit:
         title: "Editing Car"
         button: "Edit Car"
         season: "Season"
-        name: "Name"
-        folder-name: "Folder name"
-        update: "Update"
+        name: "Nome"
+        folder-name: "Nome di cartella"
+        update: "Aggiorna"
         error: "Car could not be saved"
       import:
         title: "Import Cars"
@@ -343,6 +413,7 @@ it:
         title: "Stock"
   #Assets page
   assets:
+    page-title: "Re-Volt America - Assets"
     title: "Logo & Utilizzi"
     subtitle_html: "Una collezzione delle nostre risorse principali, realizzate dalla talentuosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, che puoi scaricare per integrarti con RVA o per riferirti a noi!"
     allowed:
@@ -370,6 +441,15 @@ it:
       2_html: "Queste linee guida si basano prevalentemente sulle <a href='https://github.com/logos' target='_blank'>Linee Guida di GitHub per gli usi e i loghi</a>"
   #Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "Re-Volt America - Seasons"
+      show:
+        page-title: "Re-Volt America - %{season}"
+      new:
+        page-title: "Re-Volt America - New Season"
+      edit:
+        page-title: "Re-Volt America - Edit Season"
     title: "Le stagioni di RVA"
     explanation:
       title: "Cosa sono le stagioni di RVA?"
@@ -395,6 +475,7 @@ it:
       destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Posizione %{number}"
     title2: "Classifiche"
     small: "%{count} sessioni giocate"
@@ -410,6 +491,10 @@ it:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Stats"
+      meta:
+        title: "RVA - Leaderboard"
+        description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Global Stats"
       sorted: "Sorted by:"
       table:
@@ -430,11 +515,11 @@ it:
       edit:
         title: "Editing Session"
         host: "Host"
-        version: "Version"
+        version: "Versione"
         physics: "Physics"
-        protocol: "Protocol"
-        number: "Number"
-        date: "Date"
+        protocol: "Protocollo"
+        number: "Numero"
+        date: "Data"
         update: "Update Session"
         error: "Session could not be saved"
       upload:
@@ -449,7 +534,7 @@ it:
       no-team-results: "No team results to disiplay"
     nav:
       singles: "Singles"
-      teams: "Teams"
+      teams: "Squadre"
     admin:
       season:
         edit:
@@ -459,10 +544,17 @@ it:
           warning:
             title: "Warning!"
             body: "Deleting a Season will PERMANENTLY delete all its rankings, sessions, cars and tracks! This action is irreversible. "
-            close: "Close"
+            close: "Chiudi"
             delete-season: "Delete Season"
   #Development logs
   repositories:
+    meta:
+      show:
+        page-title: "Re-Volt America - Repositories"
+        title: "RVA - Repositories"
+        description: "Re-Volt America's version control repositories for content packs and other software."
+      new:
+        page-title: "Re-Volt America - New Repository"
     title: "Esamina"
     small: "Ultimi impegni nella nostra organizzazione"
     new-button: "Aggiungi"
@@ -488,6 +580,19 @@ it:
       destroy: "Repository was successfully destroyed."
   #RVA results page
   results:
+    meta:
+      index:
+        page-title: "Re-Volt America - Sessions"
+      new:
+        page-title: "Re-Volt America - New Session"
+      edit:
+        page-title: "Re-Volt America - Edit Session"
+      singles:
+        page-title: "Re-Volt America - Session %{number}"
+        title: "RVA Singles Session"
+      teams:
+        page-title: "Re-Volt America - Session #{@session.number}"
+        title: "RVA Teams Session"
     title: "%{category} Corse (Session %{number})"
     version: "Versione: %{version}"
     connection: "Connessione: %{protocol} (Server)"
@@ -520,33 +625,40 @@ it:
         not-found: "Track not found"
   #Teams page
   teams:
+    meta:
+      index:
+        page-title: "Re-Volt America - Teams"
+      new:
+        page-title: "Re-Volt America - New Team"
+      edit:
+        page-title: "Re-Volt America - Edit Team"
     title: "RVA Teams"
     no-teams: "No teams to display"
     global-points:
       title: "Global Team Points"
     team:
       leader: "Leader"
-      members: "Members"
+      members: "Membri"
     table:
-      name: "Name"
+      name: "Nome"
       country: "Country"
       role:
-        title: "Role"
+        title: "Ruolo"
         leader: "Leader"
-        member: "Member"
+        member: "Membro"
     edit:
       title: "Editing Team"
-      name: "Name"
+      name: "Nome"
       short-name: "Short name"
-      color: "Color"
+      color: "Colore"
       team-img: "Team image"
-      leader: "Leader"
+      leader: "Capitano"
       add-member: "Add Member"
       edit-team: "Edit Team"
       create: "Create Team"
       error: "Team could not be saved"
     new:
-      title: "New Team"
+      title: "Nuova squadra"
     controller:
       create: "Team was successfully created."
       update: "Team was successfully updated."
@@ -554,6 +666,9 @@ it:
       add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Import Users"
     stats:
       title: "Stats"
       rank:
@@ -592,20 +707,29 @@ it:
       admin: "Admin"
     badges:
       admin: "Administrator"
-      mod: "Mod"
+      mod: "Moderator"
       organizer: "Organizer"
     import:
       title: "Import users"
     controller:
       update:
         leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{lang}"
+        locale: "Lingua impostata su %{lang}"
         success: "User successfully updated."
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
         success: "Users successfully imported."
   #Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Tournaments"
+      show:
+        page-title: "Re-Volt America - %{name}"
+      new:
+        page-title: "Re-Volt America - New Tournament"
+      edit:
+        page-title: "Re-Volt America - Edit Tournament"
     title: "Past Tournaments"
     no-tournaments: "No tournaments to display"
     notice: "notice"
@@ -644,6 +768,32 @@ it:
     weight: "Peso"
     kg: "Kg"
     multiplier: "Mutatore"
+  weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    download-as-png: "Download as PNG"
+    controller:
+      destroy: "Delete Weekly Schedule"
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+    create:
+      title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
   #Devise
   activerecord:
     attributes:
@@ -696,7 +846,7 @@ it:
       confirmation_instructions:
         action: "Conferma il mio account"
         greeting: "Benvenuto %{recipient}!"
-        instruction: "Puoi confermare il tuo account cliccando sul link qui sotto:"
+        instruction: "You can confirm your account email through the link below:"
         subject: "Istruzioni per la conferma"
       email_changed:
         greeting: "Ciao %{recipient}!"
@@ -772,8 +922,8 @@ it:
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
         current-password: "Current password"
-        update: "Update"
-        update-admin: "Update %{user}"
+        update: "Aggiorna"
+        update-admin: "Aggiorna %{user}"
       new:
         sign_up: "Registrati"
         username: "Re-Volt Username"
@@ -835,9 +985,22 @@ it:
   #Misc strings
   misc:
     create: "Create"
+    view: "View"
+    go-back: "Go Back"
     download: "Scarica"
     search: "Cerca"
     and: "&"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Yes"
       false: "No"
@@ -849,9 +1012,9 @@ it:
       difficulty: "Select Difficulty"
     submit:
       import: "Import"
-      update: "Update"
+      update: "Aggiorna"
     checkbox:
-      teams: "Teams"
+      teams: "Squadre"
     button:
       back: "Back"
       new: "New"

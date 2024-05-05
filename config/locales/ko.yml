@@ -18,6 +18,7 @@ ko:
       admin:
         title: "Admin"
         upload-session: "Upload Session"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Create Season"
         import-tracks: "Import Tracks"
         import-cars: "Import Cars"
@@ -96,10 +97,15 @@ ko:
       see_you: "See you on track!"
   #Play page
   play:
+    page-title: "Re-Volt America - Play"
+    meta:
+      title: "RVA - Play"
+      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "매일 00:00 UTC에 플레이합니다"
     subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
   #Downloads page
   downloads:
+    page-title: "Re-Volt America - Downloads"
     title: "Downloads"
     video: "Pending video..."
     faq:
@@ -108,6 +114,7 @@ ko:
     legacy-downloads: "Legacy Downloads"
   #FAQ page
   faq:
+    page-title: "Re-Volt America - FAQ"
     title: "Frequently Asked Questions"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
     section-1: "Installing and setup"
@@ -171,6 +178,7 @@ ko:
         mobile-players: "Mobile Players"
   #Rules page
   rules:
+    page-title: "Re-Volt America - Rules"
     title: "규칙"
     sections:
       a:
@@ -226,11 +234,23 @@ ko:
         precision: "로비 호스트가 레이서를 강제로 관중으로 변경할 때. 이런 상황을, 처벌로 한 형태입니다."
   #Privacy & Terms pages
   privacy:
+    page-title: "Re-Volt America - Privacy"
+    meta:
+      title: "RVA - Privacy Policy"
+      description: "The privacy policy that applies in Re-Volt America's platform."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Privacy Policy"
   terms:
+    page-title: "Re-Volt America - Terms"
+    meta:
+      title: "RVA - Terms of Service"
+      description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Terms of Service"
   #Staff page
   staff:
+    page-title: "Re-Volt America - Staff"
+    meta:
+      title: "RVA - Staff"
+      description: "The people who help run Re-Volt America."
     title: "직원"
     description: "Re-volt America를 운영하는 사람들!"
     groups:
@@ -240,6 +260,7 @@ ko:
       organizer: "주최자"
   #Points page
   points:
+    page-title: "Re-Volt America - Points"
     title: "포인트 시스템"
     introduction:
       title: "Introduction"
@@ -257,6 +278,17 @@ ko:
   #RVA strings
   rva:
     tracks:
+      meta:
+        index:
+          page-title: "Re-Volt America - Tracks"
+          title: "RVA Tracks"
+          description: "The tracks in the RVA Track Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
+        new:
+          page-title: "Re-Volt America - Import Tracks"
+        edit:
+          page-title: "Re-Volt America - Edit Track"
       all-tracks: "All Tracks"
       season: "Season"
       title: "The RVA Tracks"
@@ -304,6 +336,44 @@ ko:
           success: "Tracks successfully imported."
     #RVA Cars
     cars:
+      meta:
+        classes:
+          rookie:
+            page-title: "Re-Volt America - Rookie Cars"
+            title: "Rookie Cars - %{org}"
+            description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
+          amateur:
+            page-title: "Re-Volt America - Amateur Cars"
+            title: "Amateur Cars - %{org}"
+            description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
+          advanced:
+            page-title: "Re-Volt America - Advanced Cars"
+            title: "Advanced Cars - %{org}"
+            description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
+          semi-pro:
+            page-title: "Re-Volt America - Semi-Pro Cars"
+            title: "Semi-Pro Cars - %{org}"
+            description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
+          pro:
+            page-title: "Re-Volt America - Pro Cars"
+            title: "Pro Cars - %{org}"
+            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+          super-pro:
+            page-title: "Re-Volt America - Super-Pro Cars"
+            title: "Super-Pro Cars - %{org}"
+            description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
+          clockwork:
+            page-title: "Re-Volt America - Clockwork Cars"
+            title: "Clockwork Cars - %{org}"
+            description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+        edit:
+          page-title: "Re-Volt America - Edit Car"
+        index:
+          page-title: "Re-Volt America - Cars"
+          title: "RVA Cars"
+          description: "The cars in the RVA Car Pack of the current season."
+        show:
+          description: "Part of the RVA Car Pack of the current season."
       title: "The RVA Cars"
       ratings-link: "Car Ratings"
       features:
@@ -343,6 +413,7 @@ ko:
         title: "Stock"
   #Assets page
   assets:
+    page-title: "Re-Volt America - Assets"
     title: "로고 & 사용법"
     subtitle_html: "유능한 인재들이 만든 주요 자산의 컬렉션 <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, RVA와 통합하거나 저희에게 링크하기 위해 다운로드 할 수 있습니다."
     allowed:
@@ -370,6 +441,15 @@ ko:
       2_html: "이 지침은 <a href='https://github.com/logos' target='_blank'>GitHub의 로고 및 사용 지침</a>에 큰 기본이 되었습니다."
   #Seasons page
   seasons:
+    meta:
+      index:
+        page-title: "Re-Volt America - Seasons"
+      show:
+        page-title: "Re-Volt America - %{season}"
+      new:
+        page-title: "Re-Volt America - New Season"
+      edit:
+        page-title: "Re-Volt America - Edit Season"
     title: "The RVA Seasons"
     explanation:
       title: "What are RVA Seasons?"
@@ -395,6 +475,7 @@ ko:
       destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
+    page-title: "Re-Volt America - Ranking %{number}"
     title: "Ranking %{number}"
     title2: "Leaderboards"
     small: "%{count} sessions played"
@@ -410,6 +491,10 @@ ko:
       fp: "FP"
       sp: "SP"
     stats:
+      page-title: "Re-Volt America - Stats"
+      meta:
+        title: "RVA - Leaderboard"
+        description: "Global statistics leaderboard for Re-Volt America's online sessions."
       title: "Global Stats"
       sorted: "Sorted by:"
       table:
@@ -463,6 +548,13 @@ ko:
             delete-season: "Delete Season"
   #Development logs
   repositories:
+    meta:
+      show:
+        page-title: "Re-Volt America - Repositories"
+        title: "RVA - Repositories"
+        description: "Re-Volt America's version control repositories for content packs and other software."
+      new:
+        page-title: "Re-Volt America - New Repository"
     title: "Revisions"
     small: "Latest git commits in our organization"
     new-button: "New"
@@ -488,6 +580,19 @@ ko:
       destroy: "Repository was successfully destroyed."
   #RVA results page
   results:
+    meta:
+      index:
+        page-title: "Re-Volt America - Sessions"
+      new:
+        page-title: "Re-Volt America - New Session"
+      edit:
+        page-title: "Re-Volt America - Edit Session"
+      singles:
+        page-title: "Re-Volt America - Session %{number}"
+        title: "RVA Singles Session"
+      teams:
+        page-title: "Re-Volt America - Session #{@session.number}"
+        title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
     connection: "Connection: %{protocol} (Server)"
@@ -520,6 +625,13 @@ ko:
         not-found: "Track not found"
   #Teams page
   teams:
+    meta:
+      index:
+        page-title: "Re-Volt America - Teams"
+      new:
+        page-title: "Re-Volt America - New Team"
+      edit:
+        page-title: "Re-Volt America - Edit Team"
     title: "RVA Teams"
     no-teams: "No teams to display"
     global-points:
@@ -554,6 +666,9 @@ ko:
       add-member: "%{member} was successfully added to %{team}"
   #User profile page
   users:
+    meta:
+      new:
+        page-title: "Re-Volt America - Import Users"
     stats:
       title: "Stats"
       rank:
@@ -592,7 +707,7 @@ ko:
       admin: "Admin"
     badges:
       admin: "Administrator"
-      mod: "Mod"
+      mod: "Moderator"
       organizer: "Organizer"
     import:
       title: "Import users"
@@ -606,6 +721,15 @@ ko:
         success: "Users successfully imported."
   #Tournaments page
   tournaments:
+    meta:
+      index:
+        page-title: "Re-Volt America - Tournaments"
+      show:
+        page-title: "Re-Volt America - %{name}"
+      new:
+        page-title: "Re-Volt America - New Tournament"
+      edit:
+        page-title: "Re-Volt America - Edit Tournament"
     title: "Past Tournaments"
     no-tournaments: "No tournaments to display"
     notice: "notice"
@@ -644,6 +768,32 @@ ko:
     weight: "중량"
     kg: "Kg"
     multiplier: "배율"
+  weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    download-as-png: "Download as PNG"
+    controller:
+      destroy: "Delete Weekly Schedule"
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+    create:
+      title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
   #Devise
   activerecord:
     attributes:
@@ -695,7 +845,7 @@ ko:
       confirmation_instructions:
         action: "본인 계정 인증"
         greeting: "%{recipient}님"
-        instruction: "아래 링크를 클릭하시면 이메일 인증이 완료됩니다:"
+        instruction: "You can confirm your account email through the link below:"
         subject: "이메일 인증 안내"
       email_changed:
         greeting: "%{recipient}님 환영합니다!"
@@ -832,9 +982,22 @@ ko:
   #Misc strings
   misc:
     create: "Create"
+    view: "View"
+    go-back: "Go Back"
     download: "다운로드"
     search: "찾기"
     and: "&"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Yes"
       false: "No"
