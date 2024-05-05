@@ -3,16 +3,26 @@ class WeeklySchedulesController < ApplicationController
   before_action :authenticate_organizer, :except => [:index, :show]
   before_action :set_weekly_schedule, :only => [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /weekly_schedules or /weekly_schedules.json
   def index
     @weekly_schedules = WeeklySchedule.all
     @count = 1
+
+    respond_with @weekly_schedules do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /weekly_schedules/1 or /weekly_schedules/1.json
   def show
     @count = 0
     @table_count = 0
+
+    respond_with @weekly_schedule do |format|
+      format.json { render :layout => false }
+    end
   end
 
   # GET /weekly_schedules/new
