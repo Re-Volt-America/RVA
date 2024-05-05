@@ -447,9 +447,9 @@ lol:
       index:
         page-title: "rva - seesuhnz"
       show:
-        page-title: "Re-Volt America - %{season}"
+        page-title: "RVa - %{season}"
       new:
-        page-title: "Re-Volt America - New Season"
+        page-title: "RVA -- new seesuhn"
       edit:
         page-title: "RvA - Edit Seesun"
     title: "da RVA seasunz"
