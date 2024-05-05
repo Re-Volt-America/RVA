@@ -359,6 +359,9 @@ en:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"

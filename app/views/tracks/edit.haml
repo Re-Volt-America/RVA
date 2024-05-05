@@ -26,6 +26,15 @@
       .field.form-group
         = f.label :folder_name, t("rva.tracks.edit.folder-name")
         = f.text_field :folder_name, :class => "form-control"
+      .field.form-group
+        = f.label :author, t("rva.tracks.edit.author")
+        = f.text_field :author, :class => "form-control"
+      .field.form-group
+        = f.label :average_lap_time, t("rva.tracks.edit.average-lap-time")
+        = f.number_field :average_lap_time, :class => "form-control"
+      .field.form-group
+        = f.check_box :stock
+        = f.label :stock, t("rva.tracks.edit.stock")
       .actions
         = f.button t("misc.submit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
