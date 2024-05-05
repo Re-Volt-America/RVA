@@ -311,7 +311,7 @@ en-GB:
           medium: "Medium"
           long: "Long"
           extralong: "Extra Long"
-          meters: "%{length} meters"
+          meters: "%{length} metres"
       featured:
         description: "This track has been featured in RVA %{season}"
       rotation:
