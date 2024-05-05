@@ -115,7 +115,7 @@ module ApplicationHelper
       t('misc.weekdays.friday')
     when 6
       t('misc.weekdays.saturday')
-    when 7
+    when 0
       t('misc.weekdays.sunday')
     else
       t('misc.unknown')
