@@ -1,0 +1,30 @@
+#weekly-schedules {
+  #weekly-schedules-table {
+    tr {
+      color: #beb8bc;
+    }
+  }
+}
+
+#weekly-schedule {
+  #track-list-table {
+    th {
+      font-family: NissanOpti, serif;
+      font-size: 20px;
+      background-color: #003366;
+    }
+
+    tr {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .red {
+      background-color: #800000;
+    }
+
+    .black {
+      background-color: #000001;
+    }
+  }
+}

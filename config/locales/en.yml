@@ -19,6 +19,7 @@ en:
       admin:
         title: "Admin"
         upload-session: "Upload Session"
+        generate-tracklist: "Generate Tracklist"
         create-season: "Create Season"
         import-tracks: "Import Tracks"
         import-cars: "Import Cars"
@@ -818,6 +819,33 @@ en:
     kg: "Kg"
     multiplier: "Multiplier"
 
+  weekly-schedules:
+    title: "Weekly Schedules"
+    singular: "Weekly Schedule"
+    start-date: "Start Date"
+    download-as-png: "Download as PNG"
+    controller:
+      destroy: "Delete Weekly Schedule"
+    meta:
+      new:
+        page-title: "New Weekly Schedule"
+        title: "New Weekly Schedule"
+        description: "Create a new Weekly Schedule"
+      show:
+        page-title: "Weekly Schedule - %{start_date}"
+        title: "Weekly Schedule - %{start_date}"
+        description: "The weekly schedule for %{start_date}"
+      index:
+        page-title: "RVA Weekly Schedules"
+        title: "RVA Weekly Schedules"
+        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+    create:
+      title: "Create Weekly Schedule"
+    track-list:
+      track: "Track"
+      type: "Type"
+      laps: "Laps"
+
   # Devise
   activerecord:
     attributes:
@@ -1012,9 +1040,22 @@ en:
   # Misc strings
   misc:
     create: "Create"
+    view: "View"
+    go-back: "Go Back"
     download: "Download"
     search: "Search"
     and: "&"
+    unknown: "Unknown"
+    custom: "Custom"
+    stock: "Stock"
+    weekdays:
+      monday: "Monday"
+      tuesday: "Tuesday"
+      wednesday: "Wednesday"
+      thursday: "Thursday"
+      friday: "Friday"
+      saturday: "Saturday"
+      sunday: "Sunday"
     bool:
       true: "Yes"
       false: "No"

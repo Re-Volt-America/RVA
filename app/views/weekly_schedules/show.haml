@@ -1,0 +1,53 @@
+- content_for :title, t("weekly-schedules.meta.show.page-title", :start_date => pretty_datetime(@weekly_schedule.start_date))
+- meta :title, t("weekly-schedules.meta.show.title", :start_date => pretty_datetime(@weekly_schedule.start_date))
+- meta :description, t("weekly-schedules.meta.show.description", :start_date => pretty_datetime(@weekly_schedule.start_date))
+
+%h1
+  = t("weekly-schedules.singular")
+
+%h3
+  %small
+    = "#{pretty_datetime(@weekly_schedule.start_date)} - #{pretty_datetime(@weekly_schedule.start_date + 7.days)}"
+
+= link_to t('misc.go-back'), weekly_schedules_path, :class => "btn"
+
+#weekly-schedule
+  - start_date = @weekly_schedule.start_date
+  .row
+    - @weekly_schedule.track_lists.each do |tl|
+      .col-xl-6.col-lg-6.col-md-6.col-sm-12.col-xs-12.col-12
+        .table-responsive.mt-4#track-list-table
+          %table.mt-3.table.table-bordered.table-striped{:id => "tracklist-#{@table_count}"}
+            %thead
+              %tr.text-center
+                %th.header{width: "1%", :colspan => 3}
+                  = "#{localized_weekday(start_date.wday)} (#{localized_category_name(tl.category)})"
+            %tbody
+              %tr
+                %td.black.text-center
+                  = t('weekly-schedules.track-list.track')
+                %td.black.text-center
+                  = t('weekly-schedules.track-list.type')
+                %td.black.text-center
+                  = t('weekly-schedules.track-list.laps')
+
+              - tl.track_list_entries.each do |tle|
+                %tr{:class => @count.even? ? "red" : "black"}
+                  %td.text-center
+                    = tle.track_name
+                  %td.text-center
+                    = tle.stock ? t('misc.stock') : t('misc.custom')
+                  %td.text-center
+                    = tle.lap_count
+
+                - @count += 1
+
+        - if user_is_staff?
+          %button{:id => "dl-png-#{@table_count}", :class => "btn"}
+            = t('weekly-schedules.download-as-png')
+
+        - start_date = start_date + 1.day
+        - @table_count += 1
+
+.text-center.mt-2
+  = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn"

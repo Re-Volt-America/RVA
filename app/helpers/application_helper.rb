@@ -76,6 +76,52 @@ module ApplicationHelper
     SYS::RVA_CATEGORY_NAMES[category].capitalize.gsub(/-[a-z]/, &:upcase)
   end
 
+  # @param category [Integer]
+  # @return [String] Localized name of the category
+  def localized_category_name(category)
+    case category
+    when SYS::CATEGORY::ROOKIE
+      t('classes.rookie')
+    when SYS::CATEGORY::AMATEUR
+      t('classes.amateur')
+    when SYS::CATEGORY::ADVANCED
+      t('classes.advanced')
+    when SYS::CATEGORY::SEMI_PRO
+      t('classes.semi-pro')
+    when SYS::CATEGORY::PRO
+      t('classes.pro')
+    when SYS::CATEGORY::SUPER_PRO
+      t('classes.super-pro')
+    when SYS::CATEGORY::CLOCKWORK
+      t('classes.clockwork')
+    else
+      t('misc.unknown')
+    end
+  end
+
+  # @param weekday_number [Integer]
+  # @return [String] Localized name of the week day
+  def localized_weekday(weekday_number)
+    case weekday_number
+    when 1
+      t('misc.weekdays.monday')
+    when 2
+      t('misc.weekdays.tuesday')
+    when 3
+      t('misc.weekdays.wednesday')
+    when 4
+      t('misc.weekdays.thursday')
+    when 5
+      t('misc.weekdays.friday')
+    when 6
+      t('misc.weekdays.saturday')
+    when 0
+      t('misc.weekdays.sunday')
+    else
+      t('misc.unknown')
+    end
+  end
+
   # @param input [Number] The number
   # @param value [Integer] Amount of precision
   # @return [String] The number with the desired precision as a string

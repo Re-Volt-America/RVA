@@ -1,0 +1,24 @@
+- content_for :title, t("weekly-schedules.meta.new.page-title")
+- meta :title, t("weekly-schedules.meta.new.title")
+- meta :description, t("weekly-schedules.meta.new.description")
+
+%h2.mb-3
+  = t("weekly-schedules.create.title")
+= form_with(model: @weekly_schedule) do |f|
+  .row
+    .col-md-5
+      - if @weekly_schedule.errors.any?
+        #error-explanation
+          %h2
+            = pluralize(@weekly_schedule.errors.count, "error")
+            = t("seasons.create.error")
+          %ul
+            - @weekly_schedule.errors.each do |error|
+              %li= error.full_message
+      .field.form-group
+        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
+      .field.form-group
+        = f.label :start_date, t("weekly-schedules.edit.start-date")
+        = f.date_field :start_date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year
+      .actions
+        = f.button t("misc.create"), :type => "submit", :class => "btn mb-2"

@@ -1,0 +1,29 @@
+- content_for :title, t("weekly-schedules.meta.index.page-title")
+- meta :title, t("weekly-schedules.meta.index.title")
+- meta :description, t("weekly-schedules.meta.index.description")
+
+%h1
+  = t('weekly-schedules.title')
+
+#weekly-schedules
+  .table-responsive.mt-4#weekly-schedules-table
+    %table.mt-3.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th{width: "1%"} #
+          %th{width: "79%"}= t('weekly-schedules.start-date')
+          %th{width: "20%"}= ""
+      %tbody
+        - @weekly_schedules.each do |weekly_schedule|
+          %tr
+            %td.text-center
+              = "#{@count}"
+            %td.text-center
+              = pretty_datetime(weekly_schedule.start_date)
+            %td.text-center
+              = link_to t('misc.view'), weekly_schedule, :class => "btn"
+
+          - @count += 1
+
+  .text-center
+    = link_to t('misc.button.new'), new_weekly_schedule_path, :class => "btn"
