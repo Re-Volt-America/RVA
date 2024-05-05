@@ -18,32 +18,48 @@ class RvaGenerateWeeklyScheduleService
       SYS::CATEGORY::RANDOM
     ].shuffle
 
-    season_tracks = @season.tracks.clone
+    season_tracks = @season.tracks.clone.shuffle
 
+    reverse_tracks = []
     track_lists = {}
     num_track_lists = 0
+    reverse = false
     category_numbers.each do |n|
-      if season_tracks.length < 20
-        season_tracks = @season.tracks.clone
-      end
+      season_tracks = @season.tracks.clone if season_tracks.length < 20
 
-      # pick 20 random tracks for each TrackList
+      # pick 20 random tracks every 2 TrackLists
       track_list_entries = {}
       num_track_list_entries = 0
-      season_tracks = season_tracks.shuffle
 
-      20.times do
-        track = season_tracks.pop.clone
+      if reverse
+        reverse_tracks.each do |t|
+          track_entry_hash = {
+            :track_name => "#{t.name} R",
+            :stock => t.stock,
+            :lap_count => t.lap_count(n)
+          }
 
-        track_entry_hash = {
-          :track_name => track.name,
-          :stock => track.stock,
-          :lap_count => track.lap_count(n)
-        }
+          track_list_entries = track_list_entries.merge(num_track_list_entries.to_s => track_entry_hash)
 
-        track_list_entries = track_list_entries.merge(num_track_list_entries.to_s => track_entry_hash)
+          num_track_list_entries += 1
+        end
 
-        num_track_list_entries += 1
+        reverse_tracks = []
+      else
+        20.times do
+          track = season_tracks.pop.clone
+          reverse_tracks << track
+
+          track_entry_hash = {
+            :track_name => track.name,
+            :stock => track.stock,
+            :lap_count => track.lap_count(n)
+          }
+
+          track_list_entries = track_list_entries.merge(num_track_list_entries.to_s => track_entry_hash)
+
+          num_track_list_entries += 1
+        end
       end
 
       track_list_hash = {
@@ -55,6 +71,7 @@ class RvaGenerateWeeklyScheduleService
       track_lists = track_lists.merge(num_track_lists.to_s => track_list_hash)
 
       num_track_lists += 1
+      reverse = !reverse
     end
 
     weekly_schedule_hash = {
