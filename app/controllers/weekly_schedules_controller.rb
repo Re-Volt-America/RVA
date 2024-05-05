@@ -1,5 +1,7 @@
 class WeeklySchedulesController < ApplicationController
-  before_action :set_weekly_schedule, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_organizer, :except => [:index, :show]
+  before_action :set_weekly_schedule, :only => [:show, :edit, :update, :destroy]
 
   # GET /weekly_schedules or /weekly_schedules.json
   def index
@@ -30,11 +32,11 @@ class WeeklySchedulesController < ApplicationController
 
     respond_to do |format|
       if @weekly_schedule.save
-        format.html { redirect_to weekly_schedule_url(@weekly_schedule), notice: "Weekly schedule was successfully created." }
-        format.json { render :show, status: :created, location: @weekly_schedule }
+        format.html { redirect_to weekly_schedule_url(@weekly_schedule), :notice => "Weekly schedule was successfully created." }
+        format.json { render :show, :status => :created, :location => @weekly_schedule }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @weekly_schedule.errors, status: :unprocessable_entity }
+        format.html { render :new, :status => :unprocessable_entity }
+        format.json { render :json => @weekly_schedule.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -43,11 +45,11 @@ class WeeklySchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @weekly_schedule.update(weekly_schedule_params)
-        format.html { redirect_to weekly_schedule_url(@weekly_schedule), notice: "Weekly schedule was successfully updated." }
-        format.json { render :show, status: :ok, location: @weekly_schedule }
+        format.html { redirect_to weekly_schedule_url(@weekly_schedule), :notice => "Weekly schedule was successfully updated." }
+        format.json { render :show, :status => :ok, :location => @weekly_schedule }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @weekly_schedule.errors, status: :unprocessable_entity }
+        format.html { render :edit, :status => :unprocessable_entity }
+        format.json { render :json => @weekly_schedule.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,7 +59,7 @@ class WeeklySchedulesController < ApplicationController
     @weekly_schedule.destroy!
 
     respond_to do |format|
-      format.html { redirect_to weekly_schedules_url, notice: "Weekly schedule was successfully destroyed." }
+      format.html { redirect_to weekly_schedules_url, :notice => "Weekly schedule was successfully destroyed." }
       format.json { head :no_content }
     end
   end
