@@ -293,6 +293,7 @@ es-AR:
       season: "Temporada"
       title: "Pistas de RVA"
       no-tracks: "No hay pistas que mostrar"
+      made-by: "by: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -324,6 +325,9 @@ es-AR:
         difficulty: "Dificultad"
         length: "Longitud (metros)"
         folder-name: "Nombre de carpeta"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "No se pudo guardar la pista"
       import:
         title: "Importar pistas"
@@ -993,6 +997,7 @@ es-AR:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
