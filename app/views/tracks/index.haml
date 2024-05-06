@@ -26,5 +26,7 @@
                 .caption{:style => "text-align: center;"}
                   %h1.lead
                     = track.name
+                  %h6.author
+                    = t("rva.tracks.made-by", :author_name => track.author)
 
     = paginate @tracks

@@ -328,6 +328,7 @@ en:
       season: "Season"
       title: "The RVA Tracks"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Format"
         short-name:
@@ -1051,6 +1052,7 @@ en:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
