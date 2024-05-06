@@ -293,6 +293,7 @@ es:
       season: "Temporada"
       title: "Pistas de RVA"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -324,6 +325,9 @@ es:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -993,6 +997,7 @@ es:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
