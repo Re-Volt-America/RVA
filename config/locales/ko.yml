@@ -293,6 +293,7 @@ ko:
       season: "Season"
       title: "The RVA Tracks"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Format"
         short-name:
@@ -324,6 +325,9 @@ ko:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -990,6 +994,7 @@ ko:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
