@@ -293,6 +293,7 @@ it:
       season: "Stagione"
       title: "I tracciati di RVA"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -324,6 +325,9 @@ it:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Nome di cartella"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -993,6 +997,7 @@ it:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
