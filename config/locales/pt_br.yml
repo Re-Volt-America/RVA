@@ -293,6 +293,7 @@ pt:
       season: "Temporada"
       title: "As pistas do RVA"
       no-tracks: "Sem pistas para exibir"
+      made-by: "by: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -324,6 +325,9 @@ pt:
         difficulty: "Dificuldade"
         length: "Distância (metros)"
         folder-name: "Nome da pasta"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Pista não pôde ser salva"
       import:
         title: "Importar pistas"
@@ -993,6 +997,7 @@ pt:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
