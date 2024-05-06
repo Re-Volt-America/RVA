@@ -296,6 +296,7 @@ lol:
       season: "Seashun"
       title: "Teh RVA trax"
       no-tracks: "Kitteh nu trax 2 show"
+      made-by: "by: %{author_name}"
       format:
         title: "Furmat"
         short-name:
@@ -327,6 +328,9 @@ lol:
         difficulty: "hardinezz"
         length: "Long in m"
         folder-name: "Fuldr naem"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Trak kuld nut b savd"
       import:
         title: "Gif Trakz"
@@ -996,6 +1000,7 @@ lol:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
