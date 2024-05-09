@@ -12,7 +12,7 @@
 
       %div{:"data-controller" => "season"}
         .field.form-group
-          = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
+          = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
         .field.form-group
           = f.select :ranking, [], {:prompt => t("misc.prompt.ranking")}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
       .field.form-group

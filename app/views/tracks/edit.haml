@@ -10,7 +10,7 @@
     .col-md-5
       .field.form-group
         = f.label :season, t("rva.tracks.edit.season")
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
+        = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
         = f.label :name, t("rva.tracks.edit.name")
         = f.text_field :name, :class => "form-control"

@@ -16,7 +16,7 @@
             - @weekly_schedule.errors.each do |error|
               %li= error.full_message
       .field.form-group
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
+        = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
       .field.form-group
         = f.label :start_date, t("weekly-schedules.edit.start-date")
         = f.date_field :start_date, :class => "form-control", :min => Date.new(2017, 01, 02), :max => Date.today + 1.year

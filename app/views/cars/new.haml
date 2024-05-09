@@ -8,7 +8,7 @@
         = f.file_field :file, :accept => ".csv", :class => "form-control-file"
 
       .field.form-group
-        = f.select :season, Season.all.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
+        = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
       .field.form-group
         = f.select :category, SYS::CATEGORY::RVGL_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, {:class => "form-control"}
 
