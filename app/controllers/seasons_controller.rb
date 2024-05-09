@@ -49,6 +49,14 @@ class SeasonsController < ApplicationController
         format.json { render :show, :status => :created, :location => @season, :layout => false }
 
         Rails.cache.delete('current_season')
+
+        Rails.cache.delete('rookie_cars')
+        Rails.cache.delete('amateur_cars')
+        Rails.cache.delete('advanced_cars')
+        Rails.cache.delete('semipro_cars')
+        Rails.cache.delete('pro_cars')
+        Rails.cache.delete('superpro_cars')
+        Rails.cache.delete('clockwork_cars')
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }
