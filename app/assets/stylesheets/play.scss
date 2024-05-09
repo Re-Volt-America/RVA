@@ -20,6 +20,43 @@
   color: #ffffff;
 }
 
+#tracklist {
+  h6 {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  #box {
+    p {
+      font-size: 26px;
+      font-family: NissanOpti, serif;
+    }
+
+    .box {
+      padding: 10px 30px 4px;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .box:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .box a {
+      color: white;
+    }
+
+    .box:hover a {
+      color: black;
+    }
+  }
+}
+
 @media screen and (min-width: 720px) {
   #clock #time {
     font-size: 60px;

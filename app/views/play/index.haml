@@ -29,3 +29,12 @@
               :frameborder => "0",
               :sandbox => "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
               }
+
+#tracklist.container
+  .text-center
+    %h6
+      = t("play.track-list.description")
+    #box
+      %button.btn.box
+        %p
+          = link_to t("play.track-list.button"), controller: 'weekly_schedules', action: 'index'
