@@ -7,7 +7,7 @@ class SeasonsController < ApplicationController
 
   # GET /seasons or /seasons.json
   def index
-    @seasons = Season.all
+    @seasons = Season.all.reverse
 
     respond_with @seasons do |format|
       format.json { render :layout => false }
