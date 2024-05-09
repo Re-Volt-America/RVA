@@ -13,7 +13,7 @@
 
   - if @admins.none? && @mods.none? && @organizers.none?
     %h5.text-center
-      = "No staff members to display"
+      = t("staff.no-members")
 
   - if @admins.any?
     .row.staff-group

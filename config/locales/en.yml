@@ -286,6 +286,7 @@ en:
       description: "The people who help run Re-Volt America."
     title: "Staff"
     description: "The people who help run Re-Volt America!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administrators"
       developer: "Developers"
