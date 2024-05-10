@@ -253,6 +253,7 @@ es:
       description: "The people who help run Re-Volt America."
     title: "Personal autorizado"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
