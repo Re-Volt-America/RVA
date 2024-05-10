@@ -256,6 +256,7 @@ lol:
       description: "Kitthz hoo help run rva"
     title: "Boss kittehz"
     description: "The Kittehs cat hilp run RVA!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Kitteminitrutorz"
       developer: "Divilupurrrz"
