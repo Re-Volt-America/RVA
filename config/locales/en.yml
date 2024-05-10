@@ -830,7 +830,6 @@ en:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -1056,6 +1055,7 @@ en:
     custom: "Custom"
     stock: "Stock"
     author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"

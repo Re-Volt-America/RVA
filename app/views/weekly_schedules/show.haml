@@ -44,7 +44,7 @@
 
         - if user_is_staff?
           %button{:id => "dl-png-#{@table_count}", :class => "btn"}
-            = t('weekly-schedules.download-as-png')
+            = t('misc.download-as-png')
 
         - start_date = start_date + 1.day
         - @table_count += 1

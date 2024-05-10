@@ -30,11 +30,15 @@
             = t("results.admin.title")
           %ul
             %li
+            %button{:id => "dl-png", :class => "btn mt-2"}
+              = t('misc.download-as-png')
+            %li
               = link_to t("results.admin.edit.button"), edit_session_path(@session), :class => "btn mt-2"
             %li
               = link_to t("results.admin.delete.button"), @session, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"
+
 #results.container
-  %table.table.table-sm.table-fluid.table-responsive
+  %table.table.table-sm.table-fluid.table-responsive{:id => "session"}
     %thead
       %tr
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
