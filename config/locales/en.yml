@@ -110,7 +110,7 @@ en:
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
     track-list:
       description: "Do you want to know in which tracks we are going to play?"
-      button: "Check this week track list!"
+      button: "Check the last weekly schedule!"
 
   # Downloads page
   downloads:
