@@ -108,6 +108,8 @@ en:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
 
   # Downloads page
   downloads:

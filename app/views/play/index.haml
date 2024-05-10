@@ -29,3 +29,10 @@
               :frameborder => "0",
               :sandbox => "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
               }
+
+#tracklist.container
+  .text-center.mt-3
+    #box
+      %button.btn.box
+        %p
+          = link_to t("play.track-list.button_html"), current_schedule, action: 'index'
