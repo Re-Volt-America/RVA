@@ -253,6 +253,7 @@ it:
       description: "The people who help run Re-Volt America."
     title: "Staff"
     description: "Le persone che contribuiscono alla gestione di Re-Volt America!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Amministratori"
       developer: "Sviluppatori"
