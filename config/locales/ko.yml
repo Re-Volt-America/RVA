@@ -253,6 +253,7 @@ ko:
       description: "The people who help run Re-Volt America."
     title: "직원"
     description: "Re-volt America를 운영하는 사람들!"
+    no-members: "No staff members to display"
     groups:
       administrator: "관리자"
       developer: "개발자"
