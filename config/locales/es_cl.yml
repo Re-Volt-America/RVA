@@ -255,6 +255,7 @@ es-CL:
       description: "Las personas que ayudan a dirigir Re-Volt America."
     title: "Staff"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
