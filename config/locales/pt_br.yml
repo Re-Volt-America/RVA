@@ -253,6 +253,7 @@ pt:
       description: "The people who help run Re-Volt America."
     title: "Equipe"
     description: "A equipe que mantem Re-volt America rodando!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administradores"
       developer: "Desenvolvedores"
