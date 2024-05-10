@@ -253,6 +253,7 @@ es-AR:
       description: "The people who help run Re-Volt America."
     title: "Equipo"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
