@@ -34,8 +34,12 @@
       font-family: NissanOpti, serif;
     }
 
+    a {
+      text-decoration: none;
+    }
+
     .box {
-      padding: 10px 30px 4px;
+      padding: 15px 30px 0;
       font-size: 16px;
       transition: background-color 0.3s, color 0.3s;
       color: inherit;
@@ -51,7 +55,7 @@
       color: white;
     }
 
-    .box:hover a {
+    .box:hover a, .box:focus a {
       color: black;
     }
   }

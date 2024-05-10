@@ -31,10 +31,8 @@
               }
 
 #tracklist.container
-  .text-center
-    %h6
-      = t("play.track-list.description")
+  .text-center.mt-3
     #box
       %button.btn.box
         %p
-          = link_to t("play.track-list.button"), controller: 'weekly_schedules', action: 'index'
+          = link_to t("play.track-list.button_html"), current_schedule, action: 'index'

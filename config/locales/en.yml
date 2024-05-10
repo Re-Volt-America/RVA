@@ -109,8 +109,7 @@ en:
     subheader: "We play daily at 00:00 UTC"
     subheader2_html: "Lobbies are posted at <code class='nissan-code'>#lobby-rva</code>"
     track-list:
-      description: "Do you want to know in which tracks we are going to play?"
-      button: "Check the last weekly schedule!"
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
 
   # Downloads page
   downloads:
