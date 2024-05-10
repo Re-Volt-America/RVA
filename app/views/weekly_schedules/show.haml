@@ -49,5 +49,6 @@
         - start_date = start_date + 1.day
         - @table_count += 1
 
-.text-center.mt-2
-  = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn"
+  - if user_is_staff?
+    .text-center.mt-2
+      = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn"

@@ -1,6 +1,6 @@
 class WeeklySchedulesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
-  before_action :authenticate_organizer, :except => [:index, :show]
+  before_action :authenticate_staff, :except => [:index, :show]
   before_action :set_weekly_schedule, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json

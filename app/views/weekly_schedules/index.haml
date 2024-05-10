@@ -25,5 +25,6 @@
 
           - @count += 1
 
-  .text-center
-    = link_to t('misc.button.new'), new_weekly_schedule_path, :class => "btn"
+  - if user_is_staff?
+    .text-center
+      = link_to t('misc.button.new'), new_weekly_schedule_path, :class => "btn"
