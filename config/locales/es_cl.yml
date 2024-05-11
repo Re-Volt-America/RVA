@@ -103,6 +103,8 @@ es-CL:
       description: "Calendario y anuncios de salas para las sesiones multijugador de Re-Volt America."
     subheader: "Jugamos diariamente a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
+    track-list:
+      button_html: "Revisa nuestro calendario semanal <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Descargas"
@@ -255,7 +257,7 @@ es-CL:
       description: "Las personas que ayudan a dirigir Re-Volt America."
     title: "Staff"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
-    no-members: "No staff members to display"
+    no-members: "No hay miembros del staff que mostrar"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
@@ -779,7 +781,6 @@ es-CL:
     title: "Calendarios semanales"
     singular: "Calendario semanal"
     start-date: "Fecha de inicio"
-    download-as-png: "Descargar como PNG"
     controller:
       destroy: "Eliminar calendario semanal"
     meta:
@@ -1001,6 +1002,7 @@ es-CL:
     custom: "Personalizado"
     stock: "Stock"
     author: "Autor"
+    download-as-png: "Descargar como PNG"
     weekdays:
       monday: "Lunes"
       tuesday: "Martes"
