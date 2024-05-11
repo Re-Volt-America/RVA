@@ -103,6 +103,8 @@ ko:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "매일 00:00 UTC에 플레이합니다"
     subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Downloads"
@@ -777,7 +779,6 @@ ko:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -996,6 +997,7 @@ ko:
     custom: "Custom"
     stock: "Stock"
     author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
