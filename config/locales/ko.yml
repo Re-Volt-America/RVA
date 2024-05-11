@@ -103,6 +103,8 @@ ko:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "매일 00:00 UTC에 플레이합니다"
     subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Downloads"
@@ -253,6 +255,7 @@ ko:
       description: "The people who help run Re-Volt America."
     title: "직원"
     description: "Re-volt America를 운영하는 사람들!"
+    no-members: "No staff members to display"
     groups:
       administrator: "관리자"
       developer: "개발자"
@@ -293,6 +296,7 @@ ko:
       season: "Season"
       title: "The RVA Tracks"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Format"
         short-name:
@@ -324,6 +328,9 @@ ko:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -772,7 +779,6 @@ ko:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -990,6 +996,8 @@ ko:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"

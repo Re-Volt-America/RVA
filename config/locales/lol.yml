@@ -103,6 +103,8 @@ lol:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "WE GO RACIN $@ 00:00 UTC"
     subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-RVA</code>"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Rva -- Daawnlodz"
@@ -256,6 +258,7 @@ lol:
       description: "Kitthz hoo help run rva"
     title: "Boss kittehz"
     description: "The Kittehs cat hilp run RVA!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Kitteminitrutorz"
       developer: "Divilupurrrz"
@@ -296,6 +299,7 @@ lol:
       season: "Seashun"
       title: "Teh RVA trax"
       no-tracks: "Kitteh nu trax 2 show"
+      made-by: "by: %{author_name}"
       format:
         title: "Furmat"
         short-name:
@@ -327,6 +331,9 @@ lol:
         difficulty: "hardinezz"
         length: "Long in m"
         folder-name: "Fuldr naem"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Trak kuld nut b savd"
       import:
         title: "Gif Trakz"
@@ -775,7 +782,6 @@ lol:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -996,6 +1002,8 @@ lol:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"

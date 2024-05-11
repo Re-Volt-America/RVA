@@ -103,6 +103,8 @@ es:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "Jugamos diariamente a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Downloads"
@@ -253,6 +255,7 @@ es:
       description: "The people who help run Re-Volt America."
     title: "Personal autorizado"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
+    no-members: "No staff members to display"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
@@ -293,6 +296,7 @@ es:
       season: "Temporada"
       title: "Pistas de RVA"
       no-tracks: "No tracks to display"
+      made-by: "by: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -324,6 +328,9 @@ es:
         difficulty: "Difficulty"
         length: "Length (meters)"
         folder-name: "Folder name"
+        author: "Author"
+        stock: "Stock"
+        average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -772,7 +779,6 @@ es:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -993,6 +999,8 @@ es:
     unknown: "Unknown"
     custom: "Custom"
     stock: "Stock"
+    author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
