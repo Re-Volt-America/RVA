@@ -103,6 +103,8 @@ lol:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "WE GO RACIN $@ 00:00 UTC"
     subheader2_html: "lubbis r postd at <code class='nissan-code'>#lobby-RVA</code>"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Rva -- Daawnlodz"
@@ -780,7 +782,6 @@ lol:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -1002,6 +1003,7 @@ lol:
     custom: "Custom"
     stock: "Stock"
     author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
