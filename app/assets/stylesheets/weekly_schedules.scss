@@ -1,7 +1,26 @@
 #weekly-schedules {
   #weekly-schedules-table {
+
+    table {
+      background-color: #151515;
+      width: 50%;
+      border: 1px solid #646464;
+      margin: 20px auto;
+    }
+
+    th {
+      background-color: #101010;
+      color: #ffd966;
+      height: 40px;
+      text-align: center;
+    }
+
+    td, th {
+      border: 1px solid #646464;
+    }
+
     tr {
-      color: #beb8bc;
+      color: #ffffff;
     }
   }
 }
