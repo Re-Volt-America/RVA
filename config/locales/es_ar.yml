@@ -103,6 +103,8 @@ es-AR:
       description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
     subheader: "Jugamos todos los días a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
+    track-list:
+      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Downloads"
@@ -777,7 +779,6 @@ es-AR:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
     start-date: "Start Date"
-    download-as-png: "Download as PNG"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -999,6 +1000,7 @@ es-AR:
     custom: "Custom"
     stock: "Stock"
     author: "Author"
+    download-as-png: "Download as PNG"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
