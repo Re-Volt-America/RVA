@@ -19,7 +19,7 @@ class CarsController < ApplicationController
   # GET /cars/rookie or /cars/rookie.json
   def rookie
     @cars = Rails.cache.fetch('rookie_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::ROOKIE)
+      @cars = cars_of_category(SYS::CATEGORY::ROOKIE).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -30,7 +30,7 @@ class CarsController < ApplicationController
   # GET /cars/amateur or /cars/amateur.json
   def amateur
     @cars = Rails.cache.fetch('amateur_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::AMATEUR)
+      @cars = cars_of_category(SYS::CATEGORY::AMATEUR).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -41,7 +41,7 @@ class CarsController < ApplicationController
   # GET /cars/advanced or /cars/advanced.json
   def advanced
     @cars = Rails.cache.fetch('advanced_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::ADVANCED)
+      @cars = cars_of_category(SYS::CATEGORY::ADVANCED).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -52,7 +52,7 @@ class CarsController < ApplicationController
   # GET /cars/semipro or /cars/semipro.json
   def semipro
     @cars = Rails.cache.fetch('semipro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO)
+      @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -63,7 +63,7 @@ class CarsController < ApplicationController
   # GET /cars/pro or /cars/pro.json
   def pro
     @cars = Rails.cache.fetch('pro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::PRO)
+      @cars = cars_of_category(SYS::CATEGORY::PRO).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -74,7 +74,7 @@ class CarsController < ApplicationController
   # GET /cars/superpro or /cars/superpro.json
   def superpro
     @cars = Rails.cache.fetch('superpro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO)
+      @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -85,7 +85,7 @@ class CarsController < ApplicationController
   # GET /cars/clockwork or /cars/clockwork.json
   def clockwork
     @cars = Rails.cache.fetch('clockwork_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK)
+      @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1] }
     end
 
     respond_with @cars do |format|
@@ -211,6 +211,6 @@ class CarsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def car_params
-    params.require(:car).permit(:name, :speed, :accel, :weight, :multiplier, :folder_name, :category, :stock, :season)
+    params.require(:car).permit(:name, :speed, :accel, :weight, :multiplier, :folder_name, :category, :author, :stock, :season)
   end
 end

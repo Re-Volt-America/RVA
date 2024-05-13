@@ -32,6 +32,9 @@
       .field.form-group
         = f.label :folder_name, t("rva.cars.edit.folder-name")
         = f.text_field :folder_name, :class => "form-control"
+      .field-form-group
+        = f.label :author, t("rva.cars.features.author")
+        = f.text_field :author, :class => "form-control"
       .field.form-group
         = f.label :stock, t("rva.cars.features.stock")
         = f.check_box :stock

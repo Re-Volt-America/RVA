@@ -34,7 +34,8 @@ class CsvImportCarsService
         :weight => row[3],
         :multiplier => row[4],
         :folder_name => row[5],
-        :stock => true?(row[6])
+        :author => row[6],
+        :stock => true?(row[7])
       }
 
       cars << Car.new(car_hash)
