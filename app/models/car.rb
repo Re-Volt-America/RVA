@@ -13,6 +13,7 @@ class Car
   field :multiplier, :type => Float
   field :folder_name, :type => String
   field :category, :type => Integer
+  field :author, :type => String
   field :stock, :type => Boolean, :default => false
 
   validates_presence_of :name
@@ -22,6 +23,7 @@ class Car
   validates_presence_of :multiplier
   validates_presence_of :folder_name
   validates_presence_of :category
+  validates_presence_of :author
   validates_presence_of :stock
 
   def thumbnail_url

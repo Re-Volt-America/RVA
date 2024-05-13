@@ -37,6 +37,10 @@
             = t("rva.cars.features.category")
           %dd
             = category_name(@car.category)
+          %dt
+            = "Author"
+          %dd
+            = @car.author
           %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
             = t("rva.shared.stock.title")
           %dd
