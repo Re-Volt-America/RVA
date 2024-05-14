@@ -16,10 +16,15 @@ class CsvImportTracksService
       next if row.empty?
       next if row.include?(nil)
 
-      # If the track already exists in this season, then only reassign its author and average_lap_time
+      # If the track already exists in this season, reassign all its attributes except the name
       match = Track.find { |t| t.name.eql?(row[0]) && t.season_id.to_s.eql?(@season) }
       unless match.nil?
+        match.update_attribute(:short_name, row[1])
+        match.update_attribute(:difficulty, row[2])
+        match.update_attribute(:length, row[3])
+        match.update_attribute(:folder_name, row[4])
         match.update_attribute(:author, row[5])
+        match.update_attribute(:stock, row[6])
         match.update_attribute(:average_lap_time, row[7])
 
         tracks << match
