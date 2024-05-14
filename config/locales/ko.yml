@@ -389,6 +389,7 @@ ko:
         weight: "Weight"
         multiplier: "Multiplier"
         category: "Category"
+        author: "Author"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Original Re-Volt Content"
