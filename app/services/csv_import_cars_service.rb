@@ -17,10 +17,17 @@ class CsvImportCarsService
       next if row.empty?
       next if row.include?(nil)
 
-      # If the car already exists in this season, then only reassign its multiplier
+      # If the car already exists in this season, reassign all its attributes except the name
       match = Car.find { |c| c.name.eql?(row[0]) && c.season_id.to_s.eql?(@season) }
       unless match.nil?
+        match.update_attribute(:speed, row[2])
+        match.update_attribute(:accel, row[3])
+        match.update_attribute(:weight, row[4])
         match.update_attribute(:multiplier, row[4].to_f)
+        match.update_attribute(:folder_name, row[5])
+        match.update_attribute(:author, row[6])
+        match.update_attribute(:stock, row[7])
+
         cars << match
         next
       end
