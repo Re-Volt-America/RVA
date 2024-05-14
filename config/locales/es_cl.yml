@@ -391,6 +391,7 @@ es-CL:
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoría"
+        author: "Autor"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenido original de Re-Volt"
