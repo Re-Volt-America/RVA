@@ -389,6 +389,7 @@ es-AR:
         weight: "Peso"
         multiplier: "Multip."
         category: "Categoría"
+        author: "Author"
         stock: "Original"
         stock-tooltip:
           tooltip: "Contenido base de Re-Volt"
