@@ -389,6 +389,7 @@ it:
         weight: "Peso"
         multiplier: "Mutatore"
         category: "Categoria"
+        author: "Author"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenuto originale Di Re-Volt"
