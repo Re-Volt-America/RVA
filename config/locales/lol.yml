@@ -392,6 +392,7 @@ lol:
         weight: "how haevy"
         multiplier: "math thing"
         category: "KATogry"
+        author: "Author"
         stock: "OG"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
