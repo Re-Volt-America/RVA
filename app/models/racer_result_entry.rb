@@ -19,7 +19,6 @@ class RacerResultEntry
   field :participation_multiplier, :type => Float
 
   validates_presence_of :username
-  validates_presence_of :country
 
   def filter_negatives
     session_count = 0 if session_count && session_count < 0
