@@ -94,6 +94,8 @@ module ApplicationHelper
       t('classes.super-pro')
     when SYS::CATEGORY::CLOCKWORK
       t('classes.clockwork')
+    when SYS::CATEGORY::RANDOM
+      t('classes.random')
     else
       t('misc.unknown')
     end
