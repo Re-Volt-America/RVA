@@ -389,6 +389,7 @@ es:
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoría"
+        author: "Author"
         stock: "Coches de Serie"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"

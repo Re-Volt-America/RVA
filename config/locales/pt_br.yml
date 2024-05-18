@@ -389,6 +389,7 @@ pt:
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoria"
+        author: "Author"
         stock: "Stock"
         stock-tooltip:
           tooltip: "Conteúdo original do Re-Volt"
