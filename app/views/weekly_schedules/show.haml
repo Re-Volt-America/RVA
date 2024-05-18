@@ -42,9 +42,8 @@
 
                 - @count += 1
 
-        - if user_is_staff?
-          %button{:id => "dl-png-#{@table_count}", :class => "btn"}
-            = t('misc.download-as-png')
+        %button{:id => "dl-png-#{@table_count}", :class => "btn"}
+          = t('misc.download-as-png')
 
         - start_date = start_date + 1.day
         - @table_count += 1
