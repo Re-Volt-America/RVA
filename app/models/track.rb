@@ -31,7 +31,7 @@ class Track
     lap_count = 135 / normalized_avg_time
     return 2 if lap_count < 2
 
-    lap_count
+    lap_count.round
   end
 
   def name_variations
