@@ -7,7 +7,7 @@ on a wide variety of platforms. This version of the game is also known for exten
 support for custom, community-made content such as tracks and cars.
 
 In RVA, we organise a series of online sessions where players from all around the world (primarily from the American
-continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas'
+continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt America's
 official rankings.
 
 |                                                          RVGL Results                                                          |                                                          RVGL Results                                                          |
