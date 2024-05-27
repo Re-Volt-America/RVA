@@ -272,7 +272,7 @@ es:
       big-race: "Puntuación de gran carrera"
     car-ratings:
       title: "Clasificación de coches"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and for regulating really good or overpowered cars as well. Here is how the formula is applied each race with different car multipliers:"
+      description: "En RVA, cada coche tiene asignado un multiplicador dependiendo de su velocidad máxima, aceleración, peso y demás características que hacen a un coche mejor o peor para las carreras en línea. El propósito de los multiplicadores es recompensar a quienes jueguen con coches más difíciles y balancear los coches que son muy buenos la mayoría del tiempo. Así es como se calcula la puntuación de una carrera con distintos multiplicadores:"
     desktop-parser:
       title: "Analizador de puntos de escritorio de RVA"
       description: "RVA Desktop Points Parser es una aplicación de escritorio diseñada para calcular una tabla de resultados en formato RVA a partir de un registro de sesión RVA. A través de esta herramienta portátil, permitimos que cualquiera analice los resultados de la sesión usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de lo que obtendrá analizando usted mismo una de nuestras sesiones:"
