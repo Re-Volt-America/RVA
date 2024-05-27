@@ -13,6 +13,11 @@ class TracksController < ApplicationController
       @tracks = current_season.tracks
     end
 
+    if params[:query].present?
+      regex = Regexp.new("^#{Regexp.escape(params[:query])}", Regexp::IGNORECASE)
+      @tracks = @tracks.where(name: { '$regex' => regex })
+    end
+
     @tracks = Kaminari.paginate_array(@tracks).page(params[:page]).per(12)
 
     respond_with @tracks do |format|

@@ -9,6 +9,12 @@
 = render :partial => "application/subnav", :locals => {:season => current_season}
 
 #tracks
+  = form_tag(tracks_path, method: :get) do
+    .form-group
+      = text_field_tag :query, params[:query], class: 'form-control', placeholder: t("rva.cars.shared.placeholder")
+      = button_tag type: 'submit', class: 'btn' do
+        %i.fa.fa-search
+
   = paginate @tracks
 
   - if @tracks.none?
