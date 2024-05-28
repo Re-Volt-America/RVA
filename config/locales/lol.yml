@@ -18,7 +18,7 @@ lol:
       admin:
         title: "Pow peeple"
         upload-session: "Uplod seshun"
-        generate-tracklist: "Generate Tracklist"
+        generate-tracklist: "Kitteh maek traklizz"
         create-season: "Craet seesun"
         import-tracks: "giev Trakcz"
         import-cars: "giev carz 2"
@@ -331,8 +331,8 @@ lol:
         difficulty: "hardinezz"
         length: "Long in m"
         folder-name: "Fuldr naem"
-        author: "Author"
-        stock: "Stock"
+        author: "Kiteh"
+        stock: "OG katz"
         average-lap-time: "Average Lap Time (seconds)"
         error: "Trak kuld nut b savd"
       import:
