@@ -397,7 +397,6 @@ pt:
       class-selector:
         title: "Classes"
       shared:
-        placeholder: "Buscando..."
         no-cars: "Sem carro para exibir"
       edit:
         title: "Editando carro"
@@ -1033,6 +1032,8 @@ pt:
         upload: "Você deve selecionar somente arquivos CSV."
         season: "Você deve selecionar uma temporada."
         category: "Você deve selecionar uma categoria."
+    placeholder:
+      search: "Buscando..."
   #Kaminari
   helpers:
     page_entries_info:
