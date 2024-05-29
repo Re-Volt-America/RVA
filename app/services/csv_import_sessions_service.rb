@@ -99,7 +99,9 @@ class CsvImportSessionsService
 
     racers = false
     count = 0
-    full_log.drop(1).each do |row|
+    full_log = full_log.drop(1)
+
+    full_log.each do |row|
       if row[0] == '#' # skip headers
         count += 1
         next
@@ -125,9 +127,6 @@ class CsvImportSessionsService
 
       count += 1
     end
-
-    session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
-    session_races_arr << session_race_arr
 
     session_races_arr
   end
