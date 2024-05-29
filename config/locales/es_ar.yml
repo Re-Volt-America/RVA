@@ -397,7 +397,6 @@ es-AR:
       class-selector:
         title: "Categorías"
       shared:
-        placeholder: "Buscar..."
         no-cars: "No hay autos que mostrar"
       edit:
         title: "Editando auto"
@@ -1033,6 +1032,8 @@ es-AR:
         upload: "Solo podés subir archivos CSV."
         season: "Debes seleccionar una temporada."
         category: "You must select a Category."
+    placeholder:
+      search: "Buscar..."
   #Kaminari
   helpers:
     page_entries_info:

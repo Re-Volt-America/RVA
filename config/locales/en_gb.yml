@@ -400,7 +400,6 @@ en-GB:
       class-selector:
         title: "Classes"
       shared:
-        placeholder: "Search..."
         no-cars: "No cars to display"
       edit:
         title: "Editing Car"
@@ -1036,6 +1035,8 @@ en-GB:
         upload: "You may only upload CSV files."
         season: "You must select a Season."
         category: "You must select a Category."
+    placeholder:
+      search: "Search..."
   #Kaminari
   helpers:
     page_entries_info:
