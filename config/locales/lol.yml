@@ -400,7 +400,6 @@ lol:
       class-selector:
         title: "clazzes"
       shared:
-        placeholder: "Surch..."
         no-cars: "Nu kaz to show"
       edit:
         title: "Editin' kaa"
@@ -1036,6 +1035,8 @@ lol:
         upload: "U mei olny uplod CSV thinz."
         season: "U mus cwoos a seesun."
         category: "U mus cwoos a kain."
+    placeholder:
+      search: "Surch..."
   #Kaminari
   helpers:
     page_entries_info:
