@@ -600,7 +600,7 @@ es-CL:
         page-title: "Re-Volt America - Sesión %{number}"
         title: "RVA Sesión en sólo"
       teams:
-        page-title: "Re-Volt America - Sesión #{@session.number}"
+        page-title: "Re-Volt America - Session %{number}"
         title: "RVA Sesión por equipos"
     title: "Carreras %{category} (Sesión %{number})"
     version: "Versión: %{version}"
