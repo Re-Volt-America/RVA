@@ -39,8 +39,10 @@
                         %p
                           = t("teams.team.members") + ":"
                       .col-12
+                        - last = team.members.last
                         - team.members.each do |member|
-                          = link_to "#{member.username} #{team.members.last.eql?(member) ? '' : ','}" , user_path(member)
+                          %b
+                            = link_to "#{member.username}#{last.eql?(member) ? '' : ','}" , user_path(member)
     %table.table.table-hover
     .table-responsive#teams-table
       %table.table.table-bordered.table-striped.table-hover
