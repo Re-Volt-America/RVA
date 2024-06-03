@@ -598,7 +598,7 @@ it:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Singles Session"
       teams:
-        page-title: "Re-Volt America - Session #{@session.number}"
+        page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Corse (Session %{number})"
     version: "Versione: %{version}"
