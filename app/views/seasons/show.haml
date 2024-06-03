@@ -47,6 +47,7 @@
               %td.stat-number.align-middle.text-center
                 = e.session_count
             - @count += 1
+    = paginate @racer_entries
   #teams.tab-pane.fade.show{:"aria-labelledby" => "teams-tab", role: "tabpanel"}
     - if @team_entries.none?
       %h5.text-center.mt-2
@@ -68,7 +69,6 @@
                   = e.points
               - @count += 1
 
-= paginate @racer_entries
 - if user_is_admin?
   = link_to t("rankings.admin.season.edit.button"), edit_season_path(@season), :class => "btn mt-2"
   = link_to t("rankings.admin.season.delete.button"), '', :"data-target" => "#deleteSeasonModal", :"data-toggle" => "modal", :type => "button", :class =>  "btn mt-2"
