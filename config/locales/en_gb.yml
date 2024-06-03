@@ -601,7 +601,7 @@ en-GB:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Singles Session"
       teams:
-        page-title: "Re-Volt America - Session #{@session.number}"
+        page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
     version: "Version: %{version}"
