@@ -601,7 +601,7 @@ lol:
         page-title: "RVA - Sesshun #%{number}"
         title: "Rva alon sesshun"
       teams:
-        page-title: "RvA - Seshun #{@session.number}"
+        page-title: "Re-Volt America - Session %{number}"
         title: "rva Tem sesshun"
     title: "%{category} races (sesshun %{number})"
     version: "veshun: %{version}"
