@@ -42,7 +42,7 @@
           %td
             = t("teams.table.role.member")
 
-- if user_is_admin?
+- if user_is_mod? || user_is_admin?
   = form_with :url => add_member_teams_path, method: :put do |f|
     .row
       .col-md-5

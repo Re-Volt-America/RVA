@@ -53,6 +53,7 @@ class UsersController < ApplicationController
     user_attr_names.each do |attr|
       next if params[:user][attr].nil?
 
+      # FIXME: When users don't have a team_id attr, this fails to update their team
       if attr.eql?("team_id")
         team = Team.all.find { |t| t.leader.id.eql?(user.id) }
 
