@@ -43,3 +43,9 @@
     font-size: 25px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .btn.btn-primary {
+    margin-top: 5px;
+  }
+}
