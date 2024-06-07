@@ -18,7 +18,9 @@ class TracksController < ApplicationController
       @tracks = @tracks.where(name: { '$regex' => regex })
     end
 
-    @tracks = Kaminari.paginate_array(@tracks).page(params[:page]).per(12)
+    @tracks = Kaminari.paginate_array(
+      @tracks.to_a.sort_by { |track| [track.name, track.stock? ? 0 : 1] }
+    ).page(params[:page]).per(12)
 
     respond_with @tracks do |format|
       format.json { render :layout => false }
