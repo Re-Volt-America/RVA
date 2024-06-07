@@ -341,6 +341,11 @@ ko:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+      admin:
+        edit:
+          button: "Edit Track"
+        delete:
+          button: "Delete Track"
     #RVA Cars
     cars:
       meta:

@@ -344,6 +344,11 @@ lol:
         import:
           exists: "Kitteh didnt maed any trax. Maybe dey alr hear?"
           success: "Tracks successfully imported."
+      admin:
+        edit:
+          button: "Idit trac"
+        delete:
+          button: "Kil trak"
     #RVA Cars
     cars:
       meta:

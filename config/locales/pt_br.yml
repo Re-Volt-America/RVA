@@ -341,6 +341,11 @@ pt:
         import:
           exists: "Pista já criada. Talves ela já exista?"
           success: "Pista importada com sucesso."
+      admin:
+        edit:
+          button: "Editar Pista"
+        delete:
+          button: "Excluir Pista"
     #RVA Cars
     cars:
       meta:

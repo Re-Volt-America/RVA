@@ -341,6 +341,11 @@ es:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+      admin:
+        edit:
+          button: "Editar Pista"
+        delete:
+          button: "Borrar Pista"
     #RVA Cars
     cars:
       meta:

@@ -341,6 +341,11 @@ it:
         import:
           exists: "No tracks were created. Maybe they already exist?"
           success: "Tracks successfully imported."
+      admin:
+        edit:
+          button: "Modifica Traccia"
+        delete:
+          button: "Cancella Traccia"
     #RVA Cars
     cars:
       meta:

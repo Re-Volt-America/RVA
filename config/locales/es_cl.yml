@@ -343,6 +343,11 @@ es-CL:
         import:
           exists: "No se han creado pistas, puede ser que ya existan."
           success: "Pistas importadas correctamente."
+      admin:
+        edit:
+          button: "Editar Pista"
+        delete:
+          button: "Eliminar Pista"
     #RVA Cars
     cars:
       meta:

@@ -341,6 +341,11 @@ es-AR:
         import:
           exists: "No se creó ninguna pista. ¿Tal vez ya existen?"
           success: "Pistas importadas correctamente."
+      admin:
+        edit:
+          button: "Editar Pista"
+        delete:
+          button: "Borrar Pista"
     #RVA Cars
     cars:
       meta:
