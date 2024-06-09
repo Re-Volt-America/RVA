@@ -422,7 +422,7 @@ lol:
         destroy: "Car was successfully destroyed."
         import:
           exists: "No cars were created. Maybe they already exist?"
-          success: "Cars successfully imported."
+          success: "Kaz suksesfuly impurtd."
     shared:
       stock:
         title: "OG"
