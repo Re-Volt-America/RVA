@@ -245,9 +245,9 @@ lol:
       description: "The privacy policy that applies in Re-Volt America's platform."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> FBI CAT"
   terms:
-    page-title: "Re-Volt America - Terms"
+    page-title: "Rva - Termz"
     meta:
-      title: "RVA - Terms of Service"
+      title: "RVa - Terz ovv Survizz"
       description: "The terms of service that apply in Re-Volt America's platform."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> dA TERMS OF DA SSERVIC"
   #Staff page
@@ -258,7 +258,7 @@ lol:
       description: "Kitthz hoo help run rva"
     title: "Boss kittehz"
     description: "The Kittehs cat hilp run RVA!"
-    no-members: "No staff members to display"
+    no-members: "Nu stav kitehz 2 show"
     groups:
       administrator: "Kitteminitrutorz"
       developer: "Divilupurrrz"
@@ -333,7 +333,7 @@ lol:
         folder-name: "Fuldr naem"
         author: "Kiteh"
         stock: "OG katz"
-        average-lap-time: "Average Lap Time (seconds)"
+        average-lap-time: "Avg lap taim (s)"
         error: "Trak kuld nut b savd"
       import:
         title: "Gif Trakz"
@@ -343,10 +343,10 @@ lol:
         destroy: "Kiteh alredy killd trak."
         import:
           exists: "Kitteh didnt maed any trax. Maybe dey alr hear?"
-          success: "Tracks successfully imported."
+          success: "Trakz suksesfuly impurtd."
       admin:
         edit:
-          button: "Idit trac"
+          button: "Idit trak"
         delete:
           button: "Kil trak"
     #RVA Cars
@@ -384,7 +384,7 @@ lol:
         edit:
           page-title: "Re-Volt America - Edit Car"
         index:
-          page-title: "Re-Volt America - Cars"
+          page-title: "RVA - kaz"
           title: "Rva kaz"
           description: "The cars in the RVA Car Pack of the current season."
         show:
@@ -397,7 +397,7 @@ lol:
         weight: "how haevy"
         multiplier: "math thing"
         category: "KATogry"
-        author: "Author"
+        author: "Kitteh"
         stock: "OG"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
