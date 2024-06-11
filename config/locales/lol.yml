@@ -490,7 +490,7 @@ lol:
       destroy: "Season was successfully deleted."
   #Rankings page
   rankings:
-    page-title: "Re-Volt America - Ranking %{number}"
+    page-title: "RVA - #%{number} royel"
     title: "Rank #%{number}"
     title2: "Kittehbordz"
     small: "%{count} sesshunz playd"
@@ -730,7 +730,7 @@ lol:
       update:
         leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
         locale: "Kitteh spek %{lang} nao"
-        success: "User successfully updated."
+        success: "Kitteh suksesfuly updaetd."
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
         success: "Users successfully imported."
@@ -740,7 +740,7 @@ lol:
       index:
         page-title: "Re-Volt America - Tournaments"
       show:
-        page-title: "Re-Volt America - %{name}"
+        page-title: "RVa - %{name}"
       new:
         page-title: "Re-Volt America - New Tournament"
       edit:
