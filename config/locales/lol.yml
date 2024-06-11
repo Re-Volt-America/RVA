@@ -151,7 +151,7 @@ lol:
           li-3: "Open RVGL, go 2 Play Manikittehgaem >> Join Gaem, n copy n paste da IP. Dis is a exempel IP, each kitteh will havv a different IP."
       password-sessions:
         title: "how 2 join da sessun protecktud??"
-        description: "Write the following Launch Parameters (Don't write the brackets [])."
+        description: "Wite teh Lawnch Paramitrezz (dun wite teh brackez [] pweese!!)"
         launcher:
           description: "Enter the IP and password at Launch Parameters field in the following way, for example:"
         shortcut:
@@ -506,7 +506,7 @@ lol:
       fp: "FP"
       sp: "SP"
     stats:
-      page-title: "Re-Volt America - Stats"
+      page-title: "rVA - stazzz"
       meta:
         title: "RVa - Kitehbord"
         description: "Global statistics leaderboard for Re-Volt America's online sessions."
@@ -786,7 +786,7 @@ lol:
   weekly-schedules:
     title: "Weekly Schedules"
     singular: "Weekly Schedule"
-    start-date: "Start Date"
+    start-date: "Starch daet"
     controller:
       destroy: "Delete Weekly Schedule"
     meta:
@@ -805,9 +805,9 @@ lol:
     create:
       title: "Create Weekly Schedule"
     track-list:
-      track: "Track"
-      type: "Type"
-      laps: "Laps"
+      track: "Trak"
+      type: "Taip"
+      laps: "Lapzz"
   #Devise
   activerecord:
     attributes:
@@ -999,24 +999,24 @@ lol:
   #Misc strings
   misc:
     create: "Maek"
-    view: "View"
-    go-back: "Go Back"
+    view: "s33"
+    go-back: "Go bak"
     download: "dowuload"
     search: "Scratch"
     and: "n'"
-    unknown: "Unknown"
-    custom: "Custom"
-    stock: "Stock"
-    author: "Author"
+    unknown: "kitteh dunno"
+    custom: "Kustom"
+    stock: "OG"
+    author: "Kiteh"
     download-as-png: "Download as PNG"
     weekdays:
-      monday: "Monday"
-      tuesday: "Tuesday"
-      wednesday: "Wednesday"
-      thursday: "Thursday"
-      friday: "Friday"
-      saturday: "Saturday"
-      sunday: "Sunday"
+      monday: "Muhdae lef me brokn"
+      tuesday: "Chew-sday"
+      wednesday: "Wensdei"
+      thursday: "Turzdae"
+      friday: "Fraaidae"
+      saturday: "Saturrhdae"
+      sunday: "SSSundae"
     bool:
       true: "Ys"
       false: "Nahhh"
