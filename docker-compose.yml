@@ -4,7 +4,7 @@ services:
   mongo_seed:
     image: mongo:3.6.3
     volumes:
-      - ./db/.:/src/data
+      - ./docs/db/.:/src/data
     working_dir: /src/data
     command: ./seed.sh
     networks: [rva]
@@ -13,8 +13,6 @@ services:
     restart: always
     ports:
       - 27017:27017
-    depends_on:
-      - mongo_seed
     networks: [rva]
   redis:
     image: redis:6.2-alpine

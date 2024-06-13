@@ -20,6 +20,7 @@ RUN npm install -g yarn
 
 # Clone the RVA repository
 RUN git clone https://github.com/Re-Volt-America/RVA /usr/src/app
+RUN git checkout docker
 WORKDIR /usr/src/app
 
 # Bundle gems
