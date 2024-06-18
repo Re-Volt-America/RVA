@@ -292,9 +292,9 @@ lol:
         show:
           description: "Part of the RVA Car Pack of the current season."
         new:
-          page-title: "Re-Volt America - Import Tracks"
+          page-title: "RVa - Putting trakz in"
         edit:
-          page-title: "Re-Volt America - Edit Track"
+          page-title: "rvA - Idit Tracc"
       all-tracks: "all trackz"
       season: "Seashun"
       title: "Teh RVA trax"
@@ -480,7 +480,7 @@ lol:
       name: "Naem"
       start-date: "Staat deit"
       end-date: "En deit"
-      error: "Season could not be saved"
+      error: "Seesun kuldnt b saved"
     create:
       title: "Craet seesun"
       error: "prohibited this season from being saved"
@@ -777,11 +777,11 @@ lol:
   #Car metrics
   car-card:
     speed: "sped"
-    kmh: "litres"
+    kmh: "km/h"
     acc: "Accz"
-    ms2: "kg"
+    ms2: "ms²"
     weight: "how haevy"
-    kg: "ms²"
+    kg: "Kg"
     multiplier: "math thing"
   weekly-schedules:
     title: "Weekly Schedules"
