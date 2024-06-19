@@ -536,7 +536,7 @@ lol:
         number: "No."
         date: "Deit"
         update: "Updet Sesshun"
-        error: "Session could not be saved"
+        error: "Sesshun koold nut b saevd"
       upload:
         title: "Uplod seshun"
       controller:
