@@ -35,7 +35,7 @@ class CsvImportSessionsService
       raise ArgumentError, "Unrecognised date format"
     end
   
-    parsed_date.strftime('%m/%d/%y')
+    parsed_date
   end
 
   def call
