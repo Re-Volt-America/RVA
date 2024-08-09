@@ -411,6 +411,7 @@ pt:
         folder-name: "Nome da pasta"
         update: "Atualizar"
         error: "Carro não pode ser salvo"
+        delete: "Excluir carro"
       import:
         title: "Importar carros"
       controller:
