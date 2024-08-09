@@ -14,6 +14,30 @@ class CsvImportSessionsService
     @teams = teams
   end
 
+  def parse_and_format_date(date_string)
+    formats = [
+      '%D',                       # Expected format 'mm/dd/yy H:mm:ss' from Windows machines
+      '%a %b %e %H:%M:%S %Y'      # Expected format 'ddd mmm d H:mm:ss yyyy' from Unix machines
+    ]
+  
+    parsed_date = nil
+  
+    formats.each do |format|
+      begin
+        parsed_date = Date.strptime(date_string, format)
+        break
+      rescue ArgumentError
+        next
+      end
+    end
+  
+    if parsed_date.nil?
+      raise ArgumentError, "Unrecognised date format"
+    end
+  
+    parsed_date
+  end
+
   def call
     csv = CSV.parse(File.open(@file))
 
@@ -33,7 +57,7 @@ class CsvImportSessionsService
       :physics => session_arr[1][3],
       :protocol => session_arr[0][2],
       :pickups => true?(session_arr[1][5]),
-      :date => Date.strptime(session_arr[1][1], '%D'),
+      :date => parse_and_format_date(session_arr[1][1]),
       :races => get_races_hash(session_arr),
       :ranking => @ranking,
       :category => @category,
