@@ -411,6 +411,7 @@ ko:
         folder-name: "Folder name"
         update: "Update"
         error: "Car could not be saved"
+        delete: "Delete car"
       import:
         title: "Import Cars"
       controller:
