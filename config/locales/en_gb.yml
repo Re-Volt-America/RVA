@@ -414,6 +414,7 @@ en-GB:
         folder-name: "Folder name"
         update: "Update"
         error: "Car could not be saved"
+        delete: "Delete Car"
       import:
         title: "Import Cars"
       controller:
