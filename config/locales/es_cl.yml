@@ -413,6 +413,7 @@ es-CL:
         folder-name: "Nombre de carpeta"
         update: "Actualizar"
         error: "No se pudo guardar el auto"
+        delete: "Eliminar auto"
       import:
         title: "Importar autos"
       controller:

@@ -194,10 +194,11 @@ class CarsController < ApplicationController
 
   # DELETE /cars/1 or /cars/1.json
   def destroy
+    category_path = car_category_path(@car.category)
     @car.destroy
 
     respond_to do |format|
-      format.html { redirect_to cars_url, :notice => t("rva.cars.controller.destroy") }
+      format.html { redirect_to category_path , :notice => t("rva.cars.controller.destroy") }
       format.json { head :no_content }
     end
   end
