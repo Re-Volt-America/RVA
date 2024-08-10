@@ -197,6 +197,8 @@ class CarsController < ApplicationController
     category_path = car_category_path(@car.category)
     @car.destroy
 
+    Rails.cache.delete(category_cache_key(@car.category))
+
     respond_to do |format|
       format.html { redirect_to category_path , :notice => t("rva.cars.controller.destroy") }
       format.json { head :no_content }
