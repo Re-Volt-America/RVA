@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     require 'rva_calculate_results_service'
 
     @count = 0
-    @rva_results = Rails.cache.fetch("Session:#{@session.id}") do
+    @rva_results = Rails.cache.fetch("Session:#{@session.id}", :expires_in => 1.month) do
       RvaCalculateResultsService.new(@session).call
     end
 
