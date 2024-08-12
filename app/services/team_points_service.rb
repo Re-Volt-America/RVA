@@ -138,7 +138,7 @@ class TeamPointsService
         teams << team
       end
 
-      team.points += row[7]  # PA
+      team.points += row[7] # PA
 
       team.save
 

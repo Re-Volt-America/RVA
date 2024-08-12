@@ -66,7 +66,7 @@ class User
   field :country, :type => String
 
   def has_team?
-    !self.team.nil?
+    !team.nil?
   end
 
   def to_param
@@ -113,18 +113,18 @@ class User
   def filter_negative_stats
     return if stats.nil?
 
-    stats.race_wins = 0 if stats.race_wins && stats.race_wins < 0
+    stats.race_wins = 0 if stats.race_wins&.negative?
     stats.race_win_rate = 0.0 if stats.race_win_rate && stats.race_win_rate < 0.0
-    stats.race_podiums = 0 if stats.race_podiums && stats.race_podiums < 0
-    stats.race_count = 0 if stats.race_count && stats.race_count < 0
-    stats.positions_sum = 0 if stats.positions_sum && stats.positions_sum < 0
-    stats.session_wins = 0 if stats.session_wins && stats.session_wins < 0
+    stats.race_podiums = 0 if stats.race_podiums&.negative?
+    stats.race_count = 0 if stats.race_count&.negative?
+    stats.positions_sum = 0 if stats.positions_sum&.negative?
+    stats.session_wins = 0 if stats.session_wins&.negative?
     stats.session_win_rate = 0.0 if stats.session_win_rate && stats.session_win_rate < 0.0
-    stats.session_podiums = 0 if stats.session_podiums && stats.session_podiums < 0
-    stats.session_count = 0 if stats.session_count && stats.session_count < 0
+    stats.session_podiums = 0 if stats.session_podiums&.negative?
+    stats.session_count = 0 if stats.session_count&.negative?
     stats.average_position = 0.0 if stats.average_position && stats.average_position < 0.0
     stats.participation_rate = 0.0 if stats.participation_rate && stats.participation_rate < 0.0
     stats.official_score = 0.0 if stats.official_score && stats.official_score < 0.0
-    stats.obtained_points = 0 if stats.obtained_points && stats.obtained_points < 0
+    stats.obtained_points = 0 if stats.obtained_points&.negative?
   end
 end

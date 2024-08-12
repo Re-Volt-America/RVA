@@ -35,7 +35,7 @@ class TournamentsController < ApplicationController
 
     respond_to do |format|
       if @tournament.save
-        format.html { redirect_to tournament_url(@tournament), :notice => t(".controller.create") }
+        format.html { redirect_to tournament_url(@tournament), :notice => t('.controller.create') }
         format.json { render :show, :status => :created, :location => @tournament, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -48,7 +48,7 @@ class TournamentsController < ApplicationController
   def update
     respond_to do |format|
       if @tournament.update(tournament_params)
-        format.html { redirect_to tournament_url(@tournament), :notice => t(".controller.update") }
+        format.html { redirect_to tournament_url(@tournament), :notice => t('.controller.update') }
         format.json { render :show, :status => :ok, :location => @tournament, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -62,7 +62,7 @@ class TournamentsController < ApplicationController
     @tournament.destroy
 
     respond_to do |format|
-      format.html { redirect_to tournaments_url, :notice => t(".controller.destroy") }
+      format.html { redirect_to tournaments_url, :notice => t('.controller.destroy') }
       format.json { head :no_content }
     end
   end

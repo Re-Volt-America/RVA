@@ -19,22 +19,18 @@ class CsvImportSessionsService
       '%D',                       # Expected format 'mm/dd/yy H:mm:ss' from Windows machines
       '%a %b %e %H:%M:%S %Y'      # Expected format 'ddd mmm d H:mm:ss yyyy' from Unix machines
     ]
-  
+
     parsed_date = nil
-  
+
     formats.each do |format|
-      begin
-        parsed_date = Date.strptime(date_string, format)
-        break
-      rescue ArgumentError
-        next
-      end
+      parsed_date = Date.strptime(date_string, format)
+      break
+    rescue ArgumentError
+      next
     end
-  
-    if parsed_date.nil?
-      raise ArgumentError, "Unrecognised date format"
-    end
-  
+
+    raise ArgumentError, 'Unrecognised date format' if parsed_date.nil?
+
     parsed_date
   end
 

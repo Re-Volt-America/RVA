@@ -83,7 +83,7 @@ class StatsService
           :average_position => session_entry.average_position,
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
-          :participation_multiplier => session_entry.participation_multiplier,
+          :participation_multiplier => session_entry.participation_multiplier
         }
 
         ranking_entries << RacerResultEntry.new(se_hash)
@@ -123,7 +123,7 @@ class StatsService
           :average_position => session_entry.average_position,
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
-          :participation_multiplier => session_entry.participation_multiplier,
+          :participation_multiplier => session_entry.participation_multiplier
         }
 
         season_entries << RacerResultEntry.new(session_entry_hash)

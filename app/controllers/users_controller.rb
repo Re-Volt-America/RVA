@@ -54,13 +54,16 @@ class UsersController < ApplicationController
       next if params[:user][attr].nil?
 
       # FIXME: When users don't have a team_id attr, this fails to update their team
-      if attr.eql?("team_id")
+      if attr.eql?('team_id')
         team = Team.all.find { |t| t.leader.id.eql?(user.id) }
 
         # If user is team leader, we cannot move them to a different team ... we abort
         if !team.nil? && !team.id.to_s.eql?(params[:user][attr])
           respond_to do |format|
-            format.html { redirect_to user_path(user), :notice => t(".controller.update.leader", :user => user.username, :team => team.name) }
+            format.html do
+              redirect_to user_path(user),
+                          :notice => t('.controller.update.leader', :user => user.username, :team => team.name)
+            end
           end and return
         end
       end
@@ -77,7 +80,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if user.update!
-        format.html { redirect_to user_path(user), :notice => t(".controller.update.success") }
+        format.html { redirect_to user_path(user), :notice => t('.controller.update.success') }
       else
         format.html { redirect_to user_path(user), :status => :unprocessable_entity }
       end
@@ -92,7 +95,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if current_user.update!
-        format.html { redirect_back fallback_location: root_path, :notice => t(".controller.update.locale", :lang => SYS::LOCALES_MAP.key(params[:locale].to_sym)) }
+        format.html do
+          redirect_back :fallback_location => root_path,
+                        :notice => t('.controller.update.locale',
+                                     :lang => SYS::LOCALES_MAP.key(params[:locale].to_sym))
+        end
       else
         format.html { redirect_to root_path, :status => :unprocessable_entity }
       end
@@ -111,15 +118,15 @@ class UsersController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.select") }
-        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t('misc.controller.import.select') }
+        format.json { render :json => t('misc.controller.import.select'), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to users_new_path, :notice => t("misc.controller.import.upload")  }
-        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to users_new_path, :notice => t('misc.controller.import.upload') }
+        format.json { render :json => t('misc.controller.import.upload'), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -127,13 +134,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @users.empty?
-        format.html { redirect_to users_new_path, :notice => t(".controller.import.exists") }
+        format.html { redirect_to users_new_path, :notice => t('.controller.import.exists') }
         format.json { render :show, :status => :ok, :layout => false }
       end and return
 
       @users.each do |user|
         if user.save!
-          format.html { redirect_to root_path, :notice => t(".controller.import.success") }
+          format.html { redirect_to root_path, :notice => t('.controller.import.success') }
           format.json { render :show, :status => :created, :location => user, :layout => false }
         else
           format.html { render :new, :status => :unprocessable_entity }

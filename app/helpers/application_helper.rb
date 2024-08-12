@@ -180,7 +180,7 @@ module ApplicationHelper
 
     red, green, blue = hex.match(SYS::RGB_REGEXP).captures.map(&:hex)
 
-    return (red * 0.299 + green * 0.587 + blue * 0.114) > 186 ? '#000000' : '#FFFFFF' if black_white
+    return ((red * 0.299) + (green * 0.587) + (blue * 0.114)) > 186 ? '#000000' : '#FFFFFF' if black_white
 
     red = (255 - red).to_s(16)
     green = (255 - green).to_s(16)

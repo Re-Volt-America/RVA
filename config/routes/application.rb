@@ -43,7 +43,7 @@ RVA::Application.routes.draw do
   resources :tournaments
   resources :teams do
     collection do
-      put :add_member, :to => "teams#add_member"
+      put :add_member, :to => 'teams#add_member'
     end
   end
 
