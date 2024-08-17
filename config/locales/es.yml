@@ -18,7 +18,7 @@ es:
       admin:
         title: "Admin"
         upload-session: "Subir sesión"
-        generate-tracklist: "Generate Tracklist"
+        generate-tracklist: "Generar lista de pistas"
         create-season: "Crear temporada"
         import-tracks: "Importar pistas"
         import-cars: "Importar coches"
