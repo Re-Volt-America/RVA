@@ -288,9 +288,9 @@ lol:
         index:
           page-title: "RVA - trakzz"
           title: "Rva trax"
-          description: "The tracks in the RVA Track Pack of the current season."
+          description: "Da trax in te rva trake pacc of the kurant seson."
         show:
-          description: "Part of the RVA Car Pack of the current season."
+          description: "Paaat of te RVA ka pacc of teh kurrant seeson."
         new:
           page-title: "RVa - Putting trakz in"
         edit:
@@ -386,9 +386,9 @@ lol:
         index:
           page-title: "RVA - kaz"
           title: "Rva kaz"
-          description: "The cars in the RVA Car Pack of the current season."
+          description: "Da kaaz in te rva ka pacc of the kurant seson,=."
         show:
-          description: "Part of the RVA Car Pack of the current season."
+          description: "Paaat of te RVA ka pacc of teh kurrant seeson."
       title: "Teh RVA Carz"
       ratings-link: "Car gud or bad"
       features:
@@ -414,7 +414,7 @@ lol:
         folder-name: "Fuldr naem"
         update: "Updaet"
         error: "Ka kuld nut b savd"
-        delete: "dheleet kaa"
+        delete: "Kill kaa"
       import:
         title: "Gif Kaz"
       controller:
@@ -568,7 +568,7 @@ lol:
       show:
         page-title: "RVA - Repo'z"
         title: "Rva - Repo'z"
-        description: "Re-Volt America's version control repositories for content packs and other software."
+        description: "Rva's vershun kontrl repoes fow kontenat paccz et ada softwear."
       new:
         page-title: "RvA - NEW repo"
     title: "Revishunz"
@@ -739,32 +739,32 @@ lol:
   tournaments:
     meta:
       index:
-        page-title: "Re-Volt America - Tournaments"
+        page-title: "RVa - Tawnahmntz"
       show:
         page-title: "RVa - %{name}"
       new:
-        page-title: "Re-Volt America - New Tournament"
+        page-title: "RVA - New Tawnamnts"
       edit:
-        page-title: "Re-Volt America - Edit Tournament"
+        page-title: "RVa - Edit Tawnamentzz"
     title: "Old cat competitionz"
-    no-tournaments: "No tournaments to display"
+    no-tournaments: "Nu tawnahmenz 2 dizpley"
     notice: "note"
     edit:
-      title: "Editing Tournament"
+      title: "Editin' tawnumentz"
       name: "Naem"
       date: "Det"
       season: "Seasun"
-      banner: "Tournament banner"
+      banner: "Tawnahmenz banuh"
       format: "Furmat"
       save: "Saev kat kompetishun"
-      error: "prohibited this tournament from being saved:"
+      error: "not aloud dis tawnamant frum bing saevd:"
     new:
-      title: "New Tournament"
-      button: "New Tournament"
+      title: "New INVASION KAP"
+      button: "New INVASION KAP"
     controller:
-      create: "Tournament was successfully created."
-      update: "Tournament was successfully updated."
-      destroy: "Tournament was successfully destroyed."
+      create: "Kitey start tawnamen alredy."
+      update: "Kitey updaet tawnamen ok."
+      destroy: "Tawnhment wus suksesfully deztrod."
   #Re-Volt car classes
   classes:
     rookie: "noob"
