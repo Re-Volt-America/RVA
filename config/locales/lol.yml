@@ -140,14 +140,14 @@ lol:
         classic-way:
           description-html: "Hi kittehz were gonna visit this <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and compurrtr kiteh will help u dawnlod bov rva ka pacc and trake pacc. <p>Opun da folduh were u havv RVGL alive and unzip (:o) da newly dawnloded fils there.</p>"
         mobile-players:
-          description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
+          description-html: "Kitteh will do da stepz ov te klasik medod, only dat on Android u ned a fail manajuh witch kan dekompwez ZIP failz, u kan surch in gogle Play Store app suc as ZAchiver, RAR / othrz if ur kittehfone dosent likey a fail manajur. <p>Go 2 da Download fowdur (/ wherevuh u hav dawnlod te pax) in da fail manajr & unZIP them in de RVGL fawldr dat is in da inside-memary.</p>"
       play-online:
         title: "How can i raec other catz onlein?"
         description-html: "In RVA, we got raecin sesshunz at 12am UTC evy day, n they r all annoncd in Discord a chanel cald \"#lobby-RVA\". <a href='play'>Here</a> u kan see teh countdown 4 teh nex sesshun."
         reminder:
           title: "Dont forgwt!!"
-          li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
-          li-2-html: "When there is an open room to join and enter to play a message will appear in #lobby-rva, </br> for example: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
+          li-1: "B4re joining aw-er roomz, u muz instaw da RVA Pacc. chek da FAQ thing 4 moar info."
+          li-2-html: "Wen ther iz an opun room 2 john & go in to pley a msg will apper in #lobby-rva blah blah blah (eg \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\")"
           li-3: "Open RVGL, go 2 Play Manikittehgaem >> Join Gaem, n copy n paste da IP. Dis is a exempel IP, each kitteh will havv a different IP."
       password-sessions:
         title: "how 2 join da sessun protecktud??"
