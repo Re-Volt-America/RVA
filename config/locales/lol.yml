@@ -174,8 +174,8 @@ lol:
           description-1: "ADN ov ech sesshun, de resulz gottn bai ech pleyr r postd in da #rank-global Chanel, in rRVA we hav a SPESHAL wae ov desidin' da skorz wher da ka markipliar, te accumulaed pontz, da avg royel & da fisnished raecz hav infwuenc."
           description-2-html: "You can see in detail how the points are calculated in a session in the following <a href='points', rel='noopener noreferrer'>link</a>."
           list:
-            li-1: "The Car Multiplier gives each car a value that determines its difficulty, the higher its multiplier number, the more points you can add, but it won't help if you finish the races last by trying to drive the most difficult cars."
-            li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
+            li-1: "Te kar markiplir gives ech ka a rating that choses te difficwulty, te haier itz markiplir #, te moar pontz u kan add, butt itt wontt help if you fisnish da raec last bai traiing 2 draiv the HARDESt Kaz."
+            li-2: "Te acumewlaetd pontz iz the + thing of te pontz yu get basd on ur final # royel in ech raec. Moar pontz wil b given in a sesshun if it statz with 10 or moar pleyrz."
             li-3: " Avg posishun and raec kumpletd afeck ur pontz accumalekd in a sesshun, finishing in low # royelz or quitting utube wil make kitteh get LESS PONTZ in a sessun."
       generics:
         recommended-way: "Good way: RVGL Launcher"
