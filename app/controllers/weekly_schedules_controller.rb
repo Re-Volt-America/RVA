@@ -31,8 +31,7 @@ class WeeklySchedulesController < ApplicationController
   end
 
   # GET /weekly_schedules/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /weekly_schedules or /weekly_schedules.json
   def create
@@ -42,7 +41,9 @@ class WeeklySchedulesController < ApplicationController
 
     respond_to do |format|
       if @weekly_schedule.save
-        format.html { redirect_to weekly_schedule_url(@weekly_schedule), :notice => "Weekly schedule was successfully created." }
+        format.html do
+          redirect_to weekly_schedule_url(@weekly_schedule), :notice => 'Weekly schedule was successfully created.'
+        end
         format.json { render :show, :status => :created, :location => @weekly_schedule }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -55,7 +56,9 @@ class WeeklySchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @weekly_schedule.update(weekly_schedule_params)
-        format.html { redirect_to weekly_schedule_url(@weekly_schedule), :notice => "Weekly schedule was successfully updated." }
+        format.html do
+          redirect_to weekly_schedule_url(@weekly_schedule), :notice => 'Weekly schedule was successfully updated.'
+        end
         format.json { render :show, :status => :ok, :location => @weekly_schedule }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -69,19 +72,20 @@ class WeeklySchedulesController < ApplicationController
     @weekly_schedule.destroy!
 
     respond_to do |format|
-      format.html { redirect_to weekly_schedules_url, :notice => "Weekly schedule was successfully destroyed." }
+      format.html { redirect_to weekly_schedules_url, :notice => 'Weekly schedule was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_weekly_schedule
-      @weekly_schedule = WeeklySchedule.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def weekly_schedule_params
-      params.require(:weekly_schedule).permit(:season, :start_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_weekly_schedule
+    @weekly_schedule = WeeklySchedule.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def weekly_schedule_params
+    params.require(:weekly_schedule).permit(:season, :start_date)
+  end
 end

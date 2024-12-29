@@ -2,6 +2,8 @@
 
 module Users
   class PasswordsController < Devise::PasswordsController
+    prepend_before_action :check_captcha, only: [:create]
+
     # GET /resource/password/new
     # def new
     #   super
@@ -31,6 +33,15 @@ module Users
     # The path used after sending reset password instructions
     def after_sending_reset_password_instructions_path_for(_resource_name)
       root_path
+    end
+
+    private
+
+    def check_captcha
+      unless verify_recaptcha
+        self.resource = resource_class.new
+        respond_with_navigational(resource) { render :new }
+      end
     end
   end
 end

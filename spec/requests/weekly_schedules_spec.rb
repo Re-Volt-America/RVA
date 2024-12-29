@@ -12,121 +12,117 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/weekly_schedules", type: :request do
-  
+RSpec.describe '/weekly_schedules', :type => :request do
   # This should return the minimal set of attributes required to create a valid
   # WeeklySchedule. As you add validations to WeeklySchedule, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       WeeklySchedule.create! valid_attributes
       get weekly_schedules_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       weekly_schedule = WeeklySchedule.create! valid_attributes
       get weekly_schedule_url(weekly_schedule)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_weekly_schedule_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       weekly_schedule = WeeklySchedule.create! valid_attributes
       get edit_weekly_schedule_url(weekly_schedule)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new WeeklySchedule" do
-        expect {
-          post weekly_schedules_url, params: { weekly_schedule: valid_attributes }
-        }.to change(WeeklySchedule, :count).by(1)
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new WeeklySchedule' do
+        expect do
+          post weekly_schedules_url, :params => { :weekly_schedule => valid_attributes }
+        end.to change(WeeklySchedule, :count).by(1)
       end
 
-      it "redirects to the created weekly_schedule" do
-        post weekly_schedules_url, params: { weekly_schedule: valid_attributes }
+      it 'redirects to the created weekly_schedule' do
+        post weekly_schedules_url, :params => { :weekly_schedule => valid_attributes }
         expect(response).to redirect_to(weekly_schedule_url(WeeklySchedule.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new WeeklySchedule" do
-        expect {
-          post weekly_schedules_url, params: { weekly_schedule: invalid_attributes }
-        }.to change(WeeklySchedule, :count).by(0)
+    context 'with invalid parameters' do
+      it 'does not create a new WeeklySchedule' do
+        expect do
+          post weekly_schedules_url, :params => { :weekly_schedule => invalid_attributes }
+        end.to change(WeeklySchedule, :count).by(0)
       end
 
-    
+
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post weekly_schedules_url, params: { weekly_schedule: invalid_attributes }
+        post weekly_schedules_url, :params => { :weekly_schedule => invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested weekly_schedule" do
-        weekly_schedule = WeeklySchedule.create! valid_attributes
-        patch weekly_schedule_url(weekly_schedule), params: { weekly_schedule: new_attributes }
-        weekly_schedule.reload
-        skip("Add assertions for updated state")
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
       end
 
-      it "redirects to the weekly_schedule" do
+      it 'updates the requested weekly_schedule' do
         weekly_schedule = WeeklySchedule.create! valid_attributes
-        patch weekly_schedule_url(weekly_schedule), params: { weekly_schedule: new_attributes }
+        patch weekly_schedule_url(weekly_schedule), :params => { :weekly_schedule => new_attributes }
+        weekly_schedule.reload
+        skip('Add assertions for updated state')
+      end
+
+      it 'redirects to the weekly_schedule' do
+        weekly_schedule = WeeklySchedule.create! valid_attributes
+        patch weekly_schedule_url(weekly_schedule), :params => { :weekly_schedule => new_attributes }
         weekly_schedule.reload
         expect(response).to redirect_to(weekly_schedule_url(weekly_schedule))
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         weekly_schedule = WeeklySchedule.create! valid_attributes
-        patch weekly_schedule_url(weekly_schedule), params: { weekly_schedule: invalid_attributes }
+        patch weekly_schedule_url(weekly_schedule), :params => { :weekly_schedule => invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested weekly_schedule" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested weekly_schedule' do
       weekly_schedule = WeeklySchedule.create! valid_attributes
-      expect {
+      expect do
         delete weekly_schedule_url(weekly_schedule)
-      }.to change(WeeklySchedule, :count).by(-1)
+      end.to change(WeeklySchedule, :count).by(-1)
     end
 
-    it "redirects to the weekly_schedules list" do
+    it 'redirects to the weekly_schedules list' do
       weekly_schedule = WeeklySchedule.create! valid_attributes
       delete weekly_schedule_url(weekly_schedule)
       expect(response).to redirect_to(weekly_schedules_url)

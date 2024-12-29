@@ -124,10 +124,10 @@ module SYS
       CATEGORY::ROOKIE => 1.2,
       CATEGORY::AMATEUR => 1.15,
       CATEGORY::ADVANCED => 1.075,
-      CATEGORY::SEMI_PRO => 1,
+      CATEGORY::SEMI_PRO => 1.0,
       CATEGORY::PRO => 0.95,
       CATEGORY::SUPER_PRO => 0.9,
-      CATEGORY::RANDOM => 1,
+      CATEGORY::RANDOM => 1.0,
       CATEGORY::CLOCKWORK => 1.25
     }
     BONUSES_PER_DIFF = {

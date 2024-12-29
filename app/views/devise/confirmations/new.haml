@@ -5,6 +5,8 @@
       .field.form-group
         = f.label :email, t("activerecord.attributes.user.email")
         = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :class => "form-control"
+      .field.form-group
+        = recaptcha_tags
       .actions
         = f.button t('.resend_confirmation_instructions'), :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"

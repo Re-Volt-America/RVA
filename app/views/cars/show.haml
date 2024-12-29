@@ -53,3 +53,4 @@
         %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url}
         - if user_is_admin?
           = link_to t("rva.cars.edit.button"), edit_car_path(@car), :class => "btn mt-2"
+          = link_to t("rva.cars.edit.delete"), @car, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"

@@ -15,7 +15,7 @@ RVA::Application.routes.draw do
   post '/users/import', :to => 'users#import'
   put '/:username', :to => 'users#edit'
 
-  put '/users/locale', :to => "users#update_locale"
+  put '/users/locale', :to => 'users#update_locale'
 
   get ':username', :to => 'users#show', :as => :user
 end

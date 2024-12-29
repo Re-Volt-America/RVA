@@ -7,7 +7,7 @@ gem 'countries', '~> 5.7'                                             # Collecti
 gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
-gem 'devise-i18n'
+gem 'devise-i18n', '~> 1.12', '>= 1.12.1'                             # Translations for the devise gem
 gem 'faraday-http-cache', '~> 2.4'                                    # Faraday middleware that respects HTTP cache
 gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'github_api', '~> 0.19.0'                                         # GitHub API
@@ -21,6 +21,7 @@ gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Offi
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application

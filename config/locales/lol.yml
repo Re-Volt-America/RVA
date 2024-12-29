@@ -414,6 +414,7 @@ lol:
         folder-name: "Fuldr naem"
         update: "Updaet"
         error: "Ka kuld nut b savd"
+        delete: "dheleet kaa"
       import:
         title: "Gif Kaz"
       controller:

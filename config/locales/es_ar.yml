@@ -411,6 +411,7 @@ es-AR:
         folder-name: "Nombre de carpeta"
         update: "Actualizar"
         error: "Car could not be saved"
+        delete: "Eliminar auto"
       import:
         title: "Import Cars"
       controller:

@@ -1,14 +1,14 @@
 namespace :users do
   desc "Set all users' locales to the default app locale"
-  task reset_locales: :environment do
+  task :reset_locales => :environment do
     User.each do |u|
       u.locale = I18n.default_locale
       u.update!
     end
   end
 
-  desc "Set all stats to zero for all users"
-  task clear_stats: :environment do
+  desc 'Set all stats to zero for all users'
+  task :clear_stats => :environment do
     User.each do |u|
       u.stats.race_wins = 0
       u.stats.race_win_rate = 0.0
@@ -28,8 +28,8 @@ namespace :users do
     end
   end
 
-  desc "Set all stats to zero for a determined user"
-  task :clear_user_stats, [:username] => :environment do |t, args|
+  desc 'Set all stats to zero for a determined user'
+  task :clear_user_stats, [:username] => :environment do |_t, args|
     return if args[:username].nil?
 
     u = User.find { |u| u.username.downcase.eql?(args[:username].downcase) }
