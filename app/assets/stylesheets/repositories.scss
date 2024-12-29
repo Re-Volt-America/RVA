@@ -52,4 +52,32 @@
       color: #bdbdbd;
     }
   }
+
+  .commit-message {
+    position: relative;
+
+    .expand-toggle {
+      display: none;
+
+      &:checked {
+        & + .expand-label + .message-full {
+          display: block;
+        }
+      }
+    }
+
+    .expand-label {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 0;
+      margin-left: 0.3rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .message-full {
+      display: none;
+      padding-top: 0.5rem;
+    }
+  }
 }
