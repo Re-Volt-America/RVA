@@ -333,6 +333,7 @@ lol:
         folder-name: "Fuldr naem"
         author: "Kiteh"
         stock: "OG katz"
+        lego: "Lego"
         average-lap-time: "Avg lap taim (s)"
         error: "Trak kuld nut b savd"
       import:
@@ -401,6 +402,8 @@ lol:
         stock: "OG"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "Dis car appaerd in RVA %{season}"
       class-selector:
         title: "clazzes"
@@ -427,6 +430,8 @@ lol:
     shared:
       stock:
         title: "OG"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "RVA - assez"
@@ -1007,6 +1012,7 @@ lol:
     and: "n'"
     unknown: "kitteh dunno"
     custom: "Kustom"
+    lego: "Lego"
     stock: "OG"
     author: "Kiteh"
     download-as-png: "Daunlode es PNG"
