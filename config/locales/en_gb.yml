@@ -333,6 +333,7 @@ en-GB:
         folder-name: "Folder name"
         author: "Author"
         stock: "Stock"
+        lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
@@ -401,6 +402,8 @@ en-GB:
         stock: "Stock"
         stock-tooltip:
           tooltip: "Original Re-Volt Content"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
@@ -427,6 +430,8 @@ en-GB:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Assets"
@@ -1007,6 +1012,7 @@ en-GB:
     and: "&"
     unknown: "Unknown"
     custom: "Custom"
+    lego: "Lego"
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
