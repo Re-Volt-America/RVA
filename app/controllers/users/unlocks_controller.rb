@@ -2,7 +2,7 @@
 
 module Users
   class UnlocksController < Devise::UnlocksController
-    prepend_before_action :check_captcha, only: [:create]
+    prepend_before_action :check_captcha, :only => [:create]
 
     # GET /resource/unlock/new
     # def new
@@ -32,10 +32,10 @@ module Users
     # end
 
     def check_captcha
-      unless verify_recaptcha
-        self.resource = resource_class.new
-        respond_with_navigational(resource) { render :new }
-      end
+      return if verify_recaptcha
+
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
     end
   end
 end

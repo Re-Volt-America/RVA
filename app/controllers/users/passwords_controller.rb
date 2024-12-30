@@ -2,7 +2,7 @@
 
 module Users
   class PasswordsController < Devise::PasswordsController
-    prepend_before_action :check_captcha, only: [:create]
+    prepend_before_action :check_captcha, :only => [:create]
 
     # GET /resource/password/new
     # def new
@@ -38,10 +38,10 @@ module Users
     private
 
     def check_captcha
-      unless verify_recaptcha
-        self.resource = resource_class.new
-        respond_with_navigational(resource) { render :new }
-      end
+      return if verify_recaptcha
+
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
     end
   end
 end
