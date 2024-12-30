@@ -35,13 +35,17 @@
             = t("rva.tracks.format.length.meters", length:@track.length) #{@track.length}
           %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
             = t("rva.shared.stock.title")
+          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.lego-tooltip.tooltip")}
+            = t("rva.shared.lego.title")
           %dt
 
           %dd
             = @track.stock ? t("misc.bool.true") : t("misc.bool.false")
+          %dd
+            = @track.lego ? t("misc.bool.true") : t("misc.bool.false")
         - if @track.season
           %i
-            = t("rva.tracks.featured.description", season:@track.season.name) #{@track.season.name}
+            = t("rva.tracks.featured.description", season: @track.season.name) #{@track.season.name}
 
       .col-md-6
         %img.thumbnail.center-block.img-responsive{src: @track.thumbnail_url}

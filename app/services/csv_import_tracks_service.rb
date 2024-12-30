@@ -25,7 +25,8 @@ class CsvImportTracksService
         match.update_attribute(:folder_name, row[4])
         match.update_attribute(:author, row[5])
         match.update_attribute(:stock, row[6])
-        match.update_attribute(:average_lap_time, row[7])
+        match.update_attribute(:lego, row[7])
+        match.update_attribute(:average_lap_time, row[8])
 
         tracks << match
         next
@@ -40,7 +41,8 @@ class CsvImportTracksService
         :folder_name => row[4],
         :author => row[5],
         :stock => row[6],
-        :average_lap_time => row[7]
+        :lego => row[7],
+        :average_lap_time => row[8]
       }
 
       tracks << Track.new(track_hash)
