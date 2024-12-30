@@ -332,6 +332,7 @@ es-CL:
         folder-name: "Nombre de carpeta"
         author: "Autor"
         stock: "Stock"
+        lego: "Lego"
         average-lap-time: "Tiempo de vuelta promedio (segundos)"
         error: "No se pudo guardar la pista"
       import:
@@ -400,6 +401,8 @@ es-CL:
         stock: "Stock"
         stock-tooltip:
           tooltip: "Contenido original de Re-Volt"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "Este auto ha estado en RVA desde la %{season}"
       class-selector:
         title: "Clases"
@@ -426,6 +429,8 @@ es-CL:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Recursos"
@@ -1006,6 +1011,7 @@ es-CL:
     and: "&"
     unknown: "Desconocido"
     custom: "Personalizado"
+    lego: "Lego"
     stock: "Stock"
     author: "Autor"
     download-as-png: "Descargar como PNG"
