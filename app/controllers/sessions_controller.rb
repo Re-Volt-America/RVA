@@ -81,10 +81,10 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.destroy!
+        Rails.cache.delete("Session:#{@session.id}")
+
         format.html { redirect_to sessions_url, :notice => t('rankings.sessions.controller.delete') }
         format.json { head :no_content }
-
-        Rails.cache.delete("Session:#{@session.id}")
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
@@ -126,14 +126,14 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save!
-        format.html { redirect_to session_url(@session), :notice => t('rankings.sessions.controller.import.success') }
-        format.json { render :show, :status => :created, :location => @session, :layout => false }
-
         Rails.cache.delete('recent_sessions')
 
         # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
         # in cache is by expiring their keys for each new session upload.
         Rails.cache.delete('current_ranking')
+
+        format.html { redirect_to session_url(@session), :notice => t('rankings.sessions.controller.import.success') }
+        format.json { render :show, :status => :created, :location => @session, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }

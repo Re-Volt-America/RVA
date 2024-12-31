@@ -45,9 +45,6 @@ class SeasonsController < ApplicationController
           @season.rankings << Ranking.new({ :number => n + 1, :season => @season })
         end
 
-        format.html { redirect_to season_url(@season), :notice => t('.controller.create') }
-        format.json { render :show, :status => :created, :location => @season, :layout => false }
-
         Rails.cache.delete('current_season')
 
         Rails.cache.delete('rookie_cars')
@@ -57,6 +54,9 @@ class SeasonsController < ApplicationController
         Rails.cache.delete('pro_cars')
         Rails.cache.delete('superpro_cars')
         Rails.cache.delete('clockwork_cars')
+
+        format.html { redirect_to season_url(@season), :notice => t('.controller.create') }
+        format.json { render :show, :status => :created, :location => @season, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @season.errors, :status => :unprocessable_entity, :layout => false }

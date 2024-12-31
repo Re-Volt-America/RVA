@@ -118,10 +118,10 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save!
+        Rails.cache.delete(category_cache_key(params[:category]))
+
         format.html { redirect_to car_url(@car), :notice => t('rva.cars.controller.create') }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
-
-        Rails.cache.delete(category_cache_key(params[:category]))
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @car.errors, :status => :unprocessable_entity, :layout => false }
@@ -184,10 +184,10 @@ class CarsController < ApplicationController
 
       @cars.each do |car|
         if car.save!
+          Rails.cache.delete(category_cache_key(params[:category].to_i))
+
           format.html { redirect_to new_car_path, :notice => t('rva.cars.controller.import.success') }
           format.json { render :show, :status => :created, :location => car, :layout => false }
-
-          Rails.cache.delete(category_cache_key(params[:category].to_i))
         else
           format.html { render :new, :status => :unprocessable_entity }
           format.json { render :json => car.errors, :status => :unprocessable_entity, :layout => false }
