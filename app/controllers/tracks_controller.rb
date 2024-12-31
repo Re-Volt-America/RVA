@@ -104,7 +104,7 @@ class TracksController < ApplicationController
       end and return
 
       @tracks.each do |track|
-        if track.save!
+        if track.save
           format.html { redirect_to new_track_path, :notice => t('rva.tracks.controller.import.success') }
           format.json { render :show, :status => :created, :location => track, :layout => false }
         else

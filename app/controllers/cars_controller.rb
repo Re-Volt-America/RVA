@@ -117,7 +117,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
 
     respond_to do |format|
-      if @car.save!
+      if @car.save
         Rails.cache.delete(category_cache_key(params[:category]))
 
         format.html { redirect_to car_url(@car), :notice => t('rva.cars.controller.create') }
@@ -183,7 +183,7 @@ class CarsController < ApplicationController
       end and return
 
       @cars.each do |car|
-        if car.save!
+        if car.save
           Rails.cache.delete(category_cache_key(params[:category].to_i))
 
           format.html { redirect_to new_car_path, :notice => t('rva.cars.controller.import.success') }

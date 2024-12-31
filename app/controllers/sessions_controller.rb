@@ -125,7 +125,7 @@ class SessionsController < ApplicationController
                                             params[:teams]).call
 
     respond_to do |format|
-      if @session.save!
+      if @session.save
         Rails.cache.delete('recent_sessions')
 
         # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date

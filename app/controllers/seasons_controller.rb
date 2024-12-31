@@ -40,7 +40,7 @@ class SeasonsController < ApplicationController
     @season = Season.new(season_params)
 
     respond_to do |format|
-      if @season.save!
+      if @season.save
         6.times do |n|
           @season.rankings << Ranking.new({ :number => n + 1, :season => @season })
         end

@@ -139,7 +139,7 @@ class UsersController < ApplicationController
       end and return
 
       @users.each do |user|
-        if user.save!
+        if user.save
           format.html { redirect_to root_path, :notice => t('.controller.import.success') }
           format.json { render :show, :status => :created, :location => user, :layout => false }
         else
