@@ -124,19 +124,24 @@ class SessionsController < ApplicationController
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
                                             params[:teams]).call
 
-    respond_to do |format|
-      if @session.save
-        Rails.cache.delete('recent_sessions')
+    if @session.save
+      Rails.cache.delete('recent_sessions')
+      Rails.cache.delete('current_ranking')
 
-        # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
-        # in cache is by expiring their keys for each new session upload.
-        Rails.cache.delete('current_ranking')
+      respond_to do |format|
+        format.html do
+          redirect_to session_url(@session),
+                      status: :see_other,
+                      notice: t('rankings.sessions.controller.import.success')
+        end
 
-        format.html { redirect_to session_url(@session), :notice => t('rankings.sessions.controller.import.success') }
-        format.json { render :show, :status => :created, :location => @session, :layout => false }
-      else
-        format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
+        format.json { render :show, status: :created, location: @session, layout: false }
+        format.any { head :not_acceptable }
+      end and return
+    else
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @session.errors, status: :unprocessable_entity, layout: false }
       end and return
     end
   end
