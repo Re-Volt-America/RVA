@@ -62,6 +62,7 @@
       &:checked {
         & + .expand-label + .message-full {
           display: block;
+          margin-left: 10px;
         }
       }
     }
