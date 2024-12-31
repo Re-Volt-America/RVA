@@ -151,6 +151,8 @@ module ApplicationHelper
   # @param content [String] Content
   # @return [String] Parsed html and/or markdown text
   def render_pretty(content, config = Sanitize::Config::RELAXED)
+    return '' if content.nil?
+
     Sanitize.clean(content, config)
 
     options = { :input => 'Kramdown', :parse_block_html => true }
