@@ -397,6 +397,7 @@ it:
         category: "Categoria"
         author: "Author"
         stock: "Stock"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Contenuto originale Di Re-Volt"
         lego-tooltip:
