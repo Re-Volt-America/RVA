@@ -400,6 +400,7 @@ lol:
         category: "KATogry"
         author: "Kitteh"
         stock: "OG"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
         lego-tooltip:
