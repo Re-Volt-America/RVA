@@ -397,6 +397,7 @@ es:
         category: "Categoría"
         author: "Author"
         stock: "Coches de Serie"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"
         lego-tooltip:
