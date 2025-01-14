@@ -929,6 +929,7 @@ en-GB:
         profile:
           title: "Edit Profile"
           gender: "Gender"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nationality"
             small: "(National flag)"
