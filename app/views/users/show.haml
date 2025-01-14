@@ -8,7 +8,18 @@
         = "#{@user.username}"
         = render :partial => 'country_flag', :locals => {:country => @user.country}
       = render :partial => 'badges', locals: { user: @user }
-    .col-md-4.mt-4
+
+  .row.mt-3
+    .col-md-3
+      - if @user.profile&.profile_picture_data.present?
+        = image_tag @user.profile.profile_picture_url,
+          class: "rounded",
+          style: "width: 200px; height: 200px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+      - else
+        = image_tag "no_profile_picture.png",
+          class: "rounded",
+          style: "width: 200px; height: 200px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+    .col-md-4
       .stats
         .well
           .rank
@@ -45,7 +56,9 @@
                 = t("users.stats.race-stats.wins")
               .number
                 = @user.stats.race_wins
-    .col-md-7.mt-4#recent
+
+  .row.mt-4
+    .col-md-12#recent
       .media-group
         %h6.pb-2.mb-0
           = t("users.stats.session-history.title")

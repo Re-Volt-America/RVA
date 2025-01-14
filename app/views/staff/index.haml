@@ -27,7 +27,14 @@
       - @admins.each do |admin|
         .col-md-3.col-sm-6.text-center
           .staff-entry
-            = image_tag "staff/#{admin.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+            - if admin.profile&.profile_picture_data.present?
+              = image_tag admin.profile.profile_picture_url,
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
+            - else
+              = image_tag "no_profile_picture.png",
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
             %br
             %a{:href => user_path(admin)}
               %h4.staff-username{style: "color: #f89406; border-bottom-color: #f89406;"}
@@ -55,7 +62,14 @@
       - @mods.each do |mod|
         .col-md-3.col-sm-6.text-center
           .staff-entry
-            = image_tag "staff/#{mod.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+            - if mod.profile&.profile_picture_data.present?
+              = image_tag mod.profile.profile_picture_url,
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
+            - else
+              = image_tag "no_profile_picture.png",
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
             %br
             %a{:href => user_path(mod)}
               %h4.staff-username{style: "color: #ff2200; border-bottom-color: #ff2200;"}
@@ -83,7 +97,14 @@
       - @organizers.each do |organizer|
         .col-md-3.col-sm-6.text-center
           .staff-entry
-            = image_tag "staff/#{organizer.username.downcase}.png", :alt => '', :height => 90, :style => "width: 120px; height: 120px; border-radius: 100%;", width: "90"
+            - if organizer.profile&.profile_picture_data.present?
+              = image_tag organizer.profile.profile_picture_url,
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
+            - else
+              = image_tag "no_profile_picture.png",
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
             %br
             %a{:href => user_path(organizer)}
               %h4.staff-username{style: "color: #36f971; border-bottom-color: #36f971;"}
