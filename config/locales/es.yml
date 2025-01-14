@@ -926,6 +926,7 @@ es:
         profile:
           title: "Editar Perfil"
           gender: "Gender"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nationality"
             small: "(National flag)"
