@@ -926,6 +926,7 @@ pt:
         profile:
           title: "Editar perfil"
           gender: "Sexo"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nacionalidade"
             small: "(Bandeira)"
