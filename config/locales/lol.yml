@@ -929,6 +929,7 @@ lol:
         profile:
           title: "Edit Profil"
           gender: "Gender"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Where u frum"
             small: "(Land flag)"
