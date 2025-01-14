@@ -928,6 +928,7 @@ es-CL:
         profile:
           title: "Editar Perfil"
           gender: "Género"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nacionalidad"
             small: "(Bandera nacional)"
