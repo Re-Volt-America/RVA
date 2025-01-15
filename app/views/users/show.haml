@@ -10,7 +10,7 @@
       = render :partial => 'badges', locals: { user: @user }
 
   .row.mt-3
-    .col-md-3
+    .col-md-3.mb-3
       - if @user.profile&.profile_picture_data.present?
         = image_tag @user.profile.profile_picture_url,
           class: "rounded",
