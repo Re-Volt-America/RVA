@@ -49,9 +49,13 @@
       %ul.navbar-nav
         = render :partial => 'locale_selector'
 
-        %li.dropdown
-          %a.nav-link.dropdown-toggle{:id => "access-toggle", :"data-toggle" => "dropdown", :href => "#"}
+        %li.dropdown{:style => "#{!user_signed_in? ? 'margin-top: 6px' : ''}"}
+          %a.nav-link.dropdown-toggle.d-flex.align-items-center.justify-content-between{:id => "access-toggle", :"data-toggle" => "dropdown", :href => "#"}
             - if user_signed_in?
+              - if current_user.profile&.profile_picture_data.present?
+                = image_tag current_user.profile.profile_picture_url, class: "nav-avatar mr-2"
+              - else
+                = image_tag "no_profile_picture.png", class: "nav-avatar mr-2"
               %span.current-username
                 = current_user.username
             - else
