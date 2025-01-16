@@ -11,6 +11,7 @@ gem 'devise-i18n', '~> 1.12', '>= 1.12.1'                             # Translat
 gem 'faraday-http-cache', '~> 2.4'                                    # Faraday middleware that respects HTTP cache
 gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'github_api', '~> 0.19.0'                                         # GitHub API
+gem 'groupdate', '~> 6.5', '>= 6.5.1'                                 # The simplest way to group temporal data
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
@@ -34,6 +35,7 @@ gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The orig
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'tzinfo-data', :platforms => [:windows, :jruby]                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3', :platforms => [               # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,6 +44,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print', '~> 1.9', '>= 1.9.2'                           # Print Ruby objects to visualize their structure
   gem 'bcrypt_pbkdf', '~> 1.1'                                        # Resolve OpenSSH problems with capistrano
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
   gem 'capistrano-bundler', '~> 2.1', :require => false               # Capistrano bundler integration

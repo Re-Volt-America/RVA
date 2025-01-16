@@ -24,6 +24,19 @@ class SessionsController < ApplicationController
       RvaCalculateResultsService.new(@session).call
     end
 
+    # Car usage analysis
+    car_rows = @rva_results.each_with_index.select { |row, idx| idx % 2 == 0 && idx >= 2 }.map(&:first)
+
+    @car_usage = car_rows.each_with_object(Hash.new(0)) do |row, hash|
+      next unless row[4].is_a?(Array)
+
+      cars = row[4].select { |car| car.is_a?(Car) }
+      cars.each do |car|
+        next unless car.respond_to?(:name)
+        hash[car.name] += 1
+      end
+    end.sort_by { |_, count| -count }.to_h  # Sort by frequency in descending order
+
     respond_with @session do |format|
       format.json { render :layout => false }
     end

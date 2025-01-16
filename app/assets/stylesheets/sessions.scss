@@ -18,6 +18,31 @@
 }
 
 #results {
+  .card {
+    background-color: #000000;
+    border: 1px solid #646464;
+    border-radius: 0;
+
+    .card-body {
+      padding: 20px;
+
+      .chart-container {
+        background-color: #000000;
+
+        canvas {
+          background-color: #000000 !important;
+        }
+      }
+
+      .card-title {
+        color: #ffffff;
+        font-family: "NissanOpti", serif;
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
   h3 {
     a {
       color: #fff;
@@ -51,6 +76,14 @@
 
     a {
       color: #5bada9;
+    }
+
+    // Chart specific styles
+    .chart-container {
+      // Canvas background
+      canvas {
+        background-color: #1d282b;
+      }
     }
 
     .team-col {
@@ -139,3 +172,37 @@
     }
   }
 }
+
+// Override Chartkick default styles
+.chartkick {
+  font-family: "Bahnschrift-Light", sans-serif;
+
+  // Axis labels
+  .c3-axis text {
+    fill: #a6a6a6;
+  }
+
+  // Car names (y-axis)
+  .c3-axis-y text {
+    fill: #5bada9;
+  }
+
+  // Bars
+  .c3-bar {
+    fill: #5b9bd5 !important;
+    stroke: #5b9bd5 !important;
+  }
+
+  // Grid lines
+  .c3-grid line {
+    stroke: #5a5a5a;
+  }
+
+  // Tooltips
+  .c3-tooltip-container {
+    background-color: #262626;
+    border: 1px solid #646464;
+    color: #ffd966;
+  }
+}
+

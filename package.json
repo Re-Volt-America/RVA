@@ -7,6 +7,8 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/request.js": "^0.0.8",
+    "chart.js": "^4.4.7",
+    "chartkick": "^5.0.1",
     "chokidar": "^3.5.3",
     "esbuild": "^0.17.10",
     "esbuild-rails": "^1.0.3",

@@ -179,3 +179,12 @@
       %b
         = t("rankings.table.mp") + ":"
       = t("results.container.tooltips.participation-multiplier")
+
+  .container.mt-5
+    .row
+      .col-12
+        .card.mb-4
+          .card-body
+            %h4.card-title Car Usage in Session
+            .chart-container
+              = bar_chart @car_usage, colors: ["#5bada9"], legend: false, suffix: " times used", height: "500px", horizontal: true, library: { backgroundColor: "#1d282b", color: "#ffffff", scales: { x: { ticks: { stepSize: 1, precision: 0, color: "#beb8bc" }, grid: { color: "#5a5a5a" } }, y: { ticks: { color: "#ffffff" }, grid: { display: false } } }, plugins: { tooltip: { backgroundColor: "#262626", borderColor: "#646464", titleColor: "#ffffff", bodyColor: "#ffffff", borderWidth: 1 } } }
