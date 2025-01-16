@@ -2,6 +2,12 @@
 - meta :title, t("play.meta.title")
 - meta :description, t("play.meta.description")
 
+#tracklist.container
+  .row.justify-content-center
+    .col-md-8.text-center
+      = link_to current_schedule, action: 'index', class: 'btn btn-important track-button' do
+        = t("play.track-list.button_html")
+
 #play.container
   .row.justify-content-center
     .col-md-8
@@ -26,11 +32,3 @@
                 :allowtransparency => true,
                 :frameborder => "0",
                 :sandbox => "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"}
-
-#tracklist.container
-  .row.justify-content-center
-    .col-md-8.text-center
-      .tracklist-section
-        #box
-          = link_to current_schedule, action: 'index', class: 'btn btn-important track-button' do
-            = t("play.track-list.button_html")
