@@ -18,17 +18,29 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: nowrap;
       background: rgba(0, 0, 0, 0.3);
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem;
       border-radius: 4px;
       margin: 0 auto 1rem;
+      width: 100%;
       max-width: 100%;
-      overflow: hidden;
 
       span {
         display: inline-block;
-        min-width: 60px;
         text-align: center;
+        flex-shrink: 0;
+      }
+
+      .separator {
+        padding: 0 2px;
+        flex-shrink: 0;
+      }
+
+      .timezone {
+        margin-left: 4px;
+        flex-shrink: 0;
+        white-space: nowrap;
       }
     }
   }
@@ -53,47 +65,33 @@
   }
 }
 
-#tracklist {
-  .tracklist-section {
-    background: rgba(33, 33, 33, 0.5);
-    border: 1px solid #5e6162;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-
-    h6 {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
-  }
-
-  .track-button {
-    font-size: 1.25rem;
-    padding: 1rem 2rem;
-
-    &:hover {
-      transform: translateY(-2px);
-      transition: transform 0.2s ease;
-    }
-  }
-}
-
 @media screen and (min-width: 992px) {
   #clock #time {
     font-size: 60px;
+
+    span {
+      min-width: 70px;
+    }
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #clock #time {
     font-size: 48px;
+
+    span {
+      min-width: 60px;
+    }
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
   #clock #time {
     font-size: 36px;
+
+    span {
+      min-width: 50px;
+    }
   }
 }
 
@@ -104,6 +102,11 @@
 
     span {
       min-width: 35px;
+    }
+
+    .timezone {
+      font-size: 20px;
+      margin-left: 2px;
     }
   }
 

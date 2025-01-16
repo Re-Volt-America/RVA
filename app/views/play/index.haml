@@ -15,11 +15,11 @@
         #clock
           #time
             %span{:id => "hour"} 00
-            \:
+            %span.separator :
             %span{:id => "minutes"} 00
-            \:
+            %span.separator :
             %span{:id => "seconds"} 00
-            \-UTC
+            %span.timezone -UTC
 
         .clock-info.mt-3
           %h6= t('play.subheader')
