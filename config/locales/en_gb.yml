@@ -731,6 +731,7 @@ en-GB:
       admin: "Administrator"
       mod: "Moderator"
       organizer: "Organiser"
+      sponsor: "Sponsor"
     import:
       title: "Import users"
     controller:
