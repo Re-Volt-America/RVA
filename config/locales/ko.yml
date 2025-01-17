@@ -370,7 +370,7 @@ ko:
           pro:
             page-title: "Re-Volt America - Pro Cars"
             title: "Pro Cars - %{org}"
-            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+            description: "프로 등급의 차량입니다. RVA 온라인에서 프로 등급으로 주행 시 필요한 차량들입니다!"
           super-pro:
             page-title: "Re-Volt America - Super-Pro Cars"
             title: "Super-Pro Cars - %{org}"
@@ -619,7 +619,7 @@ ko:
     pickups: "Pickups: %{pickups}"
     teams: "Teams: %{teams}"
     download: "Download Session Log"
-    team: "Team"
+    team: "팀"
     admin:
       title: "Admin Actions"
       edit:
