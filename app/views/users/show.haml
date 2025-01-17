@@ -258,6 +258,9 @@
               = f.check_box :organizer
               = f.label :organizer, t("users.badges.organizer")
             .field.form-group
+              = f.check_box :sponsor
+              = f.label :sponsor, t("users.badges.sponsor")
+            .field.form-group
               = f.label :team, t("results.team")
               = f.collection_select :team_id, Team.all, :id, :name, {:include_blank => true}, {:class => "form-control"}
             %h6

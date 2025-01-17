@@ -180,4 +180,627 @@
               "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
   }
+
+  // Sponsor badge nonsense LOL
+  // - BGM
+
+  @keyframes smokeTrail {
+    from { opacity: 0.8; }
+    to { opacity: 0; }
+  }
+
+  #sponsor-badge {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Base shooting particles */
+  #sponsor-badge::before,
+  #sponsor-badge::after,
+  #sponsor-badge [data-firework]::before,
+  #sponsor-badge [data-firework]::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffeb3b;
+    border-radius: 50%;
+  }
+
+  #sponsor-badge::before {
+    animation: shoot1 5s infinite;
+  }
+
+  #sponsor-badge::after {
+    animation: shoot2 5s infinite 1s;
+  }
+
+  #sponsor-badge [data-firework="1"]::before {
+    animation: shoot3 5s infinite 0.5s;
+  }
+
+  #sponsor-badge [data-firework="2"]::before {
+    animation: shoot4 5s infinite 1.5s;
+  }
+
+  @keyframes shoot1 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+    }
+    35% {
+      transform: translate(40px, -50px);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+      /* Smoke trail in direction of movement (about 40 degrees up-right) */
+      box-shadow:
+              /* Main trail along movement vector */
+              -8px 10px 2px rgba(255, 255, 255, 0.6),
+              -16px 20px 4px rgba(255, 255, 255, 0.5),
+              -24px 30px 6px rgba(255, 255, 255, 0.4),
+              -32px 40px 8px rgba(255, 255, 255, 0.3),
+                /* Spread effect along the same vector */
+              -10px 12px 4px rgba(255, 255, 255, 0.3),
+              -20px 24px 6px rgba(255, 255, 255, 0.2),
+              -30px 36px 8px rgba(255, 255, 255, 0.1);
+    }
+    36% {
+      transform: translate(40px, -50px);
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      background: #ffeb3b;
+      border: 1px solid #ffeb3b;
+      box-shadow:
+              /* Particle 1 */
+              30px -40px 0 -1px #FF1A1AFF,
+              29px -38px 3px -2px #ff0000,
+              28px -36px 3px -2px #ff0000,
+
+                /* Particle 2 */
+              -35px -38px 0 -1px #FF1A1AFF,
+              -33px -36px 3px -2px #ff0000,
+              -31px -34px 3px -2px #ff0000,
+
+                /* Particle 3 */
+              40px 30px 0 -1px #FF1A1AFF,
+              38px 28px 3px -2px #ff0000,
+              36px 26px 3px -2px #ff0000,
+
+                /* Particle 4 */
+              -25px 45px 0 -1px #FF1A1AFF,
+              -24px 43px 3px -2px #ff0000,
+              -23px 41px 3px -2px #ff0000,
+
+                /* Particle 5 */
+              45px -10px 0 -1px #FF1A1AFF,
+              43px -8px 3px -2px #ff0000,
+              41px -6px 3px -2px #ff0000,
+
+                /* Particle 6 */
+              -45px -15px 0 -1px #FF1A1AFF,
+              -43px -13px 3px -2px #ff0000,
+              -41px -11px 3px -2px #ff0000,
+
+                /* Particle 7 */
+              15px -45px 0 -1px #FF1A1AFF,
+              13px -43px 3px -2px #ff0000,
+              11px -41px 3px -2px #ff0000,
+
+                /* Particle 8 */
+              -15px -45px 0 -1px #FF1A1AFF,
+              -13px -43px 3px -2px #ff0000,
+              -11px -41px 3px -2px #ff0000,
+
+                /* Particle 9 */
+              35px 35px 0 -1px #FF1A1AFF,
+              33px 33px 3px -2px #ff0000,
+              31px 31px 3px -2px #ff0000,
+
+                /* Particle 10 */
+              -35px 35px 0 -1px #FF1A1AFF,
+              -33px 33px 3px -2px #ff0000,
+              -31px 31px 3px -2px #ff0000;
+    }
+    70% {
+      transform: translate(40px, -50px);
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      box-shadow:
+              /* Particle 1 final */
+              60px 0px 0 -1px #FF1A1AFF,
+              58px 2px 3px -2px #ff0000,
+              56px 4px 3px -2px #ff0000,
+
+                /* Particle 2 final */
+              -65px 20px 0 -1px #FF1A1AFF,
+              -63px 22px 3px -2px #ff0000,
+              -61px 24px 3px -2px #ff0000,
+
+                /* Particle 3 final */
+              80px 60px 0 -1px #FF1A1AFF,
+              78px 62px 3px -2px #ff0000,
+              76px 64px 3px -2px #ff0000,
+
+                /* Particle 4 final */
+              -45px 85px 0 -1px #FF1A1AFF,
+              -43px 87px 3px -2px #ff0000,
+              -41px 89px 3px -2px #ff0000,
+
+                /* Particle 5 final */
+              85px 20px 0 -1px #FF1A1AFF,
+              83px 22px 3px -2px #ff0000,
+              81px 24px 3px -2px #ff0000,
+
+                /* Particle 6 final */
+              -85px 15px 0 -1px #FF1A1AFF,
+              -83px 17px 3px -2px #ff0000,
+              -81px 19px 3px -2px #ff0000,
+
+                /* Particle 7 final */
+              35px -75px 0 -1px #FF1A1AFF,
+              33px -73px 3px -2px #ff0000,
+              31px -71px 3px -2px #ff0000,
+
+                /* Particle 8 final */
+              -35px -75px 0 -1px #FF1A1AFF,
+              -33px -73px 3px -2px #ff0000,
+              -31px -71px 3px -2px #ff0000,
+
+                /* Particle 9 final */
+              75px 75px 0 -1px #FF1A1AFF,
+              73px 77px 3px -2px #ff0000,
+              71px 79px 3px -2px #ff0000,
+
+                /* Particle 10 final */
+              -75px 75px 0 -1px #FF1A1AFF,
+              -73px 77px 3px -2px #ff0000,
+              -71px 79px 3px -2px #ff0000;
+    }
+    71%, 100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes shoot2 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+    }
+    35% {
+      transform: translate(-30px, -60px);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+      /* Smoke trail in direction of movement (about 60 degrees up-left) */
+      box-shadow:
+              6px 12px 2px rgba(255, 255, 255, 0.6),
+              12px 24px 4px rgba(255, 255, 255, 0.5),
+              18px 36px 6px rgba(255, 255, 255, 0.4),
+              24px 48px 8px rgba(255, 255, 255, 0.3),
+                /* Spread effect */
+              8px 14px 4px rgba(255, 255, 255, 0.3),
+              16px 28px 6px rgba(255, 255, 255, 0.2),
+              24px 42px 8px rgba(255, 255, 255, 0.1);
+    }
+    36% {
+      transform: translate(-30px, -60px);
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      background: #ffeb3b;
+      border: 1px solid #ffeb3b;
+      box-shadow:
+              /* Particle 1 - up right */
+              25px -45px 0 -1px #FF1A1AFF,
+              24px -43px 3px -2px #ff1a1a,
+              23px -41px 3px -2px #ff0000,
+
+                /* Particle 2 - up left */
+              -25px -45px 0 -1px #FF1A1AFF,
+              -24px -43px 3px -2px #ff0000,
+              -23px -41px 3px -2px #ff0000,
+
+                /* Particle 3 - right */
+              45px -10px 0 -1px #FF1A1AFF,
+              43px -8px 3px -2px #ff0000,
+              41px -6px 3px -2px #ff0000,
+
+                /* Particle 4 - left */
+              -45px -10px 0 -1px #FF1A1AFF,
+              -43px -8px 3px -2px #ff0000,
+              -41px -6px 3px -2px #ff0000,
+
+                /* Particle 5 - down right */
+              35px 35px 0 -1px #FF1A1AFF,
+              33px 33px 3px -2px #ff0000,
+              31px 31px 3px -2px #ff0000,
+
+                /* Particle 6 - down left */
+              -35px 35px 0 -1px #FF1A1AFF,
+              -33px 33px 3px -2px #ff0000,
+              -31px 31px 3px -2px #ff0000,
+
+                /* Particle 7 - up */
+              0 -50px 0 -1px #FF1A1AFF,
+              0 -48px 3px -2px #ff0000,
+              0 -46px 3px -2px #ff0000,
+
+                /* Particle 8 - down */
+              0 50px 0 -1px #FF1A1AFF,
+              0 48px 3px -2px #ff0000,
+              0 46px 3px -2px #ff0000,
+
+                /* Particle 9 - diagonal up-right */
+              40px -40px 0 -1px #FF1A1AFF,
+              38px -38px 3px -2px #ff0000,
+              36px -36px 3px -2px #ff0000,
+
+                /* Particle 10 - diagonal up-left */
+              -40px -40px 0 -1px #FF1A1AFF,
+              -38px -38px 3px -2px #ff0000,
+              -36px -36px 3px -2px #ff0000;
+    }
+    70% {
+      transform: translate(-30px, -60px);
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      box-shadow:
+              /* Particle 1 final position (falling) */
+              45px -25px 0 -1px #FF1A1AFF,
+              43px -23px 3px -2px #ff0000,
+              41px -21px 3px -2px #ff0000,
+
+                /* Particle 2 final position (falling) */
+              -45px -25px 0 -1px #FF1A1AFF,
+              -43px -23px 3px -2px #ff0000,
+              -41px -21px 3px -2px #ff0000,
+
+                /* Particle 3 final position (falling) */
+              85px 30px 0 -1px #FF1A1AFF,
+              83px 32px 3px -2px #ff0000,
+              81px 34px 3px -2px #ff0000,
+
+                /* Particle 4 final position (falling) */
+              -85px 30px 0 -1px #FF1A1AFF,
+              -83px 32px 3px -2px #ff0000,
+              -81px 34px 3px -2px #ff0000,
+
+                /* Particle 5 final position (falling) */
+              75px 85px 0 -1px #FF1A1AFF,
+              73px 87px 3px -2px #ff0000,
+              71px 89px 3px -2px #ff0000,
+
+                /* Particle 6 final position (falling) */
+              -75px 85px 0 -1px #FF1A1AFF,
+              -73px 87px 3px -2px #ff0000,
+              -71px 89px 3px -2px #ff0000,
+
+                /* Particle 7 final position (falling) */
+              0 -30px 0 -1px #FF1A1AFF,
+              0 -28px 3px -2px #ff0000,
+              0 -26px 3px -2px #ff0000,
+
+                /* Particle 8 final position (falling) */
+              0 90px 0 -1px #FF1A1AFF,
+              0 92px 3px -2px #ff0000,
+              0 94px 3px -2px #ff0000,
+
+                /* Particle 9 final position (falling) */
+              80px -20px 0 -1px #FF1A1AFF,
+              78px -18px 3px -2px #ff0000,
+              76px -16px 3px -2px #ff0000,
+
+                /* Particle 10 final position (falling) */
+              -80px -20px 0 -1px #FF1A1AFF,
+              -78px -18px 3px -2px #ff0000,
+              -76px -16px 3px -2px #ff0000;
+    }
+    71%, 100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes shoot3 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+    }
+    35% {
+      transform: translate(50px, -20px);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+      /* Smoke trail in direction of movement (about 20 degrees up-right) */
+      box-shadow:
+              -10px 4px 2px rgba(255, 255, 255, 0.6),
+              -20px 8px 4px rgba(255, 255, 255, 0.5),
+              -30px 12px 6px rgba(255, 255, 255, 0.4),
+              -40px 16px 8px rgba(255, 255, 255, 0.3),
+                /* Spread effect */
+              -12px 5px 4px rgba(255, 255, 255, 0.3),
+              -24px 10px 6px rgba(255, 255, 255, 0.2),
+              -36px 15px 8px rgba(255, 255, 255, 0.1);
+    }
+    36% {
+      transform: translate(50px, -20px);
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      background: #ffeb3b;
+      border: 1px solid #ffeb3b;
+      box-shadow:
+              /* Particle 1 - up right */
+              35px -45px 0 -1px #FF1A1AFF,
+              33px -43px 3px -2px #ff0000,
+              31px -41px 3px -2px #ff0000,
+
+                /* Particle 2 - up left */
+              -15px -45px 0 -1px #FF1A1AFF,
+              -13px -43px 3px -2px #ff0000,
+              -11px -41px 3px -2px #ff0000,
+
+                /* Particle 3 - far right */
+              55px 0px 0 -1px #FF1A1AFF,
+              53px 2px 3px -2px #ff0000,
+              51px 4px 3px -2px #ff0000,
+
+                /* Particle 4 - left */
+              -35px 0px 0 -1px #FF1A1AFF,
+              -33px 2px 3px -2px #ff0000,
+              -31px 4px 3px -2px #ff0000,
+
+                /* Particle 5 - down right */
+              45px 35px 0 -1px #FF1A1AFF,
+              43px 37px 3px -2px #ff0000,
+              41px 39px 3px -2px #ff0000,
+
+                /* Particle 6 - down left */
+              -25px 35px 0 -1px #FF1A1AFF,
+              -23px 37px 3px -2px #ff0000,
+              -21px 39px 3px -2px #ff0000,
+
+                /* Particle 7 - straight up */
+              10px -50px 0 -1px #FF1A1AFF,
+              8px -48px 3px -2px #ff0000,
+              6px -46px 3px -2px #ff0000,
+
+                /* Particle 8 - straight down */
+              10px 50px 0 -1px #FF1A1AFF,
+              8px 48px 3px -2px #ff0000,
+              6px 46px 3px -2px #ff0000,
+
+                /* Particle 9 - diagonal up-right */
+              50px -40px 0 -1px #FF1A1AFF,
+              48px -38px 3px -2px #ff0000,
+              46px -36px 3px -2px #ff0000,
+
+                /* Particle 10 - diagonal down-right */
+              50px 40px 0 -1px #FF1A1AFF,
+              48px 38px 3px -2px #ff0000,
+              46px 36px 3px -2px #ff0000;
+    }
+    70% {
+      transform: translate(50px, -20px);
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      box-shadow:
+              /* Particle 1 final position */
+              75px -15px 0 -1px #FF1A1AFF,
+              73px -13px 3px -2px #ff0000,
+              71px -11px 3px -2px #ff0000,
+
+                /* Particle 2 final position */
+              -35px -15px 0 -1px #FF1A1AFF,
+              -33px -13px 3px -2px #ff0000,
+              -31px -11px 3px -2px #ff0000,
+
+                /* Particle 3 final position */
+              95px 30px 0 -1px #FF1A1AFF,
+              93px 32px 3px -2px #ff0000,
+              91px 34px 3px -2px #ff0000,
+
+                /* Particle 4 final position */
+              -55px 30px 0 -1px #FF1A1AFF,
+              -53px 32px 3px -2px #ff0000,
+              -51px 34px 3px -2px #ff0000,
+
+                /* Particle 5 final position */
+              85px 85px 0 -1px #FF1A1AFF,
+              83px 87px 3px -2px #ff0000,
+              81px 89px 3px -2px #ff0000,
+
+                /* Particle 6 final position */
+              -45px 85px 0 -1px #FF1A1AFF,
+              -43px 87px 3px -2px #ff0000,
+              -41px 89px 3px -2px #ff0000,
+
+                /* Particle 7 final position */
+              30px -30px 0 -1px #FF1A1AFF,
+              28px -28px 3px -2px #ff0000,
+              26px -26px 3px -2px #ff0000,
+
+                /* Particle 8 final position */
+              30px 90px 0 -1px #FF1A1AFF,
+              28px 92px 3px -2px #ff0000,
+              26px 94px 3px -2px #ff0000,
+
+                /* Particle 9 final position */
+              90px -10px 0 -1px #FF1A1AFF,
+              88px -8px 3px -2px #ff0000,
+              86px -6px 3px -2px #ff0000,
+
+                /* Particle 10 final position */
+              90px 60px 0 -1px #FF1A1AFF,
+              88px 62px 3px -2px #ff0000,
+              86px 64px 3px -2px #ff0000;
+    }
+    71%, 100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes shoot4 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+    }
+    35% {
+      transform: translate(-40px, -30px);
+      opacity: 1;
+      background: #ffeb3b;
+      width: 4px;
+      height: 4px;
+      /* Smoke trail in direction of movement (about 35 degrees up-left) */
+      box-shadow:
+              8px 6px 2px rgba(255, 255, 255, 0.6),
+              16px 12px 4px rgba(255, 255, 255, 0.5),
+              24px 18px 6px rgba(255, 255, 255, 0.4),
+              32px 24px 8px rgba(255, 255, 255, 0.3),
+                /* Spread effect */
+              10px 7px 4px rgba(255, 255, 255, 0.3),
+              20px 14px 6px rgba(255, 255, 255, 0.2),
+              30px 21px 8px rgba(255, 255, 255, 0.1);
+    }
+    36% {
+      transform: translate(-40px, -30px);
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      background: #ffeb3b;
+      border: 1px solid #ffeb3b;
+      box-shadow:
+              /* Particle 1 - up right */
+              15px -45px 0 -1px #FF1A1AFF,
+              13px -43px 3px -2px #ff0000,
+              11px -41px 3px -2px #ff0000,
+
+                /* Particle 2 - up left */
+              -35px -45px 0 -1px #FF1A1AFF,
+              -33px -43px 3px -2px #ff0000,
+              -31px -41px 3px -2px #ff0000,
+
+                /* Particle 3 - right */
+              35px 0px 0 -1px #FF1A1AFF,
+              33px 2px 3px -2px #ff0000,
+              31px 4px 3px -2px #ff0000,
+
+                /* Particle 4 - far left */
+              -55px 0px 0 -1px #FF1A1AFF,
+              -53px 2px 3px -2px #ff0000,
+              -51px 4px 3px -2px #ff0000,
+
+                /* Particle 5 - down right */
+              25px 35px 0 -1px #FF1A1AFF,
+              23px 37px 3px -2px #ff0000,
+              21px 39px 3px -2px #ff0000,
+
+                /* Particle 6 - down left */
+              -45px 35px 0 -1px #FF1A1AFF,
+              -43px 37px 3px -2px #ff0000,
+              -41px 39px 3px -2px #ff0000,
+
+                /* Particle 7 - straight up */
+              -10px -50px 0 -1px #FF1A1AFF,
+              -12px -48px 3px -2px #ff0000,
+              -14px -46px 3px -2px #ff0000,
+
+                /* Particle 8 - straight down */
+              -10px 50px 0 -1px #FF1A1AFF,
+              -12px 48px 3px -2px #ff0000,
+              -14px 46px 3px -2px #ff0000,
+
+                /* Particle 9 - diagonal up-left */
+              -50px -40px 0 -1px #FF1A1AFF,
+              -48px -38px 3px -2px #ff0000,
+              -46px -36px 3px -2px #ff0000,
+
+                /* Particle 10 - diagonal down-left */
+              -50px 40px 0 -1px #FF1A1AFF,
+              -48px 38px 3px -2px #ff0000,
+              -46px 36px 3px -2px #ff0000;
+    }
+    70% {
+      transform: translate(-40px, -30px);
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      box-shadow:
+              /* Particle 1 final position */
+              35px -15px 0 -1px #FF1A1AFF,
+              33px -13px 3px -2px #ff0000,
+              31px -11px 3px -2px #ff0000,
+
+                /* Particle 2 final position */
+              -75px -15px 0 -1px #FF1A1AFF,
+              -73px -13px 3px -2px #ff0000,
+              -71px -11px 3px -2px #ff0000,
+
+                /* Particle 3 final position */
+              55px 30px 0 -1px #FF1A1AFF,
+              53px 32px 3px -2px #ff0000,
+              51px 34px 3px -2px #ff0000,
+
+                /* Particle 4 final position */
+              -95px 30px 0 -1px #FF1A1AFF,
+              -93px 32px 3px -2px #ff0000,
+              -91px 34px 3px -2px #ff0000,
+
+                /* Particle 5 final position */
+              45px 85px 0 -1px #FF1A1AFF,
+              43px 87px 3px -2px #ff0000,
+              41px 89px 3px -2px #ff0000,
+
+                /* Particle 6 final position */
+              -85px 85px 0 -1px #FF1A1AFF,
+              -83px 87px 3px -2px #ff0000,
+              -81px 89px 3px -2px #ff0000,
+
+                /* Particle 7 final position */
+              -30px -30px 0 -1px #FF1A1AFF,
+              -32px -28px 3px -2px #ff0000,
+              -34px -26px 3px -2px #ff0000,
+
+                /* Particle 8 final position */
+              -30px 90px 0 -1px #FF1A1AFF,
+              -32px 92px 3px -2px #ff0000,
+              -34px 94px 3px -2px #ff0000,
+
+                /* Particle 9 final position */
+              -90px -10px 0 -1px #FF1A1AFF,
+              -92px -8px 3px -2px #ff0000,
+              -94px -6px 3px -2px #ff0000,
+
+                /* Particle 10 final position */
+              -90px 60px 0 -1px #FF1A1AFF,
+              -92px 62px 3px -2px #ff0000,
+              -94px 64px 3px -2px #ff0000;
+    }
+    71%, 100% {
+      opacity: 0;
+    }
+  }
 }

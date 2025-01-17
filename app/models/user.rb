@@ -62,6 +62,9 @@ class User
   field :admin, :type => Boolean, :default => false
   field :mod, :type => Boolean, :default => false
   field :organizer, :type => Boolean, :default => false
+
+  field :sponsor, :type => Boolean, :default => false
+
   field :locale, :type => String, :default => :en
   field :country, :type => String
 
