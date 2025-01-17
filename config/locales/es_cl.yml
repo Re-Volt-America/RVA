@@ -399,11 +399,11 @@ es-CL:
         category: "Categoría"
         author: "Autor"
         stock: "Stock"
-        carbox-filename: "Car Box File Name"
+        carbox-filename: "Nombre del archivo carbox"
         stock-tooltip:
           tooltip: "Contenido original de Re-Volt"
         lego-tooltip:
-          tooltip: "Made in Re-Volt's Lego Track Maker"
+          tooltip: "Hecho en el Track Maker de Re-Volt"
         featured-session: "Este auto ha estado en RVA desde la %{season}"
       class-selector:
         title: "Clases"
@@ -929,7 +929,7 @@ es-CL:
         profile:
           title: "Editar Perfil"
           gender: "Género"
-          profile-picture: "Profile Picture"
+          profile-picture: "Foto de perfil"
           nationality:
             title: "Nacionalidad"
             small: "(Bandera nacional)"
