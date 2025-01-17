@@ -728,6 +728,7 @@ it:
       admin: "Administrator"
       mod: "Moderator"
       organizer: "Organizer"
+      sponsor: "Sponsor"
     import:
       title: "Import users"
     controller:
