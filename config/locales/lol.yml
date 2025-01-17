@@ -333,7 +333,7 @@ lol:
         folder-name: "Fuldr naem"
         author: "Kiteh"
         stock: "OG katz"
-        lego: "Lego"
+        lego: "A Man has fallen into the river in lego city"
         average-lap-time: "Avg lap taim (s)"
         error: "Trak kuld nut b savd"
       import:
@@ -400,11 +400,11 @@ lol:
         category: "KATogry"
         author: "Kitteh"
         stock: "OG"
-        carbox-filename: "Car Box File Name"
+        carbox-filename: "LITTERBOX FILE NAME"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
         lego-tooltip:
-          tooltip: "Made in Re-Volt's Lego Track Maker"
+          tooltip: "MAED IN REVOL A MAN HAS FALLEN INTO THE RIVER IN LEGO CITY TRAK MAEKR"
         featured-session: "Dis car appaerd in RVA %{season}"
       class-selector:
         title: "clazzes"
@@ -432,7 +432,7 @@ lol:
       stock:
         title: "OG"
       lego:
-        title: "Lego"
+        title: "A MAN HAS FALLEN INTO THE RIVER IN LEGO CITY"
   #Assets page
   assets:
     page-title: "RVA - assez"
@@ -731,7 +731,7 @@ lol:
       admin: "Kitteminitrutor"
       mod: "Modekatorzzz"
       organizer: "Urganizurr"
-      sponsor: "Sponsor"
+      sponsor: "MONEY KAT"
     import:
       title: "Giv usrz"
     controller:
@@ -930,7 +930,7 @@ lol:
         profile:
           title: "Edit Profil"
           gender: "Gender"
-          profile-picture: "Profile Picture"
+          profile-picture: "Cat pic"
           nationality:
             title: "Where u frum"
             small: "(Land flag)"
@@ -1015,7 +1015,7 @@ lol:
     and: "n'"
     unknown: "kitteh dunno"
     custom: "Kustom"
-    lego: "Lego"
+    lego: "A man has fallen into the river in lego city"
     stock: "OG"
     author: "Kiteh"
     download-as-png: "Daunlode es PNG"
