@@ -731,6 +731,7 @@ lol:
       admin: "Kitteminitrutor"
       mod: "Modekatorzzz"
       organizer: "Urganizurr"
+      sponsor: "Sponsor"
     import:
       title: "Giv usrz"
     controller:
