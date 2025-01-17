@@ -728,6 +728,7 @@ es-AR:
       admin: "Administrador"
       mod: "Moderador"
       organizer: "Organizador"
+      sponsor: "Sponsor"
     import:
       title: "Importar usuarios"
     controller:
