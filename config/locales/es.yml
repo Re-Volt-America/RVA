@@ -26,7 +26,7 @@ es:
         new-tournament: "Nuevo torneo"
         import-users: "Importar usuarios"
       log-out: "Cerrar Sesión"
-      login: "Inicio de sesión"
+      login: "Iniciar sesión"
       register: "Registrar"
   #Sub-navigation
   sub-nav:
@@ -48,7 +48,7 @@ es:
       title: "Organización"
       staff: "Staff"
       logs: "Registros de desarrollo"
-      bugs: "Reportar un bug"
+      bugs: "Reportar un error"
       sponsor: "Patrocinar"
       faq: "Preguntas Frecuentes"
     trademark:
