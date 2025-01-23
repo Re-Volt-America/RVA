@@ -104,7 +104,7 @@ es-AR:
     subheader: "Jugamos todos los días a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
     track-list:
-      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
+      button_html: "Revisa nuestro calendario semanal <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
     page-title: "Re-Volt America - Downloads"
@@ -330,6 +330,7 @@ es-AR:
         folder-name: "Nombre de carpeta"
         author: "Author"
         stock: "Stock"
+        lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
         error: "No se pudo guardar la pista"
       import:
@@ -396,8 +397,11 @@ es-AR:
         category: "Categoría"
         author: "Author"
         stock: "Original"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Contenido base de Re-Volt"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "Este auto estuvo presente en RVA %{season}"
       class-selector:
         title: "Categorías"
@@ -424,6 +428,8 @@ es-AR:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Assets"
@@ -722,6 +728,7 @@ es-AR:
       admin: "Administrador"
       mod: "Moderador"
       organizer: "Organizador"
+      sponsor: "Sponsor"
     import:
       title: "Importar usuarios"
     controller:
@@ -920,6 +927,7 @@ es-AR:
         profile:
           title: "Editar Perfil"
           gender: "Género"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nacionalidad"
             small: "(Bandera Nacional)"
@@ -1004,6 +1012,7 @@ es-AR:
     and: "&"
     unknown: "Unknown"
     custom: "Custom"
+    lego: "Lego"
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"

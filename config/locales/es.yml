@@ -18,7 +18,7 @@ es:
       admin:
         title: "Admin"
         upload-session: "Subir sesión"
-        generate-tracklist: "Generate Tracklist"
+        generate-tracklist: "Generar lista de pistas"
         create-season: "Crear temporada"
         import-tracks: "Importar pistas"
         import-cars: "Importar coches"
@@ -26,7 +26,7 @@ es:
         new-tournament: "Nuevo torneo"
         import-users: "Importar usuarios"
       log-out: "Cerrar Sesión"
-      login: "Inicio de sesión"
+      login: "Iniciar sesión"
       register: "Registrar"
   #Sub-navigation
   sub-nav:
@@ -48,7 +48,7 @@ es:
       title: "Organización"
       staff: "Staff"
       logs: "Registros de desarrollo"
-      bugs: "Reportar un bug"
+      bugs: "Reportar un error"
       sponsor: "Patrocinar"
       faq: "Preguntas Frecuentes"
     trademark:
@@ -91,8 +91,8 @@ es:
       description: "¡La comunidad más grande de Re-Volt que encontrarás en el continente Americano, únete a nuestras sesiones diarias de carreras, compite en nuestras temporadas y conoce a otros jugadores de Re-Volt de todo el mundo!"
       subtitle: "Quiénes somos"
       text1_html: "Fundada en 2017, Re-Volt America (RVA) es la comunidad Americana alrededor del popular juego de carreras de autos a control remoto <a href='https://es.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
-      text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
-      text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
+      text2_html: "Para jugar en línea, utilizamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, un port multiplataforma de Re-Volt. Esta versión del juego es también conocida por extender la experiencia original brindando soporte para contenido personalizado hecho por la comunidad, como pistas y coches."
+      text3_html: "En RVA, organizamos sesiones en línea en las que jugadores de todo el mundo (principalmente del continente americano) compiten entre sí, adquieren puntos por las carreras que juegan, y se posicionan en el ranking oficial de Re-Volt America."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
       see_you: "See you on track!"
   #Play page
@@ -330,6 +330,7 @@ es:
         folder-name: "Folder name"
         author: "Author"
         stock: "Stock"
+        lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
@@ -396,8 +397,11 @@ es:
         category: "Categoría"
         author: "Author"
         stock: "Coches de Serie"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "Este auto ha sido presentado en RVA %{season}"
       class-selector:
         title: "Clases"
@@ -424,6 +428,8 @@ es:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Assets"
@@ -722,6 +728,7 @@ es:
       admin: "Administrador"
       mod: "Moderator"
       organizer: "Organizer"
+      sponsor: "Sponsor"
     import:
       title: "Import users"
     controller:
@@ -920,6 +927,7 @@ es:
         profile:
           title: "Editar Perfil"
           gender: "Gender"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nationality"
             small: "(National flag)"
@@ -1004,6 +1012,7 @@ es:
     and: "&"
     unknown: "Unknown"
     custom: "Custom"
+    lego: "Lego"
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"

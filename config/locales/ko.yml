@@ -4,39 +4,39 @@ ko:
     play: "플레이"
     tracks: "트랙"
     cars: "차량"
-    seasons: "Seasons"
+    seasons: "시즌"
     league:
-      title: "League"
-      leaderboard: "Leaderboard"
-      point-system: "Points System"
-      teams: "Teams"
-      tournaments: "Tournaments"
+      title: "리그"
+      leaderboard: "순위표"
+      point-system: "포인트 시스템"
+      teams: "팀"
+      tournaments: "토너먼트"
     downloads: "다운로드"
     user:
-      my-profile: "My Profile"
-      settings: "Settings"
+      my-profile: "내 프로필"
+      settings: "설정"
       admin:
-        title: "Admin"
-        upload-session: "Upload Session"
-        generate-tracklist: "Generate Tracklist"
-        create-season: "Create Season"
-        import-tracks: "Import Tracks"
-        import-cars: "Import Cars"
-        new-team: "New Team"
-        new-tournament: "New Tournament"
-        import-users: "Import Users"
-      log-out: "Log out"
-      login: "Login"
-      register: "Register"
+        title: "관리자"
+        upload-session: "세션 업로드"
+        generate-tracklist: "트랙 리스트 생성"
+        create-season: "세션 생성"
+        import-tracks: "트랙 가져오기"
+        import-cars: "차량 가져오기"
+        new-team: "새 팀"
+        new-tournament: "새 토너먼트"
+        import-users: "유저 가져오기"
+      log-out: "로그아웃"
+      login: "로그인"
+      register: "등록"
   #Sub-navigation
   sub-nav:
-    seasons: "Seasons"
-    rankings: "Rankings"
-    ranking: "Ranking"
-    ranking-n: "Ranking %{n}"
-    session-n: "Session %{n}"
-    tracks: "Tracks"
-    cars: "Cars"
+    seasons: "시즌"
+    rankings: "순위"
+    ranking: "순위"
+    ranking-n: "순위 %{n}"
+    session-n: "세션 %{n}"
+    tracks: "트랙"
+    cars: "차량"
   #Footer
   footer:
     policies:
@@ -50,31 +50,31 @@ ko:
       logs: "개발 로그"
       bugs: "버그 신고"
       sponsor: "스폰서"
-      faq: "Frequently Asked Questions"
+      faq: "자주 묻는 질문들"
     trademark:
       title: "상표"
       assets: "자산"
       emoji: "이모지"
     social:
       title: "문의하기"
-      discord: "Discord"
+      discord: "디스코드"
       github: "GitHub"
       crowdin: "Crowdin"
   #Landing page, Splash, About
   application:
     splash:
-      description1: "The Website for the American community of Re-Volt, 1999"
+      description1: "이 웹사이트는 1999년에 출시된 리볼트의 아메리카 커뮤니티를 위해 만들어졌습니다."
       description2: "Download the game and meet players from all over the Americas!"
-      download-button: "Downloads »"
+      download-button: "다운로드 »"
     index:
       community:
-        title: "Community"
+        title: "커뮤니티"
         description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
         play-button: "Play »"
       competition:
         title: "Competition"
         description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
-        seasons-button: "Seasons »"
+        seasons-button: "시즌 »"
       reliability:
         title: "Reliabilty"
         description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
@@ -119,11 +119,11 @@ ko:
     page-title: "Re-Volt America - FAQ"
     title: "Frequently Asked Questions"
     description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
-    section-1: "Installing and setup"
+    section-1: "설치와 설정"
     section-2: "Playing online"
     accordion:
       download:
-        title: "How do I download Re-Volt?"
+        title: "Re-Volt를 어떻게 다운로드 하나요?"
         recommended-way:
           description-html: "With this program, you can download and manage custom content for the game with just a few clicks. Go to the following link to download it: <a href='https://re-volt.gitlab.io/rvgl-launcher/#download' target='_blank'>Re-Volt Launcher</a>. <p> When you open the launcher for the first time, you will be able to select the folder where the game  will be installed, along with a \"Game Preset\". For the latter, we recommend that you select \"Original\". </p>"
         classic-way:
@@ -131,19 +131,19 @@ ko:
         mobile-players:
           description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
         steam-revolt:
-          title: "Steam Re-Volt"
+          title: "스팀판 Re-Volt"
           description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
       install:
-        title: "How do I install RVA packs?"
+        title: "RVA 팩을 어떻게 설치하나요?"
         recommended-way:
-          description-html: "In the Packs tab check the rva_cars and rva_tracks options at the bottom of the list, then click the Install Packages button in the lower right corner to start downloading and installing them."
+          description-html: "팩 탭에서 목록 하단에서 rva_cars 및 rva_tracks 옵션을 선택한 다음, 오른쪽 하단에 있는 패키지 설치 버튼을 클릭하여 패키지 다운로드 및 설치를 시작합니다."
         classic-way:
           description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
         mobile-players:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
         title: "How can I play online?"
-        description-html: "In Re-Volt America, we host racing sessions daily at 23:00 UTC, and they are all announced via Discord, on a channel called \"#lobby-rva\". <a href='play'>Here</a> you can see the countdown for the next session."
+        description-html: "Re-Volt America에서는 매일 23:00 UTC에 레이싱 세션을 주최하며, 모든 세션은 디스코드의 \"#lobby-rva\"라는 채널을 통해 발표됩니다. <a href='play'>여기</a>에서 다음 세션의 카운트다운을 볼 수 있습니다."
         reminder:
           title: "Keep this in mind"
           li-1: "Before joining our rooms, you must install the RVA Pack. Check the FAQ entry for more information."
@@ -164,7 +164,7 @@ ko:
       rankings:
         title: "How do rankings and points work?"
         seasons:
-          title: "Seasons and Rankings"
+          title: "시즌과 순위"
           description: "Each of our seasons consists of 6 rankings, and each ranking consists of 18 individual sessions and 10 team sessions. This way, each ranking will have a duration of one month and each season will last approximately 6 months. A session announced on Discord at the #lobby-rva channel consists of playing the 20 tracks assigned for the day with the corresponding category. The weekly schedule that determines the races to be played each day are announced every Monday and looks as follows:"
         scoring:
           title: "Scoring points in a Session"
@@ -175,12 +175,12 @@ ko:
             li-2: "The Accumulated Points is the sum of the points obtained according to your final position in each race. More points will be awarded in a session if it starts with 10 or more players."
             li-3: " Average Position and Races Completed affect your points accumulated in a session, finishing in low positions or completing few races will decrease the amount of points you can get in a session."
       generics:
-        recommended-way: "Recommended way: RVGL Launcher"
-        classic-way: "Classic way"
-        mobile-players: "Mobile Players"
+        recommended-way: "추천하는 방법: RVGL 런쳐"
+        classic-way: "일반적인 방법"
+        mobile-players: "모바일 이용자들"
   #Rules page
   rules:
-    page-title: "Re-Volt America - Rules"
+    page-title: "리볼트 아메리카 - 규칙"
     title: "규칙"
     sections:
       a:
@@ -292,28 +292,28 @@ ko:
           page-title: "Re-Volt America - Import Tracks"
         edit:
           page-title: "Re-Volt America - Edit Track"
-      all-tracks: "All Tracks"
-      season: "Season"
-      title: "The RVA Tracks"
-      no-tracks: "No tracks to display"
+      all-tracks: "모든 트랙"
+      season: "시즌"
+      title: "RVA 트랙"
+      no-tracks: "표시할 트랙이 없음"
       made-by: "by: %{author_name}"
       format:
-        title: "Format"
+        title: "형식"
         short-name:
-          title: "Short Name"
+          title: "약칭"
         difficulty:
-          title: "Difficulty"
-          easy: "Easy"
-          medium: "Medium"
-          hard: "Hard"
-          extreme: "Extreme"
+          title: "난이도"
+          easy: "쉬움"
+          medium: "보통"
+          hard: "어려움"
+          extreme: "익스트림"
         length:
-          title: "Length"
-          short: "Short"
-          medium: "Medium"
-          long: "Long"
-          extralong: "Extra Long"
-          meters: "%{length} meters"
+          title: "길이"
+          short: "짧음"
+          medium: "보통"
+          long: "긺"
+          extralong: "매우 긺"
+          meters: "%{length} 미터"
       featured:
         description: "This track has been featured in RVA %{season}"
       rotation:
@@ -322,56 +322,57 @@ ko:
         title: "Re-Volt America Track Collection"
       edit:
         title: "Editing Track"
-        season: "Season"
-        name: "Name"
-        short-name: "Short name"
-        difficulty: "Difficulty"
-        length: "Length (meters)"
-        folder-name: "Folder name"
-        author: "Author"
-        stock: "Stock"
+        season: "시즌"
+        name: "이름"
+        short-name: "약칭"
+        difficulty: "난이도"
+        length: "길이 (미터)"
+        folder-name: "폴더명"
+        author: "제작자"
+        stock: "기본"
+        lego: "레고"
         average-lap-time: "Average Lap Time (seconds)"
         error: "Track could not be saved"
       import:
-        title: "Import Tracks"
+        title: "트랙 가져오기"
       controller:
-        create: "Track was successfully created."
-        update: "Track was successfully updated."
-        destroy: "Track was successfully destroyed."
+        create: "트랙이 성공적으로 생성되었습니다."
+        update: "트랙이 성공적으로 업데이트 되었습니다."
+        destroy: "트랙이 성공적으로 파괴되었습니다."
         import:
           exists: "No tracks were created. Maybe they already exist?"
-          success: "Tracks successfully imported."
+          success: "트랙이 성공적으로 가져와졌습니다."
       admin:
         edit:
-          button: "Edit Track"
+          button: "트랙 수정"
         delete:
-          button: "Delete Track"
+          button: "트랙 제거"
     #RVA Cars
     cars:
       meta:
         classes:
           rookie:
-            page-title: "Re-Volt America - Rookie Cars"
+            page-title: "리볼트 아메리카 - 루키 차량"
             title: "Rookie Cars - %{org}"
-            description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
+            description: "루키 등급의 차량입니다. RVA 온라인에서 루키 등급으로 주행 시 필요한 차량들입니다!"
           amateur:
             page-title: "Re-Volt America - Amateur Cars"
             title: "Amateur Cars - %{org}"
-            description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
+            description: "아마추어 등급의 차량입니다. RVA 온라인에서 아마추어 등급으로 주행 시 필요한 차량들입니다!"
           advanced:
             page-title: "Re-Volt America - Advanced Cars"
             title: "Advanced Cars - %{org}"
-            description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
+            description: "어드밴스 등급의 차량입니다. RVA 온라인에서 어드밴스 등급으로 주행 시 필요한 차량들입니다!"
           semi-pro:
             page-title: "Re-Volt America - Semi-Pro Cars"
             title: "Semi-Pro Cars - %{org}"
-            description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
+            description: "세미프로 등급의 차량입니다. RVA 온라인에서 세미프로 등급으로 주행 시 필요한 차량들입니다!"
           pro:
             page-title: "Re-Volt America - Pro Cars"
             title: "Pro Cars - %{org}"
-            description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
+            description: "프로 등급의 차량입니다. RVA 온라인에서 프로 등급으로 주행 시 필요한 차량들입니다!"
           super-pro:
-            page-title: "Re-Volt America - Super-Pro Cars"
+            page-title: ""
             title: "Super-Pro Cars - %{org}"
             description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
           clockwork:
@@ -396,8 +397,11 @@ ko:
         category: "Category"
         author: "Author"
         stock: "Stock"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Original Re-Volt Content"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "This car has been featured in RVA %{season}"
       class-selector:
         title: "Classes"
@@ -424,6 +428,8 @@ ko:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Assets"
@@ -613,7 +619,7 @@ ko:
     pickups: "Pickups: %{pickups}"
     teams: "Teams: %{teams}"
     download: "Download Session Log"
-    team: "Team"
+    team: "팀"
     admin:
       title: "Admin Actions"
       edit:
@@ -689,7 +695,7 @@ ko:
         tooltip: "Position in current ranking"
       race-stats:
         title: "Race Stats"
-        win-rate: "win rate"
+        win-rate: "승률"
         sessions: "sessions"
         races: "races"
         win: "win"
@@ -722,6 +728,7 @@ ko:
       admin: "Administrator"
       mod: "Moderator"
       organizer: "Organizer"
+      sponsor: "Sponsor"
     import:
       title: "Import users"
     controller:
@@ -782,30 +789,30 @@ ko:
     kg: "Kg"
     multiplier: "배율"
   weekly-schedules:
-    title: "Weekly Schedules"
-    singular: "Weekly Schedule"
-    start-date: "Start Date"
+    title: "주간 일정"
+    singular: "주간 일정"
+    start-date: "시작 날짜"
     controller:
-      destroy: "Delete Weekly Schedule"
+      destroy: "주간 일정 제거하기"
     meta:
       new:
-        page-title: "New Weekly Schedule"
-        title: "New Weekly Schedule"
-        description: "Create a new Weekly Schedule"
+        page-title: "새로운 주간 일정"
+        title: "새로운 주간 일정"
+        description: "새로운 주간 일정 만들기"
       show:
-        page-title: "Weekly Schedule - %{start_date}"
-        title: "Weekly Schedule - %{start_date}"
-        description: "The weekly schedule for %{start_date}"
+        page-title: "주간 일정 - %{start_date}"
+        title: "주간 일정 - %{start_date}"
+        description: "%{start_date}의 주간 일정"
       index:
-        page-title: "RVA Weekly Schedules"
-        title: "RVA Weekly Schedules"
-        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+        page-title: "RVA 주간 일정 "
+        title: "RVA 주간 일정 "
+        description: "RVA의 주간일정. 어떤 차량 목록인지, 어떤 트랙인지, 언제 플레이를 하는지 찾아보세요!"
     create:
-      title: "Create Weekly Schedule"
+      title: "주간 일정 생성하기"
     track-list:
-      track: "Track"
-      type: "Type"
-      laps: "Laps"
+      track: "트랙"
+      type: "타입"
+      laps: "바퀴 수"
   #Devise
   activerecord:
     attributes:
@@ -857,12 +864,12 @@ ko:
       confirmation_instructions:
         action: "본인 계정 인증"
         greeting: "%{recipient}님"
-        instruction: "You can confirm your account email through the link below:"
+        instruction: "아래 링크를 클릭하시면 이메일 인증이 완료됩니다:"
         subject: "이메일 인증 안내"
       email_changed:
         greeting: "%{recipient}님 환영합니다!"
         message: "당신의 이메일이 %{email}로 변경되었음을 알려드립니다."
-        message_unconfirmed: "We're contacting you to notify you that your email is being changed to %{email}."
+        message_unconfirmed: "당신의 이메일이 %{email}로 변경되었음을 알려드립니다."
         subject: "이메일이 변경되었습니다."
       password_change:
         greeting: "%{recipient}님"
@@ -907,33 +914,34 @@ ko:
         leave_blank_if_you_don_t_want_to_change_it: 변경을 원하지 않으시면 빈 칸으로 남겨주세요
         unhappy: 회원 탈퇴를 하시겠습니까?
         we_need_your_current_password_to_confirm_your_changes: 변경 사항을 반영하려면 현재 비밀번호를 입력하세요
-        title: "User settings"
+        title: "유저 설정"
         email:
-          title: "Change Email"
-          new: "New email"
+          title: "이메일 변경"
+          new: "새 이메일"
         password:
-          title: "Change Password"
-          new-length: "New password (%{length} characters minimum)"
-          new: "New password"
-          confirm: "Confirm new password"
+          title: "비밀번호 변경"
+          new-length: "새 비밀번호 (최소 %{length}자)"
+          new: "새 비밀번호"
+          confirm: "새 비밀번호 확인"
         profile:
-          title: "Edit Profile"
-          gender: "Gender"
+          title: "프로필 수정"
+          gender: "성별"
+          profile-picture: "프로필 사진"
           nationality:
-            title: "Nationality"
-            small: "(National flag)"
-          location: "Location"
-          occupation: "Occupation"
-          interests: "Interests"
-          public-email: "Public Email"
-          about: "About %{user}"
+            title: "국적"
+            small: "(국기)"
+          location: "지역"
+          occupation: "직업"
+          interests: "흥미"
+          public-email: "공개 이메일"
+          about: "%{user}에 대해"
           about-me:
             title: "About me... (You may use html)"
-            title2: "About %{user}"
-            nothing: "Nothing here yet..."
-            placeholder: "Write something interesting..."
-        current-password: "Current password"
-        update: "Update"
+            title2: "%{user}에 대해"
+            nothing: "여기엔 아무것도 없네요..."
+            placeholder: "뭔가 흥미로운 것들을 작성해보세요..."
+        current-password: "현재 비밀번호"
+        update: "업데이트"
         update-admin: "Update %{user}"
       new:
         sign_up: "회원 가입"
@@ -979,18 +987,18 @@ ko:
         other: "%{count} errors prohibited this %{resource} from being saved:"
   #Alert message boxes
   alerts:
-    no-permission: "You do not have permission"
+    no-permission: "권한이 없습니다."
   #Error pages
   error:
     404:
       title: "Error 404"
-      message: "Not Found"
+      message: "찾을 수 없습니다."
     422:
       title: "Error 404"
-      message: "Illegal Error"
+      message: "법적인 오류"
     500:
       title: "Error 404"
-      message: "Internal Server Error"
+      message: "내부 서버 오류"
   #Misc strings
   misc:
     create: "Create"
@@ -1001,6 +1009,7 @@ ko:
     and: "&"
     unknown: "Unknown"
     custom: "Custom"
+    lego: "레고"
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"

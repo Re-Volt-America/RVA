@@ -330,6 +330,7 @@ pt:
         folder-name: "Nome da pasta"
         author: "Author"
         stock: "Stock"
+        lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
         error: "Pista não pôde ser salva"
       import:
@@ -396,8 +397,11 @@ pt:
         category: "Categoria"
         author: "Author"
         stock: "Stock"
+        carbox-filename: "Car Box File Name"
         stock-tooltip:
           tooltip: "Conteúdo original do Re-Volt"
+        lego-tooltip:
+          tooltip: "Made in Re-Volt's Lego Track Maker"
         featured-session: "Este carro estava disponível na %{season}"
       class-selector:
         title: "Classes"
@@ -424,6 +428,8 @@ pt:
     shared:
       stock:
         title: "Stock"
+      lego:
+        title: "Lego"
   #Assets page
   assets:
     page-title: "Re-Volt America - Assets"
@@ -722,6 +728,7 @@ pt:
       admin: "Administrador"
       mod: "Moderador"
       organizer: "Organizador"
+      sponsor: "Sponsor"
     import:
       title: "Importar usuários"
     controller:
@@ -920,6 +927,7 @@ pt:
         profile:
           title: "Editar perfil"
           gender: "Sexo"
+          profile-picture: "Profile Picture"
           nationality:
             title: "Nacionalidade"
             small: "(Bandeira)"
@@ -1004,6 +1012,7 @@ pt:
     and: "&"
     unknown: "Unknown"
     custom: "Custom"
+    lego: "Lego"
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
