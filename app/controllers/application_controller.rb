@@ -15,17 +15,15 @@ class ApplicationController < ActionController::Base
 
     locale = params[:locale] || locale_from_header
 
-    if !locale.nil? && SYS::LOCALES_MAP.values.include?(locale.to_sym)
-      I18n.locale = locale
-    else
-      I18n.locale = I18n.default_locale
-    end
+    I18n.locale = if !locale.nil? && SYS::LOCALES_MAP.values.include?(locale.to_sym)
+                    locale
+                  else
+                    I18n.default_locale
+                  end
   end
 
   def default_url_options
-    unless user_signed_in?
-      return { :locale => I18n.locale }
-    end
+    return { :locale => I18n.locale } unless user_signed_in?
 
     {}
   end
@@ -85,10 +83,8 @@ class ApplicationController < ActionController::Base
             </li>
           ).html_safe
       end
-    else
-      if item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
-        %(<li>#{nav_link(item)}</li>).html_safe
-      end
+    elsif item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
+      %(<li>#{nav_link(item)}</li>).html_safe
     end
   end
 

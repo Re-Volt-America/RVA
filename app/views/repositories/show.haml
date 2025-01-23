@@ -47,10 +47,17 @@
                   - else
                     = r.author_name
                 %td
-                  - if r.message.length > 72
-                    = render_pretty(r.message)
-                  - else
-                    = r.message
+                  - truncate_length = 72
+                  - truncated_text = truncate(r.message, length: truncate_length, separator: ' ', omission: '')
+
+                  .commit-message
+                    %span.message-preview
+                      = truncated_text
+                    - if r.message.length > truncate_length
+                      %input.expand-toggle{type: 'checkbox', id: "toggle-#{r.sha}"}
+                      %label.expand-label{for: "toggle-#{r.sha}"} ...
+                      .message-full
+                        = render_pretty(r.message[truncated_text.length..-1])
                 %td
                   = time_ago_in_words(r.date)
                   = t("repositories.table.ago")

@@ -2,37 +2,33 @@
 - meta :title, t("play.meta.title")
 - meta :description, t("play.meta.description")
 
-#play.container
-  .text-center
-    .col-md-12
-      #clock
-        #time
-          %span{:id => "hour"}
-            00
-          \:
-          %span{:id => "minutes"}
-            00
-          \:
-          %span{:id => "seconds"}
-            00
-          \-UTC
-    .col-md-12
-      %h6
-        = t('play.subheader')
-      %h6
-        = t('play.subheader2_html')
-    .col-md-12.mt-3
-      %iframe{:src => "https://discord.com/widget?id=308469225557721090&theme=dark",
-              :width => "350",
-              :height => "500",
-              :allowtransparency => true,
-              :frameborder => "0",
-              :sandbox => "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-              }
-
 #tracklist.container
-  .text-center.mt-3
-    #box
-      %button.btn.box
-        %p
-          = link_to t("play.track-list.button_html"), current_schedule, action: 'index'
+  .row.justify-content-center
+    .col-md-8.text-center
+      = link_to current_schedule, action: 'index', class: 'btn btn-important track-button' do
+        = t("play.track-list.button_html")
+
+#play.container
+  .row.justify-content-center
+    .col-md-8
+      .clock-card.text-center.mb-4
+        #clock
+          #time
+            %span{:id => "hour"} 00
+            %span.separator :
+            %span{:id => "minutes"} 00
+            %span.separator :
+            %span{:id => "seconds"} 00
+            %span.timezone -UTC
+
+        .clock-info.mt-3
+          %h6= t('play.subheader')
+          %h6= t('play.subheader2_html')
+
+      .discord-section.text-center.mb-4
+        %iframe{:src => "https://discord.com/widget?id=308469225557721090&theme=dark",
+                :width => "350",
+                :height => "500",
+                :allowtransparency => true,
+                :frameborder => "0",
+                :sandbox => "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"}

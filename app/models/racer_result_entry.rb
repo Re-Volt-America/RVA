@@ -21,12 +21,12 @@ class RacerResultEntry
   validates_presence_of :username
 
   def filter_negatives
-    session_count = 0 if session_count && session_count < 0
-    race_count = 0 if race_count && race_count < 0
-    positions_sum = 0 if positions_sum && positions_sum < 0
-    average_position = 0.0 if average_position && average_position < 0.0
-    obtained_points = 0 if obtained_points && obtained_points < 0
-    official_score = 0.0 if official_score && official_score < 0.0
-    participation_multiplier = 0.0 if participation_multiplier && participation_multiplier < 0.0
+    0 if session_count&.negative?
+    0 if race_count&.negative?
+    0 if positions_sum&.negative?
+    0.0 if average_position && average_position < 0.0
+    0 if obtained_points&.negative?
+    0.0 if official_score && official_score < 0.0
+    0.0 if participation_multiplier && participation_multiplier < 0.0
   end
 end

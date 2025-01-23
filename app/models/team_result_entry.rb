@@ -21,6 +21,6 @@ class TeamResultEntry
   def filter_negative_points
     return if points.nil?
 
-    points = 0 if points && points < 0
+    0 if points&.negative?
   end
 end

@@ -2,6 +2,7 @@
 
 module Users
   class RegistrationsController < Devise::RegistrationsController
+    prepend_before_action :check_captcha, :only => [:create]
     before_action :configure_sign_up_params, :only => [:create]
     before_action :configure_account_update_params, :only => [:update]
 
@@ -41,6 +42,15 @@ module Users
 
     protected
 
+    def check_captcha
+      return if verify_recaptcha
+
+      self.resource = resource_class.new sign_up_params
+      resource.validate
+      set_minimum_password_length
+      respond_with_navigational(resource) { render :new }
+    end
+
     # If you have extra params to permit, append them to the sanitizer.
     def configure_sign_up_params
       devise_parameter_sanitizer.permit(:sign_up, :keys => [:username])
@@ -49,8 +59,8 @@ module Users
     # If you have extra params to permit, append them to the sanitizer.
     def configure_account_update_params
       devise_parameter_sanitizer.permit(:account_update, :keys => [
-                                          :admin, :mod, :organizer, :locale, :country, :team,
-                                          { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests],
+                                          :admin, :mod, :organizer, :sponsor, :locale, :country, :team,
+                                          { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests, :profile_picture, :profile_picture_data],
                                             :stats_attributes => [:id, :race_wins, :race_win_rate, :race_podiums, :race_count, :positions_sum,
                                                                   :session_wins, :session_podiums, :session_win_rate, :session_count, :average_position, :participation_rate, :official_score, :obtained_points] }
                                         ])

@@ -83,7 +83,7 @@ class StatsService
           :average_position => session_entry.average_position,
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
-          :participation_multiplier => session_entry.participation_multiplier,
+          :participation_multiplier => session_entry.participation_multiplier
         }
 
         ranking_entries << RacerResultEntry.new(se_hash)
@@ -123,7 +123,7 @@ class StatsService
           :average_position => session_entry.average_position,
           :obtained_points => session_entry.obtained_points,
           :official_score => session_entry.official_score,
-          :participation_multiplier => session_entry.participation_multiplier,
+          :participation_multiplier => session_entry.participation_multiplier
         }
 
         season_entries << RacerResultEntry.new(session_entry_hash)
@@ -203,10 +203,10 @@ class StatsService
       ranking_entry.session_count -= 1
       ranking_entry.race_count -= session_entry.race_count
       ranking_entry.positions_sum -= session_entry.positions_sum
-      ranking_entry.average_position = (session_entry.positions_sum.to_f / (ranking_entry.race_count.nonzero? || 1)).round(2)
+      ranking_entry.average_position = (ranking_entry.positions_sum.to_f / (ranking_entry.race_count.nonzero? || 1)).round(2)
       ranking_entry.obtained_points -= session_entry.obtained_points.to_i
       ranking_entry.official_score -= session_entry.official_score.to_f
-      ranking_entry.participation_multiplier = (session_entry.race_count.to_f / ((ranking_entry.session_count * 20).nonzero? || 1)).round(2)
+      ranking_entry.participation_multiplier = (ranking_entry.race_count.to_f / ((ranking_entry.session_count * 20).nonzero? || 1)).round(2)
 
       empty_entries << ranking_entry if ranking_entry.race_count.zero?
     end
@@ -231,10 +231,10 @@ class StatsService
       season_entry.session_count -= 1
       season_entry.race_count -= session_entry.race_count
       season_entry.positions_sum -= session_entry.positions_sum
-      season_entry.average_position = (session_entry.positions_sum.to_f / (season_entry.race_count.nonzero? || 1)).round(2)
+      season_entry.average_position = (season_entry.positions_sum.to_f / (season_entry.race_count.nonzero? || 1)).round(2)
       season_entry.obtained_points -= session_entry.obtained_points.to_i
       season_entry.official_score -= session_entry.official_score.to_f
-      season_entry.participation_multiplier = (session_entry.race_count.to_f / ((season_entry.session_count * 20).nonzero? || 1)).round(2)
+      season_entry.participation_multiplier = (season_entry.race_count.to_f / ((season_entry.session_count * 20).nonzero? || 1)).round(2)
 
       empty_entries << season_entry if season_entry.race_count.zero?
     end

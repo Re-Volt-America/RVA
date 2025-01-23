@@ -5,9 +5,11 @@ class TrackListEntry
 
   field :track_name, :type => String
   field :stock, :type => Boolean
+  field :lego, :type => Boolean
   field :lap_count, :type => Integer
 
   validates_presence_of :track_name
   validates_presence_of :stock
+  validates_presence_of :lego
   validates_presence_of :lap_count
 end

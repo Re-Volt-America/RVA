@@ -2,7 +2,7 @@ module RepositoriesHelper
   # NOTE: The staff team will likely not lie about their github accounts... but it'd be nice to
   # add a separate field for them to have internal VCS accounts.
   def user_by_github(github)
-    Rails.cache.fetch("User##{github}") do
+    Rails.cache.fetch("User##{github}", :expires_in => 1.month) do
       User.find { |u| (u.profile.github.eql?(github) && user_is_staff?(u)) }
     end
   end

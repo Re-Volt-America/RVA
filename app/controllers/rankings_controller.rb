@@ -43,7 +43,7 @@ class RankingsController < ApplicationController
 
     respond_to do |format|
       if @ranking.save
-        format.html { redirect_to ranking_url(@ranking), :notice => t(".controller.create") }
+        format.html { redirect_to ranking_url(@ranking), :notice => t('.controller.create') }
         format.json { render :show, :status => :created, :location => @ranking, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -56,7 +56,7 @@ class RankingsController < ApplicationController
   def update
     respond_to do |format|
       if @ranking.update(ranking_params)
-        format.html { redirect_to ranking_url(@ranking), :notice => t(".controller.update") }
+        format.html { redirect_to ranking_url(@ranking), :notice => t('.controller.update') }
         format.json { render :show, :status => :ok, :location => @ranking }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -69,7 +69,7 @@ class RankingsController < ApplicationController
   def destroy
     respond_to do |format|
       if @ranking.destroy!
-        format.html { redirect_to rankings_url, :notice => t(".controller.delete") }
+        format.html { redirect_to rankings_url, :notice => t('.controller.delete') }
         format.json { head :no_content }
       else
         format.html { render :edit, :status => :unprocessable_entity }

@@ -19,6 +19,16 @@
         .col.pull-left
           = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
             = f.fields_for :profile do |profile|
+              %h4= t(".profile.profile-picture")
+              .form-group
+                - if resource.profile&.profile_picture_data.present?
+                  .mb-3
+                    = image_tag resource.profile.profile_picture_url,
+                      class: "img-fluid rounded",
+                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+                .file-input-group
+                  = profile.hidden_field :profile_picture, value: resource.profile&.cached_profile_picture_data, id: nil
+                  = profile.file_field :profile_picture, accept: "image/png, image/jpeg", class: "form-control-file"
               %h6= t(".profile.gender")
               .form-group
                 .input-group
@@ -106,6 +116,8 @@
             .form-group
               .input-group
                 = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
+            .field.form-group
+              = recaptcha_tags
             .btn-toolbar
               .actions
                 = f.submit t(".update"), :class => 'btn btn-sm'

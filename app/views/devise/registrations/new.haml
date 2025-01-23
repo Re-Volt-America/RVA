@@ -17,6 +17,8 @@
       .field.form-group
         = f.label :password_confirmation, t("devise.shared.links.password-confirm")
         = f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control"
+      .field.form-group
+        = recaptcha_tags
       .actions
         = f.button t('.sign_up'), :type => "submit", :class => "btn mb-2"
       = render "devise/shared/links"

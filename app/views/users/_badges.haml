@@ -4,3 +4,8 @@
   %a.label{:href => staff_path, :style => "background-color: #ff2200; color: white;"}= t(".mod")
 - if user.organizer?
   %a.label{:href => staff_path, :style => "background-color: #36f971; color: white;"}= t(".organizer")
+- if user.sponsor?
+  %a.label#sponsor-badge{:href => ORG::SPONSOR_URL, :style => "background-color: #f47fff; color: white;"}
+    = t(".sponsor")
+    %span{:"data-firework" => "1"}
+    %span{:"data-firework" => "2"}

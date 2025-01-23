@@ -7,15 +7,15 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    if current_season.nil?
-      @tracks = Track.all
-    else
-      @tracks = current_season.tracks
-    end
+    @tracks = if current_season.nil?
+                Track.all
+              else
+                current_season.tracks
+              end
 
     if params[:query].present?
       regex = Regexp.new("^#{Regexp.escape(params[:query])}", Regexp::IGNORECASE)
-      @tracks = @tracks.where(name: { '$regex' => regex })
+      @tracks = @tracks.where(:name => { '$regex' => regex })
     end
 
     @tracks = Kaminari.paginate_array(
@@ -48,7 +48,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to track_url(@track), :notice => t("rva.tracks.controller.create") }
+        format.html { redirect_to track_url(@track), :notice => t('rva.tracks.controller.create') }
         format.json { render :show, :status => :created, :location => @track, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -61,7 +61,7 @@ class TracksController < ApplicationController
   def update
     respond_to do |format|
       if @track.update(track_params)
-        format.html { redirect_to track_url(@track), :notice => t("rva.tracks.controller.update") }
+        format.html { redirect_to track_url(@track), :notice => t('rva.tracks.controller.update') }
         format.json { render :show, :status => :ok, :location => @track, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -76,22 +76,22 @@ class TracksController < ApplicationController
     file = params[:file]
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.select") }
-        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t('misc.controller.import.select') }
+        format.json { render :json => t('misc.controller.import.select'), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.upload") }
-        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t('misc.controller.import.upload') }
+        format.json { render :json => t('misc.controller.import.upload'), :status => :bad_request, :layout => false }
       end and return
     end
 
     if params[:season].nil? || params[:season].empty?
       respond_to do |format|
-        format.html { redirect_to new_track_path, :notice => t("misc.controller.import.season") }
-        format.json { render :json => t("misc.controller.import.season"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_track_path, :notice => t('misc.controller.import.season') }
+        format.json { render :json => t('misc.controller.import.season'), :status => :bad_request, :layout => false }
       end and return
     end
 
@@ -99,13 +99,13 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @tracks.empty?
-        format.html { redirect_to new_track_path, :notice => t("rva.tracks.controller.import.exists") }
+        format.html { redirect_to new_track_path, :notice => t('rva.tracks.controller.import.exists') }
         format.json { render :show, :status => :ok, :layout => false }
       end and return
 
       @tracks.each do |track|
-        if track.save!
-          format.html { redirect_to new_track_path, :notice => t("rva.tracks.controller.import.success") }
+        if track.save
+          format.html { redirect_to new_track_path, :notice => t('rva.tracks.controller.import.success') }
           format.json { render :show, :status => :created, :location => track, :layout => false }
         else
           format.html { render :new, :status => :unprocessable_entity }
@@ -120,7 +120,7 @@ class TracksController < ApplicationController
     @track.destroy
 
     respond_to do |format|
-      format.html { redirect_to tracks_url, :notice => t("rva.tracks.controller.destroy") }
+      format.html { redirect_to tracks_url, :notice => t('rva.tracks.controller.destroy') }
       format.json { head :no_content }
     end
   end
@@ -134,6 +134,7 @@ class TracksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def track_params
-    params.require(:track).permit(:name, :short_name, :difficulty, :length, :folder_name, :author, :stock, :average_lap_time, :season)
+    params.require(:track).permit(:name, :short_name, :difficulty, :length, :folder_name, :author, :stock, :lego,
+                                  :average_lap_time, :season)
   end
 end

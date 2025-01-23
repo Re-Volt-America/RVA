@@ -36,7 +36,10 @@
                   %td.text-center
                     = tle.track_name
                   %td.text-center
-                    = tle.stock ? t('misc.stock') : t('misc.custom')
+                    - if tle.stock
+                      = t('misc.stock')
+                    - else
+                      = tle.lego ? t('misc.lego') : t('misc.custom')
                   %td.text-center
                     = tle.lap_count
 

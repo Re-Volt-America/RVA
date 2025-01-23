@@ -1,5 +1,6 @@
 class Profile
   include Mongoid::Document
+  include ProfilePictureUploader::Attachment(:profile_picture)
 
   embedded_in :user
 
@@ -15,4 +16,5 @@ class Profile
   field :twitter, :type => String
   field :occupation, :type => String
   field :interests, :type => String
+  field :profile_picture_data, :type => String
 end

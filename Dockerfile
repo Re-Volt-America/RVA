@@ -19,7 +19,7 @@ RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 RUN npm install -g yarn
 
 # Clone the RVA repository
-RUN git clone https://github.com/Re-Volt-America/RVA /usr/src/app
+RUN git clone -b docker https://github.com/Re-Volt-America/RVA /usr/src/app
 WORKDIR /usr/src/app
 
 # Bundle gems

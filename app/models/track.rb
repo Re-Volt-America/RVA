@@ -13,6 +13,7 @@ class Track
   field :folder_name, :type => String
   field :author, :type => String
   field :stock, :type => Boolean, :default => false
+  field :lego, :type => Boolean, :default => false
   field :average_lap_time, :type => Integer
 
   validates_presence_of :name
@@ -22,6 +23,7 @@ class Track
   validates_presence_of :folder_name
   validates_presence_of :author
   validates_presence_of :stock
+  validates_presence_of :lego
   validates_presence_of :average_lap_time
 
   def lap_count(category)

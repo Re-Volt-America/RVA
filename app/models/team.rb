@@ -5,7 +5,7 @@ class Team
 
   store_in :database => 'rv_teams'
 
-  belongs_to :leader, class_name: 'User', :inverse_of => nil
+  belongs_to :leader, :class_name => 'User', :inverse_of => nil
   has_many :members, :class_name => 'User', :inverse_of => :team
 
   field :name, :type => String

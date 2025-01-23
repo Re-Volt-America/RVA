@@ -20,9 +20,22 @@ class SessionsController < ApplicationController
     require 'rva_calculate_results_service'
 
     @count = 0
-    @rva_results = Rails.cache.fetch("Session:#{@session.id}") do
+    @rva_results = Rails.cache.fetch("Session:#{@session.id}", :expires_in => 1.month) do
       RvaCalculateResultsService.new(@session).call
     end
+
+    # Car usage analysis
+    car_rows = @rva_results.each_with_index.select { |row, idx| idx % 2 == 0 && idx >= 2 }.map(&:first)
+
+    @car_usage = car_rows.each_with_object(Hash.new(0)) do |row, hash|
+      next unless row[4].is_a?(Array)
+
+      cars = row[4].select { |car| car.is_a?(Car) }
+      cars.each do |car|
+        next unless car.respond_to?(:name)
+        hash[car.name] += 1
+      end
+    end.sort_by { |_, count| -count }.to_h  # Sort by frequency in descending order
 
     respond_with @session do |format|
       format.json { render :layout => false }
@@ -43,7 +56,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.create") }
+        format.html { redirect_to session_url(@session), :notice => t('rankings.sessions.controller.create') }
         format.json { render :show, :status => :created, :location => @session, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }
@@ -56,7 +69,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.update") }
+        format.html { redirect_to session_url(@session), :notice => t('rankings.sessions.controller.update') }
         format.json { render :show, :status => :ok, :location => @session, :layout => false }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -81,10 +94,10 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.destroy!
-        format.html { redirect_to sessions_url, :notice => t("rankings.sessions.controller.delete") }
-        format.json { head :no_content }
-
         Rails.cache.delete("Session:#{@session.id}")
+
+        format.html { redirect_to sessions_url, :notice => t('rankings.sessions.controller.delete') }
+        format.json { head :no_content }
       else
         format.html { render :new, :status => :unprocessable_entity }
         format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
@@ -109,34 +122,39 @@ class SessionsController < ApplicationController
 
     if file.nil?
       respond_to do |format|
-        format.html { redirect_to new_session_path, :notice => t("misc.controller.import.select") }
-        format.json { render :json => t("misc.controller.import.select"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_session_path, :notice => t('misc.controller.import.select') }
+        format.json { render :json => t('misc.controller.import.select'), :status => :bad_request, :layout => false }
       end and return
     end
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_session_path, :note => t("misc.controller.import.upload") }
-        format.json { render :json => t("misc.controller.import.upload"), :status => :bad_request, :layout => false }
+        format.html { redirect_to new_session_path, :note => t('misc.controller.import.upload') }
+        format.json { render :json => t('misc.controller.import.upload'), :status => :bad_request, :layout => false }
       end and return
     end
 
     @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
                                             params[:teams]).call
 
-    respond_to do |format|
-      if @session.save!
-        format.html { redirect_to session_url(@session), :notice => t("rankings.sessions.controller.import.success") }
-        format.json { render :show, :status => :created, :location => @session, :layout => false }
+    if @session.save
+      Rails.cache.delete('recent_sessions')
+      Rails.cache.delete('current_ranking')
 
-        Rails.cache.delete('recent_sessions')
+      respond_to do |format|
+        format.html do
+          redirect_to session_url(@session),
+                      status: :see_other,
+                      notice: t('rankings.sessions.controller.import.success')
+        end
 
-        # NOTE: Rankings are created automatically after a season is saved, therefore the only way to keep them up to date
-        # in cache is by expiring their keys for each new session upload.
-        Rails.cache.delete('current_ranking')
-      else
-        format.html { render :new, :status => :unprocessable_entity }
-        format.json { render :json => @session.errors, :status => :unprocessable_entity, :layout => false }
+        format.json { render :show, status: :created, location: @session, layout: false }
+        format.any { head :not_acceptable }
+      end and return
+    else
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @session.errors, status: :unprocessable_entity, layout: false }
       end and return
     end
   end
