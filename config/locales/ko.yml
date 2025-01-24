@@ -63,64 +63,64 @@ ko:
   #Landing page, Splash, About
   application:
     splash:
-      description1: "이 웹사이트는 1999년에 출시된 리볼트의 아메리카 커뮤니티를 위해 만들어졌습니다."
-      description2: "Download the game and meet players from all over the Americas!"
+      description1: "1999년 출시된 리볼트의 아메리카 커뮤니티 웹사이트"
+      description2: "게임을 다운로드하고 아메리카 전역의 플레이어를 만나보세요!"
       download-button: "다운로드 »"
     index:
       community:
         title: "커뮤니티"
-        description: "We are an amazing Re-Volt community mainly made up of South American players, but you will also find people from all over the world playing online with us."
-        play-button: "Play »"
+        description: "우리는 주로 남미 플레이어들로 구성된 놀라운 Re-Volt 커뮤니티이지만, 온라인에서 우리와 함께 플레이하는 전 세계의 사람들도 볼 수 있습니다."
+        play-button: "플레이 »"
       competition:
-        title: "Competition"
-        description: "In Re-Volt America we race in a seasonal format. Throughout each season, you will be able to race online daily and score points for every race you participate in!"
+        title: "대회"
+        description: "Re-Volt America에서는 시즌 형식으로 레이스를 진행합니다. 각 시즌 내내 매일 온라인 레이스에 참가하고, 참가하는 모든 레이스에 대해 포인트를 획득할 수 있습니다!"
         seasons-button: "시즌 »"
       reliability:
-        title: "Reliabilty"
-        description: "Re-Volt America has been designed with sustainability and scalability in mind. Most of the features you see here you will not find in any other Re-Volt community."
-        about-us-button: "About Us »"
+        title: "신뢰성"
+        description: "Re-Volt America는 지속 가능성과 확장성을 염두에 두고 설계되었습니다. 여기에서 볼 수 있는 대부분의 기능은 다른 Re-Volt 커뮤니티에서는 찾을 수 없습니다."
+        about-us-button: "우리에 대해 »"
       recent:
-        title: "Recent Sessions"
-        races: "%{category} Races"
-        team-races: "%{category} Team Races"
-        hosted-by: "Hosted by %{host}"
-        all-sessions-button: "All Sessions"
+        title: "최근 세션"
+        races: "%{category} 레이스"
+        team-races: "%{category} 팀 레이스"
+        hosted-by: "%{host}에서 호스팅 됨"
+        all-sessions-button: "모든 세션"
         no-sessions: "N"
     about:
-      title: "About Re-Volt America"
-      description: "The largest Re-Volt community you'll find in the American Continent. Join our racing sessions, compete in our seasons and meet other Re-Volt players from around the world!"
-      subtitle: "Who we are"
-      text1_html: "Founded in 2017, Re-Volt America (RVA) is the American community around the popular RC Cars racing game <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> from 1999."
+      title: "Re-Volt America에 대해"
+      description: "아메리카 대륙에서 찾을 수 있는 최대 규모의 Re-Volt 커뮤니티입니다. 레이싱 세션에 참여하고 시즌에 경쟁하며 전 세계의 다른 Re-Volt 플레이어를 만나보세요!"
+      subtitle: "우리가 누구냐면"
+      text1_html: "2017년에 설립된 Re-Volt America(RVA)는 1999년에 출시된 인기 RC 자동차 레이싱 게임 <a href='https://en.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a>를 중심으로 한 미국 커뮤니티입니다."
       text2_html: "In order to play online, we use <a href='https://rvgl.org/' target='_blank'>RVGL</a>, a cross-platform rewrite / port of Re-Volt that runs natively on a wide variety of platforms. This version of the game is also known for extending the original game experience with support for custom, community-made content such as tracks and cars."
       text3_html: "In RVA, we organize a series of online sessions where players from all around the world (primarily from the American continent) get to race against each other, score points for the races they play, and get indexed into Re-Volt Americas' official rankings."
       text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
       see_you: "See you on track!"
   #Play page
   play:
-    page-title: "Re-Volt America - Play"
+    page-title: "Re-Volt America - 플레이"
     meta:
-      title: "RVA - Play"
-      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
+      title: "RVA-플레이"
+      description: "Re-Volt America의 온라인 플레이 세션 일정 및 로비 공지사항입니다."
     subheader: "매일 00:00 UTC에 플레이합니다"
     subheader2_html: "로비는 <code class='nissan-code'>#lobby-rva</code>에 올라옵니다"
     track-list:
-      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
+      button_html: "주간 일정을 확인하세요 <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
-    page-title: "Re-Volt America - Downloads"
-    title: "Downloads"
-    video: "Pending video..."
+    page-title: "Re-Volt America - 다운로드"
+    title: "다운로드"
+    video: "비디오 처리중..."
     faq:
-      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
-      button: "Take me there!"
-    legacy-downloads: "Legacy Downloads"
+      title: "커뮤니티에 처음 오신 분이라면 자주 묻는 질문(FAQ) 페이지를 읽어 보시기 바랍니다."
+      button: "거기로 데려가 주세요!"
+    legacy-downloads: "기존 다운로드"
   #FAQ page
   faq:
     page-title: "Re-Volt America - FAQ"
-    title: "Frequently Asked Questions"
-    description: "This is a collection of the most frequently asked questions (FAQ) by new community members when they first want to play Re-Volt online with us in RVA. Make sure to give them a read if you're new to our community."
+    title: "자주 묻는 질문들"
+    description: "RVA에서 Re-Volt 온라인을 처음 플레이하고 싶어하는 새로운 커뮤니티 회원들이 가장 자주 묻는 질문(FAQ)을 모아놓은 것입니다. 커뮤니티에 처음 온 분이라면 꼭 읽어보세요."
     section-1: "설치와 설정"
-    section-2: "Playing online"
+    section-2: "온라인 플레이"
     accordion:
       download:
         title: "Re-Volt를 어떻게 다운로드 하나요?"
@@ -131,14 +131,14 @@ ko:
         mobile-players:
           description-html: "In the case of Android, when you try to run the game installer (click this <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>link</a> to download) you need to grant permissions to install external applications. <p> After accepting granting the permissions and installing the game, the app can be opened normally from the app drawer of your phone.</p> <p>iOS is still not supported :("
         steam-revolt:
-          title: "스팀판 Re-Volt"
-          description-html: "The Steam version of Re-Volt is not compatible to play online races because it is an obsolete version. For this and many other reasons we <b>do not</b> recommend its purchase and cannot host online events for it either."
+          title: "Steam 버전 Re-Volt"
+          description-html: "Re-Volt의 Steam 버전은 오래된 버전이기 때문에 온라인 레이스를 플레이하는 데 호환되지 않습니다. 이러한 이유와 다른 여러 이유로 우리는 구매를 <b>권장하지 않습니다</b>. 또한 온라인 이벤트를 호스팅할 수도 없습니다."
       install:
         title: "RVA 팩을 어떻게 설치하나요?"
         recommended-way:
           description-html: "팩 탭에서 목록 하단에서 rva_cars 및 rva_tracks 옵션을 선택한 다음, 오른쪽 하단에 있는 패키지 설치 버튼을 클릭하여 패키지 다운로드 및 설치를 시작합니다."
         classic-way:
-          description-html: "Enter the following <a href='downloads' target='_blank' rel='noopener noreferrer'>link</a> and download RVA Car Pack and RVA Track Pack. <p>Open the folder where you have RVGL installed and unzip the newly downloaded files there.</p>"
+          description-html: "다음 <a href='downloads' target='_blank' rel='noopener noreferrer'>링크</a>를 입력하여 RVA 자동차 팩과 RVA 트랙 팩을 다운로드하세요. <p>RVGL이 설치된 폴더를 열고 새로 다운로드한 파일의 압축을 풉니다.</p>"
         mobile-players:
           description-html: "Perform the steps of the classic method, only that on Android you need a file manager capable of decompressing ZIP files, you can search in the Play Store applications such as ZArchiver, RAR or others if your phone does not incorporate a file manager. <p>Inside the file manager go to the Downloads folder (or wherever you have downloaded the packs) and unzip them in the RVGL folder that is in the internal memory.</p>"
       play-online:
