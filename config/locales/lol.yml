@@ -2,18 +2,18 @@ lol:
   #Navigation
   nav:
     play: "Pley"
-    tracks: "trakz"
+    tracks: "Trakz"
     cars: "Kaz"
     seasons: "Seashuns"
     league:
       title: "LOL"
-      leaderboard: "katboard"
-      point-system: "pointz systm"
+      leaderboard: "Katbud"
+      point-system: "Pontz systm"
       teams: "Teamz"
       tournaments: "INVASION CUPS"
-    downloads: "dowolondas"
+    downloads: "Dawlondas"
     user:
-      my-profile: "mysekf"
+      my-profile: "Maisekf"
       settings: "myconfig"
       admin:
         title: "Pow peeple"
@@ -418,7 +418,7 @@ lol:
         folder-name: "Fuldr naem"
         update: "Updaet"
         error: "Ka kuld nut b savd"
-        delete: "dheleet kaa"
+        delete: "Kill kaa"
       import:
         title: "Gif Kaz"
       controller:
