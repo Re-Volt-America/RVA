@@ -2,7 +2,7 @@ class TeamResultEntry
   include Mongoid::Document
   include TeamLogoUploader::Attachment(:team_logo)
 
-  # NOTE: This should never happen, but we cannot allow negative counts under any circumstances
+  # NOTE: This should never happen, but we cannot allow negative points under any circumstances
   before_save :filter_negative_points
 
   embedded_in :season

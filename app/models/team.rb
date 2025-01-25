@@ -5,6 +5,9 @@ class Team
 
   store_in :database => 'rv_teams'
 
+  # NOTE: This should never happen, but we cannot allow negative points under any circumstances
+  before_save :filter_negative_points
+
   belongs_to :leader, :class_name => 'User', :inverse_of => nil
   has_many :members, :class_name => 'User', :inverse_of => :team
 
@@ -19,4 +22,10 @@ class Team
   validates_presence_of :short_name
   validates_presence_of :color
   validates_presence_of :team_logo
+
+  def filter_negative_points
+    return if points.nil?
+
+    0 if points&.negative?
+  end
 end
