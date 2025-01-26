@@ -20,7 +20,7 @@ class SeasonsController < ApplicationController
     @racer_entries = Kaminari.paginate_array(@racer_entries).page(params[:page]).per(16)
     @count = ((@racer_entries.current_page - 1) * @racer_entries.limit_value) + 1
 
-    @team_entries = @season.team_result_entries
+    @team_entries = @season.team_result_entries.order_by(points: :desc)
 
     respond_with @season do |format|
       format.json { render :layout => false }
