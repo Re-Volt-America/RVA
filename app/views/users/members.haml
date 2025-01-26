@@ -1,0 +1,40 @@
+- content_for :title, "RVA - User Administration"
+
+.row.mt-4
+  .col-md-12
+    %h2.mb-4 User Administration
+
+    .d-flex.mb-4
+      = paginate @users
+
+    .table-responsive
+      %table.table.table-dark.table-hover
+        %thead
+          %tr
+            %th #
+            %th Username
+            %th Country
+            %th Email
+            %th.text-nowrap Registered
+            %th.text-nowrap Last Sign In
+            %th.text-center Sign Ins
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td.align-middle
+                %small= @count += 1
+              %td.align-middle
+                = link_to user.username, user_path(user), class: "text-white"
+              %td.align-middle.text-center
+                = render partial: "country_flag", locals: { country: user.country }
+              %td.align-middle
+                %small= user.email
+              %td.align-middle
+                %small= pretty_time_precise(user.created_at)
+              %td.align-middle
+                %small= user.last_sign_in_at ? pretty_time_precise(user.last_sign_in_at) : "Never"
+              %td.align-middle.text-center
+                %small= user.sign_in_count
+
+    .d-flex.mt-4
+      = paginate @users

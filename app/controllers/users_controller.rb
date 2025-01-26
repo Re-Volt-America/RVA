@@ -3,13 +3,13 @@ class UsersController < ApplicationController
   include RankingsHelper
 
   before_action :authenticate_user!, :except => [:show, :stats]
-  before_action :authenticate_admin, :except => [:show, :stats, :update_locale, :edit]
-  before_action :authenticate_mod, :only => [:edit]
+  before_action :authenticate_admin, :except => [:show, :stats, :update_locale, :edit, :members]
+  before_action :authenticate_mod, :only => [:edit, :members]
 
   def members
-    @users = User.all
-    @users = Kaminari.paginate_array(@users).page(params[:page]).per(20)
-    @count = (@users.current_page - 1) * (@users.limit_value + 1)
+    @users = User.all.order(created_at: :desc)
+    @users = Kaminari.paginate_array(@users.to_a).page(params[:page]).per(20)
+    @count = (@users.current_page - 1) * @users.limit_value
   end
 
   def show
