@@ -8,6 +8,7 @@ gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
 gem 'devise-i18n', '~> 1.12', '>= 1.12.1'                             # Translations for the devise gem
+gem 'faraday', '<= 2'                                                 # HTTP/REST API client library.
 gem 'faraday-http-cache', '~> 2.4'                                    # Faraday middleware that respects HTTP cache
 gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'github_api', '~> 0.19.0'                                         # GitHub API

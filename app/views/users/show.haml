@@ -86,6 +86,8 @@
     - if user_is_mod? || user_is_admin?
       %li.nav-item
         %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"}= t("users.tabs.admin")
+      %li.nav-item
+        %a#sessions-tab.nav-link{"aria-controls" => "sessions", "aria-selected" => "false", "data-toggle" => "tab", href: "#sessions", role: "tab"} Sessions
   .tab-content
     #general.tab-pane.fade.show.active{:"aria-labelledby" => "general-tab", role: "tabpanel"}
       .row.mt-2.info
@@ -325,3 +327,49 @@
           .btn-toolbar
             .actions
               = f.submit t("devise.registrations.edit.update-admin", user: @user.username), :class => 'btn btn-sm'
+    - if user_is_admin?
+      #sessions.tab-pane.fade{:"aria-labelledby" => "sessions-tab", role: "tabpanel"}
+        .row.mt-4
+          .col-md-12
+            %h4 Session Information
+            %dl.dl-horizontal
+              %dt Sign In Count
+              %dd= @user.sign_in_count || 'Never signed in'
+              %dt First Sign In
+              %dd= @user.created_at ? pretty_datetime(@user.created_at) : 'Unknown'
+              %dt Current Sign In
+              %dd
+                - if @user.current_sign_in_at && @user.current_sign_in_ip
+                  = pretty_datetime(@user.current_sign_in_at)
+                  from
+                  %code= @user.current_sign_in_ip
+                  - if (ip_data = IpLookupService.lookup(@user.current_sign_in_ip)) && ip_data['status'] != 'fail'
+                    - location_parts = [ip_data['city'], ip_data['regionName'], ip_data['country']].compact.presence
+                    - if location_parts
+                      %small.d-block.text-muted
+                        = location_parts.join(', ')
+                        = "(#{ip_data['org']})" if ip_data['org'].present?
+                - else
+                  Never signed in
+              %dt Last Sign In
+              %dd
+                - if @user.last_sign_in_at && @user.last_sign_in_ip
+                  = pretty_datetime(@user.last_sign_in_at)
+                  from
+                  %code= @user.last_sign_in_ip
+                - else
+                  Never signed in
+              %dt Account Status
+              %dd
+                - if @user.locked_at?
+                  %span.text-danger
+                    Locked
+                    = "(#{pretty_datetime(@user.locked_at)})" if @user.locked_at
+                - elsif !@user.confirmed_at?
+                  %span.text-warning Unconfirmed
+                - else
+                  %span.text-success Active
+              %dt Failed Logins
+              %dd= @user.failed_attempts || 0
+
+      #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
