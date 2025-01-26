@@ -22,7 +22,7 @@ class RankingsController < ApplicationController
     @racer_entries = @ranking.racer_result_entries
     @count = 1
 
-    @team_entries = @ranking.team_result_entries
+    @team_entries = @ranking.team_result_entries.order_by(points: :desc)
 
     respond_with @ranking do |format|
       format.json { render :layout => false }
