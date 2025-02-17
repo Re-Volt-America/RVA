@@ -4,7 +4,7 @@ lol:
     play: "Pley"
     tracks: "Trakz"
     cars: "Kaz"
-    seasons: "Seashuns"
+    seasons: "Seazuns"
     league:
       title: "LOL"
       leaderboard: "Katbod"
@@ -13,10 +13,10 @@ lol:
       tournaments: "INVASION CUPS"
     downloads: "Dawlondas"
     user:
-      my-profile: "Maisekf"
+      my-profile: "mysekf"
       settings: "myconfig"
       admin:
-        title: "Pow peeple"
+        title: "Powah peeple"
         upload-session: "Uplod seshun"
         generate-tracklist: "Kitteh maek traklizz"
         create-season: "Craet seesun"
