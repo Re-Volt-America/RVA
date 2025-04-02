@@ -10,7 +10,7 @@
     "chart.js": "^4.4.7",
     "chartkick": "^5.0.1",
     "chokidar": "^3.5.3",
-    "esbuild": "^0.17.10",
+    "esbuild": "^0.25.0",
     "esbuild-rails": "^1.0.3",
     "html2canvas": "^1.4.1",
     "sass": "^1.58.3"
