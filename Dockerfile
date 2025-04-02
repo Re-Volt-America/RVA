@@ -1,7 +1,7 @@
 # Official base image for Ruby 3.2.2
 FROM ruby:3.2.2
 
-ENV NODE_VERSION=16.13.0
+ENV NODE_VERSION=20
 ENV NVM_DIR=/root/.nvm
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
