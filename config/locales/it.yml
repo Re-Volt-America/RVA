@@ -13,7 +13,7 @@ it:
       tournaments: "Tornei"
     downloads: "Downloads"
     user:
-      my-profile: "\nIl mio profilo"
+      my-profile: "Il mio profilo"
       settings: "Opzioni"
       admin:
         title: "Admin"
@@ -69,7 +69,7 @@ it:
     index:
       community:
         title: "Community"
-        description: "Siamo una straordinaria community di Re-Volt composta principalmente da giocatori sud-Americani, ma troverete persone che giocano online con noi da tutto il mondo! "
+        description: "Siamo una straordinaria community di Re-Volt composta principalmente da giocatori sudamericani, ma troverete persone che giocano online con noi da tutto il mondo!"
         play-button: "Gioca »"
       competition:
         title: "Competizioni"
