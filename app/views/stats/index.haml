@@ -5,14 +5,19 @@
 %h1.mb-4
   = t("rankings.stats.title")
 
+%form.form-inline.mb-4{action: stats_path, method: "get"}
+  %input#search.form-control.mr-2{type: "text", name: "query", placeholder: t("rankings.stats.search.placeholder"), value: params[:query]}
+    %button.btn.btn-primary{type: "submit"}
+      %i.fa.fa-search
+
 = t("rankings.stats.sorted")
 
 %select#sorter.form-control{style: "display: inline-block; width: 130px; cursor: pointer;"}
   - @sorts.each do |key, label|
     - if params[:sort].eql?(key.to_s)
-      %option{label: label, selected: "selected", value: "#{full_url_for :sort => key}"}= label
+      %option{label: label, selected: "selected", value: "#{stats_path(sort: key, query: params[:query])}"}= label
     - else
-      %option{label: label, value: "#{full_url_for :sort => key}"}= label
+      %option{label: label, value: "#{stats_path(sort: key, query: params[:query])}"}= label
 
 .table-responsive.mt-4#stats-table
   = paginate @users
