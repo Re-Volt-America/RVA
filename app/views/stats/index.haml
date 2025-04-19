@@ -6,7 +6,7 @@
   = t("rankings.stats.title")
 
 %form.form-inline.mb-4{action: stats_path, method: "get"}
-  %input#search.form-control.mr-2{type: "text", name: "query", placeholder: t("misc.placeholder.search"), value: params[:query]}
+  %input#search.form-control.mr-2{type: "text", name: "query", placeholder: t("rankings.stats.search.placeholder"), value: params[:query]}
     %button.btn.btn-primary{type: "submit"}
       %i.fa.fa-search
 
