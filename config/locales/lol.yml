@@ -4,19 +4,19 @@ lol:
     play: "Pley"
     tracks: "Trakz"
     cars: "Kaz"
-    seasons: "Seashuns"
+    seasons: "Seazuns"
     league:
       title: "LOL"
-      leaderboard: "Katbud"
+      leaderboard: "Katbod"
       point-system: "Pontz systm"
       teams: "Teamz"
       tournaments: "INVASION CUPS"
     downloads: "Dawlondas"
     user:
-      my-profile: "Maisekf"
+      my-profile: "mysekf"
       settings: "myconfig"
       admin:
-        title: "Pow peeple"
+        title: "Powah peeple"
         upload-session: "Uplod seshun"
         generate-tracklist: "Kitteh maek traklizz"
         create-season: "Craet seesun"
@@ -512,12 +512,15 @@ lol:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    #Stats page
     stats:
       page-title: "rVA - stazzz"
       meta:
         title: "RVa - Kitehbord"
         description: "Wurld skatiztiks kittehbord 4 RVA onlan sesshunz."
       title: "Wurld stez"
+      search:
+        placeholder: "Saerchz cat ..."
       sorted: "sotd bai:"
       table:
         wins: "Viktori royelz"
