@@ -511,12 +511,15 @@ es-CL:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    #Stats page
     stats:
       page-title: "Re-Volt America - Estadísticas"
       meta:
         title: "RVA - Tabla de Posiciones"
         description: "Tabla de estadísticas globales para las sesiones online de RVA."
       title: "Estadísticas Globales"
+      search:
+        placeholder: "Search player ..."
       sorted: "Ordenado por:"
       table:
         wins: "Victorias"
