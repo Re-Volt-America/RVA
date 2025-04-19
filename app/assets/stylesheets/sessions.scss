@@ -63,6 +63,11 @@
 
       a {
         color: #ffd966;
+
+        &:hover {
+          color: lighten(#ffd966, 10%);
+          text-decoration: none;
+        }
       }
     }
 
@@ -100,6 +105,15 @@
       min-width: 1px;
       overflow: hidden;
       white-space: nowrap;
+
+      a {
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: lighten(#5bada9, 15%);
+          text-decoration: none;
+        }
+      }
     }
 
     .pp-header, .pa-header, .cc-header, .mp-header, .po-header {
@@ -168,7 +182,160 @@
 
       a {
         color: #a0d5ef;
+
+        &:hover {
+          color: lighten(#a0d5ef, 10%);
+          text-decoration: none;
+        }
       }
+    }
+  }
+}
+
+body .tooltip-results-custom {
+  z-index: 1070;
+
+  &.fade {
+    transition: opacity 0.15s linear;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.bs-tooltip-top {
+    padding: 0.4rem 0;
+
+    .arrow {
+      bottom: 0;
+      left: 50% !important;
+      margin-left: -0.4rem !important;
+    }
+  }
+
+  /* Fix tooltip placement and arrow for bottom position */
+  &.bs-tooltip-bottom {
+    padding: 0.4rem 0;
+
+    .arrow {
+      top: 0;
+      left: 50% !important; /* Force center alignment */
+      margin-left: -0.4rem !important; /* Center the arrow properly */
+
+      &::before {
+        border-width: 0 0.4rem 0.4rem;
+        border-bottom-color: #5bada9 !important;
+      }
+    }
+  }
+
+  &.bs-tooltip-left {
+    padding: 0 0.4rem;
+
+    .arrow {
+      right: 0;
+      top: 50% !important;
+      margin-top: -0.4rem !important;
+
+      &::before {
+        border-width: 0.4rem 0 0.4rem 0.4rem;
+        border-left-color: #5bada9 !important;
+      }
+    }
+  }
+
+  &.bs-tooltip-right {
+    padding: 0 0.4rem;
+
+    .arrow {
+      left: 0;
+      top: 50% !important;
+      margin-top: -0.4rem !important;
+
+      &::before {
+        border-width: 0.4rem 0.4rem 0.4rem 0;
+        border-right-color: #5bada9 !important;
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.4rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0.4rem 0.4rem 0;
+      border-top-color: #5bada9 !important;
+    }
+  }
+
+  .tooltip-inner {
+    max-width: 250px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    background-color: #1d282b;
+    border: 1px solid #5bada9;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+
+    h5 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+      padding-bottom: 5px;
+      text-align: center;
+      border-bottom: 1px solid rgba(91, 173, 169, 0.3);
+      color: #ffd966;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      margin: 6px auto;
+    }
+  }
+}
+
+.car-tooltip-content,
+.track-tooltip-content,
+.user-tooltip-content {
+  color: #a0d5ef;
+
+  .car-details,
+  .track-details,
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+    font-size: 12px;
+
+    span {
+      margin: 2px 0;
+    }
+  }
+}
+
+.user-tooltip-content {
+  .user-image {
+    margin: 8px auto;
+    max-width: 200px;
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 1px solid #5e6162;
+      padding: 4px;
+      background-color: #000000;
     }
   }
 }
@@ -205,4 +372,3 @@
     color: #ffd966;
   }
 }
-

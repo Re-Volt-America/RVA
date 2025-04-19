@@ -53,7 +53,7 @@
         - @rva_results[0].slice(2, @session.races.size).each do |item|
           %th.text-center.align-middle{:width => "4%"}
             - if item.is_a?(Track)
-              = link_to item.short_name, track_path(item)
+              = link_to item.short_name, track_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='track-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='track-details'><span>Difficulty: #{item.difficulty_name}</span></div></div>"
             - else
               %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
                 = "?"
@@ -73,7 +73,7 @@
               = row[2]
             %td.racer-col
               - if row[3].is_a?(User)
-                = link_to row[3].username, user_path(row[3]), :style => "color: #{row[3].username.eql?(@session.host) ? "yellow" : ""};"
+                = link_to row[3].username, user_path(row[3]), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row[3].username}</h5>#{row[3].profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row[3].profile.profile_picture_url, class: 'rounded', alt: row[3].username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row[3].stats.session_count}</span><span>Wins: #{row[3].stats.session_wins}</span><span>#{row[3].has_team? ? "Team: #{row[3].team.name}" : ""}</span></div></div>", :style => "color: #{row[3].username.eql?(@session.host) ? "yellow" : ""};"
               - else
                 %span{:style => "color: #{row[3].eql?(@session.host) ? "yellow" : ""}"}
                   = row[3]
@@ -134,7 +134,7 @@
 
               - if item.is_a?(Car)
                 %td.car{:colspan => colspan}
-                  = link_to item.name, car_path(item)
+                  = link_to item.name, car_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
               - if item.is_a?(String) && item.start_with?('?')
                 %td.car{:colspan => colspan}
                   = item.tr('?', '')
