@@ -512,12 +512,15 @@ lol:
       fj: "FJ"
       fp: "FP"
       sp: "SP"
+    #Stats page
     stats:
       page-title: "rVA - stazzz"
       meta:
         title: "RVa - Kitehbord"
         description: "Wurld skatiztiks kittehbord 4 RVA onlan sesshunz."
       title: "Wurld stez"
+      search:
+        placeholder: "Search player ..."
       sorted: "sotd bai:"
       table:
         wins: "Viktori royelz"
