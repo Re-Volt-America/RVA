@@ -64,14 +64,13 @@ production:
   clients:
     default:
       hosts:
-        - "localhost:27017"
+        - <%= ENV['MONGO_HOST'] %>
       database: rva_production
-  # Configure Mongoid specific options. (optional)
+      options:
+        user: <%= ENV['MONGO_INITDB_ROOT_USERNAME'] %>
+        password: <%= ENV['MONGO_INITDB_ROOT_PASSWORD'] %>
+        auth_source: admin
   options:
-    # Application name that is printed to the mongodb logs upon establishing
-    # a connection in server versions >= 3.4. Note that the name cannot
-    # exceed 128 bytes. It is also used as the database name if the
-    # database name is not explicitly defined. (default: nil)
     app_name: rva
 
 test:

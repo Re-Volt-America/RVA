@@ -57,8 +57,8 @@ Rails.application.configure do
   config.action_controller.enable_fragment_cache_logging = true
 
   config.cache_store = :redis_cache_store, {
-    :host => 'localhost',
-    :port => 6379,
+    :host => ENV['REDIS_HOST'],
+    :port => ENV['REDIS_PORT'],
     :db => 0
   }
   config.public_file_server.headers = {

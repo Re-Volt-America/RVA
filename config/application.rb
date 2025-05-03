@@ -206,7 +206,9 @@ module RVA
 
     config.hosts << ORG::DOMAIN
     config.hosts << "staging.#{ORG::DOMAIN}"
-    config.hosts << "production.#{ORG::DOMAIN}"
+    config.hosts << "localhost"
+    config.hosts << "localhost:3000"
+    config.hosts << "localhost:7000"
 
     config.i18n.available_locales = [:en, :'en-GB', :es, :'es-AR', :'es-CL', :it, :lol, :pt, :ko]
     config.i18n.default_locale = :en

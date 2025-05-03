@@ -1,31 +1,66 @@
 version: '3'
 
 services:
-  mongo:
-    image: mongo:3.6.3
-    restart: always
-    ports:
-      - "27017:27017"
-    networks: [rva]
-  redis:
-    image: redis:6.2-alpine
-    restart: always
-    ports:
-      - "6379:6379"
-    networks: [rva]
-    command: redis-server
   app:
-    build: .
-    command: "bundler exec rails server -b 0.0.0.0"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./log:/app/log
     ports:
-      - "3000:3000"
-    networks: [rva]
+      - "7000:3000"
+    expose:
+      - "7000"
+    networks: [ rva ]
+    env_file:
+      - .env
+    environment:
+      DEVISE_HOST: ${DEVISE_HOST}
+      RAILS_SERVE_STATIC_FILES: ${RAILS_SERVE_STATIC_FILES}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      MAILER_USERNAME: ${MAILER_USERNAME}
+      MAILER_PASSWORD: ${MAILER_PASSWORD}
+      MAILER_SMTP: ${MAILER_SMTP}
+      SENTRY_DSN: ${SENTRY_DSN}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
     depends_on:
       - mongo
       - redis
     links:
       - mongo
       - redis
+  mongo:
+    image: mongo:3.6.3
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_HOST: ${MONGO_HOST}
+    ports:
+      - "7001:27017"
+    expose:
+      - "7001"
+    networks: [rva]
+    volumes:
+      - mongo-data:/data/db
+      - ./docker/mongo/init.js:/docker-entrypoint-initdb.d/mongo.js
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "7002:6379"
+    expose:
+      - "7002"
+    networks: [rva]
+    command: redis-server
+
+volumes:
+  mongo-data:
 
 networks:
   rva:
