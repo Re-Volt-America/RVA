@@ -3,8 +3,8 @@
 // Connect to MongoDB as the root user
 db = db.getSiblingDB('admin');
 
-const appUsername = clearString(process.env.MONGO_INITDB_ROOT_USERNAME);
-const appPassword = clearString(process.env.MONGO_INITDB_ROOT_PASSWORD);
+const appUsername = "$MONGO_INITDB_ROOT_USERNAME"
+const appPassword = "$MONGO_INITDB_ROOT_PASSWORD"
 
 // Define mappings between databases and their collections
 const databaseCollectionMap = [
