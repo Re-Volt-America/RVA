@@ -54,3 +54,6 @@ log/capistrano.log
 
 # Secrets
 secrets.yml
+
+# Environment
+.env

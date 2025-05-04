@@ -1,0 +1,9 @@
+[Unit]
+Description=RVA Website
+
+[Service]
+User=rva
+Group=rva
+WorkingDirectory=/home/rva/RVA
+
+ExecStart=/bin/bash -lc 'docker-compose up --build -d'

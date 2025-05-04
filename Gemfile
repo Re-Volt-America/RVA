@@ -25,6 +25,7 @@ gem 'puma', '>= 5.0'                                                  # Use the 
 gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
+gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application

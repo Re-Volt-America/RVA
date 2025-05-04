@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-server 'server02.rva.lat', :user => 'deploy', :roles => %w(web app), :primary => true
+server 'server03.rva.lat', :user => 'rva', :roles => %w(web app), :primary => true
