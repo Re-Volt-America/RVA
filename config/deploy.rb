@@ -8,11 +8,9 @@ require 'rvm1/capistrano3'
 set :application, 'RVA'
 set :repo_url, 'git@github.com:Re-Volt-America/RVA.git'
 set :branch, 'production'
-set :user, 'deploy'
+set :user, 'rva'
 set :stages, %w(production)
-set :deploy_to, '/home/deploy/RVA'
-set :linked_dirs,
-    %w(.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle .bundle public/system public/uploads node_modules)
+set :deploy_to, '/home/rva/RVA'
 set :linked_files, %w(config/secrets.yml)
 set :pty, true
 set :rvm1_ruby_version, '3.2.2'
