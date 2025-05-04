@@ -10,7 +10,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     if Rails.env.development?
       origins 'localhost:3000', 'localhost:7000', 'rva.lat'
     else
-      origins 'rva.lat', 'staging.rva.lat'
+      origins 'rva.lat', 'www.rva.lat'
     end
 
     resource '*',
