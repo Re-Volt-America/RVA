@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./log:/app/log
+      - ./public/uploads:/app/public/uploads
     ports:
       - "7000:3000"
     expose:
