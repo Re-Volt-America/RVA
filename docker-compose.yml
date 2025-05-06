@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./log:/app/log
-      - ./public/uploads:/app/public/uploads
+      - ./log:/rails/log
+      - ./public/uploads:/rails/public/uploads
     ports:
       - "7000:3000"
     expose:
