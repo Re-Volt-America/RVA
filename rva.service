@@ -7,7 +7,7 @@ User=rva
 Group=rva
 WorkingDirectory=/home/rva/RVA/current
 
-ExecStart=/bin/bash -lc 'docker-compose -f docker-compose.production.yml -p rva down && docker-compose -f docker-compose.production.yml -p rva up --build -d'
+ExecStart=/bin/bash -lc 'docker-compose -f docker-compose.production.yml -p rva down && docker-compose -f docker-compose.production.yml -p rva up --build'
 Restart=on-failure
 RestartSec=5
 
