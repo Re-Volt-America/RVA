@@ -8,6 +8,7 @@ services:
     volumes:
       - /home/rva/RVA/shared/log:/rails/log
       - /home/rva/RVA/shared/public/uploads:/rails/public/uploads
+      - /home/rva/RVA/shared/public/uploads/cache:/rails/public/uploads/cache
       - /home/rva/RVA/shared/tmp/pids:/rails/tmp/pids
       - /home/rva/RVA/shared/tmp/cache:/rails/tmp/cache
       - /home/rva/RVA/shared/tmp/sockets:/rails/tmp/sockets

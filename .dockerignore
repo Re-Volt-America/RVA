@@ -6,3 +6,4 @@ vendor/bundle/
 .bundle/
 public/system/
 public/uploads/
+public/uploads/cache
