@@ -14,7 +14,7 @@ services:
       - "7000"
     networks: [ rva ]
     env_file:
-      - ../shared/.env
+      - ../../shared/.env
     environment:
       DEVISE_HOST: ${DEVISE_HOST}
       RAILS_SERVE_STATIC_FILES: ${RAILS_SERVE_STATIC_FILES}
@@ -35,7 +35,7 @@ services:
     image: mongo:3.6.3
     restart: always
     env_file:
-      - ../shared/.env
+      - ../../shared/.env
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
@@ -52,7 +52,7 @@ services:
     image: redis:6.2-alpine
     restart: always
     env_file:
-      - ../shared/.env
+      - ../../shared/.env
     ports:
       - "7002:6379"
     expose:
