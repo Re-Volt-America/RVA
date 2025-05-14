@@ -6,8 +6,16 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./log:/rails/log
-      - ./public/uploads:/rails/public/uploads
+      - /home/rva/RVA/shared/log:/rails/log
+      - /home/rva/RVA/shared/public/uploads:/rails/public/uploads
+      - /home/rva/RVA/shared/tmp/pids:/rails/tmp/pids
+      - /home/rva/RVA/shared/tmp/cache:/rails/tmp/cache
+      - /home/rva/RVA/shared/tmp/sockets:/rails/tmp/sockets
+      - /home/rva/RVA/shared/vendor/bundle:/rails/vendor/bundle
+      - /home/rva/RVA/shared/.bundle:/rails/.bundle
+      - /home/rva/RVA/shared/public/system:/rails/public/system
+      - /home/rva/RVA/shared/config/secrets.yml:/rails/config/secrets.yml
+      - /home/rva/RVA/shared/.env:/rails/.env
     ports:
       - "7000:3000"
     expose:
