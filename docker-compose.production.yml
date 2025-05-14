@@ -14,7 +14,6 @@ services:
       - /home/rva/RVA/shared/vendor/bundle:/rails/vendor/bundle
       - /home/rva/RVA/shared/.bundle:/rails/.bundle
       - /home/rva/RVA/shared/public/system:/rails/public/system
-      - /home/rva/RVA/shared/config/secrets.yml:/rails/config/secrets.yml
       - /home/rva/RVA/shared/.env:/rails/.env
     ports:
       - "7000:3000"
