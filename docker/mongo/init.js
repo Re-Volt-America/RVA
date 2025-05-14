@@ -36,7 +36,7 @@ databaseCollectionMap.forEach(({ database, collection }) => {
         ]
     });
 
-    print(`Created database ${database} with collection ${collection} and assigned user 'aukko' to it`);
+    print(`Created database ${database} with collection ${collection} and assigned user 'rva' to it`);
 });
 
 print('MongoDB initialization completed successfully');

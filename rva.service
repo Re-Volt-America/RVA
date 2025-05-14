@@ -6,4 +6,4 @@ User=rva
 Group=rva
 WorkingDirectory=/home/rva/RVA/current
 
-ExecStart=/bin/bash -lc 'docker-compose up --build -d'
+ExecStart=/bin/bash -lc 'docker-compose down && docker-compose up --build -d'
