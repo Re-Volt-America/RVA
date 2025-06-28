@@ -28,3 +28,5 @@
   - if user_is_staff?
     .text-center
       = link_to t('misc.button.new'), new_weekly_schedule_path, :class => "btn"
+
+  = paginate @weekly_schedules

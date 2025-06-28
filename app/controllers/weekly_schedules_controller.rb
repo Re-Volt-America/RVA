@@ -7,7 +7,9 @@ class WeeklySchedulesController < ApplicationController
 
   # GET /weekly_schedules or /weekly_schedules.json
   def index
-    @weekly_schedules = WeeklySchedule.all
+    @weekly_schedules = WeeklySchedule.all.reverse!
+    @weekly_schedules = Kaminari.paginate_array(@weekly_schedules).page(params[:page]).per(10)
+
     @count = 1
 
     respond_with @weekly_schedules do |format|
