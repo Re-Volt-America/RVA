@@ -111,7 +111,7 @@ ko:
     title: "다운로드"
     video: "비디오 처리중..."
     faq:
-      title: "If you are new to the community, we strongly recommend that you read our Frequently Asked Questions page"
+      title: "커뮤니티에 처음 오신 분이라면 자주 묻는 질문(FAQ) 페이지를 읽어 보시기 바랍니다."
       button: "거기로 데려가 주세요!"
     legacy-downloads: "기존 다운로드"
   #FAQ page
