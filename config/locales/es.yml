@@ -66,6 +66,7 @@ es:
       description1: "El sitio web de la comunidad Americana de Re-Volt, 1999"
       description2: "¡Descarga el juego y conozca jugadores de toda parte de América!"
       download-button: "Descargas »"
+      weekly-schedules-button: "Weekly Schedules »"
     index:
       community:
         title: "Comunidad"
