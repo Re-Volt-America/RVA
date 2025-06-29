@@ -66,6 +66,7 @@ ko:
       description1: "1999년 출시된 리볼트의 아메리카 커뮤니티 웹사이트"
       description2: "게임을 다운로드하고 아메리카 전역의 플레이어를 만나보세요!"
       download-button: "다운로드 »"
+      weekly-schedules-button: "Weekly Schedules »"
     index:
       community:
         title: "커뮤니티"
