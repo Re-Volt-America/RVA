@@ -66,10 +66,14 @@ services:
     expose:
       - "7002"
     networks: [rva]
-    command: redis-server
+    volumes:
+      - redis-data:/data
+    working_dir: /data
+    command: redis-server --dir /data
 
 volumes:
   mongo-data:
+  redis-data:
 
 networks:
   rva:
