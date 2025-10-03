@@ -13,7 +13,7 @@ ko:
       tournaments: "토너먼트"
     downloads: "다운로드"
     user:
-      my-profile: "내 프로필"
+      my-profile: "프로필"
       settings: "설정"
       admin:
         title: "관리자"
@@ -50,14 +50,14 @@ ko:
       logs: "개발 로그"
       bugs: "버그 신고"
       sponsor: "스폰서"
-      faq: "자주 묻는 질문들"
+      faq: "자주 묻는 질문"
     trademark:
       title: "상표"
       assets: "자산"
       emoji: "이모지"
     social:
       title: "문의하기"
-      discord: "디스코드"
+      discord: "Discord"
       github: "GitHub"
       crowdin: "Crowdin"
   #Landing page, Splash, About
@@ -114,11 +114,11 @@ ko:
     faq:
       title: "커뮤니티에 처음 오신 분이라면 자주 묻는 질문(FAQ) 페이지를 읽어 보시기 바랍니다."
       button: "거기로 데려가 주세요!"
-    legacy-downloads: "기존 다운로드"
+    legacy-downloads: "레거시 다운로드"
   #FAQ page
   faq:
     page-title: "Re-Volt America - FAQ"
-    title: "자주 묻는 질문들"
+    title: "자주 묻는 질문"
     description: "RVA에서 Re-Volt 온라인을 처음 플레이하고 싶어하는 새로운 커뮤니티 회원들이 가장 자주 묻는 질문(FAQ)을 모아놓은 것입니다. 커뮤니티에 처음 온 분이라면 꼭 읽어보세요."
     section-1: "설치와 설정"
     section-2: "온라인 플레이"
@@ -307,7 +307,7 @@ ko:
           easy: "쉬움"
           medium: "보통"
           hard: "어려움"
-          extreme: "익스트림"
+          extreme: "극한"
         length:
           title: "길이"
           short: "짧음"
@@ -446,10 +446,10 @@ ko:
       1: "어플리케이션 아이콘으로 로고 사용"
       2: "로고를 사용하여 2차 창작물 제작"
       3: "로고를 귀하의 로고로 통합"
-      4: "저희의 모든 예술품 무단 사용"
+      4: "모든 예술품 무단 사용."
       5: "색상, 치수 변경 또는 자신의 텍스트/이미지 추가"
     contact:
-      title: "연락해주세요"
+      title: "아래 경우는 연락을 바랍니다"
       1: "위 정보에 포함되지 않은 이유로 아트워크를 사용하실 경우"
       2: "비디오/주요 미디어에서 이미지를 사용하실 경우"
     naming:
@@ -775,12 +775,12 @@ ko:
       destroy: "Tournament was successfully destroyed."
   #Re-Volt car classes
   classes:
-    rookie: "루키"
+    rookie: "신입"
     amateur: "아마추어"
     advanced: "상급자"
     semi-pro: "준프로"
     pro: "프로"
-    super-pro: "슈퍼프로"
+    super-pro: "슈퍼 프로"
     clockwork: "태엽"
     random: "무작위"
   #Car metrics
@@ -816,7 +816,7 @@ ko:
     track-list:
       track: "트랙"
       type: "타입"
-      laps: "바퀴 수"
+      laps: "랩"
   #Devise
   activerecord:
     attributes:
@@ -998,8 +998,8 @@ ko:
       title: "Error 404"
       message: "찾을 수 없습니다."
     422:
-      title: "Error 404"
-      message: "법적인 오류"
+      title: "Error 422"
+      message: "법적 오류"
     500:
       title: "Error 404"
       message: "내부 서버 오류"
