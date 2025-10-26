@@ -66,6 +66,7 @@ en-GB:
       description1: "The Website for the American community of Re-Volt, 1999"
       description2: "Download the game and meet players from all over the Americas!"
       download-button: "Downloads »"
+      weekly-schedules-button: "Weekly Schedules »"
     index:
       community:
         title: "Community"
@@ -111,7 +112,7 @@ en-GB:
     title: "Downloads"
     video: "Pending video..."
     faq:
-      title: "If you are new to the community, we strongly recommend that you read the our Frequently Asked Questions page"
+      title: "If you are new to the community, we strongly recommend that you read our Frequently Asked Questions page"
       button: "Take me there!"
     legacy-downloads: "Legacy Downloads"
   #FAQ page
