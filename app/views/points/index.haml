@@ -16,13 +16,13 @@
       = t("points.introduction.normal-race")
     .points-scoring-card.points-scoring-card--normal
       .points-scoring-table
-        - SYS::SCORING::NORMAL.each do |position, points|
+        - SYS::SCORING::NORMAL.first(10).each do |position, points|
           .points-scoring-row
             %span.points-scoring-position
               %span.points-scoring-dot
-              = "P#{position}"
+              = t("points.introduction.position-label", n: position)
             %span.points-scoring-value
-              = "#{points} pts"
+              = t("points.introduction.points-label", n: points)
   .col-sm-12.col-md-6.col-lg-6.col-xl-6
     %h4
       = t("points.introduction.big-race")
@@ -32,9 +32,9 @@
           .points-scoring-row
             %span.points-scoring-position
               %span.points-scoring-dot
-              = "P#{position}"
+              = t("points.introduction.position-label", n: position)
             %span.points-scoring-value
-              = "#{points} pts"
+              = t("points.introduction.points-label", n: points)
 
 %br
 %h3
@@ -56,7 +56,7 @@
         = t("points.single-races.example-scenario")
     
     %p.calculation-formula-intro
-      Steps:
+      = t("points.single-races.steps-label")
     %p.calculation-formula-plain
       = t("points.single-races.example-steps.step1")
     %p.calculation-formula-plain
@@ -67,18 +67,18 @@
       = t("points.single-races.example-steps.step4")
     
     .calculation-formula-display.mt-3
-      %span.calculation-formula-chip Position Score
+      %span.calculation-formula-chip= t("points.single-races.formula.position-score")
       %span.calculation-formula-operator ×
-      %span.calculation-formula-chip Final Multiplier
+      %span.calculation-formula-chip= t("points.single-races.formula.final-multiplier")
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip Racer Score
+      %span.calculation-formula-chip= t("points.single-races.formula.racer-score")
     
     .calculation-formula-display.mt-2
-      %span.calculation-formula-chip 12 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 12)
       %span.calculation-formula-operator ×
       %span.calculation-formula-chip 1.125
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip 13.5 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 13.5)
     
     .calculation-formula-note.mt-2
       = t("points.single-races.example-result")
@@ -103,16 +103,16 @@
         = t("points.team-races.example-scenario")
     
     %p.calculation-formula-intro
-      Team Members:
+      = t("points.team-races.team-members-label")
     
     .calculation-formula-display.mt-2
-      %span.calculation-formula-chip Racer 1
+      %span.calculation-formula-chip= t("points.team-races.formula.racer-1")
       %span.calculation-formula-operator +
-      %span.calculation-formula-chip Racer 2
+      %span.calculation-formula-chip= t("points.team-races.formula.racer-2")
       %span.calculation-formula-operator +
-      %span.calculation-formula-chip Racer 3
+      %span.calculation-formula-chip= t("points.team-races.formula.racer-3")
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip Team PA
+      %span.calculation-formula-chip= t("points.team-races.formula.team-pa")
     
     %p.calculation-formula-plain.mt-3
       = t("points.team-races.example-steps.player1")
@@ -122,13 +122,13 @@
       = t("points.team-races.example-steps.player3")
     
     .calculation-formula-display.mt-3
-      %span.calculation-formula-chip 22.5 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 22.5)
       %span.calculation-formula-operator +
-      %span.calculation-formula-chip 16.2 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 16.2)
       %span.calculation-formula-operator +
-      %span.calculation-formula-chip 9 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 9)
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip 47.7 pts
+      %span.calculation-formula-chip= t("points.introduction.points-label", n: 47.7)
     
     .calculation-formula-note.mt-2
       = t("points.team-races.team-total")
@@ -174,49 +174,49 @@
 
 %br
 %h3
-  Scoring Formulas
+  = t("points.scoring-formulas.title")
 
 .calculation-formulas-section
   %p.calculation-formula-legend
-    Each blue bar is one part of the score. "=" means "results in", "×" means "multiply", and "÷" means "divide".
+    = t("points.scoring-formulas.legend")
   
   .calculation-formula-card
-    .calculation-formula-title Singles
+    .calculation-formula-title= t("points.scoring-formulas.singles.title")
     .calculation-formula-display
-      %span.calculation-formula-chip Racer Score
+      %span.calculation-formula-chip= t("points.scoring-formulas.singles.racer-score")
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip Position Score
+      %span.calculation-formula-chip= t("points.scoring-formulas.singles.position-score")
       %span.calculation-formula-operator ×
-      %span.calculation-formula-chip Final Multiplier
-    .calculation-formula-note Final Multiplier = Car Multiplier × Class Factor
+      %span.calculation-formula-chip= t("points.scoring-formulas.singles.final-multiplier")
+    .calculation-formula-note= t("points.scoring-formulas.singles.note")
     %p.calculation-formula-plain
-      You first earn points from your finishing position. Then those points are adjusted by your car multiplier.
+      = t("points.scoring-formulas.singles.description")
   
   .calculation-formula-card
-    .calculation-formula-title Teams
+    .calculation-formula-title= t("points.scoring-formulas.teams.title")
     .calculation-formula-display
-      %span.calculation-formula-chip Team PA
+      %span.calculation-formula-chip= t("points.scoring-formulas.teams.team-pa")
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip Sum of Racer Scores
-    .calculation-formula-note Team entries are ranked by PA (obtained points) in descending order
+      %span.calculation-formula-chip= t("points.scoring-formulas.teams.sum-of-racer-scores")
+    .calculation-formula-note= t("points.scoring-formulas.teams.note")
     %p.calculation-formula-plain
-      Team points are everyone\'s points added together, so each teammate contributes to the final team result.
+      = t("points.scoring-formulas.teams.description")
 
   .calculation-formula-card
-    .calculation-formula-title Main
+    .calculation-formula-title= t("points.scoring-formulas.main.title")
     .calculation-formula-display
-      %span.calculation-formula-chip Official Score
+      %span.calculation-formula-chip= t("points.scoring-formulas.main.official-score")
       %span.calculation-formula-equals =
-      %span.calculation-formula-chip Obtained Points
+      %span.calculation-formula-chip= t("points.scoring-formulas.main.obtained-points")
       %span.calculation-formula-operator ÷
-      %span.calculation-formula-chip Average Position
+      %span.calculation-formula-chip= t("points.scoring-formulas.main.average-position")
       %span.calculation-formula-operator ×
-      %span.calculation-formula-chip Participation Multiplier
+      %span.calculation-formula-chip= t("points.scoring-formulas.main.participation-multiplier")
       %span.calculation-formula-operator ×
-      %span.calculation-formula-chip Normalizer Constant
-    .calculation-formula-note This is the final score formula used for singles ranking
+      %span.calculation-formula-chip= t("points.scoring-formulas.main.normalizer-constant")
+    .calculation-formula-note= t("points.scoring-formulas.main.note")
     %p.calculation-formula-plain
-      To rank higher, score more points, keep a better average finish (lower is better), and take part in more races.
+      = t("points.scoring-formulas.main.description")
 
 %br
 %h3
