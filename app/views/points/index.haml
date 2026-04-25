@@ -14,11 +14,127 @@
   .col-sm-12.col-md-6.col-lg-6.col-xl-6
     %h4
       = t("points.introduction.normal-race")
-    = image_tag "points.png", :class => "img-fluid"
+    .points-scoring-card.points-scoring-card--normal
+      .points-scoring-table
+        - SYS::SCORING::NORMAL.each do |position, points|
+          .points-scoring-row
+            %span.points-scoring-position
+              %span.points-scoring-dot
+              = "P#{position}"
+            %span.points-scoring-value
+              = "#{points} pts"
   .col-sm-12.col-md-6.col-lg-6.col-xl-6
     %h4
       = t("points.introduction.big-race")
-    = image_tag "points-10.png", :class => "img-fluid"
+    .points-scoring-card.points-scoring-card--big
+      .points-scoring-table
+        - SYS::SCORING::BIG.each do |position, points|
+          .points-scoring-row
+            %span.points-scoring-position
+              %span.points-scoring-dot
+              = "P#{position}"
+            %span.points-scoring-value
+              = "#{points} pts"
+
+%br
+%h3
+  = t("points.single-races.title")
+
+%p
+  = t("points.single-races.description")
+
+.calculation-formulas-section
+  %h4
+    = t("points.single-races.example-title")
+  
+  %p.calculation-formula-plain
+    = t("points.single-races.example-intro")
+  
+  .calculation-formula-card
+    %p.calculation-formula-plain
+      %strong
+        = t("points.single-races.example-scenario")
+    
+    %p.calculation-formula-intro
+      Steps:
+    %p.calculation-formula-plain
+      = t("points.single-races.example-steps.step1")
+    %p.calculation-formula-plain
+      = t("points.single-races.example-steps.step2")
+    %p.calculation-formula-plain
+      = t("points.single-races.example-steps.step3")
+    %p.calculation-formula-plain
+      = t("points.single-races.example-steps.step4")
+    
+    .calculation-formula-display.mt-3
+      %span.calculation-formula-chip Position Score
+      %span.calculation-formula-operator ×
+      %span.calculation-formula-chip Final Multiplier
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip Racer Score
+    
+    .calculation-formula-display.mt-2
+      %span.calculation-formula-chip 12 pts
+      %span.calculation-formula-operator ×
+      %span.calculation-formula-chip 1.125
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip 13.5 pts
+    
+    .calculation-formula-note.mt-2
+      = t("points.single-races.example-result")
+    
+    %p.calculation-formula-plain.mt-3
+      = t("points.single-races.example-summary")
+
+%br
+%h3
+  = t("points.team-races.title")
+
+%p
+  = t("points.team-races.description")
+
+.calculation-formulas-section
+  %h4
+    = t("points.team-races.example-title")
+  
+  .calculation-formula-card
+    %p.calculation-formula-plain
+      %strong
+        = t("points.team-races.example-scenario")
+    
+    %p.calculation-formula-intro
+      Team Members:
+    
+    .calculation-formula-display.mt-2
+      %span.calculation-formula-chip Racer 1
+      %span.calculation-formula-operator +
+      %span.calculation-formula-chip Racer 2
+      %span.calculation-formula-operator +
+      %span.calculation-formula-chip Racer 3
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip Team PA
+    
+    %p.calculation-formula-plain.mt-3
+      = t("points.team-races.example-steps.player1")
+    %p.calculation-formula-plain
+      = t("points.team-races.example-steps.player2")
+    %p.calculation-formula-plain
+      = t("points.team-races.example-steps.player3")
+    
+    .calculation-formula-display.mt-3
+      %span.calculation-formula-chip 22.5 pts
+      %span.calculation-formula-operator +
+      %span.calculation-formula-chip 16.2 pts
+      %span.calculation-formula-operator +
+      %span.calculation-formula-chip 9 pts
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip 47.7 pts
+    
+    .calculation-formula-note.mt-2
+      = t("points.team-races.team-total")
+    
+    %p.calculation-formula-plain.mt-3
+      = t("points.team-races.example-note")
 
 %br
 %h3
@@ -27,9 +143,80 @@
 %p
   = t("points.car-ratings.description")
 
-.row
-  .col-12.text-center
-    = image_tag 'cars-multiplier-sample.png', :class => 'img-fluid'
+.multiplier-formula-grid
+  .multiplier-formula-card
+    .multiplier-car-image
+      = image_tag 'multiplier-dr-grudge.png', :alt => 'Dr Grudge'
+    .multiplier-formula-label
+      %span.multiplier-car-name Dr Grudge
+      .multiplier-formula-breakdown
+        %span.formula-energy
+          %i.fa.fa-bolt
+          = "0.7"
+  .multiplier-formula-card
+    .multiplier-car-image
+      = image_tag 'multiplier-col-moss.png', :alt => 'Col Moss'
+    .multiplier-formula-label
+      %span.multiplier-car-name Col Moss
+      .multiplier-formula-breakdown
+        %span.formula-energy
+          %i.fa.fa-bolt
+          = "0.9"
+  .multiplier-formula-card
+    .multiplier-car-image
+      = image_tag 'mulitplier-dust-mite.png', :alt => 'Dust Mite'
+    .multiplier-formula-label
+      %span.multiplier-car-name Dust Mite
+      .multiplier-formula-breakdown
+        %span.formula-energy
+          %i.fa.fa-bolt
+          = "1.2"
+
+%br
+%h3
+  Scoring Formulas
+
+.calculation-formulas-section
+  %p.calculation-formula-legend
+    Each blue bar is one part of the score. "=" means "results in", "×" means "multiply", and "÷" means "divide".
+  
+  .calculation-formula-card
+    .calculation-formula-title Singles
+    .calculation-formula-display
+      %span.calculation-formula-chip Racer Score
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip Position Score
+      %span.calculation-formula-operator ×
+      %span.calculation-formula-chip Final Multiplier
+    .calculation-formula-note Final Multiplier = Car Multiplier × Class Factor
+    %p.calculation-formula-plain
+      You first earn points from your finishing position. Then those points are adjusted by your car multiplier.
+  
+  .calculation-formula-card
+    .calculation-formula-title Teams
+    .calculation-formula-display
+      %span.calculation-formula-chip Team PA
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip Sum of Racer Scores
+    .calculation-formula-note Team entries are ranked by PA (obtained points) in descending order
+    %p.calculation-formula-plain
+      Team points are everyone\'s points added together, so each teammate contributes to the final team result.
+
+  .calculation-formula-card
+    .calculation-formula-title Main
+    .calculation-formula-display
+      %span.calculation-formula-chip Official Score
+      %span.calculation-formula-equals =
+      %span.calculation-formula-chip Obtained Points
+      %span.calculation-formula-operator ÷
+      %span.calculation-formula-chip Average Position
+      %span.calculation-formula-operator ×
+      %span.calculation-formula-chip Participation Multiplier
+      %span.calculation-formula-operator ×
+      %span.calculation-formula-chip Normalizer Constant
+    .calculation-formula-note This is the final score formula used for singles ranking
+    %p.calculation-formula-plain
+      To rank higher, score more points, keep a better average finish (lower is better), and take part in more races.
 
 %br
 %h3
@@ -37,7 +224,14 @@
 
 %p
   = t("points.desktop-parser.description")
-= image_tag 'rva-points.png', :class => 'img-fluid'
+
+.desktop-parser-preview
+  %details.desktop-parser-preview-toggle
+    %summary.desktop-parser-preview-summary
+      %span.show-label= t("points.desktop-parser.show-image")
+      %span.hide-label= t("points.desktop-parser.hide-image")
+    .desktop-parser-preview-image
+      = image_tag 'rva-points.png', :alt => t("points.desktop-parser.image-alt")
 
 %h3.mt-4
   = t("points.downloads.title")
