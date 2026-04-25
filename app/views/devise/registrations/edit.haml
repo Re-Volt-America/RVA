@@ -117,7 +117,8 @@
               .input-group
                 = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
             .field.form-group
-              = recaptcha_tags
+              - if Rails.env.production?
+                = recaptcha_tags
             .btn-toolbar
               .actions
                 = f.submit t(".update"), :class => 'btn btn-sm'
