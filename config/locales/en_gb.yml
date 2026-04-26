@@ -337,7 +337,7 @@ en-GB:
         obtained-points: "Obtained Points"
         average-position: "Average Position"
         participation-multiplier: "Participation Multiplier"
-        normalizer-constant: "Normalizer Constant"
+        normalizer-constant: "Normaliser Constant"
         note: "This is the final score formula used for singles ranking"
         description: "To rank higher, score more points, keep a better average finish (lower is better), and take part in more races."
     desktop-parser:
