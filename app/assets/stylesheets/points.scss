@@ -1,3 +1,491 @@
 // Place all the styles related to the Points controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.points-scoring-card {
+	position: relative;
+	border: 1px solid #5e6162;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #191919 0%, #0a0a0a 100%);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 20px rgba(0, 0, 0, 0.25);
+	padding: 0.75rem;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 45%);
+		pointer-events: none;
+	}
+}
+
+.points-scoring-card--normal {
+	border-color: #707a86;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 24px rgba(21, 62, 109, 0.2);
+}
+
+.points-scoring-card--big {
+	border-color: #7d6f49;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 24px rgba(108, 74, 15, 0.22);
+}
+
+.points-scoring-table {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.32rem;
+}
+
+.points-scoring-row {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #3a3a3a;
+	border-radius: 4px;
+	background: linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
+	padding: 0.38rem 0.6rem;
+	min-height: 34px;
+	overflow: hidden;
+	transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%);
+		pointer-events: none;
+	}
+
+	&:hover {
+		transform: translateY(-1px);
+		border-color: #6f6f6f;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 10px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.points-scoring-row-regular {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #3a3a3a;
+	border-radius: 4px;
+	background: linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
+	padding: 0.38rem 0.6rem;
+	min-height: 34px;
+	overflow: hidden;
+	transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%);
+		pointer-events: none;
+	}
+
+	&:hover {
+		transform: translateY(-1px);
+		border-color: #6f6f6f;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 10px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.trailing-scoring-margin {
+	margin-top: 37px;
+}
+
+.points-scoring-position {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.48rem;
+	color: #f1f1f1;
+	font-family: NissanOpti, serif;
+	font-size: 1.05rem;
+	line-height: 1;
+	letter-spacing: 0.02em;
+}
+
+.points-scoring-dot {
+	display: inline-block;
+	width: 0.82rem;
+	height: 0.82rem;
+	border-radius: 999px;
+	background: radial-gradient(circle at 35% 35%, #383838 0%, #121212 70%, #070707 100%);
+	border: 1px solid #080808;
+	box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.04);
+	flex: 0 0 0.82rem;
+}
+
+.points-scoring-value {
+	color: #ffffff;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.95rem;
+	line-height: 1;
+	font-weight: 700;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	padding: 0.18rem 0.42rem;
+	border-radius: 999px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.2) 100%);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.points-scoring-row:nth-child(1) {
+	border-color: #8b6f1f;
+	background: linear-gradient(180deg, #4c3e16 0%, #2b230d 100%);
+}
+
+.points-scoring-row:nth-child(2) {
+	border-color: #6c6c6c;
+	background: linear-gradient(180deg, #3e3e3e 0%, #262626 100%);
+}
+
+.points-scoring-row:nth-child(3) {
+	border-color: #7c4e2f;
+	background: linear-gradient(180deg, #4b2f1f 0%, #2b1b11 100%);
+}
+
+.points-scoring-row:nth-child(-n + 3) .points-scoring-value {
+	color: #ffe39f;
+}
+
+.points-scoring-card--normal .points-scoring-row:nth-child(1) {
+	box-shadow: inset 2px 0 0 #f2c05b;
+}
+
+.points-scoring-card--big .points-scoring-row:nth-child(1) {
+	box-shadow: inset 2px 0 0 #f2c05b;
+}
+
+.points-scoring-row:nth-child(n + 7) {
+	opacity: 0.96;
+}
+
+@media (max-width: 575px) {
+	.points-scoring-card {
+		margin-bottom: 0.9rem;
+	}
+
+	.points-scoring-row {
+		min-height: 32px;
+		padding: 0.32rem 0.52rem;
+	}
+
+	.points-scoring-position {
+		font-size: 1rem;
+	}
+
+	.points-scoring-value {
+		font-size: 0.9rem;
+	}
+}
+
+// Multiplier Formula Grid
+.multiplier-formula-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1.2rem;
+	margin: 2rem 0;
+	padding: 0;
+}
+
+.multiplier-formula-card {
+	position: relative;
+	border: 1px solid #5e6162;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #191919 0%, #0a0a0a 100%);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 20px rgba(0, 0, 0, 0.25);
+	padding: 1.2rem 0.8rem;
+	overflow: hidden;
+	transition: transform 140ms ease, box-shadow 140ms ease;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 45%);
+		pointer-events: none;
+	}
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 28px rgba(0, 0, 0, 0.35);
+	}
+}
+
+.multiplier-car-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 140px;
+	margin-bottom: 0.8rem;
+
+	img {
+		max-height: 100%;
+		max-width: 90%;
+		object-fit: contain;
+		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+	}
+}
+
+.multiplier-formula-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.2rem;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.multiplier-car-name {
+	color: #e0e0e0;
+	font-family: NissanOpti, serif;
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	margin-bottom: 0.6rem;
+}
+
+.multiplier-formula-breakdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.6rem;
+	background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0.15) 100%);
+	border: 1px solid rgba(255, 215, 0, 0.15);
+	border-radius: 6px;
+}
+
+.formula-energy {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	color: #ffb347;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 1.05rem;
+	font-weight: 600;
+
+	i {
+		font-size: 0.85rem;
+	}
+}
+
+.formula-separator {
+	color: #888;
+	font-weight: 300;
+	font-size: 0.9rem;
+}
+
+.formula-result {
+	color: #ffd700;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+	letter-spacing: 0.05em;
+	
+}
+
+// Calculation Formulas Section
+.calculation-formulas-section {
+	margin: 1.4rem 0 0.4rem;
+
+	h4 {
+		color: #f1f1f1;
+		font-family: NissanOpti, serif;
+		font-size: 1.22rem;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		margin-bottom: 1rem;
+	}
+}
+
+.calculation-formula-intro {
+	color: #c6c6c6;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.94rem;
+	margin: 0 0 0.9rem;
+}
+
+.calculation-formula-legend {
+	color: #b5b5b5;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.88rem;
+	margin: -0.35rem 0 0.95rem;
+	padding: 0.5rem 0.65rem;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.12) 100%);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 6px;
+}
+
+.calculation-formula-card {
+	position: relative;
+	border: 1px solid #5e6162;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #191919 0%, #0a0a0a 100%);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 20px rgba(0, 0, 0, 0.25);
+	padding: 1rem;
+	margin-bottom: 0.85rem;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 45%);
+		pointer-events: none;
+	}
+}
+
+.calculation-formula-title {
+	position: relative;
+	z-index: 1;
+	color: #e8d4a0;
+	font-family: NissanOpti, serif;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	margin-bottom: 0.7rem;
+}
+
+.calculation-formula-display {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0.7rem;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.16) 100%);
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	border-radius: 6px;
+}
+
+.calculation-formula-chip {
+	color: #d7e6f7;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.92rem;
+	font-weight: 600;
+	padding: 0.24rem 0.5rem;
+	border-radius: 999px;
+	background: linear-gradient(180deg, rgba(109, 161, 212, 0.2) 0%, rgba(60, 87, 112, 0.18) 100%);
+	border: 1px solid rgba(152, 198, 243, 0.26);
+}
+
+.calculation-formula-operator,
+.calculation-formula-equals {
+	color: #ffb347;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.calculation-formula-equals {
+	color: #ffd700;
+}
+
+.calculation-formula-note {
+	position: relative;
+	z-index: 1;
+	margin-top: 0.6rem;
+	color: #a8a8a8;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.84rem;
+}
+
+.calculation-formula-plain {
+	position: relative;
+	z-index: 1;
+	margin: 0.45rem 0 0;
+	color: #d4d4d4;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.35;
+}
+
+.desktop-parser-preview {
+	margin-top: 0.75rem;
+}
+
+.desktop-parser-preview-toggle {
+	border: 1px solid #5e6162;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #191919 0%, #0a0a0a 100%);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 20px rgba(0, 0, 0, 0.25);
+	padding: 0.6rem;
+}
+
+.desktop-parser-preview-summary {
+	list-style: none;
+	cursor: pointer;
+	color: #d7e6f7;
+	font-family: Bahnschrift-Light, sans-serif;
+	font-size: 0.9rem;
+	font-weight: 700;
+	margin: 0;
+	outline: none;
+	user-select: none;
+}
+
+.desktop-parser-preview-summary::-webkit-details-marker {
+	display: none;
+}
+
+.desktop-parser-preview-toggle .hide-label {
+	display: none;
+}
+
+.desktop-parser-preview-toggle[open] .show-label {
+	display: none;
+}
+
+.desktop-parser-preview-toggle[open] .hide-label {
+	display: inline;
+}
+
+.desktop-parser-preview-image {
+	margin-top: 0.65rem;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 8px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.22);
+}
+
+.desktop-parser-preview-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+@media (max-width: 768px) {
+	.calculation-formula-card {
+		padding: 0.85rem;
+	}
+
+	.calculation-formula-display {
+		gap: 0.4rem;
+		padding: 0.6rem;
+	}
+
+	.calculation-formula-chip {
+		font-size: 0.86rem;
+	}
+
+	.calculation-formula-note {
+		font-size: 0.8rem;
+	}
+
+	.calculation-formula-plain {
+		font-size: 0.85rem;
+	}
+
+	.calculation-formula-legend {
+		font-size: 0.83rem;
+		padding: 0.45rem 0.55rem;
+	}
+}
