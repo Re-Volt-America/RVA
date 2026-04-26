@@ -311,8 +311,7 @@ en:
       title: "Single Races"
       description: "In each ranking, we first play 18 sessions that are single races. In single races, each player competes individually and earns points based on their finishing position. The point system for single races is as follows:"
       example-title: "Quick Example"
-      example-intro: "Here is a quick example:"
-      example-scenario: "Example: A player finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.5x class factor because it is one class below the lobby class."
+      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.5x class factor because it is one class below the lobby class."
       steps-label: "Steps:"
       formula:
         position-score: "Position Score"
@@ -377,8 +376,8 @@ en:
     desktop-parser:
       title: "RVA Desktop Points Parser"
       description: "The RVA Desktop Points Parser is a Desktop application designed to calculate a results table in the RVA format from a given RVGL session log. Through this portable tool, we allow anyone to parse session results using our system locally if they so desire. Here is an example of what you'll get by parsing one of our sessions yourself:"
-      show-image: "Show image"
-      hide-image: "Hide image"
+      show-image: "Show Preview"
+      hide-image: "Hide Preview"
       image-alt: "RVA Desktop Points Parser preview"
     downloads:
       title: "Download RVA Points"

@@ -64,6 +64,38 @@
 	}
 }
 
+.points-scoring-row-regular {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #3a3a3a;
+	border-radius: 4px;
+	background: linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
+	padding: 0.38rem 0.6rem;
+	min-height: 34px;
+	overflow: hidden;
+	transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%);
+		pointer-events: none;
+	}
+
+	&:hover {
+		transform: translateY(-1px);
+		border-color: #6f6f6f;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 10px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.trailing-scoring-margin {
+	margin-top: 37px;
+}
+
 .points-scoring-position {
 	display: inline-flex;
 	align-items: center;
@@ -114,21 +146,16 @@
 	background: linear-gradient(180deg, #4b2f1f 0%, #2b1b11 100%);
 }
 
-.points-scoring-row:nth-child(-n + 4) .points-scoring-value {
+.points-scoring-row:nth-child(-n + 3) .points-scoring-value {
 	color: #ffe39f;
 }
 
 .points-scoring-card--normal .points-scoring-row:nth-child(1) {
-	box-shadow: inset 2px 0 0 #6da1d4;
+	box-shadow: inset 2px 0 0 #f2c05b;
 }
 
 .points-scoring-card--big .points-scoring-row:nth-child(1) {
 	box-shadow: inset 2px 0 0 #f2c05b;
-}
-
-.points-scoring-row:nth-child(5),
-.points-scoring-row:nth-child(6) {
-	border-left: 2px solid #325a82;
 }
 
 .points-scoring-row:nth-child(n + 7) {

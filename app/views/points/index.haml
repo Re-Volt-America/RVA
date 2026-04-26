@@ -11,7 +11,7 @@
   = t("points.introduction.description")
 
 .row
-  .col-sm-12.col-md-6.col-lg-6.col-xl-6
+  .col-sm-12.col-md-4.col-lg-4.col-xl-4
     %h4
       = t("points.introduction.normal-race")
     .points-scoring-card.points-scoring-card--normal
@@ -23,18 +23,30 @@
               = t("points.introduction.position-label", n: position)
             %span.points-scoring-value
               = t("points.introduction.points-label", n: points)
-  .col-sm-12.col-md-6.col-lg-6.col-xl-6
+
+  .col-sm-12.col-md-8.col-lg-8.col-xl-8
     %h4
       = t("points.introduction.big-race")
     .points-scoring-card.points-scoring-card--big
-      .points-scoring-table
-        - SYS::SCORING::BIG.each do |position, points|
-          .points-scoring-row
-            %span.points-scoring-position
-              %span.points-scoring-dot
-              = t("points.introduction.position-label", n: position)
-            %span.points-scoring-value
-              = t("points.introduction.points-label", n: points)
+      .row
+        .col-6
+          .points-scoring-table
+            - SYS::SCORING::BIG.first(10).each do |position, points|
+              .points-scoring-row
+                %span.points-scoring-position
+                  %span.points-scoring-dot
+                  = t("points.introduction.position-label", n: position)
+                %span.points-scoring-value
+                  = t("points.introduction.points-label", n: points)
+        .col-6
+          .points-scoring-table
+            - SYS::SCORING::BIG.to_a.last(6).each do |position, points|
+              .points-scoring-row-regular
+                %span.points-scoring-position
+                  %span.points-scoring-dot
+                  = t("points.introduction.position-label", n: position)
+                %span.points-scoring-value
+                  = t("points.introduction.points-label", n: points)
 
 %br
 %h3
@@ -46,9 +58,6 @@
 .calculation-formulas-section
   %h4
     = t("points.single-races.example-title")
-  
-  %p.calculation-formula-plain
-    = t("points.single-races.example-intro")
   
   .calculation-formula-card
     %p.calculation-formula-plain
@@ -226,7 +235,7 @@
   = t("points.desktop-parser.description")
 
 .desktop-parser-preview
-  %details.desktop-parser-preview-toggle
+  %details.desktop-parser-preview-toggle{ open: true }
     %summary.desktop-parser-preview-summary
       %span.show-label= t("points.desktop-parser.show-image")
       %span.hide-label= t("points.desktop-parser.hide-image")
