@@ -8,15 +8,8 @@ class RvaGenerateWeeklyScheduleService
   end
 
   def generate
-    category_numbers = [
-      SYS::CATEGORY::ROOKIE,
-      SYS::CATEGORY::AMATEUR,
-      SYS::CATEGORY::ADVANCED,
-      SYS::CATEGORY::SEMI_PRO,
-      SYS::CATEGORY::PRO,
-      SYS::CATEGORY::SUPER_PRO,
-      SYS::CATEGORY::RANDOM
-    ].shuffle
+    # Get the categories for this week, ensuring Mon-Tue don't match previous week's Sat-Sun
+    category_numbers = get_valid_category_shuffle
 
     track_lists = {}
     num_track_lists = 0
@@ -71,6 +64,64 @@ class RvaGenerateWeeklyScheduleService
   end
 
   private
+
+  def get_valid_category_shuffle
+    previous_sat_sun_categories = get_previous_week_sat_sun_categories
+    category_pool = [
+      SYS::CATEGORY::ROOKIE,
+      SYS::CATEGORY::AMATEUR,
+      SYS::CATEGORY::ADVANCED,
+      SYS::CATEGORY::SEMI_PRO,
+      SYS::CATEGORY::PRO,
+      SYS::CATEGORY::SUPER_PRO,
+      SYS::CATEGORY::RANDOM
+    ]
+
+    # Keep shuffling until both are satified:
+    # 1. Mon-Tue don't match previous week's Sat-Sun
+    # 2. Rookie and Amateur are not on consecutive days
+    loop do
+      shuffled = category_pool.shuffle
+      
+      # Check constraint 1: Mon-Tue don't match previous week's Sat-Sun
+      mon_tue_match = previous_sat_sun_categories.any? do |prev_cat|
+        shuffled[0] == prev_cat || shuffled[1] == prev_cat
+      end
+      next if mon_tue_match
+      
+      # Check constraint 2: Rookie and Amateur not on consecutive days
+      has_consecutive_rookie_amateur = false
+      (0...shuffled.length - 1).each do |i|
+        current = shuffled[i]
+        next_day = shuffled[i + 1]
+        
+        if (current == SYS::CATEGORY::ROOKIE && next_day == SYS::CATEGORY::AMATEUR) ||
+           (current == SYS::CATEGORY::AMATEUR && next_day == SYS::CATEGORY::ROOKIE)
+          has_consecutive_rookie_amateur = true
+          break
+        end
+      end
+      
+      return shuffled unless has_consecutive_rookie_amateur
+    end
+  end
+
+  def get_previous_week_sat_sun_categories
+    previous_start_date = @start_date - 7.days
+    previous_schedule = WeeklySchedule.where(
+      :season => @season,
+      :start_date => previous_start_date
+    ).first
+
+    return [] unless previous_schedule
+
+    track_lists = previous_schedule.track_lists.to_a
+    # Sat is index 5, Sun is index 6
+    sat_category = track_lists[5]&.category
+    sun_category = track_lists[6]&.category
+
+    [sat_category, sun_category].compact
+  end
 
   def prepare_lego_track_pairs(lego_tracks)
     # Remove one track if we have an odd number

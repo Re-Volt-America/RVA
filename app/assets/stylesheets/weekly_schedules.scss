@@ -1,49 +1,269 @@
 #weekly-schedules {
   #weekly-schedules-table {
-
     table {
       background-color: #151515;
-      width: 80%;
-      border: 1px solid #646464;
-      margin: 20px auto;
+      width: 100%;
+      max-width: 900px;
+      border-collapse: collapse;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      margin: 30px auto;
+      border: 2px solid #ffd966;
     }
 
     th {
-      background-color: #101010;
+      background-color: #003366;
       color: #ffd966;
-      height: 40px;
+      height: 45px;
       text-align: center;
+      font-weight: 600;
+      border-bottom: 2px solid #ffd966;
     }
 
     td, th {
-      border: 1px solid #646464;
+      border: 1px solid #404040;
+      padding: 12px 15px;
     }
 
     tr {
       color: #ffffff;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #1f1f1f;
+      }
     }
+
+    td {
+      text-align: center;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .text-center {
+    margin: 20px 0;
+  }
+
+  /* Index card styles */
+  .schedules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+  }
+
+  .schedule-card {
+    background-color: #141414;
+    border: 1px solid #2f2f2f;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: none;
+  }
+
+  .schedule-card-header h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.05rem; /* smaller than page title */
+    color: #ffd966;
+    font-weight: 600;
+  }
+
+  .schedule-card-body .date-range {
+    display: block;
+    color: #bfbfbf;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .schedule-card-footer {
+    text-align: left;
+  }
+
+  .schedule-card-footer .btn {
+    margin-top: 8px;
+    padding: 6px 10px;
+    display: inline-block;
   }
 }
 
 #weekly-schedule {
-  #track-list-table {
-    th {
-      font-family: NissanOpti, serif;
-      font-size: 20px;
-      background-color: #003366;
+  .schedule-show-header {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-left: 4px solid #ffd966;
+    margin-bottom: 30px;
+
+    h1 {
+      color: #ffd966;
+      margin: 0 0 10px 0;
+      font-size: 2rem;
     }
 
-    tr {
-      color: #fff;
-      font-weight: bold;
+    .schedule-date-range {
+      color: #b0b0b0;
+      font-size: 1.1rem;
+      margin: 5px 0;
     }
 
-    .red {
-      background-color: #800000;
+    .schedule-season {
+      color: #ffffff;
+      margin: 5px 0;
+    }
+  }
+
+  .schedule-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+
+    .btn {
+      margin: 0;
+      padding: 8px 12px;
+    }
+  }
+
+  .schedule-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 32px;
+    margin-bottom: 20px;
+    margin-top: 6px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .schedule-day-card {
+    background-color: #151515;
+    border: 1px solid #404040; /* single outer frame */
+    border-radius: 6px;
+    overflow: hidden;
+    transition: none;
+    margin-bottom: 12px; /* extra spacing between rows of tables */
+
+    .day-header {
+      background-color: #000000;
+      padding: 10px 12px;
+      border-bottom: 1px solid #404040;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .day-name {
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        color: #ffd966;
+      }
+
+      .category-badge {
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #111111;
+        background-color: #bdbdbd;
+        border: 1px solid #8a8a8a;
+        text-transform: uppercase;
+      }
     }
 
-    .black {
-      background-color: #000001;
+    .day-body {
+      padding: 0;
+      overflow-x: auto;
+
+      .track-list-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #151515;
+        border: none; /* avoid double frame */
+        margin: 0;
+        overflow: visible;
+
+        thead {
+          background-color: #0a0a0a;
+
+          th {
+            padding: 10px 8px;
+            color: #ffd966;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #404040;
+            background-color: #0a0a0a;
+          }
+        }
+
+        tbody {
+          tr.track-entry {
+            border-bottom: 1px solid #404040;
+            transition: background-color 0.15s ease;
+
+            &:hover {
+              background-color: #242424;
+            }
+
+            td {
+              padding: 8px;
+              color: #ffffff;
+              text-align: center;
+              font-size: 0.9rem;
+              border-top: 1px solid #2f2f2f;
+
+              .badge {
+                padding: 3px 7px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                border-radius: 3px;
+
+                &.badge-stock,
+                &.badge-lego,
+                &.badge-custom {
+                  background-color: #666666; /* uniform gray */
+                  color: #ffffff;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+
+    .day-footer {
+      padding: 10px 15px;
+      background-color: #0a0a0a;
+      border-top: 1px solid #404040;
+      text-align: center;
+
+      .btn-download {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  .category-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+
+    // Category-specific colors
+    &.category-0 { background-color: #E74C3C; } // Rookie
+    &.category-1 { background-color: #F39C12; } // Amateur
+    &.category-2 { background-color: #3498DB; } // Advanced
+    &.category-3 { background-color: #9B59B6; } // Semi-Pro
+    &.category-4 { background-color: #1ABC9C; } // Pro
+    &.category-5 { background-color: #2ECC71; } // Super-Pro
+    &.category-6 { background-color: #95A5A6; } // Random
   }
 }
