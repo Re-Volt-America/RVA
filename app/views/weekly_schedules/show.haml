@@ -20,7 +20,7 @@
   - start_date = @weekly_schedule.start_date
   .schedule-container
     - @weekly_schedule.track_lists.each do |tl|
-      .schedule-day-card
+      .schedule-day-card{:id => "tracklist-#{@table_count}"}
         .day-header
           %span.day-name
             = localized_weekday(start_date.wday)
@@ -57,7 +57,7 @@
                     %td.track-laps
                       = tle.lap_count
 
-        .day-footer
+        .day-footer{:data => { :html2canvas_ignore => true }}
           %button.btn.btn-sm.btn-outline-secondary{:id => "dl-png-#{@table_count}", :class => "btn-download"}
             = t('misc.download-as-png')
 
