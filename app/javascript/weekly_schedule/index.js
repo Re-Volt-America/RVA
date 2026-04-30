@@ -6,14 +6,30 @@ $(document).on('turbo:load', function () {
 
         button.on('click', function () {
             const screenshotTarget = $(`#tracklist-${i}`);
-            html2canvas(screenshotTarget[0]).then((canvas) => {
-                const base64image = canvas.toDataURL("image/png");
-                var anchor = document.createElement('a');
-                anchor.setAttribute("href", base64image);
-                anchor.setAttribute("download", `tracklist-${i + 1}.png`);
-                anchor.click();
-                anchor.remove();
-            });
+            if (screenshotTarget.length === 0) {
+                return;
+            }
+
+            const footer = screenshotTarget.find('.day-footer');
+            if (footer.length) {
+                footer.hide();
+            }
+
+            html2canvas(screenshotTarget[0])
+                .then((canvas) => {
+                    const base64image = canvas.toDataURL("image/png");
+                    var anchor = document.createElement('a');
+                    anchor.setAttribute("href", base64image);
+                    anchor.setAttribute("download", `tracklist-${i + 1}.png`);
+                    anchor.click();
+                    anchor.remove();
+                })
+                .catch(() => {})
+                .finally(() => {
+                    if (footer.length) {
+                        footer.show();
+                    }
+                });
         });
     }
 });
