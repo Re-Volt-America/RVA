@@ -13,8 +13,6 @@
 
 .schedule-controls
   = link_to t('misc.go-back'), weekly_schedules_path, :class => "btn btn-secondary"
-  - if user_is_staff?
-    = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn btn-danger"
 
 #weekly-schedule
   - start_date = @weekly_schedule.start_date
@@ -29,7 +27,7 @@
 
         .day-body
           .table-responsive
-            %table.track-list-table{:id => "tracklist-#{@table_count}"}
+            %table.track-list-table
               %thead
                 %tr
                   %th
@@ -63,3 +61,23 @@
 
         - start_date = start_date + 1.day
         - @table_count += 1
+
+- if user_is_staff?
+  .schedule-actions.text-center.mt-4
+    %button.btn.btn-danger{:type => "button", :data => { :toggle => "modal", :target => "#delete-weekly-schedule-modal" }}
+      = t("weekly-schedules.controller.destroy")
+
+  #delete-weekly-schedule-modal.modal.fade{:tabindex => "-1", :role => "dialog", :aria => { :labelledby => "delete-weekly-schedule-title", :hidden => "true" }}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %h5#delete-weekly-schedule-title.modal-title
+            Delete weekly schedule?
+          %button.close{:type => "button", :data => { :dismiss => "modal" }, :aria => { :label => "Close" }}
+            %span{:aria => { :hidden => "true" }} ×
+        .modal-body
+          This action cannot be undone.
+        .modal-footer
+          %button.btn.btn-secondary{:type => "button", :data => { :dismiss => "modal" }}
+            Cancel
+          = link_to t("weekly-schedules.controller.destroy"), @weekly_schedule, :data => { turbo: true, turbo_method: :delete }, :class => "btn btn-danger"
