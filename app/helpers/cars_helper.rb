@@ -28,7 +28,7 @@ module CarsHelper
     when SYS::CATEGORY::CLOCKWORK
       cars_clockwork_path
     else
-      'unknown'
+      cars_path
     end
   end
 

@@ -22,7 +22,7 @@
         .day-header
           %span.day-name
             = localized_weekday(start_date.wday)
-          %span.category-badge{:class => "category-#{tl.category}"}
+          = link_to car_category_path(tl.category), :class => "category-badge category-badge-link category-#{tl.category}" do
             = localized_category_name(tl.category)
 
         .day-body

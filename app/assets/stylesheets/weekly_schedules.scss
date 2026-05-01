@@ -172,6 +172,17 @@
         border: 1px solid #8a8a8a;
         text-transform: uppercase;
       }
+
+      .category-badge-link {
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+          color: #111111;
+          filter: brightness(1.05);
+          text-decoration: none;
+        }
+      }
     }
 
     .day-body {
