@@ -279,7 +279,7 @@ es-CL:
       title: "Carreras individuales"
       description: "In each ranking, we first play 18 sessions that are single races. In single races, each player competes individually and earns points based on their finishing position. The point system for single races is as follows:"
       example-title: "Ejemplo"
-      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.5x class factor because it is one class below the lobby class."
+      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.25x class factor because it is one class below the lobby class."
       steps-label: "Pasos:"
       formula:
         position-score: "Puntaje de posición"
@@ -310,9 +310,9 @@ es-CL:
         team-pa: "PA del equipo"
       example-steps:
         player1: "Miembro 1 termina primero en una carrera grande con un auto Rookie. Obtiene un factor de clase de 1,25x porque su auto está una clase más abajo que el lobby → 20 × (0,9 × 1,25) = 22,5 puntos"
-        player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is two classes below the lobby class, it gets a 1.5x class factor → 12 × (0.9 × 1.5) = 16.2 points"
+        player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is two classes below the lobby class, it gets a 1.25x class factor → 12 × (0.9 × 1.25) = 13.5 points"
         player3: "Member 3 finishes 5th in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 8 × (0.9 × 1.25) = 9 points"
-      team-total: "PA de lequipo (puntaje obtenido) = 22,5 + 16,2 + 9 = 47,7 puntos"
+      team-total: "Team PA (Obtained Points) = 22.5 + 13.5 + 9 = 45.0 points"
       example-note: "Nota: en las carreras por equipos, la posición promedio y la constante normalizadora no son utilizadas. El puntaje del equipo es simplemente la suma del puntaje individual de todos los miembros."
     scoring-formulas:
       title: "Fórmulas de puntuación"
