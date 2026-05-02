@@ -8,6 +8,7 @@ en:
     seasons: "Seasons"
     league:
       title: "League"
+      current-ranking: "Current Ranking"
       leaderboard: "Leaderboard"
       point-system: "Points System"
       teams: "Teams"

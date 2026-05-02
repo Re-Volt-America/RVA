@@ -29,6 +29,11 @@
             %i.fa.fa-trophy{:"aria-hidden" => true}
             = t("nav.league.title")
           %div.dropdown-menu{:"aria-labelledby" => "dropdown01"}
+            - if current_ranking
+              %a.dropdown-item{:href => ranking_path(current_ranking)}
+                %i.fa.fa-crosshairs{:"aria-hidden" => "true"}
+                = t("nav.league.current-ranking")
+              %div.dropdown-divider
             %a.dropdown-item{:href => stats_path}
               %i.fa.fa-line-chart{:"aria-hidden" => "true"}
               = t("nav.league.leaderboard")

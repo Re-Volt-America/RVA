@@ -7,6 +7,7 @@ pt:
     seasons: "Temporadas"
     league:
       title: "Ligas"
+      current-ranking: "Ranking Atual"
       leaderboard: "Tabela de classificação"
       point-system: "Sistema de Pontos"
       teams: "Equipes"
