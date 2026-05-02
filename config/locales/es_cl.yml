@@ -277,9 +277,9 @@ es-CL:
       points-label: "%{n} pts"
     single-races:
       title: "Carreras individuales"
-      description: "In each ranking, we first play 18 sessions that are single races. In single races, each player competes individually and earns points based on their finishing position. The point system for single races is as follows:"
+      description: "En cada ranking, primero jugamos 18 sesiones de carreras individuales. En las sesiones individuales, cada jugador compite de manera independiente y gana puntos en función de su posición final. El sistema de puntaje para carreras individuales funciona de la siguiente manera:"
       example-title: "Ejemplo"
-      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.25x class factor because it is one class below the lobby class."
+      example-scenario: "Ejemplo: Un jugador, el cual está jugando en un lobby de la clase Amateur, termina en segundo lugar en una carrera normal (9 jugadores) con un auto Rookie. En este caso, el auto tiene un multiplicador de 0,9 y un factor de clase de 1,25x porque está una clase por debajo de la clase del lobby."
       steps-label: "Pasos:"
       formula:
         position-score: "Puntaje de posición"
@@ -327,9 +327,9 @@ es-CL:
       teams:
         title: "Equipos"
         team-pa: "PA del equipo"
-        sum-of-racer-scores: "Sum of Racer Scores"
-        note: "Team entries are ranked by PA (obtained points) in descending order"
-        description: "Team points are everyone's points added together, so each teammate contributes to the final team result."
+        sum-of-racer-scores: "Suma de los puntajes de los jugadores"
+        note: "Los equipos son ordenados por PA (puntaje obtenido) en órden descendiente"
+        description: "Los puntajes finales de cada equipo corresponden a la suma de los puntajes de cada miembro."
       main:
         title: "Principal"
         official-score: "Puntaje oficial"
