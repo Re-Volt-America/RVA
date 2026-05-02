@@ -7,6 +7,7 @@ lol:
     seasons: "Seazuns"
     league:
       title: "LOL"
+      current-ranking: "CURRUNT RANK"
       leaderboard: "Katbod"
       point-system: "Pontz systm"
       teams: "Teamz"
