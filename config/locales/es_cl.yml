@@ -310,8 +310,8 @@ es-CL:
         team-pa: "PA del equipo"
       example-steps:
         player1: "Miembro 1 termina primero en una carrera grande con un auto Rookie. Obtiene un factor de clase de 1,25x porque su auto está una clase más abajo que el lobby → 20 × (0,9 × 1,25) = 22,5 puntos"
-        player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 12 × (0.9 × 1.25) = 13.5 points"
-        player3: "Member 3 finishes 5th in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 8 × (0.9 × 1.25) = 9 points"
+        player2: "Miembro 2 termina tercero en una carrera grande con un auto Rookie. Obtiene un multiplicador de 1,25x porque su auto está una clase más abajo que el lobby → 12 × (0,9 × 1,25) = 13,5 puntos"
+        player3: "Miembro 2 termina quinto en una carrera grande con un auto Rookie. Obtiene un multiplicador de 1,25x porque su auto está una clase más abajo que el lobby → 8 × (0,9 × 1,25) = 9 puntos"
       team-total: "PA del equipo (Puntaje Obtenido) = 22,5 + 13,5 + 9 = 45,0 points"
       example-note: "Nota: en las carreras por equipos, la posición promedio y la constante normalizadora no son utilizadas. El puntaje del equipo es simplemente la suma del puntaje individual de todos los miembros."
     scoring-formulas:
