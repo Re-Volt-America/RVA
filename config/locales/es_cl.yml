@@ -296,7 +296,7 @@ es-CL:
       example-summary: "Este puntaje contribuye a su total de puntos obtenidos (PA), el cual se utiliza para calcular su ranking final junto con otros factores como la posición promedio y la participación."
     car-ratings:
       title: "Multiplicadores en los autos"
-      description: "En Re-Volt America, a los autos se les asigna un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso, y otras características que los pueden hacer mejores o peores para jugar en carreras online. Este multiplicador se utiliza para recompensar a los jugadores por utilizar autos que se consideran difíciles. También aplicamos un factor de clase basado en qué tan por debajo está la clase del auto en relación con la clase del lobby que el jugador esté jugando. Aquí está la formula aplicada en cada carrera con distintos multiplicadores:"
+      description: "En Re-Volt America, a los autos se les asigna un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso, y otras características que los pueden hacer mejores o peores para jugar en carreras online. Este multiplicador se utiliza para recompensar a los jugadores por utilizar autos que se consideran difíciles. También aplicamos un factor de clase basado en qué tan por debajo está la clase del auto en relación con la clase del lobby que el jugador esté jugando. Aquí está la fórmula aplicada en cada carrera con distintos multiplicadores:"
     team-races:
       title: "Carreras por equipos"
       description: "Luego de las 18 sesiones individuales, jugamos 10 sesiones más en formato por equipos. En las carreras por equipos, los jugadores se dividen en diferentes equipos y compiten juntos. Cada miembro obtiene puntos de manera individual en la sesión basados en su posición final, y estos puntos se suman para crear el puntaje total del equipo al cual partenecen."
@@ -342,7 +342,7 @@ es-CL:
         description: "Para subir en el ranking, gana más puntos, mantén una mejor posición promedio (mientras más baja mejor), y participa de más carreras."
     desktop-parser:
       title: "RVA Points: Calculadora de resultados"
-      description: "RVA Points es una aplicación de escritorio diseñada para calcular la tabla de resultados en el formato RVA a partir del archivo de resultados de una sesión (session log) generado por RVGL. Con esta aplicación portable, cualquiera pueda calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de como se vería la tabla de resultados de una sesión generada por tu cuenta:"
+      description: "RVA Points es una aplicación de escritorio diseñada para calcular la tabla de resultados en el formato RVA a partir del archivo de resultados de una sesión (session log) generado por RVGL. Con esta aplicación portable, cualquiera puede calcular resultados usando nuestro sistema localmente si así lo desea. Aquí hay un ejemplo de como se vería la tabla de resultados de una sesión generada por tu cuenta:"
       show-image: "Mostrar vista previa"
       hide-image: "Ocultar vista previa"
       image-alt: "Calculador de puntos de escritorio de RVA"
