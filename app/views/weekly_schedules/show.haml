@@ -8,8 +8,7 @@
   %h3.schedule-date-range
     = "#{pretty_datetime(@weekly_schedule.start_date)} - #{pretty_datetime(@weekly_schedule.start_date + 6.days)}"
   %p.schedule-season
-    = t('seasons.title')
-    = ": #{@weekly_schedule.season.name}"
+    = "#{t('seasons.title')}: #{@weekly_schedule.season.name}"
 
 .schedule-controls
   = link_to t('misc.go-back'), weekly_schedules_path, :class => "btn btn-secondary"
