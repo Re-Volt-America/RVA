@@ -107,7 +107,7 @@ class RvaGenerateWeeklyScheduleService
   end
 
   def get_previous_week_sat_sun_categories
-    previous_start_date = @start_date - 7.days
+    previous_start_date = Date.parse(@start_date) - 7.days
     previous_schedule = WeeklySchedule.where(
       :season => @season,
       :start_date => previous_start_date
