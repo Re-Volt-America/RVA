@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: unless-stopped
     volumes:
       - /home/rva/RVA/shared/log:/rails/log
       - /home/rva/RVA/shared/public/uploads:/rails/public/uploads
