@@ -13,8 +13,8 @@
           = t("seasons.explanation.title")
         %p.lead.fw-normal.text-white-80.mb-4
           = t("seasons.explanation.description")
-        .justify-content-sm-center
-          %a{href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn-important btn-lg px-4 me-sm-3 mr-4 #{current_season.nil? ? 'disabled' : ''}"}
+        .d-grid.gap-2.d-sm-flex.justify-content-sm-center
+          %a{href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn-important btn-lg px-4 #{current_season.nil? ? 'disabled' : ''}"}
             = t("seasons.buttons.current-season")
           %a.btn-important.btn-lg.px-4{href: points_path}
             = t("seasons.buttons.learn-more")
