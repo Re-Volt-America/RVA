@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
+gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
 gem 'countries', '~> 5.7'                                             # Collection of all sorts of useful information for every country in the ISO 3166 standard
 gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
@@ -20,12 +21,13 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Paginati
 gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'kramdown', '~> 2.4'                                              # Yet-another-markdown-parser but fast
 gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
+gem 'net-imap', '>= 0.4.24'                                           # Ruby client api for Internet Message Access Protocol
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
-gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
+gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application
@@ -38,7 +40,6 @@ gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The orig
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'tzinfo-data', :platforms => [:windows, :jruby]                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3', :platforms => [               # Call 'byebug' anywhere in the code to stop execution and get a debugger console
