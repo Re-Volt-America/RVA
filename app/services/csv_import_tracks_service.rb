@@ -9,7 +9,7 @@ class CsvImportTracksService
   end
 
   def call
-    csv = CSV.parse(File.open(@file))
+    csv = CSV.parse(read_csv_content)
 
     tracks = []
     csv.drop(1).each do |row|
@@ -54,5 +54,24 @@ class CsvImportTracksService
   # TODO: Check whether this csv corresponds to RVA track data
   def is_rva_track_data(_csv)
     true
+  end
+
+  private
+
+  def read_csv_content
+    return @file.read if @file.respond_to?(:read)
+
+    File.read(safe_csv_path(@file.to_s))
+  end
+
+  def safe_csv_path(file_name)
+    base_name = File.basename(file_name)
+    raise ArgumentError, 'Invalid CSV file name' unless base_name.match?(/\A[a-zA-Z0-9._-]+\.csv\z/)
+
+    base_dir = Rails.root.join('tmp').to_s
+    full_path = File.expand_path(File.join(base_dir, base_name))
+    raise ArgumentError, 'Invalid CSV file path' unless full_path.start_with?(base_dir + File::SEPARATOR)
+
+    full_path
   end
 end
