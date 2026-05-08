@@ -13,10 +13,10 @@
           = t("seasons.explanation.title")
         %p.lead.fw-normal.text-white-80.mb-4
           = t("seasons.explanation.description")
-        .justify-content-sm-center
-          %a{href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn-important btn-lg px-4 me-sm-3 mr-4 #{current_season.nil? ? 'disabled' : ''}"}
+        .d-flex.flex-column.flex-sm-row.align-items-center.justify-content-sm-center
+          %a{href: "#{current_season.nil? ? '' : season_path(current_season) }", :class => "btn-important btn-lg px-4 mb-3 mb-sm-0 mr-sm-3 #{current_season.nil? ? 'disabled' : ''}"}
             = t("seasons.buttons.current-season")
-          %a.btn-important.btn-lg.px-4{href: points_path}
+          %a{href: points_path, :class => "btn-important btn-lg px-4"}
             = t("seasons.buttons.learn-more")
     .col-xl-5.col-xxl-6.text-center
       = image_tag "seasons.png", :class => "img-fluid rounded-3 my-5"
