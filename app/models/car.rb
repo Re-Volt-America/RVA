@@ -15,6 +15,7 @@ class Car
   field :category, :type => Integer
   field :author, :type => String
   field :stock, :type => Boolean, :default => false
+  field :active, :type => Boolean, :default => true
   field :carbox_filename, :type => String, :default => "carbox.bmp"
 
   validates_presence_of :name
@@ -26,6 +27,7 @@ class Car
   validates_presence_of :category
   validates_presence_of :author
   validates_presence_of :stock
+  validates_presence_of :active
 
   def thumbnail_url
     box_filename = carbox_filename.nil? ? 'carbox.bmp' : carbox_filename
