@@ -8,10 +8,10 @@ set :environment, ENV.fetch('RAILS_ENV', :production)
 
 # Generate today's tracklist JSON daily at 2 AM
 every 1.day, at: '2:00 am' do
-  runner 'script/generate_api_json.rb', output: 'log/cron_log.log'
+  runner 'script/generate_today_tracklist.rb', output: 'log/cron_log.log'
 end
 
-# Alternative: generate weekly at 1 AM every Monday for weekly-schedule.json
+# Generate full weekly schedule JSON every Monday at 1 AM
 every :monday, at: '1:00 am' do
   runner 'script/generate_api_json.rb', output: 'log/cron_log.log'
 end

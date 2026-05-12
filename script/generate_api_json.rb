@@ -1,4 +1,4 @@
-# Script to generate public/api JSON files for the bot
+# Script to generate public/api JSON files from already-generated tracklist images
 require 'fileutils'
 
 dir = Rails.root.join('public', 'api')
@@ -11,27 +11,35 @@ if weekly.nil?
 end
 
 base = ENV['RVA_BASE_URL'] || 'http://localhost:3000'
+tracklist_images_dir = Rails.root.join('public', 'uploads', 'tracklists')
+
+# Generate weekly schedule JSON with all tracklist image URLs
+tracklist_urls = []
+weekly.track_lists.each_with_index do |tl, idx|
+  image_filename = "tracklist-#{idx + 1}.png"
+  image_path = tracklist_images_dir.join(image_filename)
+  
+  if File.exist?(image_path)
+    image_url = "#{base}/uploads/tracklists/#{image_filename}"
+  else
+    # Fallback to template
+    image_url = "#{base}/api/tracklist/#{weekly.id}/#{idx}.png"
+  end
+  
+  tracklist_urls << {
+    index: idx,
+    image_url: image_url
+  }
+end
 
 payload = {
   id: weekly.id.to_s,
   start_date: weekly.start_date,
   generated_at: Time.now,
   tracklists_count: weekly.track_lists.size,
-  image_url_template: "#{base}/api/tracklist/{weekly_id}/{index}.png",
-  example_image_url: "#{base}/api/tracklist/#{weekly.id}/0.png"
+  tracklists: tracklist_urls
 }
+
 File.write(dir.join('weekly-schedule.json'), JSON.pretty_generate(payload.as_json))
+puts "Generated weekly schedule JSON with #{tracklist_urls.size} tracklist images"
 
-start_date = weekly.start_date || Date.today
-index = (Date.today - start_date).to_i
-
-payload2 = {
-  date: Date.today,
-  weekly_schedule_id: weekly.id.to_s,
-  tracklist_index: index,
-  image_url: "#{base}/api/tracklist/#{weekly.id}/#{index}.png"
-}
-
-File.write(dir.join('today-track-list.json'), JSON.pretty_generate(payload2.as_json))
-
-puts 'wrote files'
