@@ -14,6 +14,7 @@ gem 'faraday-http-cache', '~> 2.4'                                    # Faraday 
 gem 'foreman', '~> 0.87.2'                                            # Process manager for applications with multiple components
 gem 'github_api', '~> 0.19.0'                                         # GitHub API
 gem 'groupdate', '~> 6.5', '>= 6.5.1'                                 # The simplest way to group temporal data
+gem 'whenever', '~> 1.0', :require => false                           # Cron job generator for Rails
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
