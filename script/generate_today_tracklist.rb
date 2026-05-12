@@ -15,6 +15,10 @@ base = ENV['RVA_BASE_URL'] || 'http://localhost:3000'
 start_date = weekly.start_date || Date.today
 index = (Date.today - start_date).to_i
 
+today_track_list = weekly.track_lists[index] || weekly.track_lists.first
+current_class = today_track_list&.category
+class_name = current_class ? ApplicationController.helpers.localized_category_name(current_class) : nil
+
 # Look for the already-generated tracklist image for today
 # Images are typically stored in public/uploads/tracklists/ 
 tracklist_images_dir = Rails.root.join('public', 'uploads', 'tracklists')
@@ -37,10 +41,13 @@ payload = {
   date: Date.today,
   weekly_schedule_id: weekly.id.to_s,
   tracklist_index: index,
+  class_id: current_class,
+  class_name: class_name,
   image_url: image_url
 }
 
 File.write(api_dir.join('today-track-list.json'), JSON.pretty_generate(payload.as_json))
 
-puts "Generated today's tracklist JSON (index #{index}) for #{Date.today}"
+puts "Generated today tracklist JSON (index #{index}) for #{Date.today}"
+puts "Class: #{class_name} (#{current_class})"
 puts "Image URL: #{image_url}"
