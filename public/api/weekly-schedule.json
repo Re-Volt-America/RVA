@@ -1,8 +1,0 @@
-{
-  "id": "69efda8e270bf6ebcc13a659",
-  "start_date": "2026-04-27",
-  "generated_at": "2026-05-11T20:30:21.847-04:00",
-  "tracklists_count": 7,
-  "image_url_template": "http://localhost:3000/api/tracklist/{weekly_id}/{index}.png",
-  "example_image_url": "http://localhost:3000/api/tracklist/69efda8e270bf6ebcc13a659/0.png"
-}

@@ -39,6 +39,9 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignore generated public API JSON files written at runtime
+/public/api/
+
 # Mac OSX generated files
 .DS_Store
 
