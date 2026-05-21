@@ -400,6 +400,7 @@ es-AR:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "No se pudo guardar la pista"
       import:
         title: "Importar pistas"
@@ -466,6 +467,7 @@ es-AR:
         author: "Author"
         stock: "Original"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Contenido base de Re-Volt"
         lego-tooltip:
