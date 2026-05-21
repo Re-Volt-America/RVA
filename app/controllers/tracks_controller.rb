@@ -13,13 +13,16 @@ class TracksController < ApplicationController
                 current_season.tracks
               end
 
+    # Filter out inactive tracks
+    @tracks = @tracks.reject { |track| !track.active? }
+
     if params[:query].present?
       regex = Regexp.new("^#{Regexp.escape(params[:query])}", Regexp::IGNORECASE)
-      @tracks = @tracks.where(:name => { '$regex' => regex })
+      @tracks = @tracks.select { |track| track.name.match(regex) }
     end
 
     @tracks = Kaminari.paginate_array(
-      @tracks.to_a.sort_by { |track| [track.name, track.stock? ? 0 : 1] }
+      @tracks.sort_by { |track| [track.name, track.stock? ? 0 : 1] }
     ).page(params[:page]).per(12)
 
     respond_with @tracks do |format|
@@ -135,6 +138,6 @@ class TracksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def track_params
     params.require(:track).permit(:name, :short_name, :difficulty, :length, :folder_name, :author, :stock, :lego,
-                                  :average_lap_time, :season)
+                                  :average_lap_time, :season, :active)
   end
 end

@@ -15,19 +15,19 @@ class RvaGenerateWeeklyScheduleService
     num_track_lists = 0
 
     # Prepare lego tracks
-    lego_tracks = @season.tracks.where(:lego => true).shuffle.to_a
+    lego_tracks = @season.tracks.where(:lego => true).reject { |t| !t.active? }.shuffle.to_a
     lego_track_pairs = prepare_lego_track_pairs(lego_tracks)
 
     # Randomly assign lego track pairs to consecutive track list positions
     lego_track_assignments = assign_lego_track_pairs(lego_track_pairs, category_numbers.length)
 
     # Generate track lists for each category
-    season_tracks = @season.tracks.where(:lego => false).to_a.shuffle
+    season_tracks = @season.tracks.where(:lego => false).reject { |t| !t.active? }.to_a.shuffle
     reverse_tracks = []
     reverse = false
 
     category_numbers.each do |category|
-      season_tracks = @season.tracks.where(:lego => false).to_a.shuffle if season_tracks.length < 20
+      season_tracks = @season.tracks.where(:lego => false).reject { |t| !t.active? }.to_a.shuffle if season_tracks.length < 20
 
       # Get lego track assignment for this position if it exists
       lego_assignment = lego_track_assignments[num_track_lists]

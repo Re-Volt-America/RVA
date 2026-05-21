@@ -9,7 +9,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.all.reject { |car| !car.active? }
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -219,6 +219,6 @@ class CarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def car_params
     params.require(:car).permit(:name, :speed, :accel, :weight, :multiplier, :folder_name, :category, :author, :stock,
-                                :carbox_filename, :season)
+                                :carbox_filename, :season, :active)
   end
 end

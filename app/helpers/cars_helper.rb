@@ -1,11 +1,10 @@
 module CarsHelper
-  # @return [Array] All the cars of the passed category from the current season. If there is no current season, then
-  # from all cars in the database.
+  # Filters out inactive cars.
   def cars_of_category(category)
     if current_season.nil?
-      Car.all.filter { |c| c.category == category }
+      Car.all.filter { |c| c.category == category && c.active? }
     else
-      current_season.cars.filter { |c| c.category == category }
+      current_season.cars.filter { |c| c.category == category && c.active? }
     end
   end
 

@@ -38,6 +38,9 @@
       .field.form-group
         = f.check_box :lego
         = f.label :lego, t("rva.tracks.edit.lego")
+      .field.form-group
+        = f.check_box :active
+        = f.label :active, t("rva.tracks.edit.active")
       .actions
         = f.button t("misc.submit.update"), :type => "submit", :class => "btn mb-2"
     .col-md-7
