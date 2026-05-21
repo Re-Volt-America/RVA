@@ -403,6 +403,7 @@ lol:
         stock: "OG katz"
         lego: "A Man has fallen into the river in lego city"
         average-lap-time: "Avg lap taim (s)"
+        active: "Active"
         error: "Trak kuld nut b savd"
       import:
         title: "Gif Trakz"
@@ -469,6 +470,7 @@ lol:
         author: "Kitteh"
         stock: "OG"
         carbox-filename: "LITTERBOX FILE NAME"
+        active: "Active"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
         lego-tooltip:
