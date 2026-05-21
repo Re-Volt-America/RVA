@@ -400,6 +400,7 @@ ko:
         stock: "기본"
         lego: "레고"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Track could not be saved"
       import:
         title: "트랙 가져오기"
@@ -466,6 +467,7 @@ ko:
         author: "Author"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Original Re-Volt Content"
         lego-tooltip:
