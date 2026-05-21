@@ -15,15 +15,17 @@ set :pty, true
 namespace :app do
   task :set_permissions do
     on roles(:app) do
+      execute :sudo, "mkdir -p #{shared_path}/tmp/pids"
       execute :sudo, "chmod -R 777 #{shared_path}"
     end
   end
 
-  task :restart do
+  task :deploy_containers do
     on roles(:app) do
-      execute :sudo, '/bin/systemctl restart rva.service'
+      execute :sudo, '/home/rva/RVA/deploy.sh'
     end
   end
 end
 
-after 'deploy', 'app:restart'
+after 'deploy:check:linked_dirs', 'app:set_permissions'
+after 'deploy', 'app:deploy_containers'

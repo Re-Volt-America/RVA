@@ -1,0 +1,3 @@
+#!/bin/sh -e
+rm -f /rails/tmp/pids/*.pid
+exec "$@"

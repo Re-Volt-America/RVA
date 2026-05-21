@@ -80,6 +80,9 @@ RUN useradd -ms /bin/bash rails && \
     chown -R rails:rails /rails
 USER rails
 
+COPY --chmod=755 bin/docker-entrypoint /rails/bin/docker-entrypoint
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "rva"]

@@ -1,15 +1,17 @@
 [Unit]
 Description=RVA Website
-After=network.target
+Requires=docker.service
+After=docker.service network-online.target
 
 [Service]
+Type=oneshot
+RemainAfterExit=yes
 User=rva
 Group=rva
 WorkingDirectory=/home/rva/RVA/current
 
-ExecStart=/bin/bash -lc 'docker-compose -f docker-compose.production.yml -p rva build && docker-compose -f docker-compose.production.yml -p rva up -d'
-Restart=on-failure
-RestartSec=5
+ExecStart=/usr/bin/docker compose -f docker-compose.production.yml up -d
+ExecStop=/usr/bin/docker compose -f docker-compose.production.yml stop
 
 [Install]
 WantedBy=multi-user.target
