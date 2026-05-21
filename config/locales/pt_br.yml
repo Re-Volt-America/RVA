@@ -400,6 +400,7 @@ pt:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Pista não pôde ser salva"
       import:
         title: "Importar pistas"
@@ -466,6 +467,7 @@ pt:
         author: "Author"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Conteúdo original do Re-Volt"
         lego-tooltip:
