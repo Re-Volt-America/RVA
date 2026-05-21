@@ -400,6 +400,7 @@ es:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -466,6 +467,7 @@ es:
         author: "Author"
         stock: "Coches de Serie"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"
         lego-tooltip:
