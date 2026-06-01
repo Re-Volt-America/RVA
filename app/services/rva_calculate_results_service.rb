@@ -117,7 +117,7 @@ class RvaCalculateResultsService
     tracks = []
 
     @races.each do |race|
-      tracks << find_track(race.track_name)
+      tracks << (race.track || find_track(race.track_name))
     end
 
     tracks
@@ -134,7 +134,8 @@ class RvaCalculateResultsService
       end
 
       racer_entry = race.get_racer_entry_by_name(racer)
-      car_bonus = get_car_bonus(find_car(racer_entry.car_name))
+      car = racer_entry.car || find_car(racer_entry.car_name)
+      car_bonus = get_car_bonus(car)
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
       if car_bonus.nil?
@@ -165,7 +166,8 @@ class RvaCalculateResultsService
         next
       end
 
-      car_used_name = race.get_racer_entry_by_name(racer).car_name
+      racer_entry = race.get_racer_entry_by_name(racer)
+      car_used_name = racer_entry.car_name
 
       # Player hasn't changed cars, so we skip
       if car_used_name.eql?(last_car_used_name)
@@ -179,7 +181,7 @@ class RvaCalculateResultsService
         next
       end
 
-      car = find_car(car_used_name)
+      car = racer_entry.car || find_car(car_used_name)
 
       # The car used by this player doesn't match the following criteria:
       # - It's not part of this session's season
@@ -284,7 +286,7 @@ class RvaCalculateResultsService
   end
 
   def get_racer_score(race, entry)
-    car = find_car(entry.car_name)
+    car = entry.car || find_car(entry.car_name)
     car_bonus = get_car_bonus(car)
 
     # Car is above the current category or is invalid, therefore points are invalidated

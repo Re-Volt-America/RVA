@@ -19,7 +19,7 @@
                 .session-date
                   = pretty_datetime(session.date)
               %span.d-block.session-host
-                = t("application.index.recent.hosted-by", host:session.host) #{session.host}
+                = t("application.index.recent.hosted-by", host:session.host_name) #{session.host_name}
     - else
       %h6.text-center
         = t("rankings.sessions.no-sessions")

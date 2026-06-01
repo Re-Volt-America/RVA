@@ -1,6 +1,7 @@
 - content_for :title, t("results.meta.singles.page-title", number: @session.number)
 - meta :title, t("results.meta.singles.title")
 - meta :description, singles_session_meta_desc(@rva_results)
+- host_name = @session.host_name
 
 .container
   = render :partial => "application/subnav", :locals => { :season => @session.ranking.season, :rankings => @session.ranking.season.rankings, :ranking => @session.ranking, :session => @session }
@@ -78,9 +79,9 @@
               = row[2]
             %td.racer-col
               - if row[3].is_a?(User)
-                = link_to row[3].username, user_path(row[3]), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row[3].username}</h5>#{row[3].profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row[3].profile.profile_picture_url, class: 'rounded', alt: row[3].username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row[3].stats.session_count}</span><span>Wins: #{row[3].stats.session_wins}</span><span>#{row[3].has_team? ? "Team: #{row[3].team.name}" : ""}</span></div></div>", :style => "color: #{row[3].username.eql?(@session.host) ? "yellow" : ""};"
+                = link_to row[3].username, user_path(row[3]), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row[3].username}</h5>#{row[3].profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row[3].profile.profile_picture_url, class: 'rounded', alt: row[3].username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row[3].stats.session_count}</span><span>Wins: #{row[3].stats.session_wins}</span><span>#{row[3].has_team? ? "Team: #{row[3].team.name}" : ""}</span></div></div>", :style => "color: #{row[3].username.eql?(host_name) ? "yellow" : ""};"
               - else
-                %span{:style => "color: #{row[3].eql?(@session.host) ? "yellow" : ""}"}
+                %span{:style => "color: #{row[3].eql?(host_name) ? "yellow" : ""}"}
                   = row[3]
             - row[4].each do |pos|
               %td.pos.text-center.align-middle{:style => "color: #{position_color(pos)};"}
