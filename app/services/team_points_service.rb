@@ -1,7 +1,7 @@
 class TeamPointsService
   include ApplicationHelper
 
-  def initialize(session, rva_results)
+  def initialize(session, rva_results = nil)
     @session = session
     @rva_results = rva_results
   end
@@ -189,32 +189,12 @@ class TeamPointsService
   end
 
   def remove_team_points
-    count = 0
-    teams = []
+    @session.team_result_entries.each do |session_entry|
+      team = Team.where(:name => session_entry.name).first
+      next if team.nil?
 
-    @rva_results.drop(1).each do |row|
-      if count.odd?
-        count += 1
-        next
-      end
-
-      # Only go through with valid teams
-      unless row[4].is_a?(Team)
-        count += 1
-        next
-      end
-
-      team = teams.find { |t| t.name.eql?(row[4].name) }
-      if team.nil?
-        team = Team.find { |t| t.name.eql?(row[4].name) }
-        teams << team
-      end
-
-      team.points -= row[7] # PA
-
+      team.points -= session_entry.points
       team.update!
-
-      count -= 1
     end
   end
 end

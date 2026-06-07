@@ -107,4 +107,31 @@ namespace :rva do
     puts "Sessions saved: #{totals[:sessions_saved]}"
     puts "Errors: #{totals[:errors]}"
   end
+
+  desc "Backfill persisted results_data for sessions missing it"
+  task backfill_session_results: :environment do
+    require 'rva_calculate_results_service'
+
+    scanned = 0
+    updated = 0
+    errors = 0
+
+    Session.each do |session|
+      scanned += 1
+      next if session.results_data.present?
+
+      begin
+        session.results_data = RvaCalculateResultsService.new(session).call
+        session.save!
+        updated += 1
+      rescue => e
+        errors += 1
+        puts "Session #{session.id} failed: #{e.class} #{e.message}"
+      end
+    end
+
+    puts "Sessions scanned: #{scanned}"
+    puts "Sessions updated: #{updated}"
+    puts "Errors: #{errors}"
+  end
 end

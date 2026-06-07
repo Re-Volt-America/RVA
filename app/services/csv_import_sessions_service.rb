@@ -72,6 +72,7 @@ class CsvImportSessionsService
 
     session = Session.new(session_hash)
     rva_results = RvaCalculateResultsService.new(session).call
+    session.results_data = rva_results
 
     if session.teams
       TeamPointsService.new(session, rva_results).add_points

@@ -79,21 +79,16 @@ class SeasonsController < ApplicationController
 
   # DELETE /seasons/1 or /seasons/1.json
   def destroy
-    require 'rva_calculate_results_service'
     require 'stats_service'
     require 'team_points_service'
 
     @season.rankings.each do |r|
       r.sessions.each do |s|
-        rva_results = RvaCalculateResultsService.new(s).call
-
         if s.teams?
-          TeamPointsService.new(s, rva_results).remove_team_points
+          TeamPointsService.new(s).remove_team_points
         else
-          StatsService.new(s, rva_results).remove_stats
+          StatsService.new(s).remove_stats
         end
-
-        Rails.cache.delete("Session:#{s.id}")
 
         s.destroy!
       end

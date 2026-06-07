@@ -24,6 +24,7 @@ class Session
   field :teams, :type => Boolean
   field :category, :type => Integer
   field :session_log_data, :type => String
+  field :results_data, :type => Array, :default => []
 
   validates_presence_of :number
   validates_presence_of :version

@@ -17,11 +17,14 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
-    require 'rva_calculate_results_service'
-
     @count = 0
-    @rva_results = Rails.cache.fetch("Session:#{@session.id}", :expires_in => 1.month) do
-      RvaCalculateResultsService.new(@session).call
+    @rva_results = @session.results_data
+
+    if @rva_results.blank?
+      require 'rva_calculate_results_service'
+
+      @rva_results = RvaCalculateResultsService.new(@session).call
+      @session.set(:results_data => @rva_results)
     end
 
     # Car usage analysis
@@ -80,22 +83,17 @@ class SessionsController < ApplicationController
 
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
-    require 'rva_calculate_results_service'
     require 'stats_service'
     require 'team_points_service'
 
-    rva_results = RvaCalculateResultsService.new(@session).call
-
     if @session.teams?
-      TeamPointsService.new(@session, rva_results).remove_team_points
+      TeamPointsService.new(@session).remove_team_points
     else
-      StatsService.new(@session, rva_results).remove_stats
+      StatsService.new(@session).remove_stats
     end
 
     respond_to do |format|
       if @session.destroy!
-        Rails.cache.delete("Session:#{@session.id}")
-
         format.html { redirect_to sessions_url, :notice => t('rankings.sessions.controller.delete') }
         format.json { head :no_content }
       else
