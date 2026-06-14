@@ -42,16 +42,16 @@
     %thead
       %tr
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
-          = @rva_results[0][0] # "#"
+          #
         %th.align-middle{:width => "8%"}
-          = @rva_results[0][1] # "Date"
+          Date
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
           = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
           = t("rankings.table.racer")
         %th.align-middle{:width => "6%"}
           = t("results.team")
-        - @rva_results[0].slice(2, @session.races.size).each do |item|
+        - @results_table.tracks.each do |item|
           %th.text-center.align-middle{:width => "4%"}
             - if item.is_a?(Track)
               = link_to item.short_name, track_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='track-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='track-details'><span>Difficulty: #{item.difficulty_name}</span></div></div>"
@@ -63,93 +63,90 @@
         %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
           = t("rankings.table.pa")
     %tbody
-      - @rva_results.drop(1).each do |row|
-        - if @count.even?
-          %tr
-            %td.number-col.text-center.align-middle
-              = row[0]
-            %td.date-col
-              = row[1]
-            %td.fp-col.text-center.align-middle
-              = row[2]
-            %td.racer-col
-              - if row[3].is_a?(User)
-                = link_to row[3].username, user_path(row[3]), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row[3].username}</h5>#{row[3].profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row[3].profile.profile_picture_url, class: 'rounded', alt: row[3].username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row[3].stats.session_count}</span><span>Wins: #{row[3].stats.session_wins}</span><span>#{row[3].has_team? ? "Team: #{row[3].team.name}" : ""}</span></div></div>", :style => "color: #{row[3].username.eql?(host_name) ? "yellow" : ""};"
-              - else
-                %span{:style => "color: #{row[3].eql?(host_name) ? "yellow" : ""}"}
-                  = row[3]
-            %td.team-col.text-center.align-middle
-              - if row[4].is_a?(Team)
-                = link_to row[4].short_name, team_path(row[4])
-              - else
-                = row[4]
-            - row[5].each do |pos|
-              %td.pos.text-center.align-middle{:style => "color: #{position_color(pos)};"}
-                = pos
-            %td.cc.text-center.align-middle
-              = row[6]
-            %td.pa.text-center.align-middle
-              = row[7]
-        - else
-          %tr
-            %td.number-col
-              = row[0]
-            %td.date-col
-              = row[1]
-            %td.fp-col.text-center.align-middle
-              = row[2]
-            %td.racer-col
-              = row[3]
-            %td.team-col
-              = row[4]
+      - @results_table.rows.each_with_index do |row, idx|
+        %tr
+          %td.number-col.text-center.align-middle
+            = idx.zero? ? @results_table.session_number : ''
+          %td.date-col
+            = idx.zero? ? @results_table.session_date : ''
+          %td.fp-col.text-center.align-middle
+            = row.final_position
+          %td.racer-col
+            - if row.racer_user
+              = link_to row.racer_user.username, user_path(row.racer_user), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row.racer_user.username}</h5>#{row.racer_user.profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row.racer_user.profile.profile_picture_url, class: 'rounded', alt: row.racer_user.username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row.racer_user.stats.session_count}</span><span>Wins: #{row.racer_user.stats.session_wins}</span><span>#{row.racer_user.has_team? ? "Team: #{row.racer_user.team.name}" : ""}</span></div></div>", :style => "color: #{row.racer_user.username.eql?(host_name) ? "yellow" : ""};"
+            - else
+              %span{:style => "color: #{row.racer_name.eql?(host_name) ? "yellow" : ""}"}
+                = row.racer_name
+          %td.team-col.text-center.align-middle
+            - if row.team_entity
+              = link_to row.team_entity.short_name, team_path(row.team_entity)
+            - else
+              = row.team_name
+          - row.positions.each do |pos|
+            %td.pos.text-center.align-middle{:style => "color: #{position_color(pos)};"}
+              = pos
+          %td.cc.text-center.align-middle
+            = row.race_count
+          %td.pa.text-center.align-middle
+            = row.obtained_points
 
-            - i = 0
-            - step = 0
-            - colspan = 1
-            - first = true
-            - row[5].each do |item|
-              - if item.eql?("r")
-                %td{:height => "34.6"}
-                  = ""
-                - next
+        %tr
+          %td.number-col
+            = ''
+          %td.date-col
+            = ''
+          %td.fp-col.text-center.align-middle
+            = ''
+          %td.racer-col
+            = row.racer_name
+          %td.team-col
+            = row.team_name
 
-              - if !step.zero?
-                - step -= 1
-                - colspan -= 1
-                - i += 1
-                - next
+          - i = 0
+          - step = 0
+          - colspan = 1
+          - first = true
+          - row.cars.each do |item|
+            - if item.eql?("r")
+              %td{:height => "34.6"}
+                = ""
+              - next
 
-              - if item.eql?("x") || (!item.is_a?(Car) && item.start_with?('?'))
-                - col = i
-                - while row[5][col + 1].eql?("x") || (!row[5][col + 1].is_a?(Car) && row[5][col + 1].start_with?("?"))
-                  - step += 1
-                  - colspan += 1
-                  - col += 1
-
-              - if item.is_a?(Car) || item.start_with?('!!')
-                - col = i
-                - while not row[5][col + 1].is_a?(Car) and not %w[!CC !PA !PP !MP !PO].include?(row[5][col + 1])
-                  - step += 1
-                  - colspan += 1
-                  - col += 1
-
-              - if item.is_a?(Car)
-                %td.car{:colspan => colspan}
-                  = link_to item.name, car_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
-              - if item.is_a?(String) && item.start_with?('?')
-                %td.car{:colspan => colspan}
-                  = item.tr('?', '')
-              - if item.eql?("x")
-                %td{:colspan => (first ? colspan : 1)}
-                  = ""
-              - if %w[!CC !PA !PP !MP !PO].include?(item)
-                %td{:class => "#{item.eql?("!CC") ? 'cc' : ''}" "#{item.eql?("!PA") ? 'pa' : ''}"}
-                  = ""
-
+            - if !step.zero?
+              - step -= 1
+              - colspan -= 1
               - i += 1
-              - first = false
+              - next
 
-        - @count += 1
+            - if item.eql?("x") || (item.is_a?(String) && item.start_with?('?'))
+              - col = i
+              - while row.cars[col + 1] && (row.cars[col + 1].eql?("x") || (row.cars[col + 1].is_a?(String) && row.cars[col + 1].start_with?("?")))
+                - step += 1
+                - colspan += 1
+                - col += 1
+
+            - if item.is_a?(Car) || (item.is_a?(String) && item.start_with?('!!'))
+              - col = i
+              - while row.cars[col + 1] && (!row.cars[col + 1].is_a?(Car) && !%w[!CC !PA !PP !MP !PO].include?(row.cars[col + 1]))
+                - step += 1
+                - colspan += 1
+                - col += 1
+
+            - if item.is_a?(Car)
+              %td.car{:colspan => colspan}
+                = link_to item.name, car_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
+            - if item.is_a?(String) && item.start_with?('?')
+              %td.car{:colspan => colspan}
+                = item.tr('?', '')
+            - if item.eql?("x")
+              %td{:colspan => (first ? colspan : 1)}
+                = ""
+            - if %w[!CC !PA !PP !MP !PO].include?(item)
+              %td{:class => "#{item.eql?("!CC") ? 'cc' : ''}" "#{item.eql?("!PA") ? 'pa' : ''}"}
+                = ""
+
+            - i += 1
+            - first = false
 
   .row
     .col-4

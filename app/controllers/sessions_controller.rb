@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
   def show
     require 'session_results_table'
 
-    @count = 0
     @results_table = SessionResultsTable.from_serialized(@session.results_data, :session => @session)
 
     if @results_table.rows.empty?
@@ -29,8 +28,6 @@ class SessionsController < ApplicationController
       @results_table = SessionResultsTable.from_legacy_array(rva_results, @session)
       @session.set(:results_data => @results_table.as_serialized)
     end
-
-    @rva_results = @results_table.to_legacy_array
 
     # Car usage analysis
     @car_usage = @results_table.rows.each_with_object(Hash.new(0)) do |row, hash|

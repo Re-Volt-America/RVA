@@ -26,9 +26,7 @@ module SessionsHelper
     rows = results_table.rows.first(3)
     return '' if rows.empty?
 
-    top1 = rows[0]
-    top2 = rows[1]
-    top3 = rows[2]
+    top1, top2, top3 = rows
 
     "#{pretty_datetime(results_table.session_date)}\n
     Top Score:
@@ -41,9 +39,7 @@ module SessionsHelper
     rows = results_table.rows.first(3)
     return '' if rows.empty?
 
-    top1 = rows[0]
-    top2 = rows[1]
-    top3 = rows[2]
+    top1, top2, top3 = rows
 
     "#{pretty_datetime(results_table.session_date)}\n
     Top Score:
