@@ -111,6 +111,7 @@ namespace :rva do
   desc "Backfill persisted results_data for sessions missing it"
   task backfill_session_results: :environment do
     require 'rva_calculate_results_service'
+    require 'session_results_table'
 
     scanned = 0
     updated = 0
@@ -118,10 +119,18 @@ namespace :rva do
 
     Session.each do |session|
       scanned += 1
-      next if session.results_data.present?
+      if session.results_data.is_a?(Hash) && session.results_data['rows'].present?
+        next
+      end
 
       begin
-        session.results_data = RvaCalculateResultsService.new(session).call
+        if session.results_data.is_a?(Array)
+          rva_results = session.results_data
+        else
+          rva_results = RvaCalculateResultsService.new(session).call
+        end
+
+        session.results_data = SessionResultsTable.from_legacy_array(rva_results, session).as_serialized
         session.save!
         updated += 1
       rescue => e

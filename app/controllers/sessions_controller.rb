@@ -17,23 +17,24 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
-    @count = 0
-    @rva_results = @session.results_data
+    require 'session_results_table'
 
-    if @rva_results.blank?
+    @count = 0
+    @results_table = SessionResultsTable.from_serialized(@session.results_data, :session => @session)
+
+    if @results_table.rows.empty?
       require 'rva_calculate_results_service'
 
-      @rva_results = RvaCalculateResultsService.new(@session).call
-      @session.set(:results_data => @rva_results)
+      rva_results = RvaCalculateResultsService.new(@session).call
+      @results_table = SessionResultsTable.from_legacy_array(rva_results, @session)
+      @session.set(:results_data => @results_table.as_serialized)
     end
 
+    @rva_results = @results_table.to_legacy_array
+
     # Car usage analysis
-    car_rows = @rva_results.each_with_index.select { |row, idx| idx % 2 == 0 && idx >= 2 }.map(&:first)
-
-    @car_usage = car_rows.each_with_object(Hash.new(0)) do |row, hash|
-      next unless row[4].is_a?(Array)
-
-      cars = row[4].select { |car| car.is_a?(Car) }
+    @car_usage = @results_table.rows.each_with_object(Hash.new(0)) do |row, hash|
+      cars = row.cars.select { |car| car.is_a?(Car) }
       cars.each do |car|
         next unless car.respond_to?(:name)
         hash[car.name] += 1

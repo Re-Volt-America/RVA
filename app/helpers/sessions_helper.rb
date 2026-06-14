@@ -22,27 +22,33 @@ module SessionsHelper
     ''
   end
 
-  def singles_session_meta_desc(rva_results)
-    top1 = rva_results[1][3].is_a?(User) ? rva_results[1][3].username : rva_results[1][3]
-    top2 = rva_results[3][3].is_a?(User) ? rva_results[3][3].username : rva_results[3][3]
-    top3 = rva_results[5][3].is_a?(User) ? rva_results[5][3].username : rva_results[5][3]
+  def singles_session_meta_desc(results_table)
+    rows = results_table.rows.first(3)
+    return '' if rows.empty?
 
-    "#{pretty_datetime(rva_results[1][1])}\n
+    top1 = rows[0]
+    top2 = rows[1]
+    top3 = rows[2]
+
+    "#{pretty_datetime(results_table.session_date)}\n
     Top Score:
-        1. #{top1} (#{rva_results[1][9]})
-        2. #{top2} (#{rva_results[3][9]})
-        3. #{top3} (#{rva_results[5][9]})"
+        1. #{top1&.racer_name} (#{top1&.official_score})
+        2. #{top2&.racer_name} (#{top2&.official_score})
+        3. #{top3&.racer_name} (#{top3&.official_score})"
   end
 
-  def teams_session_meta_desc(rva_results)
-    top1 = rva_results[1][3].is_a?(User) ? rva_results[1][3].username : rva_results[1][3]
-    top2 = rva_results[3][3].is_a?(User) ? rva_results[3][3].username : rva_results[3][3]
-    top3 = rva_results[5][3].is_a?(User) ? rva_results[5][3].username : rva_results[5][3]
+  def teams_session_meta_desc(results_table)
+    rows = results_table.rows.first(3)
+    return '' if rows.empty?
 
-    "#{pretty_datetime(rva_results[1][1])}\n
+    top1 = rows[0]
+    top2 = rows[1]
+    top3 = rows[2]
+
+    "#{pretty_datetime(results_table.session_date)}\n
     Top Score:
-        1. #{top1} (#{rva_results[1][7]})
-        2. #{top2} (#{rva_results[3][7]})
-        3. #{top3} (#{rva_results[5][7]})"
+        1. #{top1&.racer_name} (#{top1&.obtained_points})
+        2. #{top2&.racer_name} (#{top2&.obtained_points})
+        3. #{top3&.racer_name} (#{top3&.obtained_points})"
   end
 end

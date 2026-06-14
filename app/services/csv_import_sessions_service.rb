@@ -3,6 +3,7 @@ class CsvImportSessionsService
 
   require 'csv'
   require 'rva_calculate_results_service'
+  require 'session_results_table'
   require 'stats_service'
   require 'team_points_service'
 
@@ -72,7 +73,7 @@ class CsvImportSessionsService
 
     session = Session.new(session_hash)
     rva_results = RvaCalculateResultsService.new(session).call
-    session.results_data = rva_results
+    session.results_data = SessionResultsTable.from_legacy_array(rva_results, session).as_serialized
 
     if session.teams
       TeamPointsService.new(session, rva_results).add_points
