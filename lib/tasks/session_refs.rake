@@ -116,6 +116,7 @@ namespace :rva do
     scanned = 0
     updated = 0
     errors = 0
+    skipped = 0
 
     Session.each do |session|
       scanned += 1
@@ -133,6 +134,9 @@ namespace :rva do
         session.results_data = SessionResultsTable.from_legacy_array(rva_results, session).as_serialized
         session.save!
         updated += 1
+      rescue Mongoid::Errors::Validations => e
+        skipped += 1
+        puts "Session #{session.id} skipped (invalid): #{e.summary}"
       rescue => e
         errors += 1
         puts "Session #{session.id} failed: #{e.class} #{e.message}"
@@ -141,6 +145,7 @@ namespace :rva do
 
     puts "Sessions scanned: #{scanned}"
     puts "Sessions updated: #{updated}"
+    puts "Sessions skipped (invalid data): #{skipped}"
     puts "Errors: #{errors}"
   end
 end

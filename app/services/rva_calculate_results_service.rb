@@ -362,18 +362,24 @@ class RvaCalculateResultsService
   end
 
   def find_user(name)
+    return nil if name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#User:#{name.upcase}", :expires_in => 1.minute) do
       User.find { |u| u.username.eql?(name.upcase) }
     end
   end
 
   def find_track(track_name)
+    return nil if track_name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#Track:#{track_name}", :expires_in => 1.minute) do
       Track.find { |t| t.name_variations.include?(track_name) && t.season.eql?(@session.season) }
     end
   end
 
   def find_car(car_name)
+    return nil if car_name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#Car:#{car_name}", :expires_in => 1.minute) do
       Car.find { |c| c.name.eql?(car_name) && c.season.eql?(@session.season) }
     end
