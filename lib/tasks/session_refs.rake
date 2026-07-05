@@ -196,7 +196,16 @@ namespace :rva do
     # (often null) track cells baked in and would otherwise be skipped.
     force = ENV['FORCE'].present?
 
-    Session.each do |session|
+    $stdout.sync = true
+    # Load ids up front instead of holding a live cursor open across the slow
+    # per-session recompute. This was timing out as CursorNotFound.
+    session_ids = Session.all.pluck(:id)
+    total = session_ids.size
+    started = Time.now
+    puts "Backfilling results for #{total} sessions (force=#{force})..."
+
+    session_ids.each do |id|
+      session = Session.find(id)
       scanned += 1
       if !force && session.results_data.is_a?(Hash) && session.results_data['rows'].present?
         next
@@ -214,10 +223,14 @@ namespace :rva do
         updated += 1
       rescue Mongoid::Errors::Validations => e
         skipped += 1
-        puts "Session #{session.id} skipped (invalid): #{e.summary}"
+        puts "  [#{scanned}/#{total}] Session ##{session.number} (#{session.id}) skipped (invalid): #{e.summary}"
       rescue => e
         errors += 1
-        puts "Session #{session.id} failed: #{e.class} #{e.message}"
+        puts "  [#{scanned}/#{total}] Session ##{session.number} (#{session.id}) failed: #{e.class} #{e.message}"
+      end
+
+      if (scanned % 20).zero? || scanned == total
+        puts "  [#{scanned}/#{total}] elapsed #{(Time.now - started).round}s (updated: #{updated}, skipped: #{skipped}, errors: #{errors})"
       end
     end
 
