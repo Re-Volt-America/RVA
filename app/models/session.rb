@@ -6,7 +6,7 @@ class Session
   store_in :database => 'rv_sessions'
 
   belongs_to :ranking
-  belongs_to :host, :class_name => 'User', :optional => true, :inverse_of => nil
+  has_and_belongs_to_many :hosts, :class_name => 'User', :inverse_of => nil
   embeds_many :races
   embeds_many :racer_result_entries
   embeds_many :team_result_entries
@@ -41,12 +41,12 @@ class Session
   end
 
   def host_name
-    host&.username || legacy_host
+    hosts.first&.username || legacy_host
   end
 
   def host_name=(value)
     if value.is_a?(User)
-      self.host = value
+      self.hosts = [value]
       self.legacy_host = value.username
       return
     end
@@ -54,7 +54,8 @@ class Session
     self.legacy_host = value
     return if value.nil? || value.to_s.strip.empty?
 
-    self.host = User.where(:username => value.to_s.upcase).first
+    user = User.where(:username => value.to_s.upcase).first
+    self.hosts = [user] if user
   end
 
   # Look for all RacerEntry models in this session which correspond to the passed racer.
@@ -74,8 +75,8 @@ class Session
   private
 
   def host_reference_present
-    return if host.present? || legacy_host.present?
+    return if hosts.any? || legacy_host.present?
 
-    errors.add(:host, "can't be blank")
+    errors.add(:hosts, "can't be blank")
   end
 end

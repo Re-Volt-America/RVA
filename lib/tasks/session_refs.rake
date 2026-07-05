@@ -121,10 +121,10 @@ namespace :rva do
       changed = false
       season = session.ranking&.season
 
-      if session.host.nil? && session.legacy_host.present?
+      if session.hosts.empty? && session.legacy_host.present?
         host = cached_user(session.legacy_host, user_cache)
         if host
-          session.host = host
+          session.hosts = [host]
           totals[:hosts_linked] += 1
           changed = true
         end

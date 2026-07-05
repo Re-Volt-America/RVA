@@ -57,7 +57,7 @@ class CsvImportSessionsService
 
     session_hash = {
       :number => ranking.sessions.size + 1,
-      :host => host_user,
+      :hosts => [host_user].compact,
       :legacy_host => host_name,
       :version => session_arr[0][1],
       :physics => session_arr[1][3],
