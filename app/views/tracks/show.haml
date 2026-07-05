@@ -5,7 +5,7 @@
 - meta :image, @track.thumbnail_url
 
 %h2
-  = t('rva.tracks.title')
+  = title_with_season(t('rva.tracks.title'), @track.season)
 
 = render :partial => "application/subnav", :locals => {:season => @track.season, :track => @track}
 

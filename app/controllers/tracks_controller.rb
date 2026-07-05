@@ -7,10 +7,11 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = if current_season.nil?
+    season = selected_season
+    @tracks = if season.nil?
                 Track.all
               else
-                current_season.tracks
+                season.tracks
               end
 
     # Filter out inactive tracks

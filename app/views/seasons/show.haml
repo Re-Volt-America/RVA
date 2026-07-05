@@ -1,9 +1,9 @@
 - content_for :title, t("seasons.meta.show.page-title", season: @season.name)
 
-= render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
-
 %h2.mt-4.text-center
-  = t("rankings.title2")
+  = title_with_season(t("rankings.title2"), @season)
+
+= render :partial => "application/subnav", :locals => { :season => @season, :rankings => @season.rankings }
 
 %ul.nav.nav-tabs{role: "tablist"}
   %li.nav-item

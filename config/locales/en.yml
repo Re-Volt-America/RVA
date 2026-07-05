@@ -580,6 +580,7 @@ en:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "The RVA Seasons"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "What are RVA Seasons?"
       description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking

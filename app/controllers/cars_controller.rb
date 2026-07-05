@@ -18,8 +18,9 @@ class CarsController < ApplicationController
 
   # GET /cars/rookie or /cars/rookie.json
   def rookie
-    @cars = Rails.cache.fetch('rookie_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::ROOKIE).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::ROOKIE, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::ROOKIE, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
 
     respond_with @cars do |format|
@@ -29,8 +30,9 @@ class CarsController < ApplicationController
 
   # GET /cars/amateur or /cars/amateur.json
   def amateur
-    @cars = Rails.cache.fetch('amateur_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::AMATEUR).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::AMATEUR, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::AMATEUR, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
 
     respond_with @cars do |format|
@@ -40,8 +42,9 @@ class CarsController < ApplicationController
 
   # GET /cars/advanced or /cars/advanced.json
   def advanced
-    @cars = Rails.cache.fetch('advanced_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::ADVANCED).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::ADVANCED, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::ADVANCED, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
 
     respond_with @cars do |format|
@@ -51,8 +54,9 @@ class CarsController < ApplicationController
 
   # GET /cars/semipro or /cars/semipro.json
   def semipro
-    @cars = Rails.cache.fetch('semipro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::SEMI_PRO, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
 
     respond_with @cars do |format|
@@ -62,8 +66,9 @@ class CarsController < ApplicationController
 
   # GET /cars/pro or /cars/pro.json
   def pro
-    @cars = Rails.cache.fetch('pro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::PRO).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::PRO, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::PRO, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
 
     respond_with @cars do |format|
@@ -73,8 +78,9 @@ class CarsController < ApplicationController
 
   # GET /cars/superpro or /cars/superpro.json
   def superpro
-    @cars = Rails.cache.fetch('superpro_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO).sort_by do |car|
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::SUPER_PRO, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::SUPER_PRO, season).sort_by do |car|
         [car.multiplier, car.stock? ? 0 : 1, car.name]
       end
     end
@@ -86,8 +92,9 @@ class CarsController < ApplicationController
 
   # GET /cars/clockwork or /cars/clockwork.json
   def clockwork
-    @cars = Rails.cache.fetch('clockwork_cars', :expires_in => 1.month) do
-      @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK).sort_by do |car|
+    season = selected_season
+    @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::CLOCKWORK, season), :expires_in => 1.month) do
+      @cars = cars_of_category(SYS::CATEGORY::CLOCKWORK, season).sort_by do |car|
         [car.multiplier, car.stock? ? 0 : 1, car.name]
       end
     end
@@ -118,7 +125,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save
-        Rails.cache.delete(category_cache_key(params[:category]))
+        Rails.cache.delete(category_cache_key(@car.category, @car.season))
 
         format.html { redirect_to car_url(@car), :notice => t('rva.cars.controller.create') }
         format.json { render :show, :status => :created, :location => @car, :layout => false }
@@ -184,7 +191,7 @@ class CarsController < ApplicationController
 
       @cars.each do |car|
         if car.save
-          Rails.cache.delete(category_cache_key(params[:category].to_i))
+          Rails.cache.delete(category_cache_key(car.category, car.season))
 
           format.html { redirect_to new_car_path, :notice => t('rva.cars.controller.import.success') }
           format.json { render :show, :status => :created, :location => car, :layout => false }
@@ -198,10 +205,10 @@ class CarsController < ApplicationController
 
   # DELETE /cars/1 or /cars/1.json
   def destroy
-    category_path = car_category_path(@car.category)
+    category_path = car_category_path(@car.category, @car.season)
     @car.destroy
 
-    Rails.cache.delete(category_cache_key(@car.category))
+    Rails.cache.delete(category_cache_key(@car.category, @car.season))
 
     respond_to do |format|
       format.html { redirect_to category_path, :notice => t('rva.cars.controller.destroy') }

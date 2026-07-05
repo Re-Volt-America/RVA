@@ -5,9 +5,9 @@
 
 #car-cards-display
   %h2
-    = "#{t('rva.cars.title')} - #{t("classes.amateur")}"
+    = "#{title_with_season(t('rva.cars.title'))} - #{t("classes.amateur")}"
 
-  = render :partial => "application/subnav", :locals => {:season => current_season, :category => SYS::CATEGORY::AMATEUR}
+  = render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings, :category => SYS::CATEGORY::AMATEUR}
 
   .sticky-top.search-bar
     .row
