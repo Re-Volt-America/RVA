@@ -1,4 +1,77 @@
 namespace :rva do
+  # Maps old raw document keys (written before the *_reference schema existed)
+  # onto the field names the current models actually persist. Runs at the raw
+  # collection level on purpose: $rename can't reach into embedded arrays, and
+  # loading through Mongoid would trip the very validations we're trying to make
+  # pass.
+  desc "Rename legacy embedded session keys (host/track_name/username/car_name) to their legacy_* fields"
+  task normalize_legacy_sessions: :environment do
+    collection = Session.collection
+
+    scanned = 0
+    migrated = 0
+
+    # Move an old key onto its legacy_* field within a hash, in place.
+    # Only fills the legacy field if it's currently blank, but always drops
+    # the stale key so re-runs are no-ops.
+    move_key = lambda do |hash, old_key, new_key|
+      return false unless hash.key?(old_key)
+
+      old_value = hash.delete(old_key)
+      hash[new_key] = old_value if hash[new_key].to_s.strip.empty?
+      true
+    end
+
+    collection.find.each do |doc|
+      scanned += 1
+      set_ops = {}
+      unset_ops = {}
+
+      # Session-level host: raw string "host" -> legacy_host.
+      # belongs_to :host persists as host_id, so a bare "host" is always legacy.
+      if doc['host'].is_a?(String)
+        set_ops['legacy_host'] = doc['host'] if doc['legacy_host'].to_s.strip.empty?
+        unset_ops['host'] = ''
+      end
+
+      races = doc['races']
+      if races.is_a?(Array)
+        races_changed = false
+
+        new_races = races.map do |race|
+          race = race.dup
+          races_changed = true if move_key.call(race, 'track_name', 'legacy_track_name')
+
+          entries = race['racer_entries']
+          if entries.is_a?(Array)
+            race['racer_entries'] = entries.map do |entry|
+              entry = entry.dup
+              races_changed = true if move_key.call(entry, 'username', 'legacy_username')
+              races_changed = true if move_key.call(entry, 'car_name', 'legacy_car_name')
+              entry
+            end
+          end
+
+          race
+        end
+
+        set_ops['races'] = new_races if races_changed
+      end
+
+      next if set_ops.empty? && unset_ops.empty?
+
+      update = {}
+      update['$set'] = set_ops unless set_ops.empty?
+      update['$unset'] = unset_ops unless unset_ops.empty?
+
+      collection.update_one({ '_id' => doc['_id'] }, update)
+      migrated += 1
+    end
+
+    puts "Sessions scanned: #{scanned}"
+    puts "Sessions normalized: #{migrated}"
+  end
+
   desc "Backfill session host/track/user/car references from legacy name fields"
   task backfill_session_refs: :environment do
     user_cache = {}
@@ -118,14 +191,19 @@ namespace :rva do
     errors = 0
     skipped = 0
 
+    # FORCE=1 recomputes results_data even when rows already exist. Needed after
+    # normalizing legacy sessions: results persisted from the old data have stale
+    # (often null) track cells baked in and would otherwise be skipped.
+    force = ENV['FORCE'].present?
+
     Session.each do |session|
       scanned += 1
-      if session.results_data.is_a?(Hash) && session.results_data['rows'].present?
+      if !force && session.results_data.is_a?(Hash) && session.results_data['rows'].present?
         next
       end
 
       begin
-        if session.results_data.is_a?(Array)
+        if !force && session.results_data.is_a?(Array)
           rva_results = session.results_data
         else
           rva_results = RvaCalculateResultsService.new(session).call
@@ -147,5 +225,16 @@ namespace :rva do
     puts "Sessions updated: #{updated}"
     puts "Sessions skipped (invalid data): #{skipped}"
     puts "Errors: #{errors}"
+  end
+
+  desc "Full legacy migration: normalize keys, then link refs, then backfill results"
+  task migrate_legacy_sessions: :environment do
+    # Recompute results from freshly-normalized data so track cells resolve properly.
+    ENV['FORCE'] ||= 'true'
+
+    %w[normalize_legacy_sessions backfill_session_refs backfill_session_results].each do |name|
+      puts "\n== rva:#{name} =="
+      Rake::Task["rva:#{name}"].invoke
+    end
   end
 end

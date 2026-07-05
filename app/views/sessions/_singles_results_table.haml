@@ -43,7 +43,7 @@
     %thead
       %tr
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
-          #
+          \#
         %th.align-middle{:width => "8%"}
           Date
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
@@ -80,7 +80,7 @@
             - if row.racer_user
               = link_to row.racer_user.username, user_path(row.racer_user), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='user-tooltip-content'><h5>#{row.racer_user.username}</h5>#{row.racer_user.profile.profile_picture_url ? "<div class='user-image'>" + image_tag(row.racer_user.profile.profile_picture_url, class: 'rounded', alt: row.racer_user.username) + "</div>" : ""}<div class='user-details'><span>Sessions: #{row.racer_user.stats.session_count}</span><span>Wins: #{row.racer_user.stats.session_wins}</span><span>#{row.racer_user.has_team? ? "Team: #{row.racer_user.team.name}" : ""}</span></div></div>", :style => "color: #{row.racer_user.username.eql?(host_name) ? "yellow" : ""};"
             - else
-              %span{:style => "color: #{row.racer_name.eql?(host_name) ? "yellow" : ""}"}
+              %span.no-account{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.racer.no-account"), :style => "color: #{row.racer_name.eql?(host_name) ? "yellow" : ""}"}
                 = row.racer_name
           - row.positions.each do |pos|
             %td.pos.text-center.align-middle{:style => "color: #{position_color(pos)};"}
@@ -104,7 +104,7 @@
           %td.fp-col.text-center.align-middle
             = ''
           %td.racer-col
-            = row.racer_name
+            = ''
 
           - i = 0
           - step = 0

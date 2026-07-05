@@ -32,7 +32,7 @@ class Session
   validates_presence_of :protocol
   validates_presence_of :date
   validates_presence_of :session_log
-  validates_presence_of :teams
+  validates_inclusion_of :teams, :in => [true, false]
   validates_presence_of :category
   validate :host_reference_present
 

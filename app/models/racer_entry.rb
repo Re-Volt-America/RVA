@@ -18,8 +18,8 @@ class RacerEntry
   validates_presence_of :position
   validates_presence_of :time
   validates_presence_of :best_lap
-  validates_presence_of :finished
-  validates_presence_of :cheating
+  validates_inclusion_of :finished, :in => [true, false]
+  validates_inclusion_of :cheating, :in => [true, false]
   validate :user_reference_present
   validate :car_reference_present
 

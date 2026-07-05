@@ -764,6 +764,8 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
 
   # Teams page
   teams:

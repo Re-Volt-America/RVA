@@ -365,7 +365,7 @@ class RvaCalculateResultsService
     return nil if name.blank?
     
     Rails.cache.fetch("Session:#{@session.id}#User:#{name.upcase}", :expires_in => 1.minute) do
-      User.find { |u| u.username.eql?(name.upcase) }
+      User.where(:username => name.to_s.upcase).first
     end
   end
 
@@ -386,8 +386,10 @@ class RvaCalculateResultsService
   end
 
   def find_team(short_name)
+    return nil if short_name.blank?
+
     Rails.cache.fetch("Session:#{@session.id}#Team:#{short_name}", :expires_in => 1.minute) do
-      Team.find { |t| t.short_name.eql?(short_name) }
+      Team.where(:short_name => short_name).first
     end
   end
 end

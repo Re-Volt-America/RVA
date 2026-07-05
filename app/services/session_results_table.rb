@@ -88,7 +88,10 @@ class SessionResultsTable
 
   def initialize(session_number:, session_date:, teams:, tracks:, rows:)
     @session_number = session_number
-    @session_date = session_date
+    # BSON has no Date type, so a persisted Date round-trips back as a Time
+    # (e.g. 2025-01-24 00:00:00 UTC). Normalize to a Date so it renders as a
+    # plain date regardless of how it was stored.
+    @session_date = session_date.respond_to?(:to_date) ? session_date.to_date : session_date
     @teams = teams
     @tracks = tracks
     @rows = rows
