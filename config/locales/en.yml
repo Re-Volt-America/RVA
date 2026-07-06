@@ -400,6 +400,7 @@ en:
       all-tracks: "All Tracks"
       season: "Season"
       title: "The RVA Tracks"
+      new-track: "Add Track"
       no-tracks: "No tracks to display"
       made-by: "by: %{author_name}"
       format:
@@ -495,6 +496,7 @@ en:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "The RVA Cars"
+      new-car: "Add Car"
       ratings-link: "Car Ratings"
       features:
         speed: "Speed"
@@ -1171,6 +1173,7 @@ en:
     submit:
       import: "Import"
       update: "Update"
+      create: "Create"
     checkbox:
       teams: "Teams"
     button:

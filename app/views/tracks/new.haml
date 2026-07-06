@@ -1,5 +1,14 @@
 - content_for :title, t("rva.tracks.meta.new.page-title")
 
+= render :partial => "application/subnav", :locals => {:season => selected_season}
+
+%h2.mb-4
+  = title_with_season(t("rva.tracks.new-track"))
+
+= render "form"
+
+%hr.my-4
+
 %h2.mb-4
   = t("rva.tracks.import.title")
 

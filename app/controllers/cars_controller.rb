@@ -1,8 +1,8 @@
 class CarsController < ApplicationController
   include CarsHelper
 
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:new, :create, :edit, :update, :destroy]
   before_action :set_car, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
@@ -113,7 +113,8 @@ class CarsController < ApplicationController
 
   # GET /cars/new
   def new
-    @car = Car.new
+    @car = Car.new(:season => selected_season)
+    @car.category = params[:category].to_i if params[:category].present?
   end
 
   # GET /cars/1/edit
@@ -226,6 +227,6 @@ class CarsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def car_params
     params.require(:car).permit(:name, :speed, :accel, :weight, :multiplier, :folder_name, :category, :author, :stock,
-                                :carbox_filename, :season, :active)
+                                :carbox_filename, :season, :season_id, :active)
   end
 end
