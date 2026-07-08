@@ -11,6 +11,23 @@ namespace :rva do
     scanned = 0
     migrated = 0
 
+    $stdout.sync = true
+    total = collection.count_documents({})
+    started = Time.now
+    fmt = lambda do |secs|
+      secs = secs.to_i
+      h, rem = secs.divmod(3600)
+      m, s = rem.divmod(60)
+      if h.positive?
+        "#{h}h#{m}m#{s}s"
+      elsif m.positive?
+        "#{m}m#{s}s"
+      else
+        "#{s}s"
+      end
+    end
+    puts "Normalizing #{total} sessions..."
+
     # Move an old key onto its legacy_* field within a hash, in place.
     # Only fills the legacy field if it's currently blank, but always drops
     # the stale key so re-runs are no-ops.
@@ -24,6 +41,15 @@ namespace :rva do
 
     collection.find.each do |doc|
       scanned += 1
+
+      if (scanned % 100).zero? || scanned == total
+        elapsed = Time.now - started
+        rate = elapsed.positive? ? scanned / elapsed : 0.0
+        eta = rate.positive? ? (total - scanned) / rate : 0
+        pct = total.positive? ? (100.0 * scanned / total).round : 100
+        puts "  [#{scanned}/#{total}] #{pct}%  elapsed #{fmt.call(elapsed)}  ETA #{fmt.call(eta)}  (#{rate.round(1)}/s, normalized: #{migrated})"
+      end
+
       set_ops = {}
       unset_ops = {}
 
@@ -116,8 +142,37 @@ namespace :rva do
       :errors => 0
     }
 
+    $stdout.sync = true
+    total = Session.count
+    started = Time.now
+    fmt = lambda do |secs|
+      secs = secs.to_i
+      h, rem = secs.divmod(3600)
+      m, s = rem.divmod(60)
+      if h.positive?
+        "#{h}h#{m}m#{s}s"
+      elsif m.positive?
+        "#{m}m#{s}s"
+      else
+        "#{s}s"
+      end
+    end
+    puts "Linking references for #{total} sessions..."
+
     Session.each do |session|
+
       totals[:sessions_scanned] += 1
+
+      puts "Linking session #{totals[:sessions_scanned]} ..."
+
+      scanned = totals[:sessions_scanned]
+      if (scanned % 50).zero? || scanned == total
+        elapsed = Time.now - started
+        rate = elapsed.positive? ? scanned / elapsed : 0.0
+        eta = rate.positive? ? (total - scanned) / rate : 0
+        pct = total.positive? ? (100.0 * scanned / total).round : 100
+        puts "  [#{scanned}/#{total}] #{pct}%  elapsed #{fmt.call(elapsed)}  ETA #{fmt.call(eta)}  (#{rate.round(1)}/s, saved: #{totals[:sessions_saved]}, users: #{totals[:users_linked]}, cars: #{totals[:cars_linked]})"
+      end
       changed = false
       season = session.ranking&.season
 
@@ -202,6 +257,18 @@ namespace :rva do
     session_ids = Session.all.pluck(:id)
     total = session_ids.size
     started = Time.now
+    fmt = lambda do |secs|
+      secs = secs.to_i
+      h, rem = secs.divmod(3600)
+      m, s = rem.divmod(60)
+      if h.positive?
+        "#{h}h#{m}m#{s}s"
+      elsif m.positive?
+        "#{m}m#{s}s"
+      else
+        "#{s}s"
+      end
+    end
     puts "Backfilling results for #{total} sessions (force=#{force})..."
 
     session_ids.each do |id|
@@ -230,7 +297,11 @@ namespace :rva do
       end
 
       if (scanned % 20).zero? || scanned == total
-        puts "  [#{scanned}/#{total}] elapsed #{(Time.now - started).round}s (updated: #{updated}, skipped: #{skipped}, errors: #{errors})"
+        elapsed = Time.now - started
+        rate = elapsed.positive? ? scanned / elapsed : 0.0
+        eta = rate.positive? ? (total - scanned) / rate : 0
+        pct = (100.0 * scanned / total).round
+        puts "  [#{scanned}/#{total}] #{pct}%  elapsed #{fmt.call(elapsed)}  ETA #{fmt.call(eta)}  (#{rate.round(1)}/s, updated: #{updated}, skipped: #{skipped}, errors: #{errors})"
       end
     end
 
