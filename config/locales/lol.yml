@@ -366,6 +366,7 @@ lol:
       all-tracks: "all trackz"
       season: "Seashun"
       title: "Teh RVA trax"
+      new-track: "Add Track"
       no-tracks: "Kitteh nu trax 2 show"
       made-by: "by: %{author_name}"
       format:
@@ -460,6 +461,7 @@ lol:
         show:
           description: "Paaat of te RVA ka pacc of teh kurrant seeson."
       title: "Teh RVA Carz"
+      new-car: "Add Car"
       ratings-link: "Car gud or bad"
       features:
         speed: "sped"
@@ -543,6 +545,7 @@ lol:
       edit:
         page-title: "RvA - Edit Seesun"
     title: "da RVA seasunz"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "Whut are RVA seasunz?"
       description: "In RVA, we hav seesunz for onlain raecin'. Evy Seesun ther ar 6 rankin'z, n' each rankin ther r 28 sesshunz, 18 of wich r 4 singel raecz n da othr 10 for Team raecz. Plyerz get pontz for evy raecz."
@@ -718,6 +721,8 @@ lol:
         sessions-played: "Sesshunz Playd"
       tracks:
         not-found: "Trak not finded"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1112,6 +1117,7 @@ lol:
     submit:
       import: "Giv"
       update: "Updaet"
+      create: "Create"
     checkbox:
       teams: "Teamz"
     button:
