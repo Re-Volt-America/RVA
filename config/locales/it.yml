@@ -363,6 +363,7 @@ it:
       all-tracks: "Tutti i tracciati"
       season: "Stagione"
       title: "I tracciati di RVA"
+      new-track: "Add Track"
       no-tracks: "No tracks to display"
       made-by: "by: %{author_name}"
       format:
@@ -457,6 +458,7 @@ it:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Le auto di RVA"
+      new-car: "Add Car"
       ratings-link: "Valutazioni Auto"
       features:
         speed: "Velocità"
@@ -540,6 +542,7 @@ it:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Le stagioni di RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "Cosa sono le stagioni di RVA?"
       description: "In RVA adottiamo un format stagionale per le corse online. Ogni stagione è composta da 6 Classifiche e ogni classifica è composta da 28 Sessioni, di cui 18 in Singolo e 10 in Team. I giocatori prendono punti per ogni gara."
@@ -715,6 +718,8 @@ it:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1109,6 +1114,7 @@ it:
     submit:
       import: "Import"
       update: "Aggiorna"
+      create: "Create"
     checkbox:
       teams: "Squadre"
     button:
