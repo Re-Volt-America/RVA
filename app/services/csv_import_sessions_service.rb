@@ -39,31 +39,32 @@ class CsvImportSessionsService
   end
 
   def call
-    csv = CSV.parse(File.open(@file))
+    csv = CSV.parse(File.read(uploaded_file_path(@file)))
 
     unless is_rv_session_log(csv)
       return nil # FIXME: handle?
     end
 
-    session_arr = []
-    csv.each do |row|
-      session_arr << row
-    end
+    session_arr = csv.reject { |row| blank_row?(row) }
+    version_row = session_arr.find { |row| row[0] == '#' }
+    session_row = session_arr.find { |row| row[0] == 'Session' }
+
+    return nil if version_row.nil? || session_row.nil?
 
     ranking = Ranking.find { |r| r.id.to_s.eql?(@ranking) }
     season = ranking&.season
-    host_name = true?(@teams) ? session_arr[1][2].partition(' ').last : session_arr[1][2]
+    host_name = extract_host_name(session_row[2])
     host_user = find_user_by_username(host_name)
 
     session_hash = {
       :number => ranking.sessions.size + 1,
       :hosts => [host_user].compact,
       :legacy_host => host_name,
-      :version => session_arr[0][1],
-      :physics => session_arr[1][3],
-      :protocol => session_arr[0][2],
-      :pickups => true?(session_arr[1][5]),
-      :date => parse_and_format_date(session_arr[1][1]),
+      :version => version_row[1],
+      :physics => session_row[3],
+      :protocol => version_row[2],
+      :pickups => true?(session_row[5]),
+      :date => parse_and_format_date(session_row[1]),
       :races => get_races_hash(session_arr, season),
       :ranking => ranking,
       :category => @category,
@@ -90,9 +91,13 @@ class CsvImportSessionsService
     races_hash = {}
     num_races = 0
     session_races_arr.each do |race_arr|
+      next unless complete_race?(race_arr[0], race_arr[1], race_arr[2])
+
       racer_entries = {}
       num_racer_entries = 0
       race_arr[2].each do |racer_entry_arr|
+        next unless valid_racer_row?(racer_entry_arr)
+
         username = racer_entry_arr[1]
         car_name = racer_entry_arr[2]
         user = find_user_by_username(username)
@@ -138,36 +143,37 @@ class CsvImportSessionsService
     session_row_arr = nil
     results_row_arr = nil
     position_rows_arr = []
-
-    racers = false
-    count = 0
     full_log = full_log.drop(1)
 
     full_log.each do |row|
-      if row[0] == '#' # skip headers
-        count += 1
+      if blank_row?(row) || row[0] == '#'
         next
       end
 
       if row[0] == 'Session'
+        if complete_race?(session_row_arr, results_row_arr, position_rows_arr)
+          session_races_arr << [session_row_arr, results_row_arr, position_rows_arr]
+          position_rows_arr = []
+          results_row_arr = nil
+        end
+
         session_row_arr = row
       elsif row[0] == 'Results'
+        if complete_race?(session_row_arr, results_row_arr, position_rows_arr)
+          session_races_arr << [session_row_arr, results_row_arr, position_rows_arr]
+          position_rows_arr = []
+        end
+
         results_row_arr = row
       else
+        next unless valid_racer_row?(row)
+
         position_rows_arr << row
-        racers = true
       end
+    end
 
-      if racers && (full_log[count + 1].nil? || (full_log[count + 1][0] == 'Session') || (full_log[count + 1][0] == 'Results'))
-        racers = false
-
-        session_race_arr = [session_row_arr, results_row_arr, position_rows_arr]
-        session_races_arr << session_race_arr
-
-        position_rows_arr = []
-      end
-
-      count += 1
+    if complete_race?(session_row_arr, results_row_arr, position_rows_arr)
+      session_races_arr << [session_row_arr, results_row_arr, position_rows_arr]
     end
 
     session_races_arr
@@ -204,5 +210,38 @@ class CsvImportSessionsService
 
     tracks = Track.where(:season => season).to_a
     @track_cache[cache_key] = tracks.find { |t| t.name_variations.include?(track_name) }
+  end
+
+  private
+
+  def uploaded_file_path(file)
+    return file.path if file.respond_to?(:path)
+    return file.tempfile.path if file.respond_to?(:tempfile)
+
+    file.to_s
+  end
+
+  def blank_row?(row)
+    row.nil? || row.all? { |value| value.to_s.strip.empty? }
+  end
+
+  def extract_host_name(raw_host_name)
+    normalized_host_name = raw_host_name.to_s.strip
+    return normalized_host_name unless true?(@teams)
+
+    parsed_host_name = normalized_host_name.partition(' ').last.to_s.strip
+    parsed_host_name.empty? ? normalized_host_name : parsed_host_name
+  end
+
+  def complete_race?(session_row_arr, results_row_arr, position_rows_arr)
+    session_row_arr.present? && results_row_arr.present? && position_rows_arr.any?
+  end
+
+  def valid_racer_row?(row)
+    return false if row.nil?
+    return false unless row[0].to_s.match?(/\A\d+\z/)
+    return false unless row.values_at(1, 2, 3, 4, 5, 6).all? { |value| value.present? }
+
+    %w(true false).include?(row[5].to_s.downcase) && %w(true false).include?(row[6].to_s.downcase)
   end
 end
