@@ -6,6 +6,7 @@ class Session
   store_in :database => 'rv_sessions'
 
   belongs_to :ranking
+  has_and_belongs_to_many :hosts, :class_name => 'User', :inverse_of => nil
   embeds_many :races
   embeds_many :racer_result_entries
   embeds_many :team_result_entries
@@ -14,7 +15,7 @@ class Session
   accepts_nested_attributes_for :team_result_entries
 
   field :number, :type => Integer
-  field :host, :type => String
+  field :legacy_host, :type => String
   field :version, :type => String
   field :physics, :type => String
   field :protocol, :type => String
@@ -23,19 +24,38 @@ class Session
   field :teams, :type => Boolean
   field :category, :type => Integer
   field :session_log_data, :type => String
+  field :results_data, :type => Hash, :default => {}
 
   validates_presence_of :number
-  validates_presence_of :host
   validates_presence_of :version
   validates_presence_of :physics
   validates_presence_of :protocol
   validates_presence_of :date
   validates_presence_of :session_log
-  validates_presence_of :teams
+  validates_inclusion_of :teams, :in => [true, false]
   validates_presence_of :category
+  validate :host_reference_present
 
   def season
     ranking.season
+  end
+
+  def host_name
+    hosts.first&.username || legacy_host
+  end
+
+  def host_name=(value)
+    if value.is_a?(User)
+      self.hosts = [value]
+      self.legacy_host = value.username
+      return
+    end
+
+    self.legacy_host = value
+    return if value.nil? || value.to_s.strip.empty?
+
+    user = User.where(:username => value.to_s.upcase).first
+    self.hosts = [user] if user
   end
 
   # Look for all RacerEntry models in this session which correspond to the passed racer.
@@ -50,5 +70,13 @@ class Session
     end
 
     racer_entries_arr
+  end
+
+  private
+
+  def host_reference_present
+    return if hosts.any? || legacy_host.present?
+
+    errors.add(:hosts, "can't be blank")
   end
 end

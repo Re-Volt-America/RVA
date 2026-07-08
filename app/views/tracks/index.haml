@@ -4,12 +4,16 @@
 - meta :image, "https://rva.lat/assets/img/og/tracks.png"
 
 %h2.mb-4
-  = t('rva.tracks.title')
+  = title_with_season(t('rva.tracks.title'))
 
-= render :partial => "application/subnav", :locals => {:season => current_season}
+- if user_is_admin?
+  = link_to t("rva.tracks.new-track"), new_track_path(:season => selected_season&.id), :class => "btn mb-3"
+
+= render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings}
 
 #tracks
   = form_tag(tracks_path, method: :get) do
+    = hidden_field_tag :season, params[:season] if params[:season].present?
     .form-group
       = text_field_tag :query, params[:query], class: 'form-control', placeholder: t("misc.placeholder.search")
       = button_tag type: 'submit', class: 'btn' do

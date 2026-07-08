@@ -188,6 +188,12 @@
           text-decoration: none;
         }
       }
+
+      .no-account {
+        cursor: help;
+        opacity: 0.75;
+        border-bottom: 1px dotted currentColor;
+      }
     }
   }
 }

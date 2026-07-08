@@ -117,7 +117,7 @@ class RvaCalculateResultsService
     tracks = []
 
     @races.each do |race|
-      tracks << find_track(race.track_name)
+      tracks << (race.track || find_track(race.track_name))
     end
 
     tracks
@@ -134,7 +134,8 @@ class RvaCalculateResultsService
       end
 
       racer_entry = race.get_racer_entry_by_name(racer)
-      car_bonus = get_car_bonus(find_car(racer_entry.car_name))
+      car = racer_entry.car || find_car(racer_entry.car_name)
+      car_bonus = get_car_bonus(car)
 
       # Car was invalid for whatever reason, so we prepend "'" to the position
       if car_bonus.nil?
@@ -165,7 +166,8 @@ class RvaCalculateResultsService
         next
       end
 
-      car_used_name = race.get_racer_entry_by_name(racer).car_name
+      racer_entry = race.get_racer_entry_by_name(racer)
+      car_used_name = racer_entry.car_name
 
       # Player hasn't changed cars, so we skip
       if car_used_name.eql?(last_car_used_name)
@@ -179,7 +181,7 @@ class RvaCalculateResultsService
         next
       end
 
-      car = find_car(car_used_name)
+      car = racer_entry.car || find_car(car_used_name)
 
       # The car used by this player doesn't match the following criteria:
       # - It's not part of this session's season
@@ -284,7 +286,7 @@ class RvaCalculateResultsService
   end
 
   def get_racer_score(race, entry)
-    car = find_car(entry.car_name)
+    car = entry.car || find_car(entry.car_name)
     car_bonus = get_car_bonus(car)
 
     # Car is above the current category or is invalid, therefore points are invalidated
@@ -360,26 +362,34 @@ class RvaCalculateResultsService
   end
 
   def find_user(name)
+    return nil if name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#User:#{name.upcase}", :expires_in => 1.minute) do
-      User.find { |u| u.username.eql?(name.upcase) }
+      User.where(:username => name.to_s.upcase).first
     end
   end
 
   def find_track(track_name)
+    return nil if track_name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#Track:#{track_name}", :expires_in => 1.minute) do
-      Track.find { |t| t.name_variations.include?(track_name) && t.season.eql?(@session.season) }
+      Track.where(:season => @session.season).to_a.find { |t| t.name_variations.include?(track_name) }
     end
   end
 
   def find_car(car_name)
+    return nil if car_name.blank?
+    
     Rails.cache.fetch("Session:#{@session.id}#Car:#{car_name}", :expires_in => 1.minute) do
-      Car.find { |c| c.name.eql?(car_name) && c.season.eql?(@session.season) }
+      Car.where(:name => car_name, :season => @session.season).first
     end
   end
 
   def find_team(short_name)
+    return nil if short_name.blank?
+
     Rails.cache.fetch("Session:#{@session.id}#Team:#{short_name}", :expires_in => 1.minute) do
-      Team.find { |t| t.short_name.eql?(short_name) }
+      Team.where(:short_name => short_name).first
     end
   end
 end

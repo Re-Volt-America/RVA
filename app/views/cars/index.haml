@@ -3,15 +3,18 @@
 - meta :description, t("rva.cars.meta.index.description")
 
 %h2
-  = t('rva.cars.title')
+  = title_with_season(t('rva.cars.title'))
 
-= render :partial => "application/subnav", :locals => {:season => current_season}
+- if user_is_admin?
+  = link_to t("rva.cars.new-car"), new_car_path(:season => selected_season&.id), :class => "btn mb-3"
+
+= render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings}
 
 #cars
   .row
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_rookie_path }
+        %a{href: cars_rookie_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/rookie.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption
@@ -19,7 +22,7 @@
               = category_name(SYS::CATEGORY::ROOKIE)
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_amateur_path }
+        %a{href: cars_amateur_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/amateur.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption
@@ -27,7 +30,7 @@
               = category_name(SYS::CATEGORY::AMATEUR)
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_advanced_path }
+        %a{href: cars_advanced_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/advanced.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption
@@ -35,7 +38,7 @@
               = category_name(SYS::CATEGORY::ADVANCED)
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_semipro_path }
+        %a{href: cars_semipro_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/semipro.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption
@@ -43,7 +46,7 @@
               = category_name(SYS::CATEGORY::SEMI_PRO)
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_pro_path }
+        %a{href: cars_pro_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/pro.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption
@@ -51,7 +54,7 @@
               = category_name(SYS::CATEGORY::PRO)
     .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
       .car-category-thumbnail.text-center
-        %a{href: cars_superpro_path }
+        %a{href: cars_superpro_path(:season => selected_season&.id) }
           .car-category-thumbnail-overlay
             = image_tag "cars/superpro.jpg", :alt => "", :class => "img-fluid car-category-img"
           .car-category-caption

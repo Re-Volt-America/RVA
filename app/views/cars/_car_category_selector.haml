@@ -2,16 +2,16 @@
   %button.btn.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", type: "button"}
     = t("rva.cars.class-selector.title")
   .dropdown-menu.dropdown-menu-right
-    %a.dropdown-item{href: cars_rookie_path}
+    %a.dropdown-item{href: cars_rookie_path(:season => selected_season&.id)}
       = t("classes.rookie")
-    %a.dropdown-item{href: cars_amateur_path}
+    %a.dropdown-item{href: cars_amateur_path(:season => selected_season&.id)}
       = t("classes.amateur")
-    %a.dropdown-item{href: cars_advanced_path}
+    %a.dropdown-item{href: cars_advanced_path(:season => selected_season&.id)}
       = t("classes.advanced")
-    %a.dropdown-item{href: cars_semipro_path}
+    %a.dropdown-item{href: cars_semipro_path(:season => selected_season&.id)}
       = t("classes.semi-pro")
-    %a.dropdown-item{href: cars_pro_path}
+    %a.dropdown-item{href: cars_pro_path(:season => selected_season&.id)}
       = t("classes.pro")
-    %a.dropdown-item{href: cars_superpro_path}
+    %a.dropdown-item{href: cars_superpro_path(:season => selected_season&.id)}
       = t("classes.super-pro")
     / a class="dropdown-item" href="{{ baseurl }}/cars/clockwork">{% t classes.clockwork %}</a>

@@ -17,20 +17,21 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1 or /sessions/1.json
   def show
-    require 'rva_calculate_results_service'
+    require 'session_results_table'
 
-    @count = 0
-    @rva_results = Rails.cache.fetch("Session:#{@session.id}", :expires_in => 1.month) do
-      RvaCalculateResultsService.new(@session).call
+    @results_table = SessionResultsTable.from_serialized(@session.results_data, :session => @session)
+
+    if @results_table.rows.empty?
+      require 'rva_calculate_results_service'
+
+      rva_results = RvaCalculateResultsService.new(@session).call
+      @results_table = SessionResultsTable.from_legacy_array(rva_results, @session)
+      @session.set(:results_data => @results_table.as_serialized)
     end
 
     # Car usage analysis
-    car_rows = @rva_results.each_with_index.select { |row, idx| idx % 2 == 0 && idx >= 2 }.map(&:first)
-
-    @car_usage = car_rows.each_with_object(Hash.new(0)) do |row, hash|
-      next unless row[4].is_a?(Array)
-
-      cars = row[4].select { |car| car.is_a?(Car) }
+    @car_usage = @results_table.rows.each_with_object(Hash.new(0)) do |row, hash|
+      cars = row.cars.select { |car| car.is_a?(Car) }
       cars.each do |car|
         next unless car.respond_to?(:name)
         hash[car.name] += 1
@@ -80,22 +81,17 @@ class SessionsController < ApplicationController
 
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
-    require 'rva_calculate_results_service'
     require 'stats_service'
     require 'team_points_service'
 
-    rva_results = RvaCalculateResultsService.new(@session).call
-
     if @session.teams?
-      TeamPointsService.new(@session, rva_results).remove_team_points
+      TeamPointsService.new(@session).remove_team_points
     else
-      StatsService.new(@session, rva_results).remove_stats
+      StatsService.new(@session).remove_stats
     end
 
     respond_to do |format|
       if @session.destroy!
-        Rails.cache.delete("Session:#{@session.id}")
-
         format.html { redirect_to sessions_url, :notice => t('rankings.sessions.controller.delete') }
         format.json { head :no_content }
       else
@@ -168,7 +164,7 @@ class SessionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def session_params
-    params.require(:session).permit(:number, :host, :version, :physics, :protocol, :pickups, :date,
+    params.require(:session).permit(:number, :host_name, :version, :physics, :protocol, :pickups, :date,
                                     :category, :teams, :ranking, :session_log)
   end
 end

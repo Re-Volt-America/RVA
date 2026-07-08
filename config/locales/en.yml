@@ -400,6 +400,7 @@ en:
       all-tracks: "All Tracks"
       season: "Season"
       title: "The RVA Tracks"
+      new-track: "Add Track"
       no-tracks: "No tracks to display"
       made-by: "by: %{author_name}"
       format:
@@ -495,6 +496,7 @@ en:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "The RVA Cars"
+      new-car: "Add Car"
       ratings-link: "Car Ratings"
       features:
         speed: "Speed"
@@ -580,6 +582,7 @@ en:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "The RVA Seasons"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "What are RVA Seasons?"
       description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking
@@ -764,6 +767,8 @@ en:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
 
   # Teams page
   teams:
@@ -1168,6 +1173,7 @@ en:
     submit:
       import: "Import"
       update: "Update"
+      create: "Create"
     checkbox:
       teams: "Teams"
     button:

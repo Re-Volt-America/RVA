@@ -1,16 +1,17 @@
 class TracksController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:new, :create, :edit, :update, :destroy]
   before_action :set_track, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = if current_season.nil?
+    season = selected_season
+    @tracks = if season.nil?
                 Track.all
               else
-                current_season.tracks
+                season.tracks
               end
 
     # Filter out inactive tracks
@@ -39,7 +40,7 @@ class TracksController < ApplicationController
 
   # GET /tracks/new
   def new
-    @track = Track.new
+    @track = Track.new(:season => selected_season)
   end
 
   # GET /tracks/1/edit
@@ -138,6 +139,6 @@ class TracksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def track_params
     params.require(:track).permit(:name, :short_name, :difficulty, :length, :folder_name, :author, :stock, :lego,
-                                  :average_lap_time, :season, :active)
+                                  :average_lap_time, :season, :season_id, :active)
   end
 end

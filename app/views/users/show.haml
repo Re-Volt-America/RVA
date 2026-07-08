@@ -75,7 +75,7 @@
                 .session-date
                   = pretty_datetime(session.date)
               %span.d-block.session-host
-                = t("application.index.recent.hosted-by", host:session.host) #{session.host}
+                = t("application.index.recent.hosted-by", host:session.host_name) #{session.host_name}
 
   %br/
   %ul.nav.nav-tabs{role: "tablist"}

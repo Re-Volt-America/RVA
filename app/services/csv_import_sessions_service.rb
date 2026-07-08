@@ -3,6 +3,7 @@ class CsvImportSessionsService
 
   require 'csv'
   require 'rva_calculate_results_service'
+  require 'session_results_table'
   require 'stats_service'
   require 'team_points_service'
 
@@ -12,6 +13,9 @@ class CsvImportSessionsService
     @category = category
     @number = number
     @teams = teams
+    @user_cache = {}
+    @car_cache = {}
+    @track_cache = {}
   end
 
   def parse_and_format_date(date_string)
@@ -46,16 +50,22 @@ class CsvImportSessionsService
       session_arr << row
     end
 
+    ranking = Ranking.find { |r| r.id.to_s.eql?(@ranking) }
+    season = ranking&.season
+    host_name = true?(@teams) ? session_arr[1][2].partition(' ').last : session_arr[1][2]
+    host_user = find_user_by_username(host_name)
+
     session_hash = {
-      :number => Ranking.find { |r| r.id.to_s.eql?(@ranking) }.sessions.size + 1,
-      :host => true?(@teams) ? session_arr[1][2].partition(' ').last : session_arr[1][2],
+      :number => ranking.sessions.size + 1,
+      :hosts => [host_user].compact,
+      :legacy_host => host_name,
       :version => session_arr[0][1],
       :physics => session_arr[1][3],
       :protocol => session_arr[0][2],
       :pickups => true?(session_arr[1][5]),
       :date => parse_and_format_date(session_arr[1][1]),
-      :races => get_races_hash(session_arr),
-      :ranking => @ranking,
+      :races => get_races_hash(session_arr, season),
+      :ranking => ranking,
       :category => @category,
       :teams => @teams,
       :session_log => @file
@@ -63,6 +73,7 @@ class CsvImportSessionsService
 
     session = Session.new(session_hash)
     rva_results = RvaCalculateResultsService.new(session).call
+    session.results_data = SessionResultsTable.from_legacy_array(rva_results, session).as_serialized
 
     if session.teams
       TeamPointsService.new(session, rva_results).add_points
@@ -73,7 +84,7 @@ class CsvImportSessionsService
     session
   end
 
-  def get_races_hash(session_arr)
+  def get_races_hash(session_arr, season)
     session_races_arr = get_session_races_arr(session_arr)
 
     races_hash = {}
@@ -82,10 +93,17 @@ class CsvImportSessionsService
       racer_entries = {}
       num_racer_entries = 0
       race_arr[2].each do |racer_entry_arr|
+        username = racer_entry_arr[1]
+        car_name = racer_entry_arr[2]
+        user = find_user_by_username(username)
+        car = find_car_by_name(car_name, season)
+
         racer_entry_hash = {
           :position => racer_entry_arr[0],
-          :username => racer_entry_arr[1],
-          :car_name => racer_entry_arr[2],
+          :user => user,
+          :legacy_username => username,
+          :car => car,
+          :legacy_car_name => car_name,
           :time => racer_entry_arr[3],
           :best_lap => racer_entry_arr[4],
           :finished => true?(racer_entry_arr[5]),
@@ -96,8 +114,12 @@ class CsvImportSessionsService
         num_racer_entries += 1
       end
 
+      track_name = race_arr[1][1]
+      track = find_track_by_name(track_name, season)
+
       race_hash = {
-        :track_name => race_arr[1][1],
+        :track => track,
+        :legacy_track_name => track_name,
         :racer_entries => racer_entries,
         :laps => race_arr[0][4],
         :total_racers => race_arr[1][2]
@@ -154,5 +176,33 @@ class CsvImportSessionsService
   # TODO: Check whether this csv corresponds to a Re-Volt session log
   def is_rv_session_log(_csv)
     true
+  end
+
+  def find_user_by_username(username)
+    return nil if username.nil?
+
+    normalized = username.to_s.upcase
+    return @user_cache[normalized] if @user_cache.key?(normalized)
+
+    @user_cache[normalized] = User.where(:username => normalized).first
+  end
+
+  def find_car_by_name(car_name, season)
+    return nil if car_name.nil? || season.nil?
+
+    cache_key = "#{season.id}:#{car_name}"
+    return @car_cache[cache_key] if @car_cache.key?(cache_key)
+
+    @car_cache[cache_key] = Car.where(:name => car_name, :season => season).first
+  end
+
+  def find_track_by_name(track_name, season)
+    return nil if track_name.nil? || season.nil?
+
+    cache_key = "#{season.id}:#{track_name}"
+    return @track_cache[cache_key] if @track_cache.key?(cache_key)
+
+    tracks = Track.where(:season => season).to_a
+    @track_cache[cache_key] = tracks.find { |t| t.name_variations.include?(track_name) }
   end
 end

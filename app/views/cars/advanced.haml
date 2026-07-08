@@ -5,9 +5,9 @@
 
 #car-cards-display
   %h2
-    = "#{t('rva.cars.title')} - #{t("classes.advanced")}"
+    = "#{title_with_season(t('rva.cars.title'))} - #{t("classes.advanced")}"
 
-  = render :partial => "application/subnav", :locals => {:season => current_season, :category => SYS::CATEGORY::ADVANCED}
+  = render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings, :category => SYS::CATEGORY::ADVANCED}
 
   .sticky-top.search-bar
     .row

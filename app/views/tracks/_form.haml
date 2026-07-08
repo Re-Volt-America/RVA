@@ -1,0 +1,47 @@
+= form_with(:model => @track) do |f|
+  .row
+    .col-md-5
+      .field.form-group
+        = f.label :season, t("rva.tracks.edit.season")
+        = f.select :season_id, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, :class => "form-control"
+      .field.form-group
+        = f.label :name, t("rva.tracks.edit.name")
+        = f.text_field :name, :class => "form-control"
+      .field.form-group
+        = f.label :short_name, t("rva.tracks.edit.short-name")
+        = f.text_field :short_name, :class => "form-control"
+      .field.form-group
+        = f.label :difficulty, t("rva.tracks.edit.difficulty")
+        = f.select :difficulty, SYS::TRACK::DIFFICULTIES, {:prompt => t("misc.prompt.difficulty")}, :class => "form-control"
+      .field.form-group
+        = f.label t("rva.tracks.edit.length")
+        = f.number_field :length, :class => "form-control"
+      .field.form-group
+        = f.label :folder_name, t("rva.tracks.edit.folder-name")
+        = f.text_field :folder_name, :class => "form-control"
+      .field.form-group
+        = f.label :author, t("rva.tracks.edit.author")
+        = f.text_field :author, :class => "form-control"
+      .field.form-group
+        = f.label :average_lap_time, t("rva.tracks.edit.average-lap-time")
+        = f.number_field :average_lap_time, :class => "form-control"
+      .field.form-group
+        = f.check_box :stock
+        = f.label :stock, t("rva.tracks.edit.stock")
+      .field.form-group
+        = f.check_box :lego
+        = f.label :lego, t("rva.tracks.edit.lego")
+      .field.form-group
+        = f.check_box :active
+        = f.label :active, t("rva.tracks.edit.active")
+      .actions
+        = f.button (@track.persisted? ? t("misc.submit.update") : t("misc.submit.create")), :type => "submit", :class => "btn mb-2"
+    .col-md-7
+      - if @track.errors.any?
+        #error-explanation
+          %h5
+            = t("rva.tracks.edit.error")
+          %ul
+            - @track.errors.each do |error|
+              %li
+                = error.full_message
