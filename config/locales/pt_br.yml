@@ -363,6 +363,7 @@ pt:
       all-tracks: "Todas as pistas"
       season: "Temporada"
       title: "As pistas do RVA"
+      new-track: "Add Track"
       no-tracks: "Sem pistas para exibir"
       made-by: "by: %{author_name}"
       format:
@@ -457,6 +458,7 @@ pt:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Re-Volt América - Carros"
+      new-car: "Add Car"
       ratings-link: "Classificações de Carros"
       features:
         speed: "Velocidade"
@@ -540,6 +542,7 @@ pt:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "O que são temporadas RVA?"
       description: "No RVA, seguimos um formato sazonal para corridas on-line. Toda temporada consiste em 6 Rankings, e cada ranking consiste em 28 sessões, 18 das quais são para corridas individuais e as outras 10 para corridas em equipes. Os jogadores marcam pontos em cada corrida."
@@ -715,6 +718,8 @@ pt:
         sessions-played: "Sessões jogadas"
       tracks:
         not-found: "Pista não encontrada"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1109,6 +1114,7 @@ pt:
     submit:
       import: "Importar"
       update: "Atualizar"
+      create: "Create"
     checkbox:
       teams: "Equipes"
     button:
