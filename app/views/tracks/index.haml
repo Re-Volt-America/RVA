@@ -8,6 +8,7 @@
 
 - if user_is_admin?
   = link_to t("rva.tracks.new-track"), new_track_path(:season => selected_season&.id), :class => "btn mb-3"
+  = render "application/active_toggle"
 
 = render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings}
 

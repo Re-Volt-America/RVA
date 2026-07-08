@@ -1,0 +1,8 @@
+-# Admin-only button to toggle between viewing active and inactive
+-# (disabled) records. Relies on the controller honouring `?active=false`.
+- if user_is_admin?
+  - base = request.query_parameters.symbolize_keys.except(:page)
+  - if show_inactive?
+    = link_to t("misc.active-toggle.show-active"), url_for(base.except(:active).merge(:only_path => true)), :class => "btn btn-sm mb-3"
+  - else
+    = link_to t("misc.active-toggle.show-inactive"), url_for(base.merge(:active => "false", :only_path => true)), :class => "btn btn-sm mb-3"

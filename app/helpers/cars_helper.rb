@@ -1,10 +1,12 @@
 module CarsHelper
-  # Filters out inactive cars.
-  def cars_of_category(category, season = selected_season)
-    if season.nil?
-      Car.all.filter { |c| c.category == category && c.active? }
-    else
-      season.cars.filter { |c| c.category == category && c.active? }
+  # Returns the cars of a category. By default only active cars are returned;
+  # pass `:active => false` to return the inactive (disabled) ones instead.
+  def cars_of_category(category, season = selected_season, active: true)
+    source = season.nil? ? Car.all : season.cars
+    source.filter do |c|
+      next false unless c.category == category
+
+      active ? c.active? : !c.active?
     end
   end
 

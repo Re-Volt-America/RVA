@@ -23,9 +23,11 @@ class Track
   validates_presence_of :length
   validates_presence_of :folder_name
   validates_presence_of :author
-  validates_presence_of :stock
-  validates_presence_of :lego
-  validates_presence_of :active
+  # Booleans: use inclusion rather than presence, otherwise a value of `false`
+  # (e.g. a non-stock or disabled track) fails `presence` since `false.blank?` is true.
+  validates_inclusion_of :stock, :in => [true, false]
+  validates_inclusion_of :lego, :in => [true, false]
+  validates_inclusion_of :active, :in => [true, false]
   validates_presence_of :average_lap_time
 
   def lap_count(category)

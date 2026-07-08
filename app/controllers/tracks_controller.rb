@@ -14,8 +14,8 @@ class TracksController < ApplicationController
                 season.tracks
               end
 
-    # Filter out inactive tracks
-    @tracks = @tracks.reject { |track| !track.active? }
+    # Only show active tracks, unless an admin has requested the inactive ones.
+    @tracks = @tracks.select { |track| show_inactive? ? !track.active? : track.active? }
 
     if params[:query].present?
       regex = Regexp.new("^#{Regexp.escape(params[:query])}", Regexp::IGNORECASE)
@@ -52,7 +52,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to track_url(@track), :notice => t('rva.tracks.controller.create') }
+        format.html { redirect_to tracks_url(:season => @track.season_id), :notice => t('rva.tracks.controller.create') }
         format.json { render :show, :status => :created, :location => @track, :layout => false }
       else
         format.html { render :new, :status => :unprocessable_entity }

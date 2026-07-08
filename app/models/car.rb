@@ -26,8 +26,10 @@ class Car
   validates_presence_of :folder_name
   validates_presence_of :category
   validates_presence_of :author
-  validates_presence_of :stock
-  validates_presence_of :active
+  # Booleans: use inclusion rather than presence, otherwise a value of `false`
+  # (e.g. a non-stock or disabled car) fails `presence` since `false.blank?` is true.
+  validates_inclusion_of :stock, :in => [true, false]
+  validates_inclusion_of :active, :in => [true, false]
 
   def thumbnail_url
     box_filename = carbox_filename.nil? ? 'carbox.bmp' : carbox_filename

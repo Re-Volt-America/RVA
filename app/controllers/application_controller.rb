@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :build_navigation
 
+  helper_method :show_inactive?
+
+  # Whether an admin has explicitly requested to view inactive (disabled)
+  # records via `?active=false`. Only honoured for admins.
+  def show_inactive?
+    user_is_admin? && params[:active] == 'false'
+  end
+
   def set_locale
     if user_signed_in?
       I18n.locale = current_user.locale
