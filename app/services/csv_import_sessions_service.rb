@@ -39,7 +39,7 @@ class CsvImportSessionsService
   end
 
   def call
-    csv = CSV.parse(File.read(uploaded_file_path(@file)))
+    csv = CSV.parse(read_uploaded_csv_content(@file))
 
     unless is_rv_session_log(csv)
       return nil # FIXME: handle?
@@ -214,11 +214,18 @@ class CsvImportSessionsService
 
   private
 
-  def uploaded_file_path(file)
-    return file.path if file.respond_to?(:path)
-    return file.tempfile.path if file.respond_to?(:tempfile)
+  def read_uploaded_csv_content(file)
+    if file.respond_to?(:read)
+      file.rewind if file.respond_to?(:rewind)
+      return file.read
+    end
 
-    file.to_s
+    if file.respond_to?(:tempfile) && file.tempfile.respond_to?(:read)
+      file.tempfile.rewind if file.tempfile.respond_to?(:rewind)
+      return file.tempfile.read
+    end
+
+    raise ArgumentError, 'Invalid uploaded file'
   end
 
   def blank_row?(row)
