@@ -1096,6 +1096,9 @@ es-CL:
     stock: "Stock"
     author: "Autor"
     download-as-png: "Descargar como PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Lunes"
       tuesday: "Martes"
