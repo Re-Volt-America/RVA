@@ -1097,6 +1097,9 @@ lol:
     stock: "OG"
     author: "Kiteh"
     download-as-png: "Daunlode es PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Muhdae lef me brokn"
       tuesday: "Chew-sday"
