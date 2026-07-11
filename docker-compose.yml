@@ -32,7 +32,7 @@ services:
       - mongo
       - redis
   mongo:
-    image: mongo:3.6.3
+    image: mongo:7.0
     restart: always
     env_file:
       - .env

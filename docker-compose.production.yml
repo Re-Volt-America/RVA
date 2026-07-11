@@ -41,7 +41,7 @@ services:
       - mongo
       - redis
   mongo:
-    image: mongo:3.6.3
+    image: mongo:7.0
     restart: always
     env_file:
       - /home/rva/RVA/shared/.env
@@ -55,7 +55,7 @@ services:
       - "7001"
     networks: [rva]
     volumes:
-      - mongo-data:/data/db
+      - mongo-data-70:/data/db
       - ./docker/mongo/init.js:/docker-entrypoint-initdb.d/mongo.js
   redis:
     image: redis:6.2-alpine
@@ -74,6 +74,7 @@ services:
 
 volumes:
   mongo-data:
+  mongo-data-70:
   redis-data:
 
 networks:
