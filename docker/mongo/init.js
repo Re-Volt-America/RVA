@@ -14,6 +14,7 @@ const databaseCollectionMap = [
     { database: 'rv_seasons', collection: 'seasons' },
     { database: 'rv_sessions', collection: 'sessions' },
     { database: 'rv_teams', collection: 'teams' },
+    { database: 'rv_tournaments', collection: 'rv_tournaments'},
     { database: 'rv_tracks', collection: 'tracks' },
     { database: 'rv_users', collection: 'users' },
     { database: 'rv_weekly_schedules', collection: 'weekly_schedules' }
