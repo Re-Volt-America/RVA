@@ -1,0 +1,168 @@
+// Administration Panel styling.
+//
+// Mirrors the /stats page palette: #212121 tables with #1a1a1a gold headers,
+// borderless striped rows and white links, plus the site-wide white-outline
+// buttons. Role badges reuse the exact colours from player profiles
+// (see users/_badges.haml).
+
+#admin-panel {
+  h2, h3, h4, h5 {
+    color: #fff;
+    font-family: NissanOpti, serif;
+  }
+
+  .panel-lead {
+    color: #a49fa2;
+  }
+
+  a {
+    color: #beb8bc;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  // Cards — black fill, square #646464 border (as used elsewhere on the site).
+  .card {
+    background-color: #000000;
+    border: 1px solid #646464;
+    border-radius: 0;
+    color: #beb8bc;
+
+    .card-title {
+      color: #ffffff;
+      font-family: "NissanOpti", serif;
+    }
+
+    .card-text {
+      color: #a49fa2;
+    }
+  }
+
+  // Big figure on the summary cards.
+  .stat-number {
+    color: #ffd966;
+    font-family: "NissanOpti", serif;
+    font-weight: bold;
+  }
+
+  .stat-label {
+    color: #a49fa2;
+  }
+
+  // Buttons keep the site-wide .btn look (white outline, white fill on hover).
+  // These rules only re-assert the text colour, because the generic
+  // `#admin-panel a` rules above (which include an id) would otherwise win on
+  // specificity and keep the label white on the white hover fill.
+  .btn {
+    color: #fff;
+
+    &:hover, &:focus {
+      color: #000;
+    }
+  }
+
+  // Search / filter controls (text input + role dropdown) intentionally inherit
+  // the site-wide .form-control style so they match the /stats page controls.
+
+  // Data tables — matches the #stats-table palette.
+  table {
+    font-family: "Bahnschrift-Light", sans-serif;
+    background-color: #212121;
+    border: 1px solid #646464;
+    color: #beb8bc;
+    margin-bottom: 0;
+
+    th {
+      background-color: #1a1a1a;
+      color: #ffd966;
+      border: 0;
+      height: 40px;
+      white-space: nowrap;
+    }
+
+    td {
+      border: 0;
+      vertical-align: middle;
+    }
+
+    tbody tr {
+      color: #beb8bc;
+    }
+
+    tbody tr:nth-of-type(odd) {
+      background-color: #1d1d1d;
+    }
+
+    tbody tr:hover {
+      background-color: #161616;
+    }
+
+    a {
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Role badges — identical to the profile page colours.
+  .role-badge {
+    display: inline-block;
+    padding: .2em .6em .3em;
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    border-radius: .25em;
+    white-space: nowrap;
+
+    &.role-admin     { background-color: #f89406; }
+    &.role-mod       { background-color: #ff2200; }
+    &.role-organizer { background-color: #36f971; }
+    &.role-sponsor   { background-color: #f47fff; }
+  }
+
+  // Session-import status badges — themed to sit alongside the palette.
+  .status-badge {
+    display: inline-block;
+    padding: .2em .6em .3em;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    border-radius: .25em;
+    white-space: nowrap;
+
+    &.status-pending    { background-color: #5a5a5a; }
+    &.status-processing { background-color: #ffd966; color: #262626; }
+    &.status-completed  { background-color: #36f971; color: #04210f; }
+    &.status-failed     { background-color: #ff2200; }
+  }
+
+  .count-pill {
+    background-color: #1a1a1a;
+    color: #ffd966;
+    border: 1px solid #646464;
+    padding: .15em .55em;
+    border-radius: .25em;
+    font-size: 65%;
+    vertical-align: middle;
+  }
+
+  .alert-danger {
+    background-color: #1d0707;
+    border: 1px solid #ff2200;
+    color: #ff9d90;
+    border-radius: 0;
+  }
+
+  .empty-note {
+    color: #6b6669;
+    font-style: italic;
+  }
+}

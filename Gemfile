@@ -36,6 +36,7 @@ gem 'sanitize', '~> 6.1'                                              # HTML & C
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
 gem 'shrine', '~> 3.5'                                                # File Attachment toolkit for Ruby applications
 gem 'shrine-mongoid', '~> 1.0'                                        # Mongoid integration for Shrine
+gem 'sidekiq', '~> 7.3'                                               # Simple, efficient background processing for Ruby (backed by Redis)
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]

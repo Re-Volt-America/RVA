@@ -1,0 +1,76 @@
+- content_for :title, "RVA - Session Processing"
+
+#admin-panel
+  .row.mt-4
+    .col-md-12
+      .d-flex.justify-content-between.align-items-center.mb-3
+        %h2.mb-0 Session Processing
+        = link_to admin_root_path, :class => "btn btn-sm" do
+          %i.fa.fa-arrow-left.mr-1
+          Back to panel
+
+      %h4.mb-3
+        Currently parsing
+        %span.count-pill.ml-1= @in_progress.size
+
+      - if @in_progress.any?
+        .table-responsive.mb-4
+          %table.table
+            %thead
+              %tr
+                %th Status
+                %th Uploaded by
+                %th Session
+                %th Category
+                %th.text-nowrap Enqueued
+                %th Elapsed
+            %tbody
+              - @in_progress.each do |import|
+                %tr
+                  %td= import_status_badge(import.status)
+                  %td= import_uploader_link(import)
+                  %td= import_session_link(import)
+                  %td= import.category ? category_name(import.category) : "—"
+                  %td
+                    %small= pretty_time_precise(import.enqueued_at || import.created_at)
+                  %td
+                    %small= import_duration(import)
+      - else
+        %p.empty-note.mb-4 Nothing is being parsed right now.
+
+      %h4.mb-3 Recently parsed
+
+      .d-flex.mb-3
+        = paginate @imports
+
+      .table-responsive
+        %table.table
+          %thead
+            %tr
+              %th Status
+              %th Uploaded by
+              %th Session
+              %th.text-nowrap Finished
+              %th Duration
+          %tbody
+            - @imports.each do |import|
+              %tr
+                %td= import_status_badge(import.status)
+                %td= import_uploader_link(import)
+                %td= import_session_link(import)
+                %td
+                  %small= import.finished_at ? pretty_time_precise(import.finished_at) : "—"
+                %td
+                  %small= import_duration(import)
+
+      - if @imports.empty?
+        %p.empty-note.mt-3 No sessions have been parsed yet.
+
+      .d-flex.mt-4
+        = paginate @imports
+
+  - if @in_progress.any?
+    :javascript
+      // Auto-refresh while imports are in progress so the admin can watch
+      // background parsing finish without manually reloading the page.
+      setTimeout(function () { window.location.reload(); }, 6000);

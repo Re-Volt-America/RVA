@@ -1,0 +1,79 @@
+- content_for :title, "RVA - Administration Panel"
+
+#admin-panel
+  .row.mt-4
+    .col-md-12
+      %h2.mb-1 Administration Panel
+      %p.panel-lead Manage users and monitor background session processing.
+
+  .row.mt-3
+    .col-md-3.col-6.mb-3
+      .card.h-100
+        .card-body.text-center
+          %h3.stat-number.mb-0= @users_count
+          %small.stat-label Registered users
+    .col-md-3.col-6.mb-3
+      .card.h-100
+        .card-body.text-center
+          %h3.stat-number.mb-0= @sessions_count
+          %small.stat-label Sessions parsed
+    .col-md-3.col-6.mb-3
+      .card.h-100
+        .card-body.text-center
+          %h3.stat-number.mb-0= @imports_in_progress.size
+          %small.stat-label Currently parsing
+    .col-md-3.col-6.mb-3
+      .card.h-100
+        .card-body.text-center
+          %h3.stat-number.mb-0= @failed_count
+          %small.stat-label Failed imports
+
+  .row.mt-2
+    .col-md-4.mb-3
+      .card.h-100
+        .card-body.d-flex.flex-column
+          %h5.card-title
+            %i.fa.fa-users.mr-2
+            User Administration
+          %p.card-text.flex-grow-1 Browse, search and review every user account and its roles.
+          = link_to "Open", admin_users_path, :class => "btn"
+    .col-md-4.mb-3
+      .card.h-100
+        .card-body.d-flex.flex-column
+          %h5.card-title
+            %i.fa.fa-tasks.mr-2
+            Session Processing
+          %p.card-text.flex-grow-1 See sessions being parsed now and the ones recently parsed.
+          = link_to "Open", admin_session_imports_path, :class => "btn"
+    .col-md-4.mb-3
+      .card.h-100
+        .card-body.d-flex.flex-column
+          %h5.card-title
+            %i.fa.fa-cogs.mr-2
+            Sidekiq Dashboard
+          %p.card-text.flex-grow-1 Inspect background queues, retries and workers directly.
+          = link_to "Open", "/admin/sidekiq", :class => "btn", :target => "_blank", :rel => "noopener"
+
+  - if @imports_in_progress.any? || @recent_imports.any?
+    .row.mt-2
+      .col-md-12
+        %h4.mb-3 Latest Sessions
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th Status
+                %th Uploaded by
+                %th Session
+                %th When
+                %th Duration
+            %tbody
+              - (@imports_in_progress + @recent_imports).each do |import|
+                %tr
+                  %td= import_status_badge(import.status)
+                  %td= import_uploader_link(import)
+                  %td= import_session_link(import)
+                  %td
+                    %small= pretty_time_precise(import.finished_at || import.created_at)
+                  %td
+                    %small= import_duration(import)

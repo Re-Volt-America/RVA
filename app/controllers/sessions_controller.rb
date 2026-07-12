@@ -111,9 +111,11 @@ class SessionsController < ApplicationController
   end
 
   # NOTE: Game physics and other info present in the session log headers is only captured for the first race.
+  #
+  # The uploaded log is persisted as a SessionImport and parsed in the
+  # background by SessionImportJob, so the admin is not left waiting on the
+  # request. Progress can be followed in the Administration Panel.
   def import
-    require 'csv_import_sessions_service'
-
     file = params[:session_log]
 
     if file.nil?
@@ -125,32 +127,49 @@ class SessionsController < ApplicationController
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
-        format.html { redirect_to new_session_path, :note => t('misc.controller.import.upload') }
+        format.html { redirect_to new_session_path, :notice => t('misc.controller.import.upload') }
         format.json { render :json => t('misc.controller.import.upload'), :status => :bad_request, :layout => false }
       end and return
     end
 
-    @session = CsvImportSessionsService.new(file, params[:ranking], params[:category], params[:number],
-                                            params[:teams]).call
+    import = SessionImport.new(
+      :uploaded_by => current_user,
+      :ranking_id => params[:ranking],
+      :category => params[:category],
+      :teams => true?(params[:teams]),
+      :original_filename => file.original_filename,
+      :status => SessionImport::PENDING,
+      :enqueued_at => Time.current
+    )
+    import.session_log = file
 
-    if @session.save
-      Rails.cache.delete('recent_sessions')
-      Rails.cache.delete('current_ranking')
+    if import.save
+      SessionImportJob.perform_later(import.id.to_s)
+
+      # Admins are sent to the panel to watch progress; everyone else (organizers)
+      # returns to the home page with a message that doesn't reference a panel
+      # they cannot access.
+      if user_is_admin?
+        redirect_target = admin_session_imports_path
+        enqueued_notice = t('rankings.sessions.controller.import.enqueued')
+      else
+        redirect_target = root_path
+        enqueued_notice = t('rankings.sessions.controller.import.enqueued_uploader')
+      end
 
       respond_to do |format|
         format.html do
-          redirect_to session_url(@session),
+          redirect_to redirect_target,
                       status: :see_other,
-                      notice: t('rankings.sessions.controller.import.success')
+                      notice: enqueued_notice
         end
-
-        format.json { render :show, status: :created, location: @session, layout: false }
+        format.json { render :json => { :id => import.id.to_s, :status => import.status }, :status => :accepted, :layout => false }
         format.any { head :not_acceptable }
       end and return
     else
       respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity, layout: false }
+        format.html { redirect_to new_session_path, :notice => import.errors.full_messages.to_sentence }
+        format.json { render :json => import.errors, :status => :unprocessable_entity, :layout => false }
       end and return
     end
   end

@@ -1,0 +1,68 @@
+- content_for :title, "RVA - User Administration"
+
+#admin-panel
+  .row.mt-4
+    .col-md-12
+      .d-flex.justify-content-between.align-items-center.mb-3
+        %h2.mb-0 User Administration
+        = link_to admin_root_path, :class => "btn btn-sm" do
+          %i.fa.fa-arrow-left.mr-1
+          Back to panel
+
+      = form_with :url => admin_users_path, :method => :get, :class => "form-row mb-3" do |f|
+        .col-md-5.mb-2
+          = f.text_field :q, :value => @q, :placeholder => "Search username, email or country", :class => "form-control"
+        .col-md-3.mb-2
+          = f.select :role, options_for_select([["All roles", ""], ["Admins", "admin"], ["Moderators", "mod"], ["Organizers", "organizer"], ["Sponsors", "sponsor"]], @role), {}, { :class => "form-control" }
+        .col-md-2.mb-2
+          = f.submit "Filter", :class => "btn btn-block", :"data-turbo" => false
+        .col-md-2.mb-2
+          = link_to "Reset", admin_users_path, :class => "btn btn-block"
+
+      .d-flex.mb-3
+        = paginate @users
+
+      .table-responsive
+        %table.table
+          %thead
+            %tr
+              %th #
+              %th Username
+              %th Roles
+              %th Country
+              %th Email
+              %th.text-nowrap Registered
+              %th.text-nowrap Last Sign In
+              %th.text-center Sign Ins
+          %tbody
+            - @users.each do |user|
+              %tr
+                %td
+                  %small= @count += 1
+                %td
+                  = link_to user.username, user_path(user)
+                %td
+                  - if user.admin?
+                    %span.role-badge.role-admin Admin
+                  - if user.mod?
+                    %span.role-badge.role-mod Mod
+                  - if user.organizer?
+                    %span.role-badge.role-organizer Organizer
+                  - if user.sponsor?
+                    %span.role-badge.role-sponsor Sponsor
+                %td.text-center
+                  = render :partial => "users/country_flag", :locals => { :country => user.country }
+                %td
+                  %small= user.email
+                %td
+                  %small= pretty_time_precise(user.created_at)
+                %td
+                  %small= user.last_sign_in_at ? pretty_time_precise(user.last_sign_in_at) : "Never"
+                %td.text-center
+                  %small= user.sign_in_count
+
+      - if @users.empty?
+        %p.empty-note.mt-3 No users match your search.
+
+      .d-flex.mt-4
+        = paginate @users

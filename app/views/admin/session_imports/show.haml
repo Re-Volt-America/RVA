@@ -1,0 +1,52 @@
+- content_for :title, "RVA - Session Import"
+
+#admin-panel
+  .row.mt-4
+    .col-md-8.offset-md-2
+      .d-flex.justify-content-between.align-items-center.mb-3
+        %h2.mb-0 Session Import
+        = link_to admin_session_imports_path, :class => "btn btn-sm" do
+          %i.fa.fa-arrow-left.mr-1
+          Back
+
+      .card
+        .card-body
+          %table.table.mb-0
+            %tbody
+              %tr
+                %th Status
+                %td= import_status_badge(@import.status)
+              %tr
+                %th Uploaded by
+                %td= @import.uploaded_by&.username || "—"
+              %tr
+                %th File
+                %td= @import.original_filename || "—"
+              %tr
+                %th Category
+                %td= @import.category ? category_name(@import.category) : "—"
+              %tr
+                %th Teams session
+                %td= @import.teams ? "Yes" : "No"
+              %tr
+                %th Enqueued
+                %td= @import.enqueued_at ? pretty_time_precise(@import.enqueued_at) : "—"
+              %tr
+                %th Started
+                %td= @import.started_at ? pretty_time_precise(@import.started_at) : "—"
+              %tr
+                %th Finished
+                %td= @import.finished_at ? pretty_time_precise(@import.finished_at) : "—"
+              %tr
+                %th Duration
+                %td= import_duration(@import)
+              - parsed = @import.result_session
+              - if parsed
+                %tr
+                  %th Resulting session
+                  %td= link_to "Session ##{parsed.number}", session_path(parsed)
+
+      - if @import.failed? && @import.error_message.present?
+        .alert.alert-danger.mt-3
+          %strong.mr-1 Error:
+          = @import.error_message

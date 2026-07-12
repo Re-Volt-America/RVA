@@ -1,6 +1,22 @@
 RVA::Application.routes.draw do
   default_url_options :host => 'localhost'
 
+  # Administration Panel (admins only). Declared here, in the higher-priority
+  # application routes, so /admin/* resolves ahead of the catch-all
+  # `/:username` route defined in config/routes/user.rb.
+  require 'sidekiq/web'
+
+  namespace :admin do
+    root :to => 'dashboard#index'
+    resources :users, :only => [:index]
+    resources :session_imports, :only => [:index, :show]
+  end
+
+  # Sidekiq's own dashboard, restricted to signed-in admins via Warden.
+  authenticate :user, ->(user) { user.respond_to?(:admin?) && user.admin? } do
+    mount Sidekiq::Web => '/admin/sidekiq'
+  end
+
   root :to => 'application#index', :via => 'get'
 
   get 'about' => 'application#about'

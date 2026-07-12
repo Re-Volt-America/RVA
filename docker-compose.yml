@@ -31,6 +31,29 @@ services:
     links:
       - mongo
       - redis
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec sidekiq -C config/sidekiq.yml -r ./config/environment.rb
+    volumes:
+      - ./log:/rails/log
+      - ./public/uploads:/rails/public/uploads
+    networks: [ rva ]
+    env_file:
+      - .env
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      MAILER_USERNAME: ${MAILER_USERNAME}
+      MAILER_PASSWORD: ${MAILER_PASSWORD}
+      MAILER_SMTP: ${MAILER_SMTP}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
   mongo:
     image: mongo:7.0
     restart: always

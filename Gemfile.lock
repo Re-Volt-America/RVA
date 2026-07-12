@@ -338,7 +338,7 @@ GEM
     redcarpet (3.6.0)
     redis (5.0.8)
       redis-client (>= 0.17.0)
-    redis-client (0.18.0)
+    redis-client (0.25.2)
       connection_pool
     regexp_parser (2.8.2)
     reline (0.4.3)
@@ -399,6 +399,12 @@ GEM
     shrine-mongoid (1.0.0)
       mongoid (>= 5.0)
       shrine (>= 3.0.0.beta3, < 4)
+    sidekiq (7.3.9)
+      base64
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -499,6 +505,7 @@ DEPENDENCIES
   sentry-rails (~> 5.11)
   shrine (~> 3.5)
   shrine-mongoid (~> 1.0)
+  sidekiq (~> 7.3)
   sprockets-rails (~> 3.4, >= 3.4.2)
   stimulus-rails (~> 1.2, >= 1.2.2)
   turbo-rails (~> 1.4)

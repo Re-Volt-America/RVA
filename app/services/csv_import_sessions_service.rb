@@ -39,7 +39,7 @@ class CsvImportSessionsService
   end
 
   def call
-    csv = CSV.parse(File.open(@file))
+    csv = CSV.parse(read_file_content)
 
     unless is_rv_session_log(csv)
       return nil # FIXME: handle?
@@ -176,6 +176,17 @@ class CsvImportSessionsService
   # TODO: Check whether this csv corresponds to a Re-Volt session log
   def is_rv_session_log(_csv)
     true
+  end
+
+  # Reads the raw CSV content regardless of whether @file is an uploaded file,
+  # a Shrine attachment/Tempfile (background import) or a plain path/String.
+  def read_file_content
+    if @file.respond_to?(:read)
+      @file.rewind if @file.respond_to?(:rewind)
+      @file.read
+    else
+      File.read(@file)
+    end
   end
 
   def find_user_by_username(username)

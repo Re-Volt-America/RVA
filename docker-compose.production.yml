@@ -40,6 +40,35 @@ services:
     links:
       - mongo
       - redis
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command: bundle exec sidekiq -C config/sidekiq.yml -r ./config/environment.rb
+    volumes:
+      - /home/rva/RVA/shared/log:/rails/log
+      - /home/rva/RVA/shared/public/uploads:/rails/public/uploads
+      - /home/rva/RVA/shared/public/uploads/cache:/rails/public/uploads/cache
+      - /home/rva/RVA/shared/vendor/bundle:/rails/vendor/bundle
+      - /home/rva/RVA/shared/.bundle:/rails/.bundle
+      - /home/rva/RVA/shared/public/system:/rails/public/system
+      - /home/rva/RVA/shared/.env:/rails/.env
+    networks: [ rva ]
+    env_file:
+      - /home/rva/RVA/shared/.env
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      MAILER_USERNAME: ${MAILER_USERNAME}
+      MAILER_PASSWORD: ${MAILER_PASSWORD}
+      MAILER_SMTP: ${MAILER_SMTP}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
   mongo:
     image: mongo:7.0
     restart: always
