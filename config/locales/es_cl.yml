@@ -627,6 +627,8 @@ es-CL:
         delete: "Sesión eliminada correctamente."
         import:
           success: "La sesión se ha importado correctamente."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
     results:
       no-team-results: "No hay resultados por equipos para mostrar"
     nav:
@@ -1071,6 +1073,10 @@ es-CL:
   #Alert message boxes
   alerts:
     no-permission: "No tienes permiso"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
