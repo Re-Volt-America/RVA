@@ -625,6 +625,8 @@ pt:
         delete: "Sessão deletada com sucesso."
         import:
           success: "Sessão importada com sucesso."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
     results:
       no-team-results: "Nenhum resultado para exibir :("
     nav:
@@ -1069,6 +1071,10 @@ pt:
   #Alert message boxes
   alerts:
     no-permission: "Você não tem permissão"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
