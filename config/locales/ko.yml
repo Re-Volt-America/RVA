@@ -625,6 +625,8 @@ ko:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
     results:
       no-team-results: "No team results to disiplay"
     nav:
@@ -1066,6 +1068,10 @@ ko:
   #Alert message boxes
   alerts:
     no-permission: "권한이 없습니다."
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
