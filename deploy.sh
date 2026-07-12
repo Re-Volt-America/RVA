@@ -8,12 +8,14 @@ cd /home/rva/RVA/current
 
 COMPOSE="docker compose -f docker-compose.production.yml"
 
-echo "==> Building new app image (old container still serving)"
-$COMPOSE build app --progress=plain app
+echo "==> Building new image (old containers still serving)"
+$COMPOSE build --progress=plain app
 
-echo "==> Swapping in new app container"
-# --no-deps: leave mongo/redis untouched
-$COMPOSE up -d --no-deps app
+echo "==> Swapping in new app + sidekiq containers"
+# app and sidekiq share the freshly built rva-app image, so recreate them
+# together to keep the web process and the background worker in sync.
+# --no-deps: leave mongo/redis untouched.
+$COMPOSE up -d --no-deps app sidekiq
 
 echo "==> Pruning dangling images"
 docker image prune -f

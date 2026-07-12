@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: rva-app:latest
     volumes:
       - ./log:/rails/log
       - ./public/uploads:/rails/public/uploads
@@ -32,9 +33,9 @@ services:
       - mongo
       - redis
   sidekiq:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Reuse the exact image built for `app` so the worker and web process always
+    # run identical code. Only `app` carries the build: block.
+    image: rva-app:latest
     command: bundle exec sidekiq -C config/sidekiq.yml -r ./config/environment.rb
     volumes:
       - ./log:/rails/log
