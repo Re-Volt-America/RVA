@@ -13,12 +13,13 @@ module AdminHelper
     link_to(user.username, user_path(user))
   end
 
-  # Links a SessionImport to the session it produced ("—" when none yet).
+  # Links a SessionImport to the session it produced, shown as the session's
+  # hash id ("—" when there is no session yet).
   def import_session_link(import)
     session = import.result_session
     return content_tag(:span, "—") if session.nil?
 
-    link_to("##{session.number}", session_path(session))
+    link_to(session.id.to_s, session_path(session))
   end
 
   # Human readable duration for a SessionImport ("—" when unknown).
