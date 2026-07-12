@@ -15,6 +15,16 @@ require 'action_cable/engine'
 require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 
+# Sidekiq does not depend on Rails, so it only wires up its Active Job
+# integration (which defines Sidekiq::ActiveJob) when it detects Rails at the
+# moment `sidekiq` is required. The Sidekiq CLI that runs the worker requires
+# `sidekiq` *before* Rails is loaded, so that detection is skipped and booting
+# the app later raises `uninitialized constant Sidekiq::ActiveJob`. Loading the
+# Rails hooks explicitly here fixes it for the worker, web and test processes
+# alike. See https://github.com/sidekiq/sidekiq/issues/6668
+require 'sidekiq'
+require 'sidekiq/rails'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
