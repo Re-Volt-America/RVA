@@ -152,6 +152,13 @@ module SYS
 
   module SCORING
     NORMALIZER_CONSTANT = 0.1
+
+    # Participation floor awarded to any finishing position that falls outside
+    # the explicit tables below. The tables only enumerate positions 1..16
+    # (Re-Volt's historical lobby cap), but sessions may now have any number of
+    # racers, so positions beyond the last listed entry score MIN_POINTS.
+    MIN_POINTS = 1
+
     NORMAL = {
       1 => 15,
       2 => 12,

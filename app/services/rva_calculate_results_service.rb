@@ -302,9 +302,12 @@ class RvaCalculateResultsService
   end
 
   def get_position_score(position, big_scoring)
-    return SYS::SCORING::BIG[position] if big_scoring
+    scoring_table = big_scoring ? SYS::SCORING::BIG : SYS::SCORING::NORMAL
 
-    SYS::SCORING::NORMAL[position]
+    # The tables only enumerate positions 1..16, but a session can have any
+    # number of racers. Anyone finishing beyond the table gets the participation
+    # floor (MIN_POINTS).
+    scoring_table.fetch(position, SYS::SCORING::MIN_POINTS)
   end
 
   def get_car_bonus(car)
