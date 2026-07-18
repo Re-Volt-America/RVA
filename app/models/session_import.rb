@@ -23,6 +23,9 @@ class SessionImport
 
   field :status, :type => String, :default => PENDING
   field :error_message, :type => String
+  # Full exception backtrace / technical log captured when an import fails, so
+  # admins can inspect (and share) the underlying stack trace.
+  field :error_backtrace, :type => String
   field :session_log_data, :type => String
 
   # Parameters captured from the upload form, needed to (re)run the import.
@@ -65,6 +68,22 @@ class SessionImport
 
   def in_progress?
     pending? || processing?
+  end
+
+  # Whether we captured any inspectable error information for a failed import.
+  def error_details?
+    failed? && (error_message.present? || error_backtrace.present?)
+  end
+
+  # A plain-text summary of the failure (message + stack trace), suitable for
+  # copying and sharing with a developer.
+  def error_details_text
+    parts = []
+    parts << "Import: #{original_filename}" if original_filename.present?
+    parts << "Failed at: #{finished_at}" if finished_at
+    parts << "Message: #{error_message}" if error_message.present?
+    parts << "\nBacktrace:\n#{error_backtrace}" if error_backtrace.present?
+    parts.join("\n")
   end
 
   # Human friendly duration in seconds (nil until we have timing data).

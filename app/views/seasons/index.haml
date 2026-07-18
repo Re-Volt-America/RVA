@@ -33,7 +33,7 @@
               %strong.text-gray-dark
                 = season.name
             %span.d-block.session-host
-              = "#{season.start_date} — #{season.end_date.nil? ? t("seasons.bottom.present") : season.end_date }"
+              = "#{season.start_date} - #{season.end_date.nil? ? t("seasons.bottom.present") : season.end_date }"
       - else
         %a.media.text-muted.pt-3.border-bottom.border-gray{:href => season_path(season) }
           .media-body.pb-3.mb-0.small.lh-125

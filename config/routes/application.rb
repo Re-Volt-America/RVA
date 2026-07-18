@@ -70,6 +70,16 @@ RVA::Application.routes.draw do
     end
   end
 
+  # Uploader-facing import progress screen. After uploading a Session log the
+  # user is sent here to watch a progress bar; `status` is polled as JSON and
+  # the page redirects to the parsed Session's results once it completes.
+  # (Distinct from the admin-only /admin/session_imports monitor.)
+  resources :session_imports, :only => [:show] do
+    member do
+      get :status
+    end
+  end
+
   resources :weekly_schedules
 
   match '404', :to => 'errors#not_found', :via => :all

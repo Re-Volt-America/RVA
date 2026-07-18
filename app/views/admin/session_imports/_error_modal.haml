@@ -1,0 +1,33 @@
+-# Dialog with the failure details for a Session import. Triggered by the "?"
+-# button rendered alongside a Failed status badge (see AdminHelper#import_status_cell).
+.modal.fade.import-error-modal{:id => modal_id, :tabindex => "-1", :role => "dialog", :"aria-hidden" => "true", :"aria-labelledby" => "#{modal_id}-title"}
+  .modal-dialog.modal-lg.modal-dialog-centered{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5.modal-title{:id => "#{modal_id}-title"}
+          %i.fa.fa-exclamation-triangle.mr-2
+          Import error
+        %button.close{:type => "button", :"data-dismiss" => "modal", :"aria-label" => "Close"}
+          %span{:"aria-hidden" => "true"} &times;
+      .modal-body{:data => {:controller => "clipboard"}}
+        %dl.import-error-meta
+          %dt File
+          %dd= import.original_filename || "—"
+          %dt Uploaded by
+          %dd= import.uploaded_by&.username || "—"
+          %dt Failed
+          %dd= import.finished_at ? pretty_time_precise(import.finished_at) : "—"
+
+        - if import.error_message.present?
+          %p.import-error-heading Message
+          %pre.import-error-block= import.error_message
+
+        - if import.error_backtrace.present?
+          %p.import-error-heading Technical log / stack trace
+          %pre.import-error-block.import-error-trace= import.error_backtrace
+
+        %button.btn.btn-sm.mt-2{:type => "button", :data => {:action => "clipboard#copy", :"clipboard-text" => import.error_details_text}}
+          %i.fa.fa-copy.mr-1
+          Copy details
+      .modal-footer
+        %button.btn.btn-sm{:type => "button", :"data-dismiss" => "modal"} Close

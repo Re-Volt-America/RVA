@@ -70,7 +70,7 @@
             %tbody
               - (@imports_in_progress + @recent_imports).each do |import|
                 %tr
-                  %td= import_status_badge(import.status)
+                  %td= import_status_cell(import)
                   %td= import_uploader_link(import)
                   %td= import_session_link(import)
                   %td

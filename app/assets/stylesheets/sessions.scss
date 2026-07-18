@@ -378,3 +378,80 @@ body .tooltip-results-custom {
     color: #ffd966;
   }
 }
+
+// Upload progress screen (session_imports/show) shown after a Session log
+// upload while the background import runs.
+#import-progress {
+  .card {
+    background-color: #000000;
+    border: 1px solid #646464;
+    border-radius: 0;
+    color: #beb8bc;
+  }
+
+  h3 {
+    color: #fff;
+    font-family: NissanOpti, serif;
+  }
+
+  .import-progress-sub {
+    color: #a49fa2;
+    margin-bottom: 0;
+  }
+
+  .progress.import-progress-bar-wrap {
+    height: 22px;
+    background-color: #1a1a1a;
+    border: 1px solid #646464;
+    border-radius: 0;
+  }
+
+  .progress-bar {
+    background-color: #ffd966;
+    color: #262626;
+    font-weight: bold;
+    transition: width .25s ease;
+
+    &.bg-danger {
+      background-color: #ff2200 !important;
+      color: #fff;
+    }
+  }
+
+  .import-progress-percent {
+    color: #ffd966;
+    font-family: NissanOpti, serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .import-progress-file {
+    color: #6b6669;
+    font-size: 13px;
+    word-break: break-all;
+  }
+
+  .alert-danger {
+    background-color: #1d0707;
+    border: 1px solid #ff2200;
+    color: #ff9d90;
+    border-radius: 0;
+  }
+
+  // The descriptive validation breakdown is multi-line; preserve its line
+  // breaks and indentation so the bulleted list stays readable.
+  .import-progress-error-text {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 13px;
+  }
+
+  .btn {
+    color: #fff;
+
+    &:hover, &:focus {
+      color: #000;
+    }
+  }
+}

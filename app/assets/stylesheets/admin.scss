@@ -165,4 +165,133 @@
     color: #6b6669;
     font-style: italic;
   }
+
+  // "?" button shown next to a Failed status badge to open the error dialog.
+  .import-error-toggle {
+    background: transparent;
+    border: 0;
+    padding: 0 0 0 4px;
+    color: #ff8a7a;
+    cursor: pointer;
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 15px;
+
+    &:hover, &:focus {
+      color: #ffb3a8;
+      outline: none;
+    }
+  }
+
+  // Inline error details card on the import show page.
+  .import-error-details {
+    border-color: #7a1a10;
+  }
+
+  .import-error-heading {
+    color: #ffd966;
+    font-family: "NissanOpti", serif;
+    margin-bottom: .3rem;
+    margin-top: .5rem;
+  }
+
+  .import-error-block {
+    background-color: #140606;
+    border: 1px solid #5a1109;
+    border-radius: 0;
+    color: #ff9d90;
+    padding: .6rem .75rem;
+    margin-bottom: .5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 12px;
+    max-height: 320px;
+    overflow: auto;
+  }
+
+  .import-error-trace {
+    color: #c9b6b3;
+    max-height: 360px;
+  }
+}
+
+// Failed-import error dialog. Themed dark to match the Administration Panel
+// (Bootstrap's default modal is white). Declared outside #admin-panel because
+// Bootstrap renders/moves modals near the end of the DOM.
+.import-error-modal {
+  .modal-content {
+    background-color: #000;
+    border: 1px solid #646464;
+    border-radius: 0;
+    color: #beb8bc;
+  }
+
+  .modal-header, .modal-footer {
+    border-color: #333;
+  }
+
+  .modal-title {
+    color: #fff;
+    font-family: NissanOpti, serif;
+  }
+
+  .close {
+    color: #fff;
+    text-shadow: none;
+    opacity: .7;
+
+    &:hover { opacity: 1; }
+  }
+
+  .import-error-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .15rem .75rem;
+    margin-bottom: .75rem;
+
+    dt {
+      color: #a49fa2;
+      font-weight: 400;
+    }
+
+    dd {
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  .import-error-heading {
+    color: #ffd966;
+    font-family: "NissanOpti", serif;
+    margin-bottom: .3rem;
+    margin-top: .5rem;
+  }
+
+  .import-error-block {
+    background-color: #140606;
+    border: 1px solid #5a1109;
+    color: #ff9d90;
+    padding: .6rem .75rem;
+    margin-bottom: .5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 12px;
+    max-height: 320px;
+    overflow: auto;
+  }
+
+  .import-error-trace {
+    color: #c9b6b3;
+    max-height: 360px;
+  }
+
+  .btn {
+    color: #fff;
+    border-color: #fff;
+
+    &:hover, &:focus {
+      color: #000;
+      background-color: #fff;
+    }
+  }
 }

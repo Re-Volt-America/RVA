@@ -146,22 +146,12 @@ class SessionsController < ApplicationController
     if import.save
       SessionImportJob.perform_later(import.id.to_s)
 
-      # Admins are sent to the panel to watch progress; everyone else (organizers)
-      # returns to the home page with a message that doesn't reference a panel
-      # they cannot access.
-      if user_is_admin?
-        redirect_target = admin_session_imports_path
-        enqueued_notice = t('rankings.sessions.controller.import.enqueued')
-      else
-        redirect_target = root_path
-        enqueued_notice = t('rankings.sessions.controller.import.enqueued_uploader')
-      end
-
+      # Everyone who uploads (admins and organizers alike) is sent to the import
+      # progress screen, which shows a live progress bar and then forwards them
+      # straight to the parsed Session's results page once it finishes.
       respond_to do |format|
         format.html do
-          redirect_to redirect_target,
-                      status: :see_other,
-                      notice: enqueued_notice
+          redirect_to session_import_path(import), status: :see_other
         end
         format.json { render :json => { :id => import.id.to_s, :status => import.status }, :status => :accepted, :layout => false }
         format.any { head :not_acceptable }

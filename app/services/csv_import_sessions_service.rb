@@ -4,6 +4,8 @@ class CsvImportSessionsService
   require 'csv'
   require 'rva_calculate_results_service'
   require 'session_results_table'
+  require 'session_import_error'
+  require 'session_validation_report'
   require 'stats_service'
   require 'team_points_service'
 
@@ -72,6 +74,16 @@ class CsvImportSessionsService
     }
 
     session = Session.new(session_hash)
+
+    # Validate up front, before StatsService / TeamPointsService begin
+    # persisting (they call update! on the session, ranking, season and each
+    # user). This fails fast with a precise, per-field breakdown of what's
+    # wrong and avoids leaving half-applied stats behind when the
+    # parsed data is invalid.
+    unless session.valid?
+      raise SessionImportError::InvalidSession, SessionValidationReport.call(session)
+    end
+
     rva_results = RvaCalculateResultsService.new(session).call
     session.results_data = SessionResultsTable.from_legacy_array(rva_results, session).as_serialized
 

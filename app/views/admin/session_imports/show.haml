@@ -46,7 +46,21 @@
                   %th Resulting session
                   %td= link_to "Session ##{parsed.number}", session_path(parsed)
 
-      - if @import.failed? && @import.error_message.present?
-        .alert.alert-danger.mt-3
-          %strong.mr-1 Error:
-          = @import.error_message
+      - if @import.error_details?
+        .card.import-error-details.mt-3{:data => {:controller => "clipboard"}}
+          .card-body
+            %h5.mb-3
+              %i.fa.fa-exclamation-triangle.mr-2
+              Error details
+
+            - if @import.error_message.present?
+              %p.import-error-heading Message
+              %pre.import-error-block= @import.error_message
+
+            - if @import.error_backtrace.present?
+              %p.import-error-heading Technical log / stack trace
+              %pre.import-error-block.import-error-trace= @import.error_backtrace
+
+            %button.btn.btn-sm.mt-2{:type => "button", :data => {:action => "clipboard#copy", :"clipboard-text" => @import.error_details_text}}
+              %i.fa.fa-copy.mr-1
+              Copy details
