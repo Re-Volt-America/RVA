@@ -193,11 +193,34 @@ class CsvImportSessionsService
   # Reads the raw CSV content regardless of whether @file is an uploaded file,
   # a Shrine attachment/Tempfile (background import) or a plain path/String.
   def read_file_content
-    if @file.respond_to?(:read)
-      @file.rewind if @file.respond_to?(:rewind)
-      @file.read
-    else
-      File.read(@file)
+    raw =
+      if @file.respond_to?(:read)
+        @file.rewind if @file.respond_to?(:rewind)
+        @file.read
+      else
+        File.read(@file)
+      end
+
+    normalize_encoding(raw)
+  end
+
+  # RVGL session logs are UTF-8, but Shrine downloads them in binary mode, so
+  # @file.read hands us an ASCII-8BIT string. Left as-is, any accented name
+  # (Uki Ñiki, ...) makes CSV/String operations raise
+  # "\xC3 from ASCII-8BIT to UTF-8". We tag the bytes as UTF-8 (which they
+  # already are); if that isn't valid we try Windows-1252 (older exports) and,
+  # as a last resort, scrub any stray bytes so a single bad character can't sink
+  # the whole import.
+  def normalize_encoding(content)
+    return content if content.nil?
+
+    utf8 = content.dup.force_encoding(Encoding::UTF_8)
+    return utf8 if utf8.valid_encoding?
+
+    begin
+      content.encode(Encoding::UTF_8, Encoding::WINDOWS_1252, :invalid => :replace, :undef => :replace)
+    rescue StandardError
+      utf8.scrub('?')
     end
   end
 
