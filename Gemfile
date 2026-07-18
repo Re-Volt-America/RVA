@@ -54,7 +54,7 @@ group :development do
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
   gem 'ed25519', '~> 1.3'                                             # Resolve OpenSSH problems with capistrano
   gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
-  gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem 'rack-mini-profiler', '>= 4.0.1'                                # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 
