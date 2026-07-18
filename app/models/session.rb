@@ -5,6 +5,9 @@ class Session
 
   store_in :database => 'rv_sessions'
 
+  # Speeds up "find sessions this racer took part in" (users#show).
+  index({ 'racer_result_entries.username' => 1 })
+
   belongs_to :ranking
   has_and_belongs_to_many :hosts, :class_name => 'User', :inverse_of => nil
   embeds_many :races

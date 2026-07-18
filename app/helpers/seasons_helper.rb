@@ -1,7 +1,9 @@
 module SeasonsHelper
   # @return The most recent season, or nil if there are no seasons in the system
   def current_season
-    Season.all.max_by { |s| s[:start_date] }
+    return @current_season if defined?(@current_season)
+
+    @current_season = Season.order_by(:start_date => :desc).first
   end
 
   # @return The season currently in context: the one identified by the :season

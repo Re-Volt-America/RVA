@@ -8,15 +8,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by!(:username => params[:username].upcase)
-    @recent_sessions = []
 
-    Session.all.each do |session|
-      next unless session.racer_result_entries.any? { |r| r.username.upcase.eql?(params[:username].upcase) }
-
-      @recent_sessions << session
-    end
-
-    @recent_sessions = @recent_sessions.last(5).reverse!
+    @recent_sessions = Session
+                       .where('racer_result_entries.username' => @user.username)
+                       .order_by(:created_at => :desc)
+                       .limit(5)
+                       .to_a
 
     @rank = if current_ranking
               current_ranking.get_rank(@user)
