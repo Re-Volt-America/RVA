@@ -48,7 +48,7 @@ class CsvImportSessionsService
     end
 
     session_arr = csv.reject { |row| blank_row?(row) }
-    version_row = session_arr.find { |row| row[0] == '#' }
+    version_row = session_arr.find { |row| row[0] == 'Version' }
     session_row = session_arr.find { |row| row[0] == 'Session' }
 
     return nil if version_row.nil? || session_row.nil?
