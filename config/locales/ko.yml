@@ -363,6 +363,7 @@ ko:
       all-tracks: "모든 트랙"
       season: "시즌"
       title: "RVA 트랙"
+      new-track: "Add Track"
       no-tracks: "표시할 트랙이 없음"
       made-by: "by: %{author_name}"
       format:
@@ -400,6 +401,7 @@ ko:
         stock: "기본"
         lego: "레고"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Track could not be saved"
       import:
         title: "트랙 가져오기"
@@ -456,6 +458,7 @@ ko:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "The RVA Cars"
+      new-car: "Add Car"
       ratings-link: "Car Ratings"
       features:
         speed: "Speed"
@@ -466,6 +469,7 @@ ko:
         author: "Author"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Original Re-Volt Content"
         lego-tooltip:
@@ -538,6 +542,7 @@ ko:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "The RVA Seasons"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "What are RVA Seasons?"
       description: "In RVA, we follow a seasonal format for online racing. Every Season consists of 6 Rankings, and each ranking consists of 28 Sessions, 18 of which are for Single races and the other 10 for Team races. Players score points for every race."
@@ -620,6 +625,9 @@ ko:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
     results:
       no-team-results: "No team results to disiplay"
     nav:
@@ -713,6 +721,8 @@ ko:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1059,6 +1069,10 @@ ko:
   #Alert message boxes
   alerts:
     no-permission: "권한이 없습니다."
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
@@ -1084,6 +1098,9 @@ ko:
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
@@ -1104,6 +1121,7 @@ ko:
     submit:
       import: "Import"
       update: "Update"
+      create: "Create"
     checkbox:
       teams: "Teams"
     button:

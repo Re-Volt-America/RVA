@@ -363,6 +363,7 @@ it:
       all-tracks: "Tutti i tracciati"
       season: "Stagione"
       title: "I tracciati di RVA"
+      new-track: "Add Track"
       no-tracks: "No tracks to display"
       made-by: "by: %{author_name}"
       format:
@@ -400,6 +401,7 @@ it:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -456,6 +458,7 @@ it:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Le auto di RVA"
+      new-car: "Add Car"
       ratings-link: "Valutazioni Auto"
       features:
         speed: "Velocità"
@@ -466,6 +469,7 @@ it:
         author: "Author"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Contenuto originale Di Re-Volt"
         lego-tooltip:
@@ -538,6 +542,7 @@ it:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Le stagioni di RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "Cosa sono le stagioni di RVA?"
       description: "In RVA adottiamo un format stagionale per le corse online. Ogni stagione è composta da 6 Classifiche e ogni classifica è composta da 28 Sessioni, di cui 18 in Singolo e 10 in Team. I giocatori prendono punti per ogni gara."
@@ -620,6 +625,9 @@ it:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
     results:
       no-team-results: "No team results to disiplay"
     nav:
@@ -713,6 +721,8 @@ it:
         sessions-played: "Sessions Played"
       tracks:
         not-found: "Track not found"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1062,6 +1072,10 @@ it:
   #Alert message boxes
   alerts:
     no-permission: "You do not have permission"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
@@ -1087,6 +1101,9 @@ it:
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
@@ -1107,6 +1124,7 @@ it:
     submit:
       import: "Import"
       update: "Aggiorna"
+      create: "Create"
     checkbox:
       teams: "Squadre"
     button:

@@ -363,6 +363,7 @@ es:
       all-tracks: "Todas las pistas"
       season: "Temporada"
       title: "Pistas de RVA"
+      new-track: "Add Track"
       no-tracks: "No tracks to display"
       made-by: "by: %{author_name}"
       format:
@@ -400,6 +401,7 @@ es:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Track could not be saved"
       import:
         title: "Import Tracks"
@@ -456,6 +458,7 @@ es:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Coches de RVA"
+      new-car: "Add Car"
       ratings-link: "Clasificación de coches"
       features:
         speed: "Velocidad"
@@ -466,6 +469,7 @@ es:
         author: "Author"
         stock: "Coches de Serie"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Contenido Original de Re-Volt"
         lego-tooltip:
@@ -538,6 +542,7 @@ es:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas de RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "¿Qué son las temporadas de RVA?"
       description: "En RVA, seguimos un formato estacional para carreras en línea. Cada temporada consiste en 6 rankings, y cada ranking consta de 28 sesiones, 18 de las cuales son para carreras individuales y las otras 10 para carreras de equipos. Los jugadores anotan puntos por cada carrera."
@@ -620,6 +625,9 @@ es:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
     results:
       no-team-results: "No hay resultados de equipo por mostrar"
     nav:
@@ -713,6 +721,8 @@ es:
         sessions-played: "Sesiones jugadas"
       tracks:
         not-found: "Pista no encontrada"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1062,6 +1072,10 @@ es:
   #Alert message boxes
   alerts:
     no-permission: "Usted no tiene permiso"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
@@ -1087,6 +1101,9 @@ es:
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
@@ -1107,6 +1124,7 @@ es:
     submit:
       import: "Import"
       update: "Update"
+      create: "Create"
     checkbox:
       teams: "Teams"
     button:
