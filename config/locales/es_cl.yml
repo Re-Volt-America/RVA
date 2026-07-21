@@ -365,7 +365,7 @@ es-CL:
       all-tracks: "Todas las pistas"
       season: "Temporadas"
       title: "Pistas de RVA"
-      new-track: "Add Track"
+      new-track: "Agregar pista"
       no-tracks: "No hay pistas para mostrar"
       made-by: "por: %{author_name}"
       format:
@@ -460,7 +460,7 @@ es-CL:
         show:
           description: "Parte del Pack de Autos de RVA para la temporada actual."
       title: "Autos de RVA"
-      new-car: "Add Car"
+      new-car: "Agregar Auto"
       ratings-link: "Clases de autos"
       features:
         speed: "Velocidad"
@@ -544,7 +544,7 @@ es-CL:
       edit:
         page-title: "Re-Volt America - Editar temporada"
     title: "Temporadas de RVA"
-    of-season: "%{title} of %{season}"
+    of-season: "%{title} de la %{season}"
     explanation:
       title: "¿Qué son las temporadas de RVA?"
       description: "En RVA, seguimos un formato de temporadas para las carreras en línea. Cada temporada consiste en 6 rankings, y cada ranking consta de 28 sesiones, 18 de las cuales son carreras individuales y las otras 10 son de carreras en equipos. Los jugadores obtienen puntos por cada carrera."
@@ -627,9 +627,9 @@ es-CL:
         delete: "Sesión eliminada correctamente."
         import:
           success: "La sesión se ha importado correctamente."
-          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
-          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
-          not_found: "That session import could not be found."
+          enqueued: "Session log cargado. Se está procesando en segundo plano. Puedes seguir el progreso en el panel de administración."
+          enqueued_uploader: "Session log cargado. Se está procesando en segundo plano y estará listo pronto."
+          not_found: "Importación de sesión no encontrada."
     results:
       no-team-results: "No hay resultados por equipos para mostrar"
     nav:
@@ -724,7 +724,7 @@ es-CL:
       tracks:
         not-found: "Pista no encontrada"
       racer:
-        no-account: "This player doesn't have an account on the site yet"
+        no-account: "Este jugador aún no tiene una cuenta en la página"
   #Teams page
   teams:
     meta:
@@ -1077,7 +1077,7 @@ es-CL:
   #Administration Panel
   admin:
     session_imports:
-      not_found: "That session import could not be found."
+      not_found: "Importación de sesión no encontrada."
   #Error pages
   error:
     404:
@@ -1104,8 +1104,8 @@ es-CL:
     author: "Autor"
     download-as-png: "Descargar como PNG"
     active-toggle:
-      show-active: "Show Active"
-      show-inactive: "Show Inactive"
+      show-active: "Mostrar activos"
+      show-inactive: "Mostrar inactivos"
     weekdays:
       monday: "Lunes"
       tuesday: "Martes"
@@ -1126,7 +1126,7 @@ es-CL:
     submit:
       import: "Importar"
       update: "Actualizar"
-      create: "Create"
+      create: "Crear"
     checkbox:
       teams: "Equipos"
     button:
