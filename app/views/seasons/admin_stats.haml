@@ -1,0 +1,52 @@
+- content_for :title, "Season Car Usage Admin"
+
+%h2.mt-4.text-center
+  Season Car Usage Statistics
+
+- if @seasons.any?
+  = form_with :url => admin_season_stats_path, :method => :get, :local => true do
+    .row.mb-3
+      .col-md-4
+        %label{:for => "season_id"} Season
+        = select_tag :season_id, options_from_collection_for_select(@seasons, :id, :name, @season&.id.to_s), :class => "form-control"
+      .col-md-2
+        %label{:for => "from_date"} From Date
+        = date_field_tag :from_date, @season_stats_filters[:from_date_value], :class => "form-control"
+      .col-md-2
+        %label{:for => "to_date"} To Date
+        = date_field_tag :to_date, @season_stats_filters[:to_date_value], :class => "form-control"
+      .col-md-2
+        %label{:for => "car_category"} Car Class
+        = select_tag :car_category, options_for_select([["All classes", ""]] + @season_car_category_options, @season_stats_filters[:car_category_value]), :class => "form-control"
+      .col-md-2.d-flex.align-items-end
+        = submit_tag "Apply", :class => "btn w-100"
+
+  .row.mb-3
+    .col-12
+      = link_to "Reset filters", admin_season_stats_path(:season_id => @season&.id), :class => "btn btn-sm"
+
+  .row
+    .col-12
+      .card.mb-4{:style => "background-color: #000000; border: 1px solid #3c3c3c;"}
+        .card-body{:style => "background-color: #000000; color: #ffffff;"}
+          %h4.card-title{:style => "color: #ffffff;"}
+            = "Car Usage in #{@season&.name || 'Season'}"
+          .chart-container{:style => "background-color: #000000; padding: 8px; border-radius: 6px;"}
+            = bar_chart @season_car_usage, colors: ["#5bada9"], legend: false, suffix: " times used", height: "500px", horizontal: true, library: { backgroundColor: "#1d282b", color: "#ffffff", scales: { x: { ticks: { stepSize: 1, precision: 0, color: "#beb8bc" }, grid: { color: "#5a5a5a" } }, y: { ticks: { color: "#ffffff" }, grid: { display: false } } }, plugins: { tooltip: { backgroundColor: "#262626", borderColor: "#646464", titleColor: "#ffffff", bodyColor: "#ffffff", borderWidth: 1 } } }
+
+          - if @season_car_usage.present?
+            .table-responsive.mt-3
+              %table.table.table-sm.table-dark.mb-0
+                %thead
+                  %tr
+                    %th Car
+                    %th.text-right Times Used
+                %tbody
+                  - @season_car_usage.each do |car_name, uses|
+                    %tr
+                      %td= car_name
+                      %td.text-right= uses
+          - else
+            %p.mt-3.mb-0.text-muted No car usage data available for the selected filters.
+- else
+  %p.text-center.mt-4 No seasons found.

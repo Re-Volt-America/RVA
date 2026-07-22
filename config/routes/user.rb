@@ -1,4 +1,8 @@
 RVA::Application.routes.draw do
+  get '/admin', to: redirect('/admin/seasons/stats')
+  get '/admin/users', to: 'users#members', as: :admin_users
+  get '/admin/seasons/stats', to: 'seasons#admin_stats', as: :admin_season_stats
+
   get '/users', :to => redirect('/users/register')
 
   # Well known users with alternative nicknames get their own redirects
