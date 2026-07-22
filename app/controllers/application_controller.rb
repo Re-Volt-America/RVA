@@ -40,6 +40,7 @@ class ApplicationController < ActionController::Base
       { :name => t('nav.user.admin.upload-session'), :path => new_session_path, :organizer => true },
       { :name => t('nav.user.admin.generate-tracklist'), :path => weekly_schedules_path, :organizer => true },
       { :name => "Administrate Users", :path => admin_users_path  },
+      { :name => 'Season Car Usage Stats', :path => admin_season_stats_path },
       { :name => t('nav.user.admin.create-season'), :path => new_season_path },
       { :name => t('nav.user.admin.import-tracks'), :path => new_track_path },
       { :name => t('nav.user.admin.import-cars'), :path => new_car_path },

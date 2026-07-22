@@ -13,7 +13,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by!(:username => params[:username].upcase)
+    @user = User.where(:username => params[:username].to_s.upcase).first
+    if @user.nil?
+      render 'errors/not_found', :status => :not_found
+      return
+    end
+
     @recent_sessions = []
 
     Session.all.each do |session|
