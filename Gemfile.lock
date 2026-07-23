@@ -452,6 +452,7 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
+  ruby
   x64-mingw-ucrt
   x86_64-darwin-19
   x86_64-linux
