@@ -94,7 +94,6 @@ GEM
       msgpack (~> 1.2)
     bson (4.15.0)
     builder (3.3.0)
-    byebug (11.1.3)
     capistrano (3.18.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -121,6 +120,9 @@ GEM
     cssbundling-rails (1.3.3)
       railties (>= 6.0.0)
     date (3.5.1)
+    debug (1.11.1)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.9.3)
@@ -227,7 +229,6 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
     mongo (2.19.1)
       bson (>= 4.14.1, < 5.0.0)
@@ -254,9 +255,6 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.7.3)
-    nokogiri (1.18.9)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.9-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-darwin)
@@ -454,7 +452,6 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
-  ruby
   x64-mingw-ucrt
   x86_64-darwin-19
   x86_64-linux
@@ -463,13 +460,13 @@ DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
   bcrypt_pbkdf (~> 1.1)
   bootsnap
-  byebug (~> 11.1, >= 11.1.3)
   capistrano (~> 3.18)
   capybara (~> 3.39, >= 3.39.2)
   chartkick (~> 5.1, >= 5.1.2)
   countries (~> 5.7)
   country_select (~> 8.0, >= 8.0.3)
   cssbundling-rails (~> 1.1)
+  debug (>= 1.11.1)
   devise (~> 4.9.2)
   devise-i18n (~> 1.12, >= 1.12.1)
   ed25519 (~> 1.3)
@@ -517,4 +514,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.5.9
+   2.6.9

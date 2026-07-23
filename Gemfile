@@ -43,9 +43,7 @@ gem 'turbo-rails', '~> 1.4'                                           # Hotwire'
 gem 'tzinfo-data', :platforms => [:windows, :jruby]                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 group :development, :test do
-  gem 'byebug', '~> 11.1', '>= 11.1.3', :platforms => [               # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    :mri, :mingw, :x64_mingw
-  ]
+  gem 'debug', '>= 1.11.1', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
