@@ -9,5 +9,5 @@ import "./play"
 import "./nav"
 import './session'
 import "./weekly_schedule"
-
-Turbo.session.drive = false
+import "./transition"
+import "./profile_preview"

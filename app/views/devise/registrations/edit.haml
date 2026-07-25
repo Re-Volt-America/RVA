@@ -21,14 +21,20 @@
             = f.fields_for :profile do |profile|
               %h4= t(".profile.profile-picture")
               .form-group
-                - if resource.profile&.profile_picture_data.present?
-                  .mb-3
+                .mb-3
+                  - if resource.profile&.profile_picture_data.present?
                     = image_tag resource.profile.profile_picture_url,
+                      id: "profile-preview",
+                      class: "img-fluid rounded",
+                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+                  - else
+                    = image_tag "no_profile_picture.png",
+                      id: "profile-preview",
                       class: "img-fluid rounded",
                       style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
                 .file-input-group
                   = profile.hidden_field :profile_picture, value: resource.profile&.cached_profile_picture_data, id: nil
-                  = profile.file_field :profile_picture, accept: "image/png, image/jpeg", class: "form-control-file"
+                  = profile.file_field :profile_picture, accept: "image/png, image/jpeg", class: "form-control-file", id: "profile-picture-input"
               %h6= t(".profile.gender")
               .form-group
                 .input-group
@@ -93,7 +99,82 @@
               .row
                 .form-group
                   = profile.text_area :about, :placeholder => t(".profile.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control'
+              %a.btn-link.html-syntax-toggle{"data-toggle" => "collapse", href: "#html-syntax-ref", role: "button", "aria-expanded" => "false"}
+                %i.fa.fa-code
+                HTML syntax reference
+              #html-syntax-ref.collapse.mt-2
+                .html-syntax-ref-box
+                  %table.html-syntax-table
+                    %thead
+                      %tr
+                        %th Tag
+                        %th Code
+                        %th Preview
+                    %tbody
+                      %tr
+                        %td Bold
+                        %td= "&lt;b&gt;text&lt;/b&gt;".html_safe
+                        %td= "<b>text</b>".html_safe
+                      %tr
+                        %td Italic
+                        %td= "&lt;i&gt;text&lt;/i&gt;".html_safe
+                        %td= "<i>text</i>".html_safe
+                      %tr
+                        %td Underline
+                        %td= "&lt;u&gt;text&lt;/u&gt;".html_safe
+                        %td= "<u>text</u>".html_safe
+                      %tr
+                        %td Strikethrough
+                        %td= "&lt;s&gt;text&lt;/s&gt;".html_safe
+                        %td= "<s>text</s>".html_safe
+                      %tr
+                        %td Heading 1
+                        %td= "&lt;h1&gt;text&lt;/h1&gt;".html_safe
+                        %td= "<h1 style='margin:0;font-size:18px;'>text</h1>".html_safe
+                      %tr
+                        %td Heading 2
+                        %td= "&lt;h2&gt;text&lt;/h2&gt;".html_safe
+                        %td= "<h2 style='margin:0;font-size:16px;'>text</h2>".html_safe
+                      %tr
+                        %td Heading 3
+                        %td= "&lt;h3&gt;text&lt;/h3&gt;".html_safe
+                        %td= "<h3 style='margin:0;font-size:14px;'>text</h3>".html_safe
+                      %tr
+                        %td Link
+                        %td= "&lt;a href='url'&gt;text&lt;/a&gt;".html_safe
+                        %td= "<a href='#'>text</a>".html_safe
+                      %tr
+                        %td Image
+                        %td= "&lt;img src='url'&gt;".html_safe
+                        %td= "<i class='fa fa-image'></i> image".html_safe
+                      %tr
+                        %td Quote
+                        %td= "&lt;blockquote&gt;text&lt;/blockquote&gt;".html_safe
+                        %td= "<blockquote style='margin:0;border-left:3px solid #646464;padding-left:8px;'>text</blockquote>".html_safe
+                      %tr
+                        %td Unordered list
+                        %td= "&lt;ul&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ul&gt;".html_safe
+                        %td= "<ul style='margin:0;padding-left:18px;'><li>item</li></ul>".html_safe
+                      %tr
+                        %td Ordered list
+                        %td= "&lt;ol&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ol&gt;".html_safe
+                        %td= "<ol style='margin:0;padding-left:18px;'><li>item</li></ol>".html_safe
+                      %tr
+                        %td Inline code
+                        %td= "&lt;code&gt;text&lt;/code&gt;".html_safe
+                        %td= "<code>text</code>".html_safe
+                      %tr
+                        %td Line break
+                        %td= "&lt;br&gt;".html_safe
+                        %td= "line1<br>line2".html_safe
+                      %tr
+                        %td Horizontal line
+                        %td= "&lt;hr&gt;".html_safe
+                        %td= "<hr style='margin:4px 0;border-color:#646464;'>".html_safe
               .form-group
+                .current-password-notice
+                  %i.fa.fa-info-circle
+                  = t(".profile.current-password-notice")
                 .input-group
                   = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
               .btn-toolbar

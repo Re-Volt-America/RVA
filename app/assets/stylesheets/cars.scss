@@ -170,3 +170,25 @@
     background-color: #000000;
   }
 }
+
+@keyframes car-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#cars .row > div,
+#car-cards-display .row > .car-card {
+  opacity: 0;
+}
+
+#cars.animated .row > div,
+#car-cards-display.animated .row > .car-card {
+  animation: car-slide-up 0.15s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 15ms);
+}
