@@ -605,6 +605,15 @@ a.btn-important-2.disabled, fieldset:disabled a.btn-important-2 {
   }
 }
 
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
 #error_explanation {
   background-color: #2d1215;
   border: 1px solid #842029;

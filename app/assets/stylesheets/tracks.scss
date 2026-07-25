@@ -67,4 +67,13 @@
     flex: 1;
     margin-right: 5px;
   }
+
+  .row > div {
+    opacity: 0;
+  }
+
+  &.animated .row > div {
+    animation: car-slide-up 0.15s ease-out forwards;
+    animation-delay: calc(var(--i, 0) * 15ms);
+  }
 }

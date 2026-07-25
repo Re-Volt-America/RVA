@@ -111,6 +111,23 @@ nav {
   width: 29px;
 }
 
+.locale-form {
+  .dropdown-item {
+    padding: .25rem 1.5rem;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #beb8bc;
+
+    &:hover {
+      background-color: #343a40;
+      color: #fff;
+    }
+  }
+}
+
 .dropdown-submenu {
   display: block;
   position: relative;
