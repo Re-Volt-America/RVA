@@ -279,14 +279,14 @@ lol:
       points-label: "%{n} ptz"
     single-races:
       title: "Singul Racezz"
-      description: "In each ranking, we first play 18 sessions that are single races. In single races, each player competes individually and earns points based on their finishing position. The point system for single races is as follows:"
+      description: "In each rankin, we 1st play 18 sesshunz dat r single racez. In single racez, each kitteh competez individaly n earnz pts bazd on der finishin posishun. Teh pt system 4 single racez iz az folloz:"
       example-title: "Kuick Ekzample"
       example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.25x class factor because it is one class below the lobby class."
       steps-label: "Stepz:"
       formula:
-        position-score: "Position Score"
-        final-multiplier: "Final Multiplier"
-        racer-score: "Racer Score"
+        position-score: "Posishun scwor"
+        final-multiplier: "final multiplication thingie"
+        racer-score: "Racer Scor"
       example-steps:
         step1: "Step 1: Position Score — Look up the points for 2nd place in a normal race → 12 points"
         step2: "Step 2: Car Multiplier — The Rookie car has a car multiplier of 0.9"
@@ -404,7 +404,7 @@ lol:
         stock: "OG katz"
         lego: "A Man has fallen into the river in lego city"
         average-lap-time: "Avg lap taim (s)"
-        active: "Active"
+        active: "Activ"
         error: "Trak kuld nut b savd"
       import:
         title: "Gif Trakz"
@@ -461,7 +461,7 @@ lol:
         show:
           description: "Paaat of te RVA ka pacc of teh kurrant seeson."
       title: "Teh RVA Carz"
-      new-car: "Add Car"
+      new-car: "Add kar"
       ratings-link: "Car gud or bad"
       features:
         speed: "sped"
@@ -472,7 +472,7 @@ lol:
         author: "Kitteh"
         stock: "OG"
         carbox-filename: "LITTERBOX FILE NAME"
-        active: "Active"
+        active: "Activ"
         stock-tooltip:
           tooltip: "OG Re-Volt stuff"
         lego-tooltip:
