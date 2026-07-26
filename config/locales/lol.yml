@@ -299,12 +299,12 @@ lol:
       title: "Carz 2 ratin"
       description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and we also apply a class factor based on how far below the lobby class the car is. Here is how the formula is applied each race with different car multipliers:"
     team-races:
-      title: "Team Races"
+      title: "Team Racez"
       description: "After the 18 single race sessions, we play 10 more sessions in team format. In team races, players are divided into teams and compete together. Each team member earns individual points based on their finishing position, and these points are summed together to create the team's total score."
-      example-title: "Quick Example"
+      example-title: "Kuick Ekzample"
       example-intro: ""
       example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
-      team-members-label: "Team Members:"
+      team-members-label: "Team Kittehz:"
       formula:
         racer-1: "Kitteh 1"
         racer-2: "Kitteh 2"
