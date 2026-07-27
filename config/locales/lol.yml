@@ -281,7 +281,7 @@ lol:
       title: "Singul Racezz"
       description: "In each rankin, we 1st play 18 sesshunz dat r single racez. In single racez, each kitteh competez individaly n earnz pts bazd on der finishin posishun. Teh pt system 4 single racez iz az folloz:"
       example-title: "Kuick Ekzample"
-      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.25x class factor because it is one class below the lobby class."
+      example-scenario: "Ekzampl: A kitteh, who iz playin a lobby of the Amachurr clazz, finishz in 2nd plaze in a noraml race (9 razorz) with a Rooky claz car. In diz case, teh car haz a 0.9 car markiplir n a 1.25x claz faktor bc itz one claz b low teh loby claz."
       steps-label: "Stepz:"
       formula:
         position-score: "Posishun scwor"
