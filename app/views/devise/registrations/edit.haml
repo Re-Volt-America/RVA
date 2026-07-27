@@ -1,24 +1,21 @@
 .container
-  %h3= t(".title")
-  %hr/
-
-  .mb-3
-    = render "devise/shared/error_messages", resource: resource
-
-  %ul.nav.nav-tabs.mb-3{role: "tablist"}
-    %li.nav-item
-      %a#edit-profile-tab.nav-link.active{"aria-controls" => "edit-profile", "aria-selected" => "true", "data-toggle" => "tab", href: "#edit-profile", role: "tab"}= t(".profile.title")
-    %li.nav-item
-      %a#change-email-tab.nav-link{"aria-controls" => "change-email", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-email", role: "tab"}= t(".email.title")
-    %li.nav-item
-      %a#change-password-tab.nav-link{"aria-controls" => "change-password", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-password", role: "tab"}= t(".password.title")
-
-  .tab-content
-    #edit-profile.tab-pane.fade.show.active{:"aria-labelledby" => "edit-profile-tab", role: "tabpanel"}
-      .row
-        .col.pull-left
-          = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
-            = f.fields_for :profile do |profile|
+  .devise-card-header
+    %h2= t(".title")
+    %p Manage your account settings
+  = render "devise/shared/error_messages", resource: resource
+  .devise-tabs
+    %ul.nav.nav-tabs{role: "tablist"}
+      %li.nav-item
+        %a#edit-profile-tab.nav-link.active{"aria-controls" => "edit-profile", "aria-selected" => "true", "data-toggle" => "tab", href: "#edit-profile", role: "tab"}= t(".profile.title")
+      %li.nav-item
+        %a#change-email-tab.nav-link{"aria-controls" => "change-email", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-email", role: "tab"}= t(".email.title")
+      %li.nav-item
+        %a#change-password-tab.nav-link{"aria-controls" => "change-password", "aria-selected" => "false", "data-toggle" => "tab", href: "#change-password", role: "tab"}= t(".password.title")
+    .tab-content
+      #edit-profile.tab-pane.fade.show.active{"aria-labelledby" => "edit-profile-tab", role: "tabpanel"}
+        = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+          = f.fields_for :profile do |profile|
+            .devise-section
               %h4= t(".profile.profile-picture")
               .form-group
                 .mb-3
@@ -26,202 +23,199 @@
                     = image_tag resource.profile.profile_picture_url,
                       id: "profile-preview",
                       class: "img-fluid rounded",
-                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #2a2a2e; padding: 4px; background-color: #0d0d0f;"
                   - else
                     = image_tag "no_profile_picture.png",
                       id: "profile-preview",
                       class: "img-fluid rounded",
-                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+                      style: "max-width: 350px; max-height: 350px; object-fit: cover; border: 1px solid #2a2a2e; padding: 4px; background-color: #0d0d0f;"
                 .file-input-group
                   = profile.hidden_field :profile_picture, value: resource.profile&.cached_profile_picture_data, id: nil
                   = profile.file_field :profile_picture, accept: "image/png, image/jpeg", class: "form-control-file", id: "profile-picture-input"
-              %h6= t(".profile.gender")
-              .form-group
-                .input-group
-                  = profile.text_field :gender, :placeholder => t(".profile.gender"), :autocomplete => 'gender', :class => 'form-control'
-              %h6
-                = t(".profile.nationality.title")
-                %small
-                  = t(".profile.nationality.small")
-              .field.form-group
-                = f.country_select :country, {:include_blank => true}, {:class => "form-control"}
-              %h6
-                = t(".profile.location")
-              .form-group
-                .input-group
-                  = profile.text_field :location, :placeholder => t(".profile.location"), :autocomplete => 'location', :class => 'form-control'
-              %h6
-                = t(".profile.occupation")
-              .form-group
-                .input-group
-                  = profile.text_field :occupation, :placeholder => t(".profile.occupation"), :autocomplete => 'occupation', :class => 'form-control'
-              %h6
-                = t(".profile.interests")
-              .form-group
-                .input-group
-                  = profile.text_field :interests, :placeholder => t(".profile.interests"), :autocomplete => 'interests', :class => 'form-control'
-              %h6
-                = t(".profile.public-email")
-              .form-group
-                .input-group
-                  = profile.text_field :public_email, :placeholder => t(".profile.public-email"), :autocomplete => 'public_email', :class => 'form-control'
-              %h6 Discord
-              .form-group
-                .input-group
-                  = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
-              .form-group
-                .input-group
-                  .input-group-prepend
-                    .input-group-text.devise-form-input-prepend instagram.com/
-                  = profile.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control'
-              .form-group
-                .input-group
-                  .input-group-prepend
-                    .input-group-text.devise-form-input-prepend twitter.com/
-                  = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
-              .form-group
-                .input-group
-                  .input-group-prepend
-                    .input-group-text.devise-form-input-prepend github.com/
-                  = profile.text_field :github, :class => 'form-control'
-              .form-group
-                .input-group
-                  .input-group-prepend
-                    .input-group-text.devise-form-input-prepend crowdin.com/profile/
-                  = profile.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control'
-              .form-group
-                .input-group
-                  .input-group-prepend
-                    .input-group-text.devise-form-input-prepend steamcommunity.com/id/
-                  = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
-              %h6
-                = t(".profile.about-me.title")
-              .row
+                - if resource.profile&.profile_picture_data.present?
+                  .mt-2
+                    = profile.check_box :remove_profile_picture
+                    = t(".profile.remove-picture")
+            .devise-section
+              %h4 Personal Information
+              .devise-input
+                %h6= t(".profile.gender")
                 .form-group
-                  = profile.text_area :about, :placeholder => t(".profile.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control'
-              %a.btn-link.html-syntax-toggle{"data-toggle" => "collapse", href: "#html-syntax-ref", role: "button", "aria-expanded" => "false"}
-                %i.fa.fa-code
-                HTML syntax reference
-              #html-syntax-ref.collapse.mt-2
-                .html-syntax-ref-box
-                  %table.html-syntax-table
-                    %thead
-                      %tr
-                        %th Tag
-                        %th Code
-                        %th Preview
-                    %tbody
-                      %tr
-                        %td Bold
-                        %td= "&lt;b&gt;text&lt;/b&gt;".html_safe
-                        %td= "<b>text</b>".html_safe
-                      %tr
-                        %td Italic
-                        %td= "&lt;i&gt;text&lt;/i&gt;".html_safe
-                        %td= "<i>text</i>".html_safe
-                      %tr
-                        %td Underline
-                        %td= "&lt;u&gt;text&lt;/u&gt;".html_safe
-                        %td= "<u>text</u>".html_safe
-                      %tr
-                        %td Strikethrough
-                        %td= "&lt;s&gt;text&lt;/s&gt;".html_safe
-                        %td= "<s>text</s>".html_safe
-                      %tr
-                        %td Heading 1
-                        %td= "&lt;h1&gt;text&lt;/h1&gt;".html_safe
-                        %td= "<h1 style='margin:0;font-size:18px;'>text</h1>".html_safe
-                      %tr
-                        %td Heading 2
-                        %td= "&lt;h2&gt;text&lt;/h2&gt;".html_safe
-                        %td= "<h2 style='margin:0;font-size:16px;'>text</h2>".html_safe
-                      %tr
-                        %td Heading 3
-                        %td= "&lt;h3&gt;text&lt;/h3&gt;".html_safe
-                        %td= "<h3 style='margin:0;font-size:14px;'>text</h3>".html_safe
-                      %tr
-                        %td Link
-                        %td= "&lt;a href='url'&gt;text&lt;/a&gt;".html_safe
-                        %td= "<a href='#'>text</a>".html_safe
-                      %tr
-                        %td Image
-                        %td= "&lt;img src='url'&gt;".html_safe
-                        %td= "<i class='fa fa-image'></i> image".html_safe
-                      %tr
-                        %td Quote
-                        %td= "&lt;blockquote&gt;text&lt;/blockquote&gt;".html_safe
-                        %td= "<blockquote style='margin:0;border-left:3px solid #646464;padding-left:8px;'>text</blockquote>".html_safe
-                      %tr
-                        %td Unordered list
-                        %td= "&lt;ul&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ul&gt;".html_safe
-                        %td= "<ul style='margin:0;padding-left:18px;'><li>item</li></ul>".html_safe
-                      %tr
-                        %td Ordered list
-                        %td= "&lt;ol&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ol&gt;".html_safe
-                        %td= "<ol style='margin:0;padding-left:18px;'><li>item</li></ol>".html_safe
-                      %tr
-                        %td Inline code
-                        %td= "&lt;code&gt;text&lt;/code&gt;".html_safe
-                        %td= "<code>text</code>".html_safe
-                      %tr
-                        %td Line break
-                        %td= "&lt;br&gt;".html_safe
-                        %td= "line1<br>line2".html_safe
-                      %tr
-                        %td Horizontal line
-                        %td= "&lt;hr&gt;".html_safe
-                        %td= "<hr style='margin:4px 0;border-color:#646464;'>".html_safe
+                  = profile.text_field :gender, :placeholder => t(".profile.gender"), :autocomplete => 'gender', :class => 'form-control'
+                %h6
+                  = t(".profile.nationality.title")
+                  %small= t(".profile.nationality.small")
+                .field.form-group
+                  = f.country_select :country, {:include_blank => true}, {:class => "form-control country-select"}
+                %h6= t(".profile.location")
+                .form-group
+                  = profile.text_field :location, :placeholder => t(".profile.location"), :autocomplete => 'location', :class => 'form-control'
+                %h6= t(".profile.occupation")
+                .form-group
+                  = profile.text_field :occupation, :placeholder => t(".profile.occupation"), :autocomplete => 'occupation', :class => 'form-control'
+                %h6= t(".profile.interests")
+                .form-group
+                  = profile.text_field :interests, :placeholder => t(".profile.interests"), :autocomplete => 'interests', :class => 'form-control'
+            .devise-section
+              %h4 Social Links
+              .devise-input
+                %h6= t(".profile.public-email")
+                .form-group
+                  = profile.text_field :public_email, :placeholder => t(".profile.public-email"), :autocomplete => 'public_email', :class => 'form-control'
+                %h6 Discord
+                .form-group
+                  = profile.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control'
+                .form-group
+                  .input-group
+                    .input-group-prepend
+                      .input-group-text.devise-form-input-prepend instagram.com/
+                    = profile.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control'
+                .form-group
+                  .input-group
+                    .input-group-prepend
+                      .input-group-text.devise-form-input-prepend twitter.com/
+                    = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
+                .form-group
+                  .input-group
+                    .input-group-prepend
+                      .input-group-text.devise-form-input-prepend github.com/
+                    = profile.text_field :github, :class => 'form-control'
+                .form-group
+                  .input-group
+                    .input-group-prepend
+                      .input-group-text.devise-form-input-prepend crowdin.com/profile/
+                    = profile.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control'
+                .form-group
+                  .input-group
+                    .input-group-prepend
+                      .input-group-text.devise-form-input-prepend steamcommunity.com/id/
+                    = profile.text_field :steam, :autocomplete => 'steam', :class => 'form-control'
+            .devise-section
+              %h4= t(".profile.about-me.title")
+              .devise-input
+                .form-group
+                  = profile.text_area :about, :placeholder => t(".profile.about-me.placeholder"), :autocomplete => 'about_me', :class => 'form-control', rows: 5
+                %a.btn-link.html-syntax-toggle{"data-toggle" => "collapse", href: "#html-syntax-ref", role: "button", "aria-expanded" => "false"}
+                  %i.fa.fa-code
+                  HTML syntax reference
+                #html-syntax-ref.collapse.mt-2
+                  .html-syntax-ref-box
+                    %table.html-syntax-table
+                      %thead
+                        %tr
+                          %th Tag
+                          %th Code
+                          %th Preview
+                      %tbody
+                        %tr
+                          %td Bold
+                          %td= "&lt;b&gt;text&lt;/b&gt;".html_safe
+                          %td= "<b>text</b>".html_safe
+                        %tr
+                          %td Italic
+                          %td= "&lt;i&gt;text&lt;/i&gt;".html_safe
+                          %td= "<i>text</i>".html_safe
+                        %tr
+                          %td Underline
+                          %td= "&lt;u&gt;text&lt;/u&gt;".html_safe
+                          %td= "<u>text</u>".html_safe
+                        %tr
+                          %td Strikethrough
+                          %td= "&lt;s&gt;text&lt;/s&gt;".html_safe
+                          %td= "<s>text</s>".html_safe
+                        %tr
+                          %td Heading 1
+                          %td= "&lt;h1&gt;text&lt;/h1&gt;".html_safe
+                          %td= "<h1 style='margin:0;font-size:18px;'>text</h1>".html_safe
+                        %tr
+                          %td Heading 2
+                          %td= "&lt;h2&gt;text&lt;/h2&gt;".html_safe
+                          %td= "<h2 style='margin:0;font-size:16px;'>text</h2>".html_safe
+                        %tr
+                          %td Heading 3
+                          %td= "&lt;h3&gt;text&lt;/h3&gt;".html_safe
+                          %td= "<h3 style='margin:0;font-size:14px;'>text</h3>".html_safe
+                        %tr
+                          %td Link
+                          %td= "&lt;a href='url'&gt;text&lt;/a&gt;".html_safe
+                          %td= "<a href='#'>text</a>".html_safe
+                        %tr
+                          %td Image
+                          %td= "&lt;img src='url'&gt;".html_safe
+                          %td= "<i class='fa fa-image'></i> image".html_safe
+                        %tr
+                          %td Quote
+                          %td= "&lt;blockquote&gt;text&lt;/blockquote&gt;".html_safe
+                          %td= "<blockquote style='margin:0;border-left:3px solid #646464;padding-left:8px;'>text</blockquote>".html_safe
+                        %tr
+                          %td Unordered list
+                          %td= "&lt;ul&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ul&gt;".html_safe
+                          %td= "<ul style='margin:0;padding-left:18px;'><li>item</li></ul>".html_safe
+                        %tr
+                          %td Ordered list
+                          %td= "&lt;ol&gt;&lt;li&gt;text&lt;/li&gt;&lt;/ol&gt;".html_safe
+                          %td= "<ol style='margin:0;padding-left:18px;'><li>item</li></ol>".html_safe
+                        %tr
+                          %td Inline code
+                          %td= "&lt;code&gt;text&lt;/code&gt;".html_safe
+                          %td= "<code>text</code>".html_safe
+                        %tr
+                          %td Line break
+                          %td= "&lt;br&gt;".html_safe
+                          %td= "line1<br>line2".html_safe
+                        %tr
+                          %td Horizontal line
+                          %td= "&lt;hr&gt;".html_safe
+                          %td= "<hr style='margin:4px 0;border-color:#646464;'>".html_safe
+            .devise-section
+              %h4 Confirm Changes
+              .devise-input
+                .form-group
+                  .current-password-notice
+                    %i.fa.fa-info-circle
+                    = t(".profile.current-password-notice")
+                  = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
+              .devise-submit
+                = f.submit t(".update"), class: "btn"
+
+      #change-email.tab-pane.fade.show{"aria-labelledby" => "change-email-tab", role: "tabpanel"}
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          .devise-section
+            %h4= t(".email.title")
+            .devise-input
+              .form-group
+                = f.email_field :email, autofocus: true, :placeholder => t(".email.new"), :class => 'form-control'
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                .devise-text-pleasant
+                  %i.fa.fa-exclamation-triangle{"aria-hidden" => "true"}
+                  = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email)
               .form-group
                 .current-password-notice
                   %i.fa.fa-info-circle
                   = t(".profile.current-password-notice")
-                .input-group
-                  = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
-              .btn-toolbar
-                .actions
-                  = f.submit t(".update"), :class => 'btn btn-sm'
-
-    #change-email.tab-pane.fade.show{:"aria-labelledby" => "change-email-tab", role: "tabpanel"}
-      .row
-        .col-md-5
-          %h4
-            = t(".email.title")
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-            .form-group
-              .input-group
-                = f.email_field :email, autofocus: true, :placeholder => t(".email.new"), :class => 'form-control'
-            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-              .devise-text-pleasant
-                %i.fa.fa-exclamation-triangle{"aria-hidden" => "true"}
-                = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email)
-            .form-group
-              .input-group
                 = f.password_field :current_password, :placeholder => t(".current-password"), :class => 'form-control'
-            .field.form-group
               - if Rails.env.production?
-                = recaptcha_tags
-            .btn-toolbar
-              .actions
-                = f.submit t(".update"), :class => 'btn btn-sm'
+                .devise-captcha
+                  = recaptcha_tags
+            .devise-submit
+              = f.submit t(".update"), class: "btn"
 
-    #change-password.tab-pane.fade.show{:"aria-labelledby" => "change-password-tab", role: "tabpanel"}
-      .row
-        .col-md-5
-          %h4
-            = t(".password.title")
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-            .form-group
-              .input-group
+      #change-password.tab-pane.fade.show{"aria-labelledby" => "change-password-tab", role: "tabpanel"}
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          .devise-section
+            %h4= t(".password.title")
+            .devise-input
+              .form-group
                 - if @minimum_password_length
-                  = f.password_field :password, autocomplete: "new-password", :placeholder => t(".password.new-length", length: @minimum_password_length) , :class => 'form-control'
+                  = f.password_field :password, autocomplete: "new-password", :placeholder => t(".password.new-length", length: @minimum_password_length), :class => 'form-control'
                 - else
                   = f.password_field :password, autocomplete: "new-password", :placeholder => t(".password.new"), :class => 'form-control'
-            .form-group
-              .input-group
+              .form-group
                 = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => t(".password.confirm"), :class => 'form-control'
-            .form-group
-              .input-group
+              .form-group
+                .current-password-notice
+                  %i.fa.fa-info-circle
+                  = t(".profile.current-password-notice")
                 = f.password_field :current_password, autocomplete: "current-password", :placeholder => t(".current-password"), :class => 'form-control'
-            .btn-toolbar
-              .actions
-                = f.submit t(".update"), :class => 'btn btn-sm'
+            .devise-submit
+              = f.submit t(".update"), class: "btn"

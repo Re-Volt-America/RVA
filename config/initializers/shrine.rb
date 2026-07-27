@@ -17,5 +17,6 @@ Shrine.storages = if Rails.env.test?
 Shrine.plugin :mongoid
 Shrine.plugin :cached_attachment_data # enables retaining cached file across form redisplays
 Shrine.plugin :restore_cached_data    # extracts metadata for assigned cached files
+Shrine.plugin :remove_attachment      # enables remove_<attachment> virtual attribute
 Shrine.plugin :validation
 Shrine.plugin :validation_helpers

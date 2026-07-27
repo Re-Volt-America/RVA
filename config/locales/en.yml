@@ -1080,6 +1080,7 @@ en:
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
             current-password-notice: "You need to enter your current password to save changes."
+            remove-picture: "Remove profile picture"
         current-password: "Current password"
         update: "Update"
         update-admin: "Update %{user}"
