@@ -1,10 +1,18 @@
 - if notice
-  .alert.alert-warning.alert-dismissible.fade.show.mt-3{role: "alert"}
-    = notice
-    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
-      %span{"aria-hidden" => "true"} ×
+  .notification.success.show{role: "notification"}
+    .notification-content
+      %i.fa.fa-check-circle
+      %span= notice
+    %button.notification-close{"aria-label" => "Close", type: "button"}
+      %i.fa.fa-times
+    .notification-progress
+      .notification-progress-bar
 - if alert
-  .alert.alert-warning.alert-dismissible.fade.show.mt-3{role: "alert"}
-    = alert
-    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
-      %span{"aria-hidden" => "true"} ×
+  .notification.error.show{role: "notification"}
+    .notification-content
+      %i.fa.fa-exclamation-triangle
+      %span= alert
+    %button.notification-close{"aria-label" => "Close", type: "button"}
+      %i.fa.fa-times
+    .notification-progress
+      .notification-progress-bar

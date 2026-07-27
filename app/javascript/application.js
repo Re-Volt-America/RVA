@@ -11,3 +11,5 @@ import './session'
 import "./weekly_schedule"
 import "./transition"
 import "./profile_preview"
+import "./notifications"
+import "./country_select"

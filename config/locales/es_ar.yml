@@ -1014,6 +1014,7 @@ es-AR:
             nothing: "No hay nada por ahora..."
             placeholder: "Escribí algo interesante..."
             current-password-notice: "Debes ingresar tu contraseña actual para guardar los cambios."
+            remove-picture: "Eliminar foto de perfil"
         current-password: "Contraseña actual"
         update: "Actualizar"
         update-admin: "Actualizar %{user}"
