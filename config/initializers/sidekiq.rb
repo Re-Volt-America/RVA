@@ -36,12 +36,20 @@ Sidekiq.configure_server do |config|
   # reason) so it stops sitting in limbo.
   config.on(:startup) do
     if defined?(Sidekiq::Cron::Job)
-      Sidekiq::Cron::Job.create(
+      job = Sidekiq::Cron::Job.new(
         :name  => 'Session import sweeper',
         :cron  => '*/5 * * * *',
         :class => 'SessionImportSweeperJob',
         :queue => 'default'
       )
+
+      if job.save
+        Sidekiq.logger.info('[cron] registered "Session import sweeper" (*/5 * * * *)')
+      else
+        Sidekiq.logger.error("[cron] could NOT register sweeper: #{job.errors.join('; ')}")
+      end
+    else
+      Sidekiq.logger.error('[cron] sidekiq-cron not loaded; sweeper NOT scheduled')
     end
   end
 end
