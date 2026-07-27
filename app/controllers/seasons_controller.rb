@@ -1,6 +1,6 @@
 class SeasonsController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy, :admin_stats]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy, :admin_stats]
+  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
+  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
   before_action :set_season, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
@@ -28,20 +28,6 @@ class SeasonsController < ApplicationController
     respond_with @season do |format|
       format.json { render :layout => false }
     end
-  end
-
-  # GET /admin/seasons/stats
-  def admin_stats
-    @seasons = Season.all.reverse
-    @season = if params[:season_id].present?
-                Season.where(:id => params[:season_id]).first || current_season
-              else
-                current_season
-              end
-
-    @season_stats_filters = season_stats_filter_params
-    @season_car_category_options = SYS::CATEGORY::RVGL_NUMBERS_MAP.map { |name, value| [name.to_s, value] }
-    @season_car_usage = @season.nil? ? {} : build_season_car_usage(@season, @season_stats_filters)
   end
 
   # GET /seasons/new
@@ -136,27 +122,48 @@ class SeasonsController < ApplicationController
 
   def build_season_car_usage(season, filters)
     usage = Hash.new(0)
-    season_cars_by_name = season.cars.to_a.group_by { |car| car.name.to_s.downcase }
 
-    season.rankings.each do |ranking|
-      ranking.sessions.each do |session|
-        next unless include_session_by_date?(session, filters)
+    # Load the season's cars ONCE. Cars are always season-scoped (see
+    # CsvImportSessionsService#find_car_by_name), so every racer_entry.car_id
+    # points to a car in here. Resolving from these hashes avoids a per-entry
+    # Car query (the N+1 that made this page slow).
+    season_cars = season.cars.to_a
+    cars_by_id = season_cars.index_by(&:id)
+    season_cars_by_name = season_cars.group_by { |car| car.name.to_s.downcase }
 
-        merge_session_car_usage!(usage, session, filters, season_cars_by_name)
-      end
+    sessions_for_season(season, filters).each do |session|
+      next unless include_session_by_date?(session, filters)
+
+      merge_session_car_usage!(usage, session, filters, cars_by_id, season_cars_by_name)
     end
 
     usage.sort_by { |_, count| -count }.to_h
   end
 
-  def merge_session_car_usage!(usage, session, filters, season_cars_by_name)
+  # All sessions in the season, fetched in a single query instead of one query
+  # per ranking. The date range is pushed into Mongo so filtered views also
+  # transfer fewer documents.
+  def sessions_for_season(season, filters)
+    ranking_ids = season.rankings.pluck(:id)
+    return Session.none if ranking_ids.empty?
+
+    scope = Session.where(:ranking_id.in => ranking_ids)
+    scope = scope.where(:date.gte => filters[:from_date]) if filters[:from_date]
+    scope = scope.where(:date.lte => filters[:to_date]) if filters[:to_date]
+    scope
+  end
+
+  def merge_session_car_usage!(usage, session, filters, cars_by_id, season_cars_by_name)
     session.races.each do |race|
       race.racer_entries.each do |entry|
-        car_name = entry.car_name.to_s.strip
+        # Read car_id (a raw embedded field, no query) and resolve from the
+        # preloaded hash rather than calling entry.car / entry.car_name.
+        car = entry.car_id && cars_by_id[entry.car_id]
+        car_name = (car&.name || entry.legacy_car_name).to_s.strip
         next if car_name.blank?
         next if car_name.start_with?('!')
         next if car_name.match?(/\Ax+\z/i)
-        next unless include_car_by_category?(entry, car_name, filters, season_cars_by_name)
+        next unless include_car_by_category?(car, car_name, filters, season_cars_by_name)
 
         usage[car_name] += 1
       end
@@ -207,14 +214,14 @@ class SeasonsController < ApplicationController
     true
   end
 
-  def include_car_by_category?(entry, car_name, filters, season_cars_by_name)
+  def include_car_by_category?(car, car_name, filters, season_cars_by_name)
     return true if filters[:car_category].nil?
 
-    entry_category = entry.car&.category
+    entry_category = car&.category
     return entry_category == filters[:car_category] unless entry_category.nil?
 
     candidates = season_cars_by_name[car_name.downcase] || []
-    candidates.any? { |car| car.category == filters[:car_category] }
+    candidates.any? { |candidate| candidate.category == filters[:car_category] }
   end
 
   # Only allow a list of trusted parameters through.

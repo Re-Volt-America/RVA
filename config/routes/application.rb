@@ -9,6 +9,9 @@ RVA::Application.routes.draw do
 
   namespace :admin do
     root :to => 'dashboard#index'
+
+    get 'seasons/stats', to: 'seasons#stats', as: :season_stats
+
     resources :users, :only => [:index]
     resources :session_imports, :only => [:index, :show]
   end
