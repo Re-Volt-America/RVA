@@ -92,15 +92,20 @@ services:
     restart: always
     env_file:
       - /home/rva/RVA/shared/.env
-    ports:
-      - "7002:6379"
-    expose:
-      - "7002"
     networks: [rva]
     volumes:
       - redis-data:/data
     working_dir: /data
-    command: redis-server --dir /data
+    command: >
+      sh -c 'exec redis-server
+      --dir /data
+      --requirepass "$$REDIS_PASSWORD"
+      --appendonly yes
+      --appendfsync everysec
+      --rename-command MODULE ""
+      --rename-command SLAVEOF ""
+      --rename-command REPLICAOF ""
+      --rename-command DEBUG ""'
 
 volumes:
   mongo-data:

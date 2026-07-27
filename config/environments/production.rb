@@ -59,6 +59,7 @@ Rails.application.configure do
   config.cache_store = :redis_cache_store, {
     :host => ENV['REDIS_HOST'],
     :port => ENV['REDIS_PORT'],
+    :password => ENV['REDIS_PASSWORD'].presence,
     :db => 0
   }
   config.public_file_server.headers = {

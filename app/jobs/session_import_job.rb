@@ -12,11 +12,15 @@ class SessionImportJob < ApplicationJob
     require 'session_import_error'
     require 'session_validation_report'
 
-    import = SessionImport.where(:id => session_import_id).first
-    return if import.nil?
-
     started = Time.current
-    import.update(:status => SessionImport::PROCESSING, :started_at => started)
+
+    import = SessionImport
+             .where(:id => session_import_id, :status => SessionImport::PENDING)
+             .find_one_and_update(
+               { '$set' => { :status => SessionImport::PROCESSING, :started_at => started } },
+               :return_document => :after
+             )
+    return if import.nil?
 
     session = nil
 
