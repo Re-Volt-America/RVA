@@ -30,6 +30,9 @@
   %link{:rel => "stylesheet", :href => "https://use.fontawesome.com/releases/v5.13.0/css/all.css"}
   %link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}
 
+  -# Select2
+  %link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"}
+
   %title
     - if content_for?(:title)
       = yield :title
@@ -50,14 +53,17 @@
   = javascript_include_tag 'application', 'data-turbo-track': 'reload'
 
   %body
-    = render :partial => "nav"
-    = yield :splash if content_for?(:splash)
-    .container
-      = render :partial => "alerts"
-      = if content_for?(:content) then yield :content else yield end
+    .page-content
+      = render :partial => "nav"
+      = yield :splash if content_for?(:splash)
+      .container
+        = render :partial => "alerts"
+        = if content_for?(:content) then yield :content else yield end
 
-    = yield :results if content_for?(:results)
+      = yield :results if content_for?(:results)
 
     .container
       %hr
       = render :partial => "footer"
+
+  %script{:src => "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"}

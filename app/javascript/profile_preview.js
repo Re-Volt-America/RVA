@@ -1,29 +1,24 @@
-let currentInput = null
-
-function initPreview() {
-  if (currentInput) {
-    currentInput.removeEventListener("change", handleFileChange)
-  }
-
-  const input = document.getElementById("profile-picture-input")
-  if (!input) return
-
-  currentInput = input
-  input.addEventListener("change", handleFileChange)
-}
-
-function handleFileChange(e) {
+document.addEventListener("change", (e) => {
   const preview = document.getElementById("profile-preview")
   if (!preview) return
 
-  const file = e.target.files[0]
-  if (file) {
-    const reader = new FileReader()
-    reader.onload = (ev) => { preview.src = ev.target.result }
-    reader.readAsDataURL(file)
-  }
-}
+  if (e.target.id === "profile-picture-input") {
+    const checkbox = document.querySelector("input[type='checkbox'][name*='remove_profile_picture']")
+    if (checkbox) checkbox.checked = false
 
-document.addEventListener("DOMContentLoaded", initPreview)
-document.addEventListener("turbo:load", initPreview)
-document.addEventListener("turbo:render", initPreview)
+    const file = e.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (ev) => { preview.src = ev.target.result }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  if (e.target.name && e.target.name.includes("remove_profile_picture")) {
+    const input = document.getElementById("profile-picture-input")
+    if (e.target.checked) {
+      preview.src = "/images/no_profile_picture.png"
+      if (input) input.value = ""
+    }
+  }
+})
