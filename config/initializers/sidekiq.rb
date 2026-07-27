@@ -37,10 +37,11 @@ Sidekiq.configure_server do |config|
   config.on(:startup) do
     if defined?(Sidekiq::Cron::Job)
       job = Sidekiq::Cron::Job.new(
-        :name  => 'Session import sweeper',
-        :cron  => '*/5 * * * *',
-        :class => 'SessionImportSweeperJob',
-        :queue => 'default'
+        :name       => 'Session import sweeper',
+        :cron       => '*/5 * * * *',
+        :class      => 'SessionImportSweeperJob',
+        :queue      => 'default',
+        :active_job => true
       )
 
       if job.save
