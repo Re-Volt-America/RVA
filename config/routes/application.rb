@@ -5,6 +5,7 @@ RVA::Application.routes.draw do
   # application routes, so /admin/* resolves ahead of the catch-all
   # `/:username` route defined in config/routes/user.rb.
   require 'sidekiq/web'
+  require 'sidekiq/cron/web'
 
   namespace :admin do
     root :to => 'dashboard#index'
