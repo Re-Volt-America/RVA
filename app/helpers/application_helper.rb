@@ -17,6 +17,12 @@ module ApplicationHelper
     user&.admin?
   end
 
+  # Check if the passed user is a developer
+  # @return [Boolean] true if the current user is a developer, false otherwise
+  def user_is_developer?(user = current_user)
+    user&.developer?
+  end
+
   # Check if the passed user is a moderator
   # @return [Boolean] true if the current user is a moderator, false otherwise
   def user_is_mod?(user = current_user)
@@ -30,9 +36,9 @@ module ApplicationHelper
   end
 
   # Check if the passed user has a staff role
-  # @return [Boolean] true if the current user either an admin, a mod or an organizer
+  # @return [Boolean] true if the current user either an admin, a developer, a mod or an organizer
   def user_is_staff?(user = current_user)
-    user && (user.admin? || user.mod? || user.organizer?)
+    user && (user.admin? || user.developer? || user.mod? || user.organizer?)
   end
 
   # Check whether the passed object evaluates to a true expression

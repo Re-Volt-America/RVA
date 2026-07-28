@@ -858,6 +858,7 @@ en:
       admin: "Admin"
     badges:
       admin: "Administrator"
+      developer: "Developer"
       mod: "Moderator"
       organizer: "Organizer"
       sponsor: "Sponsor"

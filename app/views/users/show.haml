@@ -83,7 +83,7 @@
       %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"}= t("users.tabs.title")
     %li.nav-item
       %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"}= t("users.tabs.stats")
-    - if user_is_mod? || user_is_admin?
+    - if user_is_mod? || user_is_admin? || user_is_developer?
       %li.nav-item
         %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"}= t("users.tabs.admin")
       %li.nav-item
@@ -245,24 +245,26 @@
             = number_to_percentage(@user.stats.participation_rate * 100, :precision => 1)
             %small
               = t("users.stats.overall-stats.participation")
-    - if user_is_mod? || user_is_admin?
+    - if user_is_mod? || user_is_admin? || user_is_developer?
       #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
         = form_for(@user, html: { method: :put }) do |f|
           = f.fields_for :profile do |profile|
             %br/
-            - if user_is_admin?
-              .field.form-group
-                = f.check_box :admin
-                = f.label :admin, t("users.badges.admin")
-              .field.form-group
-                = f.check_box :mod
-                = f.label :mod, t("users.badges.mod")
-              .field.form-group
-                = f.check_box :organizer
-                = f.label :organizer, t("users.badges.organizer")
-              .field.form-group
-                = f.check_box :sponsor
-                = f.label :sponsor, t("users.badges.sponsor")
+            .field.form-group
+              = f.check_box :admin
+              = f.label :admin, t("users.badges.admin")
+            .field.form-group
+              = f.check_box :developer
+              = f.label :developer, t("users.badges.developer")
+            .field.form-group
+              = f.check_box :mod
+              = f.label :mod, t("users.badges.mod")
+            .field.form-group
+              = f.check_box :organizer
+              = f.label :organizer, t("users.badges.organizer")
+            .field.form-group
+              = f.check_box :sponsor
+              = f.label :sponsor, t("users.badges.sponsor")
             .field.form-group
               = f.label :team, t("results.team")
               = f.collection_select :team_id, Team.all, :id, :name, {:include_blank => true}, {:class => "form-control"}

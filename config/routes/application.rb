@@ -18,7 +18,7 @@ RVA::Application.routes.draw do
   end
 
   # Sidekiq's own dashboard, restricted to signed-in admins via Warden.
-  authenticate :user, ->(user) { user.respond_to?(:admin?) && user.admin? } do
+  authenticate :user, ->(user) { user.respond_to?(:admin?) && (user.admin? || user.developer?) } do
     mount Sidekiq::Web => '/admin/sidekiq'
   end
 

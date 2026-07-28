@@ -2,7 +2,7 @@ module Admin
   # User Administration: a read-only overview of every account, with search and
   # role filtering. (Relocated here from the old /admin/users members page.)
   class UsersController < BaseController
-    ROLE_FIELDS = { 'admin' => :admin, 'mod' => :mod, 'organizer' => :organizer, 'sponsor' => :sponsor }.freeze
+    ROLE_FIELDS = { 'admin' => :admin, 'developer' => :developer, 'mod' => :mod, 'organizer' => :organizer, 'sponsor' => :sponsor }.freeze
 
     def index
       users = User.all.order_by(:created_at.desc)

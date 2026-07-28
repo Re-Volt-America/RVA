@@ -799,6 +799,7 @@ es-CL:
       admin: "Administrador"
     badges:
       admin: "Administrador"
+      developer: "Desarrollador"
       mod: "Moderador"
       organizer: "Organizador"
       sponsor: "Sponsor"

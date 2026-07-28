@@ -13,7 +13,7 @@
         .col-md-5.mb-2
           = f.text_field :q, :value => @q, :placeholder => "Search username, email or country", :class => "form-control"
         .col-md-3.mb-2
-          = f.select :role, options_for_select([["All roles", ""], ["Admins", "admin"], ["Moderators", "mod"], ["Organizers", "organizer"], ["Sponsors", "sponsor"]], @role), {}, { :class => "form-control" }
+          = f.select :role, options_for_select([["All roles", ""], ["Admins", "admin"], ["Developers", "developer"], ["Moderators", "mod"], ["Organizers", "organizer"], ["Sponsors", "sponsor"]], @role), {}, { :class => "form-control" }
         .col-md-2.mb-2
           = f.submit "Filter", :class => "btn btn-block", :"data-turbo" => false
         .col-md-2.mb-2
@@ -44,6 +44,8 @@
                 %td
                   - if user.admin?
                     %span.role-badge.role-admin Admin
+                  - if user.developer?
+                    %span.role-badge.role-developer Developer
                   - if user.mod?
                     %span.role-badge.role-mod Mod
                   - if user.organizer?

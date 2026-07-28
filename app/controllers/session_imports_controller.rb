@@ -34,7 +34,7 @@ class SessionImportsController < ApplicationController
     end
 
     # Organizers may only follow their own uploads; admins may follow any.
-    return if user_is_admin? || @import.uploaded_by == current_user
+    return if user_is_admin? || user_is_developer? || @import.uploaded_by == current_user
 
     redirect_to(root_path, :notice => t('alerts.no-permission'))
   end
