@@ -288,22 +288,22 @@ lol:
         final-multiplier: "final multiplication thingie"
         racer-score: "Racer Scor"
       example-steps:
-        step1: "Step 1: Position Score — Look up the points for 2nd place in a normal race → 12 points"
-        step2: "Step 2: Car Multiplier — The Rookie car has a car multiplier of 0.9"
-        step3: "Step 3: Class Factor — The class factor is 1.25x because the car is one class below the lobby class"
-        step4: "Step 4: Final Multiplier — 0.9 × 1.25 = 1.125"
-        step5: "Step 5: Racer Score — 12 points × 1.125 = 13.5 points"
-      example-result: "The player earns 13.5 points for this race."
-      example-summary: "This score contributes to their total obtained points (PA), which is used to calculate their final ranking along with other factors like average position and participation."
+        step1: "Paw 1: posishun scor — luk up da ptz 4 2nd plaze in a normal race -> 12 pts"
+        step2: "Paw 2: kar markipler — Teh rooky car haz a car markiplirt of 0.9"
+        step3: "Paw 3: claz factor — Teh claz factor iz 1.25x bc the car iz one claz b low teh lobby clazz"
+        step4: "Paw 4: final markiplier — 0.9 × 1.25 = 1.125"
+        step5: "Paw 5: Razor Skor — 12ptz × 1.125 = 13.5ptz"
+      example-result: "Teh cat ernz 13.5ptz 4 diz race."
+      example-summary: "Dis scor contributz 2 der total obteind ptz (PA) witch iz uzed 2 calculate der final rankin along w otehr factoz liek average posishun n participation."
     car-ratings:
       title: "Carz 2 ratin"
       description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and we also apply a class factor based on how far below the lobby class the car is. Here is how the formula is applied each race with different car multipliers:"
     team-races:
       title: "Team Racez"
-      description: "After the 18 single race sessions, we play 10 more sessions in team format. In team races, players are divided into teams and compete together. Each team member earns individual points based on their finishing position, and these points are summed together to create the team's total score."
+      description: "After teh 18 singl raze sesshunz, we play 10 moar sesshunz in team format. In team racez, kittehz are divided in2 teamz n compete tg. Each team kitteh earnz individual ptz bazed on der finishin posishun, and diz ptz are summed tg 2 get the team total skor."
       example-title: "Kuick Ekzample"
       example-intro: ""
-      example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
+      example-scenario: "Ekzampl: A team with 3 kitenz finishz a big raze (10+ razorz):"
       team-members-label: "Team Kittehz:"
       formula:
         racer-1: "Kitteh 1"
@@ -314,39 +314,39 @@ lol:
         player1: "Member 1 finishes 1st in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 20 × (0.9 × 1.25) = 22.5 points"
         player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 12 × (0.9 × 1.25) = 13.5 points"
         player3: "Member 3 finishes 5th in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 8 × (0.9 × 1.25) = 9 points"
-      team-total: "Team PA (Obtained Points) = 22.5 + 13.5 + 9 = 45.0 points"
+      team-total: "Team PA (Obtaind ptz) = 22.5 + 13.5 + 9 = 45.0pts"
       example-note: "Note: In team races, the average position and normalizer constant are not used. The team score is simply the sum of all team members' individual race points, making it straightforward to understand each team's contribution to the ranking."
     scoring-formulas:
-      title: "Scoring Formulas"
-      legend: "Each blue bar is one part of the score. \"=\" means \"results in\", \"×\" means \"multiply\", and \"÷\" means \"divide\"."
+      title: "Skorin Formulaz"
+      legend: "Each blu bar iz one part ov the skor. \"=\" meanz \"resultz in\", \"×\" meanz \"multiply\", and \"÷\" meanz \"divide\"."
       singles:
-        title: "Singles"
-        racer-score: "Racer Score"
-        position-score: "Position Score"
-        final-multiplier: "Final Multiplier"
-        note: "Final Multiplier = Car Multiplier × Class Factor"
+        title: "Singlz"
+        racer-score: "Racer Scor"
+        position-score: "Posishun scwor"
+        final-multiplier: "final markiplir"
+        note: "final markiplir = car markplier × claz faktor"
         description: "You first earn points from your finishing position. Then those points are adjusted by your car multiplier."
       teams:
         title: "Teamz"
         team-pa: "Team PA"
-        sum-of-racer-scores: "Sum of Racer Scores"
-        note: "Team entries are ranked by PA (obtained points) in descending order"
-        description: "Team points are everyone's points added together, so each teammate contributes to the final team result."
+        sum-of-racer-scores: "Sum ov Razor Skorz"
+        note: "Team entriz r rankd by PA (obteind ptz) in descendin ordur"
+        description: "Team ptz r everyone'z ptz added tg, so each teammate contributz 2 teh final team result."
       main:
         title: "Main"
         official-score: "Offishal skor"
         obtained-points: "Gottn Pontz"
         average-position: "Avg Posishun"
         participation-multiplier: "Participashun markipler"
-        normalizer-constant: "Normalizer Constant"
-        note: "This is the final score formula used for singles ranking"
+        normalizer-constant: "Normalizr Konztant"
+        note: "Dis iz teh final skor formula uzed 4 singlz rankin"
         description: "To rank higher, score more points, keep a better average finish (lower is better), and take part in more races."
     desktop-parser:
       title: "Da RVA desk pointz calculatr"
       description: "Teh Rva dekstop ponts parmasan is a dekstop app made fo cal a resulz tabel in teh rva 4mat frum a given rvgl seeshun lwag. Thru dis portablet tool, we aloud any1 2 pars3 sesshun resulz usin' our systum lokaly if they wannabe. Hair is 1 exemplar de que you'll get by graving parmasan chez on 1 of our seshhunz urselv:"
-      show-image: "Show Preview"
+      show-image: "Show Previw"
       hide-image: "Hide Preview"
-      image-alt: "RVA Desktop Points Parser preview"
+      image-alt: "Da RVA desk pointz previw"
     downloads:
       title: "dOWOnload da RVA Pointz"
   #RVA strings
@@ -366,7 +366,7 @@ lol:
       all-tracks: "all trackz"
       season: "Seashun"
       title: "Teh RVA trax"
-      new-track: "Add Track"
+      new-track: "Add Trak"
       no-tracks: "Kitteh nu trax 2 show"
       made-by: "by: %{author_name}"
       format:
@@ -545,7 +545,7 @@ lol:
       edit:
         page-title: "RvA - Edit Seesun"
     title: "da RVA seasunz"
-    of-season: "%{title} of %{season}"
+    of-season: "%{title} ov %{season}"
     explanation:
       title: "Whut are RVA seasunz?"
       description: "In RVA, we hav seesunz for onlain raecin'. Evy Seesun ther ar 6 rankin'z, n' each rankin ther r 28 sesshunz, 18 of wich r 4 singel raecz n da othr 10 for Team raecz. Plyerz get pontz for evy raecz."
@@ -628,9 +628,9 @@ lol:
         delete: "Kitteh scratchd sesshun :("
         import:
           success: "Kitteh alredy givn seshun."
-          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
-          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
-          not_found: "That session import could not be found."
+          enqueued: "Sesshun lug upd. Itz bein parsed in teh bckgrnd. Follow itz progrez in the ADMIN PANEL"
+          enqueued_uploader: "Sesshun lug upd. itz being parsed in teh bckgrnd n will appear in no time."
+          not_found: "dat sesshun import could not b found."
     results:
       no-team-results: "Nu team resulz to show"
     nav:
@@ -725,7 +725,7 @@ lol:
       tracks:
         not-found: "Trak not finded"
       racer:
-        no-account: "This player doesn't have an account on the site yet"
+        no-account: "Diz playur dosent hav a account on teh site yet"
   #Teams page
   teams:
     meta:
@@ -1078,7 +1078,7 @@ lol:
   #Administration Panel
   admin:
     session_imports:
-      not_found: "That session import could not be found."
+      not_found: "dat sesshun import could not b found."
   #Error pages
   error:
     404:
@@ -1105,8 +1105,8 @@ lol:
     author: "Kiteh"
     download-as-png: "Daunlode es PNG"
     active-toggle:
-      show-active: "Show Active"
-      show-inactive: "Show Inactive"
+      show-active: "Show Activ"
+      show-inactive: "Show Inactiv"
     weekdays:
       monday: "Muhdae lef me brokn"
       tuesday: "Chew-sday"
@@ -1127,7 +1127,7 @@ lol:
     submit:
       import: "Giv"
       update: "Updaet"
-      create: "Create"
+      create: "Maek"
     checkbox:
       teams: "Teamz"
     button:
