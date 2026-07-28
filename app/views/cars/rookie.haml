@@ -13,9 +13,9 @@
 
   .sticky-top.search-bar
     .row
-      .col-xl-11.col-lg-10.col-md-10.col-xs-9.col-8.sticky-top
+      .col-xl-10.col-lg-9.col-md-9.col-xs-9.col-8.sticky-top
         %input#input.form-control{placeholder: t("misc.placeholder.search"), type: "text"}/
-      .col-xl-1.col-lg-2.col-md-2.col-xs-3.col-4
+      .col-xl-2.col-lg-3.col-md-3.col-xs-3.col-4
         = render :partial => "car_category_selector"
 
   - if @cars.none?
