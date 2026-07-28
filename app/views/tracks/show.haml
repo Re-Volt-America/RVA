@@ -16,33 +16,28 @@
         %h1{style: "margin-top: 0;"}
           = @track.name
         %br
-        %dl.dl-horizontal
-          %dt
-            = t("misc.author")
-          %dd
-            = @track.author
-          %dt
-            = t("rva.tracks.format.short-name.title")
-          %dd
-            = @track.short_name
-          %dt
-            = t("rva.tracks.format.difficulty.title")
-          %dd
-            = @track.difficulty_name
-          %dt
-            = t("rva.tracks.format.length.title")
-          %dd
-            = t("rva.tracks.format.length.meters", length:@track.length) #{@track.length}
-          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
-            = t("rva.shared.stock.title")
-          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.lego-tooltip.tooltip")}
-            = t("rva.shared.lego.title")
-          %dt
-
-          %dd
-            = @track.stock ? t("misc.bool.true") : t("misc.bool.false")
-          %dd
-            = @track.lego ? t("misc.bool.true") : t("misc.bool.false")
+        %table.car-specs-table
+          %tbody
+            %tr
+              %td= t("misc.author")
+              %td= @track.author
+            %tr
+              %td= t("rva.tracks.format.short-name.title")
+              %td= @track.short_name
+            %tr
+              %td= t("rva.tracks.format.difficulty.title")
+              %td= @track.difficulty_name
+            %tr
+              %td= t("rva.tracks.format.length.title")
+              %td= t("rva.tracks.format.length.meters", length:@track.length) #{@track.length}
+            %tr
+              %td{style: "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
+                = t("rva.shared.stock.title")
+              %td= @track.stock ? t("misc.bool.true") : t("misc.bool.false")
+            %tr
+              %td{style: "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.lego-tooltip.tooltip")}
+                = t("rva.shared.lego.title")
+              %td= @track.lego ? t("misc.bool.true") : t("misc.bool.false")
         - if @track.season
           %i
             = t("rva.tracks.featured.description", season: @track.season.name) #{@track.season.name}
