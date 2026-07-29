@@ -324,7 +324,7 @@ pt:
         note: "Final Multiplier = Car Multiplier × Class Factor"
         description: "You first earn points from your finishing position. Then those points are adjusted by your car multiplier."
       teams:
-        title: "Teams"
+        title: "Equipes"
         team-pa: "Team PA"
         sum-of-racer-scores: "Sum of Racer Scores"
         note: "Team entries are ranked by PA (obtained points) in descending order"
@@ -466,7 +466,7 @@ pt:
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoria"
-        author: "Author"
+        author: "Autor"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
         active: "Active"
@@ -891,8 +891,8 @@ pt:
     create:
       title: "Create Weekly Schedule"
     track-list:
-      track: "Track"
-      type: "Type"
+      track: "Pista"
+      type: "Tipo"
       laps: "Laps"
   #Devise
   activerecord:
@@ -1095,23 +1095,23 @@ pt:
     download: "Download"
     search: "Busca"
     and: "&"
-    unknown: "Unknown"
+    unknown: "Desconhecido"
     custom: "Custom"
     lego: "Lego"
     stock: "Stock"
-    author: "Author"
+    author: "Autor"
     download-as-png: "Download as PNG"
     active-toggle:
       show-active: "Show Active"
       show-inactive: "Show Inactive"
     weekdays:
-      monday: "Monday"
-      tuesday: "Tuesday"
-      wednesday: "Wednesday"
-      thursday: "Thursday"
-      friday: "Friday"
-      saturday: "Saturday"
-      sunday: "Sunday"
+      monday: "Segunda-feira"
+      tuesday: "Terça-feira"
+      wednesday: "Quarta-feira"
+      thursday: "Quinta-feira"
+      friday: "Sexta-feira"
+      saturday: "Sábado"
+      sunday: "Domingo"
     bool:
       true: "Sim"
       false: "Não"
@@ -1124,7 +1124,7 @@ pt:
     submit:
       import: "Importar"
       update: "Atualizar"
-      create: "Create"
+      create: "Criar"
     checkbox:
       teams: "Equipes"
     button:
