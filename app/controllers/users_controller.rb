@@ -22,13 +22,14 @@ class UsersController < ApplicationController
             end
   end
 
-  ROLE_ATTRS = %w[admin mod organizer sponsor].freeze
+  # NOTE: This may be a bit hacky, but it gets the job done...
+  ROLE_ATTRS = %w[admin developer mod organizer sponsor].freeze
 
   def edit
     return if params[:username].nil?
 
-    # Only admins can change roles
-    unless user_is_admin?
+    # Only admins/developers can change roles
+    unless user_is_admin? || user_is_developer?
       ROLE_ATTRS.each { |attr| params[:user]&.delete(attr) }
     end
 
