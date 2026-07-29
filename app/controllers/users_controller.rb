@@ -22,9 +22,15 @@ class UsersController < ApplicationController
             end
   end
 
-  # NOTE: This may be a bit hacky, but it gets the job done...
+  ROLE_ATTRS = %w[admin mod organizer sponsor].freeze
+
   def edit
     return if params[:username].nil?
+
+    # Only admins can change roles
+    unless user_is_admin?
+      ROLE_ATTRS.each { |attr| params[:user]&.delete(attr) }
+    end
 
     user = User.find { |u| u.username.downcase.eql?(params[:username].downcase) }
 
