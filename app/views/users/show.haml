@@ -100,10 +100,10 @@
                   = @user.profile.instagram
         - if @user.profile.twitter?
           .col-md-4.col-sm-6
-            %h6 Twitter
+            %h6 X
             %blockquote
               %p
-                %a{href: "https://twitter.com/#{@user.profile.twitter}", target: "_blank"}
+                %a{href: "https://x.com/#{@user.profile.twitter}", target: "_blank"}
                   = @user.profile.twitter
         - if @user.profile.steam?
           .col-md-4.col-sm-6
@@ -306,7 +306,7 @@
             .form-group
               .input-group
                 .input-group-prepend
-                  .input-group-text twitter.com/
+                  .input-group-text x.com/
                 = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
             .form-group
               .input-group

@@ -1,4 +1,4 @@
-- content_for :title, t("results.meta.teams.page-title", number: @session.number)
+﻿- content_for :title, t("results.meta.teams.page-title", number: @session.number)
 - meta :title, t("results.meta.teams.title")
 - meta :description, teams_session_meta_desc(@results_table)
 - host_name = @session.host_name
@@ -43,7 +43,7 @@
       %tr
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
           \#
-        %th.align-middle{:width => "8%"}
+        %th.align-middle{:width => "12%"}
           Date
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
           = t("rankings.table.fp")
@@ -58,13 +58,13 @@
             - else
               %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
                 = "?"
-        %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
+        %th.cc-header.text-center.align-middle{:width => "3%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
           = t("rankings.table.cc")
-        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
+        %th.pa-header.text-center.align-middle{:width => "4%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
           = t("rankings.table.pa")
     %tbody
       - @results_table.rows.each_with_index do |row, idx|
-        %tr
+        %tr{:class => "#{'session-header-row' if idx.zero?}"}
           %td.number-col.text-center.align-middle
             = idx.zero? ? @results_table.session_number : ''
           %td.date-col
@@ -79,7 +79,7 @@
                 = row.racer_name
           %td.team-col.text-center.align-middle
             - if row.team_entity
-              = link_to row.team_entity.short_name, team_path(row.team_entity)
+              = link_to row.team_entity.short_name, team_path(row.team_entity), :style => team_gradient_style(row.team_entity)
             - else
               = row.team_name
           - row.positions.each do |pos|
@@ -134,7 +134,7 @@
 
             - if item.is_a?(Car)
               %td.car{:colspan => colspan}
-                = link_to item.name, car_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
+                = link_to item.name, car_path(item), :style => "color: #{car_category_color(item)};", :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
             - if item.is_a?(String) && item.start_with?('?')
               %td.car{:colspan => colspan}
                 = item.tr('?', '')
