@@ -1,123 +1,72 @@
 module Admin
   class SeasonsController < BaseController
+    include SeasonCarUsage
+
     def stats
       @seasons = Season.all.reverse
-      @season = if params[:season_id].present?
-                  Season.where(:id => params[:season_id]).first || current_season
-                else
-                  current_season
-                end
+      @season = resolve_season
 
-      @season_stats_filters = season_stats_filter_params
+      @season_stats_filters = season_stats_filter_params(:default_category => SYS::CATEGORY::ROOKIE)
       @season_car_category_options = SYS::CATEGORY::RVGL_NUMBERS_MAP.map { |name, value| [name.to_s, value] }
+      @season_cars_by_name = season_cars_by_name(@season)
       @season_car_usage = @season.nil? ? {} : build_season_car_usage(@season, @season_stats_filters)
+    end
+
+    # Full-season car usage as a multi-sheet .xlsx (one sheet per car class).
+    # Ignores the on-page date/class filters on purpose so the download is the
+    # complete picture for the season.
+    def stats_export
+      season = resolve_season
+
+      if season.nil?
+        redirect_to(admin_season_stats_path, :alert => 'There is no season to export.') and return
+      end
+
+      usage = build_season_car_usage(season, :from_date => nil, :to_date => nil, :car_category => nil)
+      workbook = build_car_usage_workbook(season, usage)
+
+      send_data workbook.to_bytes,
+                :filename => car_usage_filename(season),
+                :type => SimpleXlsx::MIME_TYPE
     end
 
     private
 
-    def build_season_car_usage(season, filters)
-      usage = Hash.new(0)
-
-      # Load the season's cars ONCE. Cars are always season-scoped (see
-      # CsvImportSessionsService#find_car_by_name), so every racer_entry.car_id
-      # points to a car in here. Resolving from these hashes avoids a per-entry
-      # Car query (the N+1 that made this page slow).
-      season_cars = season.cars.to_a
-      cars_by_id = season_cars.index_by(&:id)
-      season_cars_by_name = season_cars.group_by { |car| car.name.to_s.downcase }
-
-      sessions_for_season(season, filters).each do |session|
-        next unless include_session_by_date?(session, filters)
-
-        merge_session_car_usage!(usage, session, filters, cars_by_id, season_cars_by_name)
-      end
-
-      usage.sort_by { |_, count| -count }.to_h
-    end
-
-    # All sessions in the season, fetched in a single query instead of one query
-    # per ranking. The date range is pushed into Mongo so filtered views also
-    # transfer fewer documents.
-    def sessions_for_season(season, filters)
-      ranking_ids = season.rankings.pluck(:id)
-      return Session.none if ranking_ids.empty?
-
-      scope = Session.where(:ranking_id.in => ranking_ids)
-      scope = scope.where(:date.gte => filters[:from_date]) if filters[:from_date]
-      scope = scope.where(:date.lte => filters[:to_date]) if filters[:to_date]
-      scope
-    end
-
-    def merge_session_car_usage!(usage, session, filters, cars_by_id, season_cars_by_name)
-      session.races.each do |race|
-        race.racer_entries.each do |entry|
-          # Read car_id (a raw embedded field, no query) and resolve from the
-          # preloaded hash rather than calling entry.car / entry.car_name.
-          car = entry.car_id && cars_by_id[entry.car_id]
-          car_name = (car&.name || entry.legacy_car_name).to_s.strip
-          next if car_name.blank?
-          next if car_name.start_with?('!')
-          next if car_name.match?(/\Ax+\z/i)
-          next unless include_car_by_category?(car, car_name, filters, season_cars_by_name)
-
-          usage[car_name] += 1
-        end
+    def resolve_season
+      if params[:season_id].present?
+        Season.where(:id => params[:season_id]).first || current_season
+      else
+        current_season
       end
     end
 
-    def season_stats_filter_params
-      from_date = parse_filter_date(params[:from_date])
-      to_date = parse_filter_date(params[:to_date])
+    # Groups the season's usage into one worksheet per car class, plus an
+    # "Uncategorised" sheet for names that no longer resolve to a Car record.
+    def build_car_usage_workbook(season, usage)
+      cars_by_name = season_cars_by_name(season)
+      by_category = Hash.new { |hash, key| hash[key] = [] }
+      uncategorised = []
 
-      if from_date && to_date && from_date > to_date
-        from_date, to_date = to_date, from_date
+      usage.each do |car_name, uses|
+        category = cars_by_name[car_name.downcase]&.category
+        (category.nil? ? uncategorised : by_category[category]) << [car_name, uses]
       end
 
-      {
-        :from_date => from_date,
-        :to_date => to_date,
-        :car_category => parse_filter_category(params[:car_category]),
-        :from_date_value => from_date&.strftime('%Y-%m-%d') || params[:from_date].to_s,
-        :to_date_value => to_date&.strftime('%Y-%m-%d') || params[:to_date].to_s,
-        :car_category_value => params[:car_category].to_s
-      }
+      xlsx = SimpleXlsx.new
+      SYS::CATEGORY::RVGL_NUMBERS_MAP.each do |label, value|
+        rows = by_category[value]
+        next if rows.empty?
+
+        xlsx.add_sheet(label.to_s, [['Car', 'Times used']] + rows)
+      end
+      xlsx.add_sheet('Uncategorised', [['Car', 'Times used']] + uncategorised) if uncategorised.any?
+
+      xlsx
     end
 
-    def parse_filter_date(date_param)
-      return nil if date_param.blank?
-
-      Date.parse(date_param.to_s)
-    rescue ArgumentError
-      nil
+    def car_usage_filename(season)
+      slug = season.name.to_s.parameterize.presence || 'season'
+      "car-usage-#{slug}-#{Date.current.iso8601}.xlsx"
     end
-
-    def parse_filter_category(category_param)
-      return nil if category_param.blank?
-
-      category = Integer(category_param)
-      SYS::CATEGORY::RVGL_NUMBERS_MAP.values.include?(category) ? category : nil
-    rescue ArgumentError, TypeError
-      nil
-    end
-
-    def include_session_by_date?(session, filters)
-      session_date = session.date&.to_date
-      return false if session_date.nil?
-      return false if filters[:from_date] && session_date < filters[:from_date]
-      return false if filters[:to_date] && session_date > filters[:to_date]
-
-      true
-    end
-
-    def include_car_by_category?(entry, car_name, filters, season_cars_by_name)
-      return true if filters[:car_category].nil?
-
-      entry_category = entry.car&.category
-      return entry_category == filters[:car_category] unless entry_category.nil?
-
-      candidates = season_cars_by_name[car_name.downcase] || []
-      candidates.any? { |car| car.category == filters[:car_category] }
-    end
-
   end
 end

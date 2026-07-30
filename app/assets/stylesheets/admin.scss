@@ -166,6 +166,68 @@
     font-style: italic;
   }
 
+  // Filter form labels above the season / date / class controls.
+  .filter-label {
+    display: block;
+    color: #a49fa2;
+    font-size: 13px;
+    margin-bottom: .2rem;
+  }
+
+  // Season car-usage chart + companion table.
+  .car-usage-hint {
+    color: #a49fa2;
+    font-size: 13px;
+  }
+
+  .car-usage-chart {
+    background-color: #161616;
+    border: 1px solid #2b2b2b;
+    padding: 12px 14px;
+  }
+
+  .car-usage-table {
+    .usage-rank {
+      color: #6b6669;
+      font-family: "NissanOpti", serif;
+    }
+
+    // Carbox thumbnail pulled from the cars repo.
+    .car-box {
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+    }
+
+    .car-box-img {
+      height: 30px;
+      width: auto;
+      border: 1px solid #3a3a3a;
+      border-radius: 2px;
+      background-color: #000;
+    }
+
+    tbody tr {
+      transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    // Rows that resolve to a car link to its page, so signal they're clickable.
+    tbody tr[data-car-path] {
+      cursor: pointer;
+    }
+
+    // Applied by the car-usage-chart Stimulus controller when its bar is
+    // clicked. Gold accent ties the row back to the (yellow) bar colour.
+    tbody tr.car-usage-row--active {
+      background-color: #2a2512 !important;
+      box-shadow: inset 3px 0 0 #ffd966;
+      animation: carUsageRowPulse .9s ease-out;
+
+      .usage-rank {
+        color: #ffd966;
+      }
+    }
+  }
+
   // "?" button shown next to a Failed status badge to open the error dialog.
   .import-error-toggle {
     background: transparent;
@@ -294,4 +356,12 @@
       background-color: #fff;
     }
   }
+}
+
+// Brief flash when a car-usage table row is focused by clicking its chart bar,
+// settling into the steady active-row colour. Declared at root because
+// @keyframes cannot be scoped inside a selector.
+@keyframes carUsageRowPulse {
+  0%   { background-color: #4a3f16; }
+  100% { background-color: #2a2512; }
 }
