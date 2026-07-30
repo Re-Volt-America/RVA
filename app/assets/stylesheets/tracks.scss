@@ -1,4 +1,53 @@
 #tracks {
+  .search-bar {
+    background: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    padding-left: 36px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ced4da;
+    background-color: #111111;
+    background-clip: padding-box;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  .form-control:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+  }
+
+  .form-control::placeholder {
+    color: #beb8bc;
+    opacity: 1;
+  }
+
+  .btn-search {
+    color: #beb8bc;
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    margin-left: 8px;
+    padding: 6px 16px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-search:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
   img {
     margin-bottom: 5px;
   }
@@ -50,15 +99,16 @@
     padding: 12px 16px;
     background-color: rgba(255, 255, 255, 0.03);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: #ced4da;
+    color: #ffd966;
   }
 
   .lead {
     font-size: 16px;
     font-weight: 600;
+    color: #ffd966;
 
     a {
-      color: #beb8bc;
+      color: #ffd966;
       text-decoration: none;
     }
   }

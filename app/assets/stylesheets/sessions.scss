@@ -1,103 +1,147 @@
 .session-details {
-  border: 1px solid #fff;
-  border-radius: 3px;
-  padding: 15px;
+  background: linear-gradient(135deg, rgba(30, 45, 61, 0.95), rgba(15, 25, 35, 0.95));
+  border: 1px solid rgba(91, 173, 169, 0.25);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
   h2 {
     font-size: 1.25rem;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: #ffd966;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-    margin-left: 15px;
+    margin-left: 0;
     margin-bottom: 0;
+
+    li {
+      padding: 3px 0;
+      color: #b0bec5;
+      font-size: 0.9rem;
+
+      a {
+        color: #5bada9;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: lighten(#5bada9, 15%);
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
 
 #results {
   .card {
-    background-color: #000000;
-    border: 1px solid #646464;
-    border-radius: 0;
+    background: linear-gradient(135deg, #1a2835, #0f1923);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 
     .card-body {
-      padding: 20px;
+      padding: 24px;
 
       .chart-container {
-        background-color: #000000;
+        background-color: transparent;
+        border-radius: 8px;
 
         canvas {
-          background-color: #000000 !important;
+          background-color: transparent !important;
         }
       }
 
       .card-title {
-        color: #ffffff;
+        color: #e0e6ed;
         font-family: "NissanOpti", serif;
         font-size: 1.25rem;
         margin-bottom: 20px;
+        letter-spacing: 0.5px;
       }
     }
   }
 
   h3 {
     a {
-      color: #fff;
+      color: #e0e6ed;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #ffd966;
+        text-decoration: none;
+      }
     }
   }
 
   table {
     font-family: "Bahnschrift-Light", sans-serif;
-    background-color: #2d3f43;
-    border: 1px solid #646464;
+    background-color: #1a2835;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
 
     th {
-      background-color: #1d282b;
+      background-color: #0f1923;
       color: #ffd966;
-      border-bottom: 0;
+      border-bottom: 1px solid rgba(91, 173, 169, 0.2);
       border-top: 0;
-      height: 40px;
+      height: 44px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
 
       a {
         color: #ffd966;
+        transition: color 0.2s ease;
 
         &:hover {
-          color: lighten(#ffd966, 10%);
+          color: lighten(#ffd966, 15%);
           text-decoration: none;
         }
       }
     }
 
     tr {
-      color: #5bada9;
+      color: #b0bec5;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: rgba(91, 173, 169, 0.05);
+      }
     }
 
     td {
-      border-top: 1px solid #5a5a5a;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 8px;
+      vertical-align: middle;
     }
 
     a {
       color: #5bada9;
-    }
+      transition: color 0.2s ease;
 
-    // Chart specific styles
-    .chart-container {
-      // Canvas background
-      canvas {
-        background-color: #1d282b;
+      &:hover {
+        color: lighten(#5bada9, 15%);
+        text-decoration: none;
       }
     }
 
     .team-col {
+      background-color: rgba(33, 43, 54, 0.6);
+
       a {
         color: #5b9bd5;
-      }
 
-      background-color: #212b36;
-      color: #5b9bd5;
+        &:hover {
+          color: lighten(#5b9bd5, 10%);
+        }
+      }
     }
 
     .car {
@@ -107,84 +151,118 @@
       white-space: nowrap;
 
       a {
-        transition: color 0.2s ease;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 0.3px;
+        transition: all 0.2s ease;
+        text-shadow: 0 0 3px currentColor;
 
         &:hover {
-          color: lighten(#5bada9, 15%);
           text-decoration: none;
+          filter: brightness(1.3);
         }
       }
     }
 
     .pp-header, .pa-header, .cc-header, .mp-header, .po-header {
-      color: #ffffff;
-      font-size: 18px;
-      border-bottom: 1px solid #5a5a5a;
+      color: #94a3b8;
+      font-size: 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .pos, .car {
+    .pos {
+      font-style: italic;
+      font-weight: 600;
+      color: #d4dce8;
+    }
+
+    .car {
       font-style: italic;
     }
 
     .pp, .pa, .cc, .mp, .po {
       border-top: 0;
+      white-space: nowrap;
+      padding: 10px 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
 
     .pp, .pa, .cc, .mp {
-      color: #a6a6a6;
+      color: #c8d6e0;
     }
 
     .pp, .pp-header {
-      background-color: #1d282b;
+      background-color: rgba(15, 25, 35, 0.8);
     }
 
     .pa, .pa-header {
-      background-color: #000800;
+      background-color: rgba(0, 0, 0, 0.3);
     }
 
     .cc, .cc-header {
-      background-color: #161616;
+      background-color: rgba(22, 22, 22, 0.5);
     }
 
     .mp, .mp-header {
-      background-color: #161616;
+      background-color: rgba(22, 22, 22, 0.5);
     }
 
     .po, .po-header {
-      background-color: #262626;
+      background-color: rgba(38, 38, 38, 0.6);
       color: #ffd966;
+    }
+
+    .session-header-row {
+      td {
+        border-top: 0;
+      }
+
+      .number-col {
+        padding: 14px 12px;
+      }
+
+      .date-col {
+        padding: 14px 18px;
+      }
     }
 
     .number-col {
       color: #ffd966;
-      background-color: #262626;
-      border-top: 0;
+      background: linear-gradient(135deg, rgba(255, 217, 102, 0.12), rgba(38, 38, 38, 0.6));
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border-right: 1px solid rgba(255, 217, 102, 0.15);
     }
 
     .date-col {
-      color: #7f7f7f;
-      background-color: #d9d9d9;
-      font-style: italic;
-      border-top: 0;
+      color: #e8edf2;
+      background: linear-gradient(135deg, rgba(38, 38, 38, 0.6), rgba(255, 255, 255, 0.04));
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .fp-col {
-      color: #906000;
+      color: #1a1a2e;
       background-color: #ffd966;
       font-weight: bold;
       border-top: 0;
-      border-left: 1px solid #464646;
+      border-left: 1px solid rgba(70, 70, 70, 0.3);
     }
 
     .racer-col {
       color: #a0d5ef;
-      background-image: linear-gradient(to right, #18301a, #2d3f43 80%);
+      background: linear-gradient(to right, rgba(24, 48, 26, 0.6), rgba(26, 40, 53, 0.9) 80%);
 
       a {
         color: #a0d5ef;
+        font-weight: 500;
 
         &:hover {
-          color: lighten(#a0d5ef, 10%);
+          color: lighten(#a0d5ef, 15%);
           text-decoration: none;
         }
       }
@@ -219,14 +297,13 @@ body .tooltip-results-custom {
     }
   }
 
-  /* Fix tooltip placement and arrow for bottom position */
   &.bs-tooltip-bottom {
     padding: 0.4rem 0;
 
     .arrow {
       top: 0;
-      left: 50% !important; /* Force center alignment */
-      margin-left: -0.4rem !important; /* Center the arrow properly */
+      left: 50% !important;
+      margin-left: -0.4rem !important;
 
       &::before {
         border-width: 0 0.4rem 0.4rem;
@@ -282,31 +359,32 @@ body .tooltip-results-custom {
   }
 
   .tooltip-inner {
-    max-width: 250px;
-    padding: 10px;
+    max-width: 260px;
+    padding: 14px;
     color: #fff;
     text-align: center;
-    background-color: #1d282b;
-    border: 1px solid #5bada9;
-    border-radius: 6px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #1d282b, #0f1923);
+    border: 1px solid rgba(91, 173, 169, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 
     h5 {
       font-size: 14px;
       font-weight: bold;
-      margin: 0 0 8px 0;
-      padding-bottom: 5px;
+      margin: 0 0 10px 0;
+      padding-bottom: 8px;
       text-align: center;
-      border-bottom: 1px solid rgba(91, 173, 169, 0.3);
+      border-bottom: 1px solid rgba(91, 173, 169, 0.2);
       color: #ffd966;
     }
 
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 4px;
+      border-radius: 6px;
       display: block;
-      margin: 6px auto;
+      margin: 8px auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
   }
 }
@@ -321,27 +399,30 @@ body .tooltip-results-custom {
   .user-details {
     display: flex;
     flex-direction: column;
-    margin-top: 6px;
+    margin-top: 8px;
     font-size: 12px;
 
     span {
       margin: 2px 0;
+      padding: 1px 0;
     }
   }
 }
 
 .user-tooltip-content {
   .user-image {
-    margin: 8px auto;
+    margin: 10px auto;
     max-width: 200px;
 
     img {
       width: 150px;
       height: 150px;
       object-fit: cover;
-      border: 1px solid #5e6162;
-      padding: 4px;
-      background-color: #000000;
+      border: 2px solid rgba(91, 173, 169, 0.3);
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #1a2835, #0f1923);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
   }
 }
@@ -350,70 +431,67 @@ body .tooltip-results-custom {
 .chartkick {
   font-family: "Bahnschrift-Light", sans-serif;
 
-  // Axis labels
   .c3-axis text {
-    fill: #a6a6a6;
+    fill: #94a3b8;
   }
 
-  // Car names (y-axis)
   .c3-axis-y text {
     fill: #5bada9;
   }
 
-  // Bars
   .c3-bar {
     fill: #5b9bd5 !important;
     stroke: #5b9bd5 !important;
   }
 
-  // Grid lines
   .c3-grid line {
-    stroke: #5a5a5a;
+    stroke: rgba(255, 255, 255, 0.08);
   }
 
-  // Tooltips
   .c3-tooltip-container {
-    background-color: #262626;
-    border: 1px solid #646464;
+    background-color: #1a2835;
+    border: 1px solid rgba(91, 173, 169, 0.3);
+    border-radius: 6px;
     color: #ffd966;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 }
 
-// Upload progress screen (session_imports/show) shown after a Session log
-// upload while the background import runs.
 #import-progress {
   .card {
-    background-color: #000000;
-    border: 1px solid #646464;
-    border-radius: 0;
-    color: #beb8bc;
+    background: linear-gradient(135deg, #1a2835, #0f1923);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: #b0bec5;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   }
 
   h3 {
-    color: #fff;
+    color: #e0e6ed;
     font-family: NissanOpti, serif;
   }
 
   .import-progress-sub {
-    color: #a49fa2;
+    color: #94a3b8;
     margin-bottom: 0;
   }
 
   .progress.import-progress-bar-wrap {
     height: 22px;
-    background-color: #1a1a1a;
-    border: 1px solid #646464;
-    border-radius: 0;
+    background-color: #0f1923;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   .progress-bar {
-    background-color: #ffd966;
-    color: #262626;
+    background: linear-gradient(90deg, #ffd966, #f0c040);
+    color: #1a1a2e;
     font-weight: bold;
     transition: width .25s ease;
 
     &.bg-danger {
-      background-color: #ff2200 !important;
+      background: linear-gradient(90deg, #ff2200, #cc1a00) !important;
       color: #fff;
     }
   }
@@ -426,20 +504,18 @@ body .tooltip-results-custom {
   }
 
   .import-progress-file {
-    color: #6b6669;
+    color: #6b7280;
     font-size: 13px;
     word-break: break-all;
   }
 
   .alert-danger {
-    background-color: #1d0707;
-    border: 1px solid #ff2200;
+    background-color: rgba(29, 7, 7, 0.8);
+    border: 1px solid rgba(255, 34, 0, 0.4);
     color: #ff9d90;
-    border-radius: 0;
+    border-radius: 8px;
   }
 
-  // The descriptive validation breakdown is multi-line; preserve its line
-  // breaks and indentation so the bulleted list stays readable.
   .import-progress-error-text {
     display: block;
     white-space: pre-wrap;
@@ -448,10 +524,15 @@ body .tooltip-results-custom {
   }
 
   .btn {
-    color: #fff;
+    color: #e0e6ed;
+    border: 1px solid rgba(91, 173, 169, 0.3);
+    background: rgba(15, 25, 35, 0.6);
+    transition: all 0.2s ease;
 
     &:hover, &:focus {
-      color: #000;
+      color: #0f1923;
+      background: #5bada9;
+      border-color: #5bada9;
     }
   }
 }
