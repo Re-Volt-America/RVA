@@ -333,67 +333,90 @@ fieldset:disabled a.btn-important, fieldset:disabled a.btn-important-2 {
   .jumbotron.main {
     overflow: hidden;
     position: relative;
-    padding: 0;
-    min-height: 480px;
-    display: flex;
-    align-items: center;
+    padding: 40px 0;
     color: #fff;
     text-align: center;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.1);
+    background:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 45%, rgba(0, 0, 0, 0.2) 55%, rgba(0, 0, 0, 0.75) 100%),
+      radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%),
+      url("index/splash.png") center;
     margin-bottom: 0 !important;
     border-radius: 0;
-    background: url("index/splash.png") no-repeat center center;
-    background-size: cover;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-    }
   }
 
   .masthead.main {
-    padding: 60px 0;
+    padding: 70px 0 80px;
     margin-bottom: 0;
     color: #fff;
-    width: 100%;
 
-    .btn-important, .btn-important-2 {
-      font-size: 1.1rem;
+    .splash-kicker {
+      display: inline-block;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffd966;
+      border: 1px solid rgba(255, 217, 102, 0.4);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-important {
+      font-size: 1.15rem;
       padding: 12px 32px;
+      border-radius: 8px;
+      background: #ffd966;
+      border: 1px solid #ffd966;
+      color: #1a1a2e;
+      font-weight: 600;
+
+      &:hover, &:focus {
+        background: lighten(#ffd966, 8%);
+        border-color: lighten(#ffd966, 8%);
+        color: #1a1a2e;
+        box-shadow: 0 4px 20px rgba(255, 217, 102, 0.25);
+      }
     }
 
     .btn-important-2 {
-      font-size: 0.95rem;
-      padding: 10px 24px;
+      font-size: 1.05rem;
+      padding: 11px 28px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+
+      &:hover, &:focus {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: #fff;
+        color: #fff;
+      }
     }
 
     h1 {
       font-family: "NissanOpti", serif;
-      font-size: 80px;
-      line-height: 1;
+      font-size: 62px;
+      line-height: 1.05;
       letter-spacing: -1px;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-      position: relative;
     }
 
     @media screen and (max-width: 400px) {
       h1 {
-        font-size: 55px;
+        font-size: 46px;
       }
     }
 
     p {
-      font-size: 28px;
-      font-weight: 300;
+      font-size: 24px;
+      font-weight: 200;
       line-height: 1.4;
       margin: 0 0 30px;
-      opacity: 0.9;
-      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-      position: relative;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

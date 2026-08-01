@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  rescue_from ArgumentError, :with => :render_internal_error
+
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :authenticate_organizer, :except => [:index, :show]
   before_action :set_session, :only => [:show, :edit, :update, :destroy]
@@ -118,12 +120,9 @@ class SessionsController < ApplicationController
   def import
     file = params[:session_log]
 
-    if file.nil?
-      respond_to do |format|
-        format.html { redirect_to new_session_path, :notice => t('misc.controller.import.select') }
-        format.json { render :json => t('misc.controller.import.select'), :status => :bad_request, :layout => false }
-      end and return
-    end
+    # The import form must always include a file. If none was provided the
+    # request is invalid, so raise and let the 500 error page handle it.
+    raise ArgumentError, t('misc.controller.import.select') if file.blank?
 
     unless SYS::CSV_TYPES.include?(file.content_type)
       respond_to do |format|
@@ -175,5 +174,11 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:number, :host_name, :version, :physics, :protocol, :pickups, :date,
                                     :category, :teams, :ranking, :session_log)
+  end
+
+  # Renders the website's 500 error page when an invalid import request reaches
+  # the server (e.g. no CSV file was uploaded).
+  def render_internal_error
+    render 'errors/internal_error', :status => :internal_server_error, :layout => 'application'
   end
 end

@@ -4,21 +4,34 @@
   = t("rankings.sessions.upload.title")
 
 = form_with :url => import_sessions_path, :method => :post do |f|
-  .row
-    .col-md-5
-      .field.file-input-group
-        = f.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
-        = f.file_field :session_log, :accept => ".csv", :class => "form-control-file"
-
-      %div{:"data-controller" => "season"}
-        .field.form-group
-          = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")},  {:data => {:action => "change->season#change"}, :class => "form-control" }
-        .field.form-group
-          = f.select :ranking, [], {:prompt => t("misc.prompt.ranking")}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
-      .field.form-group
-        = f.select :category, SYS::CATEGORY::RVA_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, {:class => "form-control"}
-      .field.form-group
-        = f.check_box :teams
-        = f.label :teams, t("misc.checkbox.teams")
-
-      = f.button t("misc.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"
+  .session-form
+    .form-card
+      .row
+        .col-lg-5
+          .field.form-group.mb-lg-0
+            .upload-dropzone{:"data-controller" => "session-log"}
+              %label
+                %i.fa.fa-cloud-upload-alt{:"aria-hidden" => "true"}
+                %span.dropzone-title
+                  = t("rankings.sessions.upload.title")
+                %small
+                  = t("misc.controller.import.upload")
+                = f.hidden_field :session_log, :value => @session.cached_session_log_data, :id => nil
+                = f.file_field :session_log, :accept => ".csv", :class => "form-control-file", :"data-session-log-target" => "input", :"data-action" => "change->session-log#update"
+                %span.file-name{:"data-session-log-target" => "filename"}
+        .col-lg-7
+          %div{:"data-controller" => "season"}
+            .row
+              .col-md-6
+                .field.form-group
+                  = f.select :season, Season.all.reverse.collect { |s| [s.name, s.id] }, {:prompt => t("misc.prompt.season")}, {:data => {:action => "change->season#change"}, :class => "form-control" }
+              .col-md-6
+                .field.form-group
+                  = f.select :ranking, [], {:prompt => t("misc.prompt.ranking")}, {:data => {:"season_target" => "rankingSelect"}, :class => "form-control"}
+            .field.form-group.mb-0
+              = f.select :category, SYS::CATEGORY::RVA_NUMBERS_MAP, {:prompt => t("misc.prompt.category")}, {:class => "form-control"}
+      .form-actions
+        .session-checkbox.mb-0
+          = f.check_box :teams
+          = f.label :teams, t("misc.checkbox.teams")
+        = f.button t("misc.submit.import"), :type => "submit", :"data-turbo" => false, :class => "btn"
