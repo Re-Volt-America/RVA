@@ -49,10 +49,10 @@
       .card.h-100
         .card-body.d-flex.flex-column
           %h5.card-title
-            %i.fa.fa-cogs.mr-2
-            Sidekiq Dashboard
-          %p.card-text.flex-grow-1 Inspect background queues, retries and workers directly.
-          = link_to "Open", "/admin/sidekiq", :class => "btn", :target => "_blank", :rel => "noopener"
+            %i.fa.fa-bar-chart.mr-2
+            Season Car Usage
+          %p.card-text.flex-grow-1 Break down how often each car was used across a season, by class and date.
+          = link_to "Open", admin_season_stats_path, :class => "btn"
 
   - if @imports_in_progress.any? || @recent_imports.any?
     .row.mt-2
