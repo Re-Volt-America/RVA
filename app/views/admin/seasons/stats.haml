@@ -36,17 +36,19 @@
       .col-12
         .card.mb-4
           .card-body
-            .d-flex.justify-content-between.align-items-center.mb-2
-              %h4.card-title.mb-0
-                = "Car usage in #{@season&.name || 'Season'}"
+            - selected_class_label = @season_stats_filters[:car_category_value].blank? ? "All classes" : (@season_car_category_options.find { |_name, value| value.to_s == @season_stats_filters[:car_category_value] }&.first || "All classes")
+            .d-flex.justify-content-between.align-items-start.mb-2
+              %div
+                %h4.card-title.mb-0
+                  = "Car usage in #{@season&.name || 'Season'}"
+                %div.car-class-title
+                  %i.fa.fa-car.mr-1
+                  = "Class: #{selected_class_label}"
               - if @season_car_usage.present?
                 %span.count-pill= "#{@season_car_usage.size} cars"
             - if @season_car_usage.present?
-              %p.car-usage-hint.mb-3
-                %i.fa.fa-hand-pointer-o.mr-1
-                Hover a bar for details, or click it to jump to that car in the table below.
               .car-usage-chart
-                = bar_chart @season_car_usage, id: "season-car-usage-chart", colors: ["#ffd966"], legend: false, height: "520px", horizontal: true, dataset: { hoverBackgroundColor: "#ffe89a", borderRadius: 3, borderSkipped: false, maxBarThickness: 26, categoryPercentage: 0.86, barPercentage: 0.9 }, library: { maintainAspectRatio: false, layout: { padding: { right: 16 } }, interaction: { mode: "nearest", axis: "y", intersect: false }, animation: { duration: 700, easing: "easeOutQuart" }, scales: { x: { beginAtZero: true, title: { display: true, text: "Times used", color: "#a49fa2", font: { family: "Bahnschrift-Light", size: 13 } }, ticks: { stepSize: 1, precision: 0, color: "#a49fa2", font: { family: "Bahnschrift-Light" } }, grid: { color: "#2b2b2b" }, border: { display: false } }, y: { ticks: { color: "#e8e4e6", font: { family: "Bahnschrift-Light" } }, grid: { display: false }, border: { display: false } } }, plugins: { tooltip: { backgroundColor: "#1a1a1a", borderColor: "#646464", borderWidth: 1, titleColor: "#ffd966", bodyColor: "#ffffff", padding: 10, cornerRadius: 3, displayColors: false } } }
+                = bar_chart @season_car_usage, id: "season-car-usage-chart", colors: ["#ffd966"], legend: false, height: "100%", horizontal: true, dataset: { hoverBackgroundColor: "#ffe89a", borderRadius: 3, borderSkipped: false, maxBarThickness: 26, categoryPercentage: 0.86, barPercentage: 0.9 }, library: { responsive: true, maintainAspectRatio: false, layout: { padding: { right: 16 } }, interaction: { mode: "nearest", axis: "y", intersect: false }, animation: { duration: 700, easing: "easeOutQuart" }, scales: { x: { beginAtZero: true, title: { display: true, text: "Times used", color: "#a49fa2", font: { family: "Bahnschrift-Light", size: 13 } }, ticks: { stepSize: 1, precision: 0, color: "#a49fa2", font: { family: "Bahnschrift-Light" } }, grid: { color: "#2b2b2b" }, border: { display: false } }, y: { ticks: { autoSkip: false, color: "#e8e4e6", font: { family: "Bahnschrift-Light" } }, grid: { display: false }, border: { display: false } } }, plugins: { tooltip: { backgroundColor: "#1a1a1a", borderColor: "#646464", borderWidth: 1, titleColor: "#ffd966", bodyColor: "#ffffff", padding: 10, cornerRadius: 3, displayColors: false } } }
               .table-responsive.mt-4
                 %table.table.table-sm.car-usage-table.mb-0
                   %thead

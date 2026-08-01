@@ -175,15 +175,34 @@
   }
 
   // Season car-usage chart + companion table.
+  .car-class-title {
+    color: #ffd966;
+    font-family: "NissanOpti", serif;
+    font-size: 15px;
+    letter-spacing: .02em;
+    margin-top: .25rem;
+  }
+
   .car-usage-hint {
     color: #a49fa2;
     font-size: 13px;
   }
 
+  // A position:relative parent with an explicit height is the container
+  // Chart.js's responsive mode needs. The canvas itself is left alone so
+  // Chart.js can size it on resize (forcing it via CSS makes the chart blank
+  // out on resize and only recover on a full reload).
   .car-usage-chart {
+    position: relative;
+    height: 520px;
     background-color: #161616;
     border: 1px solid #2b2b2b;
     padding: 12px 14px;
+
+    // Chartkick's own wrapper (height: 100%) fills the sized container above.
+    > div {
+      height: 100%;
+    }
   }
 
   .car-usage-table {

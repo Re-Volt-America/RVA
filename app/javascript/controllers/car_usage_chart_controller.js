@@ -22,6 +22,15 @@ export default class extends Controller {
 
   disconnect() {
     this.stopPolling()
+    if (this.onResize) {
+      window.removeEventListener("resize", this.onResize)
+      this.onResize = null
+    }
+    if (this.resizeTimer) {
+      clearTimeout(this.resizeTimer)
+      this.resizeTimer = null
+    }
+    this.chart = null
   }
 
   stopPolling() {
@@ -53,6 +62,19 @@ export default class extends Controller {
   }
 
   bind(chart) {
+    this.chart = chart
+
+    // Chart.js responsive mode can occasionally leave the canvas collapsed
+    // after a window resize (it doesn't recover until a full reload). Force a
+    // redraw ourselves, debounced, so the chart always comes back.
+    this.onResize = () => {
+      if (this.resizeTimer) clearTimeout(this.resizeTimer)
+      this.resizeTimer = setTimeout(() => {
+        if (this.chart) this.chart.resize()
+      }, 150)
+    }
+    window.addEventListener("resize", this.onResize)
+
     // Pointer cursor while hovering a bar.
     chart.options.onHover = (event, elements) => {
       const canvas = event.native && event.native.target
