@@ -64,6 +64,7 @@ it:
   #Landing page, Splash, About
   application:
     splash:
+      kicker: "Community di Corse Online • Dal 1999"
       description1: "Il sito della community Americana del gioco Re-Volt dal 1999"
       description2: "Scarica il gioco e incontra giocatori da tutte le Americhe!"
       download-button: "Downloads »"
@@ -684,6 +685,7 @@ it:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Corse (Session %{number})"
+    date: "Data: %{date}"
     version: "Versione: %{version}"
     connection: "Connessione: %{protocol} (Server)"
     mode: "Modalità: %{physics}"

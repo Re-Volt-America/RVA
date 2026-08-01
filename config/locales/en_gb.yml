@@ -64,6 +64,7 @@ en-GB:
   #Landing page, Splash, About
   application:
     splash:
+      kicker: "Online Racing Community • Est. 1999"
       description1: "The Website for the American community of Re-Volt, 1999"
       description2: "Download the game and meet players from all over the Americas!"
       download-button: "Downloads »"
@@ -687,6 +688,7 @@ en-GB:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
+    date: "Date: %{date}"
     version: "Version: %{version}"
     connection: "Connection: %{protocol} (Server)"
     mode: "Mode: %{physics}"

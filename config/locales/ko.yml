@@ -64,6 +64,7 @@ ko:
   #Landing page, Splash, About
   application:
     splash:
+      kicker: "온라인 레이싱 커뮤니티 • 1999년 설립"
       description1: "1999년 출시된 리볼트의 아메리카 커뮤니티 웹사이트"
       description2: "게임을 다운로드하고 아메리카 전역의 플레이어를 만나보세요!"
       download-button: "다운로드 »"
@@ -684,6 +685,7 @@ ko:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
+    date: "Date: %{date}"
     version: "Version: %{version}"
     connection: "Connection: %{protocol} (Server)"
     mode: "Mode: %{physics}"

@@ -13,6 +13,8 @@
           = t("results.title", category:category_name(@session.category), number: @session.number )
         %ul
           %li
+            = t("results.date", date: pretty_datetime(@results_table.session_date))
+          %li
             = t("results.version", version: @session.version)
           %li
             = t("results.connection", protocol: @session.protocol)
@@ -41,10 +43,6 @@
   %table.table.table-sm.table-fluid.table-responsive{:id => "session"}
     %thead
       %tr
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
-          \#
-        %th.align-middle{:width => "12%"}
-          Date
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
           = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
@@ -63,12 +61,8 @@
         %th.pa-header.text-center.align-middle{:width => "4%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
           = t("rankings.table.pa")
     %tbody
-      - @results_table.rows.each_with_index do |row, idx|
-        %tr{:class => "#{'session-header-row' if idx.zero?}"}
-          %td.number-col.text-center.align-middle
-            = idx.zero? ? @results_table.session_number : ''
-          %td.date-col
-            = idx.zero? ? @results_table.session_date : ''
+      - @results_table.rows.each do |row|
+        %tr
           %td.fp-col.text-center.align-middle
             = row.final_position
           %td.racer-col
@@ -91,10 +85,6 @@
             = row.obtained_points
 
         %tr
-          %td.number-col
-            = ''
-          %td.date-col
-            = ''
           %td.fp-col.text-center.align-middle
             = ''
           %td.racer-col
