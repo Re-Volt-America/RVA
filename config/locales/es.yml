@@ -807,6 +807,7 @@ es:
       admin: "Administrador"
     badges:
       admin: "Administrador"
+      developer: "Desarrollador"
       mod: "Moderator"
       organizer: "Organizer"
       sponsor: "Sponsor"
