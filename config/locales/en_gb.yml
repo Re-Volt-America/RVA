@@ -810,6 +810,7 @@ en-GB:
       admin: "Admin"
     badges:
       admin: "Administrator"
+      developer: "Developer"
       mod: "Moderator"
       organizer: "Organiser"
       sponsor: "Sponsor"
