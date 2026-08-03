@@ -807,6 +807,7 @@ ko:
       admin: "Admin"
     badges:
       admin: "Administrator"
+      developer: "개발자"
       mod: "Moderator"
       organizer: "Organizer"
       sponsor: "Sponsor"
