@@ -26,7 +26,7 @@ gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.2.3', '>= 7.2.3.2'                                 # Rails!
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production

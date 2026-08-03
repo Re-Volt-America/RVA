@@ -2,7 +2,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.2.2
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim-bookworm as base
 
 # Rails app lives here
 WORKDIR /rails
@@ -43,7 +43,7 @@ RUN bundle install && yarn install && \
     bundle exec bootsnap precompile --gemfile
 
 # Copy application code
-COPY . .
+COPY ../../Desktop .
 
 # Make sure the builds directory exists
 RUN mkdir -p app/assets/builds
