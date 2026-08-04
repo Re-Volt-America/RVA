@@ -72,6 +72,10 @@ RVA::Application.routes.draw do
     collection do
       get :rankings
       post :import
+      # Browsers may re-request /sessions/import as GET when going back and
+      # forward after a failed upload. Redirect them to the import form so the
+      # request is not mistaken for a Session id (which would hit `show`).
+      get :import, :to => redirect('/sessions/new')
     end
   end
 

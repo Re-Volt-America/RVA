@@ -33,7 +33,7 @@
 
 #recent.mt-5
   - if @recent_sessions&.any?
-    %h6.pb-2.mb-0
+    %h6
       = t("application.index.recent.title")
     .media-group
       - @recent_sessions.each do |session|

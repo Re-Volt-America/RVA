@@ -16,41 +16,36 @@
         %h1{style: "margin-top: 0;"}
           = @car.name
         %br
-        %dl.dl-horizontal
-          %dt
-            = t("rva.cars.features.speed")
-          %dd
-            = "#{@car.speed} km/h"
-          %dt
-            = t("rva.cars.features.acceleration")
-          %dd
-            = "#{@car.accel} ms²"
-          %dt
-            = t("rva.cars.features.weight")
-          %dd
-            = "#{@car.weight} Kg"
-          %dt
-            = t("rva.cars.features.multiplier")
-          %dd
-            = @car.multiplier
-          %dt
-            = t("rva.cars.features.category")
-          %dd
-            = category_name(@car.category)
-          %dt
-            = t("rva.cars.features.author")
-          %dd
-            = @car.author
-          %dt{:style => "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
-            = t("rva.shared.stock.title")
-          %dd
-            = "#{@car.stock? ? t("misc.bool.true") : t("misc.bool.false")}"
+        %table.car-specs-table
+          %tbody
+            %tr
+              %td= t("rva.cars.features.speed")
+              %td= "#{@car.speed} km/h"
+            %tr
+              %td= t("rva.cars.features.acceleration")
+              %td= "#{@car.accel} ms²"
+            %tr
+              %td= t("rva.cars.features.weight")
+              %td= "#{@car.weight} Kg"
+            %tr
+              %td= t("rva.cars.features.multiplier")
+              %td= @car.multiplier
+            %tr
+              %td= t("rva.cars.features.category")
+              %td= category_name(@car.category)
+            %tr
+              %td= t("rva.cars.features.author")
+              %td= @car.author
+            %tr
+              %td{style: "cursor: help;", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("rva.cars.features.stock-tooltip.tooltip")}
+                = t("rva.shared.stock.title")
+              %td= "#{@car.stock? ? t("misc.bool.true") : t("misc.bool.false")}"
         - if @car.season
           %i
             = t("rva.cars.features.featured-session", season:@car.season.name) #{@car.season.name}
 
       .col-md-6
-        %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url}
+        %img.thumbnail.center-block.img-responsive{src: @car.thumbnail_url, alt: @car.name}
         - if user_is_admin?
           = link_to t("rva.cars.edit.button"), edit_car_path(@car), :class => "btn mt-2"
           = link_to t("rva.cars.edit.delete"), @car, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"

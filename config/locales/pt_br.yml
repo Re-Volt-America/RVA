@@ -64,6 +64,7 @@ pt:
   #Landing page, Splash, About
   application:
     splash:
+      kicker: "Comunidade de Corridas Online • Desde 1999"
       description1: "O site para a comunidade americana de Re-volt, 1999"
       description2: "Baixe o jogo e encontre jogadores por toda a América!"
       download-button: "Downloads »"
@@ -684,6 +685,7 @@ pt:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "Corridas %{category} (Sessão %{number})"
+    date: "Data: %{date}"
     version: "Versão: %{version}"
     connection: "Conexão: %{protocol} (Servidor)"
     mode: "Modo: %{physics}"

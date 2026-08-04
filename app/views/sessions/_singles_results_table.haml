@@ -1,4 +1,4 @@
-- content_for :title, t("results.meta.singles.page-title", number: @session.number)
+﻿- content_for :title, t("results.meta.singles.page-title", number: @session.number)
 - meta :title, t("results.meta.singles.title")
 - meta :description, singles_session_meta_desc(@results_table)
 - host_name = @session.host_name
@@ -12,6 +12,8 @@
         %h2
           = t("results.title", category:category_name(@session.category), number: @session.number)
         %ul
+          %li
+            = t("results.date", date: pretty_datetime(@results_table.session_date))
           %li
             = t("results.version", version: @session.version)
           %li
@@ -42,10 +44,6 @@
   %table.table.table-sm.table-fluid.table-responsive{:id => "session"}
     %thead
       %tr
-        %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.session-number")}
-          \#
-        %th.align-middle{:width => "8%"}
-          Date
         %th.text-center.align-middle{:width => "1%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.final-position")}
           = t("rankings.table.fp")
         %th.align-middle{:width => "30%"}
@@ -57,23 +55,19 @@
             - else
               %span{:"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tracks.not-found")}
                 = "?"
-        %th.pp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}
+        %th.pp-header.text-center.align-middle{:width => "3%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.average-position")}
           = t("rankings.table.pp")
-        %th.pa-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
+        %th.pa-header.text-center.align-middle{:width => "4%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.obtained-points")}
           = t("rankings.table.pa")
         %th.cc-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.race-count")}
           = t("rankings.table.cc")
-        %th.mp-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}
+        %th.mp-header.text-center.align-middle{:width => "3%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.participation-multiplier")}
           = t("rankings.table.mp")
-        %th.po-header.text-center.align-middle{:width => "2%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}
+        %th.po-header.text-center.align-middle{:width => "4%", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => t("results.container.tooltips.official-score")}
           = t("rankings.table.po")
     %tbody
-      - @results_table.rows.each_with_index do |row, idx|
+      - @results_table.rows.each do |row|
         %tr
-          %td.number-col.text-center.align-middle
-            = idx.zero? ? @results_table.session_number : ''
-          %td.date-col
-            = idx.zero? ? @results_table.session_date : ''
           %td.fp-col.text-center.align-middle
             = row.final_position
           %td.racer-col
@@ -97,10 +91,6 @@
             = row.official_score
 
         %tr
-          %td.number-col
-            = ''
-          %td.date-col
-            = ''
           %td.fp-col.text-center.align-middle
             = ''
           %td.racer-col
@@ -138,7 +128,7 @@
 
             - if item.is_a?(Car)
               %td.car{:colspan => colspan}
-                = link_to item.name, car_path(item), :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
+                = link_to item.name, car_path(item), :style => "color: #{car_category_color(item)};", :"data-toggle" => "tooltip", :"data-placement" => "top", :"data-html" => "true", :title => "<div class='car-tooltip-content'><h5>#{item.name}</h5><img src='#{item.thumbnail_url}' alt='#{item.name}' /><div class='car-details'><span>Speed: #{item.speed}</span><span>Weight: #{item.weight}</span></div></div>"
             - if item.is_a?(String) && item.start_with?('?')
               %td.car{:colspan => colspan}
                 = item.tr('?', '')

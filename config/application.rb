@@ -52,7 +52,7 @@ end
 
 module SYS
   RVA_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro random clockwork)
-  RVA_CATEGORY_COLORS = %w(#3c3cff #00af63 #f0e764 #ff7823 #ff2323 #c337ff #6e6e6e #d7d7d7)
+  RVA_CATEGORY_COLORS = %w(#9999ff #00af63 #f0e764 #ff7823 #ff2323 #c337ff #6e6e6e #d7d7d7)
   RVGL_CAR_CATEGORY_NAMES = %w(rookie amateur advanced semi-pro pro super-pro clockwork)
   RVGL_TRACK_DIFFICULTY_NAMES = %w(easy medium hard extreme)
 

@@ -100,10 +100,10 @@
                   = @user.profile.instagram
         - if @user.profile.twitter?
           .col-md-4.col-sm-6
-            %h6 Twitter
+            %h6 X
             %blockquote
               %p
-                %a{href: "https://twitter.com/#{@user.profile.twitter}", target: "_blank"}
+                %a{href: "https://x.com/#{@user.profile.twitter}", target: "_blank"}
                   = @user.profile.twitter
         - if @user.profile.steam?
           .col-md-4.col-sm-6
@@ -250,21 +250,22 @@
         = form_for(@user, html: { method: :put }) do |f|
           = f.fields_for :profile do |profile|
             %br/
-            .field.form-group
-              = f.check_box :admin
-              = f.label :admin, t("users.badges.admin")
-            .field.form-group
-              = f.check_box :developer
-              = f.label :developer, t("users.badges.developer")
-            .field.form-group
-              = f.check_box :mod
-              = f.label :mod, t("users.badges.mod")
-            .field.form-group
-              = f.check_box :organizer
-              = f.label :organizer, t("users.badges.organizer")
-            .field.form-group
-              = f.check_box :sponsor
-              = f.label :sponsor, t("users.badges.sponsor")
+            - if user_is_admin? || user_is_developer?
+              .field.form-group
+                = f.check_box :admin
+                = f.label :admin, t("users.badges.admin")
+              .field.form-group
+                = f.check_box :developer
+                = f.label :developer, t("users.badges.developer")
+              .field.form-group
+                = f.check_box :mod
+                = f.label :mod, t("users.badges.mod")
+              .field.form-group
+                = f.check_box :organizer
+                = f.label :organizer, t("users.badges.organizer")
+              .field.form-group
+                = f.check_box :sponsor
+                = f.label :sponsor, t("users.badges.sponsor")
             .field.form-group
               = f.label :team, t("results.team")
               = f.collection_select :team_id, Team.all, :id, :name, {:include_blank => true}, {:class => "form-control"}
@@ -305,7 +306,7 @@
             .form-group
               .input-group
                 .input-group-prepend
-                  .input-group-text twitter.com/
+                  .input-group-text x.com/
                 = profile.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control'
             .form-group
               .input-group

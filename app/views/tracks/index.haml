@@ -13,12 +13,16 @@
 = render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings}
 
 #tracks
-  = form_tag(tracks_path, method: :get) do
-    = hidden_field_tag :season, params[:season] if params[:season].present?
-    .form-group
-      = text_field_tag :query, params[:query], class: 'form-control', placeholder: t("misc.placeholder.search")
-      = button_tag type: 'submit', class: 'btn' do
-        %i.fa.fa-search
+  .sticky-top.search-bar
+    .row
+      .col-12
+        = form_tag(tracks_path, method: :get) do
+          = hidden_field_tag :season, params[:season] if params[:season].present?
+          .input-group
+            = text_field_tag :query, params[:query], class: 'form-control', placeholder: t("misc.placeholder.search"), id: 'track-search'
+            .input-group-append
+              = button_tag type: 'submit', class: 'btn btn-search' do
+                %i.fa.fa-search
 
   = paginate @tracks
 

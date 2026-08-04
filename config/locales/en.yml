@@ -68,6 +68,7 @@ en:
   # Landing page, Splash, About
   application:
     splash:
+      kicker: "Online Racing Community • Est. 1999"
       description1: "The Website for the American community of Re-Volt, 1999"
       description2: "Download the game and meet players from all over the Americas!"
       download-button: "Downloads »"
@@ -741,6 +742,7 @@ en:
         page-title: "Re-Volt America - Session %{number}"
         title: "RVA Teams Session"
     title: "%{category} Races (Session %{number})"
+    date: "Date: %{date}"
     version: "Version: %{version}"
     connection: "Connection: %{protocol} (Server)"
     mode: "Mode: %{physics}"
@@ -1079,6 +1081,8 @@ en:
             title2: "About %{user}"
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
+            current-password-notice: "You need to enter your current password to save changes."
+            remove-picture: "Remove profile picture"
         current-password: "Current password"
         update: "Update"
         update-admin: "Update %{user}"

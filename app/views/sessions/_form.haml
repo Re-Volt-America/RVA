@@ -1,31 +1,57 @@
 = form_with(:model => session) do |form|
-  .row
-    .col-md-5
-      .field.form-group
-        = form.label :host_name, t("rankings.sessions.edit.host")
-        = form.text_field :host_name, :class => "form-control"
-      .field.form-group
-        = form.label :version, t("rankings.sessions.edit.version")
-        = form.text_field :version, :class => "form-control"
-      .field.form-group
-        = form.label :physics, t("rankings.sessions.edit.physics")
-        = form.text_field :physics, :class => "form-control"
-      .field.form-group
-        = form.label :protocol, t("rankings.sessions.edit.protocol")
-        = form.text_field :protocol, :class => "form-control"
-      .field.form-group
-        = form.label :number, t("rankings.sessions.edit.number")
-        = form.number_field :number, :class => "form-control"
-      .field.form-group
-        = form.label :date, t("rankings.sessions.edit.date")
-        = form.date_field :date, :class => "form-control"
-      .actions
+  .session-form
+    .form-card
+      .row
+        .col-md-6
+          .field.form-group
+            = form.label :host_name, t("rankings.sessions.edit.host")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-user{:"aria-hidden" => "true"}
+              = form.text_field :host_name, :class => "form-control"
+          .field.form-group
+            = form.label :number, t("rankings.sessions.edit.number")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-hashtag{:"aria-hidden" => "true"}
+              = form.number_field :number, :class => "form-control"
+          .field.form-group
+            = form.label :date, t("rankings.sessions.edit.date")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-calendar{:"aria-hidden" => "true"}
+              = form.date_field :date, :class => "form-control"
+        .col-md-6
+          .field.form-group
+            = form.label :version, t("rankings.sessions.edit.version")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-code-branch{:"aria-hidden" => "true"}
+              = form.text_field :version, :class => "form-control"
+          .field.form-group
+            = form.label :physics, t("rankings.sessions.edit.physics")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-flask{:"aria-hidden" => "true"}
+              = form.text_field :physics, :class => "form-control"
+          .field.form-group
+            = form.label :protocol, t("rankings.sessions.edit.protocol")
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  %i.fa.fa-plug{:"aria-hidden" => "true"}
+              = form.text_field :protocol, :class => "form-control"
+      .form-actions
         = form.button t("rankings.sessions.edit.update"), :type => "submit", :"data-turbo" => false, :class => "btn"
-    .col-md-7
-      - if session.errors.any?
-        #error-explanation
-          %h5
-            = t("rankings.sessions.edit.error")
-          %ul
-            - session.errors.each do |error|
-              %li= error.full_message
+    - if session.errors.any?
+      #error-explanation.mt-4
+        %h5
+          = t("rankings.sessions.edit.error")
+        %ul
+          - session.errors.each do |error|
+            %li= error.full_message

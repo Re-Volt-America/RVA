@@ -64,6 +64,7 @@ lol:
   #Landing page, Splash, About
   application:
     splash:
+      kicker: "Onlin Racin Kitteh Komunity • SINZ 1999"
       description1: "Da websiet of da Re-Volt America of Re-Volt of katz, 1999"
       description2: "dowonload da gaem and meet da catz from all ovur da AMERICA"
       download-button: "Dowomnloads »"
@@ -687,6 +688,7 @@ lol:
         page-title: "RVA - Sesshun %{number}"
         title: "rva Tem sesshun"
     title: "%{category} races (sesshun %{number})"
+    date: "Dait: %{date}"
     version: "veshun: %{version}"
     connection: "Konnecshun: %{protocol} (Servur)"
     mode: "Moed: %{physics}"

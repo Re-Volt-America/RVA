@@ -22,9 +22,14 @@ module Users
     # end
 
     # PUT /resource
-    # def update
-    #   super
-    # end
+    def update
+      super do |resource|
+        if params[:user][:profile_attributes][:remove_profile_picture] == "1"
+          resource.profile.profile_picture_data = nil
+          resource.profile.save
+        end
+      end
+    end
 
     # DELETE /resource
     # def destroy
@@ -60,7 +65,7 @@ module Users
     def configure_account_update_params
       devise_parameter_sanitizer.permit(:account_update, :keys => [
                                           :admin, :mod, :organizer, :sponsor, :locale, :country, :team,
-                                          { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests, :profile_picture, :profile_picture_data],
+                                          { :profile_attributes => [:id, :about, :gender, :public_email, :location, :discord, :github, :instagram, :crowdin, :steam, :twitter, :occupation, :interests, :profile_picture, :profile_picture_data, :remove_profile_picture],
                                             :stats_attributes => [:id, :race_wins, :race_win_rate, :race_podiums, :race_count, :positions_sum,
                                                                   :session_wins, :session_podiums, :session_win_rate, :session_count, :average_position, :participation_rate, :official_score, :obtained_points] }
                                         ])
