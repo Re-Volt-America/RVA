@@ -4,6 +4,7 @@ ruby '3.2.2'
 
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
+gem 'connection_pool', '~> 2.5'                                       # Generic connection pool for Ruby
 gem 'countries', '~> 5.7'                                             # Collection of all sorts of useful information for every country in the ISO 3166 standard
 gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
