@@ -324,7 +324,7 @@ pt:
         note: "Final Multiplier = Car Multiplier × Class Factor"
         description: "You first earn points from your finishing position. Then those points are adjusted by your car multiplier."
       teams:
-        title: "Teams"
+        title: "Equipes"
         team-pa: "Team PA"
         sum-of-racer-scores: "Sum of Racer Scores"
         note: "Team entries are ranked by PA (obtained points) in descending order"
@@ -363,6 +363,7 @@ pt:
       all-tracks: "Todas as pistas"
       season: "Temporada"
       title: "As pistas do RVA"
+      new-track: "Add Track"
       no-tracks: "Sem pistas para exibir"
       made-by: "by: %{author_name}"
       format:
@@ -400,6 +401,7 @@ pt:
         stock: "Stock"
         lego: "Lego"
         average-lap-time: "Average Lap Time (seconds)"
+        active: "Active"
         error: "Pista não pôde ser salva"
       import:
         title: "Importar pistas"
@@ -456,6 +458,7 @@ pt:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Re-Volt América - Carros"
+      new-car: "Add Car"
       ratings-link: "Classificações de Carros"
       features:
         speed: "Velocidade"
@@ -463,9 +466,10 @@ pt:
         weight: "Peso"
         multiplier: "Multiplicador"
         category: "Categoria"
-        author: "Author"
+        author: "Autor"
         stock: "Stock"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Conteúdo original do Re-Volt"
         lego-tooltip:
@@ -538,6 +542,7 @@ pt:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "O que são temporadas RVA?"
       description: "No RVA, seguimos um formato sazonal para corridas on-line. Toda temporada consiste em 6 Rankings, e cada ranking consiste em 28 sessões, 18 das quais são para corridas individuais e as outras 10 para corridas em equipes. Os jogadores marcam pontos em cada corrida."
@@ -620,6 +625,9 @@ pt:
         delete: "Sessão deletada com sucesso."
         import:
           success: "Sessão importada com sucesso."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
     results:
       no-team-results: "Nenhum resultado para exibir :("
     nav:
@@ -713,6 +721,8 @@ pt:
         sessions-played: "Sessões jogadas"
       tracks:
         not-found: "Pista não encontrada"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -882,8 +892,8 @@ pt:
     create:
       title: "Create Weekly Schedule"
     track-list:
-      track: "Track"
-      type: "Type"
+      track: "Pista"
+      type: "Tipo"
       laps: "Laps"
   #Devise
   activerecord:
@@ -1063,6 +1073,10 @@ pt:
   #Alert message boxes
   alerts:
     no-permission: "Você não tem permissão"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
@@ -1082,20 +1096,23 @@ pt:
     download: "Download"
     search: "Busca"
     and: "&"
-    unknown: "Unknown"
+    unknown: "Desconhecido"
     custom: "Custom"
     lego: "Lego"
     stock: "Stock"
-    author: "Author"
+    author: "Autor"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
-      monday: "Monday"
-      tuesday: "Tuesday"
-      wednesday: "Wednesday"
-      thursday: "Thursday"
-      friday: "Friday"
-      saturday: "Saturday"
-      sunday: "Sunday"
+      monday: "Segunda-feira"
+      tuesday: "Terça-feira"
+      wednesday: "Quarta-feira"
+      thursday: "Quinta-feira"
+      friday: "Sexta-feira"
+      saturday: "Sábado"
+      sunday: "Domingo"
     bool:
       true: "Sim"
       false: "Não"
@@ -1108,6 +1125,7 @@ pt:
     submit:
       import: "Importar"
       update: "Atualizar"
+      create: "Criar"
     checkbox:
       teams: "Equipes"
     button:
