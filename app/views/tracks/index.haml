@@ -38,5 +38,7 @@
                     = track.name
                   %h6.author
                     = t("rva.tracks.made-by", :author_name => track.author)
+                  .track-card-rating
+                    = render "track_ratings/summary", track: track
 
     = paginate @tracks

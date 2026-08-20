@@ -76,7 +76,9 @@ production:
 test:
   clients:
     default:
-      uri: ""
+      hosts:
+        - "localhost:27018"
+      database: rva_test
       options:
         read:
           mode: :primary

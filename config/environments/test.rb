@@ -8,6 +8,12 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # config/application.rb unconditionally appends production/staging hostnames to config.hosts
+  # for every environment. That's meaningless (and actively harmful) in test: RSpec's request specs
+  # default to the "www.example.com" Host header, which would otherwise be rejected with a
+  # 403 Blocked Host response by ActionDispatch::HostAuthorization before reaching any controller.
+  config.hosts.clear
+
   config.cache_classes = true
 
   # Do not eager load code on boot. This avoids loading your whole application

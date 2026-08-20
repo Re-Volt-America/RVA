@@ -1,4 +1,13 @@
-# frozen_string_literal: true
+class Users::SessionsController < Devise::SessionsController
+  protected
+
+  # Devise's default auth_options include a recall to sessions#new on failure.
+  # In this app that recall is executed as POST and can trip CSRF verification.
+  # Returning only scope/locale keeps failure flow on normal redirect behavior.
+  def auth_options
+    { :scope => resource_name, :locale => I18n.locale }
+  end
+end# frozen_string_literal: true
 
 module Users
   class SessionsController < Devise::SessionsController

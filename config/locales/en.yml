@@ -454,6 +454,29 @@ en:
           button: "Edit Track"
         delete:
           button: "Delete Track"
+      rating:
+        section-title: "Community Rating"
+        title: "Rate this Track"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
 
     # RVA Cars
     cars:

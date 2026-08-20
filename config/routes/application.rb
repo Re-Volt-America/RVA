@@ -23,6 +23,8 @@ RVA::Application.routes.draw do
     collection do
       post :import
     end
+
+    resource :rating, :only => [:create], :controller => 'track_ratings'
   end
 
   # NOTE: Maybe not the best way of adding routing exceptions?
@@ -62,6 +64,7 @@ RVA::Application.routes.draw do
 
   devise_for :users,
              :controllers => {
+               :sessions => 'users/sessions',
                :confirmations => 'users/confirmations',
                :registrations => 'users/registrations',
                :passwords => 'users/passwords',
