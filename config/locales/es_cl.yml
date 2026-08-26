@@ -460,7 +460,7 @@ es-CL:
         show:
           description: "Parte del Pack de Autos de RVA para la temporada actual."
       title: "Autos de RVA"
-      new-car: "Agregar Auto"
+      new-car: "Agregar auto"
       ratings-link: "Clases de autos"
       features:
         speed: "Velocidad"
