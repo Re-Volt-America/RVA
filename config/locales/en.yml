@@ -558,6 +558,29 @@ en:
         import:
           exists: "No cars were created. Maybe they already exist?"
           success: "Cars successfully imported."
+      rating:
+        section-title: "Community Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "Stock"

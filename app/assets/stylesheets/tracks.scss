@@ -143,7 +143,7 @@
 
     .badge-light {
       background-color: #1a1a1a;
-      color: #f0c419;
+      color: #fff;
     }
   }
 
@@ -156,7 +156,7 @@
     border-top: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     background: #000;
-    color: #f0c419;
+    color: #fff;
     font-size: 0.82rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -173,17 +173,17 @@
 
   td {
     vertical-align: middle;
-    color: #fff;
+    color: #f0c419;
     border-color: rgba(255, 255, 255, 0.1);
   }
 
   .track-rating-admin-user {
     font-weight: 600;
-    color: #fff;
+    color: #f0c419;
     text-decoration: none;
 
     &:hover {
-      color: #f0c419;
+      color: #fff;
     }
   }
 
@@ -207,7 +207,7 @@
 
     .rating-pill-value {
       margin-left: 6px;
-      color: #fff;
+      color: #f0c419;
       font-weight: 600;
       font-size: 0.82rem;
     }

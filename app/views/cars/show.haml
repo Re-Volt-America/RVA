@@ -54,3 +54,17 @@
         - if user_is_admin?
           = link_to t("rva.cars.edit.button"), edit_car_path(@car), :class => "btn mt-2"
           = link_to t("rva.cars.edit.delete"), @car, data: { turbo: true, turbo_method: :delete, turbo_confirm: t("results.admin.delete.confirmation.body") }, :class => "btn mt-2"
+
+    .row.mt-4
+      .col-md-12
+        %h2= t("rva.cars.rating.section-title")
+        = render "car_ratings/summary", car: @car
+
+        - if user_signed_in?
+          = render "car_ratings/form", car: @car, car_rating: @car_rating
+        - else
+          %p.rating-sign-in-notice
+            = t("rva.cars.rating.sign-in-notice")
+
+        - if user_is_admin?
+          = render "car_ratings/admin_breakdown", car: @car

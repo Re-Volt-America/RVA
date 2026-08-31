@@ -40,6 +40,8 @@ RVA::Application.routes.draw do
     collection do
       post :import
     end
+
+    resource :rating, :only => [:create], :controller => 'car_ratings'
   end
 
   resources :tournaments

@@ -1,4 +1,11 @@
 module CarsHelper
+  # @param car [Car]
+  # @return [String] DOM id for the car's rating summary element, shared between the cars views and the
+  # car_ratings turbo_stream response so the latter can target and replace the former.
+  def car_rating_summary_dom_id(car)
+    dom_id(car, :rating_summary)
+  end
+
   # Filters out inactive cars.
   def cars_of_category(category, season = selected_season)
     if season.nil?
