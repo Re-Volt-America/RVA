@@ -23,7 +23,7 @@ class TracksController < ApplicationController
     end
 
     @tracks = Kaminari.paginate_array(
-      @tracks.sort_by { |track| [track.name, track.stock? ? 0 : 1] }
+      sort_ratable_collection(@tracks.sort_by { |track| [track.name, track.stock? ? 0 : 1] }, params[:sort])
     ).page(params[:page]).per(12)
 
     respond_with @tracks do |format|

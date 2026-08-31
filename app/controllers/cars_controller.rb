@@ -22,6 +22,7 @@ class CarsController < ApplicationController
     @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::ROOKIE, season), :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::ROOKIE, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -34,6 +35,7 @@ class CarsController < ApplicationController
     @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::AMATEUR, season), :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::AMATEUR, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -46,6 +48,7 @@ class CarsController < ApplicationController
     @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::ADVANCED, season), :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::ADVANCED, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -58,6 +61,7 @@ class CarsController < ApplicationController
     @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::SEMI_PRO, season), :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::SEMI_PRO, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -70,6 +74,7 @@ class CarsController < ApplicationController
     @cars = Rails.cache.fetch(category_cache_key(SYS::CATEGORY::PRO, season), :expires_in => 1.month) do
       @cars = cars_of_category(SYS::CATEGORY::PRO, season).sort_by { |car| [car.multiplier, car.stock? ? 0 : 1, car.name] }
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -84,6 +89,7 @@ class CarsController < ApplicationController
         [car.multiplier, car.stock? ? 0 : 1, car.name]
       end
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }
@@ -98,6 +104,7 @@ class CarsController < ApplicationController
         [car.multiplier, car.stock? ? 0 : 1, car.name]
       end
     end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }

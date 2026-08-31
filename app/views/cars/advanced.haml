@@ -16,6 +16,12 @@
       .col-xl-1.col-lg-2.col-md-2.col-xs-3.col-4
         = render :partial => "car_category_selector"
 
+  .row.mt-2
+    .col-12.text-right
+      = form_tag(request.path, method: :get, class: "d-inline-block") do
+        = hidden_field_tag :season, params[:season] if params[:season].present?
+        = render "application/sort_selector"
+
   - if @cars.none?
     %h5.text-center
       = t("rva.cars.shared.no-cars")

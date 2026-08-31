@@ -1,0 +1,2 @@
+- sort_options = [[t("misc.sort.name-asc"), "name_asc"], [t("misc.sort.name-desc"), "name_desc"], [t("misc.sort.rating-asc"), "rating_asc"], [t("misc.sort.rating-desc"), "rating_desc"]]
+= select_tag :sort, options_for_select(sort_options, params[:sort]), include_blank: t("misc.sort.default"), class: "form-control sort-selector", onchange: "this.form.requestSubmit()"

@@ -29,6 +29,26 @@ module ApplicationHelper
     user&.organizer?
   end
 
+  # Sorts a collection of items that respond to #name, #rating_count and #average_rating (e.g. Track, Car).
+  # @param collection [Enumerable]
+  # @param sort [String, nil] one of "name_asc", "name_desc", "rating_asc", "rating_desc"; anything else
+  #   (including nil) leaves the collection unchanged.
+  # @return [Enumerable] the sorted collection
+  def sort_ratable_collection(collection, sort)
+    case sort
+    when 'name_asc'
+      collection.sort_by { |item| item.name.to_s.downcase }
+    when 'name_desc'
+      collection.sort_by { |item| item.name.to_s.downcase }.reverse
+    when 'rating_asc'
+      collection.sort_by { |item| [item.rating_count.zero? ? 1 : 0, item.average_rating || 0] }
+    when 'rating_desc'
+      collection.sort_by { |item| [item.rating_count.zero? ? 1 : 0, -(item.average_rating || 0)] }
+    else
+      collection
+    end
+  end
+
   # Check if the passed user has a staff role
   # @return [Boolean] true if the current user either an admin, a mod or an organizer
   def user_is_staff?(user = current_user)
