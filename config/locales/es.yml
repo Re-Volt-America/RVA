@@ -1013,6 +1013,7 @@ es:
             title2: "Acerca de %{user}"
             nothing: "Aún no hay nada aquí..."
             placeholder: "Escriba algo interesante..."
+            current-password-notice: "Debes ingresar tu contraseña actual para guardar los cambios."
         current-password: "Contraseña actual"
         update: "Actualizar"
         update-admin: "Actualizar %{user}"
