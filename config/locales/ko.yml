@@ -502,7 +502,7 @@ ko:
   assets:
     page-title: "Re-Volt America - Assets"
     title: "로고 & 사용법"
-    subtitle_html: "유능한 인재들이 만든 주요 자산의 컬렉션 <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, RVA와 통합하거나 저희에게 링크하기 위해 다운로드 할 수 있습니다."
+    subtitle_html: "유능한 인재들이 만든 주요 자산의 컬렉션 <a class='text-primary' href='https://x.com/hylia_js' target='_blank'>Hylia</a>, RVA와 통합하거나 저희에게 링크하기 위해 다운로드 할 수 있습니다."
     allowed:
       title: "허용된 사용법"
       1: "웹 사이트의 출처를 밝힌 로고 사용"
