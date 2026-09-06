@@ -1023,6 +1023,7 @@ pt:
             title2: "Sobre %{user}"
             nothing: "Nada por aqui, ainda..."
             placeholder: "Escreva algo interessante..."
+            current-password-notice: "You need to enter your current password to save changes."
         current-password: "Senha atual"
         update: "Atualizar"
         update-admin: "Atualizar %{user}"
