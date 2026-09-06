@@ -545,7 +545,7 @@ en:
   assets:
     page-title: "Re-Volt America - Assets"
     title: "LOGOS & USAGE"
-    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
+    subtitle_html: "A collection of our main assets, crafted by the talented <a class='text-primary' href='https://x.com/hylia_js' target='_blank'>Hylia</a>, which you can download to integrate with RVA or link back to us!"
     allowed:
       title: "Allowed Usage"
       1: "Use our logo to link to our website."
@@ -1079,6 +1079,8 @@ en:
             title2: "About %{user}"
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
+            current-password-notice: "You need to enter your current password to save changes."
+            remove-picture: "Remove profile picture"
         current-password: "Current password"
         update: "Update"
         update-admin: "Update %{user}"
