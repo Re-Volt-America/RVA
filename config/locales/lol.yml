@@ -1026,6 +1026,7 @@ lol:
             title2: "Abt %{user}"
             nothing: "Void..."
             placeholder: "Drop down smth dat kitteh will be intrztin'..."
+            current-password-notice: "You need to enter your current password to save changes."
         current-password: "Pw rn"
         update: "Updaet"
         update-admin: "Updaet %{user}"
