@@ -1026,6 +1026,7 @@ en-GB:
             title2: "About %{user}"
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
+            current-password-notice: "You need to enter your current password to save changes."
         current-password: "Current password"
         update: "Update"
         update-admin: "Update %{user}"
