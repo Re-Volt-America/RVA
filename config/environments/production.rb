@@ -59,15 +59,16 @@ Rails.application.configure do
   config.cache_store = :redis_cache_store, {
     :host => ENV['REDIS_HOST'],
     :port => ENV['REDIS_PORT'],
+    :password => ENV['REDIS_PASSWORD'].presence,
     :db => 0
   }
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{30.days.to_i}"
   }
 
-  # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "RVA_production"
+  # Use Sidekiq as the Active Job backend so heavy work (e.g. parsing uploaded
+  # Session logs) runs in the background instead of blocking web requests.
+  config.active_job.queue_adapter = :sidekiq
 
   # Custom mailing settings
   config.action_mailer.perform_deliveries = true

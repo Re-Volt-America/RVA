@@ -1,6 +1,27 @@
 RVA::Application.routes.draw do
   default_url_options :host => 'localhost'
 
+  # Administration Panel (admins only). Declared here, in the higher-priority
+  # application routes, so /admin/* resolves ahead of the catch-all
+  # `/:username` route defined in config/routes/user.rb.
+  require 'sidekiq/web'
+  require 'sidekiq/cron/web'
+
+  namespace :admin do
+    root :to => 'dashboard#index'
+
+    get 'seasons/stats', to: 'seasons#stats', as: :season_stats
+    get 'seasons/stats/export', to: 'seasons#stats_export', as: :season_stats_export
+
+    resources :users, :only => [:index]
+    resources :session_imports, :only => [:index, :show]
+  end
+
+  # Sidekiq's own dashboard, restricted to signed-in admins via Warden.
+  authenticate :user, ->(user) { user.respond_to?(:admin?) && (user.admin? || user.developer?) } do
+    mount Sidekiq::Web => '/admin/sidekiq'
+  end
+
   root :to => 'application#index', :via => 'get'
 
   get 'about' => 'application#about'
@@ -55,6 +76,16 @@ RVA::Application.routes.draw do
     collection do
       get :rankings
       post :import
+    end
+  end
+
+  # Uploader-facing import progress screen. After uploading a Session log the
+  # user is sent here to watch a progress bar; `status` is polled as JSON and
+  # the page redirects to the parsed Session's results once it completes.
+  # (Distinct from the admin-only /admin/session_imports monitor.)
+  resources :session_imports, :only => [:show] do
+    member do
+      get :status
     end
   end
 

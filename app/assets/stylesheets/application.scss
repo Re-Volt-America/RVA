@@ -1,4 +1,5 @@
 @import "about";
+@import "admin";
 @import "assets";
 @import "cars";
 @import "downloads";
@@ -601,5 +602,43 @@ a.btn-important-2.disabled, fieldset:disabled a.btn-important-2 {
 
   .country-flag {
     font-size: 25px;
+  }
+}
+
+#error_explanation {
+  background-color: #2d1215;
+  border: 1px solid #842029;
+  border-radius: 4px;
+  color: #ea868f;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+
+  h2 {
+    color: #ea868f;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+.current-password-notice {
+  color: #8899a6;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.4rem;
+
+  i {
+    margin-right: 0.4rem;
+    color: #d4a017;
   }
 }

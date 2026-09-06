@@ -11,7 +11,7 @@
         = t("staff.description")
   %hr
 
-  - if @admins.none? && @mods.none? && @organizers.none?
+  - if @admins.none? && @developers.none? && @mods.none? && @organizers.none?
     %h5.text-center
       = t("staff.no-members")
 
@@ -48,6 +48,41 @@
                 %i.fab.fa-discord{"aria-hidden" => "true"}
             - if admin.profile.github?
               %a{href: "https://github.com/#{admin.profile.github}", target: "_blank"}
+                %i.fab.fa-github{"aria-hidden" => "true"}
+
+  - if @developers.any?
+    .row.staff-group
+      .col-md-12
+        %h2{style: "color: #71368a"}
+          = t("staff.groups.developer")
+          %small.staff-group-count
+            = @developers.size
+        %hr.hr-light-title/
+    .row
+      - @developers.each do |developer|
+        .col-md-3.col-sm-6.text-center
+          .staff-entry
+            - if developer.profile&.profile_picture_data.present?
+              = image_tag developer.profile.profile_picture_url,
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
+            - else
+              = image_tag "no_profile_picture.png",
+                alt: '',
+                style: "width: 120px; height: 120px; object-fit: cover; border-radius: 100%;"
+            %br
+            %a{:href => user_path(developer)}
+              %h4.staff-username{style: "color: #71368a; border-bottom-color: #71368a;"}
+                = developer.username
+            %br
+            - if developer.profile.public_email?
+              %a{"data-content" => developer.profile.public_email, "data-placement" => "bottom", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+                %i.fa.fa-envelope{"aria-hidden" => "true"}
+            - if developer.profile.discord?
+              %a{"data-content" => developer.profile.discord, "data-placement" => "top", "data-toggle" => "popover", style: "cursor: pointer; color: #beb8bc;"}
+                %i.fab.fa-discord{"aria-hidden" => "true"}
+            - if developer.profile.github?
+              %a{href: "https://github.com/#{developer.profile.github}", target: "_blank"}
                 %i.fab.fa-github{"aria-hidden" => "true"}
 
   - if @mods.any?

@@ -15,6 +15,16 @@ require 'action_cable/engine'
 require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 
+# Sidekiq does not depend on Rails, so it only wires up its Active Job
+# integration (which defines Sidekiq::ActiveJob) when it detects Rails at the
+# moment `sidekiq` is required. The Sidekiq CLI that runs the worker requires
+# `sidekiq` *before* Rails is loaded, so that detection is skipped and booting
+# the app later raises `uninitialized constant Sidekiq::ActiveJob`. Loading the
+# Rails hooks explicitly here fixes it for the worker, web and test processes
+# alike. See https://github.com/sidekiq/sidekiq/issues/6668
+require 'sidekiq'
+require 'sidekiq/rails'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -142,6 +152,13 @@ module SYS
 
   module SCORING
     NORMALIZER_CONSTANT = 0.1
+
+    # Participation floor awarded to any finishing position that falls outside
+    # the explicit tables below. The tables only enumerate positions 1..16
+    # (Re-Volt's historical lobby cap), but sessions may now have any number of
+    # racers, so positions beyond the last listed entry score MIN_POINTS.
+    MIN_POINTS = 1
+
     NORMAL = {
       1 => 15,
       2 => 12,

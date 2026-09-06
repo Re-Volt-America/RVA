@@ -1,0 +1,28 @@
+- content_for :title, "RVA - Importing Session"
+
+#import-progress{:data => {:controller => "import-progress", "import-progress-url-value" => status_session_import_path(@import), "import-progress-interval-value" => 1500}}
+  .row.mt-5
+    .col-md-6.offset-md-3
+      .card
+        .card-body.text-center
+          %h3.mb-1 Importing your session
+          %p.import-progress-sub{:data => {"import-progress-target" => "label"}} Queued...
+
+          .progress.import-progress-bar-wrap.mt-3.mb-2
+            .progress-bar.progress-bar-striped.progress-bar-animated{:role => "progressbar", :style => "width: 0%", :"aria-valuenow" => "0", :"aria-valuemin" => "0", :"aria-valuemax" => "100", :data => {"import-progress-target" => "bar"}}
+          .import-progress-percent{:data => {"import-progress-target" => "percent"}} 0%
+
+          - if @import.original_filename.present?
+            %p.import-progress-file.mt-3.mb-0
+              %i.fa.fa-file-text-o.mr-1
+              = @import.original_filename
+
+          .import-progress-error.d-none.mt-4.text-left{:data => {"import-progress-target" => "error"}}
+            .alert.alert-danger.mb-2
+              %strong.d-block.mb-1
+                %i.fa.fa-exclamation-triangle.mr-1
+                The import failed.
+              %span.import-progress-error-text{:data => {"import-progress-target" => "errorMessage"}}
+            = link_to new_session_path, :class => "btn btn-sm" do
+              %i.fa.fa-arrow-left.mr-1
+              Back to upload

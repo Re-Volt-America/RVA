@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: rva-app:latest
     volumes:
       - ./log:/rails/log
       - ./public/uploads:/rails/public/uploads
@@ -31,8 +32,31 @@ services:
     links:
       - mongo
       - redis
+  sidekiq:
+    # Reuse the exact image built for `app` so the worker and web process always
+    # run identical code. Only `app` carries the build: block.
+    image: rva-app:latest
+    command: bundle exec sidekiq -C config/sidekiq.yml -r ./config/environment.rb
+    volumes:
+      - ./log:/rails/log
+      - ./public/uploads:/rails/public/uploads
+    networks: [ rva ]
+    env_file:
+      - .env
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      MAILER_USERNAME: ${MAILER_USERNAME}
+      MAILER_PASSWORD: ${MAILER_PASSWORD}
+      MAILER_SMTP: ${MAILER_SMTP}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
   mongo:
-    image: mongo:3.6.3
+    image: mongo:7.0
     restart: always
     env_file:
       - .env

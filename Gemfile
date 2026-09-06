@@ -4,6 +4,7 @@ ruby '3.2.2'
 
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
+gem 'connection_pool', '~> 2.5'                                       # Generic connection pool for Ruby
 gem 'countries', '~> 5.7'                                             # Collection of all sorts of useful information for every country in the ISO 3166 standard
 gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
@@ -26,7 +27,7 @@ gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem 'rails', '~> 7.1'                                                 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.2.3', '>= 7.2.3.2'                                 # Rails!
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
@@ -36,15 +37,15 @@ gem 'sanitize', '~> 6.1'                                              # HTML & C
 gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
 gem 'shrine', '~> 3.5'                                                # File Attachment toolkit for Ruby applications
 gem 'shrine-mongoid', '~> 1.0'                                        # Mongoid integration for Shrine
+gem 'sidekiq', '~> 7.3'                                               # Simple, efficient background processing for Ruby (backed by Redis)
+gem 'sidekiq-cron', '~> 1.12'                                         # Cron scheduler for Sidekiq
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'tzinfo-data', :platforms => [:windows, :jruby]                   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 group :development, :test do
-  gem 'byebug', '~> 11.1', '>= 11.1.3', :platforms => [               # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    :mri, :mingw, :x64_mingw
-  ]
+  gem 'debug', '>= 1.11.1', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -53,7 +54,7 @@ group :development do
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
   gem 'ed25519', '~> 1.3'                                             # Resolve OpenSSH problems with capistrano
   gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
-  gem 'rack-mini-profiler', '~> 3.1', '>= 3.1.1'                      # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem 'rack-mini-profiler', '>= 4.0.1'                                # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 

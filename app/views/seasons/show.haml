@@ -109,6 +109,7 @@
             - else
               %p.mt-3.mb-0.text-muted No car usage data available for this season yet.
 
+- if user_is_admin? || user_is_developer?
   = link_to t("rankings.admin.season.edit.button"), edit_season_path(@season), :class => "btn mt-2"
   = link_to t("rankings.admin.season.delete.button"), '', :"data-target" => "#deleteSeasonModal", :"data-toggle" => "modal", :type => "button", :class =>  "btn mt-2"
 

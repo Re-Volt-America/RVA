@@ -4,6 +4,8 @@ class CsvImportSessionsService
   require 'csv'
   require 'rva_calculate_results_service'
   require 'session_results_table'
+  require 'session_import_error'
+  require 'session_validation_report'
   require 'stats_service'
   require 'team_points_service'
 
@@ -39,14 +41,14 @@ class CsvImportSessionsService
   end
 
   def call
-    csv = CSV.parse(read_uploaded_csv_content(@file))
+    csv = CSV.parse(read_file_content)
 
     unless is_rv_session_log(csv)
       return nil # FIXME: handle?
     end
 
     session_arr = csv.reject { |row| blank_row?(row) }
-    version_row = session_arr.find { |row| row[0] == '#' }
+    version_row = session_arr.find { |row| row[0] == 'Version' }
     session_row = session_arr.find { |row| row[0] == 'Session' }
 
     return nil if version_row.nil? || session_row.nil?
@@ -184,6 +186,40 @@ class CsvImportSessionsService
     true
   end
 
+  # Reads the raw CSV content regardless of whether @file is an uploaded file,
+  # a Shrine attachment/Tempfile (background import) or a plain path/String.
+  def read_file_content
+    raw =
+      if @file.respond_to?(:read)
+        @file.rewind if @file.respond_to?(:rewind)
+        @file.read
+      else
+        File.read(@file)
+      end
+
+    normalize_encoding(raw)
+  end
+
+  # RVGL session logs are UTF-8, but Shrine downloads them in binary mode, so
+  # @file.read hands us an ASCII-8BIT string. Left as-is, any accented name
+  # (Uki Ñiki, ...) makes CSV/String operations raise
+  # "\xC3 from ASCII-8BIT to UTF-8". We tag the bytes as UTF-8 (which they
+  # already are); if that isn't valid we try Windows-1252 (older exports) and,
+  # as a last resort, scrub any stray bytes so a single bad character can't sink
+  # the whole import.
+  def normalize_encoding(content)
+    return content if content.nil?
+
+    utf8 = content.dup.force_encoding(Encoding::UTF_8)
+    return utf8 if utf8.valid_encoding?
+
+    begin
+      content.encode(Encoding::UTF_8, Encoding::WINDOWS_1252, :invalid => :replace, :undef => :replace)
+    rescue StandardError
+      utf8.scrub('?')
+    end
+  end
+
   def find_user_by_username(username)
     return nil if username.nil?
 
@@ -214,18 +250,11 @@ class CsvImportSessionsService
 
   private
 
-  def read_uploaded_csv_content(file)
-    if file.respond_to?(:read)
-      file.rewind if file.respond_to?(:rewind)
-      return file.read
-    end
+  def uploaded_file_path(file)
+    return file.path if file.respond_to?(:path)
+    return file.tempfile.path if file.respond_to?(:tempfile)
 
-    if file.respond_to?(:tempfile) && file.tempfile.respond_to?(:read)
-      file.tempfile.rewind if file.tempfile.respond_to?(:rewind)
-      return file.tempfile.read
-    end
-
-    raise ArgumentError, 'Invalid uploaded file'
+    file.to_s
   end
 
   def blank_row?(row)

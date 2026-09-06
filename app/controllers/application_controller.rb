@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :build_navigation
 
+  helper_method :show_inactive?
+
+  # Whether an admin has explicitly requested to view inactive (disabled)
+  # records via `?active=false`. Only honoured for admins.
+  def show_inactive?
+    (user_is_admin? || user_is_developer?) && params[:active] == 'false'
+  end
+
   def set_locale
     if user_signed_in?
       I18n.locale = current_user.locale
@@ -37,6 +45,7 @@ class ApplicationController < ActionController::Base
     return unless user_signed_in?
 
     @admin_nav = [
+      { :name => "Administration Panel", :path => admin_root_path },
       { :name => t('nav.user.admin.upload-session'), :path => new_session_path, :organizer => true },
       { :name => t('nav.user.admin.generate-tracklist'), :path => weekly_schedules_path, :organizer => true },
       { :name => "Administrate Users", :path => admin_users_path  },
@@ -70,12 +79,12 @@ class ApplicationController < ActionController::Base
   def render_navigation(item)
     if item[:sub]
       subs = item[:sub].map do |sub|
-        if sub[:user] || user_is_admin? || ((sub[:organizer] && user_is_organizer?) || (sub[:mod] && user_is_mod?))
+        if sub[:user] || user_is_admin? || user_is_developer? || ((sub[:organizer] && user_is_organizer?) || (sub[:mod] && user_is_mod?))
           render_navigation(sub)
         end
       end
 
-      if item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
+      if item[:user] || user_is_admin? || user_is_developer? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
         %(
             <li class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle" href="#">#{item[:name]}</a>
@@ -85,7 +94,7 @@ class ApplicationController < ActionController::Base
             </li>
           ).html_safe
       end
-    elsif item[:user] || user_is_admin? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
+    elsif item[:user] || user_is_admin? || user_is_developer? || ((item[:organizer] && user_is_organizer?) || (item[:mod] && user_is_mod?))
       %(<li>#{nav_link(item)}</li>).html_safe
     end
   end
@@ -112,15 +121,15 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_admin?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_admin? || user_is_developer?
   end
 
   def authenticate_mod
-    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_mod? || user_is_admin?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_mod? || user_is_admin? || user_is_developer?
   end
 
   def authenticate_organizer
-    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_organizer? || user_is_admin?
+    redirect_to root_path, :notice => t('alerts.no-permission') unless user_is_organizer? || user_is_admin? || user_is_developer?
   end
 
   def authenticate_staff

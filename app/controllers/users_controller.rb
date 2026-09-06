@@ -3,14 +3,8 @@ class UsersController < ApplicationController
   include RankingsHelper
 
   before_action :authenticate_user!, :except => [:show, :stats]
-  before_action :authenticate_admin, :except => [:show, :stats, :update_locale, :edit, :members]
-  before_action :authenticate_mod, :only => [:edit, :members]
-
-  def members
-    @users = User.all.order(created_at: :desc)
-    @users = Kaminari.paginate_array(@users.to_a).page(params[:page]).per(20)
-    @count = (@users.current_page - 1) * @users.limit_value
-  end
+  before_action :authenticate_admin, :except => [:show, :stats, :update_locale, :edit]
+  before_action :authenticate_mod, :only => [:edit]
 
   def show
     @user = User.where(:username => params[:username].to_s.upcase).first
@@ -19,15 +13,11 @@ class UsersController < ApplicationController
       return
     end
 
-    @recent_sessions = []
-
-    Session.all.each do |session|
-      next unless session.racer_result_entries.any? { |r| r.username.upcase.eql?(params[:username].upcase) }
-
-      @recent_sessions << session
-    end
-
-    @recent_sessions = @recent_sessions.last(5).reverse!
+    @recent_sessions = Session
+                       .where('racer_result_entries.username' => @user.username)
+                       .order_by(:created_at => :desc)
+                       .limit(5)
+                       .to_a
 
     @rank = if current_ranking
               current_ranking.get_rank(@user)
@@ -36,9 +26,15 @@ class UsersController < ApplicationController
             end
   end
 
-  # NOTE: This may be a bit hacky, but it gets the job done...
+  ROLE_ATTRS = %w[admin mod organizer sponsor].freeze
+
   def edit
     return if params[:username].nil?
+
+    # Only admins can change roles
+    unless user_is_admin?
+      ROLE_ATTRS.each { |attr| params[:user]&.delete(attr) }
+    end
 
     user = User.find { |u| u.username.downcase.eql?(params[:username].downcase) }
 

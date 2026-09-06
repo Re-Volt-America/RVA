@@ -9,6 +9,8 @@
 
   = render :partial => "application/subnav", :locals => {:season => selected_season, :rankings => selected_season&.rankings, :category => SYS::CATEGORY::CLOCKWORK}
 
+  = render "application/active_toggle"
+
   .sticky-top.search-bar
     .row
       .col-xl-11.col-lg-10.col-md-10.col-xs-9.col-8.sticky-top

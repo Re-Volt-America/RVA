@@ -717,6 +717,9 @@ en:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
 
     results:
       no-team-results: "No team results to display"
@@ -901,6 +904,7 @@ en:
       admin: "Admin"
     badges:
       admin: "Administrator"
+      developer: "Developer"
       mod: "Moderator"
       organizer: "Organizer"
       sponsor: "Sponsor"
@@ -1121,6 +1125,7 @@ en:
             title2: "About %{user}"
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
+            current-password-notice: "You need to enter your current password to save changes."
         current-password: "Current password"
         update: "Update"
         update-admin: "Update %{user}"
@@ -1173,6 +1178,11 @@ en:
   alerts:
     no-permission: "You do not have permission"
 
+  # Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
+
   # Error pages
   error:
     404:
@@ -1199,6 +1209,9 @@ en:
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"

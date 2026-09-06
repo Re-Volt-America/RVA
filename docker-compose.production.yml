@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: rva-app:latest
     restart: unless-stopped
     volumes:
       - /home/rva/RVA/shared/log:/rails/log
@@ -40,8 +41,37 @@ services:
     links:
       - mongo
       - redis
+  sidekiq:
+    # Reuse the exact image built for `app` so the worker and web process always
+    # run identical code. Only `app` carries the build: block.
+    image: rva-app:latest
+    restart: unless-stopped
+    command: bundle exec sidekiq -C config/sidekiq.yml -r ./config/environment.rb
+    volumes:
+      - /home/rva/RVA/shared/log:/rails/log
+      - /home/rva/RVA/shared/public/uploads:/rails/public/uploads
+      - /home/rva/RVA/shared/public/uploads/cache:/rails/public/uploads/cache
+      - /home/rva/RVA/shared/vendor/bundle:/rails/vendor/bundle
+      - /home/rva/RVA/shared/.bundle:/rails/.bundle
+      - /home/rva/RVA/shared/public/system:/rails/public/system
+      - /home/rva/RVA/shared/.env:/rails/.env
+    networks: [ rva ]
+    env_file:
+      - /home/rva/RVA/shared/.env
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      MAILER_USERNAME: ${MAILER_USERNAME}
+      MAILER_PASSWORD: ${MAILER_PASSWORD}
+      MAILER_SMTP: ${MAILER_SMTP}
+      SENTRY_DSN: ${SENTRY_DSN}
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
   mongo:
-    image: mongo:3.6.3
+    image: mongo:7.0
     restart: always
     env_file:
       - /home/rva/RVA/shared/.env
@@ -55,25 +85,31 @@ services:
       - "7001"
     networks: [rva]
     volumes:
-      - mongo-data:/data/db
+      - mongo-data-70:/data/db
       - ./docker/mongo/init.js:/docker-entrypoint-initdb.d/mongo.js
   redis:
     image: redis:6.2-alpine
     restart: always
     env_file:
       - /home/rva/RVA/shared/.env
-    ports:
-      - "7002:6379"
-    expose:
-      - "7002"
     networks: [rva]
     volumes:
       - redis-data:/data
     working_dir: /data
-    command: redis-server --dir /data
+    command: >
+      sh -c 'exec redis-server
+      --dir /data
+      --requirepass "$$REDIS_PASSWORD"
+      --appendonly yes
+      --appendfsync everysec
+      --rename-command MODULE ""
+      --rename-command SLAVEOF ""
+      --rename-command REPLICAOF ""
+      --rename-command DEBUG ""'
 
 volumes:
   mongo-data:
+  mongo-data-70:
   redis-data:
 
 networks:

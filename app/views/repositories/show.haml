@@ -8,7 +8,7 @@
       = t("repositories.title")
       %small
         = t("repositories.small")
-      - if user_is_admin?
+      - if user_is_admin? || user_is_developer?
         %a.btn.btn-sm.float-right{:href => new_repository_path}= t("repositories.new-button")
     %hr.mt-1/
   .row

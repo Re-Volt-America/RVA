@@ -60,6 +60,7 @@ class User
   field :locked_at,       :type => Time
 
   field :admin, :type => Boolean, :default => false
+  field :developer, :type => Boolean, :default => false
   field :mod, :type => Boolean, :default => false
   field :organizer, :type => Boolean, :default => false
 
