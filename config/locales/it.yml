@@ -506,7 +506,7 @@ it:
   assets:
     page-title: "Re-Volt America - Assets"
     title: "Logo & Utilizzi"
-    subtitle_html: "Una collezzione delle nostre risorse principali, realizzate dalla talentuosa <a class='text-primary' href='https://twitter.com/hylia_js' target='_blank'>Hylia</a>, che puoi scaricare per integrarti con RVA o per riferirti a noi!"
+    subtitle_html: "Una collezzione delle nostre risorse principali, realizzate dalla talentuosa <a class='text-primary' href='https://x.com/hylia_js' target='_blank'>Hylia</a>, che puoi scaricare per integrarti con RVA o per riferirti a noi!"
     allowed:
       title: "Uso Consentito"
       1: "Usa il nostro logo per riferirti al nostro sito"
@@ -1024,6 +1024,7 @@ it:
             nothing: "Nothing here yet..."
             placeholder: "Write something interesting..."
             current-password-notice: "You need to enter your current password to save changes."
+            remove-picture: "Remove profile picture"
         current-password: "Current password"
         update: "Aggiorna"
         update-admin: "Aggiorna %{user}"
