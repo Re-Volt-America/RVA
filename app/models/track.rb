@@ -77,6 +77,17 @@ class Track
     ((average_rating * 2).round / 2.0).clamp(1.0, 5.0)
   end
 
+  # @return [Hash{Integer=>Integer}] number of ratings whose composite score rounds to each 1-5
+  #   star bucket, e.g. { 1 => 3, 2 => 0, 3 => 12, 4 => 40, 5 => 88 }
+  def rating_distribution
+    distribution = (1..5).index_with { 0 }
+    track_ratings.each do |rating|
+      bucket = rating.average_score.round.clamp(1, 5)
+      distribution[bucket] += 1
+    end
+    distribution
+  end
+
   def carry_over_ratings_from_previous_season!
     return false if season.nil?
     return false if track_ratings.exists?

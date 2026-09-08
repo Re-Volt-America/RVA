@@ -55,9 +55,7 @@
 
     .row.mt-4
       .col-md-12
-        %h2= t("rva.tracks.rating.section-title")
-        = render "track_ratings/summary", track: @track
-
+        = render "track_ratings/overview", track: @track
         - if user_signed_in?
           = render "track_ratings/form", track: @track, track_rating: @track_rating
         - else

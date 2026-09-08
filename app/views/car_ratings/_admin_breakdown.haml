@@ -1,7 +1,7 @@
 - if car.car_ratings.any?
   .car-rating-admin-breakdown.card.mt-4
     .card-header.car-rating-admin-header
-      %h4.mb-0= t("rva.cars.rating.admin.title")
+      %h5.mb-0= t("rva.cars.rating.admin.title")
       %span.badge.badge-light= t("rva.cars.rating.votes", count: car.rating_count)
 
     .card-body.p-0

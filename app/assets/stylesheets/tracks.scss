@@ -12,7 +12,7 @@
     flex-direction: column;
     padding: 4px;
     margin-bottom: 20px;
-    background-color: #0d0d10;
+    background-color: #000;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 4px;
     -webkit-transition: border .2s ease-in-out;
@@ -120,6 +120,133 @@
 
   .rating-field-label {
     flex: 1;
+  }
+
+  // Community-rating overview: average score on the left, vote-distribution chart on the right
+  .rating-overview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin: 4px 0 24px;
+
+    .rating-overview-score {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+
+    .rating-overview-label {
+      color: #787476;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .stars.readonly {
+      margin-top: 6px;
+      font-size: 1.9rem;
+    }
+
+    .rating-overview-value {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .rating-average-number {
+      color: #fff;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .rating-average-label {
+      color: #787476;
+      font-size: 1rem;
+    }
+
+    .rating-count {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+
+    .rating-overview-distribution {
+      flex: 1 1 280px;
+      min-width: 260px;
+    }
+
+    .rating-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .rating-bar-star {
+      flex-shrink: 0;
+      width: 14px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .rating-bar-track {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      height: 22px;
+    }
+
+    .rating-bar-fill {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      min-width: 52px;
+      border-radius: 3px;
+      transition: width .3s ease-in-out;
+    }
+
+    .rating-bar-count {
+      padding: 0 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .rating-bar-count--zero {
+      color: #787476;
+    }
+
+
+    .rating-bar-fill--1 { background-color: #e0564b; }
+    .rating-bar-fill--2 { background-color: #f0912f; }
+    .rating-bar-fill--3 { background-color: #f4c81e; }
+    .rating-bar-fill--4 { background-color: #9fce3a; }
+    .rating-bar-fill--5 { background-color: #2ec84a; }
+  }
+
+  @media screen and (max-width: 575px) {
+    .rating-overview {
+      gap: 16px;
+
+      .rating-overview-distribution {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  // Smaller, less dominant "Rate this Car/Track" form heading
+  .rating-form-title {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
   }
 }
 

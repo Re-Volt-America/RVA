@@ -1,5 +1,5 @@
 = turbo_stream.replace car_rating_summary_dom_id(@car) do
-  = render "car_ratings/summary", car: @car
+  = render "car_ratings/overview", car: @car
 
 = turbo_stream.replace "car-rating-form" do
   = render "car_ratings/form", car: @car, car_rating: @car_rating, saved: saved

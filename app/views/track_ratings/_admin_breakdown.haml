@@ -1,7 +1,7 @@
 - if track.track_ratings.any?
   .track-rating-admin-breakdown.card.mt-4
     .card-header.track-rating-admin-header
-      %h4.mb-0= t("rva.tracks.rating.admin.title")
+      %h5.mb-0= t("rva.tracks.rating.admin.title")
       %span.badge.badge-light= t("rva.tracks.rating.votes", count: track.rating_count)
 
     .card-body.p-0

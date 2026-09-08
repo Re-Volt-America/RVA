@@ -1,6 +1,6 @@
 - saved = false unless defined?(saved)
 = form_with model: track_rating, url: track_rating_path(track), method: :post, html: {id: "track-rating-form", data: {controller: "track-rating", action: "submit->track-rating#submit"}} do |form|
-  %h3= t("rva.tracks.rating.title")
+  %h4.rating-form-title= t("rva.tracks.rating.title")
 
   - if saved
     .alert.alert-success= t("rva.tracks.rating.controller.success")

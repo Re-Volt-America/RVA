@@ -57,9 +57,7 @@
 
     .row.mt-4
       .col-md-12
-        %h2= t("rva.cars.rating.section-title")
-        = render "car_ratings/summary", car: @car
-
+        = render "car_ratings/overview", car: @car
         - if user_signed_in?
           = render "car_ratings/form", car: @car, car_rating: @car_rating
         - else

@@ -456,6 +456,7 @@ en:
           button: "Delete Track"
       rating:
         section-title: "Community Rating"
+        average-label: "Average Rating"
         title: "Rate this Track"
         not-enough-votes: "Not Enough Votes"
         votes:
@@ -560,6 +561,7 @@ en:
           success: "Cars successfully imported."
       rating:
         section-title: "Community Rating"
+        average-label: "Average Rating"
         title: "Rate this Car"
         not-enough-votes: "Not Enough Votes"
         votes:
