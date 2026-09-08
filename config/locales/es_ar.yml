@@ -67,7 +67,7 @@ es-AR:
       description1: "La página web de la comunidad Americana de Re-Volt, 1999"
       description2: "¡Descargá el juego y conocé jugadores de toda América!"
       download-button: "Descargas »"
-      weekly-schedules-button: "Weekly Schedules »"
+      weekly-schedules-button: "Horarios Semanales »"
     index:
       community:
         title: "Comunidad"
@@ -109,7 +109,7 @@ es-AR:
       button_html: "Revisa nuestro calendario semanal <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
-    page-title: "Re-Volt America - Downloads"
+    page-title: "Re-Volt América - Descargas"
     title: "Descargas"
     video: "Video pendiente..."
     faq:
@@ -118,7 +118,7 @@ es-AR:
     legacy-downloads: "Descargas antiguas"
   #FAQ page
   faq:
-    page-title: "Re-Volt America - FAQ"
+    page-title: "Re-Volt América - Preguntas Frecuentes"
     title: "Preguntas Frecuentes"
     description: "Esta es una recolección de preguntas frecuentes (FAQ) hechas por miembros nuevos de la comunidad cuando quieren jugar Re-Volt en línea con nosotros por primera vez. Asegurate de leerlas si sos nuevo en nuestra comunidad."
     section-1: "Instalación y configuración"
@@ -182,7 +182,7 @@ es-AR:
         mobile-players: "Jugadores de teléfono"
   #Rules page
   rules:
-    page-title: "Re-Volt America - Rules"
+    page-title: "Re-Volt América - Reglas"
     title: "Reglas"
     sections:
       a:
@@ -238,26 +238,26 @@ es-AR:
         precision: "Cuando el anfitrión de una sala fuerza a un corredor a espectadores. En este contexto, como una forma de infracción."
   #Privacy & Terms pages
   privacy:
-    page-title: "Re-Volt America - Privacy"
+    page-title: "Re-Volt América - Privacidad"
     meta:
-      title: "RVA - Privacy Policy"
-      description: "The privacy policy that applies in Re-Volt America's platform."
+      title: "RVA - Política de Privacidad"
+      description: "La política de privacidad que se aplica en la plataforma de Re-Volt América."
     title_html: "<i class='fa fa-user-secret' aria-hidden='true'></i> Política de Privacidad"
   terms:
-    page-title: "Re-Volt America - Terms"
+    page-title: "Re-Volt América - Términos"
     meta:
-      title: "RVA - Terms of Service"
-      description: "The terms of service that apply in Re-Volt America's platform."
+      title: "RVA - Términos de Servicio"
+      description: "Los términos de servicio que se aplican en la plataforma de Re-Volt América."
     title_html: "<i class='fa fa-book' aria-hidden='true'></i> Términos de Servicio"
   #Staff page
   staff:
-    page-title: "Re-Volt America - Staff"
+    page-title: "Re-Volt América - Personal"
     meta:
-      title: "RVA - Staff"
-      description: "The people who help run Re-Volt America."
+      title: "RVA - Personal"
+      description: "La gente que ayuda a la gestión de Re-Volt América."
     title: "Equipo"
     description: "¡La gente que ayuda a la gestión de Re-Volt América!"
-    no-members: "No staff members to display"
+    no-members: "No hay miembros del personal para mostrar"
     groups:
       administrator: "Administradores"
       developer: "Desarrolladores"
@@ -265,7 +265,7 @@ es-AR:
       organizer: "Organizadores"
   #Points page
   points:
-    page-title: "Re-Volt America - Points"
+    page-title: "Re-Volt América - Puntos"
     title: "Sistema de puntos de RVA"
     introduction:
       title: "Introducción"
@@ -273,17 +273,17 @@ es-AR:
       normal-race: "Puntuación normal de carrera"
       big-race: "Puntuación de carrera grande"
       position-label: "P%{n}"
-      points-label: "%{n} pts"
+      points-label: "%{n} puntos"
     single-races:
-      title: "Single Races"
-      description: "In each ranking, we first play 18 sessions that are single races. In single races, each player competes individually and earns points based on their finishing position. The point system for single races is as follows:"
-      example-title: "Quick Example"
-      example-scenario: "Example: A player, who is playing a lobby of the Amateur class, finishes in 2nd place in a normal race (9 racers) with a Rookie class car. In this case, the car has a 0.9 car multiplier and a 1.25x class factor because it is one class below the lobby class."
-      steps-label: "Steps:"
+      title: "Carreras Individuales"
+      description: "En cada clasificación, jugamos primero 18 sesiones que son carreras individuales. En una sola carrera, cada jugador compite individualmente y gana puntos en base a su posición final. El sistema de puntos para carreras individuales es el siguiente:"
+      example-title: "Ejemplo rápido"
+      example-scenario: "Ejemplo: Un jugador, que está jugando a un lobby de la clase Amateur, termina en 2º lugar en una carrera normal (9 carreras) con un coche de clase Rookie. En este caso, el coche tiene un multiplicador de 0.9 coches y un factor de clase 1.25x porque es una clase debajo de la clase lobby."
+      steps-label: "Pasos:"
       formula:
-        position-score: "Position Score"
-        final-multiplier: "Final Multiplier"
-        racer-score: "Racer Score"
+        position-score: "Puntuación de Posición"
+        final-multiplier: "Multiplicador Final"
+        racer-score: "Puntuación del Corredor"
       example-steps:
         step1: "Step 1: Position Score — Look up the points for 2nd place in a normal race → 12 points"
         step2: "Step 2: Car Multiplier — The Rookie car has a car multiplier of 0.9"
@@ -296,53 +296,53 @@ es-AR:
       title: "Clasificación de autos"
       description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and we also apply a class factor based on how far below the lobby class the car is. Here is how the formula is applied each race with different car multipliers:"
     team-races:
-      title: "Team Races"
+      title: "Carreras de Equipo"
       description: "After the 18 single race sessions, we play 10 more sessions in team format. In team races, players are divided into teams and compete together. Each team member earns individual points based on their finishing position, and these points are summed together to create the team's total score."
-      example-title: "Quick Example"
+      example-title: "Ejemplo Rápido"
       example-intro: ""
       example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
-      team-members-label: "Team Members:"
+      team-members-label: "Miembros del Equipo:"
       formula:
-        racer-1: "Racer 1"
-        racer-2: "Racer 2"
-        racer-3: "Racer 3"
-        team-pa: "Team PA"
+        racer-1: "Corredor 1"
+        racer-2: "Corredor 2"
+        racer-3: "Corredor 3"
+        team-pa: "Equipo PA"
       example-steps:
         player1: "Member 1 finishes 1st in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 20 × (0.9 × 1.25) = 22.5 points"
         player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 12 × (0.9 × 1.25) = 13.5 points"
         player3: "Member 3 finishes 5th in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 8 × (0.9 × 1.25) = 9 points"
       team-total: "Team PA (Obtained Points) = 22.5 + 13.5 + 9 = 45.0 points"
-      example-note: "Note: In team races, the average position and normalizer constant are not used. The team score is simply the sum of all team members' individual race points, making it straightforward to understand each team's contribution to the ranking."
+      example-note: "Nota: En las carreras de equipos, la posición media y el constante normalizador no se utilizan. La puntuación del equipo es simplemente la suma de los puntos de carrera individuales de todos los miembros del equipo, haciendo fácil entender la contribución de cada equipo a la clasificación."
     scoring-formulas:
-      title: "Scoring Formulas"
-      legend: "Each blue bar is one part of the score. \"=\" means \"results in\", \"×\" means \"multiply\", and \"÷\" means \"divide\"."
+      title: "Fórmulas de Puntuación"
+      legend: "Cada barra azul es una parte de los puntos. \"=\" significa \"resultados en\", \"×\" significa \"multiplicar\", y \"÷\" significa \"dividir\"."
       singles:
-        title: "Singles"
-        racer-score: "Racer Score"
-        position-score: "Position Score"
-        final-multiplier: "Final Multiplier"
+        title: "Individuales"
+        racer-score: "Puntuación del Corredor"
+        position-score: "Puntuación de Posición"
+        final-multiplier: "Multiplicador Final"
         note: "Final Multiplier = Car Multiplier × Class Factor"
         description: "You first earn points from your finishing position. Then those points are adjusted by your car multiplier."
       teams:
-        title: "Teams"
-        team-pa: "Team PA"
+        title: "Equipos"
+        team-pa: "Equipo PA"
         sum-of-racer-scores: "Sum of Racer Scores"
         note: "Team entries are ranked by PA (obtained points) in descending order"
         description: "Team points are everyone's points added together, so each teammate contributes to the final team result."
       main:
-        title: "Main"
-        official-score: "Official Score"
-        obtained-points: "Obtained Points"
-        average-position: "Average Position"
-        participation-multiplier: "Participation Multiplier"
+        title: "Principal"
+        official-score: "Puntaje Oficial"
+        obtained-points: "Puntaje Obtenido"
+        average-position: "Posición Promedio"
+        participation-multiplier: "Multiplicador por Participación"
         normalizer-constant: "Normalizer Constant"
         note: "This is the final score formula used for singles ranking"
         description: "To rank higher, score more points, keep a better average finish (lower is better), and take part in more races."
     desktop-parser:
       title: "Calculadora de puntos de RVA"
       description: "La calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en el formato de RVA desde un registro de sesión de RVGL. A través de esta herramienta portable, permitimos que cualquiera pueda calcular resultados de una fecha usando nuestro sistema de manera local si así lo desean. Acá hay un ejemplo de lo que obtendrías calculando una fecha vos mismo:"
-      show-image: "Show Preview"
-      hide-image: "Hide Preview"
+      show-image: "Mostrar Vista Previa"
+      hide-image: "Ocultar Vista Previa"
       image-alt: "RVA Desktop Points Parser preview"
     downloads:
       title: "Descargar RVA Points"
@@ -351,20 +351,21 @@ es-AR:
     tracks:
       meta:
         index:
-          page-title: "Re-Volt America - Tracks"
-          title: "RVA Tracks"
-          description: "The tracks in the RVA Track Pack of the current season."
+          page-title: "Re-Volt América - Pistas"
+          title: "Pistas de RVA"
+          description: "Las pistas en el Pack de Pistas RVA de la temporada actual."
         show:
-          description: "Part of the RVA Car Pack of the current season."
+          description: "Parte del Pack de Autos RVA de la temporada actual."
         new:
-          page-title: "Re-Volt America - Import Tracks"
+          page-title: "Re-Volt América - Importar Pistas"
         edit:
-          page-title: "Re-Volt America - Edit Track"
+          page-title: "Re-Volt América - Editar pista"
       all-tracks: "Todas las pistas"
       season: "Temporada"
       title: "Pistas de RVA"
+      new-track: "Añadir Pista"
       no-tracks: "No hay pistas que mostrar"
-      made-by: "by: %{author_name}"
+      made-by: "por: %{author_name}"
       format:
         title: "Formato"
         short-name:
@@ -396,10 +397,11 @@ es-AR:
         difficulty: "Dificultad"
         length: "Longitud (metros)"
         folder-name: "Nombre de carpeta"
-        author: "Author"
-        stock: "Stock"
+        author: "Autor"
+        stock: "Coches de Serie"
         lego: "Lego"
-        average-lap-time: "Average Lap Time (seconds)"
+        average-lap-time: "Tiempo Promedio de Vuelta (Segundos)"
+        active: "Activo"
         error: "No se pudo guardar la pista"
       import:
         title: "Importar pistas"
@@ -420,7 +422,7 @@ es-AR:
       meta:
         classes:
           rookie:
-            page-title: "Re-Volt America - Rookie Cars"
+            page-title: "Re-Volt América - Rookie Cars"
             title: "Rookie Cars - %{org}"
             description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
           amateur:
@@ -456,6 +458,7 @@ es-AR:
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Lista de autos de RVA"
+      new-car: "Add Car"
       ratings-link: "Categorías"
       features:
         speed: "Velocidad"
@@ -466,6 +469,7 @@ es-AR:
         author: "Author"
         stock: "Original"
         carbox-filename: "Car Box File Name"
+        active: "Active"
         stock-tooltip:
           tooltip: "Contenido base de Re-Volt"
         lego-tooltip:
@@ -538,6 +542,7 @@ es-AR:
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas de RVA"
+    of-season: "%{title} of %{season}"
     explanation:
       title: "Qué son las temporadas de RVA?"
       description: "En RVA, usamos un formato de temporadas para nuestras carreras en línea. Cada Temporada consiste de 6 Rankings, cada uno consistiendo de 28 fechas, 18 de las cuales son carreras individuales y las otras 10 son carreras por equipos. Los jugadores suman puntos por cada carrera."
@@ -550,7 +555,7 @@ es-AR:
     edit:
       title: "Editing Season"
       name: "Name"
-      start-date: "Start date"
+      start-date: "Fecha de Inicio"
       end-date: "End date"
       error: "Season could not be saved"
     create:
@@ -620,6 +625,9 @@ es-AR:
         delete: "Session was successfully deleted."
         import:
           success: "Session was successfully imported."
+          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
+          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
+          not_found: "That session import could not be found."
     results:
       no-team-results: "No hay resultados de equipo disponibles"
     nav:
@@ -713,6 +721,8 @@ es-AR:
         sessions-played: "Fechas Jugadas"
       tracks:
         not-found: "Pista no encontrada"
+      racer:
+        no-account: "This player doesn't have an account on the site yet"
   #Teams page
   teams:
     meta:
@@ -1065,6 +1075,10 @@ es-AR:
   #Alert message boxes
   alerts:
     no-permission: "No tiene permiso"
+  #Administration Panel
+  admin:
+    session_imports:
+      not_found: "That session import could not be found."
   #Error pages
   error:
     404:
@@ -1090,6 +1104,9 @@ es-AR:
     stock: "Stock"
     author: "Author"
     download-as-png: "Download as PNG"
+    active-toggle:
+      show-active: "Show Active"
+      show-inactive: "Show Inactive"
     weekdays:
       monday: "Monday"
       tuesday: "Tuesday"
@@ -1110,6 +1127,7 @@ es-AR:
     submit:
       import: "Importar"
       update: "Actualizar"
+      create: "Create"
     checkbox:
       teams: "Equipos"
     button:
