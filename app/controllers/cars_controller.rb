@@ -53,6 +53,10 @@ class CarsController < ApplicationController
 
   # GET /cars/1 or /cars/1.json
   def show
+    if user_signed_in?
+      @car_rating = CarRating.find_or_initialize_by(:car_id => @car.id, :user_id => current_user.id)
+    end
+
     respond_with @car do |format|
       format.json { render :layout => false }
     end
@@ -74,6 +78,7 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.save
         Rails.cache.delete(category_cache_key(@car.category, @car.season))
+        @car.carry_over_ratings_from_previous_season!
 
         format.html do
           redirect_to car_category_path(@car.category, @car.season), :notice => t('rva.cars.controller.create')
@@ -142,8 +147,11 @@ class CarsController < ApplicationController
       end and return
 
       @cars.each do |car|
+        was_new_record = car.new_record?
+
         if car.save
           Rails.cache.delete(category_cache_key(car.category, car.season))
+          car.carry_over_ratings_from_previous_season! if was_new_record
 
           format.html { redirect_to new_car_path, :notice => t('rva.cars.controller.import.success') }
           format.json { render :show, :status => :created, :location => car, :layout => false }
@@ -183,6 +191,7 @@ class CarsController < ApplicationController
                 sort_cars(cars_of_category(category, season))
               end
             end
+    @cars = sort_ratable_collection(@cars, params[:sort])
 
     respond_with @cars do |format|
       format.json { render :layout => false }

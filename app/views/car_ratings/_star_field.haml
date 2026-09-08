@@ -1,0 +1,7 @@
+- value = form.object.public_send(field)
+.rating-field{data: {field: field}}
+  %span.rating-field-label= label
+  .stars{data: {action: "mouseout->car-rating#reset"}}
+    - (1..5).each do |i|
+      %i.fa{class: (value.to_i >= i ? "fa-star" : "fa-star-o"), data: {car_rating_target: "star", value: i, action: "click->car-rating#select mouseover->car-rating#hover"}}
+  = form.hidden_field field, data: {car_rating_target: "input"}

@@ -454,6 +454,30 @@ en:
           button: "Edit Track"
         delete:
           button: "Delete Track"
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Track"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
 
     # RVA Cars
     cars:
@@ -535,6 +559,30 @@ en:
         import:
           exists: "No cars were created. Maybe they already exist?"
           success: "Cars successfully imported."
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "Stock"
@@ -1201,6 +1249,12 @@ en:
         category: "You must select a Category."
     placeholder:
       search: "Search..."
+    sort:
+      default: "Sort by"
+      name-asc: "Name (A-Z)"
+      name-desc: "Name (Z-A)"
+      rating-asc: "Rating (Lowest first)"
+      rating-desc: "Rating (Highest first)"
 
   # Kaminari
   helpers:

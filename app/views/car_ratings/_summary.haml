@@ -1,0 +1,14 @@
+.car-rating-summary{id: car_rating_summary_dom_id(car)}
+  - if car.rating_count < Car::RATING_VOTE_THRESHOLD
+    %span.rating-placeholder= t("rva.cars.rating.not-enough-votes")
+  - else
+    - rating = car.display_rating
+    .stars.readonly
+      - (1..5).each do |i|
+        - if i <= rating.floor
+          %i.fa.fa-star
+        - elsif i - rating == 0.5
+          %i.fa.fa-star-half-o
+        - else
+          %i.fa.fa-star-o
+    %span.rating-count= t("rva.cars.rating.votes", count: car.rating_count)

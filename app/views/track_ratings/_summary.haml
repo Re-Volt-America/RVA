@@ -1,0 +1,14 @@
+.track-rating-summary{id: track_rating_summary_dom_id(track)}
+  - if track.rating_count < Track::RATING_VOTE_THRESHOLD
+    %span.rating-placeholder= t("rva.tracks.rating.not-enough-votes")
+  - else
+    - rating = track.display_rating
+    .stars.readonly
+      - (1..5).each do |i|
+        - if i <= rating.floor
+          %i.fa.fa-star
+        - elsif i - rating == 0.5
+          %i.fa.fa-star-half-o
+        - else
+          %i.fa.fa-star-o
+    %span.rating-count= t("rva.tracks.rating.votes", count: track.rating_count)

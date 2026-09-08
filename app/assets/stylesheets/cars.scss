@@ -170,3 +170,165 @@
     background-color: #000000;
   }
 }
+
+.car-rating-summary {
+  margin: 10px 0;
+}
+
+.car-card-rating {
+  width: 100%;
+}
+
+.rating-count, .rating-placeholder {
+  margin-left: 8px;
+  color: #787476;
+}
+
+.rating-fields {
+  margin-bottom: 15px;
+}
+
+.rating-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 320px;
+  margin-bottom: 8px;
+}
+
+.rating-field-label {
+  flex: 1;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  font-size: 1.5rem;
+  color: #f0c419;
+}
+
+.stars:not(.readonly) i {
+  cursor: pointer;
+}
+
+.stars.readonly {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.car-rating-admin-breakdown {
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .car-rating-admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.85rem 1rem;
+
+    h4 {
+      color: #fff;
+    }
+
+    .badge-light {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  }
+
+  table {
+    margin-bottom: 0;
+    background-color: #000;
+  }
+
+  thead th {
+    border-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: #000;
+    color: #fff;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    background-color: #000;
+
+    &:hover {
+      background-color: #161616;
+    }
+  }
+
+  td {
+    vertical-align: middle;
+    color: #f0c419;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .car-rating-admin-user {
+    font-weight: 600;
+    color: #f0c419;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .rating-admin-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    object-fit: cover;
+  }
+
+  .rating-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: #f0c419;
+    white-space: nowrap;
+
+    i {
+      font-size: 0.85rem;
+    }
+
+    .rating-pill-value {
+      margin-left: 6px;
+      color: #f0c419;
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+  }
+
+  .rating-overall-badge {
+    display: inline-block;
+    min-width: 58px;
+    text-align: center;
+    padding: 0.2rem 0.45rem;
+    border-radius: 999px;
+    background: #1a1a1a;
+    border: 1px solid rgba(240, 196, 25, 0.5);
+    color: #f0c419;
+    font-weight: 700;
+    font-size: 0.82rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    .car-rating-admin-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    thead th,
+    td {
+      font-size: 0.8rem;
+    }
+  }
+}

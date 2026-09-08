@@ -17,6 +17,7 @@
     = hidden_field_tag :season, params[:season] if params[:season].present?
     .form-group
       = text_field_tag :query, params[:query], class: 'form-control', placeholder: t("misc.placeholder.search")
+      = render "application/sort_selector"
       = button_tag type: 'submit', class: 'btn' do
         %i.fa.fa-search
 
@@ -39,5 +40,7 @@
                     = track.name
                   %h6.author
                     = t("rva.tracks.made-by", :author_name => track.author)
+                  .track-card-rating
+                    = render "track_ratings/summary", track: track
 
     = paginate @tracks

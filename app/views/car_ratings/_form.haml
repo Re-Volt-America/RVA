@@ -1,0 +1,20 @@
+- saved = false unless defined?(saved)
+= form_with model: car_rating, url: car_rating_path(car), method: :post, html: {id: "car-rating-form", data: {controller: "car-rating", action: "submit->car-rating#submit"}} do |form|
+  %h4.rating-form-title= t("rva.cars.rating.title")
+
+  - if saved
+    .alert.alert-success= t("rva.cars.rating.controller.success")
+
+  - if car_rating.errors.any?
+    .alert.alert-danger
+      %ul
+        - car_rating.errors.full_messages.each do |message|
+          %li= message
+
+  .rating-fields
+    = render "car_ratings/star_field", form: form, field: :handling_rating, label: t("rva.cars.rating.fields.handling")
+    = render "car_ratings/star_field", form: form, field: :visuals_rating, label: t("rva.cars.rating.fields.visuals")
+    = render "car_ratings/star_field", form: form, field: :audio_rating, label: t("rva.cars.rating.fields.audio")
+    = render "car_ratings/star_field", form: form, field: :fun_rating, label: t("rva.cars.rating.fields.fun")
+
+  = form.submit(car_rating.persisted? ? t("rva.cars.rating.update") : t("rva.cars.rating.submit"), class: "btn mt-2")

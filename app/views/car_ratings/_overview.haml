@@ -1,0 +1,33 @@
+.car-rating-summary.rating-overview{id: car_rating_summary_dom_id(car)}
+  - if car.rating_count < Car::RATING_VOTE_THRESHOLD
+    %span.rating-placeholder= t("rva.cars.rating.not-enough-votes")
+  - else
+    - rating = car.display_rating
+    .rating-overview-score
+      %span.rating-overview-label= t("rva.cars.rating.section-title")
+      .stars.readonly
+        - (1..5).each do |i|
+          - if i <= rating.floor
+            %i.fa.fa-star
+          - elsif i - rating == 0.5
+            %i.fa.fa-star-half-o
+          - else
+            %i.fa.fa-star-o
+      .rating-overview-value
+        %span.rating-average-number= number_with_precision(car.average_rating, precision: 2)
+        %span.rating-average-label= t("rva.cars.rating.average-label")
+      %span.rating-count= t("rva.cars.rating.votes", count: car.rating_count)
+    .rating-overview-distribution
+      - distribution = car.rating_distribution
+      - max_count = [distribution.values.max, 1].max
+      - (1..5).each do |star|
+        - count = distribution[star]
+        - pct = (count.to_f / max_count * 100).round(1)
+        .rating-bar-row{title: t("rva.cars.rating.votes", count: count)}
+          %span.rating-bar-star= star
+          .rating-bar-track
+            - if count.positive?
+              .rating-bar-fill{class: "rating-bar-fill--#{star}", style: "width: #{pct}%;"}
+                %span.rating-bar-count= number_with_delimiter(count)
+            - else
+              %span.rating-bar-count.rating-bar-count--zero 0

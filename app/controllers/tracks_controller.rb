@@ -23,7 +23,7 @@ class TracksController < ApplicationController
     end
 
     @tracks = Kaminari.paginate_array(
-      @tracks.sort_by { |track| [track.name, track.stock? ? 0 : 1] }
+      sort_ratable_collection(@tracks.sort_by { |track| [track.name, track.stock? ? 0 : 1] }, params[:sort])
     ).page(params[:page]).per(12)
 
     respond_with @tracks do |format|
@@ -33,6 +33,12 @@ class TracksController < ApplicationController
 
   # GET /tracks/1 or /tracks/1.json
   def show
+    # :track_id/:user_id avoids binding a new, unsaved TrackRating into @track's :track_ratings relation,
+    # which would corrupt average_rating/display_rating.
+    if user_signed_in?
+      @track_rating = TrackRating.find_or_initialize_by(:track_id => @track.id, :user_id => current_user.id)
+    end
+
     respond_with @track do |format|
       format.json { render :layout => false }
     end
@@ -52,6 +58,8 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.save
+        @track.carry_over_ratings_from_previous_season!
+
         format.html { redirect_to tracks_url(:season => @track.season_id), :notice => t('rva.tracks.controller.create') }
         format.json { render :show, :status => :created, :location => @track, :layout => false }
       else
@@ -108,7 +116,11 @@ class TracksController < ApplicationController
       end and return
 
       @tracks.each do |track|
+        was_new_record = track.new_record?
+
         if track.save
+          track.carry_over_ratings_from_previous_season! if was_new_record
+
           format.html { redirect_to new_track_path, :notice => t('rva.tracks.controller.import.success') }
           format.json { render :show, :status => :created, :location => track, :layout => false }
         else

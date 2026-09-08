@@ -1,0 +1,50 @@
+- if car.car_ratings.any?
+  .car-rating-admin-breakdown.card.mt-4
+    .card-header.car-rating-admin-header
+      %h5.mb-0= t("rva.cars.rating.admin.title")
+      %span.badge.badge-light= t("rva.cars.rating.votes", count: car.rating_count)
+
+    .card-body.p-0
+      .table-responsive
+        %table.table.table-hover.table-sm.mb-0
+          %thead
+            %tr
+              %th= t("rva.cars.rating.admin.columns.user")
+              %th= t("rva.cars.rating.fields.handling")
+              %th= t("rva.cars.rating.fields.visuals")
+              %th= t("rva.cars.rating.fields.audio")
+              %th= t("rva.cars.rating.fields.fun")
+              %th.text-right= t("rva.cars.rating.admin.columns.overall")
+          %tbody
+            - car.car_ratings.each do |rating|
+              %tr
+                %td.align-middle
+                  = link_to user_path(rating.user), :class => "car-rating-admin-user d-flex align-items-center" do
+                    - if rating.user.profile&.profile_picture_data.present?
+                      = image_tag rating.user.profile.profile_picture_url, class: "rating-admin-avatar mr-2"
+                    - else
+                      = image_tag "no_profile_picture.png", class: "rating-admin-avatar mr-2"
+                    = rating.user.username
+                %td.align-middle
+                  .rating-pill
+                    - (1..5).each do |i|
+                      %i.fa{ :class => (i <= rating.handling_rating ? "fa-star" : "fa-star-o") }
+                    %span.rating-pill-value= rating.handling_rating
+                %td.align-middle
+                  .rating-pill
+                    - (1..5).each do |i|
+                      %i.fa{ :class => (i <= rating.visuals_rating ? "fa-star" : "fa-star-o") }
+                    %span.rating-pill-value= rating.visuals_rating
+                %td.align-middle
+                  .rating-pill
+                    - (1..5).each do |i|
+                      %i.fa{ :class => (i <= rating.audio_rating ? "fa-star" : "fa-star-o") }
+                    %span.rating-pill-value= rating.audio_rating
+                %td.align-middle
+                  .rating-pill
+                    - (1..5).each do |i|
+                      %i.fa{ :class => (i <= rating.fun_rating ? "fa-star" : "fa-star-o") }
+                    %span.rating-pill-value= rating.fun_rating
+                %td.align-middle.text-right
+                  %span.rating-overall-badge
+                    = number_with_precision(rating.average_score, precision: 2)
