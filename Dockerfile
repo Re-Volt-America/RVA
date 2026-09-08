@@ -43,7 +43,7 @@ RUN bundle install && yarn install && \
     bundle exec bootsnap precompile --gemfile
 
 # Copy application code
-COPY ../../Desktop .
+COPY . .
 
 # Make sure the builds directory exists
 RUN mkdir -p app/assets/builds
