@@ -420,6 +420,30 @@ lol:
           button: "Idit trak"
         delete:
           button: "Kil trak"
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Track"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     #RVA Cars
     cars:
       meta:
@@ -500,6 +524,30 @@ lol:
         import:
           exists: "Kitteh didnt maed any kaz. Maybe dey alr hear?"
           success: "Kaz suksesfuly impurtd."
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "OG"
@@ -1144,6 +1192,12 @@ lol:
         category: "U mus cwoos a kain."
     placeholder:
       search: "Surch..."
+    sort:
+      default: "Sort by"
+      name-asc: "Name (A-Z)"
+      name-desc: "Name (Z-A)"
+      rating-asc: "Rating (Lowest first)"
+      rating-desc: "Rating (Highest first)"
   #Kaminari
   helpers:
     page_entries_info:
