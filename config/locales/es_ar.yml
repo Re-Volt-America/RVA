@@ -300,7 +300,7 @@ es-AR:
       description: "Después de las 18 sesiones individuales, jugamos 10 sesiones más  en el formato de equipo. "
       example-title: "Ejemplo Rápido"
       example-intro: ""
-      example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
+      example-scenario: "Ejemplo: Un equipo con 3 integrantes termina una carrera grande (10+ Competidores):"
       team-members-label: "Miembros del Equipo:"
       formula:
         racer-1: "Corredor 1"
