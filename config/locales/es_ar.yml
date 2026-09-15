@@ -102,7 +102,7 @@ es-AR:
     page-title: "Re-Volt America - Jugar"
     meta:
       title: "RVA - Jugar"
-      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
+      description: "Cronograma y anuncios del lobby para las sesiones de juegos en línea de Re-volt América."
     subheader: "Jugamos todos los días a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
     track-list:
@@ -285,22 +285,22 @@ es-AR:
         final-multiplier: "Multiplicador Final"
         racer-score: "Puntuación del Corredor"
       example-steps:
-        step1: "Step 1: Position Score — Look up the points for 2nd place in a normal race → 12 points"
-        step2: "Step 2: Car Multiplier — The Rookie car has a car multiplier of 0.9"
-        step3: "Step 3: Class Factor — The class factor is 1.25x because the car is one class below the lobby class"
-        step4: "Step 4: Final Multiplier — 0.9 × 1.25 = 1.125"
-        step5: "Step 5: Racer Score — 12 points × 1.125 = 13.5 points"
-      example-result: "The player earns 13.5 points for this race."
-      example-summary: "This score contributes to their total obtained points (PA), which is used to calculate their final ranking along with other factors like average position and participation."
+        step1: "Paso 1: Puntuación por posición — Busca los puntos para el 2º lugar en una carrera normal → 12 puntos"
+        step2: "Multiplicador de autos — El auto Novato tiene un multiplicador  de autos de 0.9"
+        step3: "Paso 3: Factor de categoría — El factor de categoría es de 1.25x porque el auto es una clase debajo de la clase del lobby"
+        step4: "Multiplicador Final — 0.9 × 1.25 = 1.125"
+        step5: "Puntuación de la carrera  — 12 puntos × 1.125 = 13.5 puntos"
+      example-result: "El jugador gana 13.5 puntos por esta carrera"
+      example-summary: "Esta puntuación contribuye a su total de puntos obtenidos (PA), que se utiliza para calcular su clasificación final junto con otros factores como la posición media y la participación."
     car-ratings:
       title: "Clasificación de autos"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and we also apply a class factor based on how far below the lobby class the car is. Here is how the formula is applied each race with different car multipliers:"
+      description: "En Re-volt América, los autos tienen asignado un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso y otras características que pueden hacerlas mejores o peores para las carreras en línea. Utilizamos este multiplicador para recompensar a los corredores que usen autos difíciles, y regular autos que sean demasiado buenos o desbalanceados. Así es como la fórmula es aplicada cada carrera con multiplicadores distintos:"
     team-races:
       title: "Carreras de Equipo"
-      description: "After the 18 single race sessions, we play 10 more sessions in team format. In team races, players are divided into teams and compete together. Each team member earns individual points based on their finishing position, and these points are summed together to create the team's total score."
+      description: "Después de las 18 sesiones individuales, jugamos 10 sesiones más  en el formato de equipo. "
       example-title: "Ejemplo Rápido"
       example-intro: ""
-      example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
+      example-scenario: "Ejemplo: Un equipo con 3 integrantes termina una carrera grande (10+ Competidores):"
       team-members-label: "Miembros del Equipo:"
       formula:
         racer-1: "Corredor 1"
@@ -417,6 +417,30 @@ es-AR:
           button: "Editar Pista"
         delete:
           button: "Borrar Pista"
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Track"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     #RVA Cars
     cars:
       meta:
@@ -430,15 +454,15 @@ es-AR:
             title: "Amateur Cars - %{org}"
             description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
           advanced:
-            page-title: "Re-Volt America - Advanced Cars"
+            page-title: "Autos Avanzados"
             title: "Advanced Cars - %{org}"
             description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
           semi-pro:
-            page-title: "Re-Volt America - Semi-Pro Cars"
+            page-title: "Autos Semi-Pro"
             title: "Semi-Pro Cars - %{org}"
             description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
           pro:
-            page-title: "Re-Volt America - Pro Cars"
+            page-title: "Re-volt América - Autos pro"
             title: "Pro Cars - %{org}"
             description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
           super-pro:
@@ -452,7 +476,7 @@ es-AR:
         edit:
           page-title: "Re-Volt America - Edit Car"
         index:
-          page-title: "Re-Volt America - Cars"
+          page-title: "Re-volt América - Autos"
           title: "RVA Cars"
           description: "The cars in the RVA Car Pack of the current season."
         show:
@@ -497,6 +521,30 @@ es-AR:
         import:
           exists: "No cars were created. Maybe they already exist?"
           success: "Cars successfully imported."
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "Stock"
@@ -1141,6 +1189,12 @@ es-AR:
         category: "You must select a Category."
     placeholder:
       search: "Buscar..."
+    sort:
+      default: "Sort by"
+      name-asc: "Name (A-Z)"
+      name-desc: "Name (Z-A)"
+      rating-asc: "Rating (Lowest first)"
+      rating-desc: "Rating (Highest first)"
   #Kaminari
   helpers:
     page_entries_info:
