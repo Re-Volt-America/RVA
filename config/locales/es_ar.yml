@@ -343,7 +343,7 @@ es-AR:
       description: "La calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en el formato de RVA desde un registro de sesión de RVGL. A través de esta herramienta portable, permitimos que cualquiera pueda calcular resultados de una fecha usando nuestro sistema de manera local si así lo desean. Acá hay un ejemplo de lo que obtendrías calculando una fecha vos mismo:"
       show-image: "Mostrar Vista Previa"
       hide-image: "Ocultar Vista Previa"
-      image-alt: "RVA Desktop Points Parser preview"
+      image-alt: "Vista previa de calculadora de puntos de RVA"
     downloads:
       title: "Descargar RVA Points"
   #RVA strings
@@ -418,29 +418,29 @@ es-AR:
         delete:
           button: "Borrar Pista"
       rating:
-        section-title: "Community Rating"
-        average-label: "Average Rating"
-        title: "Rate this Track"
-        not-enough-votes: "Not Enough Votes"
+        section-title: "Calificación de la comunidad"
+        average-label: "Calificación promedio"
+        title: "Califica esta pista"
+        not-enough-votes: "No hay votos suficientes"
         votes:
           one: "%{count} vote"
-          other: "%{count} votes"
-        submit: "Submit Rating"
-        update: "Update Rating"
-        sign-in-notice: "Log in to rate this track."
+          other: "%{count} votos"
+        submit: "Enviar calificación"
+        update: "Actualizar calificación"
+        sign-in-notice: "Inicia sesión para calificar esta pista."
         fields:
-          gameplay: "Raceline, Flow, Pickups"
-          visuals: "Visuals, Art Design, Atmosphere"
-          audio: "SFX, Music Effects"
-          fun: "Overall Fun"
+          gameplay: "Línea de carrera, Fluidez, Pickups"
+          visuals: "Visuales, diseño artístico, Atmósfera"
+          audio: "Efectos de sonido, Efectos musicales"
+          fun: "Diversión en general"
         controller:
-          success: "Your rating has been saved."
-          failure: "Your rating could not be saved."
+          success: "Tu calificación se ha guardado."
+          failure: "Tu calificación no se ha guardado."
         admin:
-          title: "Individual Ratings"
+          title: "Calificaciones individuales"
           columns:
-            user: "User"
-            overall: "Overall"
+            user: "Usuario"
+            overall: "General"
     #RVA Cars
     cars:
       meta:
