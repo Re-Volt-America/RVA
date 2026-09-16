@@ -286,18 +286,18 @@ es-AR:
         racer-score: "Puntuación del Corredor"
       example-steps:
         step1: "Paso 1: Puntuación por posición — Busca los puntos para el 2º lugar en una carrera normal → 12 puntos"
-        step2: "Multiplicador de autos — El auto Novato tiene un multiplicador  de autos de 0.9"
+        step2: "Paso 2: Multiplicador de autos — El auto Novato tiene un multiplicador de autos de 0.9"
         step3: "Paso 3: Factor de categoría — El factor de categoría es de 1.25x porque el auto es una clase debajo de la clase del lobby"
-        step4: "Multiplicador Final — 0.9 × 1.25 = 1.125"
-        step5: "Puntuación de la carrera  — 12 puntos × 1.125 = 13.5 puntos"
-      example-result: "El jugador gana 13.5 puntos por esta carrera"
+        step4: "Paso 4: Multiplicador Final — 0.9 × 1.25 = 1.125"
+        step5: "Paso 5: Puntuación de corredor — 12 puntos × 1.125 = 13.5 puntos"
+      example-result: "El jugador gana 13.5 puntos por esta carrera."
       example-summary: "Esta puntuación contribuye a su total de puntos obtenidos (PA), que se utiliza para calcular su clasificación final junto con otros factores como la posición media y la participación."
     car-ratings:
       title: "Clasificación de autos"
       description: "En Re-volt América, los autos tienen asignado un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso y otras características que pueden hacerlas mejores o peores para las carreras en línea. Utilizamos este multiplicador para recompensar a los corredores que usen autos difíciles, y regular autos que sean demasiado buenos o desbalanceados. Así es como la fórmula es aplicada cada carrera con multiplicadores distintos:"
     team-races:
       title: "Carreras de Equipo"
-      description: "Después de las 18 sesiones individuales, jugamos 10 sesiones más  en el formato de equipo. "
+      description: "Después de las 18 sesiones individuales, jugamos 10 sesiones más en el formato de equipo. en las carreras por equipo, los participantes se dividen y compiten en conjunto. Cada integrante del equipo obtiene sus puntos individuales según su posición final, y dichos puntos se suman para obtener la puntuación total del equipo."
       example-title: "Ejemplo Rápido"
       example-intro: ""
       example-scenario: "Ejemplo: Un equipo con 3 integrantes termina una carrera grande (10+ Competidores):"
@@ -454,7 +454,7 @@ es-AR:
             title: "Amateur Cars - %{org}"
             description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
           advanced:
-            page-title: "Autos Avanzados"
+            page-title: "Re-volt América - Autos Avanzados"
             title: "Advanced Cars - %{org}"
             description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
           semi-pro:
