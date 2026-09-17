@@ -67,7 +67,7 @@ es-AR:
       description1: "La página web de la comunidad Americana de Re-Volt, 1999"
       description2: "¡Descargá el juego y conocé jugadores de toda América!"
       download-button: "Descargas »"
-      weekly-schedules-button: "Horarios Semanales »"
+      weekly-schedules-button: "Horarios semanales »"
     index:
       community:
         title: "Comunidad"
@@ -133,7 +133,7 @@ es-AR:
         mobile-players:
           description-html: "En el caso de Android, cuando intentes ejecutar el instalador del juego (haga click <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>aquí</a> para descargar) va a necesitar permitir la instalación de aplicaciones externas. <p>Despues de otorgar los permisos e instalar el juego, la app podrá ser abierta normalmente desde el cajón de aplicaciones de su teléfono.</p> <p> No hay compatibilidad con iOS. :("
         steam-revolt:
-          title: "Re-Volt de Steam"
+          title: "Re-Volt en Steam"
           description-html: "La versión de Steam de Re-Volt no tiene acceso a carreras en línea porque es una versión obsoleta. Por esto y varias otras razones nosotros <b>no recomendamos</b> su compra y tampoco podemos organizar eventos en línea para dicha versión."
       install:
         title: "¿Cómo instalo los packs de RVA?"
@@ -142,7 +142,7 @@ es-AR:
         classic-way:
           description-html: "Entrá al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>enlace</a> y descargá los packs de Autos y Pistas de RVA. <p>Abrí la carpeta donde tiene instalado RVGL y extraiga los nuevos archivos descargados ahí.</p>"
         mobile-players:
-          description-html: "Realizá los pasos explicados en el método clásico, pero en Android necesitará un gestor de archivos capaz de descomprimir archivos ZIP. Podes buscar en la Play Store aplicaciones como ZArchiver, RAR u otras si tu celular no tiene un gestor de archivos integrado. <p>Dentro del explorador, dirigite a la carpeta de Descargas (o donde haya descargado los packs) y extraelos en la carpeta RVGL que se encuentra en la memoria interna.</p>"
+          description-html: "Realizá los pasos explicados en el método clásico, pero en Android necesitará un gestor de archivos capaz de descomprimir archivos ZIP. Podés buscar en la Play Store aplicaciones como ZArchiver, RAR u otras si tu celular no tiene un gestor de archivos integrado. <p>Dentro del explorador, dirigite a la carpeta de Descargas (o donde haya descargado los packs) y extraelos en la carpeta RVGL que se encuentra en la memoria interna.</p>"
       play-online:
         title: "¿Cómo puedo jugar en línea?"
         description-html: "En Re-Volt América, organizamos fechas todos los días a las 23:00 UTC, y son anunciadas por Discord, en el canal llamado \"#lobby-rva\". Podés ver el temporizador para la siguiente sesión <a href='play'>Aquí</a>."
@@ -152,7 +152,7 @@ es-AR:
           li-2-html: "Cuando hay una sala abierta, un mensaje va a aparecer en #lobby-rva, </br> por ejemplo: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Abra RVGL, seleccione Multijugador >> Unirse a Partida, y copie y pegue la dirección IP. Esta IP es un ejemplo, cada organizador tendrá una dirección IP distinta."
       password-sessions:
-        title: "Cómo me uno a una sesión con contraseña?"
+        title: "¿Cómo me uno a una sesión con contraseña?"
         description: "Escriba los siguientes parámetros de lanzamiento (sin los corchetes [])."
         launcher:
           description: "Ingrese la IP y contraseña en los Parámetros de Lanzamiento de la siguiente manera, por ejemplo:"
@@ -162,7 +162,7 @@ es-AR:
         android:
           li-1-html: "Descargá e instalá <b>Termux</b>, si no podés encontrar la aplicación en la Play Store, entonces usa este <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>enlace (F-Droid)</a> para descargarlo."
           li-2-html: |
-            Copiá y pegá dentro de la app este comando; <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo.
+            Copiá y pegá dentro de la app este comando; <br/>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby ip&gt -pass password&gt <br/>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo.
       rankings:
         title: "¿Cómo funcionan los Rankings y los puntos?"
         seasons:
@@ -191,7 +191,7 @@ es-AR:
         2_html: "No hagas <em>Spam</em>. Podes autopromoverte a vos mismo y a otros dentro de ciertos límites, sólo no cruces la línea y estarás bien."
         3_html: "<a class='text-primary' href='https://es.wikipedia.org/wiki/Doxing' target='_blank'>Doxear</a> a otros usuarios está <b>prohibido</b>. Si participas o promovés estos actos RVA <b>TOMARÁ</b> acciones."
         4: "Siga siempre las directrices dadas por los miembros del personal."
-        5: "Usa tu sentido común. No es tan complicado, ¡en serio!"
+        5: "Usá tu sentido común. No es tan complicado, ¡en serio!"
       b:
         title: "B. Crear un nombre de usuario"
         1:
@@ -325,7 +325,7 @@ es-AR:
         description: "Primero obtienes puntos según tu posición final. Luego, esos puntos se ajustan mediante el multiplicador de tu auto."
       teams:
         title: "Equipos"
-        team-pa: "Equipo PA"
+        team-pa: "PA del equipo"
         sum-of-racer-scores: "Suma de las puntuaciones de los corredores"
         note: "Las inscripciones de los equipos se clasifican según los PA (puntos obtenidos) en orden descendente"
         description: "Los puntos del equipo son la suma de los puntos de todos, por lo que cada compañero contribuye al resultado final del equipo."
@@ -375,7 +375,7 @@ es-AR:
           easy: "Fácil"
           medium: "Media"
           hard: "Difícil"
-          extreme: "Extremo"
+          extreme: "Extrema"
         length:
           title: "Longitud"
           short: "Corta"
@@ -398,7 +398,7 @@ es-AR:
         length: "Longitud (metros)"
         folder-name: "Nombre de carpeta"
         author: "Autor"
-        stock: "Coches de Serie"
+        stock: "Auto original"
         lego: "Lego"
         average-lap-time: "Tiempo Promedio de Vuelta (Segundos)"
         active: "Activo"
@@ -423,7 +423,7 @@ es-AR:
         title: "Califica esta pista"
         not-enough-votes: "No hay votos suficientes"
         votes:
-          one: "%{count} vote"
+          one: "%{count} voto"
           other: "%{count} votos"
         submit: "Enviar calificación"
         update: "Actualizar calificación"
@@ -459,30 +459,30 @@ es-AR:
             description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
           semi-pro:
             page-title: "Re-volt América - Autos Semi-Pro"
-            title: "Semi-Pro Cars - %{org}"
+            title: "Autos Semi-Pros - %{org}"
             description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
           pro:
             page-title: "Re-volt América - Autos pro"
-            title: "Pro Cars - %{org}"
+            title: "Autos Pros - %{org}"
             description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
           super-pro:
             page-title: "Re-Volt America - Super-Pro Cars"
-            title: "Super-Pro Cars - %{org}"
+            title: "Autos Super-Pros -%{org}"
             description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
           clockwork:
             page-title: "Re-Volt America - Clockwork Cars"
-            title: "Clockwork Cars - %{org}"
+            title: "Autos Clockwork - %{org}"
             description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
         edit:
-          page-title: "Re-Volt America - Edit Car"
+          page-title: "Re-volt América - Editar auto"
         index:
           page-title: "Re-volt América - Autos"
-          title: "RVA Cars"
+          title: "Autos RVA"
           description: "The cars in the RVA Car Pack of the current season."
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Lista de autos de RVA"
-      new-car: "Add Car"
+      new-car: "Añadir Auto"
       ratings-link: "Categorías"
       features:
         speed: "Velocidad"
@@ -582,11 +582,11 @@ es-AR:
   seasons:
     meta:
       index:
-        page-title: "Re-Volt America - Seasons"
+        page-title: "Re-volt América - Temporadas"
       show:
-        page-title: "Re-Volt America - %{season}"
+        page-title: "Re-Volt América - %{season}"
       new:
-        page-title: "Re-Volt America - New Season"
+        page-title: "Re-volt América - Nueva temporada"
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas de RVA"
@@ -601,7 +601,7 @@ es-AR:
       title: "Todas las temporadas"
       present: "Presente"
     edit:
-      title: "Editing Season"
+      title: "Editar temporada"
       name: "Name"
       start-date: "Fecha de Inicio"
       end-date: "End date"
