@@ -419,6 +419,30 @@ es-CL:
           button: "Editar Pista"
         delete:
           button: "Eliminar Pista"
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Track"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "Usuario"
+            overall: "Overall"
     #RVA Cars
     cars:
       meta:
@@ -499,6 +523,30 @@ es-CL:
         import:
           exists: "No se han creado autos, puede ser que ya existan."
           success: "Autos correctamente importados."
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "Stock"
@@ -1143,6 +1191,12 @@ es-CL:
         category: "Debe seleccionar una categoría."
     placeholder:
       search: "Buscar..."
+    sort:
+      default: "Sort by"
+      name-asc: "Name (A-Z)"
+      name-desc: "Name (Z-A)"
+      rating-asc: "Rating (Lowest first)"
+      rating-desc: "Rating (Highest first)"
   #Kaminari
   helpers:
     page_entries_info:

@@ -67,7 +67,7 @@ es-AR:
       description1: "La página web de la comunidad Americana de Re-Volt, 1999"
       description2: "¡Descargá el juego y conocé jugadores de toda América!"
       download-button: "Descargas »"
-      weekly-schedules-button: "Horarios Semanales »"
+      weekly-schedules-button: "Horarios semanales »"
     index:
       community:
         title: "Comunidad"
@@ -102,7 +102,7 @@ es-AR:
     page-title: "Re-Volt America - Jugar"
     meta:
       title: "RVA - Jugar"
-      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
+      description: "Cronograma y anuncios del lobby para las sesiones de juegos en línea de Re-volt América."
     subheader: "Jugamos todos los días a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
     track-list:
@@ -133,7 +133,7 @@ es-AR:
         mobile-players:
           description-html: "En el caso de Android, cuando intentes ejecutar el instalador del juego (haga click <a href='https://distribute.re-volt.io/releases/rvgl_full_android_original.apk' target='_blank' rel='noopener noreferrer'>aquí</a> para descargar) va a necesitar permitir la instalación de aplicaciones externas. <p>Despues de otorgar los permisos e instalar el juego, la app podrá ser abierta normalmente desde el cajón de aplicaciones de su teléfono.</p> <p> No hay compatibilidad con iOS. :("
         steam-revolt:
-          title: "Re-Volt de Steam"
+          title: "Re-Volt en Steam"
           description-html: "La versión de Steam de Re-Volt no tiene acceso a carreras en línea porque es una versión obsoleta. Por esto y varias otras razones nosotros <b>no recomendamos</b> su compra y tampoco podemos organizar eventos en línea para dicha versión."
       install:
         title: "¿Cómo instalo los packs de RVA?"
@@ -142,7 +142,7 @@ es-AR:
         classic-way:
           description-html: "Entrá al siguiente <a href='downloads' target='_blank' rel='noopener noreferrer'>enlace</a> y descargá los packs de Autos y Pistas de RVA. <p>Abrí la carpeta donde tiene instalado RVGL y extraiga los nuevos archivos descargados ahí.</p>"
         mobile-players:
-          description-html: "Realizá los pasos explicados en el método clásico, pero en Android necesitará un gestor de archivos capaz de descomprimir archivos ZIP. Podes buscar en la Play Store aplicaciones como ZArchiver, RAR u otras si tu celular no tiene un gestor de archivos integrado. <p>Dentro del explorador, dirigite a la carpeta de Descargas (o donde haya descargado los packs) y extraelos en la carpeta RVGL que se encuentra en la memoria interna.</p>"
+          description-html: "Realizá los pasos explicados en el método clásico, pero en Android necesitará un gestor de archivos capaz de descomprimir archivos ZIP. Podés buscar en la Play Store aplicaciones como ZArchiver, RAR u otras si tu celular no tiene un gestor de archivos integrado. <p>Dentro del explorador, dirigite a la carpeta de Descargas (o donde haya descargado los packs) y extraelos en la carpeta RVGL que se encuentra en la memoria interna.</p>"
       play-online:
         title: "¿Cómo puedo jugar en línea?"
         description-html: "En Re-Volt América, organizamos fechas todos los días a las 23:00 UTC, y son anunciadas por Discord, en el canal llamado \"#lobby-rva\". Podés ver el temporizador para la siguiente sesión <a href='play'>Aquí</a>."
@@ -152,7 +152,7 @@ es-AR:
           li-2-html: "Cuando hay una sala abierta, un mensaje va a aparecer en #lobby-rva, </br> por ejemplo: \"<b>Lobby is UP! - IP: gforce-rva.ddns.net</b>\""
           li-3: "Abra RVGL, seleccione Multijugador >> Unirse a Partida, y copie y pegue la dirección IP. Esta IP es un ejemplo, cada organizador tendrá una dirección IP distinta."
       password-sessions:
-        title: "Cómo me uno a una sesión con contraseña?"
+        title: "¿Cómo me uno a una sesión con contraseña?"
         description: "Escriba los siguientes parámetros de lanzamiento (sin los corchetes [])."
         launcher:
           description: "Ingrese la IP y contraseña en los Parámetros de Lanzamiento de la siguiente manera, por ejemplo:"
@@ -162,7 +162,7 @@ es-AR:
         android:
           li-1-html: "Descargá e instalá <b>Termux</b>, si no podés encontrar la aplicación en la Play Store, entonces usa este <a href='https://f-droid.org/en/packages/com.termux/', target='_blank', rel='noopener noreferrer'>enlace (F-Droid)</a> para descargarlo."
           li-2-html: |
-            Copiá y pegá dentro de la app este comando; <code>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby &lt;ip&gt  -pass &lt;password&gt </code>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo.
+            Copiá y pegá dentro de la app este comando; <br/>am start -n com.rvgl.rvgl/.RVGLActivity -e args "-lobby ip&gt -pass password&gt <br/>. Tenés que escribir la IP y contraseña dentro del texto antes de presionar Enter como se muestra en la captura de pantalla. Si el juego no se abre inmediatamente, cerrá la aplicación desde las notificaciones y volvé a intentarlo: es posible que hayas copiado algo erróneo.
       rankings:
         title: "¿Cómo funcionan los Rankings y los puntos?"
         seasons:
@@ -191,7 +191,7 @@ es-AR:
         2_html: "No hagas <em>Spam</em>. Podes autopromoverte a vos mismo y a otros dentro de ciertos límites, sólo no cruces la línea y estarás bien."
         3_html: "<a class='text-primary' href='https://es.wikipedia.org/wiki/Doxing' target='_blank'>Doxear</a> a otros usuarios está <b>prohibido</b>. Si participas o promovés estos actos RVA <b>TOMARÁ</b> acciones."
         4: "Siga siempre las directrices dadas por los miembros del personal."
-        5: "Usa tu sentido común. No es tan complicado, ¡en serio!"
+        5: "Usá tu sentido común. No es tan complicado, ¡en serio!"
       b:
         title: "B. Crear un nombre de usuario"
         1:
@@ -285,22 +285,22 @@ es-AR:
         final-multiplier: "Multiplicador Final"
         racer-score: "Puntuación del Corredor"
       example-steps:
-        step1: "Step 1: Position Score — Look up the points for 2nd place in a normal race → 12 points"
-        step2: "Step 2: Car Multiplier — The Rookie car has a car multiplier of 0.9"
-        step3: "Step 3: Class Factor — The class factor is 1.25x because the car is one class below the lobby class"
-        step4: "Step 4: Final Multiplier — 0.9 × 1.25 = 1.125"
-        step5: "Step 5: Racer Score — 12 points × 1.125 = 13.5 points"
-      example-result: "The player earns 13.5 points for this race."
-      example-summary: "This score contributes to their total obtained points (PA), which is used to calculate their final ranking along with other factors like average position and participation."
+        step1: "Paso 1: Puntuación por posición — Busca los puntos para el 2º lugar en una carrera normal → 12 puntos"
+        step2: "Paso 2: Multiplicador de autos — El auto Novato tiene un multiplicador de autos de 0.9"
+        step3: "Paso 3: Factor de categoría — El factor de categoría es de 1.25x porque el auto es una clase debajo de la clase del lobby"
+        step4: "Paso 4: Multiplicador Final — 0.9 × 1.25 = 1.125"
+        step5: "Paso 5: Puntuación de corredor — 12 puntos × 1.125 = 13.5 puntos"
+      example-result: "El jugador gana 13.5 puntos por esta carrera."
+      example-summary: "Esta puntuación contribuye a su total de puntos obtenidos (PA), que se utiliza para calcular su clasificación final junto con otros factores como la posición media y la participación."
     car-ratings:
       title: "Clasificación de autos"
-      description: "In Re-Volt America, cars are assigned a 'multiplier' depending on their top speed, acceleration, weight, and other characteristics that may make them better or worse for online racing. We use this multiplier to reward racers for playing hard cars, and we also apply a class factor based on how far below the lobby class the car is. Here is how the formula is applied each race with different car multipliers:"
+      description: "En Re-volt América, los autos tienen asignado un \"multiplicador\" dependiendo de su velocidad máxima, aceleración, peso y otras características que pueden hacerlas mejores o peores para las carreras en línea. Utilizamos este multiplicador para recompensar a los corredores que usen autos difíciles, y regular autos que sean demasiado buenos o desbalanceados. Así es como la fórmula es aplicada cada carrera con multiplicadores distintos:"
     team-races:
       title: "Carreras de Equipo"
-      description: "After the 18 single race sessions, we play 10 more sessions in team format. In team races, players are divided into teams and compete together. Each team member earns individual points based on their finishing position, and these points are summed together to create the team's total score."
+      description: "Después de las 18 sesiones individuales, jugamos 10 sesiones más en el formato de equipo. en las carreras por equipo, los participantes se dividen y compiten en conjunto. Cada integrante del equipo obtiene sus puntos individuales según su posición final, y dichos puntos se suman para obtener la puntuación total del equipo."
       example-title: "Ejemplo Rápido"
       example-intro: ""
-      example-scenario: "Example: A team with 3 members finishes a big race (10+ racers):"
+      example-scenario: "Ejemplo: Un equipo con 3 integrantes termina una carrera grande (10+ Competidores):"
       team-members-label: "Miembros del Equipo:"
       formula:
         racer-1: "Corredor 1"
@@ -308,10 +308,10 @@ es-AR:
         racer-3: "Corredor 3"
         team-pa: "Equipo PA"
       example-steps:
-        player1: "Member 1 finishes 1st in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 20 × (0.9 × 1.25) = 22.5 points"
-        player2: "Member 2 finishes 3rd in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 12 × (0.9 × 1.25) = 13.5 points"
-        player3: "Member 3 finishes 5th in a big race with a Rookie car. Because the car is one class below the lobby class, it gets a 1.25x class factor → 8 × (0.9 × 1.25) = 9 points"
-      team-total: "Team PA (Obtained Points) = 22.5 + 13.5 + 9 = 45.0 points"
+        player1: "El integrante 1 finaliza en 1ª en una gran carrera con un auto Novato. Debido a que el auto es una categoría por debajo de la categoría del lobby, obtiene un factor de categoría 1.25x → 20 × (0.9 × 1.25) = 22.5 puntos"
+        player2: "El integrante 2 finaliza en 3ª en una gran carrera con un auto Novato. Debido a que el auto es una categoría por debajo de la categoría del lobby, obtiene un factor de categoría 1.25x → 12 × (0.9 × 1.25) = 13,5 puntos"
+        player3: "El integrante 3 finaliza 5º en una gran carrera con un auto Novato. Debido a que el auto es una categoría por debajo de la categoría del lobby, obtiene un factor de categoría 1.25x → 8 × (0.9 × 1.25) = 9 puntos"
+      team-total: "Equipo PA (puntos obtenidos) = 22.5 + 13.5 + 9 = 45.0 puntos"
       example-note: "Nota: En las carreras de equipos, la posición media y el constante normalizador no se utilizan. La puntuación del equipo es simplemente la suma de los puntos de carrera individuales de todos los miembros del equipo, haciendo fácil entender la contribución de cada equipo a la clasificación."
     scoring-formulas:
       title: "Fórmulas de Puntuación"
@@ -321,29 +321,29 @@ es-AR:
         racer-score: "Puntuación del Corredor"
         position-score: "Puntuación de Posición"
         final-multiplier: "Multiplicador Final"
-        note: "Final Multiplier = Car Multiplier × Class Factor"
-        description: "You first earn points from your finishing position. Then those points are adjusted by your car multiplier."
+        note: "Multiplicador final = Multiplicador del auto × Factor de categoría"
+        description: "Primero obtienes puntos según tu posición final. Luego, esos puntos se ajustan mediante el multiplicador de tu auto."
       teams:
         title: "Equipos"
-        team-pa: "Equipo PA"
-        sum-of-racer-scores: "Sum of Racer Scores"
-        note: "Team entries are ranked by PA (obtained points) in descending order"
-        description: "Team points are everyone's points added together, so each teammate contributes to the final team result."
+        team-pa: "PA del equipo"
+        sum-of-racer-scores: "Suma de las puntuaciones de los corredores"
+        note: "Las inscripciones de los equipos se clasifican según los PA (puntos obtenidos) en orden descendente"
+        description: "Los puntos del equipo son la suma de los puntos de todos, por lo que cada compañero contribuye al resultado final del equipo."
       main:
         title: "Principal"
         official-score: "Puntaje Oficial"
         obtained-points: "Puntaje Obtenido"
         average-position: "Posición Promedio"
         participation-multiplier: "Multiplicador por Participación"
-        normalizer-constant: "Normalizer Constant"
-        note: "This is the final score formula used for singles ranking"
-        description: "To rank higher, score more points, keep a better average finish (lower is better), and take part in more races."
+        normalizer-constant: "Constante de normalización"
+        note: "Esta es la fórmula utilizada para la puntuación final para el ranking individual"
+        description: "Para obtener una mejor clasificación, suma más puntos, mantén un mejor promedio de posición final (cuanto más bajo, mejor) y participa en más carreras."
     desktop-parser:
       title: "Calculadora de puntos de RVA"
       description: "La calculadora de puntos de RVA es una aplicación de escritorio diseñada para calcular una tabla de resultados en el formato de RVA desde un registro de sesión de RVGL. A través de esta herramienta portable, permitimos que cualquiera pueda calcular resultados de una fecha usando nuestro sistema de manera local si así lo desean. Acá hay un ejemplo de lo que obtendrías calculando una fecha vos mismo:"
       show-image: "Mostrar Vista Previa"
       hide-image: "Ocultar Vista Previa"
-      image-alt: "RVA Desktop Points Parser preview"
+      image-alt: "Vista previa de calculadora de puntos de RVA"
     downloads:
       title: "Descargar RVA Points"
   #RVA strings
@@ -375,7 +375,7 @@ es-AR:
           easy: "Fácil"
           medium: "Media"
           hard: "Difícil"
-          extreme: "Extremo"
+          extreme: "Extrema"
         length:
           title: "Longitud"
           short: "Corta"
@@ -398,7 +398,7 @@ es-AR:
         length: "Longitud (metros)"
         folder-name: "Nombre de carpeta"
         author: "Autor"
-        stock: "Coches de Serie"
+        stock: "Auto original"
         lego: "Lego"
         average-lap-time: "Tiempo Promedio de Vuelta (Segundos)"
         active: "Activo"
@@ -417,6 +417,30 @@ es-AR:
           button: "Editar Pista"
         delete:
           button: "Borrar Pista"
+      rating:
+        section-title: "Calificación de la comunidad"
+        average-label: "Calificación promedio"
+        title: "Califica esta pista"
+        not-enough-votes: "No hay votos suficientes"
+        votes:
+          one: "%{count} voto"
+          other: "%{count} votos"
+        submit: "Enviar calificación"
+        update: "Actualizar calificación"
+        sign-in-notice: "Inicia sesión para calificar esta pista."
+        fields:
+          gameplay: "Línea de carrera, Fluidez, Pickups"
+          visuals: "Visuales, diseño artístico, Atmósfera"
+          audio: "Efectos de sonido, Efectos musicales"
+          fun: "Diversión en general"
+        controller:
+          success: "Tu calificación se ha guardado."
+          failure: "Tu calificación no se ha guardado."
+        admin:
+          title: "Calificaciones individuales"
+          columns:
+            user: "Usuario"
+            overall: "General"
     #RVA Cars
     cars:
       meta:
@@ -426,39 +450,39 @@ es-AR:
             title: "Rookie Cars - %{org}"
             description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
           amateur:
-            page-title: "Re-Volt America - Amateur Cars"
-            title: "Amateur Cars - %{org}"
+            page-title: "Re-volt América - Autos Amateurs"
+            title: "Autos Amateurs - %{org}"
             description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
           advanced:
-            page-title: "Re-Volt America - Advanced Cars"
+            page-title: "Re-volt América - Autos Avanzados"
             title: "Advanced Cars - %{org}"
             description: "Cars of the Advanced class. These are the cars from the Advanced class required to race online on RVA!"
           semi-pro:
-            page-title: "Re-Volt America - Semi-Pro Cars"
-            title: "Semi-Pro Cars - %{org}"
+            page-title: "Re-volt América - Autos Semi-Pro"
+            title: "Autos Semi-Pros - %{org}"
             description: "Cars of the Semi-Pro class. These are the cars from the Semi-Pro class required to race online on RVA!"
           pro:
-            page-title: "Re-Volt America - Pro Cars"
-            title: "Pro Cars - %{org}"
+            page-title: "Re-volt América - Autos pro"
+            title: "Autos Pros - %{org}"
             description: "Cars of the Pro class. These are the cars from the Pro class required to race online on RVA!"
           super-pro:
             page-title: "Re-Volt America - Super-Pro Cars"
-            title: "Super-Pro Cars - %{org}"
+            title: "Autos Super-Pros -%{org}"
             description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
           clockwork:
             page-title: "Re-Volt America - Clockwork Cars"
-            title: "Clockwork Cars - %{org}"
+            title: "Autos Clockwork - %{org}"
             description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
         edit:
-          page-title: "Re-Volt America - Edit Car"
+          page-title: "Re-volt América - Editar auto"
         index:
-          page-title: "Re-Volt America - Cars"
-          title: "RVA Cars"
+          page-title: "Re-volt América - Autos"
+          title: "Autos RVA"
           description: "The cars in the RVA Car Pack of the current season."
         show:
           description: "Part of the RVA Car Pack of the current season."
       title: "Lista de autos de RVA"
-      new-car: "Add Car"
+      new-car: "Añadir Auto"
       ratings-link: "Categorías"
       features:
         speed: "Velocidad"
@@ -486,17 +510,41 @@ es-AR:
         name: "Nombre"
         folder-name: "Nombre de carpeta"
         update: "Actualizar"
-        error: "Car could not be saved"
+        error: "No se pudo guardar el auto"
         delete: "Eliminar auto"
       import:
-        title: "Import Cars"
+        title: "Importar autos"
       controller:
-        create: "Car was successfully created."
-        update: "Car was successfully updated"
-        destroy: "Car was successfully destroyed."
+        create: "El auto fue creado correctamente."
+        update: "El auto se actualizó correctamente"
+        destroy: "El auto fue destruido correctamente."
         import:
           exists: "No cars were created. Maybe they already exist?"
-          success: "Cars successfully imported."
+          success: "Autos importados correctamente."
+      rating:
+        section-title: "Community Rating"
+        average-label: "Average Rating"
+        title: "Rate this Car"
+        not-enough-votes: "Not Enough Votes"
+        votes:
+          one: "%{count} vote"
+          other: "%{count} votes"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Design, Detail, Style"
+          audio: "Engine Sound, Horn"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "User"
+            overall: "Overall"
     shared:
       stock:
         title: "Stock"
@@ -534,11 +582,11 @@ es-AR:
   seasons:
     meta:
       index:
-        page-title: "Re-Volt America - Seasons"
+        page-title: "Re-volt América - Temporadas"
       show:
-        page-title: "Re-Volt America - %{season}"
+        page-title: "Re-Volt América - %{season}"
       new:
-        page-title: "Re-Volt America - New Season"
+        page-title: "Re-volt América - Nueva temporada"
       edit:
         page-title: "Re-Volt America - Edit Season"
     title: "Temporadas de RVA"
@@ -553,7 +601,7 @@ es-AR:
       title: "Todas las temporadas"
       present: "Presente"
     edit:
-      title: "Editing Season"
+      title: "Editar temporada"
       name: "Name"
       start-date: "Fecha de Inicio"
       end-date: "End date"
@@ -1141,6 +1189,12 @@ es-AR:
         category: "You must select a Category."
     placeholder:
       search: "Buscar..."
+    sort:
+      default: "Sort by"
+      name-asc: "Name (A-Z)"
+      name-desc: "Name (Z-A)"
+      rating-asc: "Rating (Lowest first)"
+      rating-desc: "Rating (Highest first)"
   #Kaminari
   helpers:
     page_entries_info:
