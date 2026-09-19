@@ -450,8 +450,8 @@ es-AR:
             title: "Rookie Cars - %{org}"
             description: "Cars of the Rookie class. These are the cars from the Rookie class required to race online on RVA!"
           amateur:
-            page-title: "Re-Volt America - Amateur Cars"
-            title: "Amateur Cars - %{org}"
+            page-title: "Re-volt América - Autos Amateurs"
+            title: "Autos Amateurs - %{org}"
             description: "Cars of the Amateur class. These are the cars from the Amateur class required to race online on RVA!"
           advanced:
             page-title: "Re-volt América - Autos Avanzados"
