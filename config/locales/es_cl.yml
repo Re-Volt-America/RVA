@@ -420,15 +420,15 @@ es-CL:
         delete:
           button: "Eliminar Pista"
       rating:
-        section-title: "Community Rating"
-        average-label: "Average Rating"
-        title: "Rate this Track"
-        not-enough-votes: "Not Enough Votes"
+        section-title: "Valoración de la comunidad"
+        average-label: "Valoración promedio"
+        title: "Califica esta pista"
+        not-enough-votes: "No hay suficientes votos"
         votes:
-          one: "%{count} vote"
-          other: "%{count} votes"
-        submit: "Submit Rating"
-        update: "Update Rating"
+          one: "%{count} voto"
+          other: "%{count} votos"
+        submit: "Enviar valoración"
+        update: "Actualizar valoración"
         sign-in-notice: "Log in to rate this track."
         fields:
           gameplay: "Raceline, Flow, Pickups"
@@ -442,7 +442,7 @@ es-CL:
           title: "Individual Ratings"
           columns:
             user: "Usuario"
-            overall: "Overall"
+            overall: "Global"
     #RVA Cars
     cars:
       meta:
@@ -524,29 +524,29 @@ es-CL:
           exists: "No se han creado autos, puede ser que ya existan."
           success: "Autos correctamente importados."
       rating:
-        section-title: "Community Rating"
+        section-title: "Valoración de la comunidad"
         average-label: "Average Rating"
-        title: "Rate this Car"
-        not-enough-votes: "Not Enough Votes"
+        title: "Califica este auto"
+        not-enough-votes: "No hay suficientes votos"
         votes:
-          one: "%{count} vote"
-          other: "%{count} votes"
+          one: "%{count} voto"
+          other: "%{count} votos"
         submit: "Submit Rating"
         update: "Update Rating"
         sign-in-notice: "Log in to rate this car."
         fields:
           handling: "Handling, Grip, Control"
-          visuals: "Design, Detail, Style"
+          visuals: "Diseño, detalle, estilo"
           audio: "Engine Sound, Horn"
-          fun: "Overall Fun"
+          fun: "Diversión"
         controller:
           success: "Your rating has been saved."
           failure: "Your rating could not be saved."
         admin:
-          title: "Individual Ratings"
+          title: "Calificaciones individuales"
           columns:
-            user: "User"
-            overall: "Overall"
+            user: "Usuario"
+            overall: "Global"
     shared:
       stock:
         title: "Stock"
@@ -1192,11 +1192,11 @@ es-CL:
     placeholder:
       search: "Buscar..."
     sort:
-      default: "Sort by"
-      name-asc: "Name (A-Z)"
-      name-desc: "Name (Z-A)"
-      rating-asc: "Rating (Lowest first)"
-      rating-desc: "Rating (Highest first)"
+      default: "Ordenar por"
+      name-asc: "Nombre (A-Z)"
+      name-desc: "Nombre (Z-A)"
+      rating-asc: "Valoración (más baja primero)"
+      rating-desc: "Valoración (más alta primero)"
   #Kaminari
   helpers:
     page_entries_info:
