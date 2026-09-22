@@ -472,15 +472,15 @@ es-AR:
           clockwork:
             page-title: "Re-volt América - Autos Clockworks"
             title: "Autos Clockwork - %{org}"
-            description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
+            description: "Autos de la categoría Clockwork. ¡Estos son los autos de la categoría Clockwork necesarios para competir en línea en RVA!"
         edit:
           page-title: "Re-volt América - Editar auto"
         index:
           page-title: "Re-volt América - Autos"
           title: "Autos RVA"
-          description: "The cars in the RVA Car Pack of the current season."
+          description: "Los autos del pack de autos de RVA de la temporada actual."
         show:
-          description: "Part of the RVA Car Pack of the current season."
+          description: "Parte del pack de autos de RVA de la temporada actual."
       title: "Lista de autos de RVA"
       new-car: "Añadir Auto"
       ratings-link: "Categorías"
@@ -490,14 +490,14 @@ es-AR:
         weight: "Peso"
         multiplier: "Multip."
         category: "Categoría"
-        author: "Author"
+        author: "Autor"
         stock: "Original"
-        carbox-filename: "Car Box File Name"
-        active: "Active"
+        carbox-filename: "Nombre del archivo de la caja del auto"
+        active: "Activo"
         stock-tooltip:
           tooltip: "Contenido base de Re-Volt"
         lego-tooltip:
-          tooltip: "Made in Re-Volt's Lego Track Maker"
+          tooltip: "Hecho en el creador de pistas lego de Re-Volt"
         featured-session: "Este auto estuvo presente en RVA %{season}"
       class-selector:
         title: "Categorías"
@@ -519,40 +519,40 @@ es-AR:
         update: "El auto se actualizó correctamente"
         destroy: "El auto fue destruido correctamente."
         import:
-          exists: "No cars were created. Maybe they already exist?"
+          exists: "No se crearon autos. ¿Quizás ya existe?"
           success: "Autos importados correctamente."
       rating:
-        section-title: "Community Rating"
-        average-label: "Average Rating"
-        title: "Rate this Car"
-        not-enough-votes: "Not Enough Votes"
+        section-title: "Calificación de la comunidad"
+        average-label: "Calificación promedio"
+        title: "Califica este auto"
+        not-enough-votes: "No hay votos suficientes"
         votes:
-          one: "%{count} vote"
-          other: "%{count} votes"
-        submit: "Submit Rating"
-        update: "Update Rating"
-        sign-in-notice: "Log in to rate this car."
+          one: "%{count} votar"
+          other: "%{count} votos"
+        submit: "Enviar calificación"
+        update: "Actualizar calificación"
+        sign-in-notice: "Inicia sesión para calificar este auto."
         fields:
-          handling: "Handling, Grip, Control"
-          visuals: "Design, Detail, Style"
-          audio: "Engine Sound, Horn"
-          fun: "Overall Fun"
+          handling: "Manejo, Agarre, Control"
+          visuals: "Diseño, Detalle, Estilo"
+          audio: "Sonido de moto, Bocina"
+          fun: "Diversión en general"
         controller:
-          success: "Your rating has been saved."
-          failure: "Your rating could not be saved."
+          success: "Tu calificación ha sido guardada."
+          failure: "No se pudo guardar tu calificación."
         admin:
-          title: "Individual Ratings"
+          title: "Calificación individual"
           columns:
-            user: "User"
-            overall: "Overall"
+            user: "Usuario"
+            overall: "General"
     shared:
       stock:
-        title: "Stock"
+        title: "Original"
       lego:
         title: "Lego"
   #Assets page
   assets:
-    page-title: "Re-Volt America - Assets"
+    page-title: "Re-Volt América - Recursos"
     title: "LOGOS Y USO"
     subtitle_html: "¡Una colección de nuestros principales recursos, realizados por la talentosa <a class='text-primary' href='https://x.com/hylia_js' target='_blank'>Hylia</a>, los cuales puedes descargar para integrar con RVA o enlazar hacia nuestra web!"
     allowed:
@@ -588,9 +588,9 @@ es-AR:
       new:
         page-title: "Re-volt América - Nueva temporada"
       edit:
-        page-title: "Re-Volt America - Edit Season"
+        page-title: "Re-Volt América - Editar Temporada"
     title: "Temporadas de RVA"
-    of-season: "%{title} of %{season}"
+    of-season: "%{title} de %{season}"
     explanation:
       title: "Qué son las temporadas de RVA?"
       description: "En RVA, usamos un formato de temporadas para nuestras carreras en línea. Cada Temporada consiste de 6 Rankings, cada uno consistiendo de 28 fechas, 18 de las cuales son carreras individuales y las otras 10 son carreras por equipos. Los jugadores suman puntos por cada carrera."
@@ -602,20 +602,20 @@ es-AR:
       present: "Presente"
     edit:
       title: "Editar temporada"
-      name: "Name"
+      name: "Nombre"
       start-date: "Fecha de Inicio"
-      end-date: "End date"
-      error: "Season could not be saved"
+      end-date: "Terminar fecha"
+      error: "No se pudo guardar la temporada"
     create:
-      title: "Create Season"
-      error: "prohibited this season from being saved"
+      title: "Crear Temporada"
+      error: "se prohibió guardar esta temporada"
     controller:
-      create: "Season was successfully created."
-      update: "Season was successfully updated."
-      destroy: "Season was successfully deleted."
+      create: "La temporada se creó correctamente."
+      update: "La temporada se actualizó correctamente."
+      destroy: "La temporada se eliminó correctamente."
   #Rankings page
   rankings:
-    page-title: "Re-Volt America - Ranking %{number}"
+    page-title: "Re-Volt América - Ranking %{number}"
     title: "Ranking %{number}"
     title2: "Tabla de Posiciones"
     small: "%{count} Fechas jugadas"
@@ -632,31 +632,31 @@ es-AR:
       sp: "SP"
     #Stats page
     stats:
-      page-title: "Re-Volt America - Stats"
+      page-title: "Re-Volt América - Estadísticas"
       meta:
-        title: "RVA - Leaderboard"
-        description: "Global statistics leaderboard for Re-Volt America's online sessions."
-      title: "Global Stats"
+        title: "RVA - Tabla de posiciones"
+        description: "Tabla global de estadísticas para las sesiones en línea de Re-Volt América."
+      title: "Estadísticas globales"
       search:
-        placeholder: "Search player ..."
-      sorted: "Sorted by:"
+        placeholder: "Buscar jugador ..."
+      sorted: "Ordenado por:"
       table:
-        wins: "Wins"
-        podiums: "Podiums"
-        win-ratio: "Win Ratio"
-        average-pos: "Average Pos"
-        race-count: "Race Count"
-        obtained-points: "Obtained Points"
-        official-score: "Official Score"
+        wins: "Victorias"
+        podiums: "Podios"
+        win-ratio: "Tasa de victorias"
+        average-pos: "Posición promedio"
+        race-count: "Recuento de carreras"
+        obtained-points: "Puntos obtenidos"
+        official-score: "Puntaje oficial"
     controller:
-      create: "Ranking was successfully created."
-      update: "Ranking was successfully updated."
-      delete: "Ranking was successfully deleted."
+      create: "El ranking se creó correctamente."
+      update: "El ranking se actualizó correctamente."
+      delete: "El ranking se eliminó correctamente."
     sessions:
       title: "Fechas"
       no-sessions: "No hay fechas para mostrar :("
       edit:
-        title: "Editing Session"
+        title: "Editar fecha"
         host: "Host"
         version: "Version"
         physics: "Physics"
