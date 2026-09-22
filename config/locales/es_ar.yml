@@ -466,11 +466,11 @@ es-AR:
             title: "Autos Pros - %{org}"
             description: "Autos de la categoría Pro. ¡Estos son los autos de la categoría Pro necesarios para competir en línea en RVA!"
           super-pro:
-            page-title: "Re-Volt America - Super-Pro Cars"
+            page-title: "Re-volt América - Autos Super-Pros"
             title: "Autos Super-Pros -%{org}"
-            description: "Cars of the Super-Pro class. These are the cars from the Super-Pro class required to race online on RVA!"
+            description: "Autos de la categoría Super-Pro. ¡Estos son los autos de la categoría Super-Pro necesarios para competir en línea en RVA!"
           clockwork:
-            page-title: "Re-Volt America - Clockwork Cars"
+            page-title: "Re-volt América - Autos Clockworks"
             title: "Autos Clockwork - %{org}"
             description: "Cars of the Clockwork class. These are the cars from the Clockwork class required to race online on RVA!"
         edit:
