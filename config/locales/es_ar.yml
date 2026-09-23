@@ -657,25 +657,25 @@ es-AR:
       no-sessions: "No hay fechas para mostrar :("
       edit:
         title: "Editar fecha"
-        host: "Host"
-        version: "Version"
-        physics: "Physics"
-        protocol: "Protocol"
-        number: "Number"
-        date: "Date"
-        update: "Update Session"
-        error: "Session could not be saved"
+        host: "Anfitrión"
+        version: "Versión"
+        physics: "Físicas"
+        protocol: "Protocolo"
+        number: "Número"
+        date: "Fecha"
+        update: "Actualizar Fecha"
+        error: "Fecha no pudo ser guardada"
       upload:
-        title: "Upload Session"
+        title: "Subir Fecha"
       controller:
-        create: "Session was successfully created."
-        update: "Session was successfully updated."
-        delete: "Session was successfully deleted."
+        create: "La fecha se creó correctamente."
+        update: "La fecha se actualizó correctamente."
+        delete: "La fecha se eliminó correctamente."
         import:
-          success: "Session was successfully imported."
-          enqueued: "Session log uploaded. It's being parsed in the background. Follow its progress in the Administration Panel."
-          enqueued_uploader: "Session log uploaded. It's being parsed in the background and will appear shortly."
-          not_found: "That session import could not be found."
+          success: "La fecha se ha importado correctamente."
+          enqueued: "Registro de fecha subido. Se está analizando en segundo plano. Seguir su proceso en el Panel de administración."
+          enqueued_uploader: "Registro de fecha subido. Se está analizando en segundo plano y aparecerá en breve."
+          not_found: "No se pudo encontrar la fecha importada."
     results:
       no-team-results: "No hay resultados de equipo disponibles"
     nav:
@@ -696,11 +696,11 @@ es-AR:
   repositories:
     meta:
       show:
-        page-title: "Re-Volt America - Repositories"
-        title: "RVA - Repositories"
-        description: "Re-Volt America's version control repositories for content packs and other software."
+        page-title: "Re-Volt América - Repositorios"
+        title: "RVA - Repositorios"
+        description: "Repositorios de control de versiones de Re-Volt América para paquetes de contenido y otro software."
       new:
-        page-title: "Re-Volt America - New Repository"
+        page-title: "Re-Volt América - Repositorio Nuevo"
     title: "Revisiones"
     small: "Últimos commits de git en nuestra organización"
     new-button: "Nuevo"
@@ -711,34 +711,34 @@ es-AR:
       author: "Autor"
       description: "Descripción"
       when: "Cuándo"
-      ago: "ago"
+      ago: "atrás"
     new:
-      title: "New Repository"
+      title: "Repositorio nuevo"
       placeholder:
-        title: "Title"
-        description: "Description"
-        namespace: "Namespace"
-        branch: "branch"
+        title: "Título"
+        description: "Descripción"
+        namespace: "Espacio de nombre"
+        branch: "rama"
       create: "Crear"
     controller:
-      create: "Repository was successfully created."
-      update: "Repository was successfully updated."
-      destroy: "Repository was successfully destroyed."
+      create: "El repositorio se creó correctamente."
+      update: "El repositorio se actualizó correctamente."
+      destroy: "El repositorio fue destruido correctamente."
   #RVA results page
   results:
     meta:
       index:
-        page-title: "Re-Volt America - Sessions"
+        page-title: "Re-Volt América - Fechas"
       new:
-        page-title: "Re-Volt America - New Session"
+        page-title: "Re-Volt América - Nueva Fecha"
       edit:
-        page-title: "Re-Volt America - Edit Session"
+        page-title: "Re-Volt América - Editar Fecha"
       singles:
-        page-title: "Re-Volt America - Session %{number}"
-        title: "RVA Singles Session"
+        page-title: "Re-Volt América - Fecha %{number}"
+        title: "Fecha individual de RVA"
       teams:
-        page-title: "Re-Volt America - Session %{number}"
-        title: "RVA Teams Session"
+        page-title: "Re-Volt América - Fecha %{number}"
+        title: "Fechas de equipo de RVA"
     title: "%{category} Carreras (Fecha %{number})"
     version: "Versión: %{version}"
     connection: "Conexión: %{protocol} (Servidor)"
@@ -770,16 +770,16 @@ es-AR:
       tracks:
         not-found: "Pista no encontrada"
       racer:
-        no-account: "This player doesn't have an account on the site yet"
+        no-account: "Este jugador todavía no tiene una cuenta en el sitio"
   #Teams page
   teams:
     meta:
       index:
-        page-title: "Re-Volt America - Teams"
+        page-title: "Re-Volt América - Equipos"
       new:
-        page-title: "Re-Volt America - New Team"
+        page-title: "Re-Volt América - Nuevo equipo"
       edit:
-        page-title: "Re-Volt America - Edit Team"
+        page-title: "Re-Volt América - Editar equipo"
     title: "Equipos de RVA"
     no-teams: "No hay equipos que mostrar"
     global-points:
@@ -804,19 +804,19 @@ es-AR:
       add-member: "Añadir miembro"
       edit-team: "Editar equipo"
       create: "Crear equipo"
-      error: "Team could not be saved"
+      error: "No se pudo guardar el equipo"
     new:
-      title: "New Team"
+      title: "Nuevo equipo"
     controller:
-      create: "Team was successfully created."
-      update: "Team was successfully updated."
-      destroy: "Team was successfully destroyed."
-      add-member: "%{member} was successfully added to %{team}"
+      create: "El equipo fue creado correctamente."
+      update: "El equipo fue actualizado correctamente."
+      destroy: "El equipo fue destruido correctamente."
+      add-member: "%{member} fue añadido correctamente a %{team}"
   #User profile page
   users:
     meta:
       new:
-        page-title: "Re-Volt America - Import Users"
+        page-title: "Re-Volt América - Importar usuarios"
     stats:
       title: "Estadísticas"
       rank:
@@ -858,47 +858,47 @@ es-AR:
       developer: "Desarrollador"
       mod: "Moderador"
       organizer: "Organizador"
-      sponsor: "Sponsor"
+      sponsor: "Patrocinador"
     import:
       title: "Importar usuarios"
     controller:
       update:
-        leader: "%{user} is the leader of %{team}, therefore they cannot be removed from it"
-        locale: "Language set to %{lang}"
-        success: "User successfully updated."
+        leader: "%{user} es el líder de %{team}, por lo tanto no puede ser eliminado del mismo"
+        locale: "Idioma establecido en %{lang}"
+        success: "Usuario actualizado correctamente."
       import:
-        exists: "No users were created. Maybe the file format is incorrect?"
-        success: "Users successfully imported."
+        exists: "No se crearon usuarios. ¿Quizás el formato del archivo es incorrecto?"
+        success: "El usuario fue importado correctamente."
   #Tournaments page
   tournaments:
     meta:
       index:
-        page-title: "Re-Volt America - Tournaments"
+        page-title: "Re-Volt América - Torneos"
       show:
-        page-title: "Re-Volt America - %{name}"
+        page-title: "Re-Volt América - %{name}"
       new:
-        page-title: "Re-Volt America - New Tournament"
+        page-title: "Re-Volt América - Nuevo Torneo"
       edit:
-        page-title: "Re-Volt America - Edit Tournament"
+        page-title: "Re-Volt América - Editar Torneo"
     title: "Copas pasadas"
-    no-tournaments: "No tournaments to display"
-    notice: "notice"
+    no-tournaments: "No hay torneos que mostrar"
+    notice: "aviso"
     edit:
-      title: "Editing Tournament"
+      title: "Edición de torneo"
       name: "Nombre"
       date: "Fecha"
       season: "Temporada"
       banner: "Banner del torneo"
-      format: "Format"
-      save: "Save Tournament"
-      error: "prohibited this tournament from being saved:"
+      format: "Formato"
+      save: "Guardar torneo"
+      error: "se prohibió guardar este torneo:"
     new:
-      title: "New Tournament"
+      title: "Nuevo torneo"
       button: "Nuevo torneo"
     controller:
-      create: "Tournament was successfully created."
-      update: "Tournament was successfully updated."
-      destroy: "Tournament was successfully destroyed."
+      create: "El torneo fue creado correctamente."
+      update: "El torneo fue actualizado correctamente."
+      destroy: "El torneo fue destruido correctamente."
   #Re-Volt car classes
   classes:
     rookie: "Novato"
