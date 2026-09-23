@@ -919,22 +919,22 @@ es-AR:
     kg: "Kg"
     multiplier: "Multiplicador"
   weekly-schedules:
-    title: "Weekly Schedules"
-    singular: "Weekly Schedule"
-    start-date: "Start Date"
+    title: "Horarios semanales"
+    singular: "Horarios semanales"
+    start-date: "Fecha de inicio"
     controller:
-      destroy: "Delete Weekly Schedule"
+      destroy: "Eliminar horario semanal"
     meta:
       new:
-        page-title: "New Weekly Schedule"
-        title: "New Weekly Schedule"
-        description: "Create a new Weekly Schedule"
+        page-title: "Horario semanal nuevo"
+        title: "Horario semanal nuevo"
+        description: "Crear un nuevo horario semanal"
       show:
-        page-title: "Weekly Schedule - %{start_date}"
-        title: "Weekly Schedule - %{start_date}"
-        description: "The weekly schedule for %{start_date}"
+        page-title: "Horario semanal - %{start_date}"
+        title: "Horario semanal - %{start_date}"
+        description: "El horario semanal de %{start_date}"
       index:
-        page-title: "RVA Weekly Schedules"
+        page-title: "Horario semanal de RVA"
         title: "RVA Weekly Schedules"
         description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
     create:
