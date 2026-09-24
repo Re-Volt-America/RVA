@@ -15,7 +15,7 @@ $(document).on('turbo:load', function () {
                 footer.hide();
             }
 
-            html2canvas(screenshotTarget[0])
+            html2canvas(screenshotTarget[0], { backgroundColor: "#000000" })
                 .then((canvas) => {
                     const base64image = canvas.toDataURL("image/png");
                     var anchor = document.createElement('a');
