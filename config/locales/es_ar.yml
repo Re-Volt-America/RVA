@@ -278,7 +278,7 @@ es-AR:
       title: "Carreras Individuales"
       description: "En cada clasificación, jugamos primero 18 sesiones que son carreras individuales. En una sola carrera, cada jugador compite individualmente y gana puntos en base a su posición final. El sistema de puntos para carreras individuales es el siguiente:"
       example-title: "Ejemplo rápido"
-      example-scenario: "Ejemplo: Un jugador, que está jugando a un lobby de la clase Amateur, termina en 2º lugar en una carrera normal (9 carreras) con un coche de clase Rookie. En este caso, el coche tiene un multiplicador de 0.9 coches y un factor de clase 1.25x porque es una clase debajo de la clase lobby."
+      example-scenario: "Ejemplo: Un jugador, que está jugando a un lobby de la categoría Amateur, termina en 2º lugar en una carrera normal (9 carreras) con un auto de categoría Novato. En este caso, el auto tiene un multiplicador de 0.9 coches y un factor de clase 1.25x porque es una categoría debajo de la categoría del lobby."
       steps-label: "Pasos:"
       formula:
         position-score: "Puntuación de Posición"
@@ -935,14 +935,14 @@ es-AR:
         description: "El horario semanal de %{start_date}"
       index:
         page-title: "Horario semanal de RVA"
-        title: "RVA Weekly Schedules"
-        description: "RVA's Weekly Schedules. Find what car categories and which tracks we will play and when!"
+        title: "Horario semanal de RVA"
+        description: "Horarios semanales de RVA. ¡Encuentra qué categorías de autos y qué pistas jugamos y cuándo!"
     create:
-      title: "Create Weekly Schedule"
+      title: "Crear horario semanal"
     track-list:
-      track: "Track"
-      type: "Type"
-      laps: "Laps"
+      track: "Pista"
+      type: "Tipo"
+      laps: "Vueltas"
   #Devise
   activerecord:
     attributes:
@@ -995,7 +995,7 @@ es-AR:
       confirmation_instructions:
         action: "Confirmar mi cuenta"
         greeting: "¡Te damos la bienvenida, %{recipient}!"
-        instruction: "You can confirm your account email through the link below:"
+        instruction: "Puede confirmar su cuenta de correo electrónico a través del siguiente link:"
         subject: "Instrucciones de confirmación"
       email_changed:
         greeting: "Hola %{recipient}!"
@@ -1057,7 +1057,7 @@ es-AR:
         profile:
           title: "Editar Perfil"
           gender: "Género"
-          profile-picture: "Profile Picture"
+          profile-picture: "Foto de perfil"
           nationality:
             title: "Nacionalidad"
             small: "(Bandera Nacional)"
@@ -1126,7 +1126,7 @@ es-AR:
   #Administration Panel
   admin:
     session_imports:
-      not_found: "That session import could not be found."
+      not_found: "No se pudo encontrar esa importación de la fecha."
   #Error pages
   error:
     404:
@@ -1141,28 +1141,28 @@ es-AR:
   #Misc strings
   misc:
     create: "Crear"
-    view: "View"
-    go-back: "Go Back"
+    view: "Vista"
+    go-back: "Volver atrás"
     download: "Descarga"
     search: "Buscar"
     and: "&"
-    unknown: "Unknown"
-    custom: "Custom"
+    unknown: "Desconocido"
+    custom: "Personalizado"
     lego: "Lego"
-    stock: "Stock"
-    author: "Author"
-    download-as-png: "Download as PNG"
+    stock: "Original"
+    author: "Autor"
+    download-as-png: "Descargar como PNG"
     active-toggle:
-      show-active: "Show Active"
-      show-inactive: "Show Inactive"
+      show-active: "Mostrar activo"
+      show-inactive: "Mostrar inactivo"
     weekdays:
-      monday: "Monday"
-      tuesday: "Tuesday"
-      wednesday: "Wednesday"
-      thursday: "Thursday"
-      friday: "Friday"
-      saturday: "Saturday"
-      sunday: "Sunday"
+      monday: "Lunes"
+      tuesday: "Martes"
+      wednesday: "Miércoles"
+      thursday: "Jueves"
+      friday: "Viernes"
+      saturday: "Sábado"
+      sunday: "Domingo"
     bool:
       true: "Sí"
       false: "No"
@@ -1175,7 +1175,7 @@ es-AR:
     submit:
       import: "Importar"
       update: "Actualizar"
-      create: "Create"
+      create: "Crear"
     checkbox:
       teams: "Equipos"
     button:
@@ -1186,15 +1186,15 @@ es-AR:
         select: "Tenés que seleccionar un archivo CSV."
         upload: "Solo podés subir archivos CSV."
         season: "Debes seleccionar una temporada."
-        category: "You must select a Category."
+        category: "Debes seleccionar una categoría."
     placeholder:
       search: "Buscar..."
     sort:
-      default: "Sort by"
-      name-asc: "Name (A-Z)"
-      name-desc: "Name (Z-A)"
-      rating-asc: "Rating (Lowest first)"
-      rating-desc: "Rating (Highest first)"
+      default: "Ordenar por"
+      name-asc: "Nombre (A-Z)"
+      name-desc: "Nombre (Z-A)"
+      rating-asc: "Calificación (Primero el más bajo)"
+      rating-desc: "Calificación (Primero el más alto)"
   #Kaminari
   helpers:
     page_entries_info:
