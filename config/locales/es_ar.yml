@@ -446,8 +446,8 @@ es-AR:
       meta:
         classes:
           rookie:
-            page-title: "Re-Volt América - Rookie Cars"
-            title: "Rookie Cars - %{org}"
+            page-title: "Re-Volt América - Autos Novatos"
+            title: "Autos Novatos - %{org}"
             description: "Autos de la categoría Novato. ¡Estos son los autos de la categoría Novato necesarios para competir en línea en RVA!"
           amateur:
             page-title: "Re-volt América - Autos Amateurs"
@@ -557,23 +557,23 @@ es-AR:
     subtitle_html: "¡Una colección de nuestros principales recursos, realizados por la talentosa <a class='text-primary' href='https://x.com/hylia_js' target='_blank'>Hylia</a>, los cuales puedes descargar para integrar con RVA o enlazar hacia nuestra web!"
     allowed:
       title: "Uso permitido"
-      1: "Usar nuestro logo para enlazar a nuestro sitio web"
-      2: "Usar nuestro logo para anunciar que te integras con RVA"
-      3: "Usar nuestro logo en blogs o artículos acerca de RVA"
+      1: "Utilice nuestro logo para enlazar a nuestro sitio web."
+      2: "Utilice nuestro logo para anunciar que te integras con RVA."
+      3: "Utilice nuestro logo en blogs o artículos acerca de RVA."
     prohibited:
       title: "Uso prohibido"
-      1: "Usar nuestro logo como el ícono de tu aplicación"
-      2: "Crear una versión modificada de cualquiera de nuestros logos"
-      3: "Integrar cualquiera de nuestros logos en tu logo"
-      4: "Usar nuestro arte sin nuestro consentimiento"
-      5: "Cambiar los colores, dimensiones o añadir tu propio texto o imágenes"
+      1: "Utilice nuestro logo como el ícono de tu aplicación."
+      2: "Crear una versión modificada de cualquiera de nuestros logos."
+      3: "Integrar cualquiera de nuestros logos en tu logo."
+      4: "Utilizar nuestro arte sin nuestro consentimiento."
+      5: "Cambiar los colores, dimensiones o añadir tu propio texto o imágenes."
     contact:
       title: "Por favor, contáctanos"
-      1: "Si quieres usar arte no incluído en este repositorio"
-      2: "Si quieres usar estas imágenes en un video o medio de comunicación"
+      1: "Si quieres usar arte no incluido en este repositorio."
+      2: "Si quieres usar estas imágenes en un video o medio de comunicación."
     naming:
       title: "Nombrar proyectos y productos"
-      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el espaldo de Re-Volt America. Esto también aplica a nombres de dominio."
+      1: "Por favor, evita nombrar tus proyectos de tal manera que impliquen el respaldo de Re-Volt América. Esto también aplica a nombres de dominio."
     attribution:
       title: "Atribución"
       1: "Otros recursos como imágenes de clasificación de coches, imágenes de pistas, emoticonos, etc. son hechos por miembros de nuestra comunidad y todos los derechos pertenecen a sus respectivos autores."
@@ -592,7 +592,7 @@ es-AR:
     title: "Temporadas de RVA"
     of-season: "%{title} de %{season}"
     explanation:
-      title: "Qué son las temporadas de RVA?"
+      title: "¿Qué son las temporadas de RVA?"
       description: "En RVA, usamos un formato de temporadas para nuestras carreras en línea. Cada Temporada consiste de 6 Rankings, cada uno consistiendo de 28 fechas, 18 de las cuales son carreras individuales y las otras 10 son carreras por equipos. Los jugadores suman puntos por cada carrera."
     buttons:
       current-season: "Temporada actual"
@@ -745,7 +745,7 @@ es-AR:
     mode: "Modo: %{physics}"
     pickups: "Pickups:  %{pickups}"
     teams: "Equipos: %{teams}"
-    download: "Descargar Session Log"
+    download: "Descargar registro de fecha"
     team: "Equipo"
     admin:
       title: "Acciones de administrador"
@@ -754,7 +754,7 @@ es-AR:
       delete:
         button: "Borrar fecha"
         confirmation:
-          body: "¿Estas seguro?"
+          body: "¿Estás seguro?"
     container:
       tooltips:
         session-number: "Numero de fecha"
@@ -906,7 +906,7 @@ es-AR:
     advanced: "Avanzado"
     semi-pro: "Semi-Pro"
     pro: "Pro"
-    super-pro: "Super Pro"
+    super-pro: "Super-Pro"
     clockwork: "Clockwork"
     random: "Aleatorio"
   #Car metrics
@@ -988,8 +988,8 @@ es-AR:
       last_attempt: "Tienes un intento más antes de que tu cuenta se bloquee."
       locked: "Tu cuenta está bloqueada."
       not_found_in_database: "%{authentication_keys} o contraseña inválida(s)"
-      timeout: "Tu sesión expiró. Por favor, volve a iniciar sesión."
-      unauthenticated: "Tienes que iniciar sesión o registrarte."
+      timeout: "Tu sesión expiró. Por favor, vuelve a iniciar sesión."
+      unauthenticated: "Tienes que iniciar sesión o registrarte antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta para poder continuar."
     mailer:
       confirmation_instructions:
