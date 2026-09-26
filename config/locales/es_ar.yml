@@ -848,7 +848,7 @@ es-AR:
         obtained-points: "puntos obtenidos"
         official-score: "puntaje oficial"
         average-position: "posición promedio"
-        participation: "participación"
+        participation: "porcentaje de participación"
     tabs:
       title: "General"
       stats: "Estadísticas"
@@ -998,9 +998,9 @@ es-AR:
         instruction: "Puede confirmar su cuenta de correo electrónico a través del siguiente link:"
         subject: "Instrucciones de confirmación"
       email_changed:
-        greeting: "Hola %{recipient}!"
-        message: "Te estamos contactando para notificarte que tu correo ha cambiado a %{email}"
-        message_unconfirmed: "Te estamos contactando para notificarte que tu dirección de correo electrónico ha cambiado a %{email}"
+        greeting: "¡Hola %{recipient}!"
+        message: "Te estamos contactando para notificarte que tu correo ha cambiado a %{email}."
+        message_unconfirmed: "Te estamos contactando para notificarte que tu dirección de correo electrónico ha cambiado a %{email}."
         subject: "Cambio de correo electrónico"
       password_change:
         greeting: "¡Hola %{recipient}!"
@@ -1017,11 +1017,11 @@ es-AR:
         action: "Desbloquear mi cuenta"
         greeting: "¡Hola, %{recipient}!"
         instruction: 'Haz clic en el siguiente enlace para desbloquear tu cuenta:'
-        message: "Bloqueamos tu debido a una cantidad excesiva de intentos fallidos para ingresar."
+        message: "Bloqueamos tu cuenta debido a una cantidad excesiva de intentos fallidos para ingresar."
         subject: "Instrucciones para desbloquear tu cuenta"
     omniauth_callbacks:
       failure: "No has sido autorizado en la cuenta %{kind} porque \"%{reason}\"."
-      success: "Has sido autorizado desde la cuenta de %{kind}."
+      success: "Has sido autorizado desde la cuenta dé %{kind}."
     passwords:
       edit:
         change_my_password: "Cambiar mi contraseña"
@@ -1043,7 +1043,7 @@ es-AR:
         cancel_my_account: Eliminar mi cuenta
         currently_waiting_confirmation_for_email: 'Actualmente esperando la confirmación de: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no desea cambiarlo
-        unhappy: No se encuentra feliz
+        unhappy: '¿No se encuentra feliz?'
         we_need_your_current_password_to_confirm_your_changes: necesitamos tu contraseña actual para confirmar los cambios
         title: "Ajustes del usuario"
         email:
@@ -1080,12 +1080,12 @@ es-AR:
         sign_up: "Crear cuenta"
         username: "Nombre de usuario en Re-Volt"
       signed_up: "Bienvenida/o. Tu cuenta ha sido creada."
-      signed_up_but_inactive: "Tu cuenta ha sido creada. Sin embargo, no puedes iniciar sesión ya que tu cuenta aún no ha sido activada."
+      signed_up_but_inactive: "Tu cuenta ha sido creada. Sin embargo, no puedes iniciar sesión, ya que tu cuenta aún no ha sido activada."
       signed_up_but_locked: "Tu cuenta ha sido creada. Sin embargo, no es posible iniciar la sesión porque que tu cuenta se encuentra bloqueada."
       signed_up_but_unconfirmed: "Se ha enviado un mensaje con un enlace de confirmación a tu correo electrónico. Ingresa al enlace para activar tu cuenta."
       update_needs_confirmation: "Has actualizado tu cuenta, pero es necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo e ingresa al enlace de confirmación para finalizar la comprobación del nuevo correo electrónico."
       updated: "Tu cuenta ha sido actualizada."
-      updated_but_not_signed_in: "Tu cuenta ha sido actualizada pero, como tu contraseña cambio, necesitas iniciar sesión nuevamente"
+      updated_but_not_signed_in: "Tu cuenta ha sido actualizada pero, como tu contraseña cambio, necesitas iniciar sesión nuevamente."
     sessions:
       already_signed_out: "Se ha cerrado la sesión con éxito."
       new:
@@ -1133,10 +1133,10 @@ es-AR:
       title: "Error 404"
       message: "No encontrado"
     422:
-      title: "Error 404"
+      title: "Error 422"
       message: "Error ilegal"
     500:
-      title: "Error 404"
+      title: "Error 500"
       message: "Error interno del servidor"
   #Misc strings
   misc:
@@ -1184,7 +1184,7 @@ es-AR:
     controller:
       import:
         select: "Tenés que seleccionar un archivo CSV."
-        upload: "Solo podés subir archivos CSV."
+        upload: "Solo puedes subir archivos CSV."
         season: "Debes seleccionar una temporada."
         category: "Debes seleccionar una categoría."
     placeholder:
