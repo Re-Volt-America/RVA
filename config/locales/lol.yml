@@ -421,20 +421,20 @@ lol:
         delete:
           button: "Kil trak"
       rating:
-        section-title: "Community Rating"
-        average-label: "Average Rating"
-        title: "Rate this Track"
-        not-enough-votes: "Not Enough Votes"
+        section-title: "KATZ SAID"
+        average-label: "avg kat ratin"
+        title: "how many meow?"
+        not-enough-votes: "NOT ENOUH MEOW"
         votes:
-          one: "%{count} vote"
-          other: "%{count} votes"
+          one: "%{count} MEOW"
+          other: "%{count} MEOWS"
         submit: "GO!"
-        update: "Update Rating"
+        update: "updaet da ratez"
         sign-in-notice: "ENTER DA SIET 2 RAET DIS TRACK"
         fields:
           gameplay: "Raceline, Flow, Pickups"
           visuals: "Visuals, Art Design, Atmosphere"
-          audio: "SFX, Music Effects"
+          audio: "soundz & magik songz"
           fun: "INCREDIBUL KAT FUNZ"
         controller:
           success: "Your rating has been saved."
@@ -443,7 +443,7 @@ lol:
           title: "Individual Ratings"
           columns:
             user: "KAT"
-            overall: "Overall"
+            overall: "INCREDIBUL"
     #RVA Cars
     cars:
       meta:
@@ -547,7 +547,7 @@ lol:
           title: "Individual Ratings"
           columns:
             user: "cat"
-            overall: "Overall"
+            overall: "INDREDIBUL"
     shared:
       stock:
         title: "OG"
@@ -1194,10 +1194,10 @@ lol:
       search: "Surch..."
     sort:
       default: "Sort by"
-      name-asc: "Name (A-Z)"
-      name-desc: "Name (Z-A)"
-      rating-asc: "Rating (Lowest first)"
-      rating-desc: "Rating (Highest first)"
+      name-asc: "Naem (AZ)"
+      name-desc: "nAEM (ZA)"
+      rating-asc: "Ratin (bad firzt)"
+      rating-desc: "Ratin (GOOD firszt)"
   #Kaminari
   helpers:
     page_entries_info:
