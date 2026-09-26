@@ -419,6 +419,30 @@ es-CL:
           button: "Editar Pista"
         delete:
           button: "Eliminar Pista"
+      rating:
+        section-title: "Valoración de la comunidad"
+        average-label: "Valoración promedio"
+        title: "Califica esta pista"
+        not-enough-votes: "No hay suficientes votos"
+        votes:
+          one: "%{count} voto"
+          other: "%{count} votos"
+        submit: "Enviar valoración"
+        update: "Actualizar valoración"
+        sign-in-notice: "Log in to rate this track."
+        fields:
+          gameplay: "Raceline, Flow, Pickups"
+          visuals: "Visuals, Art Design, Atmosphere"
+          audio: "SFX, Music Effects"
+          fun: "Overall Fun"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Individual Ratings"
+          columns:
+            user: "Usuario"
+            overall: "Global"
     #RVA Cars
     cars:
       meta:
@@ -499,6 +523,30 @@ es-CL:
         import:
           exists: "No se han creado autos, puede ser que ya existan."
           success: "Autos correctamente importados."
+      rating:
+        section-title: "Valoración de la comunidad"
+        average-label: "Average Rating"
+        title: "Califica este auto"
+        not-enough-votes: "No hay suficientes votos"
+        votes:
+          one: "%{count} voto"
+          other: "%{count} votos"
+        submit: "Submit Rating"
+        update: "Update Rating"
+        sign-in-notice: "Log in to rate this car."
+        fields:
+          handling: "Handling, Grip, Control"
+          visuals: "Diseño, detalle, estilo"
+          audio: "Engine Sound, Horn"
+          fun: "Diversión"
+        controller:
+          success: "Your rating has been saved."
+          failure: "Your rating could not be saved."
+        admin:
+          title: "Calificaciones individuales"
+          columns:
+            user: "Usuario"
+            overall: "Global"
     shared:
       stock:
         title: "Stock"
@@ -1143,6 +1191,12 @@ es-CL:
         category: "Debe seleccionar una categoría."
     placeholder:
       search: "Buscar..."
+    sort:
+      default: "Ordenar por"
+      name-asc: "Nombre (A-Z)"
+      name-desc: "Nombre (Z-A)"
+      rating-asc: "Valoración (más baja primero)"
+      rating-desc: "Valoración (más alta primero)"
   #Kaminari
   helpers:
     page_entries_info:
