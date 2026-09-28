@@ -83,6 +83,8 @@
       %a#general-tab.nav-link.active{"aria-controls" => "general", "aria-selected" => "true", "data-toggle" => "tab", href: "#general", role: "tab"}= t("users.tabs.title")
     %li.nav-item
       %a#stats-tab.nav-link{"aria-controls" => "stats", "aria-selected" => "false", "data-toggle" => "tab", href: "#stats", role: "tab"}= t("users.tabs.stats")
+    %li.nav-item
+      %a#trophies-tab.nav-link{"aria-controls" => "trophies", "aria-selected" => "false", "data-toggle" => "tab", href: "#trophies", role: "tab"}= t("users.tabs.trophies")
     - if user_is_mod? || user_is_admin? || user_is_developer?
       %li.nav-item
         %a#admin-tab.nav-link{"aria-controls" => "admin", "aria-selected" => "false", "data-toggle" => "tab", href: "#admin", role: "tab"}= t("users.tabs.admin")
@@ -245,6 +247,8 @@
             = number_to_percentage(@user.stats.participation_rate * 100, :precision => 1)
             %small
               = t("users.stats.overall-stats.participation")
+    #trophies.tab-pane.fade{:"aria-labelledby" => "trophies-tab", :role => "tabpanel"}
+      = render :partial => "trophy_case", :locals => { :user => @user }
     - if user_is_mod? || user_is_admin? || user_is_developer?
       #admin.tab-pane.fade{:"aria-labelledby" => "admin-tab", :role => "tabpanel"}
         = form_for(@user, html: { method: :put }) do |f|

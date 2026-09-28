@@ -1,0 +1,14 @@
+- content_for :title, "Re-Volt America - #{t('notifications.title')}"
+
+#notifications-page
+  .row
+    .col-md-12
+      %h1= t("notifications.title")
+  %hr
+  - if @notifications.empty?
+    %p.text-muted= t("notifications.empty")
+  - else
+    .notification-list
+      - @notifications.each do |notification|
+        = render :partial => "notifications/item", :locals => { :notification => notification }
+    = paginate @notifications

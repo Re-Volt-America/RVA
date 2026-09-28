@@ -1,0 +1,9 @@
+- earned = user.earned_trophies
+#trophy-case
+  - if earned.empty?
+    %p.text-muted.mt-4= t("users.trophies.empty")
+  - else
+    .row.trophy-grid.mt-3
+      - earned.each do |awarded, trophy|
+        .col-6.col-sm-4.col-md-3.mb-4
+          = render :partial => "users/trophy_card", :locals => { :awarded => awarded, :trophy => trophy }

@@ -91,6 +91,13 @@ RVA::Application.routes.draw do
 
   resources :weekly_schedules
 
+  # On-site notifications (trophy awards, etc.)
+  resources :notifications, :only => [:index] do
+    collection do
+      post :mark_all_read
+    end
+  end
+
   match '404', :to => 'errors#not_found', :via => :all
   match '422', :to => 'errors#illegal', :via => :all
   match '500', :to => 'errors#internal_error', :via => :all

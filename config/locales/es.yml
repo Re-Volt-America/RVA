@@ -805,6 +805,31 @@ es:
       title: "General"
       stats: "Estadísticas"
       admin: "Administrador"
+      trophies: "Vitrina de Trofeos"
+    trophies:
+      tab: "Vitrina de Trofeos"
+      empty: "Aún no hay trofeos."
+      awarded-on: "Obtenido el %{date}"
+      unknown: "Trofeo desconocido"
+      items:
+        first_win:
+          name: "Primera Sangre"
+          description: "Gana tu primera sesión."
+        session_wins_10:
+          name: "Contendiente"
+          description: "Gana 10 sesiones."
+        session_wins_100:
+          name: "Centurión"
+          description: "Gana 100 sesiones."
+        podium_regular:
+          name: "Habitual del Podio"
+          description: "Sube al podio en 25 sesiones."
+        raton_altista:
+          name: "Ratón Altista"
+          description: "Gana una sesión pilotando el Mouse."
+        ranking_champion:
+          name: "Campeón del Ranking"
+          description: "Termina 1º en un ranking."
     badges:
       admin: "Administrador"
       developer: "Desarrollador"
@@ -821,6 +846,14 @@ es:
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
         success: "Users successfully imported."
+  # Notificaciones del sitio
+  notifications:
+    title: "Notificaciones"
+    empty: "Aún no tienes notificaciones."
+    view-all: "Ver todas las notificaciones"
+    mark-all-read: "Marcar todas como leídas"
+    trophy-earned: "¡Has obtenido un trofeo: %{name}!"
+
   #Tournaments page
   tournaments:
     meta:

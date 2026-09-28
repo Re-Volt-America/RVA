@@ -1,0 +1,7 @@
+- compact = local_assigns.fetch(:compact, false)
+%a.notification-item{:href => notification_link(notification), :class => [("dropdown-item" if compact), ("unread" unless notification.read)].compact}
+  %span.notification-item-icon
+    %i.fa{:class => notification_icon(notification)}
+  %span.notification-item-body
+    %span.notification-item-text= notification_message(notification)
+    %span.notification-item-time= pretty_datetime(notification.created_at)

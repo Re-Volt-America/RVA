@@ -1,0 +1,20 @@
+%li.nav-item.dropdown#notification-bell
+  %a.nav-link.dropdown-toggle{:href => "#", :"data-toggle" => "dropdown", :"aria-haspopup" => true, :"aria-expanded" => false}
+    %i.fa.fa-bell
+    - count = current_user.unread_notifications_count
+    - if count.positive?
+      %span.notification-badge= count > 9 ? "9+" : count
+  .dropdown-menu.dropdown-menu-right.notification-menu{:"aria-labelledby" => "notification-bell"}
+    .notification-menu-header
+      %span= t("notifications.title")
+      - if current_user.unread_notifications_count.positive?
+        = button_to t("notifications.mark-all-read"), mark_all_read_notifications_path, :method => :post, :class => "notification-mark-read-btn", :form_class => "notification-mark-read-form"
+    .dropdown-divider
+    - recent = current_user.notifications.recent.limit(6).to_a
+    - if recent.empty?
+      %span.dropdown-item.text-muted.notification-empty= t("notifications.empty")
+    - else
+      - recent.each do |notification|
+        = render :partial => "notifications/item", :locals => { :notification => notification, :compact => true }
+      .dropdown-divider
+      %a.dropdown-item.text-center.notification-view-all{:href => notifications_path}= t("notifications.view-all")

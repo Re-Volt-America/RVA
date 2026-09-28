@@ -904,6 +904,31 @@ en:
       title: "General"
       stats: "Stats"
       admin: "Admin"
+      trophies: "Trophy Case"
+    trophies:
+      tab: "Trophy Case"
+      empty: "No trophies yet."
+      awarded-on: "Awarded %{date}"
+      unknown: "Unknown trophy"
+      items:
+        first_win:
+          name: "First Blood"
+          description: "Win your first session."
+        session_wins_10:
+          name: "Contender"
+          description: "Win 10 sessions."
+        session_wins_100:
+          name: "Centurion"
+          description: "Win 100 sessions."
+        podium_regular:
+          name: "Podium Regular"
+          description: "Finish on the podium in 25 sessions."
+        raton_altista:
+          name: "Ratón Altista"
+          description: "Win a session driving the Mouse."
+        ranking_champion:
+          name: "Ranking Champion"
+          description: "Finish 1st in a ranking."
     badges:
       admin: "Administrator"
       developer: "Developer"
@@ -920,6 +945,14 @@ en:
       import:
         exists: "No users were created. Maybe the file format is incorrect?"
         success: "Users successfully imported."
+
+  # On-site notifications
+  notifications:
+    title: "Notifications"
+    empty: "No notifications yet."
+    view-all: "View all notifications"
+    mark-all-read: "Mark all as read"
+    trophy-earned: "You earned a trophy: %{name}"
 
   # Tournaments page
   tournaments:

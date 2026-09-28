@@ -1,0 +1,6 @@
+.trophy-card{:class => "tier-#{trophy.tier}", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => trophy.description}
+  .trophy-icon
+    %i.fa{:class => trophy.icon, :"aria-hidden" => true}
+  .trophy-name= trophy.name
+  - if awarded.awarded_at
+    .trophy-date= t("users.trophies.awarded-on", :date => pretty_datetime(awarded.awarded_at))
