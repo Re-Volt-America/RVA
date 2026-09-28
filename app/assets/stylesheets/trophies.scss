@@ -1,0 +1,164 @@
+// =============================================================================
+//  Trophies & on-site notifications
+// =============================================================================
+
+$tier-bronze:   #cd7f32;
+$tier-silver:   #d4d4d4;
+$tier-gold:     #ffc011;
+$tier-platinum: #67d3f9;
+
+// --- Trophy Case -------------------------------------------------------------
+
+#trophy-case {
+  .trophy-card {
+    height: 100%;
+    padding: 22px 12px 16px;
+    text-align: center;
+    background-color: #151515;
+    border: 1px solid #5e6162;
+    border-radius: 6px;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+
+    .trophy-icon {
+      margin-bottom: 12px;
+      font-size: 46px;
+      line-height: 1;
+      color: #beb8bc;
+    }
+
+    .trophy-name {
+      font-family: NissanOpti, serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .trophy-date {
+      margin-top: 4px;
+      font-size: 0.72rem;
+      color: #8a8a8a;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: #beb8bc;
+    }
+  }
+
+  .tier-bronze   .trophy-icon { color: $tier-bronze; }
+  .tier-silver   .trophy-icon { color: $tier-silver; }
+  .tier-gold     .trophy-icon { color: $tier-gold; }
+  .tier-platinum .trophy-icon { color: $tier-platinum; }
+
+  .tier-bronze:hover   { box-shadow: 0 0 12px rgba(205, 127, 50, 0.30); border-color: $tier-bronze; }
+  .tier-silver:hover   { box-shadow: 0 0 12px rgba(212, 212, 212, 0.28); border-color: $tier-silver; }
+  .tier-gold:hover     { box-shadow: 0 0 14px rgba(255, 192, 17, 0.38); border-color: $tier-gold; }
+  .tier-platinum:hover { box-shadow: 0 0 14px rgba(103, 211, 249, 0.38); border-color: $tier-platinum; }
+}
+
+// --- Notification bell (nav) -------------------------------------------------
+
+#notification-bell {
+  .nav-link { position: relative; }
+
+  .notification-badge {
+    position: absolute;
+    top: 0;
+    right: -4px;
+    min-width: 16px;
+    padding: 2px 5px;
+    font-size: 0.62rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    background-color: #f30039;
+    border-radius: 10px;
+  }
+
+  .notification-menu {
+    min-width: 320px;
+    max-width: 360px;
+    padding: 0;
+    background-color: #151515;
+    border: 1px solid #5e6162;
+
+    .notification-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .dropdown-divider { margin: 0; border-color: #2a2a2a; }
+    .notification-empty { padding: 12px 14px; }
+
+    // Beat the global `.dropdown-item:hover { color:#000 }` rule.
+    .notification-item:hover { color: #fff; }
+  }
+}
+
+.notification-mark-read-form { margin: 0; }
+
+.notification-mark-read-btn {
+  padding: 0;
+  font-size: 0.75rem;
+  color: $tier-platinum;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &:hover { color: #fff; text-decoration: underline; }
+}
+
+// --- A single notification (shared by dropdown + page) -----------------------
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  color: #beb8bc;
+  text-decoration: none;
+  white-space: normal;
+  border-bottom: 1px solid #2a2a2a;
+
+  &:hover { background-color: #000; color: #fff; }
+
+  &.unread { background-color: rgba(243, 0, 57, 0.08); }
+  &.unread .notification-item-text { color: #fff; font-weight: 600; }
+
+  .notification-item-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: $tier-gold;
+    background-color: #000;
+    border: 1px solid #5e6162;
+    border-radius: 50%;
+  }
+
+  .notification-item-body { display: flex; flex-direction: column; }
+  .notification-item-text { font-size: 0.85rem; line-height: 1.2; }
+  .notification-item-time { margin-top: 2px; font-size: 0.7rem; color: #8a8a8a; }
+}
+
+.notification-view-all { font-size: 0.8rem; }
+
+// --- Notifications page ------------------------------------------------------
+
+#notifications-page {
+  .notification-list {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid #5e6162;
+    border-radius: 6px;
+  }
+
+  .notification-item:last-child { border-bottom: 0; }
+}

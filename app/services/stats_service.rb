@@ -11,12 +11,19 @@ class StatsService
     add_session_stats
     add_ranking_stats
     add_season_stats
+    award_trophies
   end
 
   def remove_stats
     remove_user_stats
     remove_ranking_stats
     remove_season_stats
+  end
+
+  # Evaluate and grant any newly-earned trophies to this session's participants.
+  # Guarded so trophy issues can never break a session import.
+  def award_trophies
+    TrophyService.sync_session_participants(@session)
   end
 
   # Adds the given @rva_results to the @session itself

@@ -28,7 +28,8 @@
 
   -# Font Awesome
   %link{:rel => "stylesheet", :href => "https://use.fontawesome.com/releases/v5.13.0/css/all.css"}
-  %link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}
+  -# v4-shims restores the bare `.fa` class and remaps FA4 icon names to FA5
+  %link{:rel => "stylesheet", :href => "https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css"}
 
   %title
     - if content_for?(:title)
