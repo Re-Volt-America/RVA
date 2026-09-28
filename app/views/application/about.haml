@@ -21,11 +21,10 @@
     = t('application.about.see_you')
   #carouselIndicators.carousel.slide{"data-ride" => "carousel"}
     %ol.carousel-indicators
-      %li.active{"data-slide-to" => "0", "data-target" => "#carouselIndicators"}
-      %li{"data-slide-to" => "1", "data-target" => "#carouselIndicators"}
-      %li{"data-slide-to" => "2", "data-target" => "#carouselIndicators"}
+      - 1.upto(4) do |n|
+        %li{:class => (n == 1 ? "active" : ""), "data-slide-to" => (n - 1).to_s, "data-target" => "#carouselIndicators"}
     .carousel-inner
-      - 1.upto(3) do |n|
+      - 1.upto(4) do |n|
         %div{:class => "carousel-item #{n == 1 ? 'active' : ''}"}
           = image_tag "about/#{n}.png", :class => "d-block w-100"
     %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselIndicators", role: "button"}
