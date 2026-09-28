@@ -906,8 +906,8 @@ en:
       never: "Never"
       last-seen:
         title: "Last seen on"
-        races: "%{category} Races hosted by %{host}"
-        team-races: "%{category} Team Races hosted by %{host}"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
         ago: "ago"
     tabs:
       title: "General"

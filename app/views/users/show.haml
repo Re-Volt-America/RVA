@@ -21,15 +21,15 @@
           style: "width: 200px; height: 200px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
       - if @recent_sessions.first
         - session = @recent_sessions.first
-        .stats.last-seen.mt-3
+        .stats.last-seen
           .name
             = t("users.activity.last-seen.title")
           .number
             %a{:href => session_path(session)}
               - if session.teams?
-                = t("users.activity.last-seen.team-races", :category => session_category_name(session), :host => session.host_name)
+                = t("users.activity.last-seen.team-races", :category => session_category_name(session))
               - else
-                = t("users.activity.last-seen.races", :category => session_category_name(session), :host => session.host_name)
+                = t("users.activity.last-seen.races", :category => session_category_name(session))
           .text-muted.small
             = "#{time_ago_in_words(session.date)} #{t('users.activity.last-seen.ago')}"
     .col-md-4
