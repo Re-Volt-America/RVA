@@ -106,6 +106,24 @@
     }
   }
 
+  .account-meta {
+    border-left: 2px solid #5e6162;
+    margin: 0 0 10px;
+    padding-left: 12px;
+
+    dt {
+      color: #999;
+      font-size: 13px;
+      font-weight: normal;
+      margin-bottom: 3px;
+    }
+
+    dd {
+      color: #cccccc;
+      margin-bottom: 0;
+    }
+  }
+
   .username {
     font-size: 35px;
     font-weight: bold;
