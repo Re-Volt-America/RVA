@@ -849,6 +849,15 @@ it:
         official-score: "official score"
         average-position: "average position"
         participation: "participation rate"
+    activity:
+      member-since: "Member since"
+      last-active-website: "Last active (website)"
+      never: "Never"
+      last-seen:
+        title: "Last seen on"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        ago: "ago"
     tabs:
       title: "General"
       stats: "Stats"
