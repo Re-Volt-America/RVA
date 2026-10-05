@@ -19,6 +19,16 @@
         = image_tag "no_profile_picture.png",
           class: "rounded",
           style: "width: 200px; height: 200px; object-fit: cover; border: 1px solid #5e6162; padding: 4px; background-color: #000000;"
+      - if @recent_sessions.first
+        - session = @recent_sessions.first
+        .stats.last-seen
+          .name
+            = t("users.activity.last-seen.title")
+          .number
+            %a{:href => session_path(session)}
+              = session_category_name(session)
+          .text-muted.small
+            = "#{time_ago_in_words(session.date)} #{t('users.activity.last-seen.ago')}"
     .col-md-4
       .stats
         .well
@@ -90,6 +100,22 @@
         %a#sessions-tab.nav-link{"aria-controls" => "sessions", "aria-selected" => "false", "data-toggle" => "tab", href: "#sessions", role: "tab"} Sessions
   .tab-content
     #general.tab-pane.fade.show.active{:"aria-labelledby" => "general-tab", role: "tabpanel"}
+      .row.mt-2.info
+        .col-sm-6
+          %dl.account-meta
+            %dt
+              = t("users.activity.member-since")
+            %dd
+              = pretty_datetime(@user.created_at)
+        .col-sm-6
+          %dl.account-meta
+            %dt
+              = t("users.activity.last-active-website")
+            %dd
+              - if @user.last_sign_in_at
+                = pretty_datetime(@user.last_sign_in_at)
+              - else
+                = t("users.activity.never")
       .row.mt-2.info
         - if @user.profile.instagram?
           .col-md-4.col-sm-6

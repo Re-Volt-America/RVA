@@ -10,14 +10,14 @@
     %button.btn.btn-primary{type: "submit"}
       %i.fa.fa-search
 
-= t("rankings.stats.sorted")
-
-%select#sorter.form-control{style: "display: inline-block; width: 130px; cursor: pointer;"}
-  - @sorts.each do |key, label|
-    - if params[:sort].eql?(key.to_s)
-      %option{label: label, selected: "selected", value: "#{stats_path(sort: key, query: params[:query])}"}= label
-    - else
-      %option{label: label, value: "#{stats_path(sort: key, query: params[:query])}"}= label
+.mb-4{style: "display: flex; align-items: center; gap: 8px;"}
+  %span= t("rankings.stats.sorted")
+  %select#sorter.form-control{style: "display: inline-block; width: 130px; cursor: pointer;"}
+    - @sorts.each do |key, label|
+      - if params[:sort].eql?(key.to_s)
+        %option{label: label, selected: "selected", value: "#{stats_path(sort: key, query: params[:query])}"}= label
+      - else
+        %option{label: label, value: "#{stats_path(sort: key, query: params[:query])}"}= label
 
 .table-responsive.mt-4#stats-table
   = paginate @users
