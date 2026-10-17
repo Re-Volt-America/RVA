@@ -95,8 +95,20 @@ $tier-platinum: #67d3f9;
     .dropdown-divider { margin: 0; border-color: #2a2a2a; }
     .notification-empty { padding: 12px 14px; }
 
-    // Beat the global `.dropdown-item:hover { color:#000 }` rule.
-    .notification-item:hover { color: #fff; }
+    .notification-item:hover,
+    .notification-item:focus {
+      background-color: #fff;
+      color: #000;
+
+      .notification-item-text,
+      .notification-item-time { color: #000; }
+
+      .notification-item-icon {
+        color: #000;
+        background-color: #fff;
+        border-color: #000;
+      }
+    }
   }
 }
 

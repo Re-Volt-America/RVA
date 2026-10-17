@@ -62,7 +62,7 @@ Rails.application.config.to_prepare do
   # -- Custom-logic trophies --------------------------------------------------
 
   # Win a session driving the "Mouse".
-  Trophy.define :raton_altista, :icon => 'fa-cheese', :tier => :gold do |ctx|
+  Trophy.define :raton_altista, :icon => 'fa-mouse', :tier => :gold do |ctx|
     ctx.won_session_with_car?('Mouse')
   end
 

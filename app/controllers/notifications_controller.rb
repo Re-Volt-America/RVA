@@ -5,10 +5,8 @@ class NotificationsController < ApplicationController
 
   # Full notification history. Visiting the page marks everything as read.
   def index
-    @notifications = current_user.notifications
-                                 .recent
-                                 .page(params[:page])
-                                 .per(20)
+    notifications = current_user.notifications.recent.to_a
+    @notifications = Kaminari.paginate_array(notifications).page(params[:page]).per(20)
 
     # The in-memory @notifications keep their (possibly unread) state for this
     # render so the page can highlight what was new; the DB is updated so the
