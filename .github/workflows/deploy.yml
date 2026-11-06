@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Set up Ruby 3.2.2
+      - name: Set up Ruby 3.2.11
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
+          ruby-version: 3.2.11
       - name: Bundle gems
         run: |
           gem install bundler

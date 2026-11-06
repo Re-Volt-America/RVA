@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.2'
+ruby '3.2.11'
 
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
