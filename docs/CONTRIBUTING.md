@@ -23,7 +23,7 @@ interactive site where all online session results and leaderboards are kept publ
 and the general public.
 
 ## Development Team
-* [José Benavente](https://github.com/BGMP) - jose@bgm.dev
+* [José Benavente](https://github.com/BGM) - jose@bgm.dev
 * [Alex Kharlanau](https://github.com/sinaosal) - alex.kharlanau@gmail.com
 * [Franco Martinez](https://github.com/WaleleMB) - franconahuelmb@gmail.com
 

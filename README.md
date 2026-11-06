@@ -89,7 +89,7 @@ Please read the full instructions on how to contribute to this project found in 
 You may also have a look at the [repository wiki](https://github.com/Re-Volt-America/RVA/wiki).
 
 ## Governance
-The lead maintainer of this project is [BGM](https://github.com/BGMP). As the project grows, we'll scale the governance
+The lead maintainer of this project is [BGM](https://github.com/BGM). As the project grows, we'll scale the governance
 model to meet its needs.
 
 ## Thanks to
