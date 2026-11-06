@@ -44,7 +44,8 @@ This project was built using [Ruby on Rails](https://rubyonrails.org/), the full
 
 ## Installation
 Install the following services and configure them to run on their default ports if needed:
-* [Ruby 3.2.2](https://www.ruby-lang.org/en/)
+* [Ruby 3.2.11](https://www.ruby-lang.org/en/)
+  * Windows: [RubyInstaller](https://rubyinstaller.org/downloads/archives/) is recommended. For a basic installation, leave all settings set to their defaults.
   * OS X: [RVM](http://rvm.io/) is recommended over the default OS X Ruby. Here's a one-liner:
    `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
 * [MongoDB 3+](https://www.mongodb.com/)
