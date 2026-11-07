@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.2.11'
+ruby '3.4.12'
 
 gem 'bootsnap', :require => false                                     # Reduces boot times through caching; required in config/boot.rb
 gem 'chartkick', '~> 5.1', '>= 5.1.2'                                 # Create beautiful JavaScript charts with one line of Ruby
@@ -8,6 +8,7 @@ gem 'connection_pool', '~> 2.5'                                       # Generic 
 gem 'countries', '~> 5.7'                                             # Collection of all sorts of useful information for every country in the ISO 3166 standard
 gem 'country_select', '~> 8.0', '>= 8.0.3'                            # Provides a simple helper to get an HTML select list of countries
 gem 'cssbundling-rails', '~> 1.1'                                     # Use SCSS for stylesheets
+gem 'csv', '~> 3.3'                                                   # CSV parsing for session/car/track/user imports; no longer a default gem since Ruby 3.4
 gem 'devise', '~> 4.9.2'                                              # Flexible authentication solution for Rails with Warden
 gem 'devise-i18n', '~> 1.12', '>= 1.12.1'                             # Translations for the devise gem
 gem 'faraday', '<= 2'                                                 # HTTP/REST API client library.
@@ -21,6 +22,7 @@ gem 'jsbundling-rails', '~> 1.1'                                      # Bundle a
 gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
 gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'kramdown', '~> 2.4'                                              # Yet-another-markdown-parser but fast
+gem 'mongo', '~> 2.26'                                                # MongoDB Ruby driver (used by Mongoid); 2.22+ is tested on Ruby 3.4
 gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'net-imap', '>= 0.4.24'                                           # Ruby client api for Internet Message Access Protocol
 gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
@@ -50,11 +52,12 @@ end
 
 group :development do
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'                           # Print Ruby objects to visualize their structure
-  gem 'bcrypt_pbkdf', '~> 1.1'                                        # Resolve OpenSSH problems with capistrano
+  gem 'bcrypt_pbkdf', '>= 1.1.2'                                      # Resolve OpenSSH problems with capistrano
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
-  gem 'ed25519', '~> 1.3'                                             # Resolve OpenSSH problems with capistrano
+  gem 'ed25519', '>= 1.4'                                             # Resolve OpenSSH problems with capistrano
   gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
   gem 'rack-mini-profiler', '>= 4.0.1'                                # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem 'sshkit', '~> 1.25'                                             # Capistrano SSH toolkit; <1.22 requires mutex_m, which is no longer a default gem since Ruby 3.4
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 
