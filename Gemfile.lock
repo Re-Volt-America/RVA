@@ -82,7 +82,7 @@ GEM
     awesome_print (1.9.2)
     base64 (0.3.0)
     bcrypt (3.1.19)
-    bcrypt_pbkdf (1.1.0)
+    bcrypt_pbkdf (1.1.2)
     benchmark (0.5.0)
     bigdecimal (4.1.2)
     bindex (0.8.1)
@@ -116,6 +116,7 @@ GEM
     crass (1.0.7)
     cssbundling-rails (1.3.3)
       railties (>= 6.0.0)
+    csv (3.3.7)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -236,8 +237,9 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.27.0)
-    mongo (2.19.1)
-      bson (>= 4.14.1, < 5.0.0)
+    mongo (2.26.1)
+      base64
+      bson (>= 4.14.1, < 6.0.0)
     mongoid (8.1.12)
       activemodel (>= 5.1, < 8.1, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
@@ -256,6 +258,8 @@ GEM
       timeout
     net-scp (4.0.0)
       net-ssh (>= 2.6.5, < 8.0.0)
+    net-sftp (4.1.1)
+      net-ssh (>= 5.0.0, < 9.0.0)
     net-smtp (0.5.1)
       net-protocol
     net-ssh (7.2.0)
@@ -277,6 +281,7 @@ GEM
       rack (>= 2.2.3)
       rack-protection
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -430,9 +435,13 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sshkit (1.21.6)
+    sshkit (1.25.1)
+      base64
+      logger
       net-scp (>= 1.1.2)
+      net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
+      ostruct
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     temple (0.10.3)
@@ -479,7 +488,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
-  bcrypt_pbkdf (~> 1.1)
+  bcrypt_pbkdf (>= 1.1.2)
   bootsnap
   capistrano (~> 3.18)
   capybara (~> 3.39, >= 3.39.2)
@@ -488,6 +497,7 @@ DEPENDENCIES
   countries (~> 5.7)
   country_select (~> 8.0, >= 8.0.3)
   cssbundling-rails (~> 1.1)
+  csv (~> 3.3)
   debug (>= 1.11.1)
   devise (~> 4.9.2)
   devise-i18n (~> 1.12, >= 1.12.1)
@@ -505,6 +515,7 @@ DEPENDENCIES
   kaminari (~> 1.2, >= 1.2.2)
   kaminari-i18n (~> 0.5.0)
   kramdown (~> 2.4)
+  mongo (~> 2.26)
   mongoid (~> 8.1, >= 8.1.3)
   net-imap (>= 0.4.24)
   omniauth (~> 2.1, >= 2.1.1)
@@ -527,6 +538,7 @@ DEPENDENCIES
   sidekiq (~> 7.3)
   sidekiq-cron (~> 1.12)
   sprockets-rails (~> 3.4, >= 3.4.2)
+  sshkit (~> 1.25)
   stimulus-rails (~> 1.2, >= 1.2.2)
   turbo-rails (~> 1.4)
   tzinfo-data

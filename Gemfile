@@ -52,7 +52,7 @@ end
 
 group :development do
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'                           # Print Ruby objects to visualize their structure
-  gem 'bcrypt_pbkdf', '~> 1.1'                                        # Resolve OpenSSH problems with capistrano
+  gem 'bcrypt_pbkdf', '>= 1.1.2'                                      # Resolve OpenSSH problems with capistrano
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
   gem 'ed25519', '>= 1.4'                                             # Resolve OpenSSH problems with capistrano
   gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
