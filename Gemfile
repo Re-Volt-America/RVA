@@ -55,7 +55,6 @@ group :development do
   gem 'bcrypt_pbkdf', '>= 1.1.2'                                      # Resolve OpenSSH problems with capistrano
   gem 'capistrano', '~> 3.18', :require => false                      # Deployment
   gem 'ed25519', '>= 1.4'                                             # Resolve OpenSSH problems with capistrano
-  gem 'error_highlight', '>= 0.4.0', :platforms => [:ruby]            # Add a short explanation where the exception is raised
   gem 'rack-mini-profiler', '>= 4.0.1'                                # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem 'sshkit', '~> 1.25'                                             # Capistrano SSH toolkit; <1.22 requires mutex_m, which is no longer a default gem since Ruby 3.4
   gem 'web-console', '~> 4.2', '>= 4.2.1'                             # Use console on exceptions pages [https://github.com/rails/web-console]

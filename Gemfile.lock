@@ -137,7 +137,6 @@ GEM
     drb (2.2.3)
     ed25519 (1.4.0)
     erb (6.0.6)
-    error_highlight (0.5.1)
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
@@ -502,7 +501,6 @@ DEPENDENCIES
   devise (~> 4.9.2)
   devise-i18n (~> 1.12, >= 1.12.1)
   ed25519 (>= 1.4)
-  error_highlight (>= 0.4.0)
   factory_bot_rails (~> 6.2)
   faraday (<= 2)
   faraday-http-cache (~> 2.4)
