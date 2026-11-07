@@ -67,7 +67,7 @@ es:
       description1: "El sitio web de la comunidad Americana de Re-Volt, 1999"
       description2: "¡Descarga el juego y conozca jugadores de toda parte de América!"
       download-button: "Descargas »"
-      weekly-schedules-button: "Weekly Schedules »"
+      weekly-schedules-button: "Horarios semanales »"
     index:
       community:
         title: "Comunidad"
@@ -95,21 +95,21 @@ es:
       text1_html: "Fundada en 2017, Re-Volt America (RVA) es la comunidad Americana alrededor del popular juego de carreras de autos a control remoto <a href='https://es.wikipedia.org/wiki/Re-Volt' target='_blank'>Re-Volt</a> de 1999."
       text2_html: "Para jugar en línea, utilizamos <a href='https://rvgl.org/' target='_blank'>RVGL</a>, un port multiplataforma de Re-Volt. Esta versión del juego es también conocida por extender la experiencia original brindando soporte para contenido personalizado hecho por la comunidad, como pistas y coches."
       text3_html: "En RVA, organizamos sesiones en línea en las que jugadores de todo el mundo (principalmente del continente americano) compiten entre sí, adquieren puntos por las carreras que juegan, y se posicionan en el ranking oficial de Re-Volt America."
-      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Download RVGL</a>, get the <a href='%{downloads_path}'>RVA Pack</a>, and <a href='%{play_path}'>Play</a> with us!"
-      see_you: "See you on track!"
+      text4_html: "<a href='%{distribute_launcher}' target='_blank'>Descarga RVGL</a>, consigue el Pack <a href='%{downloads_path}'>RVA</a>y <a href='%{play_path}'>¡Juega</a> con nosotros!"
+      see_you: "¡Nos vemos en la pista!"
   #Play page
   play:
-    page-title: "Re-Volt America - Play"
+    page-title: "Re-Volt America - Jugar"
     meta:
       title: "RVA - Jugar"
-      description: "Schedule and lobby announcements for Re-Volt America's online play sessions."
+      description: "Horarios y anuncios de la sala para las sesiones de juegos en línea de Re-Volt América."
     subheader: "Jugamos diariamente a las 00:00 UTC"
     subheader2_html: "Las salas se publican en <code class='nissan-code'>#lobby-rva</code>"
     track-list:
-      button_html: "Check out our weekly schedule <i class='fa fa-external-link-square' aria-hidden='true'></i>"
+      button_html: "Echa un vistazo a nuestros horarios semanales <i class='fa fa-external-link-square' aria-hidden='true'></i>"
   #Downloads page
   downloads:
-    page-title: "Re-Volt America - Downloads"
+    page-title: "Re-Volt América - Descargas"
     title: "Descargas"
     video: "Video pendiente..."
     faq:
@@ -118,11 +118,11 @@ es:
     legacy-downloads: "Descargas antiguas"
   #FAQ page
   faq:
-    page-title: "Re-Volt America - FAQ"
+    page-title: "Re-Volt América - FAQ"
     title: "Preguntas frecuentes"
     description: "Esta es una colección de las preguntas más frecuentes (FAQ) para los nuevos miembros de la comunidad cuando quieren jugar por primera vez a Re-Volt en línea con nosotros en RVA. Asegúrate de leer si eres nuevo en nuestra comunidad."
-    section-1: "Installing and setup"
-    section-2: "Playing online"
+    section-1: "Instalación y configuración"
+    section-2: "Jugando en línea"
     accordion:
       download:
         title: "¿Cómo puedo descargar Re-Volt?"
@@ -849,6 +849,15 @@ es:
         official-score: "puntuación oficial"
         average-position: "posición promedio"
         participation: "porcentaje de participación"
+    activity:
+      member-since: "Member since"
+      last-active-website: "Last active (website)"
+      never: "Never"
+      last-seen:
+        title: "Last seen on"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        ago: "ago"
     tabs:
       title: "General"
       stats: "Estadísticas"

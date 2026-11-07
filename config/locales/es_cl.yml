@@ -851,6 +851,15 @@ es-CL:
         official-score: "puntuación oficial"
         average-position: "posición promedio"
         participation: "porcentaje de participación"
+    activity:
+      member-since: "Member since"
+      last-active-website: "Last active (website)"
+      never: "Never"
+      last-seen:
+        title: "Last seen on"
+        races: "%{category} Races"
+        team-races: "%{category} Team Races"
+        ago: "ago"
     tabs:
       title: "General"
       stats: "Estadísticas"
