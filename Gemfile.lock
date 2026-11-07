@@ -90,7 +90,7 @@ GEM
       msgpack (~> 1.2)
     bson (4.15.0)
     builder (3.3.0)
-    capistrano (3.18.0)
+    capistrano (3.20.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -489,7 +489,7 @@ DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
   bcrypt_pbkdf (>= 1.1.2)
   bootsnap
-  capistrano (~> 3.18)
+  capistrano (~> 3.20)
   capybara (~> 3.39, >= 3.39.2)
   chartkick (~> 5.1, >= 5.1.2)
   connection_pool (~> 2.5)
