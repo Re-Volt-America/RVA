@@ -35,6 +35,7 @@ class TrophyService
     newly_awarded = []
 
     Trophy.all.each do |trophy|
+      next if trophy.manual? # granted by an admin only
       next if @user.has_trophy?(trophy.key)
       next unless trophy.earned_by?(context)
 

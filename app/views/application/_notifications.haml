@@ -1,9 +1,8 @@
 %li.nav-item.dropdown#notification-bell
   %a.nav-link.dropdown-toggle{:href => "#", :"data-toggle" => "dropdown", :"aria-haspopup" => true, :"aria-expanded" => false}
     %i.fa.fa-bell
-    - count = current_user.unread_notifications_count
-    - if count.positive?
-      %span.notification-badge= count > 9 ? "9+" : count
+    - if current_user.unread_notifications_count.positive?
+      %span.notification-badge
   .dropdown-menu.dropdown-menu-right.notification-menu{:"aria-labelledby" => "notification-bell"}
     .notification-menu-header
       %span= t("notifications.title")

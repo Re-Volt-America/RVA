@@ -44,7 +44,7 @@ class Trophy
     # @param at_least [Numeric, nil] the minimum value of `stat` required to earn it
     # @yield [TrophyContext] optional block returning a truthy value when earned
     # @return [Trophy]
-    def define(key, icon:, tier: :bronze, stat: nil, at_least: nil, &block)
+    def define(key, icon:, tier: :bronze, stat: nil, at_least: nil, name: nil, description: nil, manual: false, &block)
       key = key.to_sym
 
       unless TIERS.include?(tier)
@@ -52,17 +52,21 @@ class Trophy
       end
 
       condition =
-        if block_given?
+        if manual
+          # Manual trophies are only ever granted by an admin; they are never
+          # earned automatically, so their condition always evaluates false.
+          ->(_ctx) { false }
+        elsif block_given?
           block
         elsif stat && at_least
           field = stat.to_sym
           minimum = at_least
           ->(ctx) { (ctx.stat(field) || 0) >= minimum }
         else
-          raise ArgumentError, "Trophy #{key}: provide either a block or both stat: and at_least:"
+          raise ArgumentError, "Trophy #{key}: provide either a block, stat:/at_least:, or manual: true"
         end
 
-      @registry[key] = new(key, icon, tier, condition)
+      @registry[key] = new(key, icon, tier, condition, name, description, manual)
     end
 
     # @return [Array<Trophy>] every defined trophy
@@ -90,11 +94,19 @@ class Trophy
 
   attr_reader :key, :icon, :tier, :condition
 
-  def initialize(key, icon, tier, condition)
+  def initialize(key, icon, tier, condition, name_override = nil, description_override = nil, manual = false)
     @key = key
     @icon = icon
     @tier = tier
     @condition = condition
+    @name_override = name_override
+    @description_override = description_override
+    @manual = manual
+  end
+
+  # Manual trophies are granted by an admin only (never auto-awarded).
+  def manual?
+    @manual
   end
 
   # Evaluate whether the given context satisfies this trophy's condition.
@@ -103,17 +115,31 @@ class Trophy
     !!@condition.call(context)
   end
 
-  # Translated, human-readable name. Falls back to a humanized key.
+  # Human-readable name. A definition may pass an explicit :name override (a
+  # String, or a callable resolved at render time). This is used for the dynamic,
+  # data-driven per-season trophies. Otherwise it is translated from I18n.
   def name
+    return resolve_override(@name_override) unless @name_override.nil?
+
     I18n.t("users.trophies.items.#{key}.name", :default => key.to_s.humanize)
   end
 
-  # Translated description (used for tooltips). Falls back to an empty string.
+  # Description (used for tooltips). Same override rules as #name; a callable
+  # override is resolved at render time so it stays translatable per viewer.
   def description
+    return resolve_override(@description_override) unless @description_override.nil?
+
     I18n.t("users.trophies.items.#{key}.description", :default => '')
   end
 
   def tier_index
     TIERS.index(tier) || 0
   end
+
+  private
+
+  def resolve_override(value)
+    value.respond_to?(:call) ? value.call : value
+  end
+
 end

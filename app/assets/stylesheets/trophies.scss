@@ -10,50 +10,59 @@ $tier-platinum: #67d3f9;
 // --- Trophy Case -------------------------------------------------------------
 
 #trophy-case {
+  // Five per row across the full width (three on tablet, two on phones).
+  .trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 575px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Each trophy is a framed card. The grey border reads clearly against the
+  // page's black background.
   .trophy-card {
-    height: 100%;
-    padding: 22px 12px 16px;
+    padding: 10px;
     text-align: center;
     background-color: #151515;
     border: 1px solid #5e6162;
     border-radius: 6px;
-    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
 
-    .trophy-icon {
-      margin-bottom: 12px;
-      font-size: 46px;
+  // Grey icon tile. The icon scales with the tile (container units) so it fills
+  // a consistent share of the square. No per-tier colour, no hover motion.
+  // The description shows as a Bootstrap tooltip (data-toggle="tooltip" + title).
+  .trophy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 8px;
+    background: #eee;
+    color: #444;
+    border-radius: 4px;
+    container-type: inline-size;
+
+    .fa {
+      font-size: 3rem;  // fallback for browsers without container-query units
+      font-size: 58cqw; // icon fills ~58% of the tile width
       line-height: 1;
-      color: #beb8bc;
-    }
-
-    .trophy-name {
-      font-family: NissanOpti, serif;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .trophy-date {
-      margin-top: 4px;
-      font-size: 0.72rem;
-      color: #8a8a8a;
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      border-color: #beb8bc;
     }
   }
 
-  .tier-bronze   .trophy-icon { color: $tier-bronze; }
-  .tier-silver   .trophy-icon { color: $tier-silver; }
-  .tier-gold     .trophy-icon { color: $tier-gold; }
-  .tier-platinum .trophy-icon { color: $tier-platinum; }
-
-  .tier-bronze:hover   { box-shadow: 0 0 12px rgba(205, 127, 50, 0.30); border-color: $tier-bronze; }
-  .tier-silver:hover   { box-shadow: 0 0 12px rgba(212, 212, 212, 0.28); border-color: $tier-silver; }
-  .tier-gold:hover     { box-shadow: 0 0 14px rgba(255, 192, 17, 0.38); border-color: $tier-gold; }
-  .tier-platinum:hover { box-shadow: 0 0 14px rgba(103, 211, 249, 0.38); border-color: $tier-platinum; }
+  .trophy-name {
+    margin: 0;
+    font-family: NissanOpti, serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #fff;
+  }
 }
 
 // --- Notification bell (nav) -------------------------------------------------
@@ -61,19 +70,16 @@ $tier-platinum: #67d3f9;
 #notification-bell {
   .nav-link { position: relative; }
 
+  // A plain dot (no number) shown when there are unread notifications. It uses
+  // currentColor so it always matches the bell icon's colour, hover included.
   .notification-badge {
     position: absolute;
-    top: 0;
-    right: -4px;
-    min-width: 16px;
-    padding: 2px 5px;
-    font-size: 0.62rem;
-    font-weight: bold;
-    line-height: 1;
-    text-align: center;
-    color: #fff;
-    background-color: #f30039;
-    border-radius: 10px;
+    top: 2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: currentColor;
+    border-radius: 50%;
   }
 
   .notification-menu {
@@ -137,8 +143,6 @@ $tier-platinum: #67d3f9;
   white-space: normal;
   border-bottom: 1px solid #2a2a2a;
 
-  &:hover { background-color: #000; color: #fff; }
-
   &.unread { background-color: rgba(243, 0, 57, 0.08); }
   &.unread .notification-item-text { color: #fff; font-weight: 600; }
 
@@ -149,9 +153,8 @@ $tier-platinum: #67d3f9;
     justify-content: center;
     width: 30px;
     height: 30px;
-    color: $tier-gold;
-    background-color: #000;
-    border: 1px solid #5e6162;
+    color: #444;            // same icon colour as the Trophy Case tiles
+    background-color: #eee;  // same tile colour as the Trophy Case
     border-radius: 50%;
   }
 
@@ -173,4 +176,18 @@ $tier-platinum: #67d3f9;
   }
 
   .notification-item:last-child { border-bottom: 0; }
+
+  // Same highlight as the bell dropdown: white row, inverted (black) text/icon.
+  .notification-item:hover {
+    background-color: #fff;
+    color: #000;
+
+    .notification-item-text,
+    .notification-item-time { color: #000; }
+
+    .notification-item-icon {
+      color: #000;
+      background-color: #fff;
+    }
+  }
 }
