@@ -104,7 +104,7 @@ Rails.application.config.to_prepare do
   end
 
   Trophy.define :spray_em_all, :icon => 'fa-spray-can', :tier => :gold do |ctx|
-    ctx.won_race_with_car?('Pest Control')
+    ctx.won_session_with_car?('Pest Control')
   end
 
   Trophy.define :car_collector, :icon => 'fa-warehouse', :tier => :silver do |ctx|

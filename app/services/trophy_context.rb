@@ -123,8 +123,8 @@ class TrophyContext
     end
   end
 
-  # Won every race they took part in, in a session with at least `min_races` races.
-  def perfect_session?(min_races = 3)
+  # Won every race they took part in, in a session with at least `min_races` races (default 20).
+  def perfect_session?(min_races = 20)
     sessions.any? do |session|
       entries = session.races.map { |race| race.get_racer_entry_by_name(user.username) }.compact
       entries.size >= min_races && entries.all? { |e| e.position.to_i == 1 }
