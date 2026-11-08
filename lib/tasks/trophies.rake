@@ -4,31 +4,55 @@ namespace :trophies do
   desc 'Recompute trophies for every user, awarding (and notifying) any newly-earned ones. ' \
        'Run this after adding new trophy definitions or to backfill existing users.'
   task :recompute => :environment do
-    # Build the shared leaderboard / car-multiplier snapshot once for the whole
-    # run (points and cars don't change while we award trophies).
+    log = ->(msg) { puts "[#{Time.now.strftime('%H:%M:%S')}] #{msg}"; $stdout.flush }
+    started = Time.now
+
+    # One shared snapshot of the user-independent data (leaderboard, cars,
+    # ranking winners) for the whole run.
     TrophyContext.reset_shared_caches!
 
-    total = User.count
-    awarded = 0
-    processed = 0
-    skipped = 0
+    # Preload every session once and group it by participant, so evaluating a
+    # player never issues a per-user query (that per-user work inside a live
+    # User cursor is what timed the cursor out and made this crawl).
+    log.call "Preloading sessions..."
+    sessions_by_user = Hash.new { |h, k| h[k] = [] }
+    session_total = 0
+    Session.without(:session_log_data, :results_data).each do |session|
+      session_total += 1
+      session.racer_result_entries.each { |entry| sessions_by_user[entry.username] << session }
+    end
+    log.call "Loaded #{session_total} sessions across #{sessions_by_user.size} participants."
 
-    User.all.each do |user|
+    # Pull the full id list up front; iterating ids (not a live cursor) means no
+    # cursor can expire while we work.
+    user_ids = User.all.pluck(:id)
+    total = user_ids.size
+    log.call "Evaluating #{total} players..."
+
+    awarded = processed = skipped = players = 0
+
+    user_ids.each do |uid|
       processed += 1
-
-      # Players who have never raced can't satisfy any auto trophy, so skip the
-      # (indexed, but still real) history lookups entirely.
+      user = User.find(uid)
       stats = user.stats
+
       if stats.nil? || (stats.session_count.to_i.zero? && stats.race_count.to_i.zero?)
         skipped += 1
-        next
+      else
+        newly = TrophyService.sync(user, :sessions => sessions_by_user[user.username])
+        unless newly.empty?
+          players += 1
+          awarded += newly.size
+          log.call "  #{user.username} +#{newly.size}: #{newly.map(&:key).join(', ')}"
+        end
       end
 
-      awarded += TrophyService.sync(user).size
-      print "\r[#{processed}/#{total}] processed, #{awarded} awarded, #{skipped} inactive skipped" if (processed % 20).zero?
+      if (processed % 25).zero? || processed == total
+        log.call "[#{processed}/#{total}] processed | #{awarded} trophies to #{players} players | #{skipped} inactive | #{(Time.now - started).round(1)}s"
+      end
     end
 
-    puts "\nDone. Processed #{processed} users (#{skipped} inactive skipped), awarded #{awarded} new trophies."
+    log.call "Done in #{(Time.now - started).round(1)}s. Awarded #{awarded} trophies to #{players} players (#{skipped} inactive skipped)."
   end
 
   desc 'List every defined trophy (key, tier, icon).'
@@ -121,7 +145,10 @@ namespace :trophies do
     users = 0
     trophies = 0
 
-    User.where(:"trophies.0".exists => true).each do |user|
+    User.where(:"trophies.0".exists => true).pluck(:id).each do |uid|
+      user = User.find(uid)
+      next if user.trophies.empty?
+
       trophies += user.trophies.size
       user.trophies.destroy_all
       user.save

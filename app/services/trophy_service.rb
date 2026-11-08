@@ -8,8 +8,8 @@
 # (see `rake trophies:recompute`).
 class TrophyService
   # Sync a single user, returning the list of Trophy definitions newly awarded.
-  def self.sync(user)
-    new(user).sync
+  def self.sync(user, sessions: nil)
+    new(user, :sessions => sessions).sync
   end
 
   # Convenience: sync every registered participant of a session. Never raises;
@@ -24,14 +24,15 @@ class TrophyService
     Sentry.capture_exception(e) if defined?(Sentry)
   end
 
-  def initialize(user)
+  def initialize(user, sessions: nil)
     @user = user
+    @sessions = sessions
   end
 
   def sync
     return [] if @user.nil? || @user.stats.nil?
 
-    context = TrophyContext.new(@user)
+    context = TrophyContext.new(@user, :sessions => @sessions)
     newly_awarded = []
 
     Trophy.all.each do |trophy|

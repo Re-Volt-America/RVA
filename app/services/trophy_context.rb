@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'set'
+
 # The object passed to every trophy condition. It answers the questions a
 # trophy definition needs ("has this user won 10 sessions?", "did they ever
 # win a session driving the Mouse?", ...) against the user's current full
@@ -31,8 +33,10 @@ class TrophyContext
     end
   end
 
-  def initialize(user)
+  def initialize(user, sessions: nil)
     @user = user
+    # The bulk recompute injects this user's sessions so we never query per user.
+    @sessions = sessions
   end
 
   # --- Stat thresholds ------------------------------------------------------
@@ -96,9 +100,7 @@ class TrophyContext
 
   # Did the user finish 1st in any *concluded* ranking?
   def won_ranking?
-    Ranking.where('racer_result_entries.username' => user.username).any? do |ranking|
-      ranking_concluded?(ranking) && ranking_winner(ranking) == user.username
-    end
+    ranking_data[:winners].include?(user.username)
   end
 
   # --- Race-entry helpers ---------------------------------------------------
@@ -177,10 +179,9 @@ class TrophyContext
 
   # Season ids this user has competed in (memoised).
   def participated_season_ids
-    @participated_season_ids ||= begin
-      ranking_ids = sessions.map(&:ranking_id).compact.uniq
-      ranking_ids.empty? ? [] : Ranking.where(:id.in => ranking_ids).pluck(:season_id).compact.uniq
-    end
+    @participated_season_ids ||= sessions.map(&:ranking_id).compact.uniq
+                                         .map { |rid| ranking_data[:ranking_season][rid] }
+                                         .compact.uniq
   end
 
   # Number of distinct seasons this user has competed in.
@@ -275,21 +276,45 @@ class TrophyContext
     session.racer_result_entries.max_by { |entry| entry.official_score.to_f }&.username
   end
 
-  def ranking_winner(ranking)
-    ranking.racer_result_entries.max_by { |entry| entry.official_score.to_f }&.username
+  # Cached once for the whole run: a {ranking_id => season_id} map, and the set of
+  # usernames who have won a *concluded* ranking. Built from a single aggregation
+  # plus one pass over rankings/seasons, so evaluating won_ranking? and season
+  # participation never issues a per-user ranking query.
+  def ranking_data
+    self.class.shared_cache[:ranking_data] ||= build_ranking_data
   end
 
-  # A ranking is considered "concluded" (and therefore winnable) once it is no
-  # longer being played: it reached the full session count, its season is over,
-  # or a later ranking exists in the same season.
-  def ranking_concluded?(ranking)
-    return true if ranking.sessions.size >= 28
+  def build_ranking_data
+    session_counts = Hash.new(0)
+    Session.collection.aggregate(
+      [{ '$group' => { '_id' => '$ranking_id', 'count' => { '$sum' => 1 } } }]
+    ).each { |row| session_counts[row['_id']] = row['count'] }
 
-    season = ranking.season
-    return false if season.nil?
-    return true unless season.current
+    season_current = Season.all.only(:current).each_with_object({}) { |se, h| h[se.id] = se.current }
 
-    season.rankings.any? { |other| other.number.to_i > ranking.number.to_i }
+    rankings = Ranking.all.to_a
+    max_number_by_season = Hash.new(0)
+    rankings.each do |r|
+      n = r.number.to_i
+      max_number_by_season[r.season_id] = n if n > max_number_by_season[r.season_id]
+    end
+
+    ranking_season = {}
+    winners = Set.new
+    rankings.each do |ranking|
+      ranking_season[ranking.id] = ranking.season_id
+
+      concluded =
+        session_counts[ranking.id] >= 28 ||
+        (ranking.season_id && season_current[ranking.season_id] == false) ||
+        (ranking.season_id && max_number_by_season[ranking.season_id] > ranking.number.to_i)
+      next unless concluded
+
+      top = ranking.racer_result_entries.max_by { |entry| entry.official_score.to_f }
+      winners << top.username if top
+    end
+
+    { :ranking_season => ranking_season, :winners => winners }
   end
 
   # [[session, race, entry], ...] for every race this user has an entry in.
