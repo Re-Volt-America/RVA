@@ -26,7 +26,7 @@
             = t("users.activity.last-seen.title")
           .number
             %a{:href => session_path(session)}
-              = session_category_name(session)
+              = "#{session_category_name(session)}s"
           .text-muted.small
             = "#{time_ago_in_words(session.date)} #{t('users.activity.last-seen.ago')}"
     .col-md-4
