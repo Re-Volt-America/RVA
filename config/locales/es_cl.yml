@@ -864,6 +864,101 @@ es-CL:
       title: "General"
       stats: "Estadísticas"
       admin: "Administrador"
+      trophies: "Trophy Case"
+    trophies:
+      tab: "Trophy Case"
+      empty: "No trophies yet."
+      awarded-on: "Awarded %{date}"
+      unknown: "Unknown trophy"
+      season-participant: "Compete in %{name}"
+      items:
+        first_win:
+          name: "First Blood"
+          description: "Win your first session."
+        contender:
+          name: "Contender"
+          description: "Win 25 sessions"
+        centurion:
+          name: "Centurion"
+          description: "Win 500 sessions"
+        podium_regular:
+          name: "Podium Regular"
+          description: "Finish on the podium in 75 sessions"
+        podium_fixture:
+          name: "Podium Fixture"
+          description: "Finish on the podium in 200 sessions"
+        veteran:
+          name: "Seasoned Veteran"
+          description: "Play 200 sessions"
+        getting_started:
+          name: "Getting Started"
+          description: "Compete in 500 races"
+        road_warrior:
+          name: "Road Warrior"
+          description: "Compete in 10,000 races"
+        race_winner:
+          name: "Race Winner"
+          description: "Win 500 races"
+        speed_demon:
+          name: "Speed Demon"
+          description: "Win 1,000 races"
+        one_big_leap:
+          name: "One Big Leap"
+          description: "Win 100,000 races"
+        point_hoarder:
+          name: "Point Hoarder"
+          description: "Reach 100,000 obtained points"
+        perfectionist:
+          name: "Flawless Victory"
+          description: "Win every race in a session"
+        sharpshooter:
+          name: "Sharpshooter"
+          description: "Keep a 50% session win rate over 20+ sessions"
+        hat_trick:
+          name: "Hat-Trick Hero"
+          description: "Win three sessions in a row"
+        raton_altista:
+          name: "Ratón Altista"
+          description: "Win a session driving the Mouse."
+        car_collector:
+          name: "Car Collector"
+          description: "Drive 50 different cars"
+        jack_of_all_cars:
+          name: "Jack of All Cars"
+          description: "Win sessions driving 15 different cars"
+        mr_worldwide:
+          name: "Mr. Worldwide"
+          description: "Win a race on 50 different tracks"
+        living_legend:
+          name: "Living Legend"
+          description: "Take part in every season ever held"
+        giant_slayer:
+          name: "Giant Slayer"
+          description: "Beat a top-5 player (by obtained points) who was driving a car with equal or lower multiplier than yours"
+        going_nuclear:
+          name: "Going Nuclear!"
+          description: "Beat NUC in a session"
+        beat_the_admin:
+          name: "Beat the Admin"
+          description: "Beat BGM in a session"
+        enduro:
+          name: "Enduro"
+          description: "Finish a race of 15 or more laps"
+        lanterne_rouge:
+          name: "Lanterne Rouge"
+          description: "Finish a race in last place without dropping out"
+        ranking_champion:
+          name: "Ranking Champion"
+          description: "Finish 1st in a ranking."
+        spray_em_all:
+          name: "SPRAY EM ALL"
+          description: "Win a session driving Pest Control"
+        official_business:
+          name: "Official Business"
+          description: "Be a member of the staff"
+        translator:
+          name: "Translator"
+          description: "Help translate the website"
     badges:
       admin: "Administrador"
       developer: "Desarrollador"
@@ -880,6 +975,13 @@ es-CL:
       import:
         exists: "No se han creado usuarios. Tal vez el formato del archivo es incorrecto."
         success: "Usuarios importados correctamente."
+  #On-site notifications
+  notifications:
+    title: "Notifications"
+    empty: "No notifications yet."
+    view-all: "View all notifications"
+    mark-all-read: "Mark all as read"
+    trophy-earned: "You earned a trophy: %{name}"
   #Tournaments page
   tournaments:
     meta:
