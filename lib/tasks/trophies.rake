@@ -4,18 +4,31 @@ namespace :trophies do
   desc 'Recompute trophies for every user, awarding (and notifying) any newly-earned ones. ' \
        'Run this after adding new trophy definitions or to backfill existing users.'
   task :recompute => :environment do
+    # Build the shared leaderboard / car-multiplier snapshot once for the whole
+    # run (points and cars don't change while we award trophies).
+    TrophyContext.reset_shared_caches!
+
     total = User.count
     awarded = 0
     processed = 0
+    skipped = 0
 
     User.all.each do |user|
-      newly = TrophyService.sync(user)
-      awarded += newly.size
       processed += 1
-      print "\r[#{processed}/#{total}] users processed, #{awarded} trophies awarded" if (processed % 20).zero?
+
+      # Players who have never raced can't satisfy any auto trophy, so skip the
+      # (indexed, but still real) history lookups entirely.
+      stats = user.stats
+      if stats.nil? || (stats.session_count.to_i.zero? && stats.race_count.to_i.zero?)
+        skipped += 1
+        next
+      end
+
+      awarded += TrophyService.sync(user).size
+      print "\r[#{processed}/#{total}] processed, #{awarded} awarded, #{skipped} inactive skipped" if (processed % 20).zero?
     end
 
-    puts "\nDone. Processed #{processed} users, awarded #{awarded} new trophies."
+    puts "\nDone. Processed #{processed} users (#{skipped} inactive skipped), awarded #{awarded} new trophies."
   end
 
   desc 'List every defined trophy (key, tier, icon).'
@@ -102,4 +115,22 @@ namespace :trophies do
 
     puts "Removed #{removed} '#{key}' trophy from #{user.username}."
   end
+  desc 'DESTRUCTIVE: remove every trophy (and all trophy notifications) from ' \
+       'ALL players. Usage: rake trophies:wipe'
+  task :wipe => :environment do
+    users = 0
+    trophies = 0
+
+    User.where(:"trophies.0".exists => true).each do |user|
+      trophies += user.trophies.size
+      user.trophies.destroy_all
+      user.save
+      users += 1
+    end
+
+    notifs = Notification.where(:kind => 'trophy').delete_all
+
+    puts "Wiped #{trophies} trophies from #{users} players and deleted #{notifs} trophy notifications."
+  end
+
 end

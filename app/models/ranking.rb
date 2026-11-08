@@ -8,6 +8,9 @@ class Ranking
   has_many :sessions
 
   embeds_many :racer_result_entries
+
+  # Speeds up "find the rankings this racer appears in" (trophy evaluation).
+  index({ 'racer_result_entries.username' => 1 })
   embeds_many :team_result_entries
 
   accepts_nested_attributes_for :racer_result_entries

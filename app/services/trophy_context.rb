@@ -12,6 +12,25 @@
 class TrophyContext
   attr_reader :user
 
+  # Process-wide caches for the expensive, user-INDEPENDENT lookups: the obtained-
+  # points leaderboard and every car's multiplier. Without these a full recompute
+  # is O(users^2) on the leaderboard and runs a Car query per race entry. The
+  # cache has a short TTL so the live app never serves very stale data; the
+  # recompute rake task resets it once up front so the whole run shares one
+  # snapshot (points/cars don't change while awarding trophies anyway).
+  SHARED_CACHE_TTL = 300 # seconds
+
+  class << self
+    def reset_shared_caches!
+      @shared_cache = nil
+    end
+
+    def shared_cache
+      @shared_cache = nil if @shared_cache && (Time.now - @shared_cache[:built_at]) > SHARED_CACHE_TTL
+      @shared_cache ||= { :built_at => Time.now, :top_points => {} }
+    end
+  end
+
   def initialize(user)
     @user = user
   end
@@ -29,7 +48,10 @@ class TrophyContext
 
   # Every session this user has taken part in.
   def sessions
-    @sessions ||= Session.where('racer_result_entries.username' => user.username).to_a
+    @sessions ||= Session
+                  .where('racer_result_entries.username' => user.username)
+                  .without(:session_log_data, :results_data)
+                  .to_a
   end
 
   # The sessions this user *won* (finished 1st overall, i.e. top official score).
@@ -155,7 +177,10 @@ class TrophyContext
 
   # Season ids this user has competed in (memoised).
   def participated_season_ids
-    @participated_season_ids ||= sessions.map { |session| session.ranking&.season_id }.compact.uniq
+    @participated_season_ids ||= begin
+      ranking_ids = sessions.map(&:ranking_id).compact.uniq
+      ranking_ids.empty? ? [] : Ranking.where(:id.in => ranking_ids).pluck(:season_id).compact.uniq
+    end
   end
 
   # Number of distinct seasons this user has competed in.
@@ -203,7 +228,7 @@ class TrophyContext
 
   # Has the user taken part in every season that exists?
   def participated_in_all_seasons?
-    total = Season.count
+    total = (self.class.shared_cache[:season_count] ||= Season.count)
     total.positive? && seasons_participated_count >= total
   end
 
@@ -285,17 +310,26 @@ class TrophyContext
 
   # Usernames of the site's top `top_n` players by obtained points.
   def top_points_usernames(top_n)
-    User.all
-        .sort_by { |u| u.stats&.obtained_points.to_i }
-        .reverse
-        .first(top_n)
-        .map(&:username)
+    self.class.shared_cache[:top_points][top_n] ||=
+      User.all
+          .only(:username, :stats)
+          .sort_by { |u| u.stats&.obtained_points.to_i }
+          .reverse
+          .first(top_n)
+          .map(&:username)
   end
 
 
   # Multiplier of the car an entry drove, or nil when the car isn't referenced.
+  # Uses a cached {car_id => multiplier} map to avoid a Car query per entry.
   def car_multiplier(entry)
-    entry.car&.multiplier
+    cid = entry.car_id
+    cid && car_multipliers[cid]
+  end
+
+  def car_multipliers
+    self.class.shared_cache[:car_multipliers] ||=
+      Car.all.only(:multiplier).each_with_object({}) { |car, map| map[car.id] = car.multiplier }
   end
 
 end
