@@ -77,7 +77,7 @@ class TrophyContext
 
     won_sessions.any? do |session|
       entries = session.races.map { |race| race.get_racer_entry_by_name(user.username) }.compact
-      entries.any? && entries.all? { |entry| entry.car_name.to_s.strip.downcase == target }
+      entries.any? && entries.all? { |entry| entry_car_name(entry).to_s.strip.downcase == target }
     end
   end
 
@@ -88,7 +88,7 @@ class TrophyContext
 
     sessions.any? do |session|
       session.races.any? do |race|
-        next false unless race.track_name.to_s.strip.downcase == target
+        next false unless race_track_name(race).to_s.strip.downcase == target
 
         entry = race.get_racer_entry_by_name(user.username)
         entry && entry.position.to_i == 1
@@ -107,25 +107,25 @@ class TrophyContext
 
   # Distinct cars this user has driven across all of their races.
   def distinct_cars_driven_count
-    my_race_entries.map { |(_s, _r, e)| e.car_name.to_s.strip.downcase }
+    my_race_entries.map { |(_s, _r, e)| entry_car_name(e).to_s.strip.downcase }
                    .reject(&:empty?).uniq.size
   end
 
   # Distinct cars this user has won a race (position 1) with.
   def distinct_cars_won_with_count
-    race_wins.map { |(_s, _r, e)| e.car_name.to_s.strip.downcase }
+    race_wins.map { |(_s, _r, e)| entry_car_name(e).to_s.strip.downcase }
              .reject(&:empty?).uniq.size
   end
 
   # Distinct tracks this user has raced on.
   def distinct_tracks_count
-    my_race_entries.map { |(_s, r, _e)| r.track_name.to_s.strip.downcase }
+    my_race_entries.map { |(_s, r, _e)| race_track_name(r).to_s.strip.downcase }
                    .reject(&:empty?).uniq.size
   end
 
   # Distinct tracks this user has won a race on.
   def distinct_tracks_won_count
-    race_wins.map { |(_s, r, _e)| r.track_name.to_s.strip.downcase }
+    race_wins.map { |(_s, r, _e)| race_track_name(r).to_s.strip.downcase }
              .reject(&:empty?).uniq.size
   end
 
@@ -236,7 +236,7 @@ class TrophyContext
   # Distinct cars the user has driven across the sessions they won.
   def distinct_cars_in_won_sessions_count
     won_sessions.flat_map { |session|
-      session.races.map { |race| race.get_racer_entry_by_name(user.username)&.car_name }
+      session.races.map { |race| entry_car_name(race.get_racer_entry_by_name(user.username)) }
     }.compact.map { |name| name.to_s.strip.downcase }.reject(&:empty?).uniq.size
   end
 
@@ -245,7 +245,7 @@ class TrophyContext
     target = car_name.to_s.strip.downcase
     return false if target.empty?
 
-    race_wins.any? { |(_s, _r, e)| e.car_name.to_s.strip.downcase == target }
+    race_wins.any? { |(_s, _r, e)| entry_car_name(e).to_s.strip.downcase == target }
   end
 
   # Did the user beat a top `top_n` player (by obtained points) in a race while
@@ -355,6 +355,35 @@ class TrophyContext
   def car_multipliers
     self.class.shared_cache[:car_multipliers] ||=
       Car.all.only(:multiplier).each_with_object({}) { |car, map| map[car.id] = car.multiplier }
+  end
+
+
+  # Car/Track NAMES by id, cached once. RacerEntry#car_name and Race#track_name
+  # lazily load the associated Car/Track from the DB (a query per entry), which
+  # is the real cost on a full recompute; these maps replace that with a lookup.
+  def car_names
+    self.class.shared_cache[:car_names] ||=
+      Car.all.only(:name).each_with_object({}) { |car, map| map[car.id] = car.name }
+  end
+
+  def track_names
+    self.class.shared_cache[:track_names] ||=
+      Track.all.only(:name).each_with_object({}) { |track, map| map[track.id] = track.name }
+  end
+
+  # Name of the car an entry drove, without loading the Car document.
+  def entry_car_name(entry)
+    return nil if entry.nil?
+
+    (entry.car_id && car_names[entry.car_id]) || entry.legacy_car_name
+  end
+
+  # Name of the track a race ran on, without loading the Track document.
+  def race_track_name(race)
+    return nil if race.nil?
+    return race.legacy_track_name if race.legacy_track_name.present?
+
+    race.track_id && track_names[race.track_id]
   end
 
 end
