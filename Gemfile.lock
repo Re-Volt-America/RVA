@@ -531,7 +531,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0, >= 6.0.3)
   rubocop
   sanitize (~> 6.1)
-  selenium-webdriver
+  selenium-webdriver (~> 4.10.0)
   sentry-rails (~> 5.11)
   shrine (~> 3.5)
   shrine-mongoid (~> 1.0)
