@@ -52,6 +52,8 @@
             = t('nav.downloads')
         %li.nav-item
       %ul.navbar-nav
+        - if user_signed_in?
+          = render :partial => 'notifications'
         = render :partial => 'locale_selector'
 
         %li.dropdown{:style => "#{!user_signed_in? ? 'margin-top: 6px' : ''}"}

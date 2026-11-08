@@ -13,8 +13,12 @@ class User
   belongs_to :team, :optional => true, :inverse_of => :members
   has_one :team
 
+  # On-site notifications (trophy awards, etc.). Stored in their own collection.
+  has_many :notifications, :dependent => :destroy
+
   embeds_one :profile
   embeds_one :stats
+  embeds_many :trophies, :class_name => 'AwardedTrophy'
   accepts_nested_attributes_for(:profile, :update_only => true, :allow_destroy => false)
   accepts_nested_attributes_for(:stats, :update_only => true, :allow_destroy => false)
 
@@ -131,4 +135,35 @@ class User
     stats.official_score = 0.0 if stats.official_score && stats.official_score < 0.0
     stats.obtained_points = 0 if stats.obtained_points&.negative?
   end
+
+  # --- Trophies -------------------------------------------------------------
+
+  # @return [Boolean] whether the user already holds the trophy with this key
+  def has_trophy?(key)
+    trophies.any? { |t| t.key == key.to_s }
+  end
+
+  # Grants the trophy in memory (does NOT save). Returns true if it was newly
+  # added, false if the user already had it. Persisting is the caller's job.
+  def award_trophy(key)
+    return false if has_trophy?(key)
+
+    trophies << AwardedTrophy.new(:key => key.to_s, :awarded_at => Time.current)
+    true
+  end
+
+  # Awarded trophies paired with their (code-defined) definition, dropping any
+  # whose definition no longer exists, sorted by tier then award date.
+  def earned_trophies
+    trophies
+      .map { |t| [t, Trophy.find(t.key)] }
+      .reject { |(_awarded, definition)| definition.nil? }
+      .sort_by { |(awarded, definition)| [definition.tier_index, awarded.awarded_at || Time.at(0)] }
+  end
+
+  # @return [Integer] count of unread notifications (memoized for the request)
+  def unread_notifications_count
+    @unread_notifications_count ||= notifications.unread.count
+  end
+
 end
