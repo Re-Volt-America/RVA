@@ -918,7 +918,7 @@ en:
       empty: "No trophies yet."
       awarded-on: "Awarded %{date}"
       unknown: "Unknown trophy"
-      season-participant: "Compete in the %{name} season"
+      season-participant: "Compete in %{name}"
       items:
         first_win:
           name: "First Blood"
