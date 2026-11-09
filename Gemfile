@@ -25,7 +25,7 @@ gem 'kramdown', '~> 2.4'                                              # Yet-anot
 gem 'mongo', '~> 2.26'                                                # MongoDB Ruby driver (used by Mongoid); 2.22+ is tested on Ruby 3.4
 gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'net-imap', '>= 0.4.24'                                           # Ruby client api for Internet Message Access Protocol
-gem 'omniauth', '~> 2.1', '>= 2.1.1'                                  # Flexible authentication system utilizing Rack middleware
+gem 'omniauth', '~> 2.2'                                            # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
