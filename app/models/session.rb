@@ -7,6 +7,8 @@ class Session
 
   # Speeds up "find sessions this racer took part in" (users#show).
   index({ 'racer_result_entries.username' => 1 })
+  # Every season/ranking page looks sessions up by ranking.
+  index({ :ranking_id => 1, :date => 1 })
 
   belongs_to :ranking
   has_and_belongs_to_many :hosts, :class_name => 'User', :inverse_of => nil

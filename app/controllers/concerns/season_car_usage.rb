@@ -51,7 +51,10 @@ module SeasonCarUsage
     ranking_ids = season.rankings.pluck(:id)
     return Session.none if ranking_ids.empty?
 
+    # Skip the heavy per-session payloads (uploaded log metadata, parsed results, standings) that car usage never
+    # reads; only the date and the embedded races/racer entries are needed.
     scope = Session.where(:ranking_id.in => ranking_ids)
+                   .without(:session_log_data, :results_data, :racer_result_entries, :team_result_entries)
     scope = scope.where(:date.gte => filters[:from_date]) if filters[:from_date]
     scope = scope.where(:date.lte => filters[:to_date]) if filters[:to_date]
     scope
