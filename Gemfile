@@ -24,22 +24,18 @@ gem 'kramdown', '~> 2.4'                                              # Yet-anot
 gem 'mongo', '~> 2.26'                                                # MongoDB Ruby driver (used by Mongoid); 2.22+ is tested on Ruby 3.4
 gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
 gem 'net-imap', '>= 0.4.24'                                           # Ruby client api for Internet Message Access Protocol
-gem 'omniauth', '~> 2.2'                                            # Flexible authentication system utilizing Rack middleware
+gem 'omniauth', '~> 2.2'                                              # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-
-# Rails! Only the parts this app loads (see config/application.rb).
-# The full 'rails' gem also installs Active Storage, which we don't use.
-gem 'actioncable', '~> 7.2.3', '>= 7.2.3.2'
-gem 'actionmailer', '~> 7.2.3', '>= 7.2.3.2'
-gem 'actionpack', '~> 7.2.3', '>= 7.2.3.2'
-gem 'actionview', '~> 7.2.3', '>= 7.2.3.2'
-gem 'activejob', '~> 7.2.3', '>= 7.2.3.2'
-gem 'activemodel', '~> 7.2.3', '>= 7.2.3.2'
-gem 'activesupport', '~> 7.2.3', '>= 7.2.3.2'
-gem 'railties', '~> 7.2.3', '>= 7.2.3.2'
-
+gem 'actioncable', '~> 7.2.3', '>= 7.2.3.2'                           # Structure many real-time application concerns into channels over a single WebSocket connection.
+gem 'actionmailer', '~> 7.2.3', '>= 7.2.3.2'                          # Email on Rails. Compose, deliver, and test emails using the familiar controller/view pattern. First-class support for multipart email and attachments.
+gem 'actionpack', '~> 7.2.3', '>= 7.2.3.2'                            # Web apps on Rails. Simple, battle-tested conventions for building and testing MVC web applications. Works with any Rack-compatible server.
+gem 'actionview', '~> 7.2.3', '>= 7.2.3.2'                            # Simple, battle-tested conventions and helpers for building web pages.
+gem 'activejob', '~> 7.2.3', '>= 7.2.3.2'                             # Declare job classes that can be run by a variety of queuing backends.
+gem 'activemodel', '~> 7.2.3', '>= 7.2.3.2'                           # A toolkit for building modeling frameworks like Active Record. Rich support for attributes, callbacks, validations, serialization, internationalization, and testing.
+gem 'activesupport', '~> 7.2.3', '>= 7.2.3.2'                         # A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. Rich support for multibyte strings, internationalization, time zones, and testing.
+gem 'railties', '~> 7.2.3', '>= 7.2.3.2'                              # Rails internals: application bootup, plugins, generators, and rake tasks.
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
