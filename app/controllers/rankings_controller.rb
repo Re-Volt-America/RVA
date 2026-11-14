@@ -1,7 +1,7 @@
 class RankingsController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
-  before_action :set_ranking, :only => [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_admin, :except => [:index, :show]
+  before_action :set_ranking, :only => [:show, :update, :destroy]
 
   respond_to :html, :json
 
@@ -28,14 +28,6 @@ class RankingsController < ApplicationController
       format.json { render :layout => false }
     end
   end
-
-  # GET /rankings/new
-  def new
-    @ranking = Ranking.new
-  end
-
-  # GET /rankings/1/edit
-  def edit; end
 
   # POST /rankings or /rankings.json
   def create
