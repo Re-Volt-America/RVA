@@ -41,7 +41,21 @@ RSpec.describe '/repositories', :type => :request do
   end
 
   describe 'GET /new' do
-    it 'renders a successful response' do
+    after { User.delete_all }
+
+    it 'sends a signed out visitor to the sign in page' do
+      get new_repository_url
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'sends a regular user back to the home page' do
+      sign_in create(:user)
+      get new_repository_url
+      expect(response).to redirect_to(root_path)
+    end
+
+    it 'renders a successful response for an admin' do
+      sign_in create(:user, :admin => true)
       get new_repository_url
       expect(response).to be_successful
     end
