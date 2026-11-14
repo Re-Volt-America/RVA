@@ -1227,6 +1227,7 @@ es:
         display_entries:
           one: Mostrando <b>%{count}</b> %{entry_name}
           other: Mostrando <b>un total de %{count}</b> %{entry_name}
+          zero: No se han encontrado %{entry_name}
   views:
     pagination:
       first: "&laquo; Primera"

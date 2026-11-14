@@ -20,7 +20,6 @@ gem 'haml', '~> 6.2'                                                  # HTML Abs
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
 gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
-gem 'kaminari-i18n', '~> 0.5.0'                                       # Translations for the Kaminari gem
 gem 'kramdown', '~> 2.4'                                              # Yet-another-markdown-parser but fast
 gem 'mongo', '~> 2.26'                                                # MongoDB Ruby driver (used by Mongoid); 2.22+ is tested on Ruby 3.4
 gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
@@ -29,7 +28,18 @@ gem 'omniauth', '~> 2.2'                                            # Flexible a
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem 'rails', '~> 7.2.3', '>= 7.2.3.2'                                 # Rails!
+
+# Rails! Only the parts this app loads (see config/application.rb).
+# The full 'rails' gem also installs Active Storage, which we don't use.
+gem 'actioncable', '~> 7.2.3', '>= 7.2.3.2'
+gem 'actionmailer', '~> 7.2.3', '>= 7.2.3.2'
+gem 'actionpack', '~> 7.2.3', '>= 7.2.3.2'
+gem 'actionview', '~> 7.2.3', '>= 7.2.3.2'
+gem 'activejob', '~> 7.2.3', '>= 7.2.3.2'
+gem 'activemodel', '~> 7.2.3', '>= 7.2.3.2'
+gem 'activesupport', '~> 7.2.3', '>= 7.2.3.2'
+gem 'railties', '~> 7.2.3', '>= 7.2.3.2'
+
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
