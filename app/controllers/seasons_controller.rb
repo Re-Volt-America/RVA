@@ -1,6 +1,6 @@
 class SeasonsController < ApplicationController
-  before_action :authenticate_user!, :only => [:edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_admin, :except => [:index, :show]
   before_action :set_season, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
