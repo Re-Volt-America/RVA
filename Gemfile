@@ -19,30 +19,30 @@ gem 'groupdate', '~> 6.5', '>= 6.5.1'                                 # The simp
 gem 'haml', '~> 6.2'                                                  # HTML Abstraction Markup Language - A Markup Haiku
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'                                # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails', '~> 1.1'                                      # Bundle and transpile JavaScript in Rails with esbuild
-gem 'kaminari', '~> 1.2', '>= 1.2.2'                                  # Pagination
+gem 'kaminari', '~> 1.3'                                            # Pagination
 gem 'kramdown', '~> 2.4'                                              # Yet-another-markdown-parser but fast
 gem 'mongo', '~> 2.26'                                                # MongoDB Ruby driver (used by Mongoid); 2.22+ is tested on Ruby 3.4
-gem 'mongoid', '~> 8.1', '>= 8.1.3'                                   # The Official Ruby Object Mapper for MongoDB
+gem 'mongoid', '~> 9.1'                                             # The Official Ruby Object Mapper for MongoDB
 gem 'net-imap', '>= 0.4.24'                                           # Ruby client api for Internet Message Access Protocol
 gem 'omniauth', '~> 2.2'                                              # Flexible authentication system utilizing Rack middleware
 gem 'puma', '>= 5.0'                                                  # Use the Puma web server [https://github.com/puma/puma]
 gem 'rack-attack', '~> 6.7'                                           # A rack middleware for throttling and blocking abusive requests
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'                                 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem 'actioncable', '~> 7.2.3', '>= 7.2.3.2'                           # Structure many real-time application concerns into channels over a single WebSocket connection.
-gem 'actionmailer', '~> 7.2.3', '>= 7.2.3.2'                          # Email on Rails. Compose, deliver, and test emails using the familiar controller/view pattern. First-class support for multipart email and attachments.
-gem 'actionpack', '~> 7.2.3', '>= 7.2.3.2'                            # Web apps on Rails. Simple, battle-tested conventions for building and testing MVC web applications. Works with any Rack-compatible server.
-gem 'actionview', '~> 7.2.3', '>= 7.2.3.2'                            # Simple, battle-tested conventions and helpers for building web pages.
-gem 'activejob', '~> 7.2.3', '>= 7.2.3.2'                             # Declare job classes that can be run by a variety of queuing backends.
-gem 'activemodel', '~> 7.2.3', '>= 7.2.3.2'                           # A toolkit for building modeling frameworks like Active Record. Rich support for attributes, callbacks, validations, serialization, internationalization, and testing.
-gem 'activesupport', '~> 7.2.3', '>= 7.2.3.2'                         # A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. Rich support for multibyte strings, internationalization, time zones, and testing.
-gem 'railties', '~> 7.2.3', '>= 7.2.3.2'                              # Rails internals: application bootup, plugins, generators, and rake tasks.
+gem 'actioncable', '~> 8.1.4'                                       # Structure many real-time application concerns into channels over a single WebSocket connection.
+gem 'actionmailer', '~> 8.1.4'                                      # Email on Rails. Compose, deliver, and test emails using the familiar controller/view pattern. First-class support for multipart email and attachments.
+gem 'actionpack', '~> 8.1.4'                                        # Web apps on Rails. Simple, battle-tested conventions for building and testing MVC web applications. Works with any Rack-compatible server.
+gem 'actionview', '~> 8.1.4'                                        # Simple, battle-tested conventions and helpers for building web pages.
+gem 'activejob', '~> 8.1.4'                                         # Declare job classes that can be run by a variety of queuing backends.
+gem 'activemodel', '~> 8.1.4'                                       # A toolkit for building modeling frameworks like Active Record. Rich support for attributes, callbacks, validations, serialization, internationalization, and testing.
+gem 'activesupport', '~> 8.1.4'                                     # A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. Rich support for multibyte strings, internationalization, time zones, and testing.
+gem 'railties', '~> 8.1.4'                                          # Rails internals: application bootup, plugins, generators, and rake tasks.
 gem 'recaptcha', '~> 5.18'                                            # Helpers for the reCAPTCHA API
 gem 'redcarpet', '~> 3.6'                                             # The safe Markdown parser, reloaded
 gem 'redis', '>= 4.0.1'                                               # Use Redis adapter to run Action Cable in production
 gem 'responders', '~> 3.1'                                            # A set of Rails responders to dry up your application
 gem 'rubocop', :require => false                                      # A Ruby static code analyzer and formatter
 gem 'sanitize', '~> 6.1'                                              # HTML & CSS Sanitizer
-gem 'sentry-rails', '~> 5.11'                                         # A gem that provides Rails integration for the Sentry error logger
+gem 'sentry-rails', '~> 5.28'                                         # A gem that provides Rails integration for the Sentry error logger
 gem 'shrine', '~> 3.5'                                                # File Attachment toolkit for Ruby applications
 gem 'shrine-mongoid', '~> 1.0'                                        # Mongoid integration for Shrine
 gem 'sidekiq', '~> 7.3'                                               # Simple, efficient background processing for Ruby (backed by Redis)
