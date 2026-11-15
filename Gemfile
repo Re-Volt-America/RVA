@@ -46,7 +46,7 @@ gem 'sentry-rails', '~> 5.11'                                         # A gem th
 gem 'shrine', '~> 3.5'                                                # File Attachment toolkit for Ruby applications
 gem 'shrine-mongoid', '~> 1.0'                                        # Mongoid integration for Shrine
 gem 'sidekiq', '~> 7.3'                                               # Simple, efficient background processing for Ruby (backed by Redis)
-gem 'sidekiq-cron', '~> 1.12'                                         # Cron scheduler for Sidekiq
+gem 'sidekiq-cron', '~> 2.4'                                          # Cron scheduler for Sidekiq
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'                           # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '~> 1.2', '>= 1.2.2'                            # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'turbo-rails', '~> 1.4'                                           # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -71,6 +71,5 @@ group :test do
   gem 'capybara', '~> 3.39', '>= 3.39.2'                              # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'factory_bot_rails', '~> 6.2'                                   # Fixtures replacement with a straightforward definition syntax
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'                             # RSpec for Rails 5+
-  gem 'selenium-webdriver', '~> 4.10.0'                               # Adds support for Capybara system testing and selenium driver
-  gem 'webdrivers', '~> 5.3'                                          # Keep your Selenium WebDrivers updated automatically
+  gem 'selenium-webdriver', '~> 4.52'                                 # Adds support for Capybara system testing and selenium driver; finds browser drivers itself (Selenium Manager)
 end

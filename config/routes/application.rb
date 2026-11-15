@@ -39,7 +39,7 @@ RVA::Application.routes.draw do
   resources :repositories
 
   resources :seasons
-  resources :rankings
+  resources :rankings, :except => [:new, :edit]
   resources :tracks do
     collection do
       post :import
@@ -128,14 +128,13 @@ RVA::Application.routes.draw do
     get '/forgot/:reset_password_token' => 'devise/passwords#edit'
     put '/forgot' => 'devise/passwords#update'
 
-    post '/register' => 'registrations#create'
-    get '/register' => 'registrations#new'
-    get '/account' => 'registrations#edit'
-    put '/account' => 'registrations#update'
+    post '/register' => 'users/registrations#create'
+    get '/register' => 'users/registrations#new'
+    get '/account' => 'users/registrations#edit'
+    put '/account' => 'users/registrations#update'
 
-    post '/confirm' => 'confirmations#create'
-    get '/confirm' => 'confirmations#new'
-    get '/confirm/:confirmation_token' => 'confirmations#show', :as => :confirmify
-    put '/confirm' => 'confirmations#confirm_account', :as => :finalize_confirmation
+    post '/confirm' => 'users/confirmations#create'
+    get '/confirm' => 'users/confirmations#new'
+    get '/confirm/:confirmation_token' => 'users/confirmations#show', :as => :confirmify
   end
 end
