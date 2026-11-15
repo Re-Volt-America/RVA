@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-  before_action :authenticate_admin, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy, :import]
+  before_action :authenticate_admin, :only => [:new, :create, :edit, :update, :destroy, :import]
   before_action :set_track, :only => [:show, :edit, :update, :destroy]
 
   respond_to :html, :json

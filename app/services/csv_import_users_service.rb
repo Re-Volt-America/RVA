@@ -8,7 +8,8 @@ class CsvImportUsersService
   end
 
   def call
-    csv = CSV.parse(File.open(@file))
+    # Read the uploaded file itself instead of opening a path from the request (CodeQL rb/path-injection)
+    csv = CSV.parse(@file.read.force_encoding(Encoding::UTF_8))
 
     users = []
     csv.each do |row|
