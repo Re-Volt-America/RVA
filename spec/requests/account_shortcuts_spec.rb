@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# Shor t addresses for the sign up, account and confirmation pages.
+# Short addresses for the sign up, account and confirmation pages.
 RSpec.describe 'Account shortcut pages', :type => :request do
   after(:each) do
     User.delete_all
